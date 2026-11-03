@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===================== Dynalar Sandevistan (operating_system/manifest.md) =====================
+       T2-Iconic, capacity 18. +100% consciousness, +5-15% crit chance, +5-15% crit damage. 8s / 55s. -->
+
+  <ThingDef ParentName="RPC_CyberwareItemBase">
+    <defName>RPC_Item_DynalarSandevistan</defName>
+    <label>Dynalar sandevistan</label>
+    <description>A sandevistan operating system. On demand it floods the user's nervous system, stretching their perception of time so the world seems to crawl.</description>
+    <costList>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>RPC_Cyberware_T2</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_CyberwareHediffBase">
+    <defName>RPC_DynalarSandevistan</defName>
+    <label>Dynalar sandevistan</label>
+    <description>An installed sandevistan operating system. Activate it to slow the world down.</description>
+    <descriptionHyperlinks><ThingDef>RPC_Item_DynalarSandevistan</ThingDef></descriptionHyperlinks>
+    <comps>
+      <li Class="RimPunkCE.HediffCompProperties_GiveCyberAbilities">
+        <abilities><li>RPC_Ability_DynalarSandevistan</li></abilities>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareExtension">
+        <slot>RPC_Slot_OperatingSystem</slot>
+        <osType>Sandevistan</osType>
+        <capacityCost>18</capacityCost>
+        <minTier>T2</minTier>
+        <maxTier>Iconic</maxTier>
+        <item>RPC_Item_DynalarSandevistan</item>
+        <values>
+          <li><key>duration</key><value><min>8</min><max>8</max></value></li>
+          <li><key>cooldown</key><value><min>55</min><max>55</max></value></li>
+        </values>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <HediffDef ParentName="RPC_CyberActiveBase">
+    <defName>RPC_DynalarSandevistanActive</defName>
+    <label>sandevistan active</label>
+    <description>Time crawls for this pawn.</description>
+    <modExtensions>
+      <li Class="RimPunkCE.ActiveEffectExtension">
+        <afterimages>true</afterimages>
+        <effects>
+          <capMods>
+            <li><capacity>Consciousness</capacity><offset><min>1</min><max>1</max></offset></li>
+          </capMods>
+          <statOffsets>
+            <li><stat>MeleeCritChance</stat><value><min>0.05</min><max>0.15</max></value></li>
+            <li><stat>RPC_RangedCritChance</stat><value><min>0.05</min><max>0.15</max></value></li>
+            <li><stat>RPC_CritDamageFactor</stat><value><min>0.05</min><max>0.15</max></value></li>
+          </statOffsets>
+        </effects>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <AbilityDef ParentName="RPC_CyberSelfAbilityBase">
+    <defName>RPC_Ability_DynalarSandevistan</defName>
+    <label>activate sandevistan</label>
+    <description>Slow down time: greatly increased consciousness and crit for the duration.</description>
+    <comps>
+      <li Class="RimPunkCE.CompProperties_AbilityCyberBuff">
+        <hediffDef>RPC_DynalarSandevistanActive</hediffDef>
+        <defaultDurationSeconds>8</defaultDurationSeconds>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <!-- ===================== Moore Tech Berserk =====================
+       T2-Iconic, capacity 12. +30-50% damage reduction, parts can't drop below 25%, melee only,
+       -100% stamina cost, no pain. On end: 25% health per enemy neutralized. 8-11s / 60-25s.
+       Red aura (vanilla berserk effecter) and red eyes while active. -->
+
+  <ThingDef ParentName="RPC_CyberwareItemBase">
+    <defName>RPC_Item_MooreTechBerserk</defName>
+    <label>Moore Tech berserk</label>
+    <description>A berserk operating system. On demand it shuts off pain and floods the body with combat stims.</description>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>RPC_Cyberware_T2</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_CyberwareHediffBase">
+    <defName>RPC_MooreTechBerserk</defName>
+    <label>Moore Tech berserk</label>
+    <description>An installed berserk operating system.</description>
+    <descriptionHyperlinks><ThingDef>RPC_Item_MooreTechBerserk</ThingDef></descriptionHyperlinks>
+    <comps>
+      <li Class="RimPunkCE.HediffCompProperties_GiveCyberAbilities">
+        <abilities><li>RPC_Ability_MooreTechBerserk</li></abilities>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareExtension">
+        <slot>RPC_Slot_OperatingSystem</slot>
+        <osType>Berserk</osType>
+        <capacityCost>12</capacityCost>
+        <minTier>T2</minTier>
+        <maxTier>Iconic</maxTier>
+        <item>RPC_Item_MooreTechBerserk</item>
+        <values>
+          <li><key>duration</key><value><min>8</min><max>11</max></value></li>
+          <li><key>cooldown</key><value><min>60</min><max>25</max></value></li>
+        </values>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <HediffDef ParentName="RPC_CyberActiveBase">
+    <defName>RPC_MooreTechBerserkActive</defName>
+    <label>berserk active</label>
+    <description>No pain, melee only, and very hard to put down.</description>
+    <defaultLabelColor>(1, 0.25, 0.25)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>Berserk</stateEffecter>
+      </li>
+    </comps>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>Things/RimPunk/Eyes/GlowEyes</texPath>
+        <color>(1, 0.1, 0.1)</color>
+        <parentTagDef>Head</parentTagDef>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData><defaultData><layer>56</layer><offset>(0, 0, -0.25)</offset></defaultData></drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>Things/RimPunk/Eyes/GlowEyes</texPath>
+        <color>(1, 0.1, 0.1)</color>
+        <parentTagDef>Head</parentTagDef>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData><layer>56</layer><offset>(0, 0, -0.25)</offset><flip>true</flip></defaultData>
+          <dataWest><flip>false</flip></dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <stages Inherit="False">
+      <li>
+        <painFactor>0</painFactor>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimPunkCE.ActiveEffectExtension">
+        <incomingDamageFactor><min>0.7</min><max>0.5</max></incomingDamageFactor>
+        <partHealthFloor>0.25</partHealthFloor>
+        <meleeOnly>true</meleeOnly>
+        <staminaCostFactor>0</staminaCostFactor>
+        <healPerNeutralizeOnEnd>0.25</healPerNeutralizeOnEnd>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <AbilityDef ParentName="RPC_CyberSelfAbilityBase">
+    <defName>RPC_Ability_MooreTechBerserk</defName>
+    <label>activate berserk</label>
+    <description>Shut off pain and go all in on melee: damage reduction, parts can't drop below 25% health, no stamina cost. Heals for every enemy put down when it ends.</description>
+    <comps>
+      <li Class="RimPunkCE.CompProperties_AbilityCyberBuff">
+        <hediffDef>RPC_MooreTechBerserkActive</hediffDef>
+        <defaultDurationSeconds>8</defaultDurationSeconds>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <!-- ===================== Arasaka Mk.1 cyberdeck =====================
+       T1-Iconic, capacity 14. Allows quickhacks, +1-10 max RAM. -->
+
+  <ThingDef ParentName="RPC_CyberwareItemBase">
+    <defName>RPC_Item_ArasakaCyberdeck</defName>
+    <label>Arasaka cyberdeck</label>
+    <description>A cyberdeck operating system. Lets the user upload quickhacks into nearby targets, limited by the deck's RAM.</description>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_CyberwareHediffBase">
+    <defName>RPC_ArasakaCyberdeck</defName>
+    <label>Arasaka cyberdeck</label>
+    <description>An installed cyberdeck.</description>
+    <descriptionHyperlinks><ThingDef>RPC_Item_ArasakaCyberdeck</ThingDef></descriptionHyperlinks>
+    <comps>
+      <li Class="RimPunkCE.HediffCompProperties_GiveCyberAbilities">
+        <abilities><li>RPC_Quickhack_ShortCircuit</li></abilities>
+      </li>
+    </comps>
+    <!-- blue eyes while uploading a quickhack -->
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <workerClass>RimPunkCE.PawnRenderNodeWorker_QuickhackEyes</workerClass>
+        <texPath>Things/RimPunk/Eyes/GlowEyes</texPath>
+        <color>(0.2, 0.6, 1)</color>
+        <parentTagDef>Head</parentTagDef>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData><defaultData><layer>56</layer><offset>(0, 0, -0.25)</offset></defaultData></drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <workerClass>RimPunkCE.PawnRenderNodeWorker_QuickhackEyes</workerClass>
+        <texPath>Things/RimPunk/Eyes/GlowEyes</texPath>
+        <color>(0.2, 0.6, 1)</color>
+        <parentTagDef>Head</parentTagDef>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData><layer>56</layer><offset>(0, 0, -0.25)</offset><flip>true</flip></defaultData>
+          <dataWest><flip>false</flip></dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareExtension">
+        <slot>RPC_Slot_OperatingSystem</slot>
+        <osType>Cyberdeck</osType>
+        <capacityCost>14</capacityCost>
+        <minTier>T1</minTier>
+        <maxTier>Iconic</maxTier>
+        <item>RPC_Item_ArasakaCyberdeck</item>
+        <effects>
+          <statOffsets>
+            <li><stat>RPC_RamMax</stat><value><min>1</min><max>10</max></value></li>
+          </statOffsets>
+        </effects>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <!-- placeholder quickhack until the quickhack list is designed -->
+  <AbilityDef>
+    <defName>RPC_Quickhack_ShortCircuit</defName>
+    <label>quickhack: short circuit</label>
+    <description>Upload a short circuit into the target's systems, dealing electrical damage. Placeholder quickhack.</description>
+    <abilityClass>RimPunkCE.CyberwareAbility</abilityClass>
+    <category>RPC_Cyberware</category>
+    <iconPath>UI/RimPunk/Placeholder_Ability</iconPath>
+    <showPsycastEffects>false</showPsycastEffects>
+    <cooldownTicksRange>60</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>
+    <ai_IsOffensive>true</ai_IsOffensive>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>RimPunkCE.Verb_Quickhack</verbClass>
+      <label>upload</label>
+      <range>24.9</range>
+      <warmupTime>1.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="RimPunkCE.CompProperties_AbilityRamCost">
+        <ramCost>1</ramCost>
+      </li>
+      <li Class="RimPunkCE.CompProperties_AbilityQuickhackDamage">
+        <damageDef>RPC_Electrical</damageDef>
+        <damage>8</damage>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <!-- ===================== Chrome Compressor =====================
+       T2-Iconic, capacity 0. +40-70 max cyberware capacity (not for gonks). -->
+
+  <ThingDef ParentName="RPC_CyberwareItemBase">
+    <defName>RPC_Item_ChromeCompressor</defName>
+    <label>chrome compressor</label>
+    <description>An operating system that does one thing: makes room for more chrome.</description>
+    <costList>
+      <Plasteel>25</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>RPC_Cyberware_T2</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_CyberwareHediffBase">
+    <defName>RPC_ChromeCompressor</defName>
+    <label>chrome compressor</label>
+    <description>An installed chrome compressor.</description>
+    <descriptionHyperlinks><ThingDef>RPC_Item_ChromeCompressor</ThingDef></descriptionHyperlinks>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareExtension">
+        <slot>RPC_Slot_OperatingSystem</slot>
+        <osType>ChromeCompressor</osType>
+        <capacityCost>0</capacityCost>
+        <minTier>T2</minTier>
+        <maxTier>Iconic</maxTier>
+        <item>RPC_Item_ChromeCompressor</item>
+        <effects>
+          <statOffsets>
+            <li><stat>RPC_CyberwareCapacity</stat><value><min>40</min><max>70</max></value></li>
+          </statOffsets>
+        </effects>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+</Defs>

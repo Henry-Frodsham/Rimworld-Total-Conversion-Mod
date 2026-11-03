@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===================== Ram Upgrade (prefrontal_cortex/manifest.md) =====================
+       T1-Iconic, capacity 8. +0.05-0.2 RAM/s, +1 max RAM at T1, +2 from T2 on. -->
+
+  <ThingDef ParentName="RPC_CyberwareItemBase">
+    <defName>RPC_Item_RamUpgrade</defName>
+    <label>RAM upgrade</label>
+    <description>A memory module that speeds up a cyberdeck's RAM recovery.</description>
+    <costList>
+      <Steel>20</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_CyberwareHediffBase">
+    <defName>RPC_RamUpgrade</defName>
+    <label>RAM upgrade</label>
+    <description>An installed RAM upgrade.</description>
+    <descriptionHyperlinks><ThingDef>RPC_Item_RamUpgrade</ThingDef></descriptionHyperlinks>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareExtension">
+        <slot>RPC_Slot_PrefrontalCortex</slot>
+        <capacityCost>8</capacityCost>
+        <minTier>T1</minTier>
+        <maxTier>Iconic</maxTier>
+        <item>RPC_Item_RamUpgrade</item>
+        <effects>
+          <statOffsets>
+            <li><stat>RPC_RamRegen</stat><value><min>0.05</min><max>0.2</max></value></li>
+            <li><stat>RPC_RamMax</stat><value><perTier><li>1</li><li>2</li><li>2</li><li>2</li><li>2</li><li>2</li></perTier></value></li>
+          </statOffsets>
+        </effects>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <!-- ===================== Newton Module =====================
+       T1-Iconic, capacity 14. 0.3-1.35% cyberware cooldown reduction after damaging another pawn. -->
+
+  <ThingDef ParentName="RPC_CyberwareItemBase">
+    <defName>RPC_Item_NewtonModule</defName>
+    <label>Newton module</label>
+    <description>A reflex co-processor that shaves time off cyberware cooldowns every time the user lands a hit.</description>
+    <costList>
+      <Steel>25</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_CyberwareHediffBase">
+    <defName>RPC_NewtonModule</defName>
+    <label>Newton module</label>
+    <description>An installed Newton module.</description>
+    <descriptionHyperlinks><ThingDef>RPC_Item_NewtonModule</ThingDef></descriptionHyperlinks>
+    <comps>
+      <li Class="RimPunkCE.HediffCompProperties_CooldownOnCombat" />
+    </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareExtension">
+        <slot>RPC_Slot_PrefrontalCortex</slot>
+        <capacityCost>14</capacityCost>
+        <minTier>T1</minTier>
+        <maxTier>Iconic</maxTier>
+        <item>RPC_Item_NewtonModule</item>
+        <values>
+          <li><key>cooldownReductionOnDamage</key><value><min>0.003</min><max>0.0135</max></value></li>
+        </values>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+</Defs>

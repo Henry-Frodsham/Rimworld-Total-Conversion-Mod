@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- tiers -->
+  <RPC_Tier_T1>tier 1</RPC_Tier_T1>
+  <RPC_Tier_T2>tier 2</RPC_Tier_T2>
+  <RPC_Tier_T3>tier 3</RPC_Tier_T3>
+  <RPC_Tier_T4>tier 4</RPC_Tier_T4>
+  <RPC_Tier_T5>tier 5</RPC_Tier_T5>
+  <RPC_Tier_Iconic>iconic</RPC_Tier_Iconic>
+  <RPC_TierRange>Tiers: {0} to {1}</RPC_TierRange>
+
+  <!-- capacity -->
+  <RPC_CapacityCost>Cyberware capacity: {0}</RPC_CapacityCost>
+  <RPC_CapacityUsage>Cyberware: {0} / {1} ({2})</RPC_CapacityUsage>
+  <RPC_UsageChange>usage {0} -> {1}</RPC_UsageChange>
+  <RPC_CyberpsychosisRisk>CYBERPSYCHOSIS RISK</RPC_CyberpsychosisRisk>
+  <RPC_GonkCapacityExplanation>Gonk: capacity fixed at {0}</RPC_GonkCapacityExplanation>
+  <RPC_CapacitySettingExplanation>Mod setting: x{0}</RPC_CapacitySettingExplanation>
+  <RPC_Paired>paired</RPC_Paired>
+
+  <!-- slot rules -->
+  <RPC_Reason_PartOccupied>{0} already has {1}.</RPC_Reason_PartOccupied>
+  <RPC_Reason_MustMatch>All {0} cyberware must match ({1} is installed).</RPC_Reason_MustMatch>
+  <RPC_Reason_SlotFull>{0} slots are full (max {1}).</RPC_Reason_SlotFull>
+
+  <!-- surgeries (generated) -->
+  <RPC_InstallLabel>install {0}</RPC_InstallLabel>
+  <RPC_InstallJob>Installing {0}.</RPC_InstallJob>
+  <RPC_RemoveLabel>remove {0}</RPC_RemoveLabel>
+  <RPC_RemoveJob>Removing {0}.</RPC_RemoveJob>
+  <RPC_UpgradeLabel>upgrade {0} to {1}</RPC_UpgradeLabel>
+  <RPC_UpgradeJob>Upgrading {0}.</RPC_UpgradeJob>
+
+  <!-- abilities -->
+  <RPC_NotEnoughRam>Not enough RAM (needs {0}).</RPC_NotEnoughRam>
+  <RPC_AlreadyActive>Already active.</RPC_AlreadyActive>
+  <RPC_NoDashLanding>No room to land next to the target.</RPC_NoDashLanding>
+  <RPC_ToggleBlades>Mantis blades</RPC_ToggleBlades>
+  <RPC_ToggleBladesDesc>Extend or retract the mantis blades. Extended blades are used for every melee attack, even when holding a gun.</RPC_ToggleBladesDesc>
+  <RPC_Extended>extended</RPC_Extended>
+  <RPC_Retracted>retracted</RPC_Retracted>
+
+  <!-- combat -->
+  <RPC_Crit>Crit!</RPC_Crit>
+  <RPC_Mitigated>Mitigated</RPC_Mitigated>
+
+  <!-- bars / stamina -->
+  <RPC_Ram>RAM</RPC_Ram>
+  <RPC_Stamina>Stamina</RPC_Stamina>
+  <RPC_StaminaTip>Drains when attacking, refills while standing still.</RPC_StaminaTip>
+  <RPC_StaminaExhaustedTip>Exhausted: can't attack and moves at half speed until stamina is full again.</RPC_StaminaExhaustedTip>
+
+  <!-- cyberpsychosis -->
+  <RPC_CyberpsychosisReason_Event>pushed over the edge ({0})</RPC_CyberpsychosisReason_Event>
+  <RPC_CyberpsychosisReason_Burnout>cyberpsychosis burnout: above 50% capacity</RPC_CyberpsychosisReason_Burnout>
+
+  <!-- settings -->
+  <RPC_Settings_CapacityMultiplier>Cyberware capacity multiplier: {0}</RPC_Settings_CapacityMultiplier>
+  <RPC_Settings_CyberpsychosisChanceMultiplier>Cyberpsychosis chance multiplier: {0}</RPC_Settings_CyberpsychosisChanceMultiplier>
+  <RPC_Settings_VisualEffects>Visual effects (sandevistan afterimages, quickhack widget)</RPC_Settings_VisualEffects>
+  <RPC_Settings_StaminaEnabled>Stamina system</RPC_Settings_StaminaEnabled>
+  <RPC_Settings_DebugLogging>Debug logging</RPC_Settings_DebugLogging>
+
+</LanguageData>

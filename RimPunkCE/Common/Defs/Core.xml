@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ================= cyberware slots (limits from cyberware_overview.md / groundwork.md) ================= -->
+
+  <RimPunkCE.CyberSlotDef>
+    <defName>RPC_Slot_OperatingSystem</defName>
+    <label>operating system</label>
+    <description>Sandevistan, berserk, cyberdeck and chrome compressor are mutually exclusive: one operating system per pawn.</description>
+    <maxInstalled>1</maxInstalled>
+    <bodyParts><li>Brain</li></bodyParts>
+    <onePerPart>false</onePerPart>
+  </RimPunkCE.CyberSlotDef>
+
+  <RimPunkCE.CyberSlotDef>
+    <defName>RPC_Slot_PrefrontalCortex</defName>
+    <label>prefrontal cortex</label>
+    <maxInstalled>3</maxInstalled>
+    <bodyParts><li>Brain</li></bodyParts>
+    <onePerPart>false</onePerPart>
+  </RimPunkCE.CyberSlotDef>
+
+  <RimPunkCE.CyberSlotDef>
+    <defName>RPC_Slot_Arm</defName>
+    <label>arms</label>
+    <description>One arm cyberware per arm; different cyberware can be mixed across arms.</description>
+    <maxInstalled>2</maxInstalled>
+    <bodyParts><li>Arm</li></bodyParts>
+  </RimPunkCE.CyberSlotDef>
+
+  <RimPunkCE.CyberSlotDef>
+    <defName>RPC_Slot_Face</defName>
+    <label>face</label>
+    <maxInstalled>2</maxInstalled>
+    <bodyParts><li>Eye</li></bodyParts>
+  </RimPunkCE.CyberSlotDef>
+
+  <RimPunkCE.CyberSlotDef>
+    <defName>RPC_Slot_Hands</defName>
+    <label>hands</label>
+    <maxInstalled>1</maxInstalled>
+    <bodyParts><li>Hand</li></bodyParts>
+  </RimPunkCE.CyberSlotDef>
+
+  <RimPunkCE.CyberSlotDef>
+    <defName>RPC_Slot_Legs</defName>
+    <label>legs</label>
+    <description>One per leg. Both legs must have the same cyberware; a matching pair doubles all of its effects.</description>
+    <maxInstalled>2</maxInstalled>
+    <bodyParts><li>Leg</li></bodyParts>
+    <allMustMatch>true</allMustMatch>
+    <matchingSetDoublesEffects>true</matchingSetDoublesEffects>
+  </RimPunkCE.CyberSlotDef>
+
+  <RimPunkCE.CyberSlotDef>
+    <defName>RPC_Slot_Skeleton</defName>
+    <label>skeleton</label>
+    <maxInstalled>2</maxInstalled>
+  </RimPunkCE.CyberSlotDef>
+
+  <RimPunkCE.CyberSlotDef>
+    <defName>RPC_Slot_NervousSystem</defName>
+    <label>nervous system</label>
+    <maxInstalled>3</maxInstalled>
+  </RimPunkCE.CyberSlotDef>
+
+  <RimPunkCE.CyberSlotDef>
+    <defName>RPC_Slot_CirculatorySystem</defName>
+    <label>circulatory system</label>
+    <maxInstalled>3</maxInstalled>
+  </RimPunkCE.CyberSlotDef>
+
+  <RimPunkCE.CyberSlotDef>
+    <defName>RPC_Slot_IntegumentarySystem</defName>
+    <label>integumentary system</label>
+    <maxInstalled>3</maxInstalled>
+  </RimPunkCE.CyberSlotDef>
+
+  <!-- ================= tuning ================= -->
+
+  <RimPunkCE.StaminaTuningDef>
+    <defName>RPC_StaminaTuning</defName>
+    <regenPerSecond>50</regenPerSecond>
+    <meleeMassFactor>4</meleeMassFactor>
+    <rangedMassFactor>1.5</rangedMassFactor>
+    <toolPowerFactor>0.6</toolPowerFactor>
+    <minDrain>1</minDrain>
+    <maxDrain>40</maxDrain>
+    <outOfCombatTicks>600</outOfCombatTicks>
+  </RimPunkCE.StaminaTuningDef>
+
+  <!-- Event table intentionally empty until the trigger events are decided. Example entry:
+       <li><eventType>TookDamage</eventType><chance>0.01</chance><chancePerTenPercentOver>0.01</chancePerTenPercentOver></li>
+       eventType: TookDamage, Downed, Killed, EnteredCombat, UsedCyberwareAbility, CyberwareInstalled -->
+  <RimPunkCE.CyberpsychosisTuningDef>
+    <defName>RPC_CyberpsychosisTuning</defName>
+    <triggerUsage>0.8</triggerUsage>
+    <safeUsage>0.5</safeUsage>
+    <events />
+  </RimPunkCE.CyberpsychosisTuningDef>
+
+  <!-- ================= stamina ================= -->
+
+  <NeedDef>
+    <defName>RPC_Stamina</defName>
+    <needClass>RimPunkCE.Need_Stamina</needClass>
+    <label>stamina</label>
+    <description>Drains when attacking with melee or ranged weapons and refills while standing still. At zero the pawn can't attack and moves at half speed until it is full again.</description>
+    <minIntelligence>Humanlike</minIntelligence>
+    <listPriority>650</listPriority>
+    <baseLevel>1</baseLevel>
+    <showForCaravanMembers>false</showForCaravanMembers>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+  </NeedDef>
+
+  <HediffDef>
+    <defName>RPC_Exhausted</defName>
+    <label>exhausted</label>
+    <description>Out of stamina. Can't attack and moves at half speed until stamina is full again.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.9, 0.7, 0.3)</defaultLabelColor>
+    <isBad>true</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.5</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ================= cyberpsychosis ================= -->
+
+  <HediffDef>
+    <defName>RPC_CyberpsychosisBurnout</defName>
+    <label>cyberpsychosis burnout</label>
+    <description>This pawn has had a cyberpsychotic break. Going above 50% cyberware capacity usage will immediately trigger another. Permanent.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.9, 0.2, 0.5)</defaultLabelColor>
+    <isBad>true</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <makesSickThought>false</makesSickThought>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>RPC_CyberpsychosisRage</defName>
+    <label>cyberpsychotic rage</label>
+    <description>Chrome-fuelled rage. Consciousness doubled.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1, 0.2, 0.2)</defaultLabelColor>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>2</postFactor>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <MentalStateDef ParentName="Berserk">
+    <defName>RPC_Cyberpsychosis</defName>
+    <stateClass>RimPunkCE.MentalState_Cyberpsychosis</stateClass>
+    <label>cyberpsychosis</label>
+    <nameColor>(1,0.15,0.3)</nameColor>
+    <beginLetter>{0} has gone cyberpsycho.\n\n[PAWN_pronoun] will attack anyone [PAWN_pronoun] sees. Knocking [PAWN_objective] down won't end it: the only way out is to remove cyberware until [PAWN_possessive] capacity usage is below 50%.</beginLetter>
+    <beginLetterLabel>cyberpsychosis</beginLetterLabel>
+    <beginLetterDef>ThreatBig</beginLetterDef>
+    <recoveryMessage>{0}'s cyberpsychosis has ended.</recoveryMessage>
+    <baseInspectLine>Mental state: Cyberpsychosis</baseInspectLine>
+    <recoverFromSleep>false</recoverFromSleep>
+    <recoverFromDowned>false</recoverFromDowned>
+    <minTicksBeforeRecovery>99999999</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>99999999</maxTicksBeforeRecovery>
+    <recoveryMtbDays>99999</recoveryMtbDays>
+    <moodRecoveryThought IsNull="True" />
+  </MentalStateDef>
+
+  <!-- ================= traits (pawn_traits.md) ================= -->
+
+  <!-- Exactly one degree per humanlike, assigned by RimPunk (commonality 0 keeps vanilla from picking it).
+       Degree commonality = how often each degree is rolled. -->
+  <TraitDef>
+    <defName>RPC_CyberAptitude</defName>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>gonk</label>
+        <description>{PAWN_nameDef}'s body rejects chrome. [PAWN_possessive] cyberware capacity is permanently 20, nothing can raise it, but [PAWN_pronoun] works faster without it.</description>
+        <degree>-2</degree>
+        <commonality>20</commonality>
+        <statOffsets>
+          <WorkSpeedGlobal>0.2</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+      <li>
+        <label>choom</label>
+        <description>{PAWN_nameDef} is an ordinary street choomba: a little extra room for chrome, quicker hands and a steady aim.</description>
+        <degree>-1</degree>
+        <commonality>35</commonality>
+        <statOffsets>
+          <RPC_CyberwareCapacity>20</RPC_CyberwareCapacity>
+          <WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+          <ReloadSpeed>0.3</ReloadSpeed>
+        </statOffsets>
+        <statFactors>
+          <AimingDelayFactor>0.77</AimingDelayFactor>
+        </statFactors>
+      </li>
+      <li>
+        <label>edgerunner</label>
+        <description>{PAWN_nameDef} lives on the edge, and [PAWN_possessive] body knows chrome.</description>
+        <degree>0</degree>
+        <commonality>25</commonality>
+        <statOffsets>
+          <RPC_CyberwareCapacity>50</RPC_CyberwareCapacity>
+          <RPC_CyberwareDamageFactor>0.1</RPC_CyberwareDamageFactor>
+          <RPC_CyberwareCooldownFactor>-0.1</RPC_CyberwareCooldownFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <label>dreamer</label>
+        <description>{PAWN_nameDef} dreams big, and [PAWN_possessive] body can take a lot of chrome to get there.</description>
+        <degree>1</degree>
+        <commonality>15</commonality>
+        <statOffsets>
+          <RPC_CyberwareCapacity>75</RPC_CyberwareCapacity>
+          <RPC_CyberwareDamageFactor>0.25</RPC_CyberwareDamageFactor>
+          <RPC_CyberwareCooldownFactor>-0.25</RPC_CyberwareCooldownFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <label>legend</label>
+        <description>{PAWN_nameDef} is the stuff of street legend. [PAWN_possessive] body takes chrome like nobody else.</description>
+        <degree>2</degree>
+        <commonality>5</commonality>
+        <statOffsets>
+          <RPC_CyberwareCapacity>100</RPC_CyberwareCapacity>
+          <RPC_CyberwareDamageFactor>0.5</RPC_CyberwareDamageFactor>
+          <RPC_CyberwareCooldownFactor>-0.5</RPC_CyberwareCooldownFactor>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>RPC_Netrunner</defName>
+    <commonality>0</commonality>
+    <degreeDatas>
+      <li>
+        <label>netrunner</label>
+        <description>{PAWN_nameDef} was born to dive the net. [PAWN_possessive] cyberdeck runs more RAM and recovers it faster.</description>
+        <statOffsets>
+          <RPC_RamMax>10</RPC_RamMax>
+          <RPC_RamRegen>0.5</RPC_RamRegen>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+  <!-- ================= damage types (cyberware/terms.md) ================= -->
+
+  <DamageDef>
+    <defName>RPC_Electrical</defName>
+    <label>electrical</label>
+    <workerClass>RimPunkCE.DamageWorker_Electrical</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been electrocuted.</deathMessage>
+    <makesBlood>false</makesBlood>
+    <armorCategory>Electric</armorCategory>
+    <defaultDamage>10</defaultDamage>
+    <modExtensions>
+      <li Class="RimPunkCE.DamageResistanceExtension">
+        <resistanceStat>RPC_ElectricalResistance</resistanceStat>
+      </li>
+    </modExtensions>
+  </DamageDef>
+
+  <!-- tick damage dealt by RPC_Electrified; armour already applied by the hit that caused it -->
+  <DamageDef>
+    <defName>RPC_ElectricalTick</defName>
+    <label>electrical burn</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <deathMessage>{0} has died from electrical burns.</deathMessage>
+    <hediff>ElectricalBurn</hediff>
+    <makesBlood>false</makesBlood>
+    <canInterruptJobs>false</canInterruptJobs>
+  </DamageDef>
+
+  <DamageDef>
+    <defName>RPC_Toxic</defName>
+    <label>toxic</label>
+    <workerClass>RimPunkCE.DamageWorker_Toxic</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been poisoned to death.</deathMessage>
+    <makesBlood>false</makesBlood>
+    <defaultDamage>10</defaultDamage>
+    <modExtensions>
+      <li Class="RimPunkCE.DamageResistanceExtension">
+        <resistanceStat>RPC_ChemicalResistance</resistanceStat>
+      </li>
+    </modExtensions>
+  </DamageDef>
+
+  <DamageDef>
+    <defName>RPC_ToxicTick</defName>
+    <label>toxic burn</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <deathMessage>{0} has died from toxin damage.</deathMessage>
+    <hediff>ChemicalBurn</hediff>
+    <makesBlood>false</makesBlood>
+    <canInterruptJobs>false</canInterruptJobs>
+  </DamageDef>
+
+  <DamageDef>
+    <defName>RPC_Thermal</defName>
+    <label>thermal</label>
+    <workerClass>RimPunkCE.DamageWorker_Thermal</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has burned to death.</deathMessage>
+    <hediff>Burn</hediff>
+    <makesBlood>false</makesBlood>
+    <armorCategory>Heat</armorCategory>
+    <defaultDamage>10</defaultDamage>
+    <modExtensions>
+      <li Class="RimPunkCE.DamageResistanceExtension">
+        <resistanceStat>RPC_ThermalResistance</resistanceStat>
+      </li>
+    </modExtensions>
+  </DamageDef>
+
+  <!-- stun for humanlikes, EMP for mechanoids. amount / 10 = stun seconds -->
+  <DamageDef>
+    <defName>RPC_Shock</defName>
+    <label>shock</label>
+    <workerClass>RimPunkCE.DamageWorker_Shock</workerClass>
+    <externalViolence>true</externalViolence>
+    <makesBlood>false</makesBlood>
+    <defaultDamage>20</defaultDamage>
+    <modExtensions>
+      <li Class="RimPunkCE.DamageResistanceExtension">
+        <resistanceStat>RPC_ElectricalResistance</resistanceStat>
+      </li>
+    </modExtensions>
+  </DamageDef>
+
+  <!-- damage over time: severity = damage still to be dealt -->
+  <HediffDef>
+    <defName>RPC_Electrified</defName>
+    <label>electrified</label>
+    <description>Current is arcing through this body, burning every part a little at a time. Worse for heavily chromed bodies and mechanoids.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.3, 0.6, 1)</defaultLabelColor>
+    <isBad>true</isBad>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1000</maxSeverity>
+    <comps>
+      <li Class="RimPunkCE.HediffCompProperties_DamageOverTime">
+        <damageDef>RPC_ElectricalTick</damageDef>
+        <intervalTicks>60</intervalTicks>
+        <damagePerTick>4</damagePerTick>
+        <spreadAcrossParts>true</spreadAcrossParts>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>RPC_ToxicBurn</defName>
+    <label>toxin damage</label>
+    <description>Toxins are eating at the kidneys and lungs.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.5, 0.9, 0.3)</defaultLabelColor>
+    <isBad>true</isBad>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1000</maxSeverity>
+    <comps>
+      <li Class="RimPunkCE.HediffCompProperties_DamageOverTime">
+        <damageDef>RPC_ToxicTick</damageDef>
+        <intervalTicks>120</intervalTicks>
+        <damagePerTick>2</damagePerTick>
+        <parts>
+          <li>Kidney</li>
+          <li>Lung</li>
+        </parts>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ================= abilities ================= -->
+
+  <AbilityCategoryDef>
+    <defName>RPC_Cyberware</defName>
+    <displayOrder>900</displayOrder>
+  </AbilityCategoryDef>
+
+  <!-- mantis dash: skims the ground fast (no jump arc), not a teleport -->
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>RPC_DashFlyer</defName>
+    <label>dashing</label>
+    <pawnFlyer>
+      <flightDurationMin>0.1</flightDurationMin>
+      <flightSpeed>35</flightSpeed>
+      <heightFactor>0</heightFactor>
+    </pawnFlyer>
+  </ThingDef>
+
+  <!-- ================= research (cyberware tab) ================= -->
+
+  <ResearchTabDef>
+    <defName>RPC_CyberwareTab</defName>
+    <label>cyberware</label>
+    <generalTitle>Cyberware research projects</generalTitle>
+    <generalDescription>Chrome, tier by tier. Each tier unlocks crafting cyberware at that tier and upgrading installed cyberware to it.</generalDescription>
+  </ResearchTabDef>
+
+  <ResearchProjectDef Name="RPC_CyberwareResearchBase" Abstract="True">
+    <tab>RPC_CyberwareTab</tab>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- costs grow ~x1.75 per tier, capped at 10k -->
+  <ResearchProjectDef ParentName="RPC_CyberwareResearchBase">
+    <defName>RPC_Cyberware_T1</defName>
+    <label>tier 1 cyberware</label>
+    <description>Basic street chrome. Craft tier 1 cyberware.</description>
+    <baseCost>600</baseCost>
+    <prerequisites><li>AdvancedFabrication</li></prerequisites>
+    <researchViewX>0</researchViewX>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="RPC_CyberwareResearchBase">
+    <defName>RPC_Cyberware_T2</defName>
+    <label>tier 2 cyberware</label>
+    <description>Craft tier 2 cyberware and upgrade installed cyberware to tier 2.</description>
+    <baseCost>1050</baseCost>
+    <prerequisites><li>RPC_Cyberware_T1</li></prerequisites>
+    <researchViewX>1</researchViewX>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="RPC_CyberwareResearchBase">
+    <defName>RPC_Cyberware_T3</defName>
+    <label>tier 3 cyberware</label>
+    <description>Craft tier 3 cyberware and upgrade installed cyberware to tier 3.</description>
+    <baseCost>1800</baseCost>
+    <prerequisites><li>RPC_Cyberware_T2</li></prerequisites>
+    <researchViewX>2</researchViewX>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="RPC_CyberwareResearchBase">
+    <defName>RPC_Cyberware_T4</defName>
+    <label>tier 4 cyberware</label>
+    <description>Craft tier 4 cyberware and upgrade installed cyberware to tier 4.</description>
+    <baseCost>3200</baseCost>
+    <prerequisites><li>RPC_Cyberware_T3</li></prerequisites>
+    <researchViewX>3</researchViewX>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="RPC_CyberwareResearchBase">
+    <defName>RPC_Cyberware_T5</defName>
+    <label>tier 5 cyberware</label>
+    <description>Craft tier 5 cyberware and upgrade installed cyberware to tier 5.</description>
+    <baseCost>5600</baseCost>
+    <prerequisites><li>RPC_Cyberware_T4</li></prerequisites>
+    <researchViewX>4</researchViewX>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="RPC_CyberwareResearchBase">
+    <defName>RPC_Cyberware_Iconic</defName>
+    <label>iconic cyberware</label>
+    <description>Legendary chrome. Upgrade installed cyberware to iconic.</description>
+    <baseCost>10000</baseCost>
+    <prerequisites><li>RPC_Cyberware_T5</li></prerequisites>
+    <researchViewX>5</researchViewX>
+  </ResearchProjectDef>
+
+</Defs>

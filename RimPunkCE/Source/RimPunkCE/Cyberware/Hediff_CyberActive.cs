@@ -5,7 +5,7 @@ using Verse;
 namespace RimPunkCE
 {
     /// <summary>
-    /// Settings for a temporary "active" effect (sandvista running, berserk running, ...).
+    /// Settings for a temporary "active" effect (sandevistan running, berserk running, ...).
     /// The tier and duration come from the implant that triggered it.
     /// </summary>
     public class ActiveEffectExtension : DefModExtension
@@ -24,14 +24,15 @@ namespace RimPunkCE
         /// <summary>Stamina cost multiplier while active (berserk: 0).</summary>
         public float staminaCostFactor = 1f;
 
-        /// <summary>Draw sandvista afterimages while the pawn moves.</summary>
+        /// <summary>Draw sandevistan afterimages while the pawn moves.</summary>
         public bool afterimages;
 
         /// <summary>Health restored per enemy neutralized while active, applied when the effect ends (0.25 = 25% of each injury).</summary>
         public float healPerNeutralizeOnEnd;
 
-        public IEnumerable<string> ConfigErrors()
+        public override IEnumerable<string> ConfigErrors()
         {
+            foreach (var e in base.ConfigErrors()) yield return e;
             if (effects != null) foreach (var e in effects.ConfigErrors("ActiveEffectExtension")) yield return e;
         }
     }

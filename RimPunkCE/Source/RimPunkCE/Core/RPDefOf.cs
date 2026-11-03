@@ -36,9 +36,8 @@ namespace RimPunkCE
         public static HediffDef RPC_Exhausted;
         public static HediffDef RPC_CyberpsychosisBurnout;
         public static HediffDef RPC_CyberpsychosisRage;
-        public static HediffDef RPC_Quickhacking;
         public static TraitDef RPC_CyberAptitude;
-        public static TraitDef RPC_Netdiver;
+        public static TraitDef RPC_Netrunner;
         public static MentalStateDef RPC_Cyberpsychosis;
         public static DamageDef RPC_Electrical;
         public static DamageDef RPC_Toxic;
@@ -56,9 +55,9 @@ namespace RimPunkCE
     /// <summary>Capacity aptitude trait degrees (one TraitDef, five degrees; pawn_traits.md).</summary>
     public static class AptitudeDegree
     {
-        public const int Gonko = -2;
-        public const int Chum = -1;
-        public const int Edgewalker = 0;
+        public const int Gonk = -2;
+        public const int Choom = -1;
+        public const int Edgerunner = 0;
         public const int Dreamer = 1;
         public const int Legend = 2;
     }

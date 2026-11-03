@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- normal traders: T1-T2 cyberware with capacity cost 0-20 -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName!="Orbital_Exotic" and defName!="Caravan_Outlander_Exotic"]/stockGenerators</xpath>
+    <value>
+      <li Class="RimPunkCE.StockGenerator_Cyberware">
+        <countRange>0~2</countRange>
+        <minTier>T1</minTier>
+        <maxTier>T2</maxTier>
+        <maxCapacityCost>20</maxCapacityCost>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- exotic traders: the good chrome, T3-Iconic, any capacity -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName="Orbital_Exotic" or defName="Caravan_Outlander_Exotic"]/stockGenerators</xpath>
+    <value>
+      <li Class="RimPunkCE.StockGenerator_Cyberware">
+        <countRange>2~4</countRange>
+        <minTier>T3</minTier>
+        <maxTier>Iconic</maxTier>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

@@ -3,16 +3,19 @@ using Verse;
 
 namespace RimPunkCE
 {
-    /// <summary>Mod entry point. Holds settings; Harmony and startup work live in <see cref="Startup"/>.</summary>
+    /// <summary>Mod entry point: settings and Harmony. Post-def-load work lives in <see cref="Startup"/>.</summary>
     public class RimPunkMod : Mod
     {
         public static RimPunkSettings Settings;
-        public static ModContentPack Content;
+        public static ModContentPack ContentPack;
 
         public RimPunkMod(ModContentPack content) : base(content)
         {
-            Content = content;
+            ContentPack = content;
             Settings = GetSettings<RimPunkSettings>();
+            // patched here, not in a [StaticConstructorOnStartup], because the implied-recipe patch
+            // (DefGenerator.GenerateImpliedDefs_PreResolve) must be live before defs are loaded
+            new HarmonyLib.Harmony(Startup.HarmonyId).PatchAll(typeof(RimPunkMod).Assembly);
         }
 
         public override string SettingsCategory() => "RimPunk CE";
@@ -34,7 +37,7 @@ namespace RimPunkCE
 
     public class RimPunkSettings : ModSettings
     {
-        /// <summary>Multiplies every pawn's max cyberware capacity (not Gonko's hard 20).</summary>
+        /// <summary>Multiplies every pawn's max cyberware capacity (not Gonk's hard 20).</summary>
         public float capacityMultiplier = 1f;
         public float cyberpsychosisChanceMultiplier = 1f;
         public bool visualEffects = true;

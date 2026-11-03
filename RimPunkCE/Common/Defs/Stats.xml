@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <StatCategoryDef>
+    <defName>RPC_Cyberware</defName>
+    <label>Cyberware</label>
+    <displayOrder>45</displayOrder>
+  </StatCategoryDef>
+
+  <StatDef Name="RPC_PawnStatBase" Abstract="True">
+    <category>RPC_Cyberware</category>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnEntities>false</showOnEntities>
+    <showOnDrones>false</showOnDrones>
+  </StatDef>
+
+  <!-- ===== capacity / cyberware ===== -->
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_CyberwareCapacity</defName>
+    <label>cyberware capacity</label>
+    <description>How much cyberware this pawn can carry. Using 80% or more risks cyberpsychosis. Every pawn rolls a base of 50-150, then their aptitude trait and some cyberware change it.</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>1</minValue>
+    <toStringStyle>Integer</toStringStyle>
+    <displayPriorityInCategory>100</displayPriorityInCategory>
+    <parts>
+      <li Class="RimPunkCE.StatPart_CyberwareCapacity">
+        <gonkCapacity>20</gonkCapacity>
+      </li>
+    </parts>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_CyberwareDamageFactor</defName>
+    <label>cyberware damage factor</label>
+    <description>Multiplier on damage done by cyberware abilities.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>90</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_CyberwareCooldownFactor</defName>
+    <label>cyberware cooldown factor</label>
+    <description>Multiplier on cyberware ability cooldowns. Lower is better.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0.1</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>89</displayPriorityInCategory>
+  </StatDef>
+
+  <!-- ===== RAM / quickhacks ===== -->
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_RamMax</defName>
+    <label>max RAM</label>
+    <description>RAM available to a cyberdeck for quickhacks. Only cyberdecks give a base amount.</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatOne</toStringStyle>
+    <hideAtValue>0</hideAtValue>
+    <displayPriorityInCategory>80</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_RamRegen</defName>
+    <label>RAM regeneration</label>
+    <description>RAM recovered per second.</description>
+    <defaultBaseValue>0.5</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatTwo</toStringStyle>
+    <formatString>{0}/s</formatString>
+    <showOnDefaultValue>false</showOnDefaultValue>
+    <displayPriorityInCategory>79</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_QuickhackUploadSpeed</defName>
+    <label>quickhack upload speed</label>
+    <description>How fast quickhacks upload to their target.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0.1</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>78</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_QuickhackCritChance</defName>
+    <label>quickhack crit chance</label>
+    <description>Chance for a quickhack to deal double damage.</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <maxValue>1</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>77</displayPriorityInCategory>
+  </StatDef>
+
+  <!-- ===== stamina / mitigation ===== -->
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_StaminaMax</defName>
+    <label>max stamina</label>
+    <description>Stamina drains when attacking. At zero the pawn can't attack and moves at half speed until it is full again.</description>
+    <defaultBaseValue>100</defaultBaseValue>
+    <minValue>1</minValue>
+    <toStringStyle>Integer</toStringStyle>
+    <displayPriorityInCategory>70</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_StaminaRegen</defName>
+    <label>stamina regeneration</label>
+    <description>Multiplier on stamina recovered while standing still.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>69</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_StaminaCostFactor</defName>
+    <label>stamina cost factor</label>
+    <description>Multiplier on stamina drained by attacks.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>68</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_MitigationChance</defName>
+    <label>mitigation chance</label>
+    <description>Chance that incoming damage is mitigated entirely, regaining stamina.</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <maxValue>0.95</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>67</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_MitigationStrength</defName>
+    <label>mitigation strength</label>
+    <description>Stamina regained (as a fraction of max) after a successful mitigation. Total can't exceed 90%.</description>
+    <defaultBaseValue>0.1</defaultBaseValue>
+    <minValue>0</minValue>
+    <maxValue>0.9</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>66</displayPriorityInCategory>
+  </StatDef>
+
+  <!-- ===== damage ===== -->
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_RangedCritChance</defName>
+    <label>ranged crit chance</label>
+    <description>Chance for a ranged hit to deal double damage. Melee crits use Combat Extended's melee crit chance.</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <maxValue>1</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>60</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_CritDamageFactor</defName>
+    <label>crit damage factor</label>
+    <description>Multiplier on top of the double damage of a ranged crit.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>59</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_HeadshotDamageFactor</defName>
+    <label>headshot damage factor</label>
+    <description>Multiplier on damage when the head is hit.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>58</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_DamageVsMechanoids</defName>
+    <label>damage vs mechanoids</label>
+    <description>Multiplier on damage dealt to mechanoids.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>57</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_ThermalResistance</defName>
+    <label>thermal resistance</label>
+    <description>Reduction of thermal damage.</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <maxValue>0.9</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <hideAtValue>0</hideAtValue>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_ChemicalResistance</defName>
+    <label>chemical resistance</label>
+    <description>Reduction of toxic damage.</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <maxValue>0.9</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <hideAtValue>0</hideAtValue>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_ElectricalResistance</defName>
+    <label>electrical resistance</label>
+    <description>Reduction of electrical and shock damage.</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <maxValue>0.9</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <hideAtValue>0</hideAtValue>
+  </StatDef>
+
+</Defs>

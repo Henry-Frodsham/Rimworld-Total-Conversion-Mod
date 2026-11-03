@@ -36,6 +36,7 @@
 
     <Reference Include="Assembly-CSharp"><HintPath>$(RimWorldDir)\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="UnityStubs"><HintPath>$(RimWorldDir)\UnityStubs.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Waylith"><HintPath>$(RimWorldDir)\Waylith.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="0Harmony"><HintPath>$(HarmonyDir)\0Harmony.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="CombatExtended"><HintPath>$(CEDir)\CombatExtended.dll</HintPath><Private>false</Private></Reference>
 
@@ -45,5 +46,13 @@
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4518" ExcludeAssets="all" />
     <Reference Include="0MultiplayerAPI"><HintPath>$(PkgRimWorld_MultiplayerAPI)\lib\net472\0MultiplayerAPI.dll</HintPath><Private>true</Private></Reference>
   </ItemGroup>
+
+  <!-- only our dll and the MP API belong in Assemblies; drop framework dlls copied as dependencies -->
+  <Target Name="TrimAssemblies" AfterTargets="Build">
+    <ItemGroup>
+      <StrayDlls Include="$(OutputPath)*.dll" Exclude="$(OutputPath)RimPunkCE.dll;$(OutputPath)0MultiplayerAPI.dll" />
+    </ItemGroup>
+    <Delete Files="@(StrayDlls)" />
+  </Target>
 
 </Project>

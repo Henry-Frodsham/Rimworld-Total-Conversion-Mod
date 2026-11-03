@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    HOW TO ADD CYBERWARE (no C# needed):
+      1. a ThingDef item with ParentName="RPC_CyberwareItemBase" (set costList + recipeMaker/researchPrerequisite)
+      2. a HediffDef with ParentName="RPC_CyberwareHediffBase" and a RimPunkCE.CyberwareExtension:
+           slot, osType (OS only), capacityCost, minTier/maxTier, item,
+           effects (tiered statOffsets/statFactors/capMods), values (tiered numbers read by comps)
+      Install / remove / upgrade surgeries are generated automatically for every tier step.
+    Tiered numbers: <min>/<max> interpolate linearly across the item's tier range (layout.md),
+    or <perTier> with exactly 6 entries (T1, T2, T3, T4, T5, Iconic).
+    Times are seconds. Fractions: 0.05 = 5%.
+  -->
+
+  <ThingCategoryDef>
+    <defName>RPC_Cyberware</defName>
+    <label>cyberware</label>
+    <parent>BodyParts</parent>
+  </ThingCategoryDef>
+
+  <ThingDef Name="RPC_CyberwareItemBase" ParentName="BodyPartBase" Abstract="True">
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>RPC_Cyberware</li>
+    </thingCategories>
+    <graphicData>
+      <!-- placeholder art -->
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+      <color>(90,220,230)</color>
+    </graphicData>
+    <tradeTags Inherit="False">
+      <li>RPC_Cyberware</li>
+    </tradeTags>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>1</Mass>
+    </statBases>
+    <comps>
+      <li Class="RimPunkCE.CompProperties_CyberwareTier" />
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>RPC_Cyberware_T1</researchPrerequisite>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <displayPriority>310</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+
+  <HediffDef Name="RPC_CyberwareHediffBase" Abstract="True">
+    <hediffClass>RimPunkCE.Hediff_Cyberware</hediffClass>
+    <defaultLabelColor>(0.35, 0.9, 0.95)</defaultLabelColor>
+    <isBad>false</isBad>
+    <priceImpact>true</priceImpact>
+    <countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+    <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+    <everCurableByItem>false</everCurableByItem>
+    <keepOnBodyPartRestoration>false</keepOnBodyPartRestoration>
+    <!-- one stage so code that indexes def.stages works; the real stage is generated per tier -->
+    <stages><li /></stages>
+  </HediffDef>
+
+  <!-- timed effect applied by a cyberware ability (sandevistan running, berserk running) -->
+  <HediffDef Name="RPC_CyberActiveBase" Abstract="True">
+    <hediffClass>RimPunkCE.Hediff_CyberActive</hediffClass>
+    <defaultLabelColor>(1, 0.85, 0.3)</defaultLabelColor>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <stages><li /></stages>
+  </HediffDef>
+
+  <AbilityDef Name="RPC_CyberSelfAbilityBase" Abstract="True">
+    <abilityClass>RimPunkCE.CyberwareAbility</abilityClass>
+    <category>RPC_Cyberware</category>
+    <iconPath>UI/RimPunk/Placeholder_Ability</iconPath>
+    <showPsycastEffects>false</showPsycastEffects>
+    <sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <aiCanUse>true</aiCanUse>
+    <ai_IsOffensive>true</ai_IsOffensive>
+    <targetRequired>false</targetRequired>
+    <!-- real cooldown comes from the implant's tiered "cooldown" value -->
+    <cooldownTicksRange>60</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <warmupTime>0</warmupTime>
+      <violent>false</violent>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+</Defs>

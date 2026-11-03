@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>RimPunk CE</name>
+  <packageId>mackos.bakos</packageId>
+  <author>Henry Frodsham</author>
+  <supportedVersions>
+    <li>1.7</li>
+  </supportedVersions>
+  <description>Cyberware, cyberpsychosis and stamina for Combat Extended. Operating systems (sandevistan, berserk, cyberdecks, chrome compressor), arm cyberware, prefrontal cortex implants and more, all tiered from T1 to Iconic.
+
+Requires Harmony and Combat Extended. Multiplayer compatible.</description>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>CETeam.CombatExtended</packageId>
+      <displayName>Combat Extended</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2890901044</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>CETeam.CombatExtended</li>
+    <li>rwmt.Multiplayer</li>
+  </loadAfter>
+</ModMetaData>

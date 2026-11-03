@@ -8,10 +8,10 @@ namespace RimPunkCE
     public enum CyberOsType
     {
         None,
-        Sandvista,
+        Sandevistan,
         Berserk,
         Cyberdeck,
-        ChromeCondenser,
+        ChromeCompressor,
     }
 
     /// <summary>

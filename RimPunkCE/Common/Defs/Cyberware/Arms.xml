@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Arm cyberware installs as an implant on an arm (one per arm, mixed freely). It doesn't replace the arm,
+       so vanilla / other mods' arm parts aren't blocked. Melee values follow CE's bionic arm / arm blade. -->
+
+  <!-- ===================== Gorilla Arms (arms/manifest.md) =====================
+       T2-Iconic, capacity 8. +5-20% melee damage, +5-20% melee attack speed, normal damage.
+       TODO (content pass): 10-20% chance of a bleeding blow. -->
+
+  <ThingDef ParentName="RPC_CyberwareItemBase">
+    <defName>RPC_Item_GorillaArms</defName>
+    <label>gorilla arm</label>
+    <description>Hard-hitting arm cyberware. Hydraulic actuators turn every punch into a sledgehammer.</description>
+    <costList>
+      <Plasteel>12</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>RPC_Cyberware_T2</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_CyberwareHediffBase">
+    <defName>RPC_GorillaArms</defName>
+    <label>gorilla arm</label>
+    <description>An installed gorilla arm.</description>
+    <descriptionHyperlinks><ThingDef>RPC_Item_GorillaArms</ThingDef></descriptionHyperlinks>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li Class="CombatExtended.ToolCE">
+            <label>gorilla fist</label>
+            <capacities><li>Blunt</li></capacities>
+            <power>12</power>
+            <cooldownTime>1.0</cooldownTime>
+            <armorPenetrationBlunt>4</armorPenetrationBlunt>
+            <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+            <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareExtension">
+        <slot>RPC_Slot_Arm</slot>
+        <capacityCost>8</capacityCost>
+        <minTier>T2</minTier>
+        <maxTier>Iconic</maxTier>
+        <item>RPC_Item_GorillaArms</item>
+        <effects>
+          <statOffsets>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.05</min><max>0.2</max></value></li>
+          </statOffsets>
+          <statFactors>
+            <!-- +5-20% attack speed = cooldown x1/1.05 .. x1/1.2 -->
+            <li><stat>MeleeCooldownFactor</stat><value><min>0.952</min><max>0.833</max></value></li>
+          </statFactors>
+        </effects>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <!-- ===================== Mantis Blades =====================
+       T2-Iconic, capacity 8. Slash and cut. Extend/retract; when extended they replace the gun butt in melee.
+       Dash: zips to a target up to 10 tiles away and attacks. -->
+
+  <ThingDef ParentName="RPC_CyberwareItemBase">
+    <defName>RPC_Item_MantisBlades</defName>
+    <label>mantis blade</label>
+    <description>Retractable blades that fold out of the forearm.</description>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>RPC_Cyberware_T2</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_CyberwareHediffBase">
+    <defName>RPC_MantisBlades</defName>
+    <label>mantis blade</label>
+    <description>An installed mantis blade.</description>
+    <descriptionHyperlinks><ThingDef>RPC_Item_MantisBlades</ThingDef></descriptionHyperlinks>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li Class="CombatExtended.ToolCE">
+            <label>blade edge</label>
+            <capacities><li>Cut</li></capacities>
+            <power>14</power>
+            <cooldownTime>0.8</cooldownTime>
+            <armorPenetrationSharp>1.2</armorPenetrationSharp>
+            <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+          </li>
+          <li Class="CombatExtended.ToolCE">
+            <label>blade point</label>
+            <capacities><li>Stab</li></capacities>
+            <power>16</power>
+            <cooldownTime>1.0</cooldownTime>
+            <armorPenetrationSharp>1.6</armorPenetrationSharp>
+            <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+          </li>
+        </tools>
+      </li>
+      <li Class="RimPunkCE.HediffCompProperties_MantisBlades" />
+      <li Class="RimPunkCE.HediffCompProperties_GiveCyberAbilities">
+        <abilities><li>RPC_Ability_MantisDash</li></abilities>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareExtension">
+        <slot>RPC_Slot_Arm</slot>
+        <capacityCost>8</capacityCost>
+        <minTier>T2</minTier>
+        <maxTier>Iconic</maxTier>
+        <item>RPC_Item_MantisBlades</item>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <AbilityDef>
+    <defName>RPC_Ability_MantisDash</defName>
+    <label>mantis dash</label>
+    <description>Zip along the ground to an enemy up to 10 tiles away and strike with the blades.</description>
+    <abilityClass>RimPunkCE.CyberwareAbility</abilityClass>
+    <category>RPC_Cyberware</category>
+    <iconPath>UI/RimPunk/Placeholder_Ability</iconPath>
+    <showPsycastEffects>false</showPsycastEffects>
+    <cooldownTicksRange>60</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>
+    <ai_IsOffensive>true</ai_IsOffensive>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>RimPunkCE.Verb_MantisDash</verbClass>
+      <label>dash</label>
+      <range>10</range>
+      <warmupTime>0.2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <flyWithCarriedThing>false</flyWithCarriedThing>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="RimPunkCE.CompProperties_AbilityDashStrike" />
+    </comps>
+  </AbilityDef>
+
+</Defs>
