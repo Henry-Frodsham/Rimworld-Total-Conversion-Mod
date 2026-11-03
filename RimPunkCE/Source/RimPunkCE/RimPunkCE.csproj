@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    RimWorld 1.7 runs on a custom .NET 10 runtime (RimWorld.runtimeconfig.json, tfm net10.0).
+    We compile against the game's own framework assemblies (DisableImplicitFrameworkReferences)
+    so the build works with any .NET SDK >= 8, and the output loads on the game's runtime.
+    Override paths with: dotnet build -p:RimWorldDir=... -p:WorkshopDir=...
+  -->
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>RimPunkCE</AssemblyName>
+    <RootNamespace>RimPunkCE</RootNamespace>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <GenerateRuntimeConfigurationFiles>false</GenerateRuntimeConfigurationFiles>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <OutputPath>..\..\1.7\Assemblies\</OutputPath>
+    <DebugType>none</DebugType>
+    <Deterministic>true</Deterministic>
+    <NoWarn>$(NoWarn);NU1701;CS1701;CS1702;CS0649;CS0169;CS0414</NoWarn>
+
+    <RimWorldDir Condition="'$(RimWorldDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\RimWorld</RimWorldDir>
+    <WorkshopDir Condition="'$(WorkshopDir)' == ''">C:\Program Files (x86)\Steam\steamapps\workshop\content\294100</WorkshopDir>
+    <HarmonyDir>$(WorkshopDir)\2009463077\1.7\Assemblies</HarmonyDir>
+    <CEDir>$(WorkshopDir)\2890901044\Assemblies</CEDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- the game's framework assemblies (net10 runtime shipped with RimWorld) -->
+    <GameFramework Include="$(RimWorldDir)\System*.dll;$(RimWorldDir)\mscorlib.dll;$(RimWorldDir)\netstandard.dll;$(RimWorldDir)\Microsoft.CSharp.dll;$(RimWorldDir)\Microsoft.Win32.Primitives.dll" Exclude="$(RimWorldDir)\System.IO.Compression.Native.dll" />
+    <Reference Include="@(GameFramework)"><Private>false</Private></Reference>
+
+    <Reference Include="Assembly-CSharp"><HintPath>$(RimWorldDir)\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityStubs"><HintPath>$(RimWorldDir)\UnityStubs.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(HarmonyDir)\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="CombatExtended"><HintPath>$(CEDir)\CombatExtended.dll</HintPath><Private>false</Private></Reference>
+
+    <!-- Multiplayer API: soft dependency. 0MultiplayerAPI.dll ships with the mod; MP.enabled is false without the Multiplayer mod. -->
+    <PackageReference Include="RimWorld.MultiplayerAPI" Version="0.6.0" ExcludeAssets="all" GeneratePathProperty="true" />
+    <!-- its dependency is the 1.6 game reference package; never let it onto the compile path -->
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4518" ExcludeAssets="all" />
+    <Reference Include="0MultiplayerAPI"><HintPath>$(PkgRimWorld_MultiplayerAPI)\lib\net472\0MultiplayerAPI.dll</HintPath><Private>true</Private></Reference>
+  </ItemGroup>
+
+</Project>
