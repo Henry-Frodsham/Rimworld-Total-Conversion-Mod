@@ -1,0 +1,11 @@
+# never tracked
+ModdingAPI/
+prompts/
+
+# build output
+bin/
+obj/
+*.pdb
+*.user
+.vs/
+.idea/
