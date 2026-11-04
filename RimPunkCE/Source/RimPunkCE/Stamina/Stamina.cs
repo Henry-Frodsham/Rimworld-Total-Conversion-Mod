@@ -106,12 +106,18 @@ namespace RimPunkCE
         public void Notify_Attacked(Verb verb)
         {
             if (!RimPunkMod.Settings.staminaEnabled) return;
-            float cost = StaminaUtility.BaseCostFor(verb) * pawn.GetStatValue(RPStatDefOf.RPC_StaminaCostFactor);
+            float cost = StaminaUtility.BaseCostFor(verb) * pawn.GetStatValue(RPStatDefOf.RPC_StaminaCostFactor)
+                         * pawn.GetStatValue(verb.IsMeleeAttack ? RPStatDefOf.RPC_StaminaCostFactorMelee : RPStatDefOf.RPC_StaminaCostFactorRanged);
             foreach (var active in pawn.ActiveEffects())
                 if (active.Ext != null) cost *= active.Ext.staminaCostFactor;
             if (cost <= 0f) return;
             CurLevel = Mathf.Max(0f, CurLevel - cost);
-            if (CurLevel <= 0f && !Exhausted) pawn.health.AddHediff(RPDefOf.RPC_Exhausted);
+            Diag.Count("stamina-drain");
+            if (CurLevel <= 0f && !Exhausted)
+            {
+                pawn.health.AddHediff(RPDefOf.RPC_Exhausted);
+                Diag.Event("stamina", $"{Diag.Describe(pawn)} exhausted ({verb.EquipmentSource?.def.defName ?? verb.tool?.label}, cost {cost:0.#})");
+            }
         }
 
         public void GainFraction(float fraction)

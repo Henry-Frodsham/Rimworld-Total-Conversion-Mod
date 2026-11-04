@@ -25,6 +25,19 @@ namespace RimPunkCE
         public static StatDef RPC_ThermalResistance;
         public static StatDef RPC_ChemicalResistance;
         public static StatDef RPC_ElectricalResistance;
+        public static StatDef RPC_IncomingDamageFactor;
+        public static StatDef RPC_MaxHealthFactor;
+        public static StatDef RPC_DamageFactorAll;
+        public static StatDef RPC_DamageFactorTech;
+        public static StatDef RPC_DamageFactorPower;
+        public static StatDef RPC_DamageVsPoisoned;
+        public static StatDef RPC_OrganDamageFactor;
+        public static StatDef RPC_CritChanceGrenades;
+        public static StatDef RPC_StaminaCostFactorMelee;
+        public static StatDef RPC_StaminaCostFactorRanged;
+        public static StatDef RPC_RecoilFactor;
+        public static StatDef RPC_SpreadFactor;
+        public static StatDef RPC_QuickhackDamageFactor;
 
         static RPStatDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(RPStatDefOf));
     }
@@ -36,6 +49,9 @@ namespace RimPunkCE
         public static HediffDef RPC_Exhausted;
         public static HediffDef RPC_CyberpsychosisBurnout;
         public static HediffDef RPC_CyberpsychosisRage;
+        public static HediffDef RPC_WeaponThrown;
+        public static HediffDef RPC_TraumaTeamCoverage;
+        public static JobDef RPC_TraumaBoardShuttle;
         public static TraitDef RPC_CyberAptitude;
         public static TraitDef RPC_Netrunner;
         public static MentalStateDef RPC_Cyberpsychosis;

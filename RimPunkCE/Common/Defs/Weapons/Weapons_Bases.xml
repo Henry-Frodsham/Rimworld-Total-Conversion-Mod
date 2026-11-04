@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Hand-written bases for the generated weapons (Source/Tools/gen_weapons.py). -->
+
+  <ResearchTabDef>
+    <defName>RPC_WeaponsTab</defName>
+    <label>cyberpunk weapons</label>
+    <generalTitle>Cyberpunk weapon research</generalTitle>
+    <generalDescription>One project per caliber: each unlocks a manufacturer's ammo and every weapon that fires it. Built on the existing weapon research.</generalDescription>
+  </ResearchTabDef>
+
+  <ResearchProjectDef Name="RPC_WeaponResearchBase" Abstract="True">
+    <tab>RPC_WeaponsTab</tab>
+    <requiredResearchBuilding>SimpleResearchBench</requiredResearchBuilding>
+  </ResearchProjectDef>
+
+  <!-- guns: vanilla-style defs, made Combat Extended compatible in Patches/Generated_Guns_CE.xml -->
+  <ThingDef Name="RPC_GunBase" ParentName="BaseHumanMakeableGun" Abstract="True">
+    <thingCategories Inherit="False">
+      <li>WeaponsRanged</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>600</MarketValue>
+    </statBases>
+    <equippedAngleOffset>0</equippedAngleOffset>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <displayPriority>420</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- melee: fixed materials (no stuff), Combat Extended tools -->
+  <ThingDef Name="RPC_MeleeBase" ParentName="BaseMeleeWeapon_Sharp_Quality" Abstract="True">
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <MarketValue>250</MarketValue>
+    </statBases>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+      <defaultIngredientFilter IsNull="True" />
+      <displayPriority>430</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- ===================== thrown melee ===================== -->
+
+  <AbilityDef>
+    <defName>RPC_Ability_ThrowWeapon</defName>
+    <label>throw weapon</label>
+    <description>Throw the weapon at a target. It comes back to your hand a few seconds later; until then it can't be used in melee.</description>
+    <iconPath>UI/RimPunk/Placeholder_Ability</iconPath>
+    <cooldownTicksRange>240</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>
+    <ai_IsOffensive>true</ai_IsOffensive>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <label>throw</label>
+      <range>12</range>
+      <warmupTime>0.4</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="RimPunkCE.CompProperties_AbilityThrowWeapon">
+        <damageFactor>1.5</damageFactor>
+        <returnDelaySeconds>4</returnDelaySeconds>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef>
+    <defName>RPC_WeaponThrown</defName>
+    <label>weapon thrown</label>
+    <description>The melee weapon is in flight and will return shortly.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>240</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ===================== grenades =====================
+       F-GX frag, EMP, smoke and X-22 flashbang use the existing grenades (Weapon_GrenadeFrag, Weapon_GrenadeEMP,
+       CE_Weapon_GrenadeSmoke, CE_Weapon_GrenadeFlashbang). The four below have no match. -->
+
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>RPC_Proj_GrenadeChar</defName>
+    <label>CHAR incendiary grenade</label>
+    <graphicData>
+      <texPath>Things/Projectile/Molotov</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <explosionRadius>2.5</explosionRadius>
+      <damageDef>Flame</damageDef>
+      <damageAmountBase>12</damageAmountBase>
+      <explosionDelay>60</explosionDelay>
+      <speed>12</speed>
+      <dropsCasings>true</dropsCasings>
+      <casingMoteDefname>Fleck_GrenadePin</casingMoteDefname>
+      <casingFilthDefname>Filth_GrenadeAmmoCasings</casingFilthDefname>
+      <suppressionFactor>2.0</suppressionFactor>
+      <dangerFactor>2.0</dangerFactor>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseGrenadeEquipment">
+    <defName>RPC_Weapon_GrenadeChar</defName>
+    <label>CHAR incendiary grenade</label>
+    <description>An incendiary grenade that sets everything around the blast on fire.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Molotov</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Grenade</soundInteract>
+    <techLevel>Industrial</techLevel>
+    <statBases><Mass>0.5</Mass><Bulk>1</Bulk><SightsEfficiency>1</SightsEfficiency><RangedWeapon_Cooldown>1</RangedWeapon_Cooldown><MarketValue>18</MarketValue></statBases>
+    <weaponTags><li>RPC_Grenade</li><li>GrenadeFlame</li></weaponTags>
+    <thingCategories><li>Grenades</li></thingCategories>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <label>throw CHAR grenade</label>
+        <verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>10</range>
+        <minRange>3</minRange>
+        <warmupTime>0.8</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams><canTargetLocations>true</canTargetLocations></targetParams>
+        <defaultProjectile>RPC_Proj_GrenadeChar</defaultProjectile>
+        <onlyManualCast>true</onlyManualCast>
+        <ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+        <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
+      </li>
+    </verbs>
+    <detonateProjectile>RPC_Proj_GrenadeChar</detonateProjectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>RPC_Proj_GrenadeGash</defName>
+    <label>GASH antipersonnel grenade</label>
+    <graphicData>
+      <texPath>Things/Projectile/Grenades/Concussion</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <explosionRadius>2.5</explosionRadius>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>90</damageAmountBase>
+      <explosionDelay>100</explosionDelay>
+      <speed>12</speed>
+      <dropsCasings>true</dropsCasings>
+      <casingMoteDefname>Fleck_GrenadePin</casingMoteDefname>
+      <casingFilthDefname>Filth_GrenadeAmmoCasings</casingFilthDefname>
+      <suppressionFactor>3.0</suppressionFactor>
+      <dangerFactor>2.5</dangerFactor>
+    </projectile>
+    <comps>
+      <li Class="CombatExtended.CompProperties_Fragments">
+        <fragments>
+          <Fragment_Small>40</Fragment_Small>
+        </fragments>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseGrenadeEquipment">
+    <defName>RPC_Weapon_GrenadeGash</defName>
+    <label>GASH antipersonnel grenade</label>
+    <description>An antipersonnel grenade that shreds everything around it with a dense cloud of fragments. Placeholder for the game's laser grid.</description>
+    <graphicData>
+      <texPath>Things/Ammo/HandGrenades/Concussion</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Grenade</soundInteract>
+    <techLevel>Spacer</techLevel>
+    <statBases><Mass>0.5</Mass><Bulk>1.5</Bulk><SightsEfficiency>1</SightsEfficiency><RangedWeapon_Cooldown>1</RangedWeapon_Cooldown><MarketValue>30</MarketValue></statBases>
+    <weaponTags><li>RPC_Grenade</li><li>GrenadeDestructive</li></weaponTags>
+    <thingCategories><li>Grenades</li></thingCategories>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <label>throw GASH grenade</label>
+        <verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>10</range>
+        <minRange>3</minRange>
+        <warmupTime>0.8</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams><canTargetLocations>true</canTargetLocations></targetParams>
+        <defaultProjectile>RPC_Proj_GrenadeGash</defaultProjectile>
+        <onlyManualCast>true</onlyManualCast>
+        <ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+        <ai_AvoidFriendlyFireRadius>6</ai_AvoidFriendlyFireRadius>
+      </li>
+    </verbs>
+    <detonateProjectile>RPC_Proj_GrenadeGash</detonateProjectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>RPC_Proj_GrenadeBiohaz</defName>
+    <label>MOLODETS BioHaz grenade</label>
+    <graphicData>
+      <texPath>Things/Projectile/Grenades/Concussion</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(120,220,90)</color>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <explosionRadius>3.5</explosionRadius>
+      <damageDef>RPC_Toxic</damageDef>
+      <damageAmountBase>20</damageAmountBase>
+      <explosionDelay>60</explosionDelay>
+      <speed>12</speed>
+      <dropsCasings>true</dropsCasings>
+      <casingMoteDefname>Fleck_GrenadePin</casingMoteDefname>
+      <casingFilthDefname>Filth_GrenadeAmmoCasings</casingFilthDefname>
+      <suppressionFactor>2.0</suppressionFactor>
+      <dangerFactor>2.0</dangerFactor>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseGrenadeEquipment">
+    <defName>RPC_Weapon_GrenadeBiohaz</defName>
+    <label>MOLODETS BioHaz grenade</label>
+    <description>A chemical grenade: everyone caught in the cloud takes toxic damage and toxic buildup.</description>
+    <graphicData>
+      <texPath>Things/Ammo/HandGrenades/Concussion</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(120,220,90)</color>
+    </graphicData>
+    <soundInteract>Interact_Grenade</soundInteract>
+    <techLevel>Industrial</techLevel>
+    <statBases><Mass>0.5</Mass><Bulk>1.2</Bulk><SightsEfficiency>1</SightsEfficiency><RangedWeapon_Cooldown>1</RangedWeapon_Cooldown><MarketValue>20</MarketValue></statBases>
+    <weaponTags><li>RPC_Grenade</li><li>GrenadeDestructive</li></weaponTags>
+    <thingCategories><li>Grenades</li></thingCategories>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <label>throw BioHaz grenade</label>
+        <verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>10</range>
+        <minRange>3</minRange>
+        <warmupTime>0.8</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams><canTargetLocations>true</canTargetLocations></targetParams>
+        <defaultProjectile>RPC_Proj_GrenadeBiohaz</defaultProjectile>
+        <onlyManualCast>true</onlyManualCast>
+        <ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+        <ai_AvoidFriendlyFireRadius>6</ai_AvoidFriendlyFireRadius>
+      </li>
+    </verbs>
+    <detonateProjectile>RPC_Proj_GrenadeBiohaz</detonateProjectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>RPC_Proj_GrenadeRecon</defName>
+    <label>recon grenade</label>
+    <graphicData>
+      <texPath>Things/Projectile/Grenades/Flashbang</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <explosionRadius>4</explosionRadius>
+      <damageDef>Stun</damageDef>
+      <damageAmountBase>4</damageAmountBase>
+      <explosionDelay>30</explosionDelay>
+      <speed>10</speed>
+      <dropsCasings>true</dropsCasings>
+      <casingMoteDefname>Fleck_GrenadePin</casingMoteDefname>
+      <casingFilthDefname>Filth_GrenadeAmmoCasings</casingFilthDefname>
+      <screenShakeFactor>0</screenShakeFactor>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseGrenadeEquipment">
+    <defName>RPC_Weapon_GrenadeRecon</defName>
+    <label>recon grenade</label>
+    <description>A sensor grenade that briefly disorients anyone nearby. Placeholder: the game's enemy lure and smart lock-on bonus aren't modelled yet.</description>
+    <graphicData>
+      <texPath>Things/Ammo/HandGrenades/Flashbang</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Grenade</soundInteract>
+    <techLevel>Spacer</techLevel>
+    <statBases><Mass>0.3</Mass><Bulk>0.6</Bulk><SightsEfficiency>1</SightsEfficiency><RangedWeapon_Cooldown>1</RangedWeapon_Cooldown><MarketValue>15</MarketValue></statBases>
+    <weaponTags><li>RPC_Grenade</li></weaponTags>
+    <thingCategories><li>Grenades</li></thingCategories>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <label>throw recon grenade</label>
+        <verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>10</range>
+        <warmupTime>0.8</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <soundCast>ThrowGrenade</soundCast>
+        <targetParams><canTargetLocations>true</canTargetLocations></targetParams>
+        <defaultProjectile>RPC_Proj_GrenadeRecon</defaultProjectile>
+        <onlyManualCast>true</onlyManualCast>
+        <ignorePartialLoSBlocker>true</ignorePartialLoSBlocker>
+      </li>
+    </verbs>
+    <detonateProjectile>RPC_Proj_GrenadeRecon</detonateProjectile>
+  </ThingDef>
+
+  <RecipeDef Name="RPC_GrenadeRecipeBase" ParentName="GrenadeRecipeBase" Abstract="True">
+    <researchPrerequisite>Machining</researchPrerequisite>
+    <workAmount>4200</workAmount>
+  </RecipeDef>
+
+  <RecipeDef ParentName="RPC_GrenadeRecipeBase">
+    <defName>RPC_MakeGrenadeChar</defName>
+    <label>make CHAR incendiary grenades x10</label>
+    <description>Craft 10 CHAR incendiary grenades.</description>
+    <jobString>Making CHAR grenades.</jobString>
+    <ingredients>
+      <li><filter><thingDefs><li>Steel</li></thingDefs></filter><count>10</count></li>
+      <li><filter><thingDefs><li>Chemfuel</li></thingDefs></filter><count>20</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Steel</li><li>Chemfuel</li></thingDefs></fixedIngredientFilter>
+    <products><RPC_Weapon_GrenadeChar>10</RPC_Weapon_GrenadeChar></products>
+  </RecipeDef>
+
+  <RecipeDef ParentName="RPC_GrenadeRecipeBase">
+    <defName>RPC_MakeGrenadeGash</defName>
+    <label>make GASH antipersonnel grenades x10</label>
+    <description>Craft 10 GASH antipersonnel grenades.</description>
+    <jobString>Making GASH grenades.</jobString>
+    <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
+    <ingredients>
+      <li><filter><thingDefs><li>Steel</li></thingDefs></filter><count>15</count></li>
+      <li><filter><thingDefs><li>FSX</li></thingDefs></filter><count>5</count></li>
+      <li><filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter><count>3</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Steel</li><li>FSX</li><li>ComponentIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><RPC_Weapon_GrenadeGash>10</RPC_Weapon_GrenadeGash></products>
+  </RecipeDef>
+
+  <RecipeDef ParentName="RPC_GrenadeRecipeBase">
+    <defName>RPC_MakeGrenadeBiohaz</defName>
+    <label>make MOLODETS BioHaz grenades x10</label>
+    <description>Craft 10 MOLODETS BioHaz grenades.</description>
+    <jobString>Making BioHaz grenades.</jobString>
+    <ingredients>
+      <li><filter><thingDefs><li>Steel</li></thingDefs></filter><count>10</count></li>
+      <li><filter><thingDefs><li>Neutroamine</li></thingDefs></filter><count>4</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Steel</li><li>Neutroamine</li></thingDefs></fixedIngredientFilter>
+    <products><RPC_Weapon_GrenadeBiohaz>10</RPC_Weapon_GrenadeBiohaz></products>
+  </RecipeDef>
+
+  <RecipeDef ParentName="RPC_GrenadeRecipeBase">
+    <defName>RPC_MakeGrenadeRecon</defName>
+    <label>make recon grenades x10</label>
+    <description>Craft 10 recon grenades.</description>
+    <jobString>Making recon grenades.</jobString>
+    <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
+    <ingredients>
+      <li><filter><thingDefs><li>Steel</li></thingDefs></filter><count>8</count></li>
+      <li><filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter><count>2</count></li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Steel</li><li>ComponentIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products><RPC_Weapon_GrenadeRecon>10</RPC_Weapon_GrenadeRecon></products>
+  </RecipeDef>
+
+</Defs>

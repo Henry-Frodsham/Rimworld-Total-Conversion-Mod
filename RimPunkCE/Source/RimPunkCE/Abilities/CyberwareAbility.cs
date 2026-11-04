@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
@@ -41,8 +42,20 @@ namespace RimPunkCE
                 if (def.cooldownTicksRange.max > 0 || Source?.Ext?.HasValue("cooldown") == true)
                     StartCooldown(CooldownTicksFor());
                 CyberEvents.Notify_AbilityUsed(pawn, this);
+                Diag.Event("ability", $"{Diag.Describe(pawn)} used {def.defName} (tier {SourceTier}), cooldown {CooldownTicksRemaining} ticks");
+                if (CompOfType<CompAbilityEffect_RamCost>() != null && SourceTier >= CyberTier.T4 && pawn.GetCyberTracker() is CompCyberTracker t)
+                    t.lastHighTierQuickhackTick = Find.TickManager.TicksGame;
             }
             return result;
+        }
+
+        /// <summary>Take a flat number of ticks off the remaining cooldown (Quantum Tuner).</summary>
+        public void ReduceCooldownTicks(int ticks)
+        {
+            int remaining = CooldownTicksRemaining;
+            if (remaining <= 0 || ticks <= 0) return;
+            if (remaining - ticks <= 0) ResetCooldown();
+            else StartCooldown(remaining - ticks);
         }
 
         /// <summary>Instantly reduce the remaining cooldown by a fraction (Newton Module, Axolotl).</summary>
@@ -81,6 +94,9 @@ namespace RimPunkCE
     /// ability (e.g. mantis blades on both arms) don't remove it when only one is removed.</summary>
     public class HediffCompProperties_GiveCyberAbilities : HediffCompProperties
     {
+        /// <summary>Legs: granted instead of <see cref="abilities"/> while a matching pair is installed (double jump range, charges).</summary>
+        public List<AbilityDef> abilitiesWhenPaired;
+
         public List<AbilityDef> abilities = new List<AbilityDef>();
 
         public HediffCompProperties_GiveCyberAbilities() => compClass = typeof(HediffComp_GiveCyberAbilities);
@@ -90,12 +106,24 @@ namespace RimPunkCE
     {
         public HediffCompProperties_GiveCyberAbilities Props => (HediffCompProperties_GiveCyberAbilities)props;
 
+        private List<AbilityDef> Wanted =>
+            (parent as Hediff_Cyberware)?.effectsDoubled == true && !Props.abilitiesWhenPaired.NullOrEmpty() ? Props.abilitiesWhenPaired : Props.abilities;
+
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
             base.CompPostPostAdd(dinfo);
+            Refresh();
+        }
+
+        /// <summary>Grant the current ability set (legs: the paired version once both legs match).</summary>
+        public void Refresh()
+        {
             var tracker = Pawn.abilities;
             if (tracker == null) return;
-            foreach (var a in Props.abilities)
+            var wanted = Wanted;
+            foreach (var a in Props.abilities.Concat(Props.abilitiesWhenPaired ?? new List<AbilityDef>()).ToList())
+                if (!wanted.Contains(a) && tracker.GetAbility(a) != null && !AnyOtherSourceGrants(a)) tracker.RemoveAbility(a);
+            foreach (var a in wanted)
                 if (tracker.GetAbility(a) == null) tracker.GainAbility(a);
         }
 
@@ -104,7 +132,7 @@ namespace RimPunkCE
             base.CompPostPostRemoved();
             var tracker = Pawn.abilities;
             if (tracker == null) return;
-            foreach (var a in Props.abilities)
+            foreach (var a in Props.abilities.Concat(Props.abilitiesWhenPaired ?? new List<AbilityDef>()))
                 if (!AnyOtherSourceGrants(a)) tracker.RemoveAbility(a);
         }
 
@@ -114,7 +142,7 @@ namespace RimPunkCE
             {
                 if (h == parent || h is not HediffWithComps hwc) continue;
                 var c = hwc.TryGetComp<HediffComp_GiveCyberAbilities>();
-                if (c != null && c.Props.abilities.Contains(a)) return true;
+                if (c != null && (c.Props.abilities.Contains(a) || (c.Props.abilitiesWhenPaired?.Contains(a) ?? false))) return true;
             }
             return false;
         }
@@ -150,6 +178,8 @@ namespace RimPunkCE
     {
         public HediffDef hediffDef;
         public float defaultDurationSeconds = 8f;
+        /// <summary>AI casts it once its enemy is this close (Sandevistan: gunfight range; Berserk: melee range, it blocks guns).</summary>
+        public float aiMaxEnemyDistance = 30f;
 
         public CompProperties_AbilityCyberBuff() => compClass = typeof(CompAbilityEffect_CyberBuff);
     }
@@ -179,9 +209,10 @@ namespace RimPunkCE
 
         public override bool AICanTargetNow(LocalTargetInfo target)
         {
-            // use when an enemy is close and engaged
+            // use once engaged with an enemy within aiMaxEnemyDistance
             var pawn = parent.pawn;
-            return !IsActive && pawn.mindState?.enemyTarget != null && pawn.Position.InHorDistOf(pawn.mindState.enemyTarget.Position, 12f);
+            var enemy = pawn.mindState?.enemyTarget;
+            return !IsActive && enemy != null && enemy.Spawned && pawn.Position.InHorDistOf(enemy.Position, Props.aiMaxEnemyDistance);
         }
     }
 }

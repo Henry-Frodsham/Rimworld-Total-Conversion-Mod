@@ -10,6 +10,14 @@ namespace RimPunkCE
     {
         public static CompCyberTracker GetCyberTracker(this Pawn pawn) => pawn?.TryGetComp<CompCyberTracker>();
 
+        /// <summary>RimPunk's own Rand.PushState sites always pop in finally; vanilla warns if a stack is left unbalanced.</summary>
+        public static float SeededRange(int seed, float min, float max)
+        {
+            Rand.PushState(seed);
+            try { return Rand.Range(min, max); }
+            finally { Rand.PopState(); }
+        }
+
         public static IEnumerable<Hediff_Cyberware> InstalledCyberware(this Pawn pawn)
         {
             var hediffs = pawn?.health?.hediffSet?.hediffs;
@@ -45,6 +53,12 @@ namespace RimPunkCE
                 if (slot.onePerPart && part != null && c.Part == part)
                 {
                     reason = "RPC_Reason_PartOccupied".Translate(part.LabelCap, c.LabelCap);
+                    return false;
+                }
+                // whole-body systems and the prefrontal cortex take each cyberware once (arms / eyes / legs: once per part)
+                if ((slot.WholeBody || !slot.onePerPart) && c.def == def && !slot.allMustMatch)
+                {
+                    reason = "RPC_Reason_AlreadyInstalled".Translate(def.label);
                     return false;
                 }
                 if (slot.allMustMatch && c.def != def)
@@ -87,6 +101,44 @@ namespace RimPunkCE
             pawn.health.hediffSet.GetHediffs(ref injuries, h => h.CanHealNaturally() || h.CanHealFromTending());
             foreach (var inj in injuries)
                 inj.Heal(inj.Severity * Mathf.Clamp01(fraction));
+        }
+
+        /// <summary>Heals <paramref name="amount"/> HP, worst injuries first (Blood Pump, healing over time).</summary>
+        public static void HealFlat(Pawn pawn, float amount)
+        {
+            if (amount <= 0f || pawn?.health?.hediffSet == null) return;
+            var injuries = new List<Hediff_Injury>();
+            pawn.health.hediffSet.GetHediffs(ref injuries, h => h.CanHealNaturally() || h.CanHealFromTending());
+            injuries.Sort((a, b) => b.Severity.CompareTo(a.Severity));
+            foreach (var inj in injuries)
+            {
+                if (amount <= 0f) break;
+                float take = Mathf.Min(amount, inj.Severity);
+                inj.Heal(take);
+                amount -= take;
+            }
+        }
+
+        /// <summary>Electrical damage to every hostile pawn within <paramref name="radius"/> of <paramref name="center"/>.</summary>
+        public static void Electroshock(Pawn source, IntVec3 center, Map map, float radius, float damage)
+        {
+            if (map == null || damage <= 0f) return;
+            FleckMaker.Static(center, map, FleckDefOf.ExplosionFlash, radius * 2f);
+            foreach (var p in map.mapPawns.AllPawnsSpawned.ToList())
+            {
+                if (p == source || p.Dead || !p.HostileTo(source) || !p.Position.InHorDistOf(center, radius)) continue;
+                FleckMaker.ThrowMicroSparks(p.DrawPos, map);
+                p.TakeDamage(new DamageInfo(RPDefOf.RPC_Electrical, damage, 0f, -1f, source));
+            }
+            Diag.Count("electroshock");
+        }
+
+        public static bool AnyHostileWithin(Pawn pawn, float radius)
+        {
+            if (!pawn.Spawned) return false;
+            foreach (var p in pawn.Map.mapPawns.AllPawnsSpawned)
+                if (!p.Dead && !p.Downed && p.HostileTo(pawn) && p.Position.InHorDistOf(pawn.Position, radius)) return true;
+            return false;
         }
 
         public static bool IsHumanlikeWithTracker(this Pawn pawn) => pawn?.RaceProps?.Humanlike == true && pawn.GetCyberTracker() != null;

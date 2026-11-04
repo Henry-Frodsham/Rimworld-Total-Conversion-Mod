@@ -30,7 +30,9 @@ namespace RimPunkCE
             Settings.cyberpsychosisChanceMultiplier = list.Slider(Settings.cyberpsychosisChanceMultiplier, 0f, 4f);
             list.CheckboxLabeled("RPC_Settings_VisualEffects".Translate(), ref Settings.visualEffects);
             list.CheckboxLabeled("RPC_Settings_StaminaEnabled".Translate(), ref Settings.staminaEnabled);
+            list.CheckboxLabeled("RPC_Settings_FactionsDefault".Translate(), ref Settings.cyberpunkFactionsDefault, "RPC_Settings_FactionsDefaultTip".Translate());
             list.CheckboxLabeled("RPC_Settings_DebugLogging".Translate(), ref Settings.debugLogging);
+            list.CheckboxLabeled("RPC_Settings_Diagnostics".Translate(), ref Settings.diagnostics, "RPC_Settings_DiagnosticsTip".Translate());
             list.End();
         }
     }
@@ -43,6 +45,10 @@ namespace RimPunkCE
         public bool visualEffects = true;
         public bool staminaEnabled = true;
         public bool debugLogging;
+        /// <summary>Corps and gangs are the default factions in a new world (vanilla still selectable).</summary>
+        public bool cyberpunkFactionsDefault = true;
+        /// <summary>Write RimPunkCE/Diagnostics/diag.log (events, RimPunk errors, invariant checks). On while testing.</summary>
+        public bool diagnostics = true;
 
         public override void ExposeData()
         {
@@ -51,6 +57,8 @@ namespace RimPunkCE
             Scribe_Values.Look(ref visualEffects, "visualEffects", true);
             Scribe_Values.Look(ref staminaEnabled, "staminaEnabled", true);
             Scribe_Values.Look(ref debugLogging, "debugLogging");
+            Scribe_Values.Look(ref cyberpunkFactionsDefault, "cyberpunkFactionsDefault", true);
+            Scribe_Values.Look(ref diagnostics, "diagnostics", true);
         }
     }
 

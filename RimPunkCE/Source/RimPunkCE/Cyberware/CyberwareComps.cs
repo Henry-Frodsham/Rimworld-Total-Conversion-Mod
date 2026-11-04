@@ -12,7 +12,7 @@ namespace RimPunkCE
     /// </summary>
     public class HediffCompProperties_MantisBlades : HediffCompProperties
     {
-        public string extendIconPath = "UI/RimPunk/Placeholder_Ability";
+        public string extendIconPath = "ToggleBlades";
 
         public HediffCompProperties_MantisBlades() => compClass = typeof(HediffComp_MantisBlades);
     }
@@ -27,12 +27,12 @@ namespace RimPunkCE
 
         public override IEnumerable<Gizmo> CompGetGizmos()
         {
-            if (Pawn.Faction != Faction.OfPlayer) yield break;
+            if (!(Pawn.Faction?.IsPlayer ?? false)) yield break;
             yield return new Command_Toggle
             {
                 defaultLabel = "RPC_ToggleBlades".Translate(),
                 defaultDesc = "RPC_ToggleBladesDesc".Translate(),
-                icon = ContentFinder<UnityEngine.Texture2D>.Get(Props.extendIconPath),
+                icon = TextureOverrides.Gizmo(Props.extendIconPath),
                 isActive = () => extended,
                 toggleAction = () => SetExtended(Pawn, !extended),
             };

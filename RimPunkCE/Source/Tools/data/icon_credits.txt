@@ -1,0 +1,5 @@
+Icons from game-icons.net, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/), recoloured.
+  andymeneely: police-badge
+  delapouite: anticlockwise-rotation, brute, caravan, enrage, falcon-moon, high-kick, invisible, jump-across, missile-launcher, oil-pump, praying-mantis, samurai-helmet, tiger-head, time-synchronization, usa-flag
+  lorc: android-mask, bleeding-eye, bleeding-heart, bowie-knife, cat, crystal-ball, dna2, dragon-head, eagle-emblem, eye-shield, hourglass, lightning-arc, moon, muscle-up, paw, processor, radar-sweep, rocket, rose, sands-of-time, scalpel, screaming, spectre, stopwatch, third-eye, thrown-daggers, voodoo-doll, whip, wolf-head
+  sbed: medical-pack

@@ -62,4 +62,42 @@
   <RPC_Settings_StaminaEnabled>Stamina system</RPC_Settings_StaminaEnabled>
   <RPC_Settings_DebugLogging>Debug logging</RPC_Settings_DebugLogging>
 
+  <!-- factions -->
+  <RPC_StrikeTeamWarning>{0} won't let that slide. Expect a strike team.</RPC_StrikeTeamWarning>
+  <RPC_NetWatchReason>NetWatch detected high-tier quickhacking.</RPC_NetWatchReason>
+  <RPC_RogueReason>rogue cyberpsycho</RPC_RogueReason>
+  <RPC_RogueLetter>Cyberpsycho</RPC_RogueLetter>
+  <RPC_RogueLetterText>{0}, a rogue cyberpsycho chromed to the teeth, has wandered into the area. They will attack anyone they see, and knocking them down won't stop them.</RPC_RogueLetterText>
+
+  <!-- trauma team -->
+  <RPC_BuyTraumaTeam>Trauma Team ({0} silver)</RPC_BuyTraumaTeam>
+  <RPC_BuyTraumaTeamDesc>Pay {0} silver for {1} days of Trauma Team coverage. If this colonist goes down, a Trauma Team shuttle lands a squad that fights off whoever is hostile to them, extracts them and returns them patched up about a day later. One dispatch per coverage. Silver is taken from anywhere on the map.</RPC_BuyTraumaTeamDesc>
+  <RPC_TraumaTeamNoSilver>Not enough silver on the map ({0} needed).</RPC_TraumaTeamNoSilver>
+  <RPC_TraumaTeamBought>{0} is covered by Trauma Team for {1} days.</RPC_TraumaTeamBought>
+  <RPC_TraumaTeamLetter>Trauma Team inbound</RPC_TraumaTeamLetter>
+  <RPC_TraumaTeamLetterText>{0} is down. Their Trauma Team coverage has kicked in: a shuttle is inbound with a squad to secure and extract them.</RPC_TraumaTeamLetterText>
+  <RPC_TraumaTeamExtracted>Trauma Team has extracted {0}. They'll be back in about a day.</RPC_TraumaTeamExtracted>
+  <RPC_Reason_AlreadyInstalled>{0} is already installed.</RPC_Reason_AlreadyInstalled>
+  <RPC_SecondHeartProc>{0}'s Second Heart kicked in.</RPC_SecondHeartProc>
+  <RPC_Recharging>recharging</RPC_Recharging>
+  <RPC_Blocked>Blocked</RPC_Blocked>
+  <RPC_Charged>charged {0}</RPC_Charged>
+  <RPC_HackNegated>Hack negated</RPC_HackNegated>
+  <RPC_CycleShell>Shell: {0}</RPC_CycleShell>
+  <RPC_CycleShellDesc>Switch the projectile launch system to the next shell type.</RPC_CycleShellDesc>
+  <RPC_TraumaTeamFailed>Trauma Team couldn't get {0} onto the shuttle. Extraction failed.</RPC_TraumaTeamFailed>
+  <RPC_MaxTacLetter>MaxTac inbound</RPC_MaxTacLetter>
+  <RPC_MaxTacLetterText>{0} is a cyberpsycho and has {1}. NCPD MaxTac is landing to put them down.</RPC_MaxTacLetterText>
+  <RPC_MaxTacReasonKills>killed {0} people</RPC_MaxTacReasonKills>
+  <RPC_MaxTacDone>MaxTac has put down {0}.</RPC_MaxTacDone>
+  <RPC_TraumaCarryReport>carrying {0} to the shuttle.</RPC_TraumaCarryReport>
+  <RPC_TraumaBoardReport>boarding the shuttle.</RPC_TraumaBoardReport>
+  <RPC_TraumaTeamReturnLetter>Patient returned</RPC_TraumaTeamReturnLetter>
+  <RPC_TraumaTeamReturnLetterText>Trauma Team has returned {0}, patched up.</RPC_TraumaTeamReturnLetterText>
+
+  <RPC_Settings_FactionsDefault>Corps and gangs are the default factions (needs restart)</RPC_Settings_FactionsDefault>
+  <RPC_Settings_FactionsDefaultTip>New worlds start with the cyberpunk corporations and gangs selected. Vanilla and DLC factions stay available in the faction list but start unselected.</RPC_Settings_FactionsDefaultTip>
+
+  <RPC_Settings_Diagnostics>Diagnostics log (for testing)</RPC_Settings_Diagnostics>
+  <RPC_Settings_DiagnosticsTip>Writes RimPunkCE/Diagnostics/diag.log: RimPunk events, errors from RimPunk code, and hourly state checks. Turn off once testing is done.</RPC_Settings_DiagnosticsTip>
 </LanguageData>

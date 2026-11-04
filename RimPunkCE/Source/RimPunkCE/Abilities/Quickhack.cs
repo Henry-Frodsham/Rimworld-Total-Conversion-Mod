@@ -46,7 +46,8 @@ namespace RimPunkCE
             base.Apply(target, dest);
             if (!target.HasThing) return;
             var caster = parent.pawn;
-            float amount = Props.damage * caster.GetStatValue(RPStatDefOf.RPC_CyberwareDamageFactor);
+            if (target.Thing is Pawn victim && victim.HostileTo(caster) && HediffComp_SelfIce.TryNegate(victim)) return;
+            float amount = Props.damage * caster.GetStatValue(RPStatDefOf.RPC_CyberwareDamageFactor) * caster.GetStatValue(RPStatDefOf.RPC_QuickhackDamageFactor);
             float crit = caster.GetStatValue(RPStatDefOf.RPC_QuickhackCritChance);
             if (crit > 0f && Rand.Chance(crit))
             {

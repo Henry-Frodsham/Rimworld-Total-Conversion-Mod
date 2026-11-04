@@ -6,7 +6,7 @@
 
   <!-- ===================== Gorilla Arms (arms/manifest.md) =====================
        T2-Iconic, capacity 8. +5-20% melee damage, +5-20% melee attack speed, normal damage.
-       TODO (content pass): 10-20% chance of a bleeding blow. -->
+       10-20% chance of a bleeding blow (HediffComp_CyberOnHit). -->
 
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_GorillaArms</defName>
@@ -40,6 +40,9 @@
           </li>
         </tools>
       </li>
+      <li Class="RimPunkCE.HediffCompProperties_CyberOnHit">
+        <bleedChanceKey>bleedChance</bleedChanceKey>
+      </li>
     </comps>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareExtension">
@@ -48,6 +51,9 @@
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_GorillaArms</item>
+        <values>
+          <li><key>bleedChance</key><value><min>0.1</min><max>0.2</max></value></li>
+        </values>
         <effects>
           <statOffsets>
             <li><stat>MeleeDamageFactor</stat><value><min>0.05</min><max>0.2</max></value></li>
@@ -128,7 +134,7 @@
     <category>RPC_Cyberware</category>
     <iconPath>UI/RimPunk/Placeholder_Ability</iconPath>
     <showPsycastEffects>false</showPsycastEffects>
-    <cooldownTicksRange>60</cooldownTicksRange>
+    <cooldownTicksRange>120</cooldownTicksRange>
     <aiCanUse>true</aiCanUse>
     <ai_IsOffensive>true</ai_IsOffensive>
     <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>

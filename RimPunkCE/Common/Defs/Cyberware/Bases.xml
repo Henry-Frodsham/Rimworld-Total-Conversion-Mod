@@ -94,7 +94,7 @@
     <ai_IsOffensive>true</ai_IsOffensive>
     <targetRequired>false</targetRequired>
     <!-- real cooldown comes from the implant's tiered "cooldown" value -->
-    <cooldownTicksRange>60</cooldownTicksRange>
+    <cooldownTicksRange>120</cooldownTicksRange>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
       <drawAimPie>false</drawAimPie>

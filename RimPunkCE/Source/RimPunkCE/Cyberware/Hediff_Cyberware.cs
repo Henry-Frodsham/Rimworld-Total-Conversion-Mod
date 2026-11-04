@@ -77,6 +77,7 @@ namespace RimPunkCE
             if (effectsDoubled == doubled) return;
             effectsDoubled = doubled;
             pawn?.health?.Notify_HediffChanged(this);
+            this.TryGetComp<HediffComp_GiveCyberAbilities>()?.Refresh();
         }
 
         public override void PostAdd(DamageInfo? dinfo)
@@ -84,12 +85,15 @@ namespace RimPunkCE
             base.PostAdd(dinfo);
             var ext = Ext;
             if (ext != null) tier = TierUtility.Clamp(tier, ext.minTier, ext.maxTier);
+            if (pawn.Faction != null && pawn.Faction.IsPlayer) Diag.Event("cyberware", $"{Diag.Describe(pawn)} +{def.defName} {tier} on {Part?.Label ?? "whole body"}");
+            else Diag.Count("cyberware-installed-npc");
             pawn.GetCyberTracker()?.Notify_CyberwareChanged();
         }
 
         public override void PostRemoved()
         {
             base.PostRemoved();
+            if (pawn.Faction != null && pawn.Faction.IsPlayer) Diag.Event("cyberware", $"{Diag.Describe(pawn)} -{def.defName} {tier}");
             pawn.GetCyberTracker()?.Notify_CyberwareChanged();
         }
 

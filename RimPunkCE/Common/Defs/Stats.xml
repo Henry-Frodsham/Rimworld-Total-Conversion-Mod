@@ -228,4 +228,137 @@
     <hideAtValue>0</hideAtValue>
   </StatDef>
 
+
+  <!-- ===== cyberware content pass (Source/Tools/gen_cyberware.py uses these) ===== -->
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_IncomingDamageFactor</defName>
+    <label>incoming damage factor</label>
+    <description>Multiplier on all damage this pawn takes.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>20</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_MaxHealthFactor</defName>
+    <label>body part health factor</label>
+    <description>Body parts behave as if they had this much of their normal max health (incoming damage is divided by it).</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0.1</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>19</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_DamageFactorAll</defName>
+    <label>damage dealt factor</label>
+    <description>Multiplier on all damage this pawn deals.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>18</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_DamageFactorTech</defName>
+    <label>tech weapon damage</label>
+    <description>Multiplier on damage dealt with tech (charge) weapons.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>17</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_DamageFactorPower</defName>
+    <label>power weapon damage</label>
+    <description>Multiplier on damage dealt with power (conventional) guns.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>16</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_DamageVsPoisoned</defName>
+    <label>damage vs poisoned</label>
+    <description>Multiplier on damage dealt to enemies with toxic buildup.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>15</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_OrganDamageFactor</defName>
+    <label>organ damage</label>
+    <description>Multiplier on damage dealt to internal organs.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>14</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_CritChanceGrenades</defName>
+    <label>grenade crit chance</label>
+    <description>Chance for grenade damage to crit (double damage).</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>13</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_StaminaCostFactorMelee</defName>
+    <label>melee stamina cost</label>
+    <description>Multiplier on stamina used by melee attacks.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>12</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_StaminaCostFactorRanged</defName>
+    <label>ranged stamina cost</label>
+    <description>Multiplier on stamina used by shooting.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>11</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_RecoilFactor</defName>
+    <label>recoil factor</label>
+    <description>Multiplier on weapon recoil.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>10</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_SpreadFactor</defName>
+    <label>bullet spread factor</label>
+    <description>Multiplier on weapon shot spread.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>9</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef ParentName="RPC_PawnStatBase">
+    <defName>RPC_QuickhackDamageFactor</defName>
+    <label>quickhack damage</label>
+    <description>Multiplier on quickhack damage.</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>8</displayPriorityInCategory>
+  </StatDef>
+
 </Defs>

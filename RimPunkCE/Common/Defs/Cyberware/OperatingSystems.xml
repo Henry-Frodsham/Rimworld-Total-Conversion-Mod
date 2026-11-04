@@ -36,8 +36,8 @@
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_DynalarSandevistan</item>
         <values>
-          <li><key>duration</key><value><min>8</min><max>8</max></value></li>
-          <li><key>cooldown</key><value><min>55</min><max>55</max></value></li>
+          <li><key>duration</key><value><min>80</min><max>80</max></value></li>
+          <li><key>cooldown</key><value><min>110</min><max>110</max></value></li>
         </values>
       </li>
     </modExtensions>
@@ -54,6 +54,10 @@
           <capMods>
             <li><capacity>Consciousness</capacity><offset><min>1</min><max>1</max></offset></li>
           </capMods>
+          <!-- movement speed buffed by the same amount as consciousness (+100%) -->
+          <statFactors>
+            <li><stat>MoveSpeed</stat><value><min>2</min><max>2</max></value></li>
+          </statFactors>
           <statOffsets>
             <li><stat>MeleeCritChance</stat><value><min>0.05</min><max>0.15</max></value></li>
             <li><stat>RPC_RangedCritChance</stat><value><min>0.05</min><max>0.15</max></value></li>
@@ -67,11 +71,12 @@
   <AbilityDef ParentName="RPC_CyberSelfAbilityBase">
     <defName>RPC_Ability_DynalarSandevistan</defName>
     <label>activate sandevistan</label>
-    <description>Slow down time: greatly increased consciousness and crit for the duration.</description>
+    <description>Slow down time: greatly increased consciousness, movement speed and crit for the duration.</description>
     <comps>
       <li Class="RimPunkCE.CompProperties_AbilityCyberBuff">
         <hediffDef>RPC_DynalarSandevistanActive</hediffDef>
-        <defaultDurationSeconds>8</defaultDurationSeconds>
+        <defaultDurationSeconds>80</defaultDurationSeconds>
+        <aiMaxEnemyDistance>40</aiMaxEnemyDistance>
       </li>
     </comps>
   </AbilityDef>
@@ -113,8 +118,8 @@
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_MooreTechBerserk</item>
         <values>
-          <li><key>duration</key><value><min>8</min><max>11</max></value></li>
-          <li><key>cooldown</key><value><min>60</min><max>25</max></value></li>
+          <li><key>duration</key><value><min>80</min><max>110</max></value></li>
+          <li><key>cooldown</key><value><min>120</min><max>50</max></value></li>
         </values>
       </li>
     </modExtensions>
@@ -178,7 +183,8 @@
     <comps>
       <li Class="RimPunkCE.CompProperties_AbilityCyberBuff">
         <hediffDef>RPC_MooreTechBerserkActive</hediffDef>
-        <defaultDurationSeconds>8</defaultDurationSeconds>
+        <defaultDurationSeconds>80</defaultDurationSeconds>
+        <aiMaxEnemyDistance>8</aiMaxEnemyDistance>
       </li>
     </comps>
   </AbilityDef>
@@ -260,7 +266,7 @@
     <category>RPC_Cyberware</category>
     <iconPath>UI/RimPunk/Placeholder_Ability</iconPath>
     <showPsycastEffects>false</showPsycastEffects>
-    <cooldownTicksRange>60</cooldownTicksRange>
+    <cooldownTicksRange>120</cooldownTicksRange>
     <aiCanUse>true</aiCanUse>
     <ai_IsOffensive>true</ai_IsOffensive>
     <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>

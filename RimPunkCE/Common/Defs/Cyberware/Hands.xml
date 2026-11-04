@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Hands cyberware needed by smart weapons (hands/manifest.md). Both enable smart-targeting:
+       with either installed, smart weapons land every shot under perfect conditions. -->
+
+  <ThingDef ParentName="RPC_CyberwareItemBase">
+    <defName>RPC_Item_SmartLink</defName>
+    <label>smart link</label>
+    <description>Links the user's optics to a smart weapon's guidance system.</description>
+    <costList>
+      <Steel>15</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_CyberwareHediffBase">
+    <defName>RPC_SmartLink</defName>
+    <label>smart link</label>
+    <description>An installed smart link. Smart weapons guide every shot.</description>
+    <descriptionHyperlinks><ThingDef>RPC_Item_SmartLink</ThingDef></descriptionHyperlinks>
+    <modExtensions>
+      <li Class="RimPunkCE.SmartLinkExtension" />
+      <li Class="RimPunkCE.CyberwareExtension">
+        <slot>RPC_Slot_Hands</slot>
+        <capacityCost>4</capacityCost>
+        <minTier>T1</minTier>
+        <maxTier>Iconic</maxTier>
+        <item>RPC_Item_SmartLink</item>
+        <effects>
+          <statOffsets>
+            <li><stat>RPC_RamMax</stat><value><perTier><li>1</li><li>1</li><li>2</li><li>2</li><li>2</li><li>2</li></perTier></value></li>
+          </statOffsets>
+        </effects>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <ThingDef ParentName="RPC_CyberwareItemBase">
+    <defName>RPC_Item_SmartImprint</defName>
+    <label>tattoo: smart imprint</label>
+    <description>A subdermal tattoo with a printed smart-targeting circuit.</description>
+    <costList>
+      <Steel>5</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_CyberwareHediffBase">
+    <defName>RPC_SmartImprint</defName>
+    <label>tattoo: smart imprint</label>
+    <description>A smart-targeting tattoo. Smart weapons guide every shot.</description>
+    <descriptionHyperlinks><ThingDef>RPC_Item_SmartImprint</ThingDef></descriptionHyperlinks>
+    <modExtensions>
+      <li Class="RimPunkCE.SmartLinkExtension" />
+      <li Class="RimPunkCE.CyberwareExtension">
+        <slot>RPC_Slot_Hands</slot>
+        <capacityCost>0</capacityCost>
+        <minTier>T1</minTier>
+        <maxTier>Iconic</maxTier>
+        <item>RPC_Item_SmartImprint</item>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Cyberpsychosis behaviour. Vanilla only runs berserk AI for its own berserk states (ThinkNode_ConditionalMentalState
+  per state in MentalStateCritical), so without this a cyberpsycho just did normal work, or walked off the map if
+  factionless. A cyberpsycho fights anyone in range with whatever it has (guns or melee: everyone counts as hostile,
+  MentalState_Cyberpsychosis.ForceHostileTo), falls back to vanilla berserk melee, otherwise wanders.
+-->
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot/subNodes</xpath>
+    <order>Prepend</order>
+    <value>
+      <li Class="ThinkNode_ConditionalMentalState">
+        <state>RPC_Cyberpsychosis</state>
+        <subNodes>
+          <li Class="ThinkNode_Priority">
+            <subNodes>
+              <li Class="JobGiver_AIFightEnemies">
+                <targetAcquireRadius>65</targetAcquireRadius>
+                <targetKeepRadius>72</targetKeepRadius>
+              </li>
+              <li Class="JobGiver_Berserk" />
+              <li Class="JobGiver_WanderAnywhere">
+                <maxDanger>Deadly</maxDanger>
+              </li>
+            </subNodes>
+          </li>
+        </subNodes>
+      </li>
+    </value>
+  </Operation>
+</Patch>

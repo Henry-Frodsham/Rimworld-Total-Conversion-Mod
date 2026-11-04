@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The Empire stays in the world (royalty content depends on it) but is presented as the New United States of America.
+  Labels only: defName, titles, permits, quests and behaviour are untouched. The fixed name applies to new worlds.
+-->
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/FactionDef[defName="Empire"]/label</xpath>
+        <value><label>NUSA</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/FactionDef[defName="Empire"]/description</xpath>
+        <value><description>The New United States of America: what is left of the old federal government after the collapse, rebuilt around a militarized executive and the corporations that fund it.\n\nThe NUSA runs on rank, patronage and loyalty to the President. Its orbital shuttles, federal agents and Militech-supplied soldiers still make it the most powerful state on the continent.\n\nIt will refuse to trade with anyone who lacks the appropriate federal title.</description></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/FactionDef[defName="Empire"]/pawnSingular</xpath>
+        <value><pawnSingular>federal</pawnSingular></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/FactionDef[defName="Empire"]/pawnsPlural</xpath>
+        <value><pawnsPlural>federals</pawnsPlural></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/FactionDef[defName="Empire"]/leaderTitle</xpath>
+        <value><leaderTitle>president</leaderTitle></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/FactionDef[defName="Empire"]</xpath>
+        <value><fixedName>New United States of America</fixedName></value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

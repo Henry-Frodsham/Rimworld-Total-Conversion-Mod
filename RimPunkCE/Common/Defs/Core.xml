@@ -97,6 +97,12 @@
     <triggerUsage>0.8</triggerUsage>
     <safeUsage>0.5</safeUsage>
     <events />
+    <maxTacKills>5</maxTacKills>
+    <maxTacOperatorKind>RPC_MaxTac_Operator</maxTacOperatorKind>
+    <maxTacLeaderKind>RPC_MaxTac_Boss</maxTacLeaderKind>
+    <maxTacSquadSize>3~4</maxTacSquadSize>
+    <maxTacMaxTicks>20000</maxTacMaxTicks>
+    <maxTacBoardTicks>1500</maxTacBoardTicks>
   </RimPunkCE.CyberpsychosisTuningDef>
 
   <!-- ================= stamina ================= -->

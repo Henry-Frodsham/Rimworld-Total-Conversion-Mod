@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace RimPunkCE
@@ -30,6 +31,22 @@ namespace RimPunkCE
         /// <summary>Health restored per enemy neutralized while active, applied when the effect ends (0.25 = 25% of each injury).</summary>
         public float healPerNeutralizeOnEnd;
 
+        /// <summary>HP healed per second while active (Blood Pump).</summary>
+        public TieredFloat healPerSecond;
+
+        /// <summary>Neutralizing an enemy while active: extend by this fraction of the original duration, heal, regain stamina (Apogee, Falcon, Warp Dancer).</summary>
+        public float onNeutralizeExtendFraction;
+        public TieredFloat onNeutralizeHealFraction;
+        public float onNeutralizeStamina;
+
+        /// <summary>Kiroshi optics scans: reveal (unfog) hostile pawns / traps / turrets within these radii while active.</summary>
+        public TieredFloat revealEnemies;
+        public TieredFloat revealTraps;
+        public TieredFloat revealTurrets;
+
+        /// <summary>Berserk: damage bonus that grows as health drops (max at 20% health). Militech Berserk: 0.5.</summary>
+        public float lowHealthDamageBonus;
+
         public override IEnumerable<string> ConfigErrors()
         {
             foreach (var e in base.ConfigErrors()) yield return e;
@@ -45,6 +62,8 @@ namespace RimPunkCE
         public CyberTier maxTier = CyberTier.Iconic;
         public int ticksLeft = 60;
         public int neutralizedWhileActive;
+        public int originalDuration;
+        public bool doubled;
 
         private ActiveEffectExtension extCached;
         private TieredStageCache stageCache;
@@ -58,7 +77,7 @@ namespace RimPunkCE
                 var ext = Ext;
                 if (ext == null) return base.CurStage;
                 stageCache ??= new TieredStageCache();
-                return stageCache.Get(ext.effects, tier, minTier, maxTier, false, def.stages?.FirstOrFallback());
+                return stageCache.Get(ext.effects, tier, minTier, maxTier, doubled, def.stages?.FirstOrFallback());
             }
         }
 
@@ -66,17 +85,45 @@ namespace RimPunkCE
 
         public override bool ShouldRemove => ticksLeft <= 0 || base.ShouldRemove;
 
-        public override string LabelInBrackets => (ticksLeft / 60f).ToString("0.0") + "s";
+        /// <summary>Conditional effects refresh every second: no countdown for those.</summary>
+        public override string LabelInBrackets => originalDuration > 0 && originalDuration <= 90 ? null : (ticksLeft / 60f).ToString("0.0") + "s";
 
         public float IncomingDamageFactor => Ext?.incomingDamageFactor?.Evaluate(tier, minTier, maxTier) ?? 1f;
 
-        public void Setup(CyberTier tier, CyberTier minTier, CyberTier maxTier, int durationTicks)
+        public void Setup(CyberTier tier, CyberTier minTier, CyberTier maxTier, int durationTicks, bool doubled = false)
         {
             this.tier = tier;
             this.minTier = minTier;
             this.maxTier = maxTier;
+            this.doubled = doubled;
             ticksLeft = durationTicks;
+            originalDuration = durationTicks;
             stageCache?.Clear();
+            pawn?.health?.Notify_HediffChanged(this);
+        }
+
+        public float Eval(TieredFloat v, float fallback = 0f) => v == null ? fallback : v.Evaluate(tier, minTier, maxTier) * (doubled ? 2f : 1f);
+
+        /// <summary>Called when the pawn neutralizes an enemy while this is active.</summary>
+        public void Notify_Neutralized()
+        {
+            neutralizedWhileActive++;
+            var ext = Ext;
+            if (ext == null) return;
+            if (ext.onNeutralizeExtendFraction > 0f) ticksLeft += Mathf.RoundToInt(originalDuration * ext.onNeutralizeExtendFraction);
+            float heal = Eval(ext.onNeutralizeHealFraction);
+            if (heal > 0f) CyberUtility.HealFraction(pawn, heal);
+            if (ext.onNeutralizeStamina > 0f) pawn.GetCyberTracker()?.Stamina?.GainFraction(ext.onNeutralizeStamina);
+        }
+
+        /// <summary>Militech Berserk: outgoing damage factor from missing health.</summary>
+        public float LowHealthDamageFactor()
+        {
+            var ext = Ext;
+            if (ext == null || ext.lowHealthDamageBonus <= 0f) return 1f;
+            float health = pawn.health.summaryHealth.SummaryHealthPercent;
+            // 0 bonus at full health, full bonus at 20% health or below
+            return 1f + ext.lowHealthDamageBonus * Mathf.Clamp01((1f - health) / 0.8f);
         }
 
         /// <summary>Extend the remaining duration by a fraction of the original (Apogee: +10% on kill).</summary>
@@ -86,6 +133,12 @@ namespace RimPunkCE
         {
             base.TickInterval(delta);
             ticksLeft -= delta;
+            var ext = Ext;
+            if (ext == null || !pawn.IsHashIntervalTick(60, delta)) return;
+            float hps = Eval(ext.healPerSecond);
+            if (hps > 0f) CyberUtility.HealFlat(pawn, hps);
+            if (ext.revealEnemies != null || ext.revealTraps != null || ext.revealTurrets != null)
+                RevealUtility.Reveal(pawn, Eval(ext.revealEnemies), Eval(ext.revealTraps), Eval(ext.revealTurrets));
         }
 
         public override void PostRemoved()
@@ -94,6 +147,7 @@ namespace RimPunkCE
             var ext = Ext;
             if (ext != null && ext.healPerNeutralizeOnEnd > 0f && neutralizedWhileActive > 0 && !pawn.Dead)
                 CyberUtility.HealFraction(pawn, ext.healPerNeutralizeOnEnd * neutralizedWhileActive);
+            if (!pawn.Dead) CyberEvents.Notify_ActiveEnded(pawn, def);
         }
 
         public override void ExposeData()
@@ -104,6 +158,8 @@ namespace RimPunkCE
             Scribe_Values.Look(ref maxTier, "maxTier", CyberTier.Iconic);
             Scribe_Values.Look(ref ticksLeft, "ticksLeft", 60);
             Scribe_Values.Look(ref neutralizedWhileActive, "neutralizedWhileActive");
+            Scribe_Values.Look(ref originalDuration, "originalDuration");
+            Scribe_Values.Look(ref doubled, "doubled");
         }
     }
 }

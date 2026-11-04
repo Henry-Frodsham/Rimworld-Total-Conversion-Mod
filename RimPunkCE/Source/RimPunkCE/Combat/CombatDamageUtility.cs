@@ -31,6 +31,17 @@ namespace RimPunkCE
             }
             if (factor < 1f && violent) dinfo.SetAmount(dinfo.Amount * factor);
 
+            // 1b. cyberware filters (Nano-plating projectile block)
+            if (violent && !CompCyberTracker.ApplyingDelayed)
+                foreach (var h in pawn.health.hediffSet.hediffs)
+                    if (h is HediffWithComps hwc && hwc.comps != null)
+                        foreach (var c in hwc.comps)
+                            if (c is ICyberIncomingFilter f && f.TryBlock(dinfo)) { absorbed = true; return; }
+
+            // 1c. cyberware damage reduction (CyberwareDefenseUtility)
+            if (violent && !CompCyberTracker.ApplyingDelayed) CyberwareDefenseUtility.ModifyIncoming(pawn, tracker, ref dinfo);
+            if (dinfo.Amount <= 0f) { absorbed = true; return; }
+
             // 2. mitigation: chance to block all of it, regaining stamina (terms.md)
             if (violent && RimPunkMod.Settings.staminaEnabled)
             {
@@ -38,6 +49,7 @@ namespace RimPunkCE
                 if (chance > 0f && Rand.Chance(Mathf.Min(chance, 0.95f)))
                 {
                     absorbed = true;
+                    Diag.Count("mitigation");
                     tracker.Stamina?.GainFraction(pawn.GetStatValue(RPStatDefOf.RPC_MitigationStrength));
                     MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "RPC_Mitigated".Translate(), 2f);
                     return;
@@ -48,7 +60,7 @@ namespace RimPunkCE
             // Only enforceable when the hit part is already chosen; otherwise the damage worker picks it later.
             if (partFloor > 0f && dinfo.HitPart != null)
             {
-                float maxHp = dinfo.HitPart.def.GetMaxHealth(pawn);
+                float maxHp = PartHealthUtility.MaxHealth(dinfo.HitPart, pawn);
                 float current = pawn.health.hediffSet.GetPartHealth(dinfo.HitPart);
                 float allowed = Mathf.Max(0f, current - maxHp * partFloor);
                 if (dinfo.Amount > allowed) dinfo.SetAmount(allowed);
@@ -66,13 +78,17 @@ namespace RimPunkCE
                 if (dinfo.HitPart != null && dinfo.HitPart.def == BodyPartDefOf.Head)
                     f *= attacker.GetStatValue(RPStatDefOf.RPC_HeadshotDamageFactor);
             }
+            f *= CyberwareDefenseUtility.OutgoingFactor(attacker, victim, dinfo);
             // ranged crits deal double damage (terms.md); melee crits are Combat Extended's own
-            if (dinfo.Weapon != null && dinfo.Weapon.IsRangedWeapon)
+            bool grenade = dinfo.Def.isExplosive && WeaponClassUtility.Matches(CyberWeaponFilter.Grenade, dinfo);
+            if ((dinfo.Weapon != null && dinfo.Weapon.IsRangedWeapon) || grenade)
             {
-                float crit = attacker.GetStatValue(RPStatDefOf.RPC_RangedCritChance);
+                float crit = grenade ? attacker.GetStatValue(RPStatDefOf.RPC_CritChanceGrenades)
+                                     : attacker.GetStatValue(RPStatDefOf.RPC_RangedCritChance) + CyberwareDefenseUtility.DistanceCritBonus(attacker, victim);
                 if (crit > 0f && Rand.Chance(crit))
                 {
                     f *= 2f * attacker.GetStatValue(RPStatDefOf.RPC_CritDamageFactor);
+                    Diag.Count("ranged-crit");
                     if (attacker.Map != null) MoteMaker.ThrowText(victim.DrawPos, attacker.Map, "RPC_Crit".Translate(), Color.yellow, 2f);
                 }
             }

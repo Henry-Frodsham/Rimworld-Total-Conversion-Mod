@@ -8,8 +8,14 @@
   </supportedVersions>
   <description>Cyberware, cyberpsychosis and stamina for Combat Extended. Operating systems (sandevistan, berserk, cyberdecks, chrome compressor), arm cyberware, prefrontal cortex implants and more, all tiered from T1 to Iconic.
 
-Requires Harmony and Combat Extended. Multiplayer compatible.</description>
+Requires Royalty, Harmony and Combat Extended. Multiplayer compatible.
+
+Icons by Lorc, Delapouite, Andy Meneely and Sbed from game-icons.net, CC BY 3.0, recoloured.</description>
   <modDependencies>
+    <li>
+      <packageId>Ludeon.RimWorld.Royalty</packageId>
+      <displayName>Royalty</displayName>
+    </li>
     <li>
       <packageId>brrainz.harmony</packageId>
       <displayName>Harmony</displayName>
@@ -22,6 +28,7 @@ Requires Harmony and Combat Extended. Multiplayer compatible.</description>
     </li>
   </modDependencies>
   <loadAfter>
+    <li>Ludeon.RimWorld.Royalty</li>
     <li>brrainz.harmony</li>
     <li>CETeam.CombatExtended</li>
     <li>rwmt.Multiplayer</li>
