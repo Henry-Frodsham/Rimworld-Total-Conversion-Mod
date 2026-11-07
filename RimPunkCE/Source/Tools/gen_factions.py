@@ -77,13 +77,29 @@ F = [
          desc='A secretive corporation with a hand in city infrastructure.'),
     dict(id='NetWatch', label='NetWatch', kind='netwatch', color=(0.2, 0.6, 0.9), manus=['Militech', 'KangTao'], classTags=['RPC_Type_smart'],
          desc='The net police. NetWatch hunts rogue AIs and netrunners who push too far.'),
-    dict(id='TraumaTeam', label='Trauma Team International', kind='trauma', color=(0.95, 0.95, 0.95), manus=['Militech'],
+    # Trauma Team: Kang Tao smart guns (Chao, Dian, Zhuo) plus the Nokota smart rifle (Kang Tao makes no rifle), and full
+    # combat chrome: no cyberdecks, no netrunning PFC chips, no arm cyberware.
+    dict(id='TraumaTeam', label='Trauma Team International', kind='trauma', color=(0.95, 0.95, 0.95), manus=['KangTao'],
+         weapons=['RPC_W_KangTao_SMG', 'RPC_W_KangTao_Shotgun', 'RPC_W_KangTao_Pistol', 'RPC_WT_Rifle_smart'], tiers=('T4', 'Iconic'),
+         loadout=[opt(1.0, SANDEVISTANS + BERSERKS), opt(1.0, ['RPC_SmartLink']), opt(1.0, FACE), opt(1.0, SKELETON, 2), opt(1.0, NERVOUS, 2),
+                  opt(1.0, CIRCULATORY, 2), opt(1.0, SKIN, 2), opt(0.8, LEGS, 2), opt(0.8, ['RPC_NewtonModule', 'RPC_MechatronicCore', 'RPC_Bioconductor', 'RPC_Axolotl'], 2),
+                  opt(0.5, ['RPC_ShockAbsorber', 'RPC_ImmovableForce', 'RPC_Microgenerator'])],
          desc='A paramedic company with an armed response. Pay for coverage and a Trauma Team squad will come for you when you go down.'),
     # MaxTac: NCPD's anti-cyberpsycho unit. never settles, only arrives by shuttle to put down a cyberpsycho (5 kills).
     # top tier chrome on every member, immune to cyberpsychosis (CyberpsychosisUtility.IsImmune).
+    # armour-killers: only the high-penetration gun classes, always loaded with AP / charged rounds
     dict(id='MaxTac', label='MaxTac', kind='maxtac', color=(0.1, 0.2, 0.55), manus=['Militech'], tiers=('Iconic', 'Iconic'),
+         roleClasses={'Operator': ['Rifle', 'MG', 'Precision'], 'Boss': ['Rifle', 'Precision']},
+         ammo={'ArmorPiercing': 1, 'Charged': 1},
          loadout=[opt(1.0, ['RPC_DynalarSandevistan', 'RPC_MooreTechBerserk']), opt(1.0, ARMS, 2), opt(1.0, PFC, 3), opt(1.0, ['RPC_SmartLink'])],
          desc='NCPD Maximum Force Tactical Division. When a cyberpsycho starts piling up bodies, MaxTac drops in to put them down. They are chromed to the limit and immune to cyberpsychosis.'),
+    # Debt collectors: the agency Trauma Team sells unpaid bills to. never settles, never visits; only raids a colony
+    # whose Trauma Team debt has gone unpaid for 30 days (GameComponent_RimPunk.TraumaDebt). mid tier chrome.
+    dict(id='DebtCollectors', label='Militech Receivables', kind='collector', color=(0.45, 0.45, 0.5), manus=['Militech', 'ConstitutionalArms', 'Tsunami'],
+         tiers=('T2', 'T3'), bossTiers=('T3', 'T4'), noPeaceful=True, hidden=True,
+         loadout=[opt(0.7, SANDEVISTANS + BERSERKS), opt(0.6, ARMS), opt(0.6, PFC, 2), opt(0.5, ['RPC_SmartLink', 'RPC_SmartImprint']),
+                  opt(0.5, SKIN), opt(0.4, NERVOUS), opt(0.3, LEGS)],
+         desc='A collection agency that buys unpaid medical debt from Trauma Team. When the bill comes due, they come to collect: in silver, in chrome, or in blood.'),
 
     dict(id='Maelstrom', label='Maelstrom', kind='gang', relation='permanent', color=(0.8, 0.1, 0.15), manus=['BudgetArms', 'Rostovic', 'Techtronika'],
          loadout=[opt(0.8, ['RPC_MooreTechBerserk', 'RPC_DynalarSandevistan']), opt(0.9, ARMS, 2), opt(0.7, PFC, 3), opt(0.7, ['RPC_SmartImprint'])],
@@ -125,12 +141,15 @@ IDS = {f['id'] for f in F}
 for f in F:
     for r in f.get('rivals', []): assert r in IDS, r
 
-CULTURE = {'corp': 'Astropolitan', 'netwatch': 'Astropolitan', 'trauma': 'Astropolitan', 'maxtac': 'Astropolitan', 'gang': 'Kriminul', 'nomads': 'Rustican'}
-EXT_KIND = {'corp': 'Corporation', 'gang': 'Gang', 'nomads': 'Nomads', 'trauma': 'TraumaTeam', 'netwatch': 'NetWatch', 'maxtac': 'MaxTac'}
-BACKSTORY = {'corp': [('RPC_Corpo', 0.75), ('Offworld', 0.25)], 'netwatch': [('RPC_Corpo', 0.8), ('Offworld', 0.2)], 'trauma': [('RPC_Corpo', 0.8), ('Offworld', 0.2)], 'maxtac': [('RPC_Corpo', 0.8), ('Offworld', 0.2)],
+CULTURE = {'corp': 'Astropolitan', 'collector': 'Astropolitan', 'netwatch': 'Astropolitan', 'trauma': 'Astropolitan', 'maxtac': 'Astropolitan', 'gang': 'Kriminul', 'nomads': 'Rustican'}
+EXT_KIND = {'corp': 'Corporation', 'collector': 'DebtCollector', 'gang': 'Gang', 'nomads': 'Nomads', 'trauma': 'TraumaTeam', 'netwatch': 'NetWatch', 'maxtac': 'MaxTac'}
+BACKSTORY = {'corp': [('RPC_Corpo', 0.75), ('Offworld', 0.25)], 'collector': [('RPC_Corpo', 0.5), ('RPC_StreetKid', 0.5)], 'netwatch': [('RPC_Corpo', 0.8), ('Offworld', 0.2)], 'trauma': [('RPC_Corpo', 0.8), ('Offworld', 0.2)], 'maxtac': [('RPC_Corpo', 0.8), ('Offworld', 0.2)],
              'gang': [('RPC_StreetKid', 0.75), ('Outlander', 0.25)], 'nomads': [('RPC_Nomad', 0.75), ('Outlander', 0.25)]}
-ICON = {'corp': 'World/WorldObjects/Expanding/Town', 'netwatch': 'World/WorldObjects/Expanding/Town', 'trauma': 'World/WorldObjects/Expanding/Town', 'maxtac': 'World/WorldObjects/Expanding/Town',
+ICON = {'corp': 'World/WorldObjects/Expanding/Town', 'collector': 'World/WorldObjects/Expanding/Town', 'netwatch': 'World/WorldObjects/Expanding/Town', 'trauma': 'World/WorldObjects/Expanding/Town', 'maxtac': 'World/WorldObjects/Expanding/Town',
         'gang': 'World/WorldObjects/Expanding/PirateOutpost', 'nomads': 'World/WorldObjects/Expanding/TownRough'}
+
+# corporate-style factions: spacer tech, better gear and pay, 'operatives', canSiege
+CORPLIKE = ('corp', 'netwatch', 'trauma', 'maxtac', 'collector')
 
 def li(items): return ''.join(f'<li>{escape(x)}</li>' for x in items)
 
@@ -193,7 +212,8 @@ NETRUNNER_LOADOUT = [opt(1.0, DECKS), opt(0.6, PFC, 2), opt(0.5, FACE), opt(0.4,
 def role_weapons(f, role):
     """Weapon tags for a role: the faction's manufacturers in the role's gun classes (RPC_W_<Manu>_<Class>), else the classes."""
     if f.get('meleeOnly') or role == 'Melee': return f.get('meleeTags', ['RPC_Melee'])
-    classes = ROLES[role]['classes']
+    if f.get('weapons'): return f['weapons']
+    classes = f.get('roleClasses', {}).get(role, ROLES[role]['classes'])
     allowed = [t[len('RPC_Class_'):] for t in f.get('classTags', []) if t.startswith('RPC_Class_')]
     if allowed: classes = [c for c in classes if c in allowed] or allowed
     combos = [f'RPC_W_{m}_{c}' for m in f.get('manus', []) for c in classes if PRICES.get(f'RPC_W_{m}_{c}')]
@@ -201,9 +221,9 @@ def role_weapons(f, role):
 
 
 def pawnkind(f, role, label, power, weapon_tags, money, mags, leader=False, trader=False):
-    corp = f['kind'] in ('corp', 'netwatch', 'trauma', 'maxtac')
+    corp = f['kind'] in CORPLIKE
     tiers = f.get('tiers', ('T3', 'Iconic') if corp else ('T1', 'T2'))
-    if role == 'Boss': tiers = (tiers[0], 'Iconic' if corp else ('T3' if tiers[1] in ('T2', 'T3') else tiers[1]))
+    if role == 'Boss': tiers = f.get('bossTiers') or (tiers[0], 'Iconic' if corp else ('T3' if tiers[1] in ('T2', 'T3') else tiers[1]))
     options = f.get('loadout', LOADOUT_CORP if corp else LOADOUT_GANG)
     if role == 'Netrunner' and 'loadout' not in f: options = NETRUNNER_LOADOUT
     elif 'loadout' not in f: options = [opt(o['chance'], SANDEVISTANS + BERSERKS, o['count']) if o['hediffs'] == OS_ALL else o for o in options]
@@ -211,8 +231,10 @@ def pawnkind(f, role, label, power, weapon_tags, money, mags, leader=False, trad
     _, required, _ = outfit(f['id'], role)
     floor = int(cheapest(weapon_tags) * 1.1) + 1
     money = (max(money[0], floor), max(money[1], floor * 2))
+    # CE LoadoutPropertiesExtension: load the gun with (and carry spares of) these ammo categories where the gun has them
+    ammo_xml = ('\n        <weightedAmmoCategories>' +''.join(f'<{c}>{w}</{c}>' for c, w in f['ammo'].items()) + '</weightedAmmoCategories>') if f.get('ammo') else ''
     mag_xml = f'''      <li Class="CombatExtended.LoadoutPropertiesExtension">
-        <primaryMagazineCount><min>{mags[0]}</min><max>{mags[1]}</max></primaryMagazineCount>
+        <primaryMagazineCount><min>{mags[0]}</min><max>{mags[1]}</max></primaryMagazineCount>{ammo_xml}
       </li>
 ''' if not (f.get('meleeOnly') or role == 'Melee') else ''
     return f'''  <PawnKindDef ParentName="RPC_PawnKindBase">
@@ -273,7 +295,7 @@ def trader_kind(f, orbital):
 out = []
 for i, f in enumerate(F):
     kind = f['kind']
-    corp = kind in ('corp', 'netwatch', 'trauma', 'maxtac')
+    corp = kind in CORPLIKE
     tech = f.get('techLevel', 'Spacer' if corp else 'Industrial')
     money = (1200, 2500) if corp else (300, 900)
     p = 1.4 if corp else 1.0
@@ -299,7 +321,7 @@ for i, f in enumerate(F):
     combat = ''.join(f'          <RPC_{f["id"]}_{r[0]}>{r[6]:g}</RPC_{f["id"]}_{r[0]}>\n' for r in fighters)
     settlement = combat
     trader_group = ''
-    peaceful_needed = f.get('relation', 'neutral') != 'permanent'
+    peaceful_needed = f.get('relation', 'neutral') != 'permanent' and not f.get('noPeaceful')
     if peaceful_needed and not trades:
         guards = ''.join(f'          <RPC_{f["id"]}_{r[0]}>{w}</RPC_{f["id"]}_{r[0]}>\n' for r, w in zip(fighters[:2], [10, 4]))
         trader_group = f'''      <li>
@@ -324,8 +346,10 @@ for i, f in enumerate(F):
       </li>
 '''
     relation = f.get('relation', 'neutral')
+    # hidden (like vanilla mechanoids): not in the faction list, no guests; needed when a faction has no Peaceful group
+    hidden_xml = '\n    <hidden>true</hidden>' if f.get('hidden') else ''
     rel_xml = {'permanent': '\n    <permanentEnemy>true</permanentEnemy>', 'hostile': '\n    <naturalEnemy>true</naturalEnemy>', 'neutral': ''}[relation]
-    settlements = 0 if kind in ('trauma', 'maxtac') else 1
+    settlements = 0 if kind in ('trauma', 'maxtac', 'collector') else 1
     caravans = f'''
     <caravanTraderKinds><li>RPC_Caravan_{f['id']}</li></caravanTraderKinds>
     <baseTraderKinds><li>RPC_Caravan_{f['id']}</li></baseTraderKinds>
@@ -350,7 +374,7 @@ for i, f in enumerate(F):
     <categoryTag>{'RPC_Corporation' if corp else 'RPC_Gang'}</categoryTag>
     <listOrderPriority>{40 - i}</listOrderPriority>
     <settlementGenerationWeight>{settlements}</settlementGenerationWeight>
-    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <requiredCountAtGameStart>{1 if f.get('hidden') or kind in ('trauma', 'maxtac') else 0}</requiredCountAtGameStart>{hidden_xml}
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
     <configurationListOrderPriority>{i}</configurationListOrderPriority>

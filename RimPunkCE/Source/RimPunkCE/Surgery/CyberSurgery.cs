@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using RimWorld;
 using HarmonyLib;
 using Verse;
@@ -14,6 +15,7 @@ namespace RimPunkCE
             if (item == null || map == null) return;
             var thing = ThingMaker.MakeThing(item);
             thing.TryGetComp<CompCyberwareTier>()?.SetTier(hediff.tier);
+            QualityBionicsCompat.SetQuality(thing, hediff.Quality);
             GenSpawn.Spawn(thing, pos, map);
         }
 
@@ -26,11 +28,70 @@ namespace RimPunkCE
             return fallback;
         }
 
+        /// <summary>Quality of the installed item (Normal without Quality Bionics Remastered).</summary>
+        public static QualityCategory QualityFromIngredients(List<Thing> ingredients, ThingDef item)
+        {
+            if (ingredients != null)
+                foreach (var t in ingredients)
+                    if (t.def == item) return QualityBionicsCompat.QualityOf(t);
+            return QualityCategory.Normal;
+        }
+
+        /// <summary>
+        /// Parts a slot's cyberware goes on. A part replaced by a bionic limb higher up (vanilla marks the arm and hand
+        /// under a bionic arm on the shoulder as missing) maps to that limb's part, see <see cref="EffectivePart"/>.
+        /// </summary>
         public static IEnumerable<BodyPartRecord> CandidateParts(Pawn pawn, CyberSlotDef slot)
         {
             if (slot == null || slot.WholeBody) yield break;
-            foreach (var part in pawn.health.hediffSet.GetNotMissingParts())
-                if (slot.bodyParts.Contains(part.def)) yield return part;
+            var seen = new HashSet<BodyPartRecord>();
+            foreach (var part in pawn.RaceProps.body.AllParts)
+            {
+                if (!slot.bodyParts.Contains(part.def)) continue;
+                var ep = EffectivePart(pawn, part);
+                if (ep != null && seen.Add(ep)) yield return ep;
+            }
+        }
+
+        /// <summary>
+        /// Where cyberware for this (natural) part sits: the part itself, or, if it's only "missing" because a bionic
+        /// limb was installed on an ancestor, that limb's part (vanilla won't add hediffs to missing parts). Null if the
+        /// part is really gone.
+        /// </summary>
+        public static BodyPartRecord EffectivePart(Pawn pawn, BodyPartRecord part)
+        {
+            var set = pawn?.health?.hediffSet;
+            if (set == null || part == null) return null;
+            if (!set.PartIsMissing(part)) return part;
+            for (var x = part.parent; x != null; x = x.parent)
+            {
+                if (set.PartIsMissing(x)) continue;
+                return set.HasDirectlyAddedPartFor(x) ? x : null;
+            }
+            return null;
+        }
+
+        /// <summary>The slot's own part for installed cyberware (its part, or the arm / hand below the limb it was moved to).</summary>
+        public static BodyPartRecord HomePart(Hediff_Cyberware c)
+        {
+            var slot = c.Ext?.slot;
+            var part = c.Part;
+            if (slot == null || part == null || slot.bodyParts.Contains(part.def)) return part;
+            var stack = new Stack<BodyPartRecord>(part.parts);
+            while (stack.Count > 0)
+            {
+                var d = stack.Pop();
+                if (slot.bodyParts.Contains(d.def)) return d;
+                foreach (var child in d.parts) stack.Push(child);
+            }
+            return part;
+        }
+
+        public static bool IsUnder(BodyPartRecord child, BodyPartRecord ancestor)
+        {
+            for (var x = child; x != null; x = x.parent)
+                if (x == ancestor) return true;
+            return false;
         }
 
         /// <summary>"(usage 64% -> 82%)" suffix so the player sees the cyberpsychosis risk before installing.</summary>
@@ -91,6 +152,7 @@ namespace RimPunkCE
             var ext = Ext;
             var hediff = (Hediff_Cyberware)HediffMaker.MakeHediff(recipe.addsHediff, pawn, part);
             hediff.tier = CyberSurgeryUtility.TierFromIngredients(ingredients, ext?.item, ext?.minTier ?? CyberTier.T1);
+            hediff.Quality = CyberSurgeryUtility.QualityFromIngredients(ingredients, ext?.item);
             pawn.health.AddHediff(hediff, part);
             CyberpsychosisUtility.Notify_Event(pawn, CyberpsychosisEvent.CyberwareInstalled);
         }
@@ -161,6 +223,88 @@ namespace RimPunkCE
             }
             var hediff = pawn.InstalledCyberware().FirstOrDefault(c => Matches(c) && c.Part == part);
             hediff?.SetTier(Up.fromTier + 1);
+        }
+    }
+
+    /// <summary>
+    /// MedicalRecipesUtility.RestorePartAndSpawnAllPreviousParts (replacing a limb with a bionic one, removing a part):
+    /// vanilla wipes every hediff on the part and below, so arm / hand / leg cyberware there would vanish. Drop each as
+    /// its item (keeping the tier) first.
+    /// </summary>
+    [HarmonyPatch(typeof(MedicalRecipesUtility), nameof(MedicalRecipesUtility.RestorePartAndSpawnAllPreviousParts))]
+    public static class Patch_RestorePart_DropCyberware
+    {
+        public static void Prefix(Pawn pawn, BodyPartRecord part, IntVec3 pos, Map map)
+        {
+            if (pawn?.health?.hediffSet == null || part == null) return;
+            var under = pawn.InstalledCyberware().Where(c => c.Part != null && CyberSurgeryUtility.IsUnder(c.Part, part)).ToList();
+            foreach (var c in under)
+            {
+                CyberSurgeryUtility.SpawnItemFor(c, pos, map);
+                pawn.health.RemoveHediff(c);
+                Diag.Event("cyberware", $"{Diag.Describe(pawn)}: {c.def.defName} {c.tier} dropped, its limb was replaced");
+            }
+        }
+
+    }
+
+    /// <summary>
+    /// Installing a limb (bionic or natural) keeps the cyberware on it. Vanilla wipes every hediff on the part and
+    /// below (RestorePart, then Hediff_AddedPart.PostAdd marks the children missing), so the cyberware is detached
+    /// from the hediff list for the surgery (no PostRemoved: launcher ammo, tiers and comp state survive) and put back
+    /// afterwards on its <see cref="CyberSurgeryUtility.EffectivePart"/>: a bionic arm on the shoulder carries the
+    /// arm and hand cyberware, a natural arm put back takes it home again. Only cyberware whose part is really gone
+    /// (failed surgery) drops as its item.
+    /// </summary>
+    [HarmonyPatch]
+    public static class Patch_LimbInstall_KeepCyberware
+    {
+        private static IEnumerable<MethodBase> TargetMethods()
+        {
+            yield return AccessTools.Method(typeof(Recipe_InstallArtificialBodyPart), nameof(Recipe_InstallArtificialBodyPart.ApplyOnPawn));
+            yield return AccessTools.Method(typeof(Recipe_InstallNaturalBodyPart), nameof(Recipe_InstallNaturalBodyPart.ApplyOnPawn));
+        }
+
+        public static void Prefix(Pawn pawn, BodyPartRecord part, out List<KeyValuePair<Hediff_Cyberware, BodyPartRecord>> __state)
+        {
+            __state = null;
+            var set = pawn?.health?.hediffSet;
+            if (set == null || part == null) return;
+            foreach (var c in pawn.InstalledCyberware().ToList())
+            {
+                if (c.Part == null || !CyberSurgeryUtility.IsUnder(c.Part, part)) continue;
+                (__state ??= new List<KeyValuePair<Hediff_Cyberware, BodyPartRecord>>()).Add(new KeyValuePair<Hediff_Cyberware, BodyPartRecord>(c, CyberSurgeryUtility.HomePart(c)));
+                set.hediffs.Remove(c);
+            }
+            if (__state != null) set.DirtyCache();
+        }
+
+        public static void Finalizer(Pawn pawn, BodyPartRecord part, List<KeyValuePair<Hediff_Cyberware, BodyPartRecord>> __state)
+        {
+            if (__state == null || pawn?.health?.hediffSet == null) return;
+            var set = pawn.health.hediffSet;
+            var kept = new List<string>();
+            foreach (var kv in __state)
+            {
+                var c = kv.Key;
+                var target = CyberSurgeryUtility.EffectivePart(pawn, kv.Value);
+                if (target != null)
+                {
+                    c.Part = target;
+                    set.hediffs.Add(c);
+                    kept.Add($"{c.def.defName} {c.tier} on {target.Label}");
+                }
+                else
+                {
+                    CyberSurgeryUtility.SpawnItemFor(c, pawn.PositionHeld, pawn.MapHeld);
+                    c.PostRemoved();
+                    Diag.Event("cyberware", $"{Diag.Describe(pawn)}: {c.def.defName} {c.tier} dropped, {kv.Value?.Label} is gone");
+                }
+            }
+            set.DirtyCache();
+            if (!pawn.Dead) pawn.health.CheckForStateChange(null, null);
+            pawn.GetCyberTracker()?.Notify_CyberwareChanged();
+            if (kept.Count > 0) Diag.Event("cyberware", $"{Diag.Describe(pawn)}: limb installed on {part?.Label}, kept {string.Join(", ", kept)}");
         }
     }
 

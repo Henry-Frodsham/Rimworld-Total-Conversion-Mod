@@ -24,7 +24,8 @@ namespace RimPunkCE.Patches
 
         public static bool Prefix(Faction __instance, Faction other, int goodwillChange, ref bool __result)
         {
-            if (goodwillChange < 0 && ((__instance.IsNeverHostile() && other.IsPlayer) || (other.IsNeverHostile() && __instance.IsPlayer)))
+            if (goodwillChange < 0 && !GameComponent_RimPunk.AllowTraumaHostility
+                && ((__instance.IsNeverHostile() && other.IsPlayer) || (other.IsNeverHostile() && __instance.IsPlayer)))
             {
                 __result = false;
                 return false;
@@ -72,6 +73,7 @@ namespace RimPunkCE.Patches
             int delay = (int)(ext.retaliationDelayDays.RandomInRange * 60000f);
             Find.Storyteller.incidentQueue.Add(IncidentDefOf.RaidEnemy, Find.TickManager.TicksGame + delay, parms, 60000);
             Messages.Message("RPC_StrikeTeamWarning".Translate(corp.Name), MessageTypeDefOf.ThreatBig);
+            BarkUtility.SayColonist(BarkKeys.Retaliation, map);
             Diag.Event("factions", $"retaliation from {corp.Name} queued in {delay} ticks, {parms.points:0} points");
         }
     }
@@ -87,6 +89,22 @@ namespace RimPunkCE.Patches
         {
             if (__result == RimWorld.Planet.WorldPawnSituation.Free && GameComponent_RimPunk.IsAwayWithTraumaTeam(p))
                 __result = RimWorld.Planet.WorldPawnSituation.Borrowed;
+        }
+    }
+}
+
+namespace RimPunkCE.Patches
+{
+    /// <summary>
+    /// IncidentWorker_RaidEnemy.FactionCanBeGroupSource: the debt collectors never show up as a random storyteller raid,
+    /// only when GameComponent_RimPunk sends them for an unpaid Trauma Team bill (it sets the faction directly).
+    /// </summary>
+    [HarmonyPatch(typeof(IncidentWorker_RaidEnemy), nameof(IncidentWorker_RaidEnemy.FactionCanBeGroupSource))]
+    public static class Patch_RaidEnemy_FactionCanBeGroupSource
+    {
+        public static void Postfix(Faction f, ref bool __result)
+        {
+            if (__result && !GameComponent_RimPunk.SendingCollectors && f.Ext()?.kind == CyberFactionKind.DebtCollector) __result = false;
         }
     }
 }

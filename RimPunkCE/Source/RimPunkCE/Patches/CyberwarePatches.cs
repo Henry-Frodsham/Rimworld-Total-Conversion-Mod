@@ -90,3 +90,31 @@ namespace RimPunkCE.Patches
         }
     }
 }
+
+namespace RimPunkCE.Patches
+{
+    /// <summary>
+    /// Pawn_HealthTracker.AddHediff / RemoveHediff: other mods' implants use cyberware capacity (ForeignCyberwareUtility),
+    /// so the tracker's cached usage is refreshed when one comes or goes. Installing one on a pawn on a map rolls the same
+    /// cyberpsychosis event as installing RimPunk cyberware (pawn generation and world pawns don't roll).
+    /// </summary>
+    [HarmonyPatch(typeof(Pawn_HealthTracker), nameof(Pawn_HealthTracker.AddHediff), typeof(Hediff), typeof(BodyPartRecord), typeof(DamageInfo?), typeof(DamageWorker.DamageResult))]
+    public static class Patch_Pawn_HealthTracker_AddHediff_Foreign
+    {
+        public static void Postfix(Pawn ___pawn, Hediff hediff)
+        {
+            if (!ForeignCyberwareUtility.IsForeignImplant(hediff)) return;
+            ___pawn.GetCyberTracker()?.Notify_CyberwareChanged();
+            if (___pawn.Spawned && !___pawn.Dead) CyberpsychosisUtility.Notify_Event(___pawn, CyberpsychosisEvent.CyberwareInstalled);
+        }
+    }
+
+    [HarmonyPatch(typeof(Pawn_HealthTracker), nameof(Pawn_HealthTracker.RemoveHediff))]
+    public static class Patch_Pawn_HealthTracker_RemoveHediff_Foreign
+    {
+        public static void Postfix(Pawn ___pawn, Hediff hediff)
+        {
+            if (ForeignCyberwareUtility.IsForeignImplant(hediff)) ___pawn.GetCyberTracker()?.Notify_CyberwareChanged();
+        }
+    }
+}

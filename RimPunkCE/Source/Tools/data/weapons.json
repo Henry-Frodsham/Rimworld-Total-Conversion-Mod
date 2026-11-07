@@ -12,8 +12,7 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": null,
-  "range": 30.0,
-  "stamina": null
+  "range": 30.0
  },
  {
   "name": "Arasaka HJSH-18 Masamune",
@@ -28,8 +27,7 @@
   "charge": null,
   "headshot": 125.0,
   "armorPen": 25.0,
-  "range": 48.0,
-  "stamina": null
+  "range": 48.0
  },
  {
   "name": "Arasaka JKE-X2 Kenshin",
@@ -44,8 +42,7 @@
   "charge": 0.5,
   "headshot": 170.0,
   "armorPen": 50.0,
-  "range": 36.0,
-  "stamina": null
+  "range": 36.0
  },
  {
   "name": "Arasaka Nowaki",
@@ -60,8 +57,7 @@
   "charge": null,
   "headshot": 150.0,
   "armorPen": 50.0,
-  "range": 42.0,
-  "stamina": null
+  "range": 42.0
  },
  {
   "name": "Arasaka Senkoh LX",
@@ -76,8 +72,7 @@
   "charge": 0.75,
   "headshot": 100.0,
   "armorPen": null,
-  "range": 28.0,
-  "stamina": null
+  "range": 28.0
  },
  {
   "name": "Arasaka Shigure",
@@ -92,8 +87,7 @@
   "charge": null,
   "headshot": 100.0,
   "armorPen": null,
-  "range": 24.0,
-  "stamina": null
+  "range": 24.0
  },
  {
   "name": "Arasaka TKI-20 Shingen",
@@ -108,8 +102,7 @@
   "charge": null,
   "headshot": 50.0,
   "armorPen": null,
-  "range": 24.0,
-  "stamina": null
+  "range": 24.0
  },
  {
   "name": "Arasaka Tamayura",
@@ -124,8 +117,7 @@
   "charge": null,
   "headshot": 150.0,
   "armorPen": 25.0,
-  "range": 36.0,
-  "stamina": null
+  "range": 36.0
  },
  {
   "name": "Baseball Bat",
@@ -140,8 +132,7 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null,
-  "stamina": 12.0
+  "range": null
  },
  {
   "name": "Boar Carver",
@@ -156,8 +147,7 @@
   "charge": null,
   "headshot": 200.0,
   "armorPen": null,
-  "range": 26.0,
-  "stamina": 4.8
+  "range": 26.0
  },
  {
   "name": "Budget Arms Carnage",
@@ -172,8 +162,7 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": 50.0,
-  "range": 8.0,
-  "stamina": null
+  "range": 8.0
  },
  {
   "name": "Budget Arms Cut-o-Matic",
@@ -188,8 +177,7 @@
   "charge": 1.2,
   "headshot": null,
   "armorPen": 50.0,
-  "range": null,
-  "stamina": 9.6
+  "range": null
  },
  {
   "name": "Budget Arms Guillotine",
@@ -204,8 +192,7 @@
   "charge": null,
   "headshot": 100.0,
   "armorPen": null,
-  "range": 28.0,
-  "stamina": null
+  "range": 28.0
  },
  {
   "name": "Budget Arms Slaught-O-Matic",
@@ -220,8 +207,7 @@
   "charge": null,
   "headshot": 150.0,
   "armorPen": 25.0,
-  "range": 20.0,
-  "stamina": null
+  "range": 20.0
  },
  {
   "name": "Chef's Knife",
@@ -236,8 +222,7 @@
   "charge": null,
   "headshot": 150.0,
   "armorPen": null,
-  "range": 21.0,
-  "stamina": 4.8
+  "range": 21.0
  },
  {
   "name": "Claw",
@@ -252,8 +237,7 @@
   "charge": null,
   "headshot": 125.0,
   "armorPen": 25.0,
-  "range": 20.0,
-  "stamina": 9.6
+  "range": 20.0
  },
  {
   "name": "Constitutional Arms Liberty",
@@ -268,8 +252,7 @@
   "charge": null,
   "headshot": 150.0,
   "armorPen": null,
-  "range": 36.0,
-  "stamina": null
+  "range": 36.0
  },
  {
   "name": "Constitutional Arms M2038 Tactician",
@@ -284,8 +267,7 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": 25.0,
-  "range": 12.0,
-  "stamina": null
+  "range": 12.0
  },
  {
   "name": "Constitutional Arms M2067 Defender",
@@ -300,8 +282,7 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": 25.0,
-  "range": 30.0,
-  "stamina": null
+  "range": 30.0
  },
  {
   "name": "Constitutional Arms Unity",
@@ -316,8 +297,7 @@
   "charge": null,
   "headshot": 150.0,
   "armorPen": null,
-  "range": 36.0,
-  "stamina": null
+  "range": 36.0
  },
  {
   "name": "Crowbar",
@@ -332,8 +312,7 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null,
-  "stamina": 9.6
+  "range": null
  },
  {
   "name": "Darra Polytechnic DA8 Umbra",
@@ -348,8 +327,7 @@
   "charge": null,
   "headshot": 100.0,
   "armorPen": 25.0,
-  "range": 30.0,
-  "stamina": null
+  "range": 30.0
  },
  {
   "name": "Darra Polytechnic DR-12 Quasar",
@@ -364,8 +342,7 @@
   "charge": 0.75,
   "headshot": 175.0,
   "armorPen": 50.0,
-  "range": 36.0,
-  "stamina": null
+  "range": 36.0
  },
  {
   "name": "Darra Polytechnic DR-5 Nova",
@@ -380,8 +357,7 @@
   "charge": null,
   "headshot": 200.0,
   "armorPen": 25.0,
-  "range": 42.0,
-  "stamina": null
+  "range": 42.0
  },
  {
   "name": "Darra Polytechnic DS1 Pulsar",
@@ -396,8 +372,7 @@
   "charge": null,
   "headshot": 100.0,
   "armorPen": null,
-  "range": 21.0,
-  "stamina": null
+  "range": 21.0
  },
  {
   "name": "Electric Baton Alpha",
@@ -412,8 +387,7 @@
   "charge": 0.5,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null,
-  "stamina": 8.0
+  "range": null
  },
  {
   "name": "Electric Baton Beta",
@@ -428,8 +402,7 @@
   "charge": 0.75,
   "headshot": null,
   "armorPen": 50.0,
-  "range": null,
-  "stamina": 8.0
+  "range": null
  },
  {
   "name": "Electric Baton Gamma",
@@ -444,8 +417,7 @@
   "charge": 1.0,
   "headshot": null,
   "armorPen": 50.0,
-  "range": null,
-  "stamina": 8.0
+  "range": null
  },
  {
   "name": "HA-4 Grit",
@@ -460,8 +432,7 @@
   "charge": 0.75,
   "headshot": 125.0,
   "armorPen": 50.0,
-  "range": 30.0,
-  "stamina": null
+  "range": 30.0
  },
  {
   "name": "HA-7 Warden",
@@ -476,8 +447,7 @@
   "charge": null,
   "headshot": 50.0,
   "armorPen": null,
-  "range": 24.0,
-  "stamina": null
+  "range": 24.0
  },
  {
   "name": "Hammer",
@@ -492,8 +462,7 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null,
-  "stamina": 16.0
+  "range": null
  },
  {
   "name": "Kaiken",
@@ -508,8 +477,7 @@
   "charge": null,
   "headshot": 150.0,
   "armorPen": null,
-  "range": 26.0,
-  "stamina": 4.8
+  "range": 26.0
  },
  {
   "name": "Kanabo",
@@ -524,8 +492,7 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null,
-  "stamina": 12.0
+  "range": null
  },
  {
   "name": "Kang Tao A-22B Chao",
@@ -540,8 +507,7 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": null,
-  "range": 36.0,
-  "stamina": null
+  "range": 36.0
  },
  {
   "name": "Kang Tao G-58 Dian",
@@ -556,8 +522,7 @@
   "charge": null,
   "headshot": 50.0,
   "armorPen": null,
-  "range": 30.0,
-  "stamina": null
+  "range": 30.0
  },
  {
   "name": "Kang Tao L-69 Zhuo",
@@ -572,8 +537,7 @@
   "charge": null,
   "headshot": 35.0,
   "armorPen": 25.0,
-  "range": 24.0,
-  "stamina": null
+  "range": 24.0
  },
  {
   "name": "Katana",
@@ -588,8 +552,7 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null,
-  "stamina": 6.4
+  "range": null
  },
  {
   "name": "Knife",
@@ -604,8 +567,7 @@
   "charge": null,
   "headshot": 200.0,
   "armorPen": null,
-  "range": 26.0,
-  "stamina": 4.8
+  "range": 26.0
  },
  {
   "name": "Kukri",
@@ -620,8 +582,7 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null,
-  "stamina": 9.6
+  "range": null
  },
  {
   "name": "Machete",
@@ -636,8 +597,7 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null,
-  "stamina": 9.6
+  "range": null
  },
  {
   "name": "Malorian Overture",
@@ -652,8 +612,7 @@
   "charge": null,
   "headshot": 200.0,
   "armorPen": 25.0,
-  "range": 42.0,
-  "stamina": null
+  "range": 42.0
  },
  {
   "name": "Midnight Arms MA70 HB",
@@ -668,8 +627,7 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": 25.0,
-  "range": 30.0,
-  "stamina": null
+  "range": 30.0
  },
  {
   "name": "Midnight Arms SOR-22",
@@ -684,8 +642,7 @@
   "charge": null,
   "headshot": 150.0,
   "armorPen": 25.0,
-  "range": 60.0,
-  "stamina": null
+  "range": 60.0
  },
  {
   "name": "Militech Crusher",
@@ -700,8 +657,7 @@
   "charge": null,
   "headshot": 135.0,
   "armorPen": null,
-  "range": 12.0,
-  "stamina": null
+  "range": 12.0
  },
  {
   "name": "Militech M-10AF Lexington",
@@ -716,8 +672,7 @@
   "charge": null,
   "headshot": 125.0,
   "armorPen": null,
-  "range": 30.0,
-  "stamina": null
+  "range": 30.0
  },
  {
   "name": "Militech M-179 Achilles",
@@ -732,8 +687,7 @@
   "charge": 1.0,
   "headshot": 150.0,
   "armorPen": 50.0,
-  "range": 73.0,
-  "stamina": null
+  "range": 73.0
  },
  {
   "name": "Militech M-76e Omaha",
@@ -748,8 +702,7 @@
   "charge": 0.75,
   "headshot": 170.0,
   "armorPen": 50.0,
-  "range": 30.0,
-  "stamina": null
+  "range": 30.0
  },
  {
   "name": "Militech M221 Saratoga",
@@ -764,8 +717,7 @@
   "charge": null,
   "headshot": 100.0,
   "armorPen": null,
-  "range": 24.0,
-  "stamina": null
+  "range": 24.0
  },
  {
   "name": "Militech M251s Ajax",
@@ -780,8 +732,7 @@
   "charge": null,
   "headshot": 100.0,
   "armorPen": 25.0,
-  "range": 42.0,
-  "stamina": null
+  "range": 42.0
  },
  {
   "name": "Militech Mk. 31 HMG",
@@ -796,8 +747,7 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": 60.0,
-  "stamina": null
+  "range": 60.0
  },
  {
   "name": "Militech Ticon",
@@ -812,8 +762,7 @@
   "charge": 0.75,
   "headshot": 170.0,
   "armorPen": 50.0,
-  "range": 42.0,
-  "stamina": null
+  "range": 42.0
  },
  {
   "name": "Neurotoxin Knife",
@@ -828,8 +777,7 @@
   "charge": null,
   "headshot": 150.0,
   "armorPen": null,
-  "range": 26.0,
-  "stamina": 4.8
+  "range": 26.0
  },
  {
   "name": "Nokota D5 Copperhead",
@@ -844,8 +792,7 @@
   "charge": null,
   "headshot": 100.0,
   "armorPen": 25.0,
-  "range": 42.0,
-  "stamina": null
+  "range": 42.0
  },
  {
   "name": "Nokota D5 Sidewinder",
@@ -860,8 +807,7 @@
   "charge": null,
   "headshot": 50.0,
   "armorPen": null,
-  "range": 36.0,
-  "stamina": null
+  "range": 36.0
  },
  {
   "name": "Punknife",
@@ -876,8 +822,7 @@
   "charge": null,
   "headshot": 150.0,
   "armorPen": null,
-  "range": 26.0,
-  "stamina": 4.8
+  "range": 26.0
  },
  {
   "name": "Rostović DB-2 Satara",
@@ -892,8 +837,7 @@
   "charge": 1.0,
   "headshot": 85.0,
   "armorPen": 50.0,
-  "range": 18.0,
-  "stamina": null
+  "range": 18.0
  },
  {
   "name": "Rostović DB-2 Testera",
@@ -908,8 +852,7 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": 50.0,
-  "range": 18.0,
-  "stamina": null
+  "range": 18.0
  },
  {
   "name": "Rostović DB-4 Igla",
@@ -924,8 +867,7 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": 25.0,
-  "range": 18.0,
-  "stamina": null
+  "range": 18.0
  },
  {
   "name": "Rostović DB-4 Palica",
@@ -940,8 +882,7 @@
   "charge": null,
   "headshot": 35.0,
   "armorPen": null,
-  "range": 12.0,
-  "stamina": null
+  "range": 12.0
  },
  {
   "name": "Rostović Kolac",
@@ -956,8 +897,7 @@
   "charge": null,
   "headshot": 220.0,
   "armorPen": 50.0,
-  "range": 60.0,
-  "stamina": null
+  "range": 60.0
  },
  {
   "name": "Skippy",
@@ -972,8 +912,7 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": null,
-  "range": 30.0,
-  "stamina": null
+  "range": 30.0
  },
  {
   "name": "Steel Pipe",
@@ -988,8 +927,7 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null,
-  "stamina": 9.6
+  "range": null
  },
  {
   "name": "Techtronika Metel",
@@ -1004,8 +942,7 @@
   "charge": null,
   "headshot": 175.0,
   "armorPen": 50.0,
-  "range": 30.0,
-  "stamina": null
+  "range": 30.0
  },
  {
   "name": "Techtronika RT-46 Burya",
@@ -1020,8 +957,7 @@
   "charge": 0.25,
   "headshot": 175.0,
   "armorPen": 50.0,
-  "range": 47.0,
-  "stamina": null
+  "range": 47.0
  },
  {
   "name": "Techtronika Razor",
@@ -1036,8 +972,7 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null,
-  "stamina": 9.6
+  "range": null
  },
  {
   "name": "Techtronika SPT32 Grad",
@@ -1052,8 +987,7 @@
   "charge": null,
   "headshot": 300.0,
   "armorPen": 50.0,
-  "range": 90.0,
-  "stamina": null
+  "range": 90.0
  },
  {
   "name": "Techtronika VST-37 Pozhar",
@@ -1068,8 +1002,7 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": 25.0,
-  "range": 14.0,
-  "stamina": null
+  "range": 14.0
  },
  {
   "name": "Tire Iron",
@@ -1084,8 +1017,7 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null,
-  "stamina": 9.6
+  "range": null
  },
  {
   "name": "Tomahawk",
@@ -1100,8 +1032,7 @@
   "charge": null,
   "headshot": 125.0,
   "armorPen": 25.0,
-  "range": 20.0,
-  "stamina": 8.0
+  "range": 20.0
  },
  {
   "name": "Tsunami Ashura",
@@ -1116,8 +1047,7 @@
   "charge": null,
   "headshot": 150.0,
   "armorPen": 25.0,
-  "range": 59.0,
-  "stamina": null
+  "range": 59.0
  },
  {
   "name": "Tsunami Kappa",
@@ -1132,8 +1062,7 @@
   "charge": null,
   "headshot": 105.0,
   "armorPen": null,
-  "range": 24.0,
-  "stamina": null
+  "range": 24.0
  },
  {
   "name": "Tsunami Kyubi",
@@ -1148,8 +1077,7 @@
   "charge": null,
   "headshot": 125.0,
   "armorPen": 25.0,
-  "range": 56.0,
-  "stamina": null
+  "range": 56.0
  },
  {
   "name": "Tsunami Nekomata",
@@ -1164,8 +1092,7 @@
   "charge": 1.25,
   "headshot": 300.0,
   "armorPen": 50.0,
-  "range": 90.0,
-  "stamina": null
+  "range": 90.0
  },
  {
   "name": "Tsunami Nue",
@@ -1180,7 +1107,6 @@
   "charge": null,
   "headshot": 125.0,
   "armorPen": 25.0,
-  "range": 42.0,
-  "stamina": null
+  "range": 42.0
  }
 ]

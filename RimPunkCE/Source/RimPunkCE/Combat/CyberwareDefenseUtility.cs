@@ -48,14 +48,17 @@ namespace RimPunkCE
                 pen /= 1f + rearArmor;
             }
 
-            // Painducer: hold back part of the damage and apply it as small hits over 50 s
-            if (delayed > 0f && tracker != null && dinfo.Amount > 0.5f)
+            // Painducer: hold back part of the damage and apply it as small hits over the next 8 s
+            if (delayed > 0f && tracker != null && dinfo.Amount > 0.5f && !pawn.Downed) // a downed pawn takes it all: held-back damage is dropped when down
             {
                 float held = dinfo.Amount * Mathf.Min(0.9f, delayed);
                 dinfo.SetAmount(dinfo.Amount - held);
-                tracker.AddDelayed(held, CyberUtility.SecondsToTicks(50f));
+                tracker.AddDelayed(held, CyberUtility.SecondsToTicks(DelayedDamageSeconds));
             }
         }
+
+        /// <summary>Painducer window. Each hit restarts it, so it must stay short or a long fight drags on for minutes.</summary>
+        public const float DelayedDamageSeconds = 8f;
 
         private static bool FromSideOrRear(Pawn pawn, Thing attacker)
         {

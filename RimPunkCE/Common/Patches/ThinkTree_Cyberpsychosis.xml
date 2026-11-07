@@ -4,6 +4,8 @@
   per state in MentalStateCritical), so without this a cyberpsycho just did normal work, or walked off the map if
   factionless. A cyberpsycho fights anyone in range with whatever it has (guns or melee: everyone counts as hostile,
   MentalState_Cyberpsychosis.ForceHostileTo), falls back to vanilla berserk melee, otherwise wanders.
+  JobGiver_CyberpsychoRecoverGear first: back up after being downed, it grabs the weapon and ammo it dropped.
+  JobGiver_CyberpsychoFight instead of vanilla JobGiver_AIFightEnemies: vanilla skips colonists not set to Attack.
 -->
 <Patch>
   <Operation Class="PatchOperationAdd">
@@ -15,7 +17,8 @@
         <subNodes>
           <li Class="ThinkNode_Priority">
             <subNodes>
-              <li Class="JobGiver_AIFightEnemies">
+              <li Class="RimPunkCE.JobGiver_CyberpsychoRecoverGear" />
+              <li Class="RimPunkCE.JobGiver_CyberpsychoFight">
                 <targetAcquireRadius>65</targetAcquireRadius>
                 <targetKeepRadius>72</targetKeepRadius>
               </li>
@@ -24,6 +27,34 @@
                 <maxDanger>Deadly</maxDanger>
               </li>
             </subNodes>
+          </li>
+        </subNodes>
+      </li>
+      <!-- the Cyberpsychosis quickhack: same fight AI, ends with the hack -->
+      <li Class="ThinkNode_ConditionalMentalState">
+        <state>RPC_HackedCyberpsychosis</state>
+        <subNodes>
+          <li Class="ThinkNode_Priority">
+            <subNodes>
+              <li Class="RimPunkCE.JobGiver_CyberpsychoFight">
+                <targetAcquireRadius>65</targetAcquireRadius>
+                <targetKeepRadius>72</targetKeepRadius>
+              </li>
+              <li Class="JobGiver_Berserk" />
+              <li Class="JobGiver_WanderAnywhere">
+                <maxDanger>Deadly</maxDanger>
+              </li>
+            </subNodes>
+          </li>
+        </subNodes>
+      </li>
+      <!-- the Memory Wipe quickhack: forgets the fight and wanders (vanilla only wanders for its own wander states) -->
+      <li Class="ThinkNode_ConditionalMentalState">
+        <state>RPC_MemoryWiped</state>
+        <subNodes>
+          <li Class="JobGiver_WanderAnywhere">
+            <maxDanger>Deadly</maxDanger>
+            <ticksBetweenWandersRange>60~180</ticksBetweenWandersRange>
           </li>
         </subNodes>
       </li>

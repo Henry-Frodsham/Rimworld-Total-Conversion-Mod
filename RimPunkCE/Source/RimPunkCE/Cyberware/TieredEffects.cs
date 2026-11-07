@@ -82,16 +82,18 @@ namespace RimPunkCE
     /// <summary>Caches one built stage per (tier, multiplier) so CurStage never allocates during play.</summary>
     public class TieredStageCache
     {
-        private readonly HediffStage[] normal = new HediffStage[TierUtility.Count];
-        private readonly HediffStage[] doubled = new HediffStage[TierUtility.Count];
+        private const int Qualities = 7;
+        private readonly HediffStage[] normal = new HediffStage[TierUtility.Count * Qualities];
+        private readonly HediffStage[] doubled = new HediffStage[TierUtility.Count * Qualities];
 
-        public HediffStage Get(TieredEffects effects, CyberTier tier, CyberTier minTier, CyberTier maxTier, bool isDoubled, HediffStage template)
+        /// <summary>quality scales the effects (Quality Bionics compat, see <see cref="QualityBionicsCompat"/>); Normal = unchanged.</summary>
+        public HediffStage Get(TieredEffects effects, CyberTier tier, CyberTier minTier, CyberTier maxTier, bool isDoubled, HediffStage template, QualityCategory quality = QualityCategory.Normal)
         {
             var arr = isDoubled ? doubled : normal;
-            int i = (int)tier;
+            int i = (int)tier * Qualities + (int)quality;
             return arr[i] ??= effects == null
                 ? template ?? new HediffStage()
-                : effects.BuildStage(tier, minTier, maxTier, isDoubled ? 2f : 1f, template);
+                : effects.BuildStage(tier, minTier, maxTier, (isDoubled ? 2f : 1f) * QualityBionicsCompat.Multiplier(quality), template);
         }
 
         public void Clear()

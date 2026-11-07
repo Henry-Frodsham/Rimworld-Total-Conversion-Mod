@@ -685,53 +685,13 @@
   </ThingDef>
 
   <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Advhelm_Arasaka</defName>
-    <label>Arasaka red combat helmet</label>
-    <description>A modern combat helmet. Worn by Arasaka in their colours.</description>
-    <techLevel>Industrial</techLevel>
-    <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/AdvancedHelmet/AdvancedHelmet</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <color>(200,24,30)</color>
-    </graphicData>
-    <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
-    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
-    <statBases>
-      <MaxHitPoints>150</MaxHitPoints>
-      <MarketValue>320</MarketValue>
-      <Mass>1.6</Mass>
-      <Bulk>4</Bulk>
-      <WornBulk>1</WornBulk>
-      <ArmorRating_Sharp>8</ArmorRating_Sharp>
-      <ArmorRating_Blunt>12</ArmorRating_Blunt>
-      <Insulation_Cold>2</Insulation_Cold>
-      <Flammability>0.2</Flammability>
-      <EquipDelay>2</EquipDelay>
-    </statBases>
-    <costList>
-      <Plasteel>20</Plasteel>
-      <ComponentIndustrial>1</ComponentIndustrial>
-    </costList>
-    <generateCommonality>1</generateCommonality>
-    <apparel>
-      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/AdvancedHelmet/AdvancedHelmet</wornGraphicPath>
-      <layers><li>Overhead</li></layers>
-      <tags><li>RPC_FactionApparel</li></tags>
-      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
-      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
-    </apparel>
-  </ThingDef>
-
-  <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Bodysuit_Black</defName>
-    <label>Arasaka black bodysuit</label>
-    <description>A thin, close-fitting synthweave suit. Worn by Arasaka in their colours.</description>
+    <defName>RPC_Apparel_Arasaka_ArasakaBodysuit</defName>
+    <label>Arasaka bodysuit</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
+      <texPath>Things/RimPunk/Apparel/ArasakaBodysuit/ArasakaBodysuit</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -753,7 +713,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Shoulders</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</wornGraphicPath>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaBodysuit/ArasakaBodysuit</wornGraphicPath>
       <layers><li>OnSkin</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -762,128 +722,13 @@
   </ThingDef>
 
   <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Collar_Black</defName>
-    <label>Arasaka black shirt</label>
-    <description>Clothing. Worn by Arasaka in their colours.</description>
+    <defName>RPC_Apparel_Arasaka_ArasakaCarrier</defName>
+    <label>Arasaka plate carrier</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
+      <texPath>Things/RimPunk/Apparel/ArasakaPlateCarrier/ArasakaPlateCarrier</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
-    </graphicData>
-    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
-    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
-    <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <MarketValue>60</MarketValue>
-      <Mass>0.4</Mass>
-      <Bulk>1</Bulk>
-      <WornBulk>0</WornBulk>
-      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
-      <Insulation_Cold>6</Insulation_Cold>
-      <Flammability>0.8</Flammability>
-      <EquipDelay>2</EquipDelay>
-    </statBases>
-    <costList>
-      <Cloth>35</Cloth>
-    </costList>
-    <generateCommonality>1</generateCommonality>
-    <apparel>
-      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</wornGraphicPath>
-      <layers><li>OnSkin</li></layers>
-      <tags><li>RPC_FactionApparel</li></tags>
-      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
-      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
-    </apparel>
-  </ThingDef>
-
-  <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Collar_White</defName>
-    <label>Arasaka white shirt</label>
-    <description>Clothing. Worn by Arasaka in their colours.</description>
-    <techLevel>Industrial</techLevel>
-    <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
-    </graphicData>
-    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
-    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
-    <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <MarketValue>60</MarketValue>
-      <Mass>0.4</Mass>
-      <Bulk>1</Bulk>
-      <WornBulk>0</WornBulk>
-      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
-      <Insulation_Cold>6</Insulation_Cold>
-      <Flammability>0.8</Flammability>
-      <EquipDelay>2</EquipDelay>
-    </statBases>
-    <costList>
-      <Cloth>35</Cloth>
-    </costList>
-    <generateCommonality>1</generateCommonality>
-    <apparel>
-      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</wornGraphicPath>
-      <layers><li>OnSkin</li></layers>
-      <tags><li>RPC_FactionApparel</li></tags>
-      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
-      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
-    </apparel>
-  </ThingDef>
-
-  <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Duster_Black</defName>
-    <label>Arasaka black long coat</label>
-    <description>Clothing. Worn by Arasaka in their colours.</description>
-    <techLevel>Industrial</techLevel>
-    <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
-    </graphicData>
-    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
-    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
-    <statBases>
-      <MaxHitPoints>200</MaxHitPoints>
-      <MarketValue>220</MarketValue>
-      <Mass>2.2</Mass>
-      <Bulk>7.5</Bulk>
-      <WornBulk>2</WornBulk>
-      <ArmorRating_Sharp>2</ArmorRating_Sharp>
-      <ArmorRating_Blunt>3.5</ArmorRating_Blunt>
-      <Insulation_Cold>22</Insulation_Cold>
-      <Flammability>0.8</Flammability>
-      <EquipDelay>2</EquipDelay>
-    </statBases>
-    <costList>
-      <Leather_Plain>80</Leather_Plain>
-    </costList>
-    <generateCommonality>1</generateCommonality>
-    <apparel>
-      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</wornGraphicPath>
-      <layers><li>Shell</li></layers>
-      <tags><li>RPC_FactionApparel</li></tags>
-      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
-      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
-    </apparel>
-  </ThingDef>
-
-  <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Flakvest_Black</defName>
-    <label>Arasaka black armor vest</label>
-    <description>A plate carrier. Worn by Arasaka in their colours.</description>
-    <techLevel>Industrial</techLevel>
-    <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -906,7 +751,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Neck</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</wornGraphicPath>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaPlateCarrier/ArasakaPlateCarrier</wornGraphicPath>
       <layers><li>Middle</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -915,52 +760,50 @@
   </ThingDef>
 
   <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Jacket_Black</defName>
-    <label>Arasaka black jacket</label>
-    <description>Clothing. Worn by Arasaka in their colours.</description>
+    <defName>RPC_Apparel_Arasaka_ArasakaDuster</defName>
+    <label>Arasaka long coat</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
+      <texPath>Things/RimPunk/Apparel/ArasakaDuster/ArasakaDuster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
     <statBases>
-      <MaxHitPoints>160</MaxHitPoints>
-      <MarketValue>160</MarketValue>
-      <Mass>1.6</Mass>
-      <Bulk>5</Bulk>
-      <WornBulk>1</WornBulk>
-      <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
-      <ArmorRating_Blunt>3</ArmorRating_Blunt>
-      <Insulation_Cold>18</Insulation_Cold>
+      <MaxHitPoints>200</MaxHitPoints>
+      <MarketValue>220</MarketValue>
+      <Mass>2.2</Mass>
+      <Bulk>7.5</Bulk>
+      <WornBulk>2</WornBulk>
+      <ArmorRating_Sharp>2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>3.5</ArmorRating_Blunt>
+      <Insulation_Cold>22</Insulation_Cold>
       <Flammability>0.8</Flammability>
       <EquipDelay>2</EquipDelay>
     </statBases>
     <costList>
-      <Leather_Plain>60</Leather_Plain>
+      <Leather_Plain>80</Leather_Plain>
     </costList>
     <generateCommonality>1</generateCommonality>
     <apparel>
-      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</wornGraphicPath>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaDuster/ArasakaDuster</wornGraphicPath>
       <layers><li>Shell</li></layers>
-      <tags><li>RPC_Outfit_Arasaka_Sniper</li></tags>
+      <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
       <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
     </apparel>
   </ThingDef>
 
   <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Marine_Black</defName>
-    <label>Arasaka black heavy armor</label>
-    <description>Heavy powered armour for the front line. Worn by Arasaka in their colours.</description>
+    <defName>RPC_Apparel_Arasaka_ArasakaHeavy</defName>
+    <label>Arasaka heavy armor</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
+      <texPath>Things/RimPunk/Apparel/ArasakaHeavyArmor/ArasakaHeavyArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -989,7 +832,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</wornGraphicPath>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaHeavyArmor/ArasakaHeavyArmor</wornGraphicPath>
       <layers><li>Middle</li><li>Shell</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -998,14 +841,13 @@
   </ThingDef>
 
   <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Marinehelm_Arasaka</defName>
-    <label>Arasaka red heavy helmet</label>
-    <description>A sealed heavy helmet. Worn by Arasaka in their colours.</description>
+    <defName>RPC_Apparel_Arasaka_ArasakaHeavyhelm</defName>
+    <label>Arasaka heavy helmet</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</texPath>
+      <texPath>Things/RimPunk/Apparel/ArasakaHeavyHelmet/ArasakaHeavyHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1029,7 +871,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>FullHead</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</wornGraphicPath>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaHeavyHelmet/ArasakaHeavyHelmet</wornGraphicPath>
       <layers><li>Overhead</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -1038,14 +880,88 @@
   </ThingDef>
 
   <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Netrig_Arasaka</defName>
-    <label>Arasaka red netrunner rig</label>
-    <description>A skull-mounted interface rig for jacking into the Net. Worn by Arasaka in their colours.</description>
+    <defName>RPC_Apparel_Arasaka_ArasakaHelmet</defName>
+    <label>Arasaka combat helmet</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/RimPunk/Apparel/ArasakaCombatHelmet/ArasakaCombatHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <MarketValue>320</MarketValue>
+      <Mass>1.6</Mass>
+      <Bulk>4</Bulk>
+      <WornBulk>1</WornBulk>
+      <ArmorRating_Sharp>8</ArmorRating_Sharp>
+      <ArmorRating_Blunt>12</ArmorRating_Blunt>
+      <Insulation_Cold>2</Insulation_Cold>
+      <Flammability>0.2</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Plasteel>20</Plasteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaCombatHelmet/ArasakaCombatHelmet</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_Arasaka_ArasakaJacket</defName>
+    <label>Arasaka jacket</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/RimPunk/Apparel/ArasakaJacket/ArasakaJacket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints>
+      <MarketValue>160</MarketValue>
+      <Mass>1.6</Mass>
+      <Bulk>5</Bulk>
+      <WornBulk>1</WornBulk>
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>3</ArmorRating_Blunt>
+      <Insulation_Cold>18</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Leather_Plain>60</Leather_Plain>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaJacket/ArasakaJacket</wornGraphicPath>
+      <layers><li>Shell</li></layers>
+      <tags><li>RPC_Outfit_Arasaka_Sniper</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_Arasaka_ArasakaNetrig</defName>
+    <label>Arasaka netrunner rig</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
+      <texPath>Things/RimPunk/Apparel/ArasakaNetRig/ArasakaNetRig</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1068,7 +984,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</wornGraphicPath>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaNetRig/ArasakaNetRig</wornGraphicPath>
       <layers><li>Overhead</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -1077,14 +993,13 @@
   </ThingDef>
 
   <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Pants_Black</defName>
-    <label>Arasaka black pants</label>
-    <description>Clothing. Worn by Arasaka in their colours.</description>
+    <defName>RPC_Apparel_Arasaka_ArasakaPants</defName>
+    <label>Arasaka pants</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
+      <texPath>Things/RimPunk/Apparel/ArasakaPants/ArasakaPants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1106,6 +1021,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Legs</li></bodyPartGroups>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaPants/ArasakaPants</wornGraphicPath>
       <layers><li>OnSkin</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -1114,14 +1030,13 @@
   </ThingDef>
 
   <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Recon_Black</defName>
-    <label>Arasaka black tactical armor</label>
-    <description>Full-body tactical armour. Worn by Arasaka in their colours.</description>
+    <defName>RPC_Apparel_Arasaka_ArasakaRecon</defName>
+    <label>Arasaka tactical armor</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/ReconArmor/ReconArmor</texPath>
+      <texPath>Things/RimPunk/Apparel/ArasakaReconArmor/ArasakaReconArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1146,7 +1061,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/ReconArmor/ReconArmor</wornGraphicPath>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaReconArmor/ArasakaReconArmor</wornGraphicPath>
       <layers><li>Middle</li><li>Shell</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -1155,14 +1070,13 @@
   </ThingDef>
 
   <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Reconhelm_Arasaka</defName>
-    <label>Arasaka red tactical helmet</label>
-    <description>A sealed tactical helmet. Worn by Arasaka in their colours.</description>
+    <defName>RPC_Apparel_Arasaka_ArasakaReconhelm</defName>
+    <label>Arasaka tactical helmet</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/ReconArmorHelmet/ReconHelmet</texPath>
+      <texPath>Things/RimPunk/Apparel/ArasakaReconHelmet/ArasakaReconHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1186,7 +1100,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>FullHead</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/ReconArmorHelmet/ReconHelmet</wornGraphicPath>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaReconHelmet/ArasakaReconHelmet</wornGraphicPath>
       <layers><li>Overhead</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -1195,14 +1109,87 @@
   </ThingDef>
 
   <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Vest_Black</defName>
-    <label>Arasaka black vest</label>
-    <description>Clothing. Worn by Arasaka in their colours.</description>
+    <defName>RPC_Apparel_Arasaka_ArasakaShirt</defName>
+    <label>Arasaka black shirt</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/RimPunk/Apparel/ArasakaShirt/ArasakaShirt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>60</MarketValue>
+      <Mass>0.4</Mass>
+      <Bulk>1</Bulk>
+      <WornBulk>0</WornBulk>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+      <Insulation_Cold>6</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Cloth>35</Cloth>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaShirt/ArasakaShirt</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_Arasaka_ArasakaShirtWhite</defName>
+    <label>Arasaka white shirt</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/RimPunk/Apparel/ArasakaShirtWhite/ArasakaShirtWhite</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>60</MarketValue>
+      <Mass>0.4</Mass>
+      <Bulk>1</Bulk>
+      <WornBulk>0</WornBulk>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+      <Insulation_Cold>6</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Cloth>35</Cloth>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaShirtWhite/ArasakaShirtWhite</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_Arasaka_ArasakaVest</defName>
+    <label>Arasaka light vest</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/EltexVest/EltexVest</texPath>
+      <texPath>Things/RimPunk/Apparel/ArasakaVestLight/ArasakaVestLight</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1224,7 +1211,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexVest/EltexVest</wornGraphicPath>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaVestLight/ArasakaVestLight</wornGraphicPath>
       <layers><li>Middle</li></layers>
       <tags><li>RPC_Outfit_Arasaka_Netrunner</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -1233,14 +1220,13 @@
   </ThingDef>
 
   <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_Arasaka_Visor_Arasaka</defName>
-    <label>Arasaka red visor</label>
-    <description>A HUD visor. Worn by Arasaka in their colours.</description>
+    <defName>RPC_Apparel_Arasaka_ArasakaVisor</defName>
+    <label>Arasaka visor</label>
+    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</texPath>
+      <texPath>Things/RimPunk/Apparel/ArasakaVisor/ArasakaVisor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1266,7 +1252,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</wornGraphicPath>
+      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaVisor/ArasakaVisor</wornGraphicPath>
       <layers><li>Overhead</li></layers>
       <tags><li>RPC_Outfit_Arasaka_Boss</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -2417,6 +2403,553 @@
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</wornGraphicPath>
       <layers><li>Overhead</li></layers>
       <tags><li>RPC_Outfit_Biotechnica_Boss</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Bodysuit_Charcoal</defName>
+    <label>Militech Receivables charcoal bodysuit</label>
+    <description>A thin, close-fitting synthweave suit. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(70,72,78)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <MarketValue>180</MarketValue>
+      <Mass>0.4</Mass>
+      <Bulk>1</Bulk>
+      <WornBulk>0</WornBulk>
+      <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
+      <Insulation_Cold>6</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Synthread>25</Synthread>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Collar_White</defName>
+    <label>Militech Receivables white shirt</label>
+    <description>Clothing. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(232,232,228)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>60</MarketValue>
+      <Mass>0.4</Mass>
+      <Bulk>1</Bulk>
+      <WornBulk>0</WornBulk>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+      <Insulation_Cold>6</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Cloth>35</Cloth>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Duster_Charcoal</defName>
+    <label>Militech Receivables charcoal long coat</label>
+    <description>Clothing. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(70,72,78)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <MarketValue>220</MarketValue>
+      <Mass>2.2</Mass>
+      <Bulk>7.5</Bulk>
+      <WornBulk>2</WornBulk>
+      <ArmorRating_Sharp>2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>3.5</ArmorRating_Blunt>
+      <Insulation_Cold>22</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Leather_Plain>80</Leather_Plain>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</wornGraphicPath>
+      <layers><li>Shell</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Faceplate_Chrome</defName>
+    <label>Militech Receivables chrome faceplate</label>
+    <description>A metal faceplate. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/WarMask/WarMask</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(190,196,205)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <MarketValue>120</MarketValue>
+      <Mass>1</Mass>
+      <Bulk>2</Bulk>
+      <WornBulk>0.5</WornBulk>
+      <ArmorRating_Sharp>3</ArmorRating_Sharp>
+      <ArmorRating_Blunt>6</ArmorRating_Blunt>
+      <Insulation_Cold>1</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Steel>25</Steel>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>FullHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/WarMask/WarMask</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Flakjacket_Charcoal</defName>
+    <label>Militech Receivables charcoal armored jacket</label>
+    <description>An armoured jacket. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/FlakJacket/FlakJacket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(70,72,78)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <MarketValue>360</MarketValue>
+      <Mass>4</Mass>
+      <Bulk>5</Bulk>
+      <WornBulk>2.5</WornBulk>
+      <ArmorRating_Sharp>4</ArmorRating_Sharp>
+      <ArmorRating_Blunt>7</ArmorRating_Blunt>
+      <Insulation_Cold>20</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+      <Cloth>40</Cloth>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/FlakJacket/FlakJacket</wornGraphicPath>
+      <layers><li>Shell</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Flakpants_Charcoal</defName>
+    <label>Militech Receivables charcoal armored pants</label>
+    <description>Armoured trousers. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/FlakPants/FlakPants</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(70,72,78)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints>
+      <MarketValue>280</MarketValue>
+      <Mass>2.5</Mass>
+      <Bulk>4</Bulk>
+      <WornBulk>2.5</WornBulk>
+      <ArmorRating_Sharp>4</ArmorRating_Sharp>
+      <ArmorRating_Blunt>7</ArmorRating_Blunt>
+      <Insulation_Cold>8</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Steel>30</Steel>
+      <Cloth>30</Cloth>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Legs</li></bodyPartGroups>
+      <layers><li>OnSkin</li><li>Middle</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Flakvest_Charcoal</defName>
+    <label>Militech Receivables charcoal armor vest</label>
+    <description>A plate carrier. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(70,72,78)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <MarketValue>420</MarketValue>
+      <Mass>8</Mass>
+      <Bulk>5</Bulk>
+      <WornBulk>3</WornBulk>
+      <ArmorRating_Sharp>8</ArmorRating_Sharp>
+      <ArmorRating_Blunt>18</ArmorRating_Blunt>
+      <Insulation_Cold>2</Insulation_Cold>
+      <Flammability>0.2</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</wornGraphicPath>
+      <layers><li>Middle</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Jacket_Charcoal</defName>
+    <label>Militech Receivables charcoal jacket</label>
+    <description>Clothing. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(70,72,78)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints>
+      <MarketValue>160</MarketValue>
+      <Mass>1.6</Mass>
+      <Bulk>5</Bulk>
+      <WornBulk>1</WornBulk>
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>3</ArmorRating_Blunt>
+      <Insulation_Cold>18</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Leather_Plain>60</Leather_Plain>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</wornGraphicPath>
+      <layers><li>Shell</li></layers>
+      <tags><li>RPC_Outfit_DebtCollectors_Grunt</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Marine_Charcoal</defName>
+    <label>Militech Receivables charcoal heavy armor</label>
+    <description>Heavy powered armour for the front line. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(70,72,78)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <MarketValue>2600</MarketValue>
+      <Mass>50</Mass>
+      <Bulk>100</Bulk>
+      <WornBulk>15</WornBulk>
+      <ArmorRating_Sharp>20</ArmorRating_Sharp>
+      <ArmorRating_Blunt>45</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.4</ArmorRating_Heat>
+      <Insulation_Cold>24</Insulation_Cold>
+      <Flammability>0.2</Flammability>
+      <EquipDelay>8</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <CarryWeight>80</CarryWeight>
+      <CarryBulk>10</CarryBulk>
+    </equippedStatOffsets>
+    <costList>
+      <Plasteel>110</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+      <Uranium>10</Uranium>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</wornGraphicPath>
+      <layers><li>Middle</li><li>Shell</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Marinehelm_Red</defName>
+    <label>Militech Receivables red heavy helmet</label>
+    <description>A sealed heavy helmet. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(190,30,36)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>240</MaxHitPoints>
+      <MarketValue>900</MarketValue>
+      <Mass>4.8</Mass>
+      <Bulk>5</Bulk>
+      <WornBulk>1</WornBulk>
+      <ArmorRating_Sharp>16</ArmorRating_Sharp>
+      <ArmorRating_Blunt>36</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.4</ArmorRating_Heat>
+      <Insulation_Cold>4</Insulation_Cold>
+      <Flammability>0.2</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Plasteel>40</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>FullHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Netrig_Red</defName>
+    <label>Militech Receivables red netrunner rig</label>
+    <description>A skull-mounted interface rig for jacking into the Net. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(190,30,36)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <MarketValue>300</MarketValue>
+      <Mass>0.4</Mass>
+      <Bulk>1</Bulk>
+      <WornBulk>0</WornBulk>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1</ArmorRating_Blunt>
+      <Insulation_Cold>2</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Synthread>10</Synthread>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Pants_Charcoal</defName>
+    <label>Militech Receivables charcoal pants</label>
+    <description>Clothing. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(70,72,78)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>50</MarketValue>
+      <Mass>0.4</Mass>
+      <Bulk>1</Bulk>
+      <WornBulk>0</WornBulk>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+      <Insulation_Cold>6</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Cloth>30</Cloth>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Legs</li></bodyPartGroups>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Vest_Charcoal</defName>
+    <label>Militech Receivables charcoal vest</label>
+    <description>Clothing. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/EltexVest/EltexVest</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(70,72,78)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <MarketValue>140</MarketValue>
+      <Mass>0.6</Mass>
+      <Bulk>2</Bulk>
+      <WornBulk>0.5</WornBulk>
+      <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
+      <Insulation_Cold>6</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Cloth>40</Cloth>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexVest/EltexVest</wornGraphicPath>
+      <layers><li>Middle</li></layers>
+      <tags><li>RPC_Outfit_DebtCollectors_Netrunner</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_DebtCollectors_Visor_Red</defName>
+    <label>Militech Receivables red visor</label>
+    <description>A HUD visor. Worn by Militech Receivables in their colours.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(190,30,36)</color>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <MarketValue>260</MarketValue>
+      <Mass>0.3</Mass>
+      <Bulk>1</Bulk>
+      <WornBulk>0</WornBulk>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1</ArmorRating_Blunt>
+      <Insulation_Cold>0</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <AimingAccuracy>0.05</AimingAccuracy>
+    </equippedStatOffsets>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</wornGraphicPath>
+      <layers><li>Overhead</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
       <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
     </apparel>
@@ -7817,121 +8350,6 @@
   </ThingDef>
 
   <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_TraumaTeam_Bodysuit_White</defName>
-    <label>Trauma Team International white bodysuit</label>
-    <description>Trauma Team International issue: armoured, sealed, and white so you know who just saved your life.</description>
-    <techLevel>Spacer</techLevel>
-    <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
-    </graphicData>
-    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
-    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
-    <statBases>
-      <MaxHitPoints>120</MaxHitPoints>
-      <MarketValue>180</MarketValue>
-      <Mass>0.4</Mass>
-      <Bulk>1</Bulk>
-      <WornBulk>0</WornBulk>
-      <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
-      <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
-      <Insulation_Cold>6</Insulation_Cold>
-      <Flammability>0.8</Flammability>
-      <EquipDelay>2</EquipDelay>
-    </statBases>
-    <costList>
-      <Synthread>25</Synthread>
-    </costList>
-    <generateCommonality>1</generateCommonality>
-    <apparel>
-      <bodyPartGroups><li>Torso</li><li>Shoulders</li></bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</wornGraphicPath>
-      <layers><li>OnSkin</li></layers>
-      <tags><li>RPC_FactionApparel</li></tags>
-      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
-      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
-    </apparel>
-  </ThingDef>
-
-  <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_TraumaTeam_Pants_White</defName>
-    <label>Trauma Team International white pants</label>
-    <description>Trauma Team International issue: armoured, sealed, and white so you know who just saved your life.</description>
-    <techLevel>Industrial</techLevel>
-    <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
-    </graphicData>
-    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
-    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
-    <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <MarketValue>50</MarketValue>
-      <Mass>0.4</Mass>
-      <Bulk>1</Bulk>
-      <WornBulk>0</WornBulk>
-      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
-      <Insulation_Cold>6</Insulation_Cold>
-      <Flammability>0.8</Flammability>
-      <EquipDelay>2</EquipDelay>
-    </statBases>
-    <costList>
-      <Cloth>30</Cloth>
-    </costList>
-    <generateCommonality>1</generateCommonality>
-    <apparel>
-      <bodyPartGroups><li>Legs</li></bodyPartGroups>
-      <layers><li>OnSkin</li></layers>
-      <tags><li>RPC_FactionApparel</li></tags>
-      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
-      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
-    </apparel>
-  </ThingDef>
-
-  <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_TraumaTeam_TraumaArmor</defName>
-    <label>Trauma Team armor</label>
-    <description>Trauma Team International issue: armoured, sealed, and white so you know who just saved your life.</description>
-    <techLevel>Spacer</techLevel>
-    <graphicData>
-      <texPath>Things/RimPunk/Apparel/TraumaArmor/TraumaArmor</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
-    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
-    <statBases>
-      <MaxHitPoints>450</MaxHitPoints>
-      <MarketValue>3000</MarketValue>
-      <Mass>28</Mass>
-      <Bulk>80</Bulk>
-      <WornBulk>12</WornBulk>
-      <ArmorRating_Sharp>18</ArmorRating_Sharp>
-      <ArmorRating_Blunt>40</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.4</ArmorRating_Heat>
-      <Insulation_Cold>22</Insulation_Cold>
-      <Flammability>0.2</Flammability>
-      <EquipDelay>8</EquipDelay>
-    </statBases>
-    <costList>
-      <Plasteel>90</Plasteel>
-      <ComponentSpacer>4</ComponentSpacer>
-      <MedicineIndustrial>4</MedicineIndustrial>
-    </costList>
-    <generateCommonality>1</generateCommonality>
-    <apparel>
-      <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/TraumaArmor/TraumaArmor</wornGraphicPath>
-      <layers><li>Middle</li><li>Shell</li></layers>
-      <tags><li>RPC_FactionApparel</li></tags>
-      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
-      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
-    </apparel>
-  </ThingDef>
-
-  <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TraumaTeam_TraumaHelmet</defName>
     <label>Trauma Team helmet</label>
     <description>Trauma Team International issue: armoured, sealed, and white so you know who just saved your life.</description>
@@ -7971,39 +8389,112 @@
   </ThingDef>
 
   <ThingDef ParentName="ApparelBase">
-    <defName>RPC_Apparel_TraumaTeam_TraumaLead</defName>
-    <label>Trauma Team lead helmet</label>
+    <defName>RPC_Apparel_TraumaTeam_TraumaPants</defName>
+    <label>Trauma Team pants</label>
+    <description>Trauma Team International issue: armoured, sealed, and white so you know who just saved your life.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/RimPunk/Apparel/TraumaPants/TraumaPants</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>80</MarketValue>
+      <Mass>0.4</Mass>
+      <Bulk>1</Bulk>
+      <WornBulk>0</WornBulk>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1</ArmorRating_Blunt>
+      <Insulation_Cold>6</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Synthread>25</Synthread>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Legs</li></bodyPartGroups>
+      <wornGraphicPath>Things/RimPunk/Apparel/TraumaPants/TraumaPants</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_TraumaTeam_TraumaShirt</defName>
+    <label>Trauma Team shirt</label>
+    <description>Trauma Team International issue: armoured, sealed, and white so you know who just saved your life.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/RimPunk/Apparel/TraumaShirt/TraumaShirt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
+    <tradeTags><li>RPC_FactionApparel</li></tradeTags>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>80</MarketValue>
+      <Mass>0.3</Mass>
+      <Bulk>1</Bulk>
+      <WornBulk>0</WornBulk>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1</ArmorRating_Blunt>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Flammability>0.8</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <costList>
+      <Synthread>20</Synthread>
+    </costList>
+    <generateCommonality>1</generateCommonality>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li></bodyPartGroups>
+      <wornGraphicPath>Things/RimPunk/Apparel/TraumaShirt/TraumaShirt</wornGraphicPath>
+      <layers><li>OnSkin</li></layers>
+      <tags><li>RPC_FactionApparel</li></tags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>RPC_Apparel_TraumaTeam_TraumaVest</defName>
+    <label>Trauma Team combat vest</label>
     <description>Trauma Team International issue: armoured, sealed, and white so you know who just saved your life.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/TraumaLeadHelmet/TraumaLeadHelmet</texPath>
+      <texPath>Things/RimPunk/Apparel/TraumaVest/TraumaVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
+    <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
     <statBases>
       <MaxHitPoints>220</MaxHitPoints>
-      <MarketValue>1000</MarketValue>
-      <Mass>3</Mass>
-      <Bulk>4</Bulk>
-      <WornBulk>1</WornBulk>
-      <ArmorRating_Sharp>14</ArmorRating_Sharp>
-      <ArmorRating_Blunt>30</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.35</ArmorRating_Heat>
-      <Insulation_Cold>2</Insulation_Cold>
+      <MarketValue>1200</MarketValue>
+      <Mass>8</Mass>
+      <Bulk>6</Bulk>
+      <WornBulk>3</WornBulk>
+      <ArmorRating_Sharp>12</ArmorRating_Sharp>
+      <ArmorRating_Blunt>26</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.3</ArmorRating_Heat>
+      <Insulation_Cold>3</Insulation_Cold>
       <Flammability>0.2</Flammability>
       <EquipDelay>2</EquipDelay>
     </statBases>
     <costList>
-      <Plasteel>35</Plasteel>
+      <Plasteel>40</Plasteel>
       <ComponentSpacer>1</ComponentSpacer>
-      <Gold>3</Gold>
     </costList>
     <generateCommonality>1</generateCommonality>
     <apparel>
-      <bodyPartGroups><li>FullHead</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/TraumaLeadHelmet/TraumaLeadHelmet</wornGraphicPath>
-      <layers><li>Overhead</li></layers>
+      <bodyPartGroups><li>Torso</li><li>Neck</li></bodyPartGroups>
+      <wornGraphicPath>Things/RimPunk/Apparel/TraumaVest/TraumaVest</wornGraphicPath>
+      <layers><li>Middle</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
       <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>

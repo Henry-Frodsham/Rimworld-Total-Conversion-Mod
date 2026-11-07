@@ -47,9 +47,6 @@
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>12</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -120,9 +117,6 @@
         <minQualityForArtistic>Excellent</minQualityForArtistic>
       </li>
     </comps>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>4.8</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -172,9 +166,6 @@
         <armorPenetrationBlunt>0.85</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>9.6</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -245,9 +236,6 @@
         <minQualityForArtistic>Excellent</minQualityForArtistic>
       </li>
     </comps>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>4.8</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -310,9 +298,6 @@
         <minQualityForArtistic>Excellent</minQualityForArtistic>
       </li>
     </comps>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>9.6</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -360,9 +345,6 @@
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>9.6</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -414,9 +396,6 @@
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>8</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -468,9 +447,6 @@
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>8</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -522,9 +498,6 @@
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>8</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -572,9 +545,6 @@
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>16</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -645,9 +615,6 @@
         <minQualityForArtistic>Excellent</minQualityForArtistic>
       </li>
     </comps>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>4.8</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -695,9 +662,6 @@
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>12</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -754,9 +718,6 @@
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>6.4</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -827,9 +788,6 @@
         <minQualityForArtistic>Excellent</minQualityForArtistic>
       </li>
     </comps>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>4.8</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -886,9 +844,6 @@
         <armorPenetrationBlunt>0.4</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>9.6</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -945,9 +900,6 @@
         <armorPenetrationBlunt>0.4</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>9.6</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -1024,9 +976,6 @@
         <minQualityForArtistic>Excellent</minQualityForArtistic>
       </li>
     </comps>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>4.8</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -1097,9 +1046,6 @@
         <minQualityForArtistic>Excellent</minQualityForArtistic>
       </li>
     </comps>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>4.8</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -1147,9 +1093,6 @@
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>9.6</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -1206,9 +1149,6 @@
         <armorPenetrationBlunt>0.4</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>9.6</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -1256,9 +1196,6 @@
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
     </tools>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>9.6</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="RPC_MeleeBase">
@@ -1321,9 +1258,6 @@
         <minQualityForArtistic>Excellent</minQualityForArtistic>
       </li>
     </comps>
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>8</costPerAttack></li>
-    </modExtensions>
   </ThingDef>
 
 </Defs>

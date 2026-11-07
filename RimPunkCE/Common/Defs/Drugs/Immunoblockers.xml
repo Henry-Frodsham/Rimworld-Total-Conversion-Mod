@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Temporary cyberware capacity (Source/RimPunkCE/Psychosis/Immunoblockers.cs). Weak lasts long, strong burns fast.
+       Only the strongest active blocker counts; a second dose of the same one restarts its clock.
+       The only thing that raises a gonk's capacity. All recipes take wake-up's work (900).
+
+       drug                 capacity  lasts  batch (20 neutroamine)
+       basewatch               +20     14d    10
+       bethaloperidol          +50      7d     8
+       prime time              +90      4d     6
+       surge                  +140      2d     4
+       black lace             +200      1d     2
+       David's last stand    +1000      6h     1   (own research; permanent cyberpsychosis the moment it ends) -->
+
+  <!-- ================= research (second row of the cyberware tab) ================= -->
+
+  <ResearchProjectDef ParentName="RPC_CyberwareResearchBase">
+    <defName>RPC_Immunoblockers</defName>
+    <label>immunoblockers</label>
+    <description>Suppress the body's rejection of chrome. Synthesize immunoblockers at a drug lab: temporary cyberware capacity, stronger doses wearing off sooner.</description>
+    <baseCost>1000</baseCost>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <researchViewX>0</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="RPC_CyberwareResearchBase">
+    <defName>RPC_DavidsLastStand</defName>
+    <label>David's last stand</label>
+    <description>An immunoblocker pushed far past any safe dose. Six hours of carrying more chrome than a body should survive, then permanent cyberpsychosis.</description>
+    <baseCost>2000</baseCost>
+    <prerequisites>
+      <li>RPC_Immunoblockers</li>
+    </prerequisites>
+    <researchViewX>1</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- ================= bases ================= -->
+
+  <ThingDef Name="RPC_ImmunoblockerBase" ParentName="MakeableDrugPillBase" Abstract="True">
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <techLevel>Spacer</techLevel>
+    <statBases>
+      <Mass>0.005</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+    </ingestible>
+    <recipeMaker>
+      <!-- MakeableDrugBase adds a x4 bulk recipe; a batch here is exactly productCount -->
+      <bulkRecipeCount>-1</bulkRecipeCount>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+    </recipeMaker>
+    <costList>
+      <Neutroamine>20</Neutroamine>
+    </costList>
+  </ThingDef>
+
+  <HediffDef Name="RPC_ImmunoblockerHediffBase" Abstract="True">
+    <hediffClass>RimPunkCE.Hediff_Immunoblocker</hediffClass>
+    <defaultLabelColor>(0.4, 0.9, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <maxSeverity>1</maxSeverity>
+  </HediffDef>
+
+  <!-- ================= tier 1: basewatch ================= -->
+
+  <ThingDef ParentName="RPC_ImmunoblockerBase">
+    <defName>RPC_Immunoblocker_Basewatch</defName>
+    <label>basewatch</label>
+    <description>A low-dose maintenance immunoblocker. Adds 20 cyberware capacity for 14 days. Only the strongest active immunoblocker counts.</description>
+    <descriptionHyperlinks><HediffDef>RPC_ImmunoblockerHigh_Basewatch</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/RimPunk/Drugs/Basewatch</texPath>
+    </graphicData>
+    <statBases>
+      <WorkToMake>900</WorkToMake>
+      <MarketValue>18</MarketValue>
+    </statBases>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RPC_ImmunoblockerHigh_Basewatch</hediffDef>
+          <severity>1</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>RPC_Immunoblockers</researchPrerequisite>
+      <label>make basewatch x10</label>
+      <productCount>10</productCount>
+      <displayPriority>2200</displayPriority>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1100</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_ImmunoblockerHediffBase">
+    <defName>RPC_ImmunoblockerHigh_Basewatch</defName>
+    <label>basewatch</label>
+    <description>Low-dose immunoblockers in the bloodstream, adding 20 cyberware capacity.</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>840000~840000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.ImmunoblockerExtension">
+        <capacityBonus>20</capacityBonus>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <!-- ================= tier 2: bethaloperidol ================= -->
+
+  <ThingDef ParentName="RPC_ImmunoblockerBase">
+    <defName>RPC_Immunoblocker_Bethaloperidol</defName>
+    <label>bethaloperidol</label>
+    <description>An antipsychotic cut with immunoblockers. Adds 50 cyberware capacity for 7 days. Only the strongest active immunoblocker counts.</description>
+    <descriptionHyperlinks><HediffDef>RPC_ImmunoblockerHigh_Bethaloperidol</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/RimPunk/Drugs/Bethaloperidol</texPath>
+    </graphicData>
+    <statBases>
+      <WorkToMake>900</WorkToMake>
+      <MarketValue>23</MarketValue>
+    </statBases>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RPC_ImmunoblockerHigh_Bethaloperidol</hediffDef>
+          <severity>1</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>RPC_Immunoblockers</researchPrerequisite>
+      <label>make bethaloperidol x8</label>
+      <productCount>8</productCount>
+      <displayPriority>2201</displayPriority>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1101</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_ImmunoblockerHediffBase">
+    <defName>RPC_ImmunoblockerHigh_Bethaloperidol</defName>
+    <label>bethaloperidol</label>
+    <description>Antipsychotics and immunoblockers in the bloodstream, adding 50 cyberware capacity.</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>420000~420000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.ImmunoblockerExtension">
+        <capacityBonus>50</capacityBonus>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <!-- ================= tier 3: prime time ================= -->
+
+  <ThingDef ParentName="RPC_ImmunoblockerBase">
+    <defName>RPC_Immunoblocker_PrimeTime</defName>
+    <label>prime time</label>
+    <description>A street-grade immunoblocker that leaves the user unnervingly calm. Adds 90 cyberware capacity for 4 days. Only the strongest active immunoblocker counts.</description>
+    <descriptionHyperlinks><HediffDef>RPC_ImmunoblockerHigh_PrimeTime</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/RimPunk/Drugs/PrimeTime</texPath>
+    </graphicData>
+    <statBases>
+      <WorkToMake>900</WorkToMake>
+      <MarketValue>30</MarketValue>
+    </statBases>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RPC_ImmunoblockerHigh_PrimeTime</hediffDef>
+          <severity>1</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>RPC_Immunoblockers</researchPrerequisite>
+      <label>make prime time x6</label>
+      <productCount>6</productCount>
+      <displayPriority>2202</displayPriority>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1102</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_ImmunoblockerHediffBase">
+    <defName>RPC_ImmunoblockerHigh_PrimeTime</defName>
+    <label>prime time</label>
+    <description>Street-grade immunoblockers in the bloodstream, adding 90 cyberware capacity.</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>240000~240000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.ImmunoblockerExtension">
+        <capacityBonus>90</capacityBonus>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <!-- ================= tier 4: surge ================= -->
+
+  <ThingDef ParentName="RPC_ImmunoblockerBase">
+    <defName>RPC_Immunoblocker_Surge</defName>
+    <label>surge</label>
+    <description>A heavy immunoblocker in a stimulant base, burned through quickly. Adds 140 cyberware capacity for 2 days. Only the strongest active immunoblocker counts.</description>
+    <descriptionHyperlinks><HediffDef>RPC_ImmunoblockerHigh_Surge</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/RimPunk/Drugs/Surge</texPath>
+    </graphicData>
+    <statBases>
+      <WorkToMake>900</WorkToMake>
+      <MarketValue>45</MarketValue>
+    </statBases>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RPC_ImmunoblockerHigh_Surge</hediffDef>
+          <severity>1</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>RPC_Immunoblockers</researchPrerequisite>
+      <label>make surge x4</label>
+      <productCount>4</productCount>
+      <displayPriority>2203</displayPriority>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1103</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_ImmunoblockerHediffBase">
+    <defName>RPC_ImmunoblockerHigh_Surge</defName>
+    <label>surge</label>
+    <description>Heavy immunoblockers in the bloodstream, adding 140 cyberware capacity.</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>120000~120000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.ImmunoblockerExtension">
+        <capacityBonus>140</capacityBonus>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <!-- ================= tier 5: black lace ================= -->
+
+  <ThingDef ParentName="RPC_ImmunoblockerBase">
+    <defName>RPC_Immunoblocker_BlackLace</defName>
+    <label>black lace</label>
+    <description>The strongest immunoblocker anyone would call a medicine. Adds 200 cyberware capacity for 1 day. Only the strongest active immunoblocker counts.</description>
+    <descriptionHyperlinks><HediffDef>RPC_ImmunoblockerHigh_BlackLace</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/RimPunk/Drugs/BlackLace</texPath>
+    </graphicData>
+    <statBases>
+      <WorkToMake>900</WorkToMake>
+      <MarketValue>85</MarketValue>
+    </statBases>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RPC_ImmunoblockerHigh_BlackLace</hediffDef>
+          <severity>1</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>RPC_Immunoblockers</researchPrerequisite>
+      <label>make black lace x2</label>
+      <productCount>2</productCount>
+      <displayPriority>2204</displayPriority>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1104</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_ImmunoblockerHediffBase">
+    <defName>RPC_ImmunoblockerHigh_BlackLace</defName>
+    <label>black lace</label>
+    <description>A massive immunoblocker dose in the bloodstream, adding 200 cyberware capacity.</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000~60000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.ImmunoblockerExtension">
+        <capacityBonus>200</capacityBonus>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+  <!-- ================= special: David's last stand ================= -->
+
+  <ThingDef ParentName="RPC_ImmunoblockerBase">
+    <defName>RPC_Immunoblocker_DavidsLastStand</defName>
+    <label>David's last stand</label>
+    <description>Everything at once, straight into the vein. Adds 1000 cyberware capacity for 6 hours, and the moment it wears off the user goes cyberpsycho for good, with twice the strength of a normal break. Nothing prevents it and nothing ends it.</description>
+    <descriptionHyperlinks><HediffDef>RPC_ImmunoblockerHigh_DavidsLastStand</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/RimPunk/Drugs/DavidsLastStand</texPath>
+    </graphicData>
+    <statBases>
+      <WorkToMake>900</WorkToMake>
+      <MarketValue>200</MarketValue>
+    </statBases>
+    <ingestible>
+      <ingestSound>Ingest_Inject</ingestSound>
+      <ingestCommandString>Inject {0}</ingestCommandString>
+      <ingestReportString>Injecting {0}.</ingestReportString>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RPC_ImmunoblockerHigh_DavidsLastStand</hediffDef>
+          <severity>1</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>RPC_DavidsLastStand</researchPrerequisite>
+      <productCount>1</productCount>
+      <displayPriority>2205</displayPriority>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1105</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_ImmunoblockerHediffBase">
+    <defName>RPC_ImmunoblockerHigh_DavidsLastStand</defName>
+    <label>David's last stand</label>
+    <description>The body has stopped rejecting anything, adding 1000 cyberware capacity. When this wears off, permanent cyberpsychosis follows instantly.</description>
+    <defaultLabelColor>(1, 0.2, 0.35)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>15000~15000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.ImmunoblockerExtension">
+        <capacityBonus>1000</capacityBonus>
+        <psychosisOnEnd>true</psychosisOnEnd>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+</Defs>

@@ -9,7 +9,7 @@
     <combatPower>98</combatPower>
     <isFighter>true</isFighter>
     <itemQuality>Good</itemQuality>
-    <apparelRequired><li>RPC_Apparel_Arasaka_Recon_Black</li><li>RPC_Apparel_Arasaka_Reconhelm_Arasaka</li><li>RPC_Apparel_Arasaka_Collar_Black</li><li>RPC_Apparel_Arasaka_Pants_Black</li></apparelRequired>
+    <apparelRequired><li>RPC_Apparel_Arasaka_ArasakaRecon</li><li>RPC_Apparel_Arasaka_ArasakaReconhelm</li><li>RPC_Apparel_Arasaka_ArasakaShirt</li><li>RPC_Apparel_Arasaka_ArasakaPants</li></apparelRequired>
     <apparelTags><li>RPC_Outfit_Arasaka_Grunt</li></apparelTags>
     <apparelMoney>1200~2500</apparelMoney>
     <weaponMoney>1200~5000</weaponMoney>
@@ -45,7 +45,7 @@
     <combatPower>84</combatPower>
     <isFighter>true</isFighter>
     <itemQuality>Good</itemQuality>
-    <apparelRequired><li>RPC_Apparel_Arasaka_Collar_White</li><li>RPC_Apparel_Arasaka_Flakvest_Black</li><li>RPC_Apparel_Arasaka_Pants_Black</li><li>RPC_Apparel_Arasaka_Advhelm_Arasaka</li></apparelRequired>
+    <apparelRequired><li>RPC_Apparel_Arasaka_ArasakaShirtWhite</li><li>RPC_Apparel_Arasaka_ArasakaCarrier</li><li>RPC_Apparel_Arasaka_ArasakaPants</li><li>RPC_Apparel_Arasaka_ArasakaHelmet</li></apparelRequired>
     <apparelTags><li>RPC_Outfit_Arasaka_Guard</li></apparelTags>
     <apparelMoney>1200~2500</apparelMoney>
     <weaponMoney>1200~5000</weaponMoney>
@@ -81,7 +81,7 @@
     <combatPower>154</combatPower>
     <isFighter>true</isFighter>
     <itemQuality>Good</itemQuality>
-    <apparelRequired><li>RPC_Apparel_Arasaka_Marine_Black</li><li>RPC_Apparel_Arasaka_Marinehelm_Arasaka</li><li>RPC_Apparel_Arasaka_Collar_Black</li><li>RPC_Apparel_Arasaka_Pants_Black</li></apparelRequired>
+    <apparelRequired><li>RPC_Apparel_Arasaka_ArasakaHeavy</li><li>RPC_Apparel_Arasaka_ArasakaHeavyhelm</li><li>RPC_Apparel_Arasaka_ArasakaShirt</li><li>RPC_Apparel_Arasaka_ArasakaPants</li></apparelRequired>
     <apparelTags><li>RPC_Outfit_Arasaka_Enforcer</li></apparelTags>
     <apparelMoney>1200~2500</apparelMoney>
     <weaponMoney>1200~5000</weaponMoney>
@@ -117,7 +117,7 @@
     <combatPower>140</combatPower>
     <isFighter>true</isFighter>
     <itemQuality>Good</itemQuality>
-    <apparelRequired><li>RPC_Apparel_Arasaka_Bodysuit_Black</li><li>RPC_Apparel_Arasaka_Netrig_Arasaka</li><li>RPC_Apparel_Arasaka_Pants_Black</li></apparelRequired>
+    <apparelRequired><li>RPC_Apparel_Arasaka_ArasakaBodysuit</li><li>RPC_Apparel_Arasaka_ArasakaNetrig</li><li>RPC_Apparel_Arasaka_ArasakaPants</li></apparelRequired>
     <apparelTags><li>RPC_Outfit_Arasaka_Netrunner</li></apparelTags>
     <apparelMoney>1200~2500</apparelMoney>
     <weaponMoney>1200~5000</weaponMoney>
@@ -147,7 +147,7 @@
     <combatPower>125</combatPower>
     <isFighter>true</isFighter>
     <itemQuality>Good</itemQuality>
-    <apparelRequired><li>RPC_Apparel_Arasaka_Collar_Black</li><li>RPC_Apparel_Arasaka_Flakvest_Black</li><li>RPC_Apparel_Arasaka_Pants_Black</li><li>RPC_Apparel_Arasaka_Visor_Arasaka</li></apparelRequired>
+    <apparelRequired><li>RPC_Apparel_Arasaka_ArasakaShirt</li><li>RPC_Apparel_Arasaka_ArasakaCarrier</li><li>RPC_Apparel_Arasaka_ArasakaPants</li><li>RPC_Apparel_Arasaka_ArasakaVisor</li></apparelRequired>
     <apparelTags><li>RPC_Outfit_Arasaka_Sniper</li></apparelTags>
     <apparelMoney>1541~3082</apparelMoney>
     <weaponMoney>1541~6164</weaponMoney>
@@ -183,7 +183,7 @@
     <combatPower>237</combatPower>
     <isFighter>true</isFighter>
     <itemQuality>Good</itemQuality>
-    <apparelRequired><li>RPC_Apparel_Arasaka_Collar_White</li><li>RPC_Apparel_Arasaka_Duster_Black</li><li>RPC_Apparel_Arasaka_Pants_Black</li></apparelRequired>
+    <apparelRequired><li>RPC_Apparel_Arasaka_ArasakaShirtWhite</li><li>RPC_Apparel_Arasaka_ArasakaDuster</li><li>RPC_Apparel_Arasaka_ArasakaPants</li></apparelRequired>
     <apparelTags><li>RPC_Outfit_Arasaka_Boss</li></apparelTags>
     <apparelMoney>2400~5000</apparelMoney>
     <weaponMoney>2400~10000</weaponMoney>
@@ -220,7 +220,7 @@
     <combatPower>56</combatPower>
     <isFighter>false</isFighter>
     <itemQuality>Good</itemQuality>
-    <apparelRequired><li>RPC_Apparel_Arasaka_Collar_White</li><li>RPC_Apparel_Arasaka_Jacket_Black</li><li>RPC_Apparel_Arasaka_Pants_Black</li></apparelRequired>
+    <apparelRequired><li>RPC_Apparel_Arasaka_ArasakaShirtWhite</li><li>RPC_Apparel_Arasaka_ArasakaJacket</li><li>RPC_Apparel_Arasaka_ArasakaPants</li></apparelRequired>
     <apparelTags><li>RPC_Outfit_Arasaka_Trader</li></apparelTags>
     <apparelMoney>1200~2500</apparelMoney>
     <weaponMoney>1200~5000</weaponMoney>
@@ -3030,27 +3030,26 @@
     <combatPower>150</combatPower>
     <isFighter>true</isFighter>
     <itemQuality>Good</itemQuality>
-    <apparelRequired><li>RPC_Apparel_TraumaTeam_TraumaArmor</li><li>RPC_Apparel_TraumaTeam_TraumaHelmet</li><li>RPC_Apparel_TraumaTeam_Bodysuit_White</li><li>RPC_Apparel_TraumaTeam_Pants_White</li></apparelRequired>
+    <apparelRequired><li>RPC_Apparel_TraumaTeam_TraumaShirt</li><li>RPC_Apparel_TraumaTeam_TraumaPants</li><li>RPC_Apparel_TraumaTeam_TraumaVest</li><li>RPC_Apparel_TraumaTeam_TraumaHelmet</li></apparelRequired>
     <apparelTags><li>RPC_Outfit_TraumaTeam_Operator</li></apparelTags>
     <apparelMoney>1200~2500</apparelMoney>
     <weaponMoney>1200~5000</weaponMoney>
-    <weaponTags><li>RPC_W_Militech_Rifle</li><li>RPC_W_Militech_SMG</li><li>RPC_W_Militech_Shotgun</li><li>RPC_W_Militech_MG</li></weaponTags>
+    <weaponTags><li>RPC_W_KangTao_SMG</li><li>RPC_W_KangTao_Shotgun</li><li>RPC_W_KangTao_Pistol</li><li>RPC_WT_Rifle_smart</li></weaponTags>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareLoadoutExtension">
-        <minTier>T3</minTier>
+        <minTier>T4</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
-          <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
-          <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BionicJoints</li><li>RPC_DenseMarrow</li><li>RPC_TitaniumBones</li><li>RPC_ParaBellum</li><li>RPC_SpringJoints</li><li>RPC_EpimorphicSkeleton</li></hediffs></li>
-          <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_AdrenalineConverter</li><li>RPC_ReflexTuner</li><li>RPC_Kerenzikov</li><li>RPC_NeoFiber</li><li>RPC_TyrosineInjector</li><li>RPC_SynapticAccelerator</li></hediffs></li>
-          <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_HealOnKill</li><li>RPC_Microrotors</li><li>RPC_ClutchPadding</li><li>RPC_BloodPump</li><li>RPC_AdrenalineBooster</li><li>RPC_SecondHeart</li></hediffs></li>
-          <li><chance>0.5</chance><count>2</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li><li>RPC_PainEditor</li></hediffs></li>
-          <li><chance>0.3</chance><count>2</count><hediffs><li>RPC_LeeroyLigamentSystem</li><li>RPC_JenkinsTendons</li><li>RPC_FortifiedAnkles</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_SmartLink</li><li>RPC_ShockAbsorber</li><li>RPC_ImmovableForce</li><li>RPC_Microgenerator</li></hediffs></li>
+          <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
+          <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
+          <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
+          <li><chance>1.0</chance><count>2</count><hediffs><li>RPC_BionicJoints</li><li>RPC_DenseMarrow</li><li>RPC_TitaniumBones</li><li>RPC_ParaBellum</li><li>RPC_SpringJoints</li><li>RPC_EpimorphicSkeleton</li></hediffs></li>
+          <li><chance>1.0</chance><count>2</count><hediffs><li>RPC_AdrenalineConverter</li><li>RPC_ReflexTuner</li><li>RPC_Kerenzikov</li><li>RPC_NeoFiber</li><li>RPC_TyrosineInjector</li><li>RPC_SynapticAccelerator</li></hediffs></li>
+          <li><chance>1.0</chance><count>2</count><hediffs><li>RPC_HealOnKill</li><li>RPC_Microrotors</li><li>RPC_ClutchPadding</li><li>RPC_BloodPump</li><li>RPC_AdrenalineBooster</li><li>RPC_SecondHeart</li></hediffs></li>
+          <li><chance>1.0</chance><count>2</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li><li>RPC_PainEditor</li></hediffs></li>
+          <li><chance>0.8</chance><count>2</count><hediffs><li>RPC_LeeroyLigamentSystem</li><li>RPC_JenkinsTendons</li><li>RPC_FortifiedAnkles</li></hediffs></li>
+          <li><chance>0.8</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_MechatronicCore</li><li>RPC_Bioconductor</li><li>RPC_Axolotl</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_ShockAbsorber</li><li>RPC_ImmovableForce</li><li>RPC_Microgenerator</li></hediffs></li>
         </options>
       </li>
       <li Class="CombatExtended.LoadoutPropertiesExtension">
@@ -3066,28 +3065,27 @@
     <combatPower>200</combatPower>
     <isFighter>true</isFighter>
     <itemQuality>Good</itemQuality>
-    <apparelRequired><li>RPC_Apparel_TraumaTeam_TraumaArmor</li><li>RPC_Apparel_TraumaTeam_TraumaLead</li><li>RPC_Apparel_TraumaTeam_Bodysuit_White</li><li>RPC_Apparel_TraumaTeam_Pants_White</li></apparelRequired>
+    <apparelRequired><li>RPC_Apparel_TraumaTeam_TraumaShirt</li><li>RPC_Apparel_TraumaTeam_TraumaPants</li><li>RPC_Apparel_TraumaTeam_TraumaVest</li><li>RPC_Apparel_TraumaTeam_TraumaHelmet</li></apparelRequired>
     <apparelTags><li>RPC_Outfit_TraumaTeam_Boss</li></apparelTags>
     <apparelMoney>2400~5000</apparelMoney>
     <weaponMoney>2400~10000</weaponMoney>
-    <weaponTags><li>RPC_W_Militech_Rifle</li><li>RPC_W_Militech_SMG</li><li>RPC_W_Militech_Pistol</li></weaponTags>
+    <weaponTags><li>RPC_W_KangTao_SMG</li><li>RPC_W_KangTao_Shotgun</li><li>RPC_W_KangTao_Pistol</li><li>RPC_WT_Rifle_smart</li></weaponTags>
     <factionLeader>true</factionLeader>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareLoadoutExtension">
-        <minTier>T3</minTier>
+        <minTier>T4</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
-          <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
-          <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BionicJoints</li><li>RPC_DenseMarrow</li><li>RPC_TitaniumBones</li><li>RPC_ParaBellum</li><li>RPC_SpringJoints</li><li>RPC_EpimorphicSkeleton</li></hediffs></li>
-          <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_AdrenalineConverter</li><li>RPC_ReflexTuner</li><li>RPC_Kerenzikov</li><li>RPC_NeoFiber</li><li>RPC_TyrosineInjector</li><li>RPC_SynapticAccelerator</li></hediffs></li>
-          <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_HealOnKill</li><li>RPC_Microrotors</li><li>RPC_ClutchPadding</li><li>RPC_BloodPump</li><li>RPC_AdrenalineBooster</li><li>RPC_SecondHeart</li></hediffs></li>
-          <li><chance>0.5</chance><count>2</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li><li>RPC_PainEditor</li></hediffs></li>
-          <li><chance>0.3</chance><count>2</count><hediffs><li>RPC_LeeroyLigamentSystem</li><li>RPC_JenkinsTendons</li><li>RPC_FortifiedAnkles</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_SmartLink</li><li>RPC_ShockAbsorber</li><li>RPC_ImmovableForce</li><li>RPC_Microgenerator</li></hediffs></li>
+          <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
+          <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
+          <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
+          <li><chance>1.0</chance><count>2</count><hediffs><li>RPC_BionicJoints</li><li>RPC_DenseMarrow</li><li>RPC_TitaniumBones</li><li>RPC_ParaBellum</li><li>RPC_SpringJoints</li><li>RPC_EpimorphicSkeleton</li></hediffs></li>
+          <li><chance>1.0</chance><count>2</count><hediffs><li>RPC_AdrenalineConverter</li><li>RPC_ReflexTuner</li><li>RPC_Kerenzikov</li><li>RPC_NeoFiber</li><li>RPC_TyrosineInjector</li><li>RPC_SynapticAccelerator</li></hediffs></li>
+          <li><chance>1.0</chance><count>2</count><hediffs><li>RPC_HealOnKill</li><li>RPC_Microrotors</li><li>RPC_ClutchPadding</li><li>RPC_BloodPump</li><li>RPC_AdrenalineBooster</li><li>RPC_SecondHeart</li></hediffs></li>
+          <li><chance>1.0</chance><count>2</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li><li>RPC_PainEditor</li></hediffs></li>
+          <li><chance>0.8</chance><count>2</count><hediffs><li>RPC_LeeroyLigamentSystem</li><li>RPC_JenkinsTendons</li><li>RPC_FortifiedAnkles</li></hediffs></li>
+          <li><chance>0.8</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_MechatronicCore</li><li>RPC_Bioconductor</li><li>RPC_Axolotl</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_ShockAbsorber</li><li>RPC_ImmovableForce</li><li>RPC_Microgenerator</li></hediffs></li>
         </options>
       </li>
       <li Class="CombatExtended.LoadoutPropertiesExtension">
@@ -3106,7 +3104,7 @@
     <categoryTag>RPC_Corporation</categoryTag>
     <listOrderPriority>32</listOrderPriority>
     <settlementGenerationWeight>0</settlementGenerationWeight>
-    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
     <configurationListOrderPriority>8</configurationListOrderPriority>
@@ -3184,7 +3182,7 @@
     <apparelTags><li>RPC_Outfit_MaxTac_Operator</li></apparelTags>
     <apparelMoney>3000~6000</apparelMoney>
     <weaponMoney>3000~12000</weaponMoney>
-    <weaponTags><li>RPC_W_Militech_Rifle</li><li>RPC_W_Militech_SMG</li><li>RPC_W_Militech_Shotgun</li><li>RPC_W_Militech_MG</li></weaponTags>
+    <weaponTags><li>RPC_W_Militech_Rifle</li><li>RPC_W_Militech_MG</li><li>RPC_W_Militech_Precision</li></weaponTags>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareLoadoutExtension">
         <minTier>Iconic</minTier>
@@ -3198,6 +3196,7 @@
       </li>
       <li Class="CombatExtended.LoadoutPropertiesExtension">
         <primaryMagazineCount><min>6</min><max>9</max></primaryMagazineCount>
+        <weightedAmmoCategories><ArmorPiercing>1</ArmorPiercing><Charged>1</Charged></weightedAmmoCategories>
       </li>
     </modExtensions>
   </PawnKindDef>
@@ -3213,7 +3212,7 @@
     <apparelTags><li>RPC_Outfit_MaxTac_Boss</li></apparelTags>
     <apparelMoney>6000~12000</apparelMoney>
     <weaponMoney>6000~24000</weaponMoney>
-    <weaponTags><li>RPC_W_Militech_Rifle</li><li>RPC_W_Militech_SMG</li><li>RPC_W_Militech_Pistol</li></weaponTags>
+    <weaponTags><li>RPC_W_Militech_Rifle</li><li>RPC_W_Militech_Precision</li></weaponTags>
     <factionLeader>true</factionLeader>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareLoadoutExtension">
@@ -3228,6 +3227,7 @@
       </li>
       <li Class="CombatExtended.LoadoutPropertiesExtension">
         <primaryMagazineCount><min>6</min><max>9</max></primaryMagazineCount>
+        <weightedAmmoCategories><ArmorPiercing>1</ArmorPiercing><Charged>1</Charged></weightedAmmoCategories>
       </li>
     </modExtensions>
   </PawnKindDef>
@@ -3242,7 +3242,7 @@
     <categoryTag>RPC_Corporation</categoryTag>
     <listOrderPriority>31</listOrderPriority>
     <settlementGenerationWeight>0</settlementGenerationWeight>
-    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
     <configurationListOrderPriority>9</configurationListOrderPriority>
@@ -3303,6 +3303,241 @@
     <modExtensions>
       <li Class="RimPunkCE.CyberFactionExtension">
         <kind>MaxTac</kind>
+        <rivals></rivals>
+        <streetNameChance>0.3</streetNameChance>
+      </li>
+    </modExtensions>
+  </FactionDef>
+
+  <PawnKindDef ParentName="RPC_PawnKindBase">
+    <defName>RPC_DebtCollectors_Grunt</defName>
+    <label>militech receivables collector</label>
+    <defaultFactionDef>RPC_Faction_DebtCollectors</defaultFactionDef>
+    <combatPower>98</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <apparelRequired><li>RPC_Apparel_DebtCollectors_Collar_White</li><li>RPC_Apparel_DebtCollectors_Flakvest_Charcoal</li><li>RPC_Apparel_DebtCollectors_Pants_Charcoal</li><li>RPC_Apparel_DebtCollectors_Visor_Red</li></apparelRequired>
+    <apparelTags><li>RPC_Outfit_DebtCollectors_Grunt</li></apparelTags>
+    <apparelMoney>1200~2500</apparelMoney>
+    <weaponMoney>1200~5000</weaponMoney>
+    <weaponTags><li>RPC_W_Militech_Rifle</li><li>RPC_W_Militech_SMG</li><li>RPC_W_Militech_Shotgun</li><li>RPC_W_ConstitutionalArms_Shotgun</li><li>RPC_W_Tsunami_Rifle</li></weaponTags>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareLoadoutExtension">
+        <minTier>T2</minTier>
+        <maxTier>T3</maxTier>
+        <options>
+          <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li>
+          <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.6</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SmartLink</li><li>RPC_SmartImprint</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li></hediffs></li>
+          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_AdrenalineConverter</li><li>RPC_ReflexTuner</li><li>RPC_Kerenzikov</li><li>RPC_NeoFiber</li><li>RPC_TyrosineInjector</li><li>RPC_SynapticAccelerator</li></hediffs></li>
+          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_LeeroyLigamentSystem</li><li>RPC_JenkinsTendons</li><li>RPC_FortifiedAnkles</li></hediffs></li>
+        </options>
+      </li>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <primaryMagazineCount><min>3</min><max>5</max></primaryMagazineCount>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="RPC_PawnKindBase">
+    <defName>RPC_DebtCollectors_Enforcer</defName>
+    <label>militech receivables repo heavy</label>
+    <defaultFactionDef>RPC_Faction_DebtCollectors</defaultFactionDef>
+    <combatPower>154</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <apparelRequired><li>RPC_Apparel_DebtCollectors_Marine_Charcoal</li><li>RPC_Apparel_DebtCollectors_Marinehelm_Red</li><li>RPC_Apparel_DebtCollectors_Collar_White</li><li>RPC_Apparel_DebtCollectors_Pants_Charcoal</li></apparelRequired>
+    <apparelTags><li>RPC_Outfit_DebtCollectors_Enforcer</li></apparelTags>
+    <apparelMoney>1200~2500</apparelMoney>
+    <weaponMoney>1200~5000</weaponMoney>
+    <weaponTags><li>RPC_W_Militech_MG</li><li>RPC_W_Militech_Shotgun</li><li>RPC_W_Militech_Rifle</li><li>RPC_W_ConstitutionalArms_MG</li><li>RPC_W_ConstitutionalArms_Shotgun</li><li>RPC_W_Tsunami_Rifle</li></weaponTags>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareLoadoutExtension">
+        <minTier>T2</minTier>
+        <maxTier>T3</maxTier>
+        <options>
+          <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li>
+          <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.6</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SmartLink</li><li>RPC_SmartImprint</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li></hediffs></li>
+          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_AdrenalineConverter</li><li>RPC_ReflexTuner</li><li>RPC_Kerenzikov</li><li>RPC_NeoFiber</li><li>RPC_TyrosineInjector</li><li>RPC_SynapticAccelerator</li></hediffs></li>
+          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_LeeroyLigamentSystem</li><li>RPC_JenkinsTendons</li><li>RPC_FortifiedAnkles</li></hediffs></li>
+        </options>
+      </li>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <primaryMagazineCount><min>4</min><max>7</max></primaryMagazineCount>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="RPC_PawnKindBase">
+    <defName>RPC_DebtCollectors_Netrunner</defName>
+    <label>militech receivables skip tracer</label>
+    <defaultFactionDef>RPC_Faction_DebtCollectors</defaultFactionDef>
+    <combatPower>140</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <apparelRequired><li>RPC_Apparel_DebtCollectors_Bodysuit_Charcoal</li><li>RPC_Apparel_DebtCollectors_Netrig_Red</li><li>RPC_Apparel_DebtCollectors_Pants_Charcoal</li></apparelRequired>
+    <apparelTags><li>RPC_Outfit_DebtCollectors_Netrunner</li></apparelTags>
+    <apparelMoney>1200~2500</apparelMoney>
+    <weaponMoney>1200~5000</weaponMoney>
+    <weaponTags><li>RPC_W_Militech_Pistol</li><li>RPC_W_Militech_SMG</li><li>RPC_W_ConstitutionalArms_Pistol</li><li>RPC_W_Tsunami_Pistol</li></weaponTags>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareLoadoutExtension">
+        <minTier>T2</minTier>
+        <maxTier>T3</maxTier>
+        <options>
+          <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li>
+          <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.6</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SmartLink</li><li>RPC_SmartImprint</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li></hediffs></li>
+          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_AdrenalineConverter</li><li>RPC_ReflexTuner</li><li>RPC_Kerenzikov</li><li>RPC_NeoFiber</li><li>RPC_TyrosineInjector</li><li>RPC_SynapticAccelerator</li></hediffs></li>
+          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_LeeroyLigamentSystem</li><li>RPC_JenkinsTendons</li><li>RPC_FortifiedAnkles</li></hediffs></li>
+        </options>
+      </li>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <primaryMagazineCount><min>2</min><max>4</max></primaryMagazineCount>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="RPC_PawnKindBase">
+    <defName>RPC_DebtCollectors_Melee</defName>
+    <label>militech receivables repo ripper</label>
+    <defaultFactionDef>RPC_Faction_DebtCollectors</defaultFactionDef>
+    <combatPower>112</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <apparelRequired><li>RPC_Apparel_DebtCollectors_Collar_White</li><li>RPC_Apparel_DebtCollectors_Flakjacket_Charcoal</li><li>RPC_Apparel_DebtCollectors_Flakpants_Charcoal</li><li>RPC_Apparel_DebtCollectors_Faceplate_Chrome</li></apparelRequired>
+    <apparelTags><li>RPC_Outfit_DebtCollectors_Melee</li></apparelTags>
+    <apparelMoney>1200~2500</apparelMoney>
+    <weaponMoney>1200~5000</weaponMoney>
+    <weaponTags><li>RPC_Melee</li></weaponTags>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareLoadoutExtension">
+        <minTier>T2</minTier>
+        <maxTier>T3</maxTier>
+        <options>
+          <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li>
+          <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.6</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SmartLink</li><li>RPC_SmartImprint</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li></hediffs></li>
+          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_AdrenalineConverter</li><li>RPC_ReflexTuner</li><li>RPC_Kerenzikov</li><li>RPC_NeoFiber</li><li>RPC_TyrosineInjector</li><li>RPC_SynapticAccelerator</li></hediffs></li>
+          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_LeeroyLigamentSystem</li><li>RPC_JenkinsTendons</li><li>RPC_FortifiedAnkles</li></hediffs></li>
+        </options>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="RPC_PawnKindBase">
+    <defName>RPC_DebtCollectors_Boss</defName>
+    <label>militech receivables account manager</label>
+    <defaultFactionDef>RPC_Faction_DebtCollectors</defaultFactionDef>
+    <combatPower>237</combatPower>
+    <isFighter>true</isFighter>
+    <itemQuality>Good</itemQuality>
+    <apparelRequired><li>RPC_Apparel_DebtCollectors_Collar_White</li><li>RPC_Apparel_DebtCollectors_Duster_Charcoal</li><li>RPC_Apparel_DebtCollectors_Pants_Charcoal</li><li>RPC_Apparel_DebtCollectors_Visor_Red</li></apparelRequired>
+    <apparelTags><li>RPC_Outfit_DebtCollectors_Boss</li></apparelTags>
+    <apparelMoney>2400~5000</apparelMoney>
+    <weaponMoney>2400~10000</weaponMoney>
+    <weaponTags><li>RPC_W_Militech_Rifle</li><li>RPC_W_Militech_SMG</li><li>RPC_W_Militech_Pistol</li><li>RPC_W_ConstitutionalArms_Pistol</li><li>RPC_W_Tsunami_Rifle</li><li>RPC_W_Tsunami_Pistol</li></weaponTags>
+    <factionLeader>true</factionLeader>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareLoadoutExtension">
+        <minTier>T3</minTier>
+        <maxTier>T4</maxTier>
+        <options>
+          <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
+          <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.6</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SmartLink</li><li>RPC_SmartImprint</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li><li>RPC_PainEditor</li></hediffs></li>
+          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_AdrenalineConverter</li><li>RPC_ReflexTuner</li><li>RPC_Kerenzikov</li><li>RPC_NeoFiber</li><li>RPC_TyrosineInjector</li><li>RPC_SynapticAccelerator</li></hediffs></li>
+          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_LeeroyLigamentSystem</li><li>RPC_JenkinsTendons</li><li>RPC_FortifiedAnkles</li></hediffs></li>
+        </options>
+      </li>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <primaryMagazineCount><min>5</min><max>8</max></primaryMagazineCount>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <FactionDef ParentName="FactionBase">
+    <defName>RPC_Faction_DebtCollectors</defName>
+    <label>Militech Receivables</label>
+    <fixedName>Militech Receivables</fixedName>
+    <description>A collection agency that buys unpaid medical debt from Trauma Team. When the bill comes due, they come to collect: in silver, in chrome, or in blood.</description>
+    <pawnSingular>operative</pawnSingular>
+    <pawnsPlural>operatives</pawnsPlural>
+    <categoryTag>RPC_Corporation</categoryTag>
+    <listOrderPriority>30</listOrderPriority>
+    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <hidden>true</hidden>
+    <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>10</configurationListOrderPriority>
+    <canSiege>true</canSiege>
+    <canStageAttacks>true</canStageAttacks>
+    <leaderTitle>director</leaderTitle>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <techLevel>Spacer</techLevel>
+    <allowedCultures><li>Astropolitan</li></allowedCultures>
+    <colorSpectrum><li>(0.45, 0.45, 0.5)</li></colorSpectrum>
+    <backstoryFilters>
+      <li>
+        <categories><li>RPC_Corpo</li></categories>
+        <commonality>0.5</commonality>
+      </li>
+      <li>
+        <categories><li>RPC_StreetKid</li></categories>
+        <commonality>0.5</commonality>
+      </li>
+    </backstoryFilters>
+    <basicMemberKind>RPC_DebtCollectors_Grunt</basicMemberKind>
+    <raidLootMaker>RPC_RaidLootMaker</raidLootMaker>
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(70,50)</li>
+        <li>(700,120)</li>
+        <li>(1300,200)</li>
+        <li>(100000,10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <options>
+          <RPC_DebtCollectors_Grunt>10</RPC_DebtCollectors_Grunt>
+          <RPC_DebtCollectors_Enforcer>4</RPC_DebtCollectors_Enforcer>
+          <RPC_DebtCollectors_Netrunner>3</RPC_DebtCollectors_Netrunner>
+          <RPC_DebtCollectors_Melee>5</RPC_DebtCollectors_Melee>
+          <RPC_DebtCollectors_Boss>1.5</RPC_DebtCollectors_Boss>
+        </options>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <RPC_DebtCollectors_Grunt>10</RPC_DebtCollectors_Grunt>
+          <RPC_DebtCollectors_Enforcer>4</RPC_DebtCollectors_Enforcer>
+          <RPC_DebtCollectors_Netrunner>3</RPC_DebtCollectors_Netrunner>
+          <RPC_DebtCollectors_Melee>5</RPC_DebtCollectors_Melee>
+          <RPC_DebtCollectors_Boss>1.5</RPC_DebtCollectors_Boss>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberFactionExtension">
+        <kind>DebtCollector</kind>
         <rivals></rivals>
         <streetNameChance>0.3</streetNameChance>
       </li>
@@ -3460,12 +3695,12 @@
     <pawnSingular>ganger</pawnSingular>
     <pawnsPlural>gangers</pawnsPlural>
     <categoryTag>RPC_Gang</categoryTag>
-    <listOrderPriority>30</listOrderPriority>
+    <listOrderPriority>29</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>10</configurationListOrderPriority>
+    <configurationListOrderPriority>11</configurationListOrderPriority>
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>boss</leaderTitle>
@@ -3675,12 +3910,12 @@
     <pawnSingular>ganger</pawnSingular>
     <pawnsPlural>gangers</pawnsPlural>
     <categoryTag>RPC_Gang</categoryTag>
-    <listOrderPriority>29</listOrderPriority>
+    <listOrderPriority>28</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>11</configurationListOrderPriority>
+    <configurationListOrderPriority>12</configurationListOrderPriority>
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>boss</leaderTitle>
@@ -3865,12 +4100,12 @@
     <pawnSingular>ganger</pawnSingular>
     <pawnsPlural>gangers</pawnsPlural>
     <categoryTag>RPC_Gang</categoryTag>
-    <listOrderPriority>28</listOrderPriority>
+    <listOrderPriority>27</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>12</configurationListOrderPriority>
+    <configurationListOrderPriority>13</configurationListOrderPriority>
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>boss</leaderTitle>
@@ -4080,12 +4315,12 @@
     <pawnSingular>ganger</pawnSingular>
     <pawnsPlural>gangers</pawnsPlural>
     <categoryTag>RPC_Gang</categoryTag>
-    <listOrderPriority>27</listOrderPriority>
+    <listOrderPriority>26</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>13</configurationListOrderPriority>
+    <configurationListOrderPriority>14</configurationListOrderPriority>
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>boss</leaderTitle>
@@ -4237,12 +4472,12 @@
     <pawnSingular>ganger</pawnSingular>
     <pawnsPlural>gangers</pawnsPlural>
     <categoryTag>RPC_Gang</categoryTag>
-    <listOrderPriority>26</listOrderPriority>
+    <listOrderPriority>25</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>14</configurationListOrderPriority>
+    <configurationListOrderPriority>15</configurationListOrderPriority>
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>boss</leaderTitle>
@@ -4448,12 +4683,12 @@
     <pawnSingular>ganger</pawnSingular>
     <pawnsPlural>gangers</pawnsPlural>
     <categoryTag>RPC_Gang</categoryTag>
-    <listOrderPriority>25</listOrderPriority>
+    <listOrderPriority>24</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>15</configurationListOrderPriority>
+    <configurationListOrderPriority>16</configurationListOrderPriority>
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>boss</leaderTitle>
@@ -4692,12 +4927,12 @@
     <pawnSingular>ganger</pawnSingular>
     <pawnsPlural>gangers</pawnsPlural>
     <categoryTag>RPC_Gang</categoryTag>
-    <listOrderPriority>24</listOrderPriority>
+    <listOrderPriority>23</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>16</configurationListOrderPriority>
+    <configurationListOrderPriority>17</configurationListOrderPriority>
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>boss</leaderTitle>
@@ -4920,12 +5155,12 @@
     <pawnSingular>ganger</pawnSingular>
     <pawnsPlural>gangers</pawnsPlural>
     <categoryTag>RPC_Gang</categoryTag>
-    <listOrderPriority>23</listOrderPriority>
+    <listOrderPriority>22</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>17</configurationListOrderPriority>
+    <configurationListOrderPriority>18</configurationListOrderPriority>
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>boss</leaderTitle>
@@ -5103,12 +5338,12 @@
     <pawnSingular>ganger</pawnSingular>
     <pawnsPlural>gangers</pawnsPlural>
     <categoryTag>RPC_Gang</categoryTag>
-    <listOrderPriority>22</listOrderPriority>
+    <listOrderPriority>21</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>18</configurationListOrderPriority>
+    <configurationListOrderPriority>19</configurationListOrderPriority>
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>boss</leaderTitle>
@@ -5350,12 +5585,12 @@
     <pawnSingular>ganger</pawnSingular>
     <pawnsPlural>gangers</pawnsPlural>
     <categoryTag>RPC_Gang</categoryTag>
-    <listOrderPriority>21</listOrderPriority>
+    <listOrderPriority>20</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>19</configurationListOrderPriority>
+    <configurationListOrderPriority>20</configurationListOrderPriority>
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>boss</leaderTitle>
@@ -5572,12 +5807,12 @@
     <pawnSingular>nomad</pawnSingular>
     <pawnsPlural>nomads</pawnsPlural>
     <categoryTag>RPC_Gang</categoryTag>
-    <listOrderPriority>20</listOrderPriority>
+    <listOrderPriority>19</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>20</configurationListOrderPriority>
+    <configurationListOrderPriority>21</configurationListOrderPriority>
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>chief</leaderTitle>
@@ -5801,12 +6036,12 @@
     <pawnSingular>nomad</pawnSingular>
     <pawnsPlural>nomads</pawnsPlural>
     <categoryTag>RPC_Gang</categoryTag>
-    <listOrderPriority>19</listOrderPriority>
+    <listOrderPriority>18</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
     <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>21</configurationListOrderPriority>
+    <configurationListOrderPriority>22</configurationListOrderPriority>
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>chief</leaderTitle>

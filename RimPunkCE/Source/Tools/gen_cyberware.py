@@ -238,7 +238,7 @@ def header(title):
     out.append(f'\n  <!-- ============================================================ {title} -->\n')
 
 
-def cyberware(id, label, desc, slot, cap, tiers, effects=None, values=None, comps='', os_type=None, extra='', note=None):
+def cyberware(id, label, desc, slot, cap, tiers, effects=None, values=None, comps='', os_type=None, extra='', note=None, role=None):
     lo, hi = tiers
     cost = list(COST[lo])
     extra_comp = cap // 20
@@ -266,7 +266,7 @@ def cyberware(id, label, desc, slot, cap, tiers, effects=None, values=None, comp
 ''' + (f'    <comps>\n{comps}    </comps>\n' if comps else '') + extra + f'''    <modExtensions>
       <li Class="RimPunkCE.CyberwareExtension">
         <slot>{SLOT[slot]}</slot>
-''' + (f'        <osType>{os_type}</osType>\n' if os_type else '') + f'''        <capacityCost>{cap}</capacityCost>
+''' + (f'        <osType>{os_type}</osType>\n' if os_type else '') + (f'        <combatRole>{role}</combatRole>\n' if role else '') + f'''        <capacityCost>{cap}</capacityCost>
         <minTier>{lo}</minTier>
         <maxTier>{hi}</maxTier>
         <item>RPC_Item_{id}</item>
@@ -293,7 +293,7 @@ def active(id, label, desc, effects=None, ext='', comps='', color='(1, 0.85, 0.3
     return f'RPC_{id}'
 
 
-def buff_ability(id, label, desc, hediff, duration, ai_dist=30, ai=True, extra_comps=''):
+def buff_ability(id, label, desc, hediff, duration, ai_dist=30, ai=True, extra_comps='', adrenaline=0, ai_rule=None):
     out.append(f'''  <AbilityDef ParentName="RPC_CyberSelfAbilityBase">
     <defName>RPC_Ability_{id}</defName>
     <label>{escape(label)}</label>
@@ -303,7 +303,7 @@ def buff_ability(id, label, desc, hediff, duration, ai_dist=30, ai=True, extra_c
         <hediffDef>{hediff}</hediffDef>
         <defaultDurationSeconds>{duration}</defaultDurationSeconds>
         <aiMaxEnemyDistance>{ai_dist}</aiMaxEnemyDistance>
-      </li>
+''' + (f'        <adrenalineCost>{adrenaline}</adrenalineCost>\n' if adrenaline else '') + (f'        <aiRule>{ai_rule}</aiRule>\n' if ai_rule else '') + f'''      </li>
     </comps>
   </AbilityDef>
 
@@ -380,29 +380,96 @@ def target_ability(id, label, desc, range_, warmup, comps, hostile=True, ai=True
     return f'RPC_Ability_{id}'
 
 
-def shell(id, label, damage_def, damage, radius, sound='Explosion_Bomb'):
-    out.append(f'''  <ThingDef ParentName="BaseBullet">
+def shell(id, label, damage_def, damage, radius, sound='Explosion_Bomb', frags=0):
+    """A CE explosive projectile (ballistic arc, CE explosion and fragments) fired by the arm launcher."""
+    frag_xml = f'''
+    <comps>
+      <li Class="CombatExtended.CompProperties_Fragments">
+        <fragments><Fragment_Small>{frags}</Fragment_Small></fragments>
+      </li>
+    </comps>''' if frags else ''
+    out.append(f'''  <ThingDef ParentName="BaseExplosiveBullet">
     <defName>RPC_Shell_{id}</defName>
     <label>{escape(label)}</label>
-    <thingClass>Projectile_Explosive</thingClass>
+    <thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
     <graphicData>
-      <texPath>Things/Projectile/Grenade</texPath>
+      <texPath>Things/Projectile/LauncherShot</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.5,0.5)</drawSize>
     </graphicData>
-    <projectile>
-      <speed>45</speed>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <speed>30</speed>
       <damageDef>{damage_def}</damageDef>
       <damageAmountBase>{int(round(damage))}</damageAmountBase>
       <explosionRadius>{fmt(radius)}</explosionRadius>
       <soundExplode>{sound}</soundExplode>
-    </projectile>
+      <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+    </projectile>{frag_xml}
   </ThingDef>
 
 ''')
     return f'RPC_Shell_{id}'
 
 
-MELEE_DMG, MELEE_SPEED = (0.05, 0.2), (0.05, 0.2)
+def launcher_ammo(id, label, ammo_class, tex, projectile, cost):
+    """CE AmmoDef for the arm launcher (carried in inventory, loaded into the implant's magazine). Not used by any
+    gun, so CE's AmmoInjector skips it: crafting and trade are wired here instead."""
+    costs = ''.join(f'''
+      <li>
+        <filter><thingDefs><li>{k}</li></thingDefs></filter>
+        <count>{v}</count>
+      </li>''' for k, v in cost.items())
+    out.append(f'''  <ThingDef Class="CombatExtended.AmmoDef" ParentName="MediumAmmoBase">
+    <defName>Ammo_RPC_LauncherShell_{id}</defName>
+    <label>arm launcher shell ({escape(label)})</label>
+    <description>A compact shell for the projectile launch system arm implant. Carry them and the implant reloads from your inventory. They fit nothing else.</description>
+    <statBases>
+      <Mass>0.2</Mass>
+      <Bulk>0.3</Bulk>
+      <MarketValue>9</MarketValue>
+    </statBases>
+    <tradeTags>
+      <li>RPC_Ammo</li>
+      <li>RPC_LauncherShell</li>
+    </tradeTags>
+    <thingCategories>
+      <li>RPC_Ammo_LauncherShells</li>
+    </thingCategories>
+    <stackLimit>200</stackLimit>
+    <graphicData>
+      <texPath>Things/Ammo/GrenadeLauncher/{tex}</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <ammoClass>{ammo_class}</ammoClass>
+    <detonateProjectile>{projectile}</detonateProjectile>
+  </ThingDef>
+
+  <RecipeDef>
+    <defName>MakeAmmo_RPC_LauncherShell_{id}</defName>
+    <label>make arm launcher shells ({escape(label)}) x10</label>
+    <description>Craft 10 arm launcher shells ({escape(label)}).</description>
+    <jobString>Making arm launcher shells.</jobString>
+    <workAmount>1800</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>RPC_Cyberware_T2</researchPrerequisite>
+    <recipeUsers><li>TableMachining</li><li>FabricationBench</li></recipeUsers>
+    <ingredients>{costs}
+    </ingredients>
+    <fixedIngredientFilter><thingDefs>{''.join(f'<li>{k}</li>' for k in cost)}</thingDefs></fixedIngredientFilter>
+    <products>
+      <Ammo_RPC_LauncherShell_{id}>10</Ammo_RPC_LauncherShell_{id}>
+    </products>
+  </RecipeDef>
+
+''')
+    return f'Ammo_RPC_LauncherShell_{id}'
+
+
+# cycle 1 arm set. gorilla: heaviest single hit, slow, no way to close. mantis: fast, dash. monowire: reach. launcher: range, ammo.
+GORILLA_DMG = (0.10, 0.30)
 
 # ================================================================================================ arms
 header('arms (arms/manifest.md): one per arm, mixed freely')
@@ -411,22 +478,24 @@ header('arms (arms/manifest.md): one per arm, mixed freely')
 def gorilla(id, label, desc, rider, chance_key):
     lo, hi = 'T2', 'Iconic'
     cyberware(id, label, desc, 'arm', 8, (lo, hi),
-              E().off('MeleeDamageFactor', MELEE_DMG).fac('MeleeCooldownFactor', speed(MELEE_SPEED, lo, hi)),
-              {chance_key: (0.1, 0.2)},
-              tools(tool('gorilla fist', 'Blunt', 12, 1.0, blunt=4, sounds=('MeleeHit_BionicPunch', 'MeleeMiss_BionicPunch')))
-              + onhit(rider=rider, **{chance_key.replace('Chance', ''): chance_key}))
+              E().off('MeleeDamageFactor', GORILLA_DMG),
+              {chance_key: (0.05, 0.1)},
+              tools(tool('gorilla fist', 'Blunt', 20, 1.7, blunt=6, sounds=('MeleeHit_BionicPunch', 'MeleeMiss_BionicPunch')))
+              + onhit(rider=rider, fraction=0.15, **{chance_key.replace('Chance', ''): chance_key}), role='Melee')
 
 
 gorilla('ElectrifyingGorillaArms', 'electrifying gorilla arm', 'Gorilla arm actuators wrapped in shock coils. Every punch carries a jolt.', 'RPC_Electrical', 'shockChance')
 gorilla('ThermalGorillaArms', 'thermal gorilla arm', 'Gorilla arm with heating elements in the knuckles. Punches burn and can set the target alight.', 'RPC_Thermal', 'burnChance')
 gorilla('ToxicGorillaArms', 'toxic gorilla arm', 'Gorilla arm with toxin injectors in the knuckles.', 'RPC_Toxic', 'poisonChance')
 
-MANTIS_TOOLS = (tool('blade edge', 'Cut', 14, 0.8, sharp=1.2, blunt=1.0), tool('blade point', 'Stab', 16, 1.0, sharp=1.6, blunt=1.0))
+MANTIS_TOOLS = (tool('blade edge', 'Cut', 20, 0.9, sharp=2.2, blunt=1.0), tool('blade point', 'Stab', 22, 1.1, sharp=3.2, blunt=1.0))
 
 
 def mantis(id, label, desc, tiers, rider=None, chance_key=None, chance=(0.1, 0.2), fraction=0.3):
     hit = onhit(rider=rider, fraction=fraction, **({chance_key.replace('Chance', ''): chance_key} if chance_key else {})) if (rider or chance_key) else ''
-    cyberware(id, label, desc, 'arm', 8, tiers, None, {chance_key: chance} if chance_key else None,
+    values = {'cooldown': (12, 6)}
+    if chance_key: values[chance_key] = chance
+    cyberware(id, label, desc, 'arm', 8, tiers, E().off('MeleeDamageFactor', (0.05, 0.25)), values,
               tools(*MANTIS_TOOLS) + '      <li Class="RimPunkCE.HediffCompProperties_MantisBlades" />\n' + give('RPC_Ability_MantisDash') + hit)
 
 
@@ -437,39 +506,63 @@ mantis('MaxTacMantisBlades', 'MaxTac mantis blade', 'Heavy mantis blades issued 
 
 
 def monowire(id, label, desc, damage_def, rider=None, chance_key=None):
-    lash = target_ability(id + 'Lash', label + ' lash', 'Whip the monowire at a target up to 3 tiles away.', 2.9, 0.3,
+    lash = target_ability(id + 'Lash', label + ' lash', 'Whip the monowire at a target up to 6 tiles away.', 5.9, 0.3,
                           f'      <li Class="RimPunkCE.CompProperties_AbilityMonowireLash">\n        <damageDef>{damage_def}</damageDef>\n      </li>\n')
     hit = onhit(rider=rider, **({chance_key.replace('Chance', ''): chance_key} if chance_key else {})) if (rider or chance_key) else ''
-    values = {'lashDamage': (10, 16)}
+    values = {'lashDamage': (14, 28)}
     if chance_key: values[chance_key] = (0.1, 0.2)
-    cyberware(id, label, desc, 'arm', 8, ('T2', 'Iconic'), None, values,
-              tools(tool('monowire', 'Cut', 11, 1.1, sharp=1.4, blunt=0.5)) + give(lash) + hit,
-              note='monowire: adjacent cut plus a 3-tile lash ability (2-3 attack reach)')
+    cyberware(id, label, desc, 'arm', 8, ('T2', 'Iconic'), E().off('MeleeDamageFactor', (0.03, 0.15)), values,
+              tools(tool('monowire', 'Cut', 16, 1.0, sharp=2.2, blunt=0.5)) + give(lash) + hit,
+              note='monowire: adjacent cut plus a 6-tile lash ability')
 
 
-monowire('Monowire', 'monowire', 'A thin, impossibly sharp wire that whips out of the wrist.', 'Cut')
+monowire('Monowire', 'monowire', 'A thin, impossibly sharp wire that whips out of the wrist.', 'RPC_MonowireCut')
 monowire('ElectrifyingMonowire', 'electrifying monowire', 'A monowire carrying an electrical charge.', 'RPC_Electrical', None, 'shockChance')
-monowire('ToxicMonowire', 'toxic monowire', 'A monowire coated in neurotoxin.', 'Cut', 'RPC_Toxic', 'poisonChance')
+monowire('ToxicMonowire', 'toxic monowire', 'A monowire coated in neurotoxin.', 'RPC_MonowireCut', 'RPC_Toxic', 'poisonChance')
 monowire('ThermalMonowire', 'thermal monowire', 'A monowire heated to a searing temperature.', 'RPC_Thermal', None, 'burnChance')
 
-# projectile launch system: 4 shells, snap (instant, scatter) and aimed (warmup, +30% damage, +25% radius, accurate)
-SHELLS = [('HE', 'HE shell', 'Bomb', 20, 1.9, 'Explosion_Bomb'), ('Toxic', 'toxic shell', 'RPC_Toxic', 12, 2.2, 'Explosion_Bomb'),
-          ('Electrifying', 'electrifying shell', 'RPC_Electrical', 12, 2.2, 'Explosion_EMP'), ('Incendiary', 'incendiary shell', 'Flame', 10, 2.2, 'Explosion_Flame')]
-snap_shells, aimed_shells = [], []
-for sid, slabel, ddef, dmg, rad, snd in SHELLS:
-    snap_shells.append(shell('Launcher' + sid, slabel, ddef, dmg, rad, snd))
-    aimed_shells.append(shell('LauncherAimed' + sid, 'aimed ' + slabel, ddef, dmg * 1.3, rad * 1.25, snd))
-snap = target_ability('LauncherSnap', 'launcher: snap shot', 'Fire the arm launcher without aiming. Fast but scattered.', 24.9, 0,
+# projectile launch system: 4 CE shell types (own ammo items, carried in inventory), loaded into the implant's magazine
+# (size by tier) by a reload job. snap (instant, scatter) and aimed (warmup, +30% damage, +25% radius, accurate).
+# (id, label, damageDef, damage, radius, sound, ammoClass, texture, frags, cost per 10)
+SHELLS = [('HE', 'HE shell', 'Bomb', 28, 1.9, 'Explosion_Bomb', 'GrenadeHE', 'HE', 15, {'Steel': 20, 'ComponentIndustrial': 1}),
+          ('Toxic', 'toxic shell', 'RPC_Toxic', 16, 2.2, 'Explosion_Bomb', 'Toxic', 'Tox', 0, {'Steel': 15, 'Neutroamine': 2}),
+          ('Electrifying', 'electrifying shell', 'RPC_Electrical', 16, 2.2, 'Explosion_EMP', 'GrenadeEMP', 'EMP', 0, {'Steel': 15, 'ComponentIndustrial': 2}),
+          ('Incendiary', 'incendiary shell', 'Flame', 14, 2.2, 'Explosion_Flame', 'GrenadeIncendiary', 'AIR', 0, {'Steel': 15, 'Chemfuel': 15})]
+LAUNCHER_MAG = {'T2': 3, 'T3': 4, 'T4': 5, 'T5': 6, 'Iconic': 8}
+out.append('''  <ThingCategoryDef>
+    <defName>RPC_Ammo_LauncherShells</defName>
+    <label>arm launcher shells</label>
+    <parent>RPC_Ammo</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberGrenade</iconPath>
+  </ThingCategoryDef>
+
+''')
+snap_shells, aimed_shells, shell_ammo = [], [], []
+for sid, slabel, ddef, dmg, rad, snd, aclass, tex, frags, cost in SHELLS:
+    snap_shells.append(shell('Launcher' + sid, slabel, ddef, dmg, rad, snd, frags))
+    aimed_shells.append(shell('LauncherAimed' + sid, 'aimed ' + slabel, ddef, dmg * 1.3, rad * 1.25, snd, int(frags * 1.3)))
+    shell_ammo.append(launcher_ammo(sid, slabel.replace(' shell', ''), aclass, tex, snap_shells[-1], cost))
+out.append('''  <CombatExtended.AmmoSetDef>
+    <defName>RPC_AmmoSet_ArmLauncher</defName>
+    <label>arm launcher shells</label>
+    <ammoTypes>
+''' + ''.join(f'      <{a}>{p}</{a}>\n' for a, p in zip(shell_ammo, snap_shells)) + '''    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+
+''')
+snap = target_ability('LauncherSnap', 'launcher: snap shot', 'Fire the arm launcher without aiming. Fast but scattered. Uses one loaded shell.', 24.9, 0,
                       '      <li Class="RimPunkCE.CompProperties_AbilityLauncher">\n        <aimed>false</aimed>\n        <scatter>2.5</scatter>\n      </li>\n')
-aimed = target_ability('LauncherAimed', 'launcher: aimed shot', 'Take aim with the arm launcher: +30% damage, +25% explosion radius, much more accurate.', 29.9, 1.5,
+aimed = target_ability('LauncherAimed', 'launcher: aimed shot', 'Take aim with the arm launcher: +30% damage, +25% explosion radius, much more accurate. Uses one loaded shell.', 29.9, 1.5,
                        '      <li Class="RimPunkCE.CompProperties_AbilityLauncher">\n        <aimed>true</aimed>\n        <scatter>0.6</scatter>\n      </li>\n')
-cyberware('ProjectileLaunchSystem', 'projectile launch system', 'A grenade launcher built into the forearm. Fires HE, toxic, electrifying or incendiary shells.',
+cyberware('ProjectileLaunchSystem', 'projectile launch system', 'A grenade launcher built into the forearm. Fires HE, toxic, electrifying or incendiary shells from a small internal magazine, reloaded from shells carried in the inventory.',
           'arm', 8, ('T2', 'Iconic'), None, None,
           give(snap, aimed) + '      <li Class="RimPunkCE.HediffCompProperties_LauncherAmmo">\n'
           + '        <shells>' + ''.join(f'<li>{s}</li>' for s in snap_shells) + '</shells>\n'
           + '        <aimedShells>' + ''.join(f'<li>{s}</li>' for s in aimed_shells) + '</aimedShells>\n'
-          + '        <shellLabels>' + ''.join(f'<li>{s[1]}</li>' for s in SHELLS) + '</shellLabels>\n      </li>\n',
-          note='no ammo items: the launcher has unlimited shells, limited by the ability cooldown')
+          + '        <ammo>' + ''.join(f'<li>{a}</li>' for a in shell_ammo) + '</ammo>\n'
+          + '        <shellLabels>' + ''.join(f'<li>{x[1]}</li>' for x in SHELLS) + '</shellLabels>\n'
+          + '        <magazineByTier>' + ''.join(f'<li>{LAUNCHER_MAG.get(t, 0)}</li>' for t in ('T1', 'T2', 'T3', 'T4', 'T5', 'Iconic')) + '</magazineByTier>\n      </li>\n',
+          note='CE ammo: shells are items (Ammo_RPC_LauncherShell_*), loaded into a magazine sized by tier (3/4/5/6/8), reloaded from inventory')
 
 # ================================================================================================ hands
 header('hands (hands/manifest.md): one, in either hand')
@@ -546,14 +639,14 @@ header('operating systems (operating_system/manifest.md): one per pawn')
 
 def sandevistan(id, label, desc, cap, tiers, consc, dur, cd, effects, ext=''):
     e = effects.cap('Consciousness', consc).fac('MoveSpeed', 1 + consc)
-    h = active(id + 'Active', label.lower() + ' active', 'Time crawls for this pawn.', e, '        <afterimages>true</afterimages>\n' + ext)
-    ab = buff_ability(id, 'activate ' + label, 'Slow down time: much faster thinking and moving for the duration.', h, 80, ai_dist=40)
+    h = active(id + 'Active', label.lower() + ' active', 'Time crawls for this pawn.', e, '        <afterimages>true</afterimages>\n        <adrenalineGainFactor>0.5</adrenalineGainFactor>\n' + ext)
+    ab = buff_ability(id, 'activate ' + label, 'Slow down time: much faster thinking and moving for the duration.', h, 80, ai_dist=40, adrenaline=25, ai_rule='CloseDistance')
     cyberware(id, label, desc, 'os', cap, tiers, None, {'duration': dur, 'cooldown': cd}, give(ab), os_type='Sandevistan')
 
 
 sandevistan('ApogeeSandevistan', 'Apogee sandevistan', 'A top-end sandevistan. Downing or killing enemies while it runs keeps it going.', 44, ('T5', 'Iconic'), 1.7, 60, (60, 50),
             E().off('RPC_HeadshotDamageFactor', (0.15, 0.2)).off('RPC_RangedCritChance', (0.15, 0.2)).off('MeleeCritChance', (0.15, 0.2)).off('RPC_CritDamageFactor', (0.15, 0.2)),
-            '        <onNeutralizeExtendFraction>0.1</onNeutralizeExtendFraction>\n        <onNeutralizeStamina>0.22</onNeutralizeStamina>\n')
+            '        <onNeutralizeExtendFraction>0.1</onNeutralizeExtendFraction>\n        <onNeutralizeAdrenaline>0.22</onNeutralizeAdrenaline>\n')
 sandevistan('FalconSandevistan', 'Falcon sandevistan', 'A military sandevistan that heals the user as they cut through enemies.', 39, ('T4', 'Iconic'), 1.4, (90, 100), (60, 40),
             E().fac('RPC_DamageFactorAll', (1.05, 1.10)).off('RPC_RangedCritChance', (0.05, 0.15)).off('MeleeCritChance', (0.05, 0.15)).off('RPC_CritDamageFactor', (0.05, 0.10)),
             '        <onNeutralizeExtendFraction>0.05</onNeutralizeExtendFraction>\n        <onNeutralizeHealFraction><min>0.10</min><max>0.12</max></onNeutralizeHealFraction>\n')
@@ -568,10 +661,10 @@ sandevistan('ZetatechSandevistan', 'Zetatech sandevistan', 'A sandevistan built 
 def berserk(id, label, desc, cap, tiers, dur, cd, incoming, effects, ext=''):
     h = active(id + 'Active', 'berserk active', 'No pain, melee only, and very hard to put down.', effects,
                (f'        <incomingDamageFactor>{tv(incoming)}</incomingDamageFactor>\n' if incoming is not None else '')
-               + '        <partHealthFloor>0.25</partHealthFloor>\n        <meleeOnly>true</meleeOnly>\n        <staminaCostFactor>0</staminaCostFactor>\n'
+               + '        <partHealthFloor>0.25</partHealthFloor>\n        <meleeOnly>true</meleeOnly>\n        <adrenalineGainFactor>1.5</adrenalineGainFactor>\n'
                + '        <healPerNeutralizeOnEnd>0.25</healPerNeutralizeOnEnd>\n' + ext,
                comps=BERSERK_LOOK, color='(1, 0.25, 0.25)', stages='    <stages Inherit="False">\n      <li>\n        <painFactor>0</painFactor>\n      </li>\n    </stages>\n')
-    ab = buff_ability(id, 'activate ' + label, 'Go berserk: melee only, no pain, much harder to kill. Heals for every enemy downed or killed when it ends.', h, 80, ai_dist=8)
+    ab = buff_ability(id, 'activate ' + label, 'Go berserk: melee only, no pain, much harder to kill. Heals for every enemy downed or killed when it ends.', h, 80, ai_dist=8, adrenaline=40, ai_rule='Pinned')
     cyberware(id, label, desc, 'os', cap, tiers, None, {'duration': dur, 'cooldown': cd}, give(ab), os_type='Berserk')
 
 
@@ -587,26 +680,33 @@ berserk('ZetatechBerserk', 'Zetatech berserk', 'A balanced berserk: tough and qu
         E().fac('MeleeCooldownFactor', speed((0.2, 0.3), lo, hi)))
 
 
+# every cyberdeck has a base RAM bank by tier (quickhack RAM costs follow the wiki: 2-32), plus the deck's own bonus
+DECK_BASE_RAM = [6, 8, 10, 12, 14, 16]
+
+
 def cyberdeck(id, label, desc, cap, tiers, effects=None, values=None, note=None):
     lo, hi = tiers
     e = effects or E()
     if not any(st == 'RPC_RamMax' for st, _ in e.offsets):
         e.off('RPC_RamMax', (1, 10))
-    cyberware(id, label, desc, 'os', cap, tiers, e, values, give('RPC_Quickhack_ShortCircuit'), os_type='Cyberdeck', extra=QUICKHACK_EYES, note=note)
+    e.offsets = [(st, [b + x for b, x in zip(DECK_BASE_RAM, lerp_tiers(v, lo, hi))]) if st == 'RPC_RamMax' else (st, v) for st, v in e.offsets]
+    # quickhacks are learned from shards (gen_quickhacks.py); the deck itself grants Overclock
+    cyberware(id, label, desc, 'os', cap, tiers, e, values, give('RPC_Ability_Overclock'), os_type='Cyberdeck', extra=QUICKHACK_EYES, note=note)
 
 
 cyberdeck('BiotechCyberdeck', 'Biotech cyberdeck', 'A cyberdeck built around damage over time. From tier 3, quickhacks hit harder; from tier 4, monowire hits harder on burning or poisoned targets.', 16, ('T2', 'Iconic'),
-          E().fac('RPC_QuickhackDamageFactor', [1, 1, 1.1, 1.1, 1.1, 1.1]), {'monowireVsDot': [0, 0, 0, 0.25, 0.25, 0.25]},
-          note='Biotech: combat-quickhack duration (t2) and overclock reset (t5) wait for more quickhacks / overclock')
-cyberdeck('CantoCyberdeck', 'Canto Mk.6 cyberdeck', 'A black-market cyberdeck of terrifying power.', 33, ('T5', 'Iconic'), E().off('RPC_RamMax', (8, 12)),
-          note='Canto: the Blackwall Gateway quickhack (iconic) waits for the quickhack list')
+          E().fac('RPC_QuickhackDamageFactor', [1, 1, 1.1, 1.1, 1.1, 1.1]),
+          {'monowireVsDot': [0, 0, 0, 0.25, 0.25, 0.25], 'combatQuickhackDuration': (0.15, 0.6)},
+          note='Biotech: overclock reset (t5) not implemented')
+cyberdeck('CantoCyberdeck', 'Canto Mk.6 cyberdeck', 'A black-market cyberdeck of terrifying power. At iconic tier it unlocks the Blackwall Gateway quickhack.', 33, ('T5', 'Iconic'), E().off('RPC_RamMax', (8, 12)),
+          {'blackwallGateway': [0, 0, 0, 0, 0, 1]})
 cyberdeck('ParalineCyberdeck', 'Paraline cyberdeck', 'A netrunner deck that pairs with monowire. From tier 2, quickhacks hit harder; from tier 3, monowire gains damage for every RAM unit spent.', 14, ('T1', 'Iconic'),
           E().fac('RPC_QuickhackDamageFactor', [1, 1.1, 1.1, 1.1, 1.1, 1.1]), {'monowirePerUsedRam': [0, 0, 0.02, 0.02, 0.02, 0.02]},
           note='Paraline: smart-weapon upload acceleration (t4) and overclock damage (t5) wait for overclock / upload interaction')
 cyberdeck('NetDriverCyberdeck', 'NetDriver Mk.1 cyberdeck', 'A combat cyberdeck: quickhacks hit much harder.', 25, ('T5', 'Iconic'),
-          E().off('RPC_RamMax', (8, 12)).fac('RPC_QuickhackDamageFactor', (1.15, 1.3)), note='NetDriver: combat-quickhack duration waits for quickhacks with a duration')
-cyberdeck('RavenCyberdeck', 'Raven Microcyber cyberdeck', 'A cyberdeck that spreads quickhacks between targets.', 20, ('T3', 'Iconic'), E().off('RPC_RamMax', (4, 10)),
-          note='Raven: quickhack spread waits for the spread system')
+          E().off('RPC_RamMax', (8, 12)).fac('RPC_QuickhackDamageFactor', (1.15, 1.3)), {'combatQuickhackDuration': (0.2, 0.5)})
+cyberdeck('RavenCyberdeck', 'Raven Microcyber cyberdeck', 'A cyberdeck that spreads quickhacks further between targets.', 20, ('T3', 'Iconic'), E().off('RPC_RamMax', (4, 10)),
+          {'quickhackSpreadDistance': [0, 0, 0.4, 0.6, 0.8, 1.0]}, note='Raven: instant spread (t4) and overclock spread chance (t5) not implemented')
 cyberdeck('RipplerCyberdeck', 'Rippler cyberdeck', 'A cyberdeck with a large RAM bank at high tiers.', 16, ('T1', 'Iconic'),
           E().off('RPC_RamMax', [a + b for a, b in zip(lerp_tiers((1, 8), 'T1', 'Iconic'), [0, 0, 0, 5, 8, 12])]),
           note='Rippler: non-combat quickhack synergies (t2, t3) and overclock auto-upload (t5) wait for those systems')
@@ -650,16 +750,16 @@ def skel(id, label, desc, cap, tiers, sharp, blunt, effects=None, values=None, c
 
 
 skel('BionicJoints', 'bionic joints', 'Armoured replacement joints. Simple but effective.', 8, ('T1', 'Iconic'), (1.25, 6.5), (2.8, 14.6))
-skel('DenseMarrow', 'dense marrow', 'Heavier bones that put more weight behind every blow, at a stamina cost.', 16, ('T2', 'Iconic'), (0.9, 2.7), (2.0, 6.1),
-     E().off('MeleeDamageFactor', (0.15, 0.27)).fac('RPC_StaminaCostFactorMelee', 1.2))
+skel('DenseMarrow', 'dense marrow', 'Heavier bones that put more weight behind every blow, but melee builds adrenaline more slowly.', 16, ('T2', 'Iconic'), (0.9, 2.7), (2.0, 6.1),
+     E().off('MeleeDamageFactor', (0.15, 0.27)).fac('RPC_AdrenalineGainMelee', 0.8))
 skel('EpimorphicSkeleton', 'epimorphic skeleton', 'A regenerative skeleton that makes every body part tougher.', 40, ('T4', 'Iconic'), (4.8, 9.3), (10.8, 20.9),
      E().fac('RPC_MaxHealthFactor', (1.10, 1.13)))
 active('FeenXBoost', 'Feen-X', 'RAM regenerating much faster.', E().fac('RPC_RamRegen', 3.5))
 skel('FeenX', 'Feen-X', 'Boosts RAM regeneration a lot when RAM runs low.', 16, ('T1', 'Iconic'), (0.4, 1.9), (0.9, 4.3), None, {'ramBelow': (3, 7)},
      conditionals(cond('RamBelow', 'RPC_FeenXBoost', threshold='ramBelow')))
-active('KineticFrameBoost', 'kinetic frame', 'Mitigation chance up while stamina is high.', E().off('RPC_MitigationChance', (0.08, 0.18)))
-skel('KineticFrame', 'kinetic frame', 'Raises mitigation chance while stamina is above 85%.', 16, ('T1', 'Iconic'), (0.85, 5.85), (1.9, 13.2), None, {'staminaAbove': 0.85},
-     conditionals(cond('StaminaAbove', 'RPC_KineticFrameBoost', threshold='staminaAbove')))
+active('KineticFrameBoost', 'kinetic frame', 'Mitigation chance up while adrenaline is high.', E().off('RPC_MitigationChance', (0.08, 0.18)))
+skel('KineticFrame', 'kinetic frame', 'Raises mitigation chance while adrenaline is above 50%.', 16, ('T1', 'Iconic'), (0.85, 5.85), (1.9, 13.2), None, {'adrenalineAbove': 0.5},
+     conditionals(cond('AdrenalineAbove', 'RPC_KineticFrameBoost', threshold='adrenalineAbove')))
 lo, hi = 'T3', 'Iconic'
 skel('ParaBellum', 'Para Bellum', 'Reinforces all other armour.', 25, (lo, hi), (1.5, 7.5), (3.4, 16.9),
      E().fac('ArmorRating_Sharp', plus1((0.08, 0.12), lo, hi)).fac('ArmorRating_Blunt', plus1((0.08, 0.12), lo, hi)))
@@ -676,7 +776,7 @@ skel('ScarCoalescer', 'scar coalescer', 'Hardens scar tissue on the fly: more ar
 active('ScarabBraced', 'scarab braced', 'Standing still: extra armour.', E().armor((1.5, 6.5), (3.4, 14.6)))
 skel('Scarab', 'scarab', 'Locks the frame when the user stands still, adding armour.', 14, ('T1', 'Iconic'), (0.5, 2.3), (1.1, 5.2), None, None,
      conditionals(cond('StandingStill', 'RPC_ScarabBraced')))
-skel('SpringJoints', 'spring joints', 'Spring-loaded joints that turn blocked hits into stamina.', 16, ('T2', 'Iconic'), (0.9, 2.3), (2.0, 5.2), E().off('RPC_MitigationStrength', (0.10, 0.18)))
+skel('SpringJoints', 'spring joints', 'Spring-loaded joints that turn blocked hits into adrenaline.', 16, ('T2', 'Iconic'), (0.9, 2.3), (2.0, 5.2), E().off('RPC_MitigationStrength', (0.10, 0.18)))
 lo, hi = 'T1', 'Iconic'
 skel('TitaniumBones', 'titanium bones', 'Titanium-laced bones: the user can carry far more.', 6, (lo, hi), (0.5, 2.3), (1.1, 5.2),
      E().fac('CarryWeight', plus1((0.3, 0.66), lo, hi)).fac('CarryBulk', plus1((0.3, 0.66), lo, hi)))
@@ -722,8 +822,8 @@ cyberware('VisualCortexSupport', 'visual cortex support', 'Crit chance grows wit
 
 # ================================================================================================ circulatory system
 header('circulatory system (circulatory_system/manifest.md): three max')
-cyberware('AdrenalineBooster', 'adrenaline booster', 'Restores stamina whenever the user takes down an enemy in melee.', 'circulatory', 14, ('T1', 'Iconic'), None,
-          {'stamina': (0.10, 0.25)}, triggers(trig('Neutralized', [eff('Stamina', key='stamina')], weapon='Melee')))
+cyberware('AdrenalineBooster', 'adrenaline booster', 'Floods the user with adrenaline whenever they take down an enemy in melee.', 'circulatory', 14, ('T1', 'Iconic'), None,
+          {'adrenaline': (0.10, 0.25)}, triggers(trig('Neutralized', [eff('Adrenaline', key='adrenaline')], weapon='Melee')))
 cyberware('BlackMamba', 'Black Mamba', 'A poison-handling system: more damage against poisoned enemies, almost immune to toxins.', 'circulatory', 16, ('T3', 'Iconic'),
           E().fac('RPC_DamageVsPoisoned', (1.10, 1.22)).off('RPC_ChemicalResistance', 0.9),
           note='Black Mamba: "-90% poison damage" = 90% chemical resistance')
@@ -733,15 +833,15 @@ ab = buff_ability('BloodPump', 'blood pump', 'Instantly restore some health, the
 cyberware('BloodPump', 'blood pump', 'An auxiliary pump that flushes the user\'s system with regenerative fluid on demand.', 'circulatory', 15, ('T2', 'Iconic'), None,
           {'instantHeal': (4.5, 11), 'duration': 60, 'cooldown': 100}, give(ab))
 lo, hi = 'T1', 'Iconic'
-cyberware('ClutchPadding', 'clutch padding', 'Shock padding that makes shooting less tiring.', 'circulatory', 12, (lo, hi), E().fac('RPC_StaminaCostFactorRanged', minus1((0.07, 0.20), lo, hi)))
-cyberware('ElectromagRecycler', 'electromag recycler', 'Recycles energy from tech weapon hits into health and stamina.', 'circulatory', 40, ('T3', 'Iconic'), None,
-          {'gain': (0.025, 0.05)}, triggers(trig('DealtDamage', [eff('HealFraction', key='gain'), eff('Stamina', key='gain')], weapon='Tech')))
+cyberware('ClutchPadding', 'clutch padding', 'Recoil feedback padding: shooting builds adrenaline faster.', 'circulatory', 12, (lo, hi), E().fac('RPC_AdrenalineGainRanged', plus1((0.07, 0.20), lo, hi)))
+cyberware('ElectromagRecycler', 'electromag recycler', 'Recycles energy from tech weapon hits into health and adrenaline.', 'circulatory', 40, ('T3', 'Iconic'), None,
+          {'gain': (0.025, 0.05)}, triggers(trig('DealtDamage', [eff('HealFraction', key='gain'), eff('Adrenaline', key='gain')], weapon='Tech')))
 cyberware('FeedbackCircuit', 'feedback circuit', 'Heals the user a little with every tech weapon hit.', 'circulatory', 14, ('T3', 'Iconic'), None,
           {'heal': (0.015, 0.035)}, triggers(trig('DealtDamage', [eff('HealFraction', key='heal')], weapon='Tech')))
 cyberware('HealOnKill', 'heal-on-kill', 'Heals the user whenever they down or kill an enemy.', 'circulatory', 10, ('T1', 'Iconic'), None,
           {'heal': (0.03, 0.075)}, triggers(trig('Neutralized', [eff('HealFraction', key='heal')])))
 lo, hi = 'T3', 'Iconic'
-cyberware('IsometricStabilizer', 'isometric stabilizer', 'Makes every attack less tiring.', 'circulatory', 40, (lo, hi), E().fac('RPC_StaminaCostFactor', minus1((0.13, 0.20), lo, hi)))
+cyberware('IsometricStabilizer', 'isometric stabilizer', 'Keeps the body primed: all adrenaline builds faster.', 'circulatory', 40, (lo, hi), E().fac('RPC_AdrenalineGain', plus1((0.13, 0.20), lo, hi)))
 lo, hi = 'T1', 'Iconic'
 cyberware('Microrotors', 'microrotors', 'Tiny rotors in the arms for faster melee swings.', 'circulatory', 12, (lo, hi), E().fac('MeleeCooldownFactor', speed((0.10, 0.25), lo, hi)))
 cyberware('SecondHeart', 'Second Heart', 'A backup heart. When the user would die or go down, it brings them back at full health.', 'circulatory', 30, ('T4', 'Iconic'), None,
@@ -791,7 +891,7 @@ skin('OpticalCamo', 'optical camo', 'Light-bending skin that makes the user invi
      {'duration': (40, 70), 'cooldown': (140, 100)}, give(ab))
 lo, hi = 'T4', 'Iconic'
 skin('PainEditor', 'pain editor', 'Filters pain signals and dampens every hit a little.', 35, (lo, hi), (4.4, 5.4), (9.9, 12.2), E().fac('RPC_IncomingDamageFactor', minus1((0.06, 0.07), lo, hi)))
-skin('Painducer', 'painducer', 'Spreads part of every hit out over the next 50 seconds as small hits.', 30, ('T4', 'Iconic'), (5.7, 6.9), (12.8, 15.5), None, {'delayedFraction': (0.25, 0.30)})
+skin('Painducer', 'painducer', 'Spreads part of every hit out over the next 8 seconds as small hits to the body and limbs. Whatever is still held back when the user goes down is dropped.', 30, ('T4', 'Iconic'), (5.7, 6.9), (12.8, 15.5), None, {'delayedFraction': (0.25, 0.30)})
 skin('PeripheralInverse', 'peripheral inverse', 'The closer an attacker is, the less damage they do: up to -34-45% within 3 tiles, fading to nothing at 6.', 30, ('T4', 'Iconic'),
      (0.4, 1.8), (0.9, 4.1), None, {'closeRangeReduction': (0.34, 0.45)})
 skin('ProxiShield', 'ProxiShield', 'The closer an attacker is, the less damage they do: up to -8-20% within 3 tiles, fading to nothing at 6.', 10, ('T1', 'Iconic'),

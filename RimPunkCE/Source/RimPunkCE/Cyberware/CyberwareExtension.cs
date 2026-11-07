@@ -24,6 +24,9 @@ namespace RimPunkCE
         public CyberSlotDef slot;
         public CyberOsType osType = CyberOsType.None;
 
+        /// <summary>How this implant makes its user fight (ContextualCombat). Most stay Neutral; the pawn's role also looks at its stats and weapon.</summary>
+        public CombatRole combatRole = CombatRole.Neutral;
+
         /// <summary>Cyberware capacity this uses ("cyberware capacity" in the manifests).</summary>
         public float capacityCost;
 

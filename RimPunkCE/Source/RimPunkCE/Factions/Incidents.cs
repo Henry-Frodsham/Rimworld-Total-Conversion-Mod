@@ -13,6 +13,9 @@ namespace RimPunkCE
     {
         public const int RecentQuickhackTicks = 60000 * 5;
 
+        /// <summary>Below this NetWatch's cheapest team doesn't fit, and the raid fails on an early colony.</summary>
+        private const float MinRaidPoints = 400f;
+
         private static Faction NetWatch => CyberFactionUtility.FirstOfKind(CyberFactionKind.NetWatch);
 
         protected override bool CanFireNowSub(IncidentParms parms)
@@ -31,7 +34,7 @@ namespace RimPunkCE
             {
                 target = parms.target,
                 faction = nw,
-                points = parms.points > 0 ? parms.points : StorytellerUtility.DefaultThreatPointsNow(parms.target),
+                points = UnityEngine.Mathf.Max(MinRaidPoints, parms.points > 0 ? parms.points : StorytellerUtility.DefaultThreatPointsNow(parms.target)),
                 forced = true,
             };
             bool ok = IncidentDefOf.RaidEnemy.Worker.TryExecute(raid);

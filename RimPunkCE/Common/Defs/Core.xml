@@ -78,16 +78,15 @@
 
   <!-- ================= tuning ================= -->
 
-  <RimPunkCE.StaminaTuningDef>
-    <defName>RPC_StaminaTuning</defName>
-    <regenPerSecond>50</regenPerSecond>
-    <meleeMassFactor>4</meleeMassFactor>
-    <rangedMassFactor>1.5</rangedMassFactor>
-    <toolPowerFactor>0.6</toolPowerFactor>
-    <minDrain>1</minDrain>
-    <maxDrain>40</maxDrain>
+  <RimPunkCE.AdrenalineTuningDef>
+    <defName>RPC_AdrenalineTuning</defName>
+    <perDamageDealt>0.6</perDamageDealt>
+    <perDamageTaken>1</perDamageTaken>
+    <enteredCombatBurst>25</enteredCombatBurst>
+    <decayPerSecond>4</decayPerSecond>
     <outOfCombatTicks>600</outOfCombatTicks>
-  </RimPunkCE.StaminaTuningDef>
+    <surgeFraction>0.5</surgeFraction>
+  </RimPunkCE.AdrenalineTuningDef>
 
   <!-- Event table intentionally empty until the trigger events are decided. Example entry:
        <li><eventType>TookDamage</eventType><chance>0.01</chance><chancePerTenPercentOver>0.01</chancePerTenPercentOver></li>
@@ -105,32 +104,35 @@
     <maxTacBoardTicks>1500</maxTacBoardTicks>
   </RimPunkCE.CyberpsychosisTuningDef>
 
-  <!-- ================= stamina ================= -->
+  <!-- ================= adrenaline ================= -->
 
-  <NeedDef>
-    <defName>RPC_Stamina</defName>
-    <needClass>RimPunkCE.Need_Stamina</needClass>
-    <label>stamina</label>
-    <description>Drains when attacking with melee or ranged weapons and refills while standing still. At zero the pawn can't attack and moves at half speed until it is full again.</description>
-    <minIntelligence>Humanlike</minIntelligence>
-    <listPriority>650</listPriority>
-    <baseLevel>1</baseLevel>
-    <showForCaravanMembers>false</showForCaravanMembers>
-    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
-  </NeedDef>
-
+  <!-- severity = adrenaline fraction, set by CompCyberTracker; on the pawn from surgeFraction up -->
   <HediffDef>
-    <defName>RPC_Exhausted</defName>
-    <label>exhausted</label>
-    <description>Out of stamina. Can't attack and moves at half speed until stamina is full again.</description>
+    <defName>RPC_AdrenalineSurge</defName>
+    <label>adrenaline surge</label>
+    <description>The fight has this pawn's blood up: less pain, faster on their feet.</description>
     <hediffClass>HediffWithComps</hediffClass>
-    <defaultLabelColor>(0.9, 0.7, 0.3)</defaultLabelColor>
-    <isBad>true</isBad>
+    <defaultLabelColor>(1, 0.5, 0.2)</defaultLabelColor>
+    <isBad>false</isBad>
     <everCurableByItem>false</everCurableByItem>
+    <initialSeverity>0.5</initialSeverity>
+    <maxSeverity>1</maxSeverity>
     <stages>
       <li>
+        <minSeverity>0</minSeverity>
+        <label>rising</label>
+        <painFactor>0.85</painFactor>
         <statFactors>
-          <MoveSpeed>0.5</MoveSpeed>
+          <MoveSpeed>1.05</MoveSpeed>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>0.85</minSeverity>
+        <label>peak</label>
+        <painFactor>0.7</painFactor>
+        <statFactors>
+          <MoveSpeed>1.1</MoveSpeed>
+          <MeleeCooldownFactor>0.95</MeleeCooldownFactor>
         </statFactors>
       </li>
     </stages>
@@ -152,13 +154,41 @@
   <HediffDef>
     <defName>RPC_CyberpsychosisRage</defName>
     <label>cyberpsychotic rage</label>
-    <description>Chrome-fuelled rage. Consciousness doubled.</description>
+    <description>Chrome-fuelled rage. Consciousness and movement speed doubled.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(1, 0.2, 0.2)</defaultLabelColor>
     <isBad>false</isBad>
     <everCurableByItem>false</everCurableByItem>
     <stages>
       <li>
+        <statFactors>
+          <MoveSpeed>2</MoveSpeed>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>2</postFactor>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- David's last stand. Stacks with RPC_CyberpsychosisRage for double the normal buffs (x4 total). -->
+  <HediffDef>
+    <defName>RPC_CyberpsychosisPermanent</defName>
+    <label>permanent cyberpsychosis</label>
+    <description>David's last stand burned out everything that was holding this mind together. The cyberpsychosis will never end, whatever is removed or done to this pawn. Together with the rage, consciousness and movement speed are quadrupled.</description>
+    <hediffClass>RimPunkCE.Hediff_PermanentCyberpsychosis</hediffClass>
+    <defaultLabelColor>(1, 0, 0.2)</defaultLabelColor>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <makesSickThought>false</makesSickThought>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>2</MoveSpeed>
+        </statFactors>
         <capMods>
           <li>
             <capacity>Consciousness</capacity>
@@ -197,7 +227,7 @@
     <degreeDatas>
       <li>
         <label>gonk</label>
-        <description>{PAWN_nameDef}'s body rejects chrome. [PAWN_possessive] cyberware capacity is permanently 20, nothing can raise it, but [PAWN_pronoun] works faster without it.</description>
+        <description>{PAWN_nameDef}'s body rejects chrome. [PAWN_possessive] cyberware capacity is permanently 20, only immunoblockers can raise it, but [PAWN_pronoun] works faster without it.</description>
         <degree>-2</degree>
         <commonality>20</commonality>
         <statOffsets>
@@ -270,6 +300,13 @@
   </TraitDef>
 
   <!-- ================= damage types (cyberware/terms.md) ================= -->
+
+  <!-- monowire lash: vanilla Cut plus a blunt value. CE turns a deflected sharp hit into blunt and reads the blunt
+       penetration from the weapon; the lash has none, so CE warned and used 50 (a deflected lash hit like a hammer) -->
+  <DamageDef ParentName="CutBase">
+    <defName>RPC_MonowireCut</defName>
+    <defaultArmorPenetration>0.5</defaultArmorPenetration>
+  </DamageDef>
 
   <DamageDef>
     <defName>RPC_Electrical</defName>

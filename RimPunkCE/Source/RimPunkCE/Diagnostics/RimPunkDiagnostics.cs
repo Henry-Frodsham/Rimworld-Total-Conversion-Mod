@@ -11,7 +11,7 @@ namespace RimPunkCE
 {
     /// <summary>
     /// Live-test diagnostics (mod setting "Diagnostics log"). Writes RimPunkCE/Diagnostics/diag.log:
-    ///  - EVENT lines from RimPunk systems (cyberware, abilities, cyberpsychosis, stamina, Trauma Team, factions);
+    ///  - EVENT lines from RimPunk systems (cyberware, abilities, cyberpsychosis, adrenaline, Trauma Team, factions, gigs);
     ///  - ERROR lines for any game error whose stack passes through RimPunk code (with the stack);
     ///  - CHECK lines from invariant checks every in-game hour (state that's wrong but invisible on screen);
     ///  - STATS lines summarising event counts per period.
@@ -28,6 +28,9 @@ namespace RimPunkCE
         private static readonly HashSet<string> ReportedOnce = new HashSet<string>();
 
         public static bool Enabled => RimPunkMod.Settings?.diagnostics == true;
+
+        /// <summary>Every game error, and whether it's ours (the live tests fail a scenario on those).</summary>
+        public static System.Action<string, bool> ErrorListener;
 
         public static string FilePath
         {
@@ -151,10 +154,10 @@ namespace RimPunkCE
                 string stack = Environment.StackTrace;
                 // ignore our own frames (this patch, Diag) when deciding whether RimPunk code caused the error
                 bool rimpunkFrame = stack.Split('\n').Any(l => l.Contains("RimPunkCE.") && !l.Contains("Patch_Log_Error") && !l.Contains("RimPunkCE.Diag"));
-                if (text != null && (text.Contains("RimPunk") || text.Contains("RPC_") || rimpunkFrame))
-                    Diag.Error(text, stack);
-                else
-                    Diag.Count("game-errors-elsewhere");
+                bool ours = text != null && (text.Contains("RimPunk") || text.Contains("RPC_") || rimpunkFrame);
+                if (ours) Diag.Error(text, stack);
+                else Diag.Count("game-errors-elsewhere");
+                Diag.ErrorListener?.Invoke(text, ours);
             }
             catch
             {
@@ -200,7 +203,8 @@ namespace RimPunkCE
             if (tracker == null) return;
 
             // capacity cache vs a fresh sum
-            float sum = pawn.InstalledCyberware().Sum(c => c.CapacityCost);
+            float sum = pawn.InstalledCyberware().Sum(c => c.CapacityCost)
+                        + pawn.health.hediffSet.hediffs.Where(ForeignCyberwareUtility.IsForeignImplant).Sum(ForeignCyberwareUtility.CostOf);
             if (Math.Abs(sum - tracker.CapacityUsed) > 0.01f)
                 Diag.Check("capacity", $"{who}: cached usage {tracker.CapacityUsed} != actual {sum} (cache not invalidated)", "cap" + id + "_" + sum);
             float max = tracker.CapacityMax;
@@ -227,18 +231,12 @@ namespace RimPunkCE
                         if (pawn.abilities.GetAbility(a) == null) Diag.Check("abilities", $"{who}: {c.def.defName} installed but ability {a.defName} missing", "abmiss" + id + a.defName);
             }
             foreach (var a in pawn.CyberAbilities())
-                if (CyberUtility.SourceCyberwareFor(pawn, a.def) == null && !(pawn.equipment?.Primary?.TryGetComp<CompEquippableAbility>()?.AbilityForReading == a))
+                if (!(a is QuickhackAbility) && CyberUtility.SourceCyberwareFor(pawn, a.def) == null && !(pawn.equipment?.Primary?.TryGetComp<CompEquippableAbility>()?.AbilityForReading == a))
                     Diag.Check("abilities", $"{who}: has {a.def.defName} but no cyberware grants it (orphan ability)", "aborphan" + id + a.def.defName);
 
-            // stamina
-            var st = tracker.Stamina;
-            if (st != null)
-            {
-                if (float.IsNaN(st.CurLevel) || st.CurLevel < 0 || st.CurLevel > st.MaxLevel + 0.01f)
-                    Diag.Check("stamina", $"{who}: stamina {st.CurLevel}/{st.MaxLevel}", "stam" + id);
-                if (st.Exhausted && st.CurLevel >= st.MaxLevel && pawn.pather != null && !pawn.pather.Moving)
-                    Diag.Check("stamina", $"{who}: exhausted while stamina is full and standing still", "stamex" + id);
-            }
+            // adrenaline
+            if (float.IsNaN(tracker.Adrenaline) || tracker.Adrenaline < 0f || tracker.Adrenaline > tracker.AdrenalineMax + 0.01f)
+                Diag.Check("adrenaline", $"{who}: adrenaline {tracker.Adrenaline}/{tracker.AdrenalineMax}", "adr" + id);
 
             // RAM
             if (tracker.Ram > tracker.RamMax + 0.01f) Diag.Check("ram", $"{who}: RAM {tracker.Ram} > max {tracker.RamMax}", "ram" + id);
@@ -274,7 +272,7 @@ namespace RimPunkCE
             {
                 int ttPawns = map.mapPawns.SpawnedPawnsInFaction(tt).Count;
                 if (ttPawns > 0) Diag.Count("trauma-team-pawns-on-map:" + ttPawns);
-                if (tt.HostileTo(Faction.OfPlayer)) Diag.Check("factions", "Trauma Team is hostile to the player", "tthostile");
+                if (tt.HostileTo(Faction.OfPlayer) && !GameComponent_RimPunk.TraumaHostileToPlayer) Diag.Check("factions", "Trauma Team is hostile to the player", "tthostile");
             }
             foreach (var f in Find.FactionManager.AllFactionsListForReading)
             {

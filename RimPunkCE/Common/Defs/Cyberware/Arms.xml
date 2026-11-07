@@ -5,13 +5,13 @@
        so vanilla / other mods' arm parts aren't blocked. Melee values follow CE's bionic arm / arm blade. -->
 
   <!-- ===================== Gorilla Arms (arms/manifest.md) =====================
-       T2-Iconic, capacity 8. +5-20% melee damage, +5-20% melee attack speed, normal damage.
-       10-20% chance of a bleeding blow (HediffComp_CyberOnHit). -->
+       T2-Iconic, capacity 8. Cycle 1: the heaviest single hit of the four arms but slow, with no way to close distance.
+       +10-30% melee damage, no attack speed bonus. 10-20% chance of a bleeding blow (HediffComp_CyberOnHit). -->
 
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_GorillaArms</defName>
     <label>gorilla arm</label>
-    <description>Hard-hitting arm cyberware. Hydraulic actuators turn every punch into a sledgehammer.</description>
+    <description>Hard-hitting arm cyberware. Hydraulic actuators turn every punch into a sledgehammer, but it's slow, and the user still has to walk up to whoever they want to hit.</description>
     <costList>
       <Plasteel>12</Plasteel>
       <ComponentSpacer>2</ComponentSpacer>
@@ -32,9 +32,9 @@
           <li Class="CombatExtended.ToolCE">
             <label>gorilla fist</label>
             <capacities><li>Blunt</li></capacities>
-            <power>12</power>
-            <cooldownTime>1.0</cooldownTime>
-            <armorPenetrationBlunt>4</armorPenetrationBlunt>
+            <power>20</power>
+            <cooldownTime>1.7</cooldownTime>
+            <armorPenetrationBlunt>6</armorPenetrationBlunt>
             <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
             <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
           </li>
@@ -47,6 +47,7 @@
     <modExtensions>
       <li Class="RimPunkCE.CyberwareExtension">
         <slot>RPC_Slot_Arm</slot>
+        <combatRole>Melee</combatRole>
         <capacityCost>8</capacityCost>
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
@@ -56,12 +57,8 @@
         </values>
         <effects>
           <statOffsets>
-            <li><stat>MeleeDamageFactor</stat><value><min>0.05</min><max>0.2</max></value></li>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.1</min><max>0.3</max></value></li>
           </statOffsets>
-          <statFactors>
-            <!-- +5-20% attack speed = cooldown x1/1.05 .. x1/1.2 -->
-            <li><stat>MeleeCooldownFactor</stat><value><min>0.952</min><max>0.833</max></value></li>
-          </statFactors>
         </effects>
       </li>
     </modExtensions>
@@ -69,7 +66,8 @@
 
   <!-- ===================== Mantis Blades =====================
        T2-Iconic, capacity 8. Slash and cut. Extend/retract; when extended they replace the gun butt in melee.
-       Dash: zips to a target up to 10 tiles away and attacks. -->
+       Dash: zips to a target up to 10 tiles away and attacks, 12-6s cooldown. Cycle 1: hits harder, pierces better,
+       now scales with tier (+5-25% melee damage), so an upgrade does something. Faster than gorilla arms, less per hit. -->
 
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_MantisBlades</defName>
@@ -95,17 +93,17 @@
           <li Class="CombatExtended.ToolCE">
             <label>blade edge</label>
             <capacities><li>Cut</li></capacities>
-            <power>14</power>
-            <cooldownTime>0.8</cooldownTime>
-            <armorPenetrationSharp>1.2</armorPenetrationSharp>
+            <power>20</power>
+            <cooldownTime>0.9</cooldownTime>
+            <armorPenetrationSharp>2.2</armorPenetrationSharp>
             <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
           </li>
           <li Class="CombatExtended.ToolCE">
             <label>blade point</label>
             <capacities><li>Stab</li></capacities>
-            <power>16</power>
-            <cooldownTime>1.0</cooldownTime>
-            <armorPenetrationSharp>1.6</armorPenetrationSharp>
+            <power>22</power>
+            <cooldownTime>1.1</cooldownTime>
+            <armorPenetrationSharp>3.2</armorPenetrationSharp>
             <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
           </li>
         </tools>
@@ -122,6 +120,14 @@
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_MantisBlades</item>
+        <values>
+          <li><key>cooldown</key><value><min>12</min><max>6</max></value></li>
+        </values>
+        <effects>
+          <statOffsets>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.05</min><max>0.25</max></value></li>
+          </statOffsets>
+        </effects>
       </li>
     </modExtensions>
   </HediffDef>
@@ -155,5 +161,14 @@
       <li Class="RimPunkCE.CompProperties_AbilityDashStrike" />
     </comps>
   </AbilityDef>
+
+  <!-- Projectile Launch System reload (ArmLauncher.cs): loads shells from the inventory into the arm's magazine -->
+  <JobDef>
+    <defName>RPC_ReloadArmLauncher</defName>
+    <driverClass>RimPunkCE.JobDriver_ReloadArmLauncher</driverClass>
+    <reportString>reloading the arm launcher.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
 
 </Defs>

@@ -45,21 +45,26 @@
   <RPC_Crit>Crit!</RPC_Crit>
   <RPC_Mitigated>Mitigated</RPC_Mitigated>
 
-  <!-- bars / stamina -->
+  <!-- bars / adrenaline -->
   <RPC_Ram>RAM</RPC_Ram>
-  <RPC_Stamina>Stamina</RPC_Stamina>
-  <RPC_StaminaTip>Drains when attacking, refills while standing still.</RPC_StaminaTip>
-  <RPC_StaminaExhaustedTip>Exhausted: can't attack and moves at half speed until stamina is full again.</RPC_StaminaExhaustedTip>
+  <RPC_Adrenaline>Adrenaline</RPC_Adrenaline>
+  <RPC_AdrenalineTip>Builds when dealing and taking damage, fades out of combat. Pays for sandevistan and berserk. Above half: less pain, faster movement.</RPC_AdrenalineTip>
+  <RPC_NotEnoughAdrenaline>Needs {0} adrenaline</RPC_NotEnoughAdrenaline>
 
   <!-- cyberpsychosis -->
   <RPC_CyberpsychosisReason_Event>pushed over the edge ({0})</RPC_CyberpsychosisReason_Event>
   <RPC_CyberpsychosisReason_Burnout>cyberpsychosis burnout: above 50% capacity</RPC_CyberpsychosisReason_Burnout>
+  <RPC_CyberpsychosisReason_LastStand>David's last stand wore off. This break is permanent: removing cyberware won't end it, nothing will.</RPC_CyberpsychosisReason_LastStand>
+
+  <!-- immunoblockers -->
+  <RPC_ImmunoblockerTip>+{0} cyberware capacity (only the strongest active immunoblocker counts)</RPC_ImmunoblockerTip>
+  <RPC_ImmunoblockerExplanation>Immunoblocker: +{0}</RPC_ImmunoblockerExplanation>
 
   <!-- settings -->
   <RPC_Settings_CapacityMultiplier>Cyberware capacity multiplier: {0}</RPC_Settings_CapacityMultiplier>
   <RPC_Settings_CyberpsychosisChanceMultiplier>Cyberpsychosis chance multiplier: {0}</RPC_Settings_CyberpsychosisChanceMultiplier>
   <RPC_Settings_VisualEffects>Visual effects (sandevistan afterimages, quickhack widget)</RPC_Settings_VisualEffects>
-  <RPC_Settings_StaminaEnabled>Stamina system</RPC_Settings_StaminaEnabled>
+  <RPC_Settings_AdrenalineEnabled>Adrenaline system (off: activations are free, no surge)</RPC_Settings_AdrenalineEnabled>
   <RPC_Settings_DebugLogging>Debug logging</RPC_Settings_DebugLogging>
 
   <!-- factions -->
@@ -71,7 +76,9 @@
 
   <!-- trauma team -->
   <RPC_BuyTraumaTeam>Trauma Team ({0} silver)</RPC_BuyTraumaTeam>
-  <RPC_BuyTraumaTeamDesc>Pay {0} silver for {1} days of Trauma Team coverage. If this colonist goes down, a Trauma Team shuttle lands a squad that fights off whoever is hostile to them, extracts them and returns them patched up about a day later. One dispatch per coverage. Silver is taken from anywhere on the map.</RPC_BuyTraumaTeamDesc>
+  <RPC_BuyTraumaTeamDesc>Pay {0} silver for {1} days of Trauma Team coverage. If this colonist goes down, a Trauma Team shuttle lands a squad that fights off whoever is hostile to them, extracts them and returns them patched up about a day later. One dispatch per coverage. Silver is taken from anywhere on the map.
+
+Treatment is billed when the patient comes back: {2} silver per condition treated, {3} silver plus {4} per hostile if the squad had to fight, and {5} silver to cure a cyberpsycho. A bill the colony can't pay becomes debt, and Trauma Team won't help anyone until it's paid.</RPC_BuyTraumaTeamDesc>
   <RPC_TraumaTeamNoSilver>Not enough silver on the map ({0} needed).</RPC_TraumaTeamNoSilver>
   <RPC_TraumaTeamBought>{0} is covered by Trauma Team for {1} days.</RPC_TraumaTeamBought>
   <RPC_TraumaTeamLetter>Trauma Team inbound</RPC_TraumaTeamLetter>
@@ -83,8 +90,14 @@
   <RPC_Blocked>Blocked</RPC_Blocked>
   <RPC_Charged>charged {0}</RPC_Charged>
   <RPC_HackNegated>Hack negated</RPC_HackNegated>
-  <RPC_CycleShell>Shell: {0}</RPC_CycleShell>
-  <RPC_CycleShellDesc>Switch the projectile launch system to the next shell type.</RPC_CycleShellDesc>
+  <RPC_CycleShell>Next shell: {0}</RPC_CycleShell>
+  <RPC_CycleShellDesc>Choose which shell type the projectile launch system loads on its next reload. Shells of another type still in the magazine go back to the inventory when it reloads.</RPC_CycleShellDesc>
+  <RPC_LauncherReload>Reload launcher ({0}/{1})</RPC_LauncherReload>
+  <RPC_LauncherReloadDesc>Load {0}s from the inventory into the arm launcher ({1} carried). Shells have to be carried: add them to the pawn's loadout or have them pick some up.</RPC_LauncherReloadDesc>
+  <RPC_LauncherEmpty>Launcher empty: reload it with shells from the inventory.</RPC_LauncherEmpty>
+  <RPC_LauncherFull>The launcher is already full of that shell type.</RPC_LauncherFull>
+  <RPC_LauncherNoShells>No {0}s in the inventory.</RPC_LauncherNoShells>
+  <RPC_LauncherTip>Magazine: {0}/{1} ({2}). Next load: {3}.\nCarried: {4}</RPC_LauncherTip>
   <RPC_TraumaTeamFailed>Trauma Team couldn't get {0} onto the shuttle. Extraction failed.</RPC_TraumaTeamFailed>
   <RPC_MaxTacLetter>MaxTac inbound</RPC_MaxTacLetter>
   <RPC_MaxTacLetterText>{0} is a cyberpsycho and has {1}. NCPD MaxTac is landing to put them down.</RPC_MaxTacLetterText>
@@ -95,9 +108,169 @@
   <RPC_TraumaTeamReturnLetter>Patient returned</RPC_TraumaTeamReturnLetter>
   <RPC_TraumaTeamReturnLetterText>Trauma Team has returned {0}, patched up.</RPC_TraumaTeamReturnLetterText>
 
+  <!-- trauma team hostility (TraumaHostility.cs) -->
+  <RPC_TraumaHostileLetter>Trauma Team hostile</RPC_TraumaHostileLetter>
+  <RPC_TraumaHostileLetterText>{0} attacked {1}, and Trauma Team doesn't forgive that. They are now hostile to the colony for {2} days: any squad on the ground will fight back instead of extracting its patient, their shuttle is no longer off-limits, and they won't respond to or sell coverage to any colonist until it's over. Attacking them again restarts the clock.</RPC_TraumaHostileLetterText>
+  <RPC_TraumaForgiveLetter>Trauma Team relations restored</RPC_TraumaForgiveLetter>
+  <RPC_TraumaForgiveLetterText>Trauma Team has taken the colony off its blacklist. Coverage can be bought again and covered colonists will be responded to.</RPC_TraumaForgiveLetterText>
+  <RPC_TraumaRefusedHostile>Trauma Team won't respond to {0}: the colony attacked them ({1} days until they'll deal with you again).</RPC_TraumaRefusedHostile>
+  <RPC_TraumaRefusedCoverageHostile>Trauma Team won't sell coverage to a colony that attacked them ({0} days left).</RPC_TraumaRefusedCoverageHostile>
+  <!-- trauma team NPC clients (TraumaCoverageUtility.cs) -->
+  <RPC_TraumaTeamEnemyLetter>Trauma Team contract</RPC_TraumaTeamEnemyLetter>
+  <RPC_TraumaTeamEnemyLetterText>{0} is down, and {1} paid for Trauma Team coverage. A Trauma Team shuttle is inbound with a squad contracted to extract them. They will fight anyone in the way, colonists included.\n\nKill or capture {0} before the shuttle lands, or stop the squad carrying them aboard.</RPC_TraumaTeamEnemyLetterText>
+  <RPC_TraumaTeamNpcMessage>Trauma Team is responding to {0}.</RPC_TraumaTeamNpcMessage>
+  <RPC_TraumaTeamExtractedNpc>Trauma Team has extracted {0}.</RPC_TraumaTeamExtractedNpc>
+  <!-- trauma team billing and debt (TraumaBilling.cs) -->
+  <RPC_TraumaBillTreatment>  - {0} conditions treated: {1} silver</RPC_TraumaBillTreatment>
+  <RPC_TraumaBillCombat>  - combat surcharge, {0} hostiles engaged: {1} silver</RPC_TraumaBillCombat>
+  <RPC_TraumaBillPsycho>  - cyberpsychosis extraction and treatment: {0} silver</RPC_TraumaBillPsycho>
+  <RPC_TraumaBillTotal>Total: {0} silver</RPC_TraumaBillTotal>
+  <RPC_TraumaBillLetter>Trauma Team bill paid</RPC_TraumaBillLetter>
+  <RPC_TraumaBillPaidText>Trauma Team has billed the colony for treating {0}. The silver was taken from the colony's stores.
+
+{1}</RPC_TraumaBillPaidText>
+  <RPC_TraumaDebtLetter>Trauma Team debt</RPC_TraumaDebtLetter>
+  <RPC_TraumaDebtLetterText>Trauma Team has billed the colony for treating {0}, but there isn't enough silver to pay. The bill has been added to the colony's debt.
+
+{1}
+
+The colony now owes {2} silver, growing by {3}% a day. Trauma Team won't help any colonist until the debt is paid. If nothing is paid within {4} days, the debt is sold to a collection agency, and they collect in person.
+
+Pay from any colonist's "Pay Trauma Team debt" button.</RPC_TraumaDebtLetterText>
+  <RPC_TraumaRefusedDebt>Trauma Team won't respond to {0}: the colony owes them {1} silver.</RPC_TraumaRefusedDebt>
+  <RPC_TraumaRefusedCoverage>Trauma Team won't sell coverage while the colony owes them {0} silver.</RPC_TraumaRefusedCoverage>
+  <RPC_PayTraumaDebt>Pay Trauma Team debt ({0})</RPC_PayTraumaDebt>
+  <RPC_PayTraumaDebtDesc>The colony owes Trauma Team {0} silver. Pays as much as the silver on this map covers ({4} available).
+
+Collectors are sent in {1} days. The debt grows by {2}% a day. Paying at least {3}% of it at once restarts the deadline. Trauma Team won't help any colonist until it's paid off.</RPC_PayTraumaDebtDesc>
+  <RPC_TraumaDebtNoSilver>No silver on the map to pay with.</RPC_TraumaDebtNoSilver>
+  <RPC_TraumaDebtCleared>Trauma Team debt paid off. Trauma Team service is restored.</RPC_TraumaDebtCleared>
+  <RPC_TraumaDebtPaidReset>Paid {0} silver to Trauma Team, {1} still owed. The collection deadline has been pushed back to {2} days.</RPC_TraumaDebtPaidReset>
+  <RPC_TraumaDebtPaidPartial>Paid {0} silver to Trauma Team, {1} still owed. Pay at least {3}% of the debt at once to push back the collection deadline.</RPC_TraumaDebtPaidPartial>
+  <RPC_TraumaDebtWarning>Trauma Team debt overdue</RPC_TraumaDebtWarning>
+  <RPC_TraumaDebtWarningText>Trauma Team reminds the colony that it owes {0} silver. If the debt isn't paid within {1} days, it will be sold to a collection agency.</RPC_TraumaDebtWarningText>
+  <RPC_TraumaDebtFinal>Final notice</RPC_TraumaDebtFinal>
+  <RPC_TraumaDebtFinalText>Final notice: the colony owes Trauma Team {0} silver. In {1} days the debt goes to collections, and the collectors will come armed.</RPC_TraumaDebtFinalText>
+  <RPC_TraumaCollectorsLetter>Debt collectors</RPC_TraumaCollectorsLetter>
+  <RPC_TraumaCollectorsLetterText>The colony's Trauma Team debt of {0} silver has been sold to a collection agency, and they've come to collect. They'll keep coming until the debt is paid. Paying it off makes them stand down.</RPC_TraumaCollectorsLetterText>
+
   <RPC_Settings_FactionsDefault>Corps and gangs are the default factions (needs restart)</RPC_Settings_FactionsDefault>
   <RPC_Settings_FactionsDefaultTip>New worlds start with the cyberpunk corporations and gangs selected. Vanilla and DLC factions stay available in the faction list but start unselected.</RPC_Settings_FactionsDefaultTip>
 
   <RPC_Settings_Diagnostics>Diagnostics log (for testing)</RPC_Settings_Diagnostics>
   <RPC_Settings_DiagnosticsTip>Writes RimPunkCE/Diagnostics/diag.log: RimPunk events, errors from RimPunk code, and hourly state checks. Turn off once testing is done.</RPC_Settings_DiagnosticsTip>
+  <!-- Trauma Team on the ground (TraumaTeamPresence.cs) -->
+  <RPC_TraumaExclusionMessage>Trauma Team has set up an exclusion zone around their AV. Keep your people out of the red line.</RPC_TraumaExclusionMessage>
+  <RPC_TraumaSay_Arrive>Trauma Team! Clear the area!</RPC_TraumaSay_Arrive>
+  <RPC_TraumaSay_Contact>Contact! Engaging!</RPC_TraumaSay_Contact>
+  <RPC_TraumaSay_Warning>Step back! Exclusion zone!</RPC_TraumaSay_Warning>
+  <RPC_TraumaSay_Secure>Client secured!</RPC_TraumaSay_Secure>
+  <RPC_TraumaSay_Depart>Wheels up!</RPC_TraumaSay_Depart>
+
+  <!-- quickhacks -->
+  <RPC_NeedsCyberdeck>Needs a cyberdeck.</RPC_NeedsCyberdeck>
+  <RPC_QuickhackTooltip>{0} quickhack, {1}. RAM: {2}, upload: {3}s.</RPC_QuickhackTooltip>
+  <RPC_QuickhackCategory_Combat>Combat</RPC_QuickhackCategory_Combat>
+  <RPC_QuickhackCategory_Control>Control</RPC_QuickhackCategory_Control>
+  <RPC_QuickhackCategory_Covert>Covert</RPC_QuickhackCategory_Covert>
+  <RPC_QuickhackCategory_Ultimate>Ultimate</RPC_QuickhackCategory_Ultimate>
+  <RPC_QuickhackDuration>Duration: {0}s.</RPC_QuickhackDuration>
+  <RPC_QuickhackUntraceable>Untraceable: doesn't draw NetWatch.</RPC_QuickhackUntraceable>
+  <RPC_QuickhackNoMechanoids>Doesn't work on mechanoids.</RPC_QuickhackNoMechanoids>
+  <RPC_QuickhackHumanlikeOnly>Only works on humanlikes.</RPC_QuickhackHumanlikeOnly>
+  <RPC_QuickhackAlreadyAffected>Already affected by this quickhack.</RPC_QuickhackAlreadyAffected>
+  <RPC_QuickhackCantAffect>This quickhack can't affect that target.</RPC_QuickhackCantAffect>
+  <RPC_QuickhackReason>quickhacked by {0}</RPC_QuickhackReason>
+  <RPC_BlockedByMalfunction>Cyberware malfunction: cyberware abilities are offline.</RPC_BlockedByMalfunction>
+  <RPC_BlockedByCripple>Cripple movement: movement cyberware is offline.</RPC_BlockedByCripple>
+  <RPC_BlockedBySonicShock>Sonic shock: comms are scrambled, can't upload quickhacks.</RPC_BlockedBySonicShock>
+  <RPC_LearnedQuickhack>{0} learned the {1} quickhack ({2}).</RPC_LearnedQuickhack>
+  <RPC_QuickhackAlreadyKnown>Already knows this quickhack at {0}.</RPC_QuickhackAlreadyKnown>
+  <!-- cyberware tab (UI/ITab_Pawn_Cyberware.cs) -->
+  <RPC_TabCyberware>Cyberware</RPC_TabCyberware>
+  <RPC_UI_Title>{0}: cyberware</RPC_UI_Title>
+  <RPC_UI_Capacity>Capacity {0} / {1} ({2})</RPC_UI_Capacity>
+  <RPC_UI_CapacityQueued>, {0} after queued operations</RPC_UI_CapacityQueued>
+  <RPC_UI_CapacityTip>Cyberware capacity used. The red line is where cyberpsychosis can set in ({0}). Amber: what queued installs will add.</RPC_UI_CapacityTip>
+  <RPC_UI_ReadOnly>Operations can only be queued for colonists, prisoners and slaves.</RPC_UI_ReadOnly>
+  <RPC_UI_Limbs>Limb replacement</RPC_UI_Limbs>
+  <RPC_UI_SlotLabel>{0} ({1}/{2})</RPC_UI_SlotLabel>
+  <RPC_UI_EmptyTip>Empty {0} slot. Click to queue an install.</RPC_UI_EmptyTip>
+  <RPC_UI_PartMissing>{0} is missing.</RPC_UI_PartMissing>
+  <RPC_UI_SlotFull>The {0} slot is full ({1} max).</RPC_UI_SlotFull>
+  <RPC_UI_NoPart>no body part to install it on</RPC_UI_NoPart>
+  <RPC_UI_Queued>queued</RPC_UI_Queued>
+  <RPC_UI_RemovalQueued>removing</RPC_UI_RemovalQueued>
+  <RPC_UI_UpgradeQueued>upgrading</RPC_UI_UpgradeQueued>
+  <RPC_UI_QueuedTip>Queued: {0}. Waiting for a doctor to perform the operation.</RPC_UI_QueuedTip>
+  <RPC_UI_ClickCancel>Click to cancel.</RPC_UI_ClickCancel>
+  <RPC_UI_ChangeTip>Queued: {0}. Click to cancel.</RPC_UI_ChangeTip>
+  <RPC_UI_CostTip>Capacity cost: {0}</RPC_UI_CostTip>
+  <RPC_UI_Cancel>Cancel: {0}</RPC_UI_Cancel>
+  <!-- netrun -->
+  <RPC_Netrun_Uploaded>UPLOADED</RPC_Netrun_Uploaded>
+  <RPC_Netrun_Resisted>RESISTED</RPC_Netrun_Resisted>
+  <RPC_Netrun_Immune>IMMUNE</RPC_Netrun_Immune>
+  <RPC_Netrun_Uploading>Uploading</RPC_Netrun_Uploading>
+  <RPC_Netrun_Unavailable>unavailable</RPC_Netrun_Unavailable>
+  <RPC_Netrun_MenuOption>Upload {0} ({1}, {2} RAM) to {3}</RPC_Netrun_MenuOption>
+
+  <!-- chrome plating -->
+  <RPC_ChromeArmorCap>Chrome armor limit: {0}</RPC_ChromeArmorCap>
+  <RPC_PlatingTip>Plates this part: +{0} mm sharp, +{1} MPa blunt, +{2} health</RPC_PlatingTip>
+  <RPC_PlatingTipWholeBody>Reinforces every body part: +{0} health</RPC_PlatingTipWholeBody>
+
+  <!-- settings -->
+  <RPC_Settings_ContextualAI>Contextual combat AI</RPC_Settings_ContextualAI>
+  <RPC_Settings_ContextualAITip>NPCs fight to their chrome: melee builds close in, ranged builds keep their distance, netrunners go after your snipers, sandevistans close gaps, berserk when pinned.</RPC_Settings_ContextualAITip>
+  <RPC_Settings_Barks>Barks (speech lines in combat and for events)</RPC_Settings_Barks>
+
+  <!-- gigs -->
+  <RPC_Gig_Title>Gigs</RPC_Gig_Title>
+  <RPC_Gig_ContactOnline>Your contact is on the line.</RPC_Gig_ContactOnline>
+  <RPC_Gig_NeedsComms>No contact: accepting gigs needs a powered comms console.</RPC_Gig_NeedsComms>
+  <RPC_Gig_None>Nothing on the board right now. New work comes in every few days.</RPC_Gig_None>
+  <RPC_Gig_AnonymousClient>an anonymous client</RPC_Gig_AnonymousClient>
+  <RPC_Gig_Type_Assassinate>Assassination</RPC_Gig_Type_Assassinate>
+  <RPC_Gig_Type_Sabotage>Sabotage</RPC_Gig_Type_Sabotage>
+  <RPC_Gig_Type_Steal>Data theft</RPC_Gig_Type_Steal>
+  <RPC_Gig_Type_Rescue>Hostage rescue</RPC_Gig_Type_Rescue>
+  <RPC_Gig_Goal_Assassinate>Kill the marked target at the site.</RPC_Gig_Goal_Assassinate>
+  <RPC_Gig_Goal_Sabotage>Destroy the server rack at the site.</RPC_Gig_Goal_Sabotage>
+  <RPC_Gig_Goal_Steal>Find the data shard at the site and bring it home, or take it with a caravan.</RPC_Gig_Goal_Steal>
+  <RPC_Gig_Goal_Rescue>Find the hostage at the site and free them (right-click). They'll join you.</RPC_Gig_Goal_Rescue>
+  <RPC_Gig_State_Offered>open</RPC_Gig_State_Offered>
+  <RPC_Gig_State_Active>running</RPC_Gig_State_Active>
+  <RPC_Gig_State_Completed>done</RPC_Gig_State_Completed>
+  <RPC_Gig_State_Failed>failed</RPC_Gig_State_Failed>
+  <RPC_Gig_Row>Client: {0}. Pays {1} silver.</RPC_Gig_Row>
+  <RPC_Gig_OfferEnds>Offer ends in {0}.</RPC_Gig_OfferEnds>
+  <RPC_Gig_DueIn>Due in {0}.</RPC_Gig_DueIn>
+  <RPC_Gig_Accept>Accept</RPC_Gig_Accept>
+  <RPC_Gig_Decline>Decline</RPC_Gig_Decline>
+  <RPC_Gig_Abandon>Abandon</RPC_Gig_Abandon>
+  <RPC_Gig_Show>Show site</RPC_Gig_Show>
+  <RPC_Gig_FreeHostage>Free {0}</RPC_Gig_FreeHostage>
+  <RPC_Gig_NewOffer>New gig: {0} against {1}, pays {2} silver. See the Gigs tab.</RPC_Gig_NewOffer>
+  <RPC_Gig_NoSite>Your contact couldn't find a usable site for this job. Try again later.</RPC_Gig_NoSite>
+  <RPC_Gig_SiteLabel>{0}: {1}</RPC_Gig_SiteLabel>
+  <RPC_Gig_AcceptedLetter>Gig accepted: {0}</RPC_Gig_AcceptedLetter>
+  <RPC_Gig_AcceptedText>{0} against {1}. Pays {2} silver. You have {3} days.\n\n{4}\n\nThe site is marked on the world map. Send a caravan.</RPC_Gig_AcceptedText>
+  <RPC_Gig_ObjectiveHere>Gig objective: {0}.</RPC_Gig_ObjectiveHere>
+  <RPC_Gig_CompletedLetter>Gig complete: {0}</RPC_Gig_CompletedLetter>
+  <RPC_Gig_CompletedText>{0} against {1} is done. {2} has sent {3} silver.</RPC_Gig_CompletedText>
+  <RPC_Gig_FailedLetter>Gig failed: {0}</RPC_Gig_FailedLetter>
+  <RPC_Gig_FailedText>{0} against {1} has failed. {2} won't be pleased.</RPC_Gig_FailedText>
+
+  <RPC_UI_Remove>Remove {0}</RPC_UI_Remove>
+  <RPC_UI_UpgradeTo>Upgrade to {0}</RPC_UI_UpgradeTo>
+  <RPC_UI_NeedsResearch>needs research: {0}</RPC_UI_NeedsResearch>
+  <RPC_UI_AlreadyQueued>already queued</RPC_UI_AlreadyQueued>
+  <RPC_UI_NoneInStock>none in stock, waits for one</RPC_UI_NoneInStock>
+  <RPC_UI_InStock>{0} in stock</RPC_UI_InStock>
+  <RPC_UI_NoOptions>Nothing can be installed here right now.</RPC_UI_NoOptions>
+  <RPC_UI_Natural>natural</RPC_UI_Natural>
+  <RPC_UI_Missing>missing</RPC_UI_Missing>
+  <RPC_UI_LimbWarn>the cyberware on this limb is removed and dropped</RPC_UI_LimbWarn>
+
 </LanguageData>

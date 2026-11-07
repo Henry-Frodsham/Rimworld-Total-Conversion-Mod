@@ -27,9 +27,9 @@
           <li Class="CombatExtended.ToolCE">
             <label>gorilla fist</label>
             <capacities><li>Blunt</li></capacities>
-            <power>12</power>
-            <cooldownTime>1.0</cooldownTime>
-            <armorPenetrationBlunt>4</armorPenetrationBlunt>
+            <power>20</power>
+            <cooldownTime>1.7</cooldownTime>
+            <armorPenetrationBlunt>6</armorPenetrationBlunt>
             <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
             <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
           </li>
@@ -37,27 +37,25 @@
       </li>
       <li Class="RimPunkCE.HediffCompProperties_CyberOnHit">
         <riderDamage>RPC_Electrical</riderDamage>
-        <riderFraction>0.3</riderFraction>
+        <riderFraction>0.15</riderFraction>
         <shockChanceKey>shockChance</shockChanceKey>
       </li>
     </comps>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareExtension">
         <slot>RPC_Slot_Arm</slot>
+        <combatRole>Melee</combatRole>
         <capacityCost>8</capacityCost>
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ElectrifyingGorillaArms</item>
         <effects>
           <statOffsets>
-            <li><stat>MeleeDamageFactor</stat><value><min>0.05</min><max>0.2</max></value></li>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.1</min><max>0.3</max></value></li>
           </statOffsets>
-          <statFactors>
-            <li><stat>MeleeCooldownFactor</stat><value><perTier><li>0.9524</li><li>0.9524</li><li>0.9195</li><li>0.8889</li><li>0.8602</li><li>0.8333</li></perTier></value></li>
-          </statFactors>
         </effects>
         <values>
-          <li><key>shockChance</key><value><min>0.1</min><max>0.2</max></value></li>
+          <li><key>shockChance</key><value><min>0.05</min><max>0.1</max></value></li>
         </values>
       </li>
     </modExtensions>
@@ -87,9 +85,9 @@
           <li Class="CombatExtended.ToolCE">
             <label>gorilla fist</label>
             <capacities><li>Blunt</li></capacities>
-            <power>12</power>
-            <cooldownTime>1.0</cooldownTime>
-            <armorPenetrationBlunt>4</armorPenetrationBlunt>
+            <power>20</power>
+            <cooldownTime>1.7</cooldownTime>
+            <armorPenetrationBlunt>6</armorPenetrationBlunt>
             <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
             <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
           </li>
@@ -97,27 +95,25 @@
       </li>
       <li Class="RimPunkCE.HediffCompProperties_CyberOnHit">
         <riderDamage>RPC_Thermal</riderDamage>
-        <riderFraction>0.3</riderFraction>
+        <riderFraction>0.15</riderFraction>
         <burnChanceKey>burnChance</burnChanceKey>
       </li>
     </comps>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareExtension">
         <slot>RPC_Slot_Arm</slot>
+        <combatRole>Melee</combatRole>
         <capacityCost>8</capacityCost>
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ThermalGorillaArms</item>
         <effects>
           <statOffsets>
-            <li><stat>MeleeDamageFactor</stat><value><min>0.05</min><max>0.2</max></value></li>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.1</min><max>0.3</max></value></li>
           </statOffsets>
-          <statFactors>
-            <li><stat>MeleeCooldownFactor</stat><value><perTier><li>0.9524</li><li>0.9524</li><li>0.9195</li><li>0.8889</li><li>0.8602</li><li>0.8333</li></perTier></value></li>
-          </statFactors>
         </effects>
         <values>
-          <li><key>burnChance</key><value><min>0.1</min><max>0.2</max></value></li>
+          <li><key>burnChance</key><value><min>0.05</min><max>0.1</max></value></li>
         </values>
       </li>
     </modExtensions>
@@ -147,9 +143,9 @@
           <li Class="CombatExtended.ToolCE">
             <label>gorilla fist</label>
             <capacities><li>Blunt</li></capacities>
-            <power>12</power>
-            <cooldownTime>1.0</cooldownTime>
-            <armorPenetrationBlunt>4</armorPenetrationBlunt>
+            <power>20</power>
+            <cooldownTime>1.7</cooldownTime>
+            <armorPenetrationBlunt>6</armorPenetrationBlunt>
             <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
             <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
           </li>
@@ -157,27 +153,25 @@
       </li>
       <li Class="RimPunkCE.HediffCompProperties_CyberOnHit">
         <riderDamage>RPC_Toxic</riderDamage>
-        <riderFraction>0.3</riderFraction>
+        <riderFraction>0.15</riderFraction>
         <poisonChanceKey>poisonChance</poisonChanceKey>
       </li>
     </comps>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareExtension">
         <slot>RPC_Slot_Arm</slot>
+        <combatRole>Melee</combatRole>
         <capacityCost>8</capacityCost>
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ToxicGorillaArms</item>
         <effects>
           <statOffsets>
-            <li><stat>MeleeDamageFactor</stat><value><min>0.05</min><max>0.2</max></value></li>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.1</min><max>0.3</max></value></li>
           </statOffsets>
-          <statFactors>
-            <li><stat>MeleeCooldownFactor</stat><value><perTier><li>0.9524</li><li>0.9524</li><li>0.9195</li><li>0.8889</li><li>0.8602</li><li>0.8333</li></perTier></value></li>
-          </statFactors>
         </effects>
         <values>
-          <li><key>poisonChance</key><value><min>0.1</min><max>0.2</max></value></li>
+          <li><key>poisonChance</key><value><min>0.05</min><max>0.1</max></value></li>
         </values>
       </li>
     </modExtensions>
@@ -207,17 +201,17 @@
           <li Class="CombatExtended.ToolCE">
             <label>blade edge</label>
             <capacities><li>Cut</li></capacities>
-            <power>14</power>
-            <cooldownTime>0.8</cooldownTime>
-            <armorPenetrationSharp>1.2</armorPenetrationSharp>
+            <power>20</power>
+            <cooldownTime>0.9</cooldownTime>
+            <armorPenetrationSharp>2.2</armorPenetrationSharp>
             <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
           </li>
           <li Class="CombatExtended.ToolCE">
             <label>blade point</label>
             <capacities><li>Stab</li></capacities>
-            <power>16</power>
-            <cooldownTime>1.0</cooldownTime>
-            <armorPenetrationSharp>1.6</armorPenetrationSharp>
+            <power>22</power>
+            <cooldownTime>1.1</cooldownTime>
+            <armorPenetrationSharp>3.2</armorPenetrationSharp>
             <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
           </li>
         </tools>
@@ -239,7 +233,13 @@
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ToxicMantisBlades</item>
+        <effects>
+          <statOffsets>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.05</min><max>0.25</max></value></li>
+          </statOffsets>
+        </effects>
         <values>
+          <li><key>cooldown</key><value><min>12</min><max>6</max></value></li>
           <li><key>poisonChance</key><value><min>0.1</min><max>0.2</max></value></li>
         </values>
       </li>
@@ -270,17 +270,17 @@
           <li Class="CombatExtended.ToolCE">
             <label>blade edge</label>
             <capacities><li>Cut</li></capacities>
-            <power>14</power>
-            <cooldownTime>0.8</cooldownTime>
-            <armorPenetrationSharp>1.2</armorPenetrationSharp>
+            <power>20</power>
+            <cooldownTime>0.9</cooldownTime>
+            <armorPenetrationSharp>2.2</armorPenetrationSharp>
             <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
           </li>
           <li Class="CombatExtended.ToolCE">
             <label>blade point</label>
             <capacities><li>Stab</li></capacities>
-            <power>16</power>
-            <cooldownTime>1.0</cooldownTime>
-            <armorPenetrationSharp>1.6</armorPenetrationSharp>
+            <power>22</power>
+            <cooldownTime>1.1</cooldownTime>
+            <armorPenetrationSharp>3.2</armorPenetrationSharp>
             <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
           </li>
         </tools>
@@ -302,7 +302,13 @@
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ElectrifyingMantisBlades</item>
+        <effects>
+          <statOffsets>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.05</min><max>0.25</max></value></li>
+          </statOffsets>
+        </effects>
         <values>
+          <li><key>cooldown</key><value><min>12</min><max>6</max></value></li>
           <li><key>shockChance</key><value><min>0.1</min><max>0.2</max></value></li>
         </values>
       </li>
@@ -333,17 +339,17 @@
           <li Class="CombatExtended.ToolCE">
             <label>blade edge</label>
             <capacities><li>Cut</li></capacities>
-            <power>14</power>
-            <cooldownTime>0.8</cooldownTime>
-            <armorPenetrationSharp>1.2</armorPenetrationSharp>
+            <power>20</power>
+            <cooldownTime>0.9</cooldownTime>
+            <armorPenetrationSharp>2.2</armorPenetrationSharp>
             <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
           </li>
           <li Class="CombatExtended.ToolCE">
             <label>blade point</label>
             <capacities><li>Stab</li></capacities>
-            <power>16</power>
-            <cooldownTime>1.0</cooldownTime>
-            <armorPenetrationSharp>1.6</armorPenetrationSharp>
+            <power>22</power>
+            <cooldownTime>1.1</cooldownTime>
+            <armorPenetrationSharp>3.2</armorPenetrationSharp>
             <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
           </li>
         </tools>
@@ -365,7 +371,13 @@
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ThermalMantisBlades</item>
+        <effects>
+          <statOffsets>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.05</min><max>0.25</max></value></li>
+          </statOffsets>
+        </effects>
         <values>
+          <li><key>cooldown</key><value><min>12</min><max>6</max></value></li>
           <li><key>burnChance</key><value><min>0.1</min><max>0.2</max></value></li>
         </values>
       </li>
@@ -396,17 +408,17 @@
           <li Class="CombatExtended.ToolCE">
             <label>blade edge</label>
             <capacities><li>Cut</li></capacities>
-            <power>14</power>
-            <cooldownTime>0.8</cooldownTime>
-            <armorPenetrationSharp>1.2</armorPenetrationSharp>
+            <power>20</power>
+            <cooldownTime>0.9</cooldownTime>
+            <armorPenetrationSharp>2.2</armorPenetrationSharp>
             <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
           </li>
           <li Class="CombatExtended.ToolCE">
             <label>blade point</label>
             <capacities><li>Stab</li></capacities>
-            <power>16</power>
-            <cooldownTime>1.0</cooldownTime>
-            <armorPenetrationSharp>1.6</armorPenetrationSharp>
+            <power>22</power>
+            <cooldownTime>1.1</cooldownTime>
+            <armorPenetrationSharp>3.2</armorPenetrationSharp>
             <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
           </li>
         </tools>
@@ -426,7 +438,13 @@
         <minTier>T4</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_MaxTacMantisBlades</item>
+        <effects>
+          <statOffsets>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.05</min><max>0.25</max></value></li>
+          </statOffsets>
+        </effects>
         <values>
+          <li><key>cooldown</key><value><min>12</min><max>6</max></value></li>
           <li><key>bleedChance</key><value><min>0.15</min><max>0.2</max></value></li>
         </values>
       </li>
@@ -436,7 +454,7 @@
   <AbilityDef>
     <defName>RPC_Ability_MonowireLash</defName>
     <label>monowire lash</label>
-    <description>Whip the monowire at a target up to 3 tiles away.</description>
+    <description>Whip the monowire at a target up to 6 tiles away.</description>
     <abilityClass>RimPunkCE.CyberwareAbility</abilityClass>
     <category>RPC_Cyberware</category>
     <iconPath>UI/RimPunk/Placeholder_Ability</iconPath>
@@ -448,7 +466,7 @@
     <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
-      <range>2.9</range>
+      <range>5.9</range>
       <warmupTime>0.3</warmupTime>
       <requireLineOfSight>true</requireLineOfSight>
       <violent>true</violent>
@@ -460,12 +478,12 @@
     </verbProperties>
     <comps>
       <li Class="RimPunkCE.CompProperties_AbilityMonowireLash">
-        <damageDef>Cut</damageDef>
+        <damageDef>RPC_MonowireCut</damageDef>
       </li>
     </comps>
   </AbilityDef>
 
-  <!-- monowire: adjacent cut plus a 3-tile lash ability (2-3 attack reach) -->
+  <!-- monowire: adjacent cut plus a 6-tile lash ability -->
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_Monowire</defName>
     <label>monowire</label>
@@ -490,9 +508,9 @@
           <li Class="CombatExtended.ToolCE">
             <label>monowire</label>
             <capacities><li>Cut</li></capacities>
-            <power>11</power>
-            <cooldownTime>1.1</cooldownTime>
-            <armorPenetrationSharp>1.4</armorPenetrationSharp>
+            <power>16</power>
+            <cooldownTime>1.0</cooldownTime>
+            <armorPenetrationSharp>2.2</armorPenetrationSharp>
             <armorPenetrationBlunt>0.5</armorPenetrationBlunt>
           </li>
         </tools>
@@ -508,8 +526,13 @@
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_Monowire</item>
+        <effects>
+          <statOffsets>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.03</min><max>0.15</max></value></li>
+          </statOffsets>
+        </effects>
         <values>
-          <li><key>lashDamage</key><value><min>10</min><max>16</max></value></li>
+          <li><key>lashDamage</key><value><min>14</min><max>28</max></value></li>
         </values>
       </li>
     </modExtensions>
@@ -518,7 +541,7 @@
   <AbilityDef>
     <defName>RPC_Ability_ElectrifyingMonowireLash</defName>
     <label>electrifying monowire lash</label>
-    <description>Whip the monowire at a target up to 3 tiles away.</description>
+    <description>Whip the monowire at a target up to 6 tiles away.</description>
     <abilityClass>RimPunkCE.CyberwareAbility</abilityClass>
     <category>RPC_Cyberware</category>
     <iconPath>UI/RimPunk/Placeholder_Ability</iconPath>
@@ -530,7 +553,7 @@
     <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
-      <range>2.9</range>
+      <range>5.9</range>
       <warmupTime>0.3</warmupTime>
       <requireLineOfSight>true</requireLineOfSight>
       <violent>true</violent>
@@ -547,7 +570,7 @@
     </comps>
   </AbilityDef>
 
-  <!-- monowire: adjacent cut plus a 3-tile lash ability (2-3 attack reach) -->
+  <!-- monowire: adjacent cut plus a 6-tile lash ability -->
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_ElectrifyingMonowire</defName>
     <label>electrifying monowire</label>
@@ -572,9 +595,9 @@
           <li Class="CombatExtended.ToolCE">
             <label>monowire</label>
             <capacities><li>Cut</li></capacities>
-            <power>11</power>
-            <cooldownTime>1.1</cooldownTime>
-            <armorPenetrationSharp>1.4</armorPenetrationSharp>
+            <power>16</power>
+            <cooldownTime>1.0</cooldownTime>
+            <armorPenetrationSharp>2.2</armorPenetrationSharp>
             <armorPenetrationBlunt>0.5</armorPenetrationBlunt>
           </li>
         </tools>
@@ -593,8 +616,13 @@
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ElectrifyingMonowire</item>
+        <effects>
+          <statOffsets>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.03</min><max>0.15</max></value></li>
+          </statOffsets>
+        </effects>
         <values>
-          <li><key>lashDamage</key><value><min>10</min><max>16</max></value></li>
+          <li><key>lashDamage</key><value><min>14</min><max>28</max></value></li>
           <li><key>shockChance</key><value><min>0.1</min><max>0.2</max></value></li>
         </values>
       </li>
@@ -604,7 +632,7 @@
   <AbilityDef>
     <defName>RPC_Ability_ToxicMonowireLash</defName>
     <label>toxic monowire lash</label>
-    <description>Whip the monowire at a target up to 3 tiles away.</description>
+    <description>Whip the monowire at a target up to 6 tiles away.</description>
     <abilityClass>RimPunkCE.CyberwareAbility</abilityClass>
     <category>RPC_Cyberware</category>
     <iconPath>UI/RimPunk/Placeholder_Ability</iconPath>
@@ -616,7 +644,7 @@
     <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
-      <range>2.9</range>
+      <range>5.9</range>
       <warmupTime>0.3</warmupTime>
       <requireLineOfSight>true</requireLineOfSight>
       <violent>true</violent>
@@ -628,12 +656,12 @@
     </verbProperties>
     <comps>
       <li Class="RimPunkCE.CompProperties_AbilityMonowireLash">
-        <damageDef>Cut</damageDef>
+        <damageDef>RPC_MonowireCut</damageDef>
       </li>
     </comps>
   </AbilityDef>
 
-  <!-- monowire: adjacent cut plus a 3-tile lash ability (2-3 attack reach) -->
+  <!-- monowire: adjacent cut plus a 6-tile lash ability -->
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_ToxicMonowire</defName>
     <label>toxic monowire</label>
@@ -658,9 +686,9 @@
           <li Class="CombatExtended.ToolCE">
             <label>monowire</label>
             <capacities><li>Cut</li></capacities>
-            <power>11</power>
-            <cooldownTime>1.1</cooldownTime>
-            <armorPenetrationSharp>1.4</armorPenetrationSharp>
+            <power>16</power>
+            <cooldownTime>1.0</cooldownTime>
+            <armorPenetrationSharp>2.2</armorPenetrationSharp>
             <armorPenetrationBlunt>0.5</armorPenetrationBlunt>
           </li>
         </tools>
@@ -681,8 +709,13 @@
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ToxicMonowire</item>
+        <effects>
+          <statOffsets>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.03</min><max>0.15</max></value></li>
+          </statOffsets>
+        </effects>
         <values>
-          <li><key>lashDamage</key><value><min>10</min><max>16</max></value></li>
+          <li><key>lashDamage</key><value><min>14</min><max>28</max></value></li>
           <li><key>poisonChance</key><value><min>0.1</min><max>0.2</max></value></li>
         </values>
       </li>
@@ -692,7 +725,7 @@
   <AbilityDef>
     <defName>RPC_Ability_ThermalMonowireLash</defName>
     <label>thermal monowire lash</label>
-    <description>Whip the monowire at a target up to 3 tiles away.</description>
+    <description>Whip the monowire at a target up to 6 tiles away.</description>
     <abilityClass>RimPunkCE.CyberwareAbility</abilityClass>
     <category>RPC_Cyberware</category>
     <iconPath>UI/RimPunk/Placeholder_Ability</iconPath>
@@ -704,7 +737,7 @@
     <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
-      <range>2.9</range>
+      <range>5.9</range>
       <warmupTime>0.3</warmupTime>
       <requireLineOfSight>true</requireLineOfSight>
       <violent>true</violent>
@@ -721,7 +754,7 @@
     </comps>
   </AbilityDef>
 
-  <!-- monowire: adjacent cut plus a 3-tile lash ability (2-3 attack reach) -->
+  <!-- monowire: adjacent cut plus a 6-tile lash ability -->
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_ThermalMonowire</defName>
     <label>thermal monowire</label>
@@ -746,9 +779,9 @@
           <li Class="CombatExtended.ToolCE">
             <label>monowire</label>
             <capacities><li>Cut</li></capacities>
-            <power>11</power>
-            <cooldownTime>1.1</cooldownTime>
-            <armorPenetrationSharp>1.4</armorPenetrationSharp>
+            <power>16</power>
+            <cooldownTime>1.0</cooldownTime>
+            <armorPenetrationSharp>2.2</armorPenetrationSharp>
             <armorPenetrationBlunt>0.5</armorPenetrationBlunt>
           </li>
         </tools>
@@ -767,154 +800,415 @@
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ThermalMonowire</item>
+        <effects>
+          <statOffsets>
+            <li><stat>MeleeDamageFactor</stat><value><min>0.03</min><max>0.15</max></value></li>
+          </statOffsets>
+        </effects>
         <values>
-          <li><key>lashDamage</key><value><min>10</min><max>16</max></value></li>
+          <li><key>lashDamage</key><value><min>14</min><max>28</max></value></li>
           <li><key>burnChance</key><value><min>0.1</min><max>0.2</max></value></li>
         </values>
       </li>
     </modExtensions>
   </HediffDef>
 
-  <ThingDef ParentName="BaseBullet">
+  <ThingCategoryDef>
+    <defName>RPC_Ammo_LauncherShells</defName>
+    <label>arm launcher shells</label>
+    <parent>RPC_Ammo</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberGrenade</iconPath>
+  </ThingCategoryDef>
+
+  <ThingDef ParentName="BaseExplosiveBullet">
     <defName>RPC_Shell_LauncherHE</defName>
     <label>HE shell</label>
-    <thingClass>Projectile_Explosive</thingClass>
+    <thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
     <graphicData>
-      <texPath>Things/Projectile/Grenade</texPath>
+      <texPath>Things/Projectile/LauncherShot</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.5,0.5)</drawSize>
     </graphicData>
-    <projectile>
-      <speed>45</speed>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <speed>30</speed>
       <damageDef>Bomb</damageDef>
-      <damageAmountBase>20</damageAmountBase>
+      <damageAmountBase>28</damageAmountBase>
       <explosionRadius>1.9</explosionRadius>
       <soundExplode>Explosion_Bomb</soundExplode>
+      <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
     </projectile>
+    <comps>
+      <li Class="CombatExtended.CompProperties_Fragments">
+        <fragments><Fragment_Small>15</Fragment_Small></fragments>
+      </li>
+    </comps>
   </ThingDef>
 
-  <ThingDef ParentName="BaseBullet">
+  <ThingDef ParentName="BaseExplosiveBullet">
     <defName>RPC_Shell_LauncherAimedHE</defName>
     <label>aimed HE shell</label>
-    <thingClass>Projectile_Explosive</thingClass>
+    <thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
     <graphicData>
-      <texPath>Things/Projectile/Grenade</texPath>
+      <texPath>Things/Projectile/LauncherShot</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.5,0.5)</drawSize>
     </graphicData>
-    <projectile>
-      <speed>45</speed>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <speed>30</speed>
       <damageDef>Bomb</damageDef>
-      <damageAmountBase>26</damageAmountBase>
+      <damageAmountBase>36</damageAmountBase>
       <explosionRadius>2.375</explosionRadius>
       <soundExplode>Explosion_Bomb</soundExplode>
+      <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
     </projectile>
+    <comps>
+      <li Class="CombatExtended.CompProperties_Fragments">
+        <fragments><Fragment_Small>19</Fragment_Small></fragments>
+      </li>
+    </comps>
   </ThingDef>
 
-  <ThingDef ParentName="BaseBullet">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="MediumAmmoBase">
+    <defName>Ammo_RPC_LauncherShell_HE</defName>
+    <label>arm launcher shell (HE)</label>
+    <description>A compact shell for the projectile launch system arm implant. Carry them and the implant reloads from your inventory. They fit nothing else.</description>
+    <statBases>
+      <Mass>0.2</Mass>
+      <Bulk>0.3</Bulk>
+      <MarketValue>9</MarketValue>
+    </statBases>
+    <tradeTags>
+      <li>RPC_Ammo</li>
+      <li>RPC_LauncherShell</li>
+    </tradeTags>
+    <thingCategories>
+      <li>RPC_Ammo_LauncherShells</li>
+    </thingCategories>
+    <stackLimit>200</stackLimit>
+    <graphicData>
+      <texPath>Things/Ammo/GrenadeLauncher/HE</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <ammoClass>GrenadeHE</ammoClass>
+    <detonateProjectile>RPC_Shell_LauncherHE</detonateProjectile>
+  </ThingDef>
+
+  <RecipeDef>
+    <defName>MakeAmmo_RPC_LauncherShell_HE</defName>
+    <label>make arm launcher shells (HE) x10</label>
+    <description>Craft 10 arm launcher shells (HE).</description>
+    <jobString>Making arm launcher shells.</jobString>
+    <workAmount>1800</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>RPC_Cyberware_T2</researchPrerequisite>
+    <recipeUsers><li>TableMachining</li><li>FabricationBench</li></recipeUsers>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>Steel</li></thingDefs></filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Steel</li><li>ComponentIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products>
+      <Ammo_RPC_LauncherShell_HE>10</Ammo_RPC_LauncherShell_HE>
+    </products>
+  </RecipeDef>
+
+  <ThingDef ParentName="BaseExplosiveBullet">
     <defName>RPC_Shell_LauncherToxic</defName>
     <label>toxic shell</label>
-    <thingClass>Projectile_Explosive</thingClass>
+    <thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
     <graphicData>
-      <texPath>Things/Projectile/Grenade</texPath>
+      <texPath>Things/Projectile/LauncherShot</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.5,0.5)</drawSize>
     </graphicData>
-    <projectile>
-      <speed>45</speed>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <speed>30</speed>
       <damageDef>RPC_Toxic</damageDef>
-      <damageAmountBase>12</damageAmountBase>
+      <damageAmountBase>16</damageAmountBase>
       <explosionRadius>2.2</explosionRadius>
       <soundExplode>Explosion_Bomb</soundExplode>
+      <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseBullet">
+  <ThingDef ParentName="BaseExplosiveBullet">
     <defName>RPC_Shell_LauncherAimedToxic</defName>
     <label>aimed toxic shell</label>
-    <thingClass>Projectile_Explosive</thingClass>
+    <thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
     <graphicData>
-      <texPath>Things/Projectile/Grenade</texPath>
+      <texPath>Things/Projectile/LauncherShot</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.5,0.5)</drawSize>
     </graphicData>
-    <projectile>
-      <speed>45</speed>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <speed>30</speed>
       <damageDef>RPC_Toxic</damageDef>
-      <damageAmountBase>16</damageAmountBase>
+      <damageAmountBase>21</damageAmountBase>
       <explosionRadius>2.75</explosionRadius>
       <soundExplode>Explosion_Bomb</soundExplode>
+      <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseBullet">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="MediumAmmoBase">
+    <defName>Ammo_RPC_LauncherShell_Toxic</defName>
+    <label>arm launcher shell (toxic)</label>
+    <description>A compact shell for the projectile launch system arm implant. Carry them and the implant reloads from your inventory. They fit nothing else.</description>
+    <statBases>
+      <Mass>0.2</Mass>
+      <Bulk>0.3</Bulk>
+      <MarketValue>9</MarketValue>
+    </statBases>
+    <tradeTags>
+      <li>RPC_Ammo</li>
+      <li>RPC_LauncherShell</li>
+    </tradeTags>
+    <thingCategories>
+      <li>RPC_Ammo_LauncherShells</li>
+    </thingCategories>
+    <stackLimit>200</stackLimit>
+    <graphicData>
+      <texPath>Things/Ammo/GrenadeLauncher/Tox</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <ammoClass>Toxic</ammoClass>
+    <detonateProjectile>RPC_Shell_LauncherToxic</detonateProjectile>
+  </ThingDef>
+
+  <RecipeDef>
+    <defName>MakeAmmo_RPC_LauncherShell_Toxic</defName>
+    <label>make arm launcher shells (toxic) x10</label>
+    <description>Craft 10 arm launcher shells (toxic).</description>
+    <jobString>Making arm launcher shells.</jobString>
+    <workAmount>1800</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>RPC_Cyberware_T2</researchPrerequisite>
+    <recipeUsers><li>TableMachining</li><li>FabricationBench</li></recipeUsers>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>Steel</li></thingDefs></filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Neutroamine</li></thingDefs></filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Steel</li><li>Neutroamine</li></thingDefs></fixedIngredientFilter>
+    <products>
+      <Ammo_RPC_LauncherShell_Toxic>10</Ammo_RPC_LauncherShell_Toxic>
+    </products>
+  </RecipeDef>
+
+  <ThingDef ParentName="BaseExplosiveBullet">
     <defName>RPC_Shell_LauncherElectrifying</defName>
     <label>electrifying shell</label>
-    <thingClass>Projectile_Explosive</thingClass>
+    <thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
     <graphicData>
-      <texPath>Things/Projectile/Grenade</texPath>
+      <texPath>Things/Projectile/LauncherShot</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.5,0.5)</drawSize>
     </graphicData>
-    <projectile>
-      <speed>45</speed>
-      <damageDef>RPC_Electrical</damageDef>
-      <damageAmountBase>12</damageAmountBase>
-      <explosionRadius>2.2</explosionRadius>
-      <soundExplode>Explosion_EMP</soundExplode>
-    </projectile>
-  </ThingDef>
-
-  <ThingDef ParentName="BaseBullet">
-    <defName>RPC_Shell_LauncherAimedElectrifying</defName>
-    <label>aimed electrifying shell</label>
-    <thingClass>Projectile_Explosive</thingClass>
-    <graphicData>
-      <texPath>Things/Projectile/Grenade</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <projectile>
-      <speed>45</speed>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <speed>30</speed>
       <damageDef>RPC_Electrical</damageDef>
       <damageAmountBase>16</damageAmountBase>
+      <explosionRadius>2.2</explosionRadius>
+      <soundExplode>Explosion_EMP</soundExplode>
+      <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseExplosiveBullet">
+    <defName>RPC_Shell_LauncherAimedElectrifying</defName>
+    <label>aimed electrifying shell</label>
+    <thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/LauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.5,0.5)</drawSize>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <speed>30</speed>
+      <damageDef>RPC_Electrical</damageDef>
+      <damageAmountBase>21</damageAmountBase>
       <explosionRadius>2.75</explosionRadius>
       <soundExplode>Explosion_EMP</soundExplode>
+      <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseBullet">
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="MediumAmmoBase">
+    <defName>Ammo_RPC_LauncherShell_Electrifying</defName>
+    <label>arm launcher shell (electrifying)</label>
+    <description>A compact shell for the projectile launch system arm implant. Carry them and the implant reloads from your inventory. They fit nothing else.</description>
+    <statBases>
+      <Mass>0.2</Mass>
+      <Bulk>0.3</Bulk>
+      <MarketValue>9</MarketValue>
+    </statBases>
+    <tradeTags>
+      <li>RPC_Ammo</li>
+      <li>RPC_LauncherShell</li>
+    </tradeTags>
+    <thingCategories>
+      <li>RPC_Ammo_LauncherShells</li>
+    </thingCategories>
+    <stackLimit>200</stackLimit>
+    <graphicData>
+      <texPath>Things/Ammo/GrenadeLauncher/EMP</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <ammoClass>GrenadeEMP</ammoClass>
+    <detonateProjectile>RPC_Shell_LauncherElectrifying</detonateProjectile>
+  </ThingDef>
+
+  <RecipeDef>
+    <defName>MakeAmmo_RPC_LauncherShell_Electrifying</defName>
+    <label>make arm launcher shells (electrifying) x10</label>
+    <description>Craft 10 arm launcher shells (electrifying).</description>
+    <jobString>Making arm launcher shells.</jobString>
+    <workAmount>1800</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>RPC_Cyberware_T2</researchPrerequisite>
+    <recipeUsers><li>TableMachining</li><li>FabricationBench</li></recipeUsers>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>Steel</li></thingDefs></filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>ComponentIndustrial</li></thingDefs></filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Steel</li><li>ComponentIndustrial</li></thingDefs></fixedIngredientFilter>
+    <products>
+      <Ammo_RPC_LauncherShell_Electrifying>10</Ammo_RPC_LauncherShell_Electrifying>
+    </products>
+  </RecipeDef>
+
+  <ThingDef ParentName="BaseExplosiveBullet">
     <defName>RPC_Shell_LauncherIncendiary</defName>
     <label>incendiary shell</label>
-    <thingClass>Projectile_Explosive</thingClass>
+    <thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
     <graphicData>
-      <texPath>Things/Projectile/Grenade</texPath>
+      <texPath>Things/Projectile/LauncherShot</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.5,0.5)</drawSize>
     </graphicData>
-    <projectile>
-      <speed>45</speed>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <speed>30</speed>
       <damageDef>Flame</damageDef>
-      <damageAmountBase>10</damageAmountBase>
+      <damageAmountBase>14</damageAmountBase>
       <explosionRadius>2.2</explosionRadius>
       <soundExplode>Explosion_Flame</soundExplode>
+      <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseBullet">
+  <ThingDef ParentName="BaseExplosiveBullet">
     <defName>RPC_Shell_LauncherAimedIncendiary</defName>
     <label>aimed incendiary shell</label>
-    <thingClass>Projectile_Explosive</thingClass>
+    <thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
     <graphicData>
-      <texPath>Things/Projectile/Grenade</texPath>
+      <texPath>Things/Projectile/LauncherShot</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.5,0.5)</drawSize>
     </graphicData>
-    <projectile>
-      <speed>45</speed>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <speed>30</speed>
       <damageDef>Flame</damageDef>
-      <damageAmountBase>13</damageAmountBase>
+      <damageAmountBase>18</damageAmountBase>
       <explosionRadius>2.75</explosionRadius>
       <soundExplode>Explosion_Flame</soundExplode>
+      <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
     </projectile>
   </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="MediumAmmoBase">
+    <defName>Ammo_RPC_LauncherShell_Incendiary</defName>
+    <label>arm launcher shell (incendiary)</label>
+    <description>A compact shell for the projectile launch system arm implant. Carry them and the implant reloads from your inventory. They fit nothing else.</description>
+    <statBases>
+      <Mass>0.2</Mass>
+      <Bulk>0.3</Bulk>
+      <MarketValue>9</MarketValue>
+    </statBases>
+    <tradeTags>
+      <li>RPC_Ammo</li>
+      <li>RPC_LauncherShell</li>
+    </tradeTags>
+    <thingCategories>
+      <li>RPC_Ammo_LauncherShells</li>
+    </thingCategories>
+    <stackLimit>200</stackLimit>
+    <graphicData>
+      <texPath>Things/Ammo/GrenadeLauncher/AIR</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <ammoClass>GrenadeIncendiary</ammoClass>
+    <detonateProjectile>RPC_Shell_LauncherIncendiary</detonateProjectile>
+  </ThingDef>
+
+  <RecipeDef>
+    <defName>MakeAmmo_RPC_LauncherShell_Incendiary</defName>
+    <label>make arm launcher shells (incendiary) x10</label>
+    <description>Craft 10 arm launcher shells (incendiary).</description>
+    <jobString>Making arm launcher shells.</jobString>
+    <workAmount>1800</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>RPC_Cyberware_T2</researchPrerequisite>
+    <recipeUsers><li>TableMachining</li><li>FabricationBench</li></recipeUsers>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>Steel</li></thingDefs></filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Chemfuel</li></thingDefs></filter>
+        <count>15</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter><thingDefs><li>Steel</li><li>Chemfuel</li></thingDefs></fixedIngredientFilter>
+    <products>
+      <Ammo_RPC_LauncherShell_Incendiary>10</Ammo_RPC_LauncherShell_Incendiary>
+    </products>
+  </RecipeDef>
+
+  <CombatExtended.AmmoSetDef>
+    <defName>RPC_AmmoSet_ArmLauncher</defName>
+    <label>arm launcher shells</label>
+    <ammoTypes>
+      <Ammo_RPC_LauncherShell_HE>RPC_Shell_LauncherHE</Ammo_RPC_LauncherShell_HE>
+      <Ammo_RPC_LauncherShell_Toxic>RPC_Shell_LauncherToxic</Ammo_RPC_LauncherShell_Toxic>
+      <Ammo_RPC_LauncherShell_Electrifying>RPC_Shell_LauncherElectrifying</Ammo_RPC_LauncherShell_Electrifying>
+      <Ammo_RPC_LauncherShell_Incendiary>RPC_Shell_LauncherIncendiary</Ammo_RPC_LauncherShell_Incendiary>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
 
   <AbilityDef>
     <defName>RPC_Ability_LauncherSnap</defName>
     <label>launcher: snap shot</label>
-    <description>Fire the arm launcher without aiming. Fast but scattered.</description>
+    <description>Fire the arm launcher without aiming. Fast but scattered. Uses one loaded shell.</description>
     <abilityClass>RimPunkCE.CyberwareAbility</abilityClass>
     <category>RPC_Cyberware</category>
     <iconPath>UI/RimPunk/Placeholder_Ability</iconPath>
@@ -947,7 +1241,7 @@
   <AbilityDef>
     <defName>RPC_Ability_LauncherAimed</defName>
     <label>launcher: aimed shot</label>
-    <description>Take aim with the arm launcher: +30% damage, +25% explosion radius, much more accurate.</description>
+    <description>Take aim with the arm launcher: +30% damage, +25% explosion radius, much more accurate. Uses one loaded shell.</description>
     <abilityClass>RimPunkCE.CyberwareAbility</abilityClass>
     <category>RPC_Cyberware</category>
     <iconPath>UI/RimPunk/Placeholder_Ability</iconPath>
@@ -977,11 +1271,11 @@
     </comps>
   </AbilityDef>
 
-  <!-- no ammo items: the launcher has unlimited shells, limited by the ability cooldown -->
+  <!-- CE ammo: shells are items (Ammo_RPC_LauncherShell_*), loaded into a magazine sized by tier (3/4/5/6/8), reloaded from inventory -->
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_ProjectileLaunchSystem</defName>
     <label>projectile launch system</label>
-    <description>A grenade launcher built into the forearm. Fires HE, toxic, electrifying or incendiary shells.</description>
+    <description>A grenade launcher built into the forearm. Fires HE, toxic, electrifying or incendiary shells from a small internal magazine, reloaded from shells carried in the inventory.</description>
     <costList>
       <Plasteel>12</Plasteel>
       <ComponentSpacer>2</ComponentSpacer>
@@ -994,7 +1288,7 @@
   <HediffDef ParentName="RPC_CyberwareHediffBase">
     <defName>RPC_ProjectileLaunchSystem</defName>
     <label>projectile launch system</label>
-    <description>A grenade launcher built into the forearm. Fires HE, toxic, electrifying or incendiary shells.</description>
+    <description>A grenade launcher built into the forearm. Fires HE, toxic, electrifying or incendiary shells from a small internal magazine, reloaded from shells carried in the inventory.</description>
     <descriptionHyperlinks><ThingDef>RPC_Item_ProjectileLaunchSystem</ThingDef></descriptionHyperlinks>
     <comps>
       <li Class="RimPunkCE.HediffCompProperties_GiveCyberAbilities">
@@ -1003,7 +1297,9 @@
       <li Class="RimPunkCE.HediffCompProperties_LauncherAmmo">
         <shells><li>RPC_Shell_LauncherHE</li><li>RPC_Shell_LauncherToxic</li><li>RPC_Shell_LauncherElectrifying</li><li>RPC_Shell_LauncherIncendiary</li></shells>
         <aimedShells><li>RPC_Shell_LauncherAimedHE</li><li>RPC_Shell_LauncherAimedToxic</li><li>RPC_Shell_LauncherAimedElectrifying</li><li>RPC_Shell_LauncherAimedIncendiary</li></aimedShells>
+        <ammo><li>Ammo_RPC_LauncherShell_HE</li><li>Ammo_RPC_LauncherShell_Toxic</li><li>Ammo_RPC_LauncherShell_Electrifying</li><li>Ammo_RPC_LauncherShell_Incendiary</li></ammo>
         <shellLabels><li>HE shell</li><li>toxic shell</li><li>electrifying shell</li><li>incendiary shell</li></shellLabels>
+        <magazineByTier><li>0</li><li>3</li><li>4</li><li>5</li><li>6</li><li>8</li></magazineByTier>
       </li>
     </comps>
     <modExtensions>
@@ -1902,8 +2198,9 @@
           </capMods>
         </effects>
         <afterimages>true</afterimages>
+        <adrenalineGainFactor>0.5</adrenalineGainFactor>
         <onNeutralizeExtendFraction>0.1</onNeutralizeExtendFraction>
-        <onNeutralizeStamina>0.22</onNeutralizeStamina>
+        <onNeutralizeAdrenaline>0.22</onNeutralizeAdrenaline>
       </li>
     </modExtensions>
   </HediffDef>
@@ -1917,6 +2214,8 @@
         <hediffDef>RPC_ApogeeSandevistanActive</hediffDef>
         <defaultDurationSeconds>80</defaultDurationSeconds>
         <aiMaxEnemyDistance>40</aiMaxEnemyDistance>
+        <adrenalineCost>25</adrenalineCost>
+        <aiRule>CloseDistance</aiRule>
       </li>
     </comps>
   </AbilityDef>
@@ -1983,6 +2282,7 @@
           </capMods>
         </effects>
         <afterimages>true</afterimages>
+        <adrenalineGainFactor>0.5</adrenalineGainFactor>
         <onNeutralizeExtendFraction>0.05</onNeutralizeExtendFraction>
         <onNeutralizeHealFraction><min>0.10</min><max>0.12</max></onNeutralizeHealFraction>
       </li>
@@ -1998,6 +2298,8 @@
         <hediffDef>RPC_FalconSandevistanActive</hediffDef>
         <defaultDurationSeconds>80</defaultDurationSeconds>
         <aiMaxEnemyDistance>40</aiMaxEnemyDistance>
+        <adrenalineCost>25</adrenalineCost>
+        <aiRule>CloseDistance</aiRule>
       </li>
     </comps>
   </AbilityDef>
@@ -2064,6 +2366,7 @@
           </capMods>
         </effects>
         <afterimages>true</afterimages>
+        <adrenalineGainFactor>0.5</adrenalineGainFactor>
         <onNeutralizeExtendFraction>0.05</onNeutralizeExtendFraction>
         <onNeutralizeHealFraction><min>0.10</min><max>0.12</max></onNeutralizeHealFraction>
       </li>
@@ -2079,6 +2382,8 @@
         <hediffDef>RPC_WarpDancerSandevistanActive</hediffDef>
         <defaultDurationSeconds>80</defaultDurationSeconds>
         <aiMaxEnemyDistance>40</aiMaxEnemyDistance>
+        <adrenalineCost>25</adrenalineCost>
+        <aiRule>CloseDistance</aiRule>
       </li>
     </comps>
   </AbilityDef>
@@ -2143,6 +2448,7 @@
           </capMods>
         </effects>
         <afterimages>true</afterimages>
+        <adrenalineGainFactor>0.5</adrenalineGainFactor>
       </li>
     </modExtensions>
   </HediffDef>
@@ -2156,6 +2462,8 @@
         <hediffDef>RPC_ZetatechSandevistanActive</hediffDef>
         <defaultDurationSeconds>80</defaultDurationSeconds>
         <aiMaxEnemyDistance>40</aiMaxEnemyDistance>
+        <adrenalineCost>25</adrenalineCost>
+        <aiRule>CloseDistance</aiRule>
       </li>
     </comps>
   </AbilityDef>
@@ -2228,7 +2536,7 @@
         <incomingDamageFactor><min>0.7</min><max>0.5</max></incomingDamageFactor>
         <partHealthFloor>0.25</partHealthFloor>
         <meleeOnly>true</meleeOnly>
-        <staminaCostFactor>0</staminaCostFactor>
+        <adrenalineGainFactor>1.5</adrenalineGainFactor>
         <healPerNeutralizeOnEnd>0.25</healPerNeutralizeOnEnd>
       </li>
     </modExtensions>
@@ -2243,6 +2551,8 @@
         <hediffDef>RPC_BioDyneBerserkActive</hediffDef>
         <defaultDurationSeconds>80</defaultDurationSeconds>
         <aiMaxEnemyDistance>8</aiMaxEnemyDistance>
+        <adrenalineCost>40</adrenalineCost>
+        <aiRule>Pinned</aiRule>
       </li>
     </comps>
   </AbilityDef>
@@ -2312,7 +2622,7 @@
         <incomingDamageFactor><min>0</min><max>0</max></incomingDamageFactor>
         <partHealthFloor>0.25</partHealthFloor>
         <meleeOnly>true</meleeOnly>
-        <staminaCostFactor>0</staminaCostFactor>
+        <adrenalineGainFactor>1.5</adrenalineGainFactor>
         <healPerNeutralizeOnEnd>0.25</healPerNeutralizeOnEnd>
         <lowHealthDamageBonus>0.5</lowHealthDamageBonus>
       </li>
@@ -2328,6 +2638,8 @@
         <hediffDef>RPC_MilitechBerserkActive</hediffDef>
         <defaultDurationSeconds>80</defaultDurationSeconds>
         <aiMaxEnemyDistance>8</aiMaxEnemyDistance>
+        <adrenalineCost>40</adrenalineCost>
+        <aiRule>Pinned</aiRule>
       </li>
     </comps>
   </AbilityDef>
@@ -2396,7 +2708,7 @@
         <incomingDamageFactor><min>0.65</min><max>0.5</max></incomingDamageFactor>
         <partHealthFloor>0.25</partHealthFloor>
         <meleeOnly>true</meleeOnly>
-        <staminaCostFactor>0</staminaCostFactor>
+        <adrenalineGainFactor>1.5</adrenalineGainFactor>
         <healPerNeutralizeOnEnd>0.25</healPerNeutralizeOnEnd>
       </li>
     </modExtensions>
@@ -2411,6 +2723,8 @@
         <hediffDef>RPC_ZetatechBerserkActive</hediffDef>
         <defaultDurationSeconds>80</defaultDurationSeconds>
         <aiMaxEnemyDistance>8</aiMaxEnemyDistance>
+        <adrenalineCost>40</adrenalineCost>
+        <aiRule>Pinned</aiRule>
       </li>
     </comps>
   </AbilityDef>
@@ -2454,7 +2768,7 @@
     </modExtensions>
   </HediffDef>
 
-  <!-- Biotech: combat-quickhack duration (t2) and overclock reset (t5) wait for more quickhacks / overclock -->
+  <!-- Biotech: overclock reset (t5) not implemented -->
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_BiotechCyberdeck</defName>
     <label>Biotech cyberdeck</label>
@@ -2475,7 +2789,7 @@
     <descriptionHyperlinks><ThingDef>RPC_Item_BiotechCyberdeck</ThingDef></descriptionHyperlinks>
     <comps>
       <li Class="RimPunkCE.HediffCompProperties_GiveCyberAbilities">
-        <abilities><li>RPC_Quickhack_ShortCircuit</li></abilities>
+        <abilities><li>RPC_Ability_Overclock</li></abilities>
       </li>
     </comps>
     <renderNodeProperties>
@@ -2515,7 +2829,7 @@
         <item>RPC_Item_BiotechCyberdeck</item>
         <effects>
           <statOffsets>
-            <li><stat>RPC_RamMax</stat><value><min>1</min><max>10</max></value></li>
+            <li><stat>RPC_RamMax</stat><value><perTier><li>7</li><li>9</li><li>13.25</li><li>17.5</li><li>21.75</li><li>26</li></perTier></value></li>
           </statOffsets>
           <statFactors>
             <li><stat>RPC_QuickhackDamageFactor</stat><value><perTier><li>1</li><li>1</li><li>1.1</li><li>1.1</li><li>1.1</li><li>1.1</li></perTier></value></li>
@@ -2523,16 +2837,16 @@
         </effects>
         <values>
           <li><key>monowireVsDot</key><value><perTier><li>0</li><li>0</li><li>0</li><li>0.25</li><li>0.25</li><li>0.25</li></perTier></value></li>
+          <li><key>combatQuickhackDuration</key><value><min>0.15</min><max>0.6</max></value></li>
         </values>
       </li>
     </modExtensions>
   </HediffDef>
 
-  <!-- Canto: the Blackwall Gateway quickhack (iconic) waits for the quickhack list -->
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_CantoCyberdeck</defName>
     <label>Canto Mk.6 cyberdeck</label>
-    <description>A black-market cyberdeck of terrifying power.</description>
+    <description>A black-market cyberdeck of terrifying power. At iconic tier it unlocks the Blackwall Gateway quickhack.</description>
     <costList>
       <Plasteel>35</Plasteel>
       <ComponentSpacer>6</ComponentSpacer>
@@ -2546,11 +2860,11 @@
   <HediffDef ParentName="RPC_CyberwareHediffBase">
     <defName>RPC_CantoCyberdeck</defName>
     <label>Canto Mk.6 cyberdeck</label>
-    <description>A black-market cyberdeck of terrifying power.</description>
+    <description>A black-market cyberdeck of terrifying power. At iconic tier it unlocks the Blackwall Gateway quickhack.</description>
     <descriptionHyperlinks><ThingDef>RPC_Item_CantoCyberdeck</ThingDef></descriptionHyperlinks>
     <comps>
       <li Class="RimPunkCE.HediffCompProperties_GiveCyberAbilities">
-        <abilities><li>RPC_Quickhack_ShortCircuit</li></abilities>
+        <abilities><li>RPC_Ability_Overclock</li></abilities>
       </li>
     </comps>
     <renderNodeProperties>
@@ -2590,9 +2904,12 @@
         <item>RPC_Item_CantoCyberdeck</item>
         <effects>
           <statOffsets>
-            <li><stat>RPC_RamMax</stat><value><min>8</min><max>12</max></value></li>
+            <li><stat>RPC_RamMax</stat><value><perTier><li>14</li><li>16</li><li>18</li><li>20</li><li>22</li><li>28</li></perTier></value></li>
           </statOffsets>
         </effects>
+        <values>
+          <li><key>blackwallGateway</key><value><perTier><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>1</li></perTier></value></li>
+        </values>
       </li>
     </modExtensions>
   </HediffDef>
@@ -2618,7 +2935,7 @@
     <descriptionHyperlinks><ThingDef>RPC_Item_ParalineCyberdeck</ThingDef></descriptionHyperlinks>
     <comps>
       <li Class="RimPunkCE.HediffCompProperties_GiveCyberAbilities">
-        <abilities><li>RPC_Quickhack_ShortCircuit</li></abilities>
+        <abilities><li>RPC_Ability_Overclock</li></abilities>
       </li>
     </comps>
     <renderNodeProperties>
@@ -2658,7 +2975,7 @@
         <item>RPC_Item_ParalineCyberdeck</item>
         <effects>
           <statOffsets>
-            <li><stat>RPC_RamMax</stat><value><min>1</min><max>10</max></value></li>
+            <li><stat>RPC_RamMax</stat><value><perTier><li>7</li><li>10.8</li><li>14.6</li><li>18.4</li><li>22.2</li><li>26</li></perTier></value></li>
           </statOffsets>
           <statFactors>
             <li><stat>RPC_QuickhackDamageFactor</stat><value><perTier><li>1</li><li>1.1</li><li>1.1</li><li>1.1</li><li>1.1</li><li>1.1</li></perTier></value></li>
@@ -2671,7 +2988,6 @@
     </modExtensions>
   </HediffDef>
 
-  <!-- NetDriver: combat-quickhack duration waits for quickhacks with a duration -->
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_NetDriverCyberdeck</defName>
     <label>NetDriver Mk.1 cyberdeck</label>
@@ -2693,7 +3009,7 @@
     <descriptionHyperlinks><ThingDef>RPC_Item_NetDriverCyberdeck</ThingDef></descriptionHyperlinks>
     <comps>
       <li Class="RimPunkCE.HediffCompProperties_GiveCyberAbilities">
-        <abilities><li>RPC_Quickhack_ShortCircuit</li></abilities>
+        <abilities><li>RPC_Ability_Overclock</li></abilities>
       </li>
     </comps>
     <renderNodeProperties>
@@ -2733,21 +3049,24 @@
         <item>RPC_Item_NetDriverCyberdeck</item>
         <effects>
           <statOffsets>
-            <li><stat>RPC_RamMax</stat><value><min>8</min><max>12</max></value></li>
+            <li><stat>RPC_RamMax</stat><value><perTier><li>14</li><li>16</li><li>18</li><li>20</li><li>22</li><li>28</li></perTier></value></li>
           </statOffsets>
           <statFactors>
             <li><stat>RPC_QuickhackDamageFactor</stat><value><min>1.15</min><max>1.3</max></value></li>
           </statFactors>
         </effects>
+        <values>
+          <li><key>combatQuickhackDuration</key><value><min>0.2</min><max>0.5</max></value></li>
+        </values>
       </li>
     </modExtensions>
   </HediffDef>
 
-  <!-- Raven: quickhack spread waits for the spread system -->
+  <!-- Raven: instant spread (t4) and overclock spread chance (t5) not implemented -->
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_RavenCyberdeck</defName>
     <label>Raven Microcyber cyberdeck</label>
-    <description>A cyberdeck that spreads quickhacks between targets.</description>
+    <description>A cyberdeck that spreads quickhacks further between targets.</description>
     <costList>
       <Plasteel>18</Plasteel>
       <ComponentSpacer>4</ComponentSpacer>
@@ -2760,11 +3079,11 @@
   <HediffDef ParentName="RPC_CyberwareHediffBase">
     <defName>RPC_RavenCyberdeck</defName>
     <label>Raven Microcyber cyberdeck</label>
-    <description>A cyberdeck that spreads quickhacks between targets.</description>
+    <description>A cyberdeck that spreads quickhacks further between targets.</description>
     <descriptionHyperlinks><ThingDef>RPC_Item_RavenCyberdeck</ThingDef></descriptionHyperlinks>
     <comps>
       <li Class="RimPunkCE.HediffCompProperties_GiveCyberAbilities">
-        <abilities><li>RPC_Quickhack_ShortCircuit</li></abilities>
+        <abilities><li>RPC_Ability_Overclock</li></abilities>
       </li>
     </comps>
     <renderNodeProperties>
@@ -2804,9 +3123,12 @@
         <item>RPC_Item_RavenCyberdeck</item>
         <effects>
           <statOffsets>
-            <li><stat>RPC_RamMax</stat><value><min>4</min><max>10</max></value></li>
+            <li><stat>RPC_RamMax</stat><value><perTier><li>10</li><li>12</li><li>14</li><li>18</li><li>22</li><li>26</li></perTier></value></li>
           </statOffsets>
         </effects>
+        <values>
+          <li><key>quickhackSpreadDistance</key><value><perTier><li>0</li><li>0</li><li>0.4</li><li>0.6</li><li>0.8</li><li>1</li></perTier></value></li>
+        </values>
       </li>
     </modExtensions>
   </HediffDef>
@@ -2832,7 +3154,7 @@
     <descriptionHyperlinks><ThingDef>RPC_Item_RipplerCyberdeck</ThingDef></descriptionHyperlinks>
     <comps>
       <li Class="RimPunkCE.HediffCompProperties_GiveCyberAbilities">
-        <abilities><li>RPC_Quickhack_ShortCircuit</li></abilities>
+        <abilities><li>RPC_Ability_Overclock</li></abilities>
       </li>
     </comps>
     <renderNodeProperties>
@@ -2872,7 +3194,7 @@
         <item>RPC_Item_RipplerCyberdeck</item>
         <effects>
           <statOffsets>
-            <li><stat>RPC_RamMax</stat><value><perTier><li>1</li><li>2.4</li><li>3.8</li><li>10.2</li><li>14.6</li><li>20</li></perTier></value></li>
+            <li><stat>RPC_RamMax</stat><value><perTier><li>7</li><li>10.4</li><li>13.8</li><li>22.2</li><li>28.6</li><li>36</li></perTier></value></li>
           </statOffsets>
         </effects>
       </li>
@@ -3395,7 +3717,7 @@
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_DenseMarrow</defName>
     <label>dense marrow</label>
-    <description>Heavier bones that put more weight behind every blow, at a stamina cost.</description>
+    <description>Heavier bones that put more weight behind every blow, but melee builds adrenaline more slowly.</description>
     <costList>
       <Plasteel>12</Plasteel>
       <ComponentSpacer>2</ComponentSpacer>
@@ -3408,7 +3730,7 @@
   <HediffDef ParentName="RPC_CyberwareHediffBase">
     <defName>RPC_DenseMarrow</defName>
     <label>dense marrow</label>
-    <description>Heavier bones that put more weight behind every blow, at a stamina cost.</description>
+    <description>Heavier bones that put more weight behind every blow, but melee builds adrenaline more slowly.</description>
     <descriptionHyperlinks><ThingDef>RPC_Item_DenseMarrow</ThingDef></descriptionHyperlinks>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareExtension">
@@ -3424,7 +3746,7 @@
             <li><stat>ArmorRating_Blunt</stat><value><min>2</min><max>6.1</max></value></li>
           </statOffsets>
           <statFactors>
-            <li><stat>RPC_StaminaCostFactorMelee</stat><value><min>1.2</min><max>1.2</max></value></li>
+            <li><stat>RPC_AdrenalineGainMelee</stat><value><min>0.8</min><max>0.8</max></value></li>
           </statFactors>
         </effects>
       </li>
@@ -3533,7 +3855,7 @@
   <HediffDef ParentName="RPC_CyberActiveBase">
     <defName>RPC_KineticFrameBoost</defName>
     <label>kinetic frame</label>
-    <description>Mitigation chance up while stamina is high.</description>
+    <description>Mitigation chance up while adrenaline is high.</description>
     <defaultLabelColor>(1, 0.85, 0.3)</defaultLabelColor>
     <modExtensions>
       <li Class="RimPunkCE.ActiveEffectExtension">
@@ -3549,7 +3871,7 @@
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_KineticFrame</defName>
     <label>kinetic frame</label>
-    <description>Raises mitigation chance while stamina is above 85%.</description>
+    <description>Raises mitigation chance while adrenaline is above 50%.</description>
     <costList>
       <Steel>30</Steel>
       <ComponentIndustrial>3</ComponentIndustrial>
@@ -3562,12 +3884,12 @@
   <HediffDef ParentName="RPC_CyberwareHediffBase">
     <defName>RPC_KineticFrame</defName>
     <label>kinetic frame</label>
-    <description>Raises mitigation chance while stamina is above 85%.</description>
+    <description>Raises mitigation chance while adrenaline is above 50%.</description>
     <descriptionHyperlinks><ThingDef>RPC_Item_KineticFrame</ThingDef></descriptionHyperlinks>
     <comps>
       <li Class="RimPunkCE.HediffCompProperties_CyberConditionals">
         <conditionals>
-          <li><when>StaminaAbove</when><effect>RPC_KineticFrameBoost</effect><thresholdKey>staminaAbove</thresholdKey></li>
+          <li><when>AdrenalineAbove</when><effect>RPC_KineticFrameBoost</effect><thresholdKey>adrenalineAbove</thresholdKey></li>
         </conditionals>
       </li>
     </comps>
@@ -3585,7 +3907,7 @@
           </statOffsets>
         </effects>
         <values>
-          <li><key>staminaAbove</key><value><min>0.85</min><max>0.85</max></value></li>
+          <li><key>adrenalineAbove</key><value><min>0.5</min><max>0.5</max></value></li>
         </values>
       </li>
     </modExtensions>
@@ -3841,7 +4163,7 @@
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_SpringJoints</defName>
     <label>spring joints</label>
-    <description>Spring-loaded joints that turn blocked hits into stamina.</description>
+    <description>Spring-loaded joints that turn blocked hits into adrenaline.</description>
     <costList>
       <Plasteel>12</Plasteel>
       <ComponentSpacer>2</ComponentSpacer>
@@ -3854,7 +4176,7 @@
   <HediffDef ParentName="RPC_CyberwareHediffBase">
     <defName>RPC_SpringJoints</defName>
     <label>spring joints</label>
-    <description>Spring-loaded joints that turn blocked hits into stamina.</description>
+    <description>Spring-loaded joints that turn blocked hits into adrenaline.</description>
     <descriptionHyperlinks><ThingDef>RPC_Item_SpringJoints</ThingDef></descriptionHyperlinks>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareExtension">
@@ -4520,7 +4842,7 @@
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_AdrenalineBooster</defName>
     <label>adrenaline booster</label>
-    <description>Restores stamina whenever the user takes down an enemy in melee.</description>
+    <description>Floods the user with adrenaline whenever they take down an enemy in melee.</description>
     <costList>
       <Steel>30</Steel>
       <ComponentIndustrial>3</ComponentIndustrial>
@@ -4533,7 +4855,7 @@
   <HediffDef ParentName="RPC_CyberwareHediffBase">
     <defName>RPC_AdrenalineBooster</defName>
     <label>adrenaline booster</label>
-    <description>Restores stamina whenever the user takes down an enemy in melee.</description>
+    <description>Floods the user with adrenaline whenever they take down an enemy in melee.</description>
     <descriptionHyperlinks><ThingDef>RPC_Item_AdrenalineBooster</ThingDef></descriptionHyperlinks>
     <comps>
       <li Class="RimPunkCE.HediffCompProperties_CyberTriggers">
@@ -4542,7 +4864,7 @@
             <on>Neutralized</on>
             <weapon>Melee</weapon>
             <effects>
-              <li><kind>Stamina</kind><valueKey>stamina</valueKey></li>
+              <li><kind>Adrenaline</kind><valueKey>adrenaline</valueKey></li>
             </effects>
           </li>
         </triggers>
@@ -4556,7 +4878,7 @@
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_AdrenalineBooster</item>
         <values>
-          <li><key>stamina</key><value><min>0.1</min><max>0.25</max></value></li>
+          <li><key>adrenaline</key><value><min>0.1</min><max>0.25</max></value></li>
         </values>
       </li>
     </modExtensions>
@@ -4668,7 +4990,7 @@
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_ClutchPadding</defName>
     <label>clutch padding</label>
-    <description>Shock padding that makes shooting less tiring.</description>
+    <description>Recoil feedback padding: shooting builds adrenaline faster.</description>
     <costList>
       <Steel>30</Steel>
       <ComponentIndustrial>3</ComponentIndustrial>
@@ -4681,7 +5003,7 @@
   <HediffDef ParentName="RPC_CyberwareHediffBase">
     <defName>RPC_ClutchPadding</defName>
     <label>clutch padding</label>
-    <description>Shock padding that makes shooting less tiring.</description>
+    <description>Recoil feedback padding: shooting builds adrenaline faster.</description>
     <descriptionHyperlinks><ThingDef>RPC_Item_ClutchPadding</ThingDef></descriptionHyperlinks>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareExtension">
@@ -4692,7 +5014,7 @@
         <item>RPC_Item_ClutchPadding</item>
         <effects>
           <statFactors>
-            <li><stat>RPC_StaminaCostFactorRanged</stat><value><perTier><li>0.93</li><li>0.904</li><li>0.878</li><li>0.852</li><li>0.826</li><li>0.8</li></perTier></value></li>
+            <li><stat>RPC_AdrenalineGainRanged</stat><value><perTier><li>1.07</li><li>1.096</li><li>1.122</li><li>1.148</li><li>1.174</li><li>1.2</li></perTier></value></li>
           </statFactors>
         </effects>
       </li>
@@ -4702,7 +5024,7 @@
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_ElectromagRecycler</defName>
     <label>electromag recycler</label>
-    <description>Recycles energy from tech weapon hits into health and stamina.</description>
+    <description>Recycles energy from tech weapon hits into health and adrenaline.</description>
     <costList>
       <Plasteel>18</Plasteel>
       <ComponentSpacer>5</ComponentSpacer>
@@ -4715,7 +5037,7 @@
   <HediffDef ParentName="RPC_CyberwareHediffBase">
     <defName>RPC_ElectromagRecycler</defName>
     <label>electromag recycler</label>
-    <description>Recycles energy from tech weapon hits into health and stamina.</description>
+    <description>Recycles energy from tech weapon hits into health and adrenaline.</description>
     <descriptionHyperlinks><ThingDef>RPC_Item_ElectromagRecycler</ThingDef></descriptionHyperlinks>
     <comps>
       <li Class="RimPunkCE.HediffCompProperties_CyberTriggers">
@@ -4725,7 +5047,7 @@
             <weapon>Tech</weapon>
             <effects>
               <li><kind>HealFraction</kind><valueKey>gain</valueKey></li>
-              <li><kind>Stamina</kind><valueKey>gain</valueKey></li>
+              <li><kind>Adrenaline</kind><valueKey>gain</valueKey></li>
             </effects>
           </li>
         </triggers>
@@ -4837,7 +5159,7 @@
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_IsometricStabilizer</defName>
     <label>isometric stabilizer</label>
-    <description>Makes every attack less tiring.</description>
+    <description>Keeps the body primed: all adrenaline builds faster.</description>
     <costList>
       <Plasteel>18</Plasteel>
       <ComponentSpacer>5</ComponentSpacer>
@@ -4850,7 +5172,7 @@
   <HediffDef ParentName="RPC_CyberwareHediffBase">
     <defName>RPC_IsometricStabilizer</defName>
     <label>isometric stabilizer</label>
-    <description>Makes every attack less tiring.</description>
+    <description>Keeps the body primed: all adrenaline builds faster.</description>
     <descriptionHyperlinks><ThingDef>RPC_Item_IsometricStabilizer</ThingDef></descriptionHyperlinks>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareExtension">
@@ -4861,7 +5183,7 @@
         <item>RPC_Item_IsometricStabilizer</item>
         <effects>
           <statFactors>
-            <li><stat>RPC_StaminaCostFactor</stat><value><perTier><li>0.87</li><li>0.87</li><li>0.87</li><li>0.8467</li><li>0.8233</li><li>0.8</li></perTier></value></li>
+            <li><stat>RPC_AdrenalineGain</stat><value><perTier><li>1.13</li><li>1.13</li><li>1.13</li><li>1.1533</li><li>1.1767</li><li>1.2</li></perTier></value></li>
           </statFactors>
         </effects>
       </li>
@@ -5488,7 +5810,7 @@
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_Painducer</defName>
     <label>painducer</label>
-    <description>Spreads part of every hit out over the next 50 seconds as small hits.</description>
+    <description>Spreads part of every hit out over the next 8 seconds as small hits to the body and limbs. Whatever is still held back when the user goes down is dropped.</description>
     <costList>
       <Plasteel>25</Plasteel>
       <ComponentSpacer>5</ComponentSpacer>
@@ -5501,7 +5823,7 @@
   <HediffDef ParentName="RPC_CyberwareHediffBase">
     <defName>RPC_Painducer</defName>
     <label>painducer</label>
-    <description>Spreads part of every hit out over the next 50 seconds as small hits.</description>
+    <description>Spreads part of every hit out over the next 8 seconds as small hits to the body and limbs. Whatever is still held back when the user goes down is dropped.</description>
     <descriptionHyperlinks><ThingDef>RPC_Item_Painducer</ThingDef></descriptionHyperlinks>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareExtension">

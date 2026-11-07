@@ -49,6 +49,30 @@
     <returnTicks>60000</returnTicks>
     <maxCarryTicks>2500</maxCarryTicks>
     <maxBoardTicks>1500</maxBoardTicks>
+    <!-- billing: every extraction is billed when the patient comes back, on top of the coverage -->
+    <feePerHediff>35</feePerHediff>
+    <maxTreatmentFee>1200</maxTreatmentFee>
+    <combatFee>300</combatFee>
+    <combatFeePerHostile>75</combatFeePerHostile>
+    <cyberpsychosisFee>2500</cyberpsychosisFee>
+    <!-- debt: a bill the colony can't pay. no Trauma Team service until paid; collectors raid after the grace period -->
+    <debtDailyInterest>0.02</debtDailyInterest>
+    <debtGraceDays>30</debtGraceDays>
+    <debtFirstWarningDays>10</debtFirstWarningDays>
+    <debtFinalWarningDays>3</debtFinalWarningDays>
+    <minPaymentFraction>0.25</minPaymentFraction>
+    <collectionRepeatDays>15</collectionRepeatDays>
+    <collectionPointsFactor>1.25</collectionPointsFactor>
+    <collectionMinPoints>400</collectionMinPoints>
+    <!-- NPC clients: rare, high-value corporation / NetWatch pawns only (never gangs). squad fights for the client's faction -->
+    <npcLeaderChance>0.2</npcLeaderChance>
+    <npcEliteChance>0.04</npcEliteChance>
+    <npcEliteMinCombatPower>150</npcEliteMinCombatPower>
+    <npcMaxConcurrentDispatches>1</npcMaxConcurrentDispatches>
+    <!-- attacking Trauma Team on purpose: hostile this many days -->
+    <hostilityDays>30</hostilityDays>
+    <!-- max share of one raid that is covered, rounded down (3%: none under 34 raiders) -->
+    <npcRaidMaxCoveredFraction>0.03</npcRaidMaxCoveredFraction>
   </RimPunkCE.TraumaTeamTuningDef>
 
   <JobDef>
@@ -123,7 +147,10 @@
           <li><chance>1</chance><count>2</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li></hediffs></li>
           <li><chance>1</chance><count>3</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li></hediffs></li>
           <li><chance>1</chance><hediffs><li>RPC_SmartLink</li></hediffs></li>
+          <li><chance>1</chance><hediffs><li>RPC_TitaniumBones</li></hediffs></li>
+          <li><chance>1</chance><count>2</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_Carapace</li><li>RPC_Chitin</li></hediffs></li>
         </options>
+        <extraHediffs><li>RPC_ScrapPlating</li></extraHediffs>
       </li>
       <li Class="CombatExtended.LoadoutPropertiesExtension">
         <primaryMagazineCount><min>3</min><max>6</max></primaryMagazineCount>

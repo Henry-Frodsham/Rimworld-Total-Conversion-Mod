@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    Trauma Team audio. Drop-in: put .ogg / .wav / .mp3 files in the folder named by <folder> under Common/Sounds/
+    (e.g. Common/Sounds/RimPunk/TraumaTeam/Landing/land1.ogg) and restart. With several files one is picked at random.
+    Until a folder has files, the landing and take-off use the vanilla shuttle sounds and the callouts are silent
+    (the text callout still shows). Code: SoundOverrides in TraumaTeamPresence.cs.
+  -->
+
+  <SoundDef>
+    <defName>RPC_TT_ShuttleLanding</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Folder"><clipFolderPath>Misc/Shuttle/Land</clipFolderPath></li></grains>
+        <volumeRange>30~30</volumeRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+    <modExtensions><li Class="RimPunkCE.CustomSoundExtension"><folder>RimPunk/TraumaTeam/Landing</folder></li></modExtensions>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>RPC_TT_ShuttleLeaving</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Folder"><clipFolderPath>Misc/Shuttle/Takeoff</clipFolderPath></li></grains>
+        <volumeRange>30~30</volumeRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+    <modExtensions><li Class="RimPunkCE.CustomSoundExtension"><folder>RimPunk/TraumaTeam/Leaving</folder></li></modExtensions>
+  </SoundDef>
+
+  <!-- squad callouts: silent until the folder has clips -->
+  <SoundDef Name="RPC_TT_CalloutBase" Abstract="True">
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Silence"><durationRange>0.1~0.1</durationRange></li></grains>
+        <volumeRange>40~45</volumeRange>
+        <distRange>20~60</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef ParentName="RPC_TT_CalloutBase">
+    <defName>RPC_TT_Arrive</defName>
+    <modExtensions><li Class="RimPunkCE.CustomSoundExtension"><folder>RimPunk/TraumaTeam/Callouts/Arrive</folder></li></modExtensions>
+  </SoundDef>
+
+  <SoundDef ParentName="RPC_TT_CalloutBase">
+    <defName>RPC_TT_Contact</defName>
+    <modExtensions><li Class="RimPunkCE.CustomSoundExtension"><folder>RimPunk/TraumaTeam/Callouts/Contact</folder></li></modExtensions>
+  </SoundDef>
+
+  <SoundDef ParentName="RPC_TT_CalloutBase">
+    <defName>RPC_TT_Warning</defName>
+    <modExtensions><li Class="RimPunkCE.CustomSoundExtension"><folder>RimPunk/TraumaTeam/Callouts/Warning</folder></li></modExtensions>
+  </SoundDef>
+
+  <SoundDef ParentName="RPC_TT_CalloutBase">
+    <defName>RPC_TT_Secure</defName>
+    <modExtensions><li Class="RimPunkCE.CustomSoundExtension"><folder>RimPunk/TraumaTeam/Callouts/Secure</folder></li></modExtensions>
+  </SoundDef>
+
+  <SoundDef ParentName="RPC_TT_CalloutBase">
+    <defName>RPC_TT_Depart</defName>
+    <modExtensions><li Class="RimPunkCE.CustomSoundExtension"><folder>RimPunk/TraumaTeam/Callouts/Depart</folder></li></modExtensions>
+  </SoundDef>
+
+  <!-- MaxTac AV: Common/Sounds/RimPunk/MaxTac/Landing, Leaving -->
+  <SoundDef>
+    <defName>RPC_MT_ShuttleLanding</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Folder"><clipFolderPath>Misc/Shuttle/Land</clipFolderPath></li></grains>
+        <volumeRange>30~30</volumeRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+    <modExtensions><li Class="RimPunkCE.CustomSoundExtension"><folder>RimPunk/MaxTac/Landing</folder></li></modExtensions>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>RPC_MT_ShuttleLeaving</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Folder"><clipFolderPath>Misc/Shuttle/Takeoff</clipFolderPath></li></grains>
+        <volumeRange>30~30</volumeRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+    <modExtensions><li Class="RimPunkCE.CustomSoundExtension"><folder>RimPunk/MaxTac/Leaving</folder></li></modExtensions>
+  </SoundDef>
+
+</Defs>

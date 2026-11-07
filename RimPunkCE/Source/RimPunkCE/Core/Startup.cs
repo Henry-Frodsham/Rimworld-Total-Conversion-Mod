@@ -18,8 +18,12 @@ namespace RimPunkCE
         {
             Diag.Start();
             CyberwareDefCache.Build();
+            QualityBionicsCompat.Init();
+            Compat.ImplantToolsCE.ConvertAll(); // before any pawn builds its implant verbs
             InjectTrackerIntoHumanlikes();
+            ChromePlatingUtility.InstallArmorCaps();
             TextureOverrides.ApplyAll();
+            SoundOverrides.ApplyAll();
             if (RimPunkMod.Settings.cyberpunkFactionsDefault) MakeCyberpunkFactionsDefault();
 
             if (MP.enabled) MP.RegisterAll(Assembly.GetExecutingAssembly());
@@ -76,11 +80,22 @@ namespace RimPunkCE
             {
                 if (def.race == null || !def.race.Humanlike) continue;
                 def.comps ??= new System.Collections.Generic.List<CompProperties>();
+                AddCyberwareTab(def);
                 if (def.comps.Any(c => c is CompProperties_CyberTracker)) continue;
                 def.comps.Add(new CompProperties_CyberTracker());
                 count++;
             }
             RPLog.Debug($"cyber tracker added to {count} humanlike races");
+        }
+
+        /// <summary>The Cyberware tab (ITab_Pawn_Cyberware) next to Health on every humanlike race.</summary>
+        private static void AddCyberwareTab(ThingDef def)
+        {
+            var type = typeof(ITab_Pawn_Cyberware);
+            def.inspectorTabs ??= new System.Collections.Generic.List<System.Type>();
+            if (def.inspectorTabs.Contains(type)) return;
+            def.inspectorTabs.Add(type);
+            def.inspectorTabsResolved?.Add(InspectTabManager.GetSharedInstance(type));
         }
     }
 }

@@ -9,6 +9,8 @@
 
   <StatDef Name="RPC_PawnStatBase" Abstract="True">
     <category>RPC_Cyberware</category>
+    <!-- vanilla's worker doesn't know custom categories (logs "Unhandled case" and hides the stat) -->
+    <workerClass>RimPunkCE.StatWorker_CyberPawn</workerClass>
     <showOnAnimals>false</showOnAnimals>
     <showOnMechanoids>false</showOnMechanoids>
     <showOnEntities>false</showOnEntities>
@@ -20,7 +22,7 @@
   <StatDef ParentName="RPC_PawnStatBase">
     <defName>RPC_CyberwareCapacity</defName>
     <label>cyberware capacity</label>
-    <description>How much cyberware this pawn can carry. Using 80% or more risks cyberpsychosis. Every pawn rolls a base of 50-150, then their aptitude trait and some cyberware change it.</description>
+    <description>How much cyberware this pawn can carry. Using 80% or more risks cyberpsychosis. Every pawn rolls a base of 50-150, then their aptitude trait, some cyberware and immunoblockers change it.</description>
     <defaultBaseValue>0</defaultBaseValue>
     <minValue>1</minValue>
     <toStringStyle>Integer</toStringStyle>
@@ -98,12 +100,12 @@
     <displayPriorityInCategory>77</displayPriorityInCategory>
   </StatDef>
 
-  <!-- ===== stamina / mitigation ===== -->
+  <!-- ===== adrenaline / mitigation ===== -->
 
   <StatDef ParentName="RPC_PawnStatBase">
-    <defName>RPC_StaminaMax</defName>
-    <label>max stamina</label>
-    <description>Stamina drains when attacking. At zero the pawn can't attack and moves at half speed until it is full again.</description>
+    <defName>RPC_AdrenalineMax</defName>
+    <label>max adrenaline</label>
+    <description>Adrenaline builds when dealing and taking damage, fades out of combat, and pays for sandevistan and berserk activations.</description>
     <defaultBaseValue>100</defaultBaseValue>
     <minValue>1</minValue>
     <toStringStyle>Integer</toStringStyle>
@@ -111,9 +113,9 @@
   </StatDef>
 
   <StatDef ParentName="RPC_PawnStatBase">
-    <defName>RPC_StaminaRegen</defName>
-    <label>stamina regeneration</label>
-    <description>Multiplier on stamina recovered while standing still.</description>
+    <defName>RPC_AdrenalineDecay</defName>
+    <label>adrenaline decay</label>
+    <description>Multiplier on how fast adrenaline fades out of combat.</description>
     <defaultBaseValue>1</defaultBaseValue>
     <minValue>0</minValue>
     <toStringStyle>PercentZero</toStringStyle>
@@ -121,9 +123,9 @@
   </StatDef>
 
   <StatDef ParentName="RPC_PawnStatBase">
-    <defName>RPC_StaminaCostFactor</defName>
-    <label>stamina cost factor</label>
-    <description>Multiplier on stamina drained by attacks.</description>
+    <defName>RPC_AdrenalineGain</defName>
+    <label>adrenaline gain</label>
+    <description>Multiplier on adrenaline built from dealing and taking damage.</description>
     <defaultBaseValue>1</defaultBaseValue>
     <minValue>0</minValue>
     <toStringStyle>PercentZero</toStringStyle>
@@ -133,7 +135,7 @@
   <StatDef ParentName="RPC_PawnStatBase">
     <defName>RPC_MitigationChance</defName>
     <label>mitigation chance</label>
-    <description>Chance that incoming damage is mitigated entirely, regaining stamina.</description>
+    <description>Chance that incoming damage is mitigated entirely, gaining adrenaline.</description>
     <defaultBaseValue>0</defaultBaseValue>
     <minValue>0</minValue>
     <maxValue>0.95</maxValue>
@@ -144,7 +146,7 @@
   <StatDef ParentName="RPC_PawnStatBase">
     <defName>RPC_MitigationStrength</defName>
     <label>mitigation strength</label>
-    <description>Stamina regained (as a fraction of max) after a successful mitigation. Total can't exceed 90%.</description>
+    <description>Adrenaline gained (as a fraction of max) after a successful mitigation. Total can't exceed 90%.</description>
     <defaultBaseValue>0.1</defaultBaseValue>
     <minValue>0</minValue>
     <maxValue>0.9</maxValue>
@@ -312,9 +314,9 @@
   </StatDef>
 
   <StatDef ParentName="RPC_PawnStatBase">
-    <defName>RPC_StaminaCostFactorMelee</defName>
-    <label>melee stamina cost</label>
-    <description>Multiplier on stamina used by melee attacks.</description>
+    <defName>RPC_AdrenalineGainMelee</defName>
+    <label>melee adrenaline gain</label>
+    <description>Multiplier on adrenaline built from melee damage dealt.</description>
     <defaultBaseValue>1</defaultBaseValue>
     <minValue>0</minValue>
     <toStringStyle>PercentZero</toStringStyle>
@@ -322,9 +324,9 @@
   </StatDef>
 
   <StatDef ParentName="RPC_PawnStatBase">
-    <defName>RPC_StaminaCostFactorRanged</defName>
-    <label>ranged stamina cost</label>
-    <description>Multiplier on stamina used by shooting.</description>
+    <defName>RPC_AdrenalineGainRanged</defName>
+    <label>ranged adrenaline gain</label>
+    <description>Multiplier on adrenaline built from ranged damage dealt.</description>
     <defaultBaseValue>1</defaultBaseValue>
     <minValue>0</minValue>
     <toStringStyle>PercentZero</toStringStyle>

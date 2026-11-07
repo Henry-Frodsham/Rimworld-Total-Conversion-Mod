@@ -28,6 +28,39 @@ namespace RimPunkCE
         public int maxCarryTicks = 2500;
         /// <summary>The shuttle leaves this long after boarding starts, loading any stragglers.</summary>
         public int maxBoardTicks = 1500;
+
+        // billing (TraumaBilling.cs): every extraction is billed on return, on top of the coverage
+        /// <summary>Per condition treated (injuries, blood loss, tended illnesses).</summary>
+        public int feePerHediff = 35;
+        /// <summary>The per-condition part of a bill never goes above this.</summary>
+        public int maxTreatmentFee = 1200;
+        /// <summary>Surcharge when the squad had to fight, plus per hostile they engaged.</summary>
+        public int combatFee = 300;
+        public int combatFeePerHostile = 75;
+        /// <summary>Extracting and curing a cyberpsycho: the biggest line on any bill.</summary>
+        public int cyberpsychosisFee = 2500;
+        // debt
+        public float debtDailyInterest = 0.02f;
+        public float debtGraceDays = 30f;
+        public float debtFirstWarningDays = 10f;
+        public float debtFinalWarningDays = 3f;
+        /// <summary>A payment of at least this share of the debt restarts the grace period.</summary>
+        public float minPaymentFraction = 0.25f;
+        public float collectionRepeatDays = 15f;
+        public float collectionPointsFactor = 1.25f;
+        public float collectionMinPoints = 400f;
+
+        // NPC coverage (TraumaCoverageUtility): rare, only high-value members of corporations / NetWatch, never gangs
+        public float npcLeaderChance = 0.2f;
+        public float npcEliteChance = 0.04f;
+        /// <summary>Non-leader pawns need at least this combat power to be considered.</summary>
+        public float npcEliteMinCombatPower = 150f;
+        /// <summary>At most this many NPC dispatches on the go at once.</summary>
+        public int npcMaxConcurrentDispatches = 1;
+        /// <summary>Attacking Trauma Team on purpose makes them hostile this long (TraumaHostility.cs).</summary>
+        public float hostilityDays = 30f;
+        /// <summary>At most this share of one raid is covered (rounded down: 3% = none under 34 raiders).</summary>
+        public float npcRaidMaxCoveredFraction = 0.03f;
     }
 
     /// <summary>
@@ -58,6 +91,7 @@ namespace RimPunkCE
             // service factions added in later versions are created in older saves (MaxTac, Trauma Team)
             EnsureFaction(CyberFactionKind.MaxTac, "RPC_Faction_MaxTac");
             EnsureFaction(CyberFactionKind.TraumaTeam, "RPC_Faction_TraumaTeam");
+            EnsureFaction(CyberFactionKind.DebtCollector, "RPC_Faction_DebtCollectors");
             CyberFactionUtility.ApplyRivalries();
         }
 
@@ -79,27 +113,39 @@ namespace RimPunkCE
         {
             if (!IsCovered(patient) || !patient.Spawned || patient.Dead) return;
             if (dispatches.Any(d => d.patient == patient)) return;
+            if (RefuseForDebt(patient)) return; // coverage is kept: it works again once the debt is paid
+            if (RefuseForHostility(patient)) return;
             var tt = CyberFactionUtility.FirstOfKind(CyberFactionKind.TraumaTeam);
             var tuning = Tuning;
             if (tt == null || tuning?.operatorKind == null) return;
 
             var map = patient.Map;
-            // the team is hostile to whoever is hostile to the patient, friendly to everyone else
-            foreach (var other in Find.FactionManager.AllFactionsListForReading)
+            // an NPC client (a covered corpo boss): the squad is contracted to the client's faction and fights as part of
+            // it, so it's hostile to the player when the client is. Trauma Team's own faction and goodwill are untouched.
+            bool npc = patient.Faction == null || !patient.Faction.IsPlayer;
+            if (npc && dispatches.Count(x => x.npc) >= tuning.npcMaxConcurrentDispatches)
             {
-                if (other == tt || other.def.hidden) continue;
-                bool enemy = patient.Faction != null && other != patient.Faction && other.HostileTo(patient.Faction);
-                var want = enemy ? FactionRelationKind.Hostile : (other == patient.Faction ? FactionRelationKind.Ally : FactionRelationKind.Neutral);
-                if (other.IsPlayer) continue; // never touch the player relation (always friendly)
-                if (tt.RelationKindWith(other) != want) CyberFactionUtility.ForceRelation(tt, other, want);
+                Diag.Event("trauma", $"npc dispatch for {Diag.Describe(patient)} skipped: {tuning.npcMaxConcurrentDispatches} already running");
+                return;
             }
+            var squadFaction = npc && patient.Faction != null ? patient.Faction : tt;
+            // the team is hostile to whoever is hostile to the patient, friendly to everyone else
+            if (!npc)
+                foreach (var other in Find.FactionManager.AllFactionsListForReading)
+                {
+                    if (other == tt || other.def.hidden) continue;
+                    bool enemy = patient.Faction != null && other != patient.Faction && other.HostileTo(patient.Faction);
+                    var want = enemy ? FactionRelationKind.Hostile : (other == patient.Faction ? FactionRelationKind.Ally : FactionRelationKind.Neutral);
+                    if (other.IsPlayer) continue; // never touch the player relation (always friendly)
+                    if (tt.RelationKindWith(other) != want) CyberFactionUtility.ForceRelation(tt, other, want);
+                }
 
             var squad = new List<Pawn>();
             int size = tuning.squadSize.RandomInRange;
             for (int i = 0; i < size; i++)
-                squad.Add(PawnGenerator.GeneratePawn(new PawnGenerationRequest(tuning.operatorKind, tt, mustBeCapableOfViolence: true)));
+                squad.Add(PawnGenerator.GeneratePawn(new PawnGenerationRequest(tuning.operatorKind, squadFaction, mustBeCapableOfViolence: true)));
             // the squad flies in on a Trauma Team shuttle, unloads, and the shuttle waits to take the patient
-            var ship = SendShuttle(tt, map, patient.Position, squad);
+            var ship = SendShuttle(tt, map, patient.Position, squad, RPDefOf.RPC_Ship_TraumaShuttle);
             ship.AddJobs(ShipJobDefOf.Unload);
             var wait = (ShipJob_WaitForever)ShipJobMaker.MakeShipJob(ShipJobDefOf.WaitForever);
             wait.showGizmos = false; // the player can't send it away
@@ -108,9 +154,14 @@ namespace RimPunkCE
             var hediff = patient.health.hediffSet.GetFirstHediffOfDef(RPDefOf.RPC_TraumaTeamCoverage);
             if (hediff != null) patient.health.RemoveHediff(hediff); // one dispatch per coverage
 
-            dispatches.Add(new TraumaDispatch { patient = patient, squad = squad, ship = ship, startTick = Find.TickManager.TicksGame });
-            Diag.Event("trauma", $"dispatch for {Diag.Describe(patient)}: {squad.Count} operators");
-            Find.LetterStack.ReceiveLetter("RPC_TraumaTeamLetter".Translate(), "RPC_TraumaTeamLetterText".Translate(patient.LabelShort), LetterDefOf.PositiveEvent, patient);
+            dispatches.Add(new TraumaDispatch { patient = patient, squad = squad, ship = ship, startTick = Find.TickManager.TicksGame, npc = npc });
+            Diag.Event("trauma", $"{(npc ? "npc " : "")}dispatch for {Diag.Describe(patient)}: {squad.Count} operators ({squadFaction?.Name})");
+            if (!npc)
+                Find.LetterStack.ReceiveLetter("RPC_TraumaTeamLetter".Translate(), "RPC_TraumaTeamLetterText".Translate(patient.LabelShort), LetterDefOf.PositiveEvent, patient);
+            else if (squadFaction != null && squadFaction.HostileTo(Faction.OfPlayer))
+                Find.LetterStack.ReceiveLetter("RPC_TraumaTeamEnemyLetter".Translate(), "RPC_TraumaTeamEnemyLetterText".Translate(patient.LabelShort, squadFaction.Name), LetterDefOf.ThreatSmall, patient);
+            else
+                Messages.Message("RPC_TraumaTeamNpcMessage".Translate(patient.LabelShort), patient, MessageTypeDefOf.NeutralEvent);
         }
 
         public override void GameComponentTick()
@@ -119,9 +170,12 @@ namespace RimPunkCE
             int now = Find.TickManager.TicksGame;
             if (now % 2500 == 0) DiagChecks.RunAll();
             if (now % 60000 == 0) CyberFactionUtility.ApplyRivalries();
+            if (now % 60000 == 0) DebtDailyTick();
+            if (now % 60000 == 0) TraumaHostilityDailyTick();
             if (now % 60 == 0) CombatOrdersTick();
             if (now % 250 != 0) return;
             TickMaxTac(now);
+            TickDebt(now);
             var tuning = Tuning;
             if (tuning == null) return;
 
@@ -133,7 +187,7 @@ namespace RimPunkCE
                 var r = returns[i];
                 if (now < r.returnTick) continue;
                 returns.RemoveAt(i);
-                ReturnPatient(r);
+                ReturnPatient(r, tuning);
             }
         }
 
@@ -195,11 +249,25 @@ namespace RimPunkCE
             }
             // nothing happens while the shuttle is still in the air
             if (!shipDown) return false;
-            if (d.boardTick < 0) AssignSquadLord(d.squad, d.ship.shipThing.Faction, patient);
+            if (d.boardTick < 0) AssignSquadLord(d.squad, SquadFaction(d), patient);
+            // a squad hostile to the colony doesn't ask colonists to step back
+            if (!(SquadFaction(d)?.HostileTo(Faction.OfPlayer) ?? false)) EnforceExclusionZone(d);
+            Callouts(d, now);
 
             // fight: operators are ordered onto the nearest hostile threatening the patient
             if (d.extractTick < 0 && d.boardTick < 0 && !patientGone && now % 1000 == 0) LogSquadState("trauma", d.squad);
-            if (d.extractTick < 0 && d.boardTick < 0)
+            // the colony turned on Trauma Team mid-dispatch: they fight, don't extract, and leave when their time is up
+            if (BetrayedDispatch(d) && d.boardTick < 0)
+            {
+                if (d.extractTick >= 0 && !d.patientAboard)
+                {
+                    if (carriedBySquad) carrier.carryTracker.TryDropCarriedThing(carrier.Position, ThingPlaceMode.Near, out _);
+                    d.extractTick = -1;
+                    Diag.Event("trauma", $"extraction of {Diag.Describe(patient)} called off: Trauma Team is hostile");
+                }
+                if (now - d.startTick > tuning.maxTicksOnGround || patientGone) d.boardTick = now;
+            }
+            if (d.extractTick < 0 && d.boardTick < 0 && !BetrayedDispatch(d))
             {
                 bool timeUp = now - d.startTick > tuning.maxTicksOnGround;
                 // secure the patient as soon as no operator on the ground can see a hostile within their weapon range
@@ -300,7 +368,9 @@ namespace RimPunkCE
                     float dist = e.Position.DistanceToSquared(p.Position);
                     if (dist < bestDist) { best = e; bestDist = dist; }
                 }
-                if (best != null) Hunt(p, best, killIncapped: false);
+                if (best == null) continue;
+                d.engaged.Add(best.thingIDNumber); // billed as a combat surcharge
+                Hunt(p, best, killIncapped: false);
             }
         }
 
@@ -367,7 +437,7 @@ namespace RimPunkCE
         {
             var d = dispatches.FirstOrDefault(x => x.patient == patient);
             if (d == null) return;
-            ExtractToWorld(patient, Find.TickManager.TicksGame + (Tuning?.returnTicks ?? 60000), map);
+            ExtractToWorld(patient, Find.TickManager.TicksGame + (Tuning?.returnTicks ?? 60000), map, d.engaged.Count);
             d.patientAboard = true;
         }
 
@@ -375,13 +445,21 @@ namespace RimPunkCE
         /// The patient is held off-map as a world pawn until the return shuttle. Registered first so vanilla doesn't treat
         /// them as a free world pawn (it would hand a colonist to a random NPC faction, see Patch_WorldPawns_GetSituation).
         /// </summary>
-        private void ExtractToWorld(Pawn patient, int returnTick, Map map)
+        private void ExtractToWorld(Pawn patient, int returnTick, Map map, int hostilesEngaged = 0)
         {
             int tile = map != null ? (int)map.Tile : -1;
-            returns.Add(new TraumaReturn { patient = patient, returnTick = returnTick, mapTile = tile, homeFaction = patient.Faction });
+            var r = new TraumaReturn
+            {
+                patient = patient, returnTick = returnTick, mapTile = tile, homeFaction = patient.Faction,
+                wasCyberpsycho = CyberpsychosisUtility.InCyberpsychosis(patient), hostilesEngaged = hostilesEngaged,
+            };
+            returns.Add(r);
             // stabilised on board: world pawns keep ticking, so an untreated patient could bleed out off-map
             // (a death there offers a funeral); with Trauma Team they're safe, like a kidnapped colonist
-            StabilizePatient(patient);
+            r.hediffsTreated += StabilizePatient(patient);
+            bool npc = patient.Faction == null || !patient.Faction.IsPlayer;
+            // an NPC client held prisoner by the colony is taken back: no longer the colony's prisoner
+            if (npc && patient.guest != null && patient.HostFaction != null) patient.guest.SetGuestStatus(null);
             if (patient.Spawned)
             {
                 FleckMaker.ThrowSmoke(patient.DrawPos, patient.Map, 1.5f);
@@ -389,7 +467,8 @@ namespace RimPunkCE
             }
             if (!patient.IsWorldPawn()) Find.WorldPawns.PassToWorld(patient, PawnDiscardDecideMode.KeepForever);
             Diag.Event("trauma", $"extracted {Diag.Describe(patient)}, return at t{returnTick}");
-            Messages.Message("RPC_TraumaTeamExtracted".Translate(patient.LabelShort), MessageTypeDefOf.NeutralEvent);
+            Messages.Message((npc ? "RPC_TraumaTeamExtractedNpc" : "RPC_TraumaTeamExtracted").Translate(patient.LabelShort),
+                npc ? MessageTypeDefOf.NegativeEvent : MessageTypeDefOf.NeutralEvent);
         }
 
         /// <summary>Trauma Team and MaxTac shuttles on the ground can't be damaged (Patch_Thing_TakeDamage_ProtectShuttles).</summary>
@@ -404,14 +483,38 @@ namespace RimPunkCE
             return false;
         }
 
-        private static void StabilizePatient(Pawn patient)
+        /// <summary>Removes injuries and blood loss, tends the rest. Returns how many conditions were treated (billed per condition).</summary>
+        private static int StabilizePatient(Pawn patient)
         {
             var hs = patient.health?.hediffSet;
-            if (hs == null) return;
+            if (hs == null) return 0;
+            int n = CountConditions(patient);
+            // Painducer damage still held back would land after the return (it waits while off-map)
+            var tracker = patient.GetCyberTracker();
+            if (tracker != null && tracker.DelayedDamagePending > 0f)
+            {
+                Diag.Event("trauma", $"cleared {tracker.DelayedDamagePending:0.#} delayed damage on {Diag.Describe(patient)}");
+                tracker.ClearDelayed();
+            }
             foreach (var inj in hs.hediffs.OfType<Hediff_Injury>().ToList()) patient.health.RemoveHediff(inj);
             foreach (var h in hs.hediffs.Where(h => h.def == HediffDefOf.BloodLoss).ToList()) patient.health.RemoveHediff(h);
             foreach (var h in hs.hediffs.ToList())
                 if (h.TendableNow()) h.Tended(1f, 1f);
+            return n;
+        }
+
+        /// <summary>
+        /// Billable conditions: each injured body part once (not each wound: a frag grenade leaves hundreds), blood loss,
+        /// and each kind of other tendable condition (illness, infection...).
+        /// </summary>
+        public static int CountConditions(Pawn pawn)
+        {
+            var hs = pawn.health?.hediffSet;
+            if (hs == null) return 0;
+            int parts = hs.hediffs.OfType<Hediff_Injury>().Select(h => h.Part).Distinct().Count();
+            int bloodLoss = hs.hediffs.Any(h => h.def == HediffDefOf.BloodLoss) ? 1 : 0;
+            int other = hs.hediffs.Where(h => !(h is Hediff_Injury) && h.def != HediffDefOf.BloodLoss && h.TendableNow()).Select(h => h.def).Distinct().Count();
+            return parts + bloodLoss + other;
         }
 
         /// <summary>True while a patient is off-map with Trauma Team (they count as borrowed, not free).</summary>
@@ -424,13 +527,15 @@ namespace RimPunkCE
             return false;
         }
 
-        /// <summary>A Trauma Team shuttle (Royalty) carrying <paramref name="contents"/>, landing as close to <paramref name="near"/> as it fits.</summary>
-        private static TransportShip SendShuttle(Faction tt, Map map, IntVec3 near, IEnumerable<Thing> contents)
+        /// <summary>A shuttle (Royalty) carrying <paramref name="contents"/>, landing as close to <paramref name="near"/> as it fits.
+        /// <paramref name="shipDef"/>: Trauma Team's own (RPC_Ship_TraumaShuttle) or, by default, the vanilla shuttle.</summary>
+        private static TransportShip SendShuttle(Faction tt, Map map, IntVec3 near, IEnumerable<Thing> contents, TransportShipDef shipDef = null)
         {
-            var shuttle = ThingMaker.MakeThing(ThingDefOf.Shuttle);
+            shipDef ??= TransportShipDefOf.Ship_Shuttle;
+            var shuttle = ThingMaker.MakeThing(shipDef.shipThing);
             shuttle.SetFaction(tt);
-            var ship = TransportShipMaker.MakeTransportShip(TransportShipDefOf.Ship_Shuttle, contents, shuttle);
-            var size = ThingDefOf.Shuttle.Size + new IntVec2(2, 2);
+            var ship = TransportShipMaker.MakeTransportShip(shipDef, contents, shuttle);
+            var size = shipDef.shipThing.Size + new IntVec2(2, 2);
             if (!near.IsValid || !DropCellFinder.TryFindDropSpotNear(near, map, out var cell, allowFogged: false, canRoofPunch: false, maxRadius: 25, allowIndoors: false, size: size))
                 cell = DropCellFinder.GetBestShuttleLandingSpot(map, tt);
             ship.ArriveAt(cell, map.Parent);
@@ -438,6 +543,9 @@ namespace RimPunkCE
         }
 
         /// <summary>Unloaded squad members join one assist lord around <paramref name="patient"/> (Trauma Team patient, MaxTac target).</summary>
+        private static Faction SquadFaction(TraumaDispatch d) =>
+            d.squad.FirstOrDefault(p => p != null && !p.Dead)?.Faction ?? d.ship?.shipThing?.Faction;
+
         private static void AssignSquadLord(List<Pawn> squad, Faction tt, Pawn patient)
         {
             if (tt == null) return;
@@ -450,7 +558,9 @@ namespace RimPunkCE
                 if (lord == null)
                 {
                     var spot = patient != null && patient.Spawned ? patient.Position : p.Position;
-                    lord = LordMaker.MakeNewLord(tt, new LordJob_AssistColony(tt, spot), p.Map, new List<Pawn> { p });
+                    // hostile to the colony (a contracted squad for an enemy client): hold the spot, no assist-colony duty
+                    LordJob job = tt.HostileTo(Faction.OfPlayer) ? new LordJob_DefendPoint(spot, addFleeToil: false) : new LordJob_AssistColony(tt, spot);
+                    lord = LordMaker.MakeNewLord(tt, job, p.Map, new List<Pawn> { p });
                 }
                 else lord.AddPawn(p);
             }
@@ -516,7 +626,7 @@ namespace RimPunkCE
             }
         }
 
-        private static void ReturnPatient(TraumaReturn r)
+        private void ReturnPatient(TraumaReturn r, TraumaTeamTuningDef tuning)
         {
             var pawn = r.patient;
             if (pawn == null || pawn.Dead || pawn.Spawned)
@@ -524,7 +634,25 @@ namespace RimPunkCE
                 Diag.Event("trauma", $"return skipped for {Diag.Describe(pawn)}: null={pawn == null} dead={pawn?.Dead} spawned={pawn?.Spawned}");
                 return;
             }
-            // patched up by Trauma Team
+            if (r.homeFaction != null && !r.homeFaction.IsPlayer)
+            {
+                // an NPC client is patched up and goes home to their faction (stays a world pawn, may show up again)
+                if (r.wasCyberpsycho || CyberpsychosisUtility.InCyberpsychosis(pawn)) StripCyberwareBelowSafe(pawn);
+                if (r.wasCyberpsycho) CyberpsychosisUtility.ClearOrphanedRage(pawn, addBurnout: true);
+                foreach (var h in pawn.health.hediffSet.hediffs.Where(h => h is Hediff_Injury || h.def == HediffDefOf.BloodLoss).ToList())
+                    pawn.health.RemoveHediff(h);
+                if (pawn.Faction != r.homeFaction && !r.homeFaction.defeated) pawn.SetFaction(r.homeFaction);
+                Diag.Event("trauma", $"npc client {Diag.Describe(pawn)} treated and back with {r.homeFaction.Name}");
+                return;
+            }
+            // a cyberpsycho comes back with the chrome that tipped them over removed (most capacity first) until below 50%
+            if (r.wasCyberpsycho || CyberpsychosisUtility.InCyberpsychosis(pawn)) StripCyberwareBelowSafe(pawn);
+            if (r.wasCyberpsycho) CyberpsychosisUtility.ClearOrphanedRage(pawn, addBurnout: true);
+            // patched up by Trauma Team (anything still open is billed too)
+            r.hediffsTreated += pawn.health.hediffSet.hediffs.Count(h => h is Hediff_Injury || h.def == HediffDefOf.BloodLoss) > 0
+                ? pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>().Select(h => h.Part).Distinct().Count()
+                  + (pawn.health.hediffSet.hediffs.Any(h => h.def == HediffDefOf.BloodLoss) ? 1 : 0)
+                : 0;
             foreach (var inj in pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>().ToList())
                 pawn.health.RemoveHediff(inj);
             foreach (var h in pawn.health.hediffSet.hediffs.Where(h => h.def == HediffDefOf.BloodLoss).ToList())
@@ -541,10 +669,40 @@ namespace RimPunkCE
             if (pawn.Faction != home) pawn.SetFaction(home);
             // flown back on a Trauma Team shuttle: lands, drops the patient off, leaves
             var tt = CyberFactionUtility.FirstOfKind(CyberFactionKind.TraumaTeam);
-            var ship = SendShuttle(tt, map, IntVec3.Invalid, new[] { (Thing)pawn });
+            var ship = SendShuttle(tt, map, IntVec3.Invalid, new[] { (Thing)pawn }, RPDefOf.RPC_Ship_TraumaShuttle);
             ship.AddJobs(ShipJobDefOf.Unload, ShipJobDefOf.FlyAway);
             Diag.Event("trauma", $"returned {Diag.Describe(pawn)}");
             Find.LetterStack.ReceiveLetter("RPC_TraumaTeamReturnLetter".Translate(), "RPC_TraumaTeamReturnLetterText".Translate(pawn.LabelShort), LetterDefOf.PositiveEvent, pawn);
+            // the player's colony pays for the service (NPC patients are on their own faction's tab)
+            if (home.IsPlayer) BillPatient(r, pawn, map, tuning);
+        }
+
+        /// <summary>
+        /// Removes chrome, highest capacity cost first, until usage is under the safe threshold (50%): RimPunk cyberware
+        /// and other mods' implants alike. A replacement part (e.g. a bionic arm) leaves the part missing, like vanilla's
+        /// removal surgery, instead of handing back a natural limb.
+        /// </summary>
+        private static void StripCyberwareBelowSafe(Pawn pawn)
+        {
+            if (CyberpsychosisUtility.IsPermanent(pawn)) return; // David's last stand: removing chrome can't help, so they keep it
+            var tracker = pawn.GetCyberTracker();
+            if (tracker == null) return;
+            float safe = RPDefOf.RPC_CyberpsychosisTuning.safeUsage;
+            var chrome = new List<(Hediff h, float cost)>();
+            foreach (var c in tracker.Cyberware) chrome.Add((c, c.CapacityCost));
+            foreach (var f in tracker.ForeignImplants) chrome.Add((f, ForeignCyberwareUtility.CostOf(f)));
+            var removed = new List<string>();
+            foreach (var (h, cost) in chrome.OrderByDescending(x => x.cost))
+            {
+                if (tracker.UsageRatio < safe) break;
+                if (cost <= 0f || !pawn.health.hediffSet.hediffs.Contains(h)) continue;
+                removed.Add(h.def.defName + (h is Hediff_Cyberware cw ? " " + cw.tier : ""));
+                if (h is Hediff_AddedPart && h.Part != null) pawn.health.AddHediff(HediffDefOf.MissingBodyPart, h.Part);
+                else pawn.health.RemoveHediff(h);
+                tracker.Notify_CyberwareChanged();
+            }
+            if (pawn.MentalState is MentalState_Cyberpsychosis) pawn.MentalState.RecoverFromState();
+            Diag.Event("trauma", $"{Diag.Describe(pawn)} stripped of [{string.Join(", ", removed)}], usage now {tracker.UsageRatio:P0}");
         }
 
         public int PendingReturns => returns.Count;
@@ -561,6 +719,16 @@ namespace RimPunkCE
         {
             var tuning = Tuning;
             if (tuning == null || pawn?.Map == null || IsCovered(pawn)) return;
+            if (PlayerInDebt)
+            {
+                Messages.Message("RPC_TraumaRefusedCoverage".Translate(Mathf.CeilToInt(Instance.TraumaDebt)), pawn, MessageTypeDefOf.RejectInput, false);
+                return;
+            }
+            if (TraumaHostileToPlayer)
+            {
+                Messages.Message("RPC_TraumaRefusedCoverageHostile".Translate(DaysUntilTraumaForgives.ToString("0.#")), pawn, MessageTypeDefOf.RejectInput, false);
+                return;
+            }
             if (!SilverUtility.TryConsumeSilver(pawn.Map, tuning.coverageCostSilver))
             {
                 Messages.Message("RPC_TraumaTeamNoSilver".Translate(tuning.coverageCostSilver), pawn, MessageTypeDefOf.RejectInput, false);
@@ -580,6 +748,8 @@ namespace RimPunkCE
             Scribe_Collections.Look(ref dispatches, "traumaDispatches", LookMode.Deep);
             Scribe_Collections.Look(ref returns, "traumaReturns", LookMode.Deep);
             ExposeMaxTac();
+            ExposeDebt();
+            ExposeTraumaHostility();
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 dispatches ??= new List<TraumaDispatch>();
@@ -601,6 +771,14 @@ namespace RimPunkCE
         public bool patientAboard;
         public Pawn carrier;
         public bool noCarrierLogged;
+        /// <summary>The patient isn't the player's: the squad is contracted to the patient's faction.</summary>
+        public bool npc;
+        // callouts and exclusion zone (TraumaTeamPresence.cs)
+        public bool saidArrive, saidSecure, saidDepart, warnedMessage;
+        public int lastContactTick = -99999;
+        public HashSet<Pawn> warned = new HashSet<Pawn>();
+        /// <summary>Hostiles the squad was ordered onto (thingIDNumbers): the combat surcharge on the bill.</summary>
+        public HashSet<int> engaged = new HashSet<int>();
 
         public void ExposeData()
         {
@@ -612,6 +790,13 @@ namespace RimPunkCE
             Scribe_Values.Look(ref boardTick, "boardTick", -1);
             Scribe_Values.Look(ref patientAboard, "patientAboard");
             Scribe_References.Look(ref carrier, "carrier");
+            Scribe_Values.Look(ref npc, "npc");
+            Scribe_Values.Look(ref saidArrive, "saidArrive");
+            Scribe_Values.Look(ref saidSecure, "saidSecure");
+            Scribe_Values.Look(ref saidDepart, "saidDepart");
+            Scribe_Values.Look(ref lastContactTick, "lastContactTick", -99999);
+            Scribe_Collections.Look(ref engaged, "engaged", LookMode.Value);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit) engaged ??= new HashSet<int>();
         }
     }
 
@@ -622,6 +807,12 @@ namespace RimPunkCE
         public int mapTile;
         /// <summary>Faction to restore on return (null in older saves: the player).</summary>
         public Faction homeFaction;
+        /// <summary>Extracted mid-cyberpsychosis: comes back with chrome stripped below the safe threshold.</summary>
+        public bool wasCyberpsycho;
+        // billing
+        public int hediffsTreated;
+        public int hostilesEngaged;
+        public int billTotal;
 
         public void ExposeData()
         {
@@ -629,11 +820,18 @@ namespace RimPunkCE
             Scribe_References.Look(ref patient, "patient", saveDestroyedThings: true);
             Scribe_Values.Look(ref returnTick, "returnTick");
             Scribe_Values.Look(ref mapTile, "mapTile");
+            Scribe_Values.Look(ref wasCyberpsycho, "wasCyberpsycho");
+            Scribe_Values.Look(ref hediffsTreated, "hediffsTreated");
+            Scribe_Values.Look(ref hostilesEngaged, "hostilesEngaged");
         }
     }
 
     public static class SilverUtility
     {
+        /// <summary>Silver on the map the player can see (what TryConsumeSilver can take).</summary>
+        public static int CountSilver(Map map) =>
+            map == null ? 0 : map.listerThings.ThingsOfDef(ThingDefOf.Silver).Where(t => t.Spawned && !t.Position.Fogged(map)).Sum(t => t.stackCount);
+
         /// <summary>Takes silver from anywhere on the map that belongs to the player (stockpiles, shelves...).</summary>
         public static bool TryConsumeSilver(Map map, int amount)
         {

@@ -80,7 +80,7 @@ namespace RimPunkCE
             return nodes;
         }
 
-        private static void Equip(Pawn p, ThingDef def)
+        internal static void Equip(Pawn p, ThingDef def)
         {
             if (p.equipment == null) return;
             if (p.equipment.Primary != null) p.equipment.DestroyEquipment(p.equipment.Primary);
@@ -350,7 +350,7 @@ namespace RimPunkCE
         // ================================================================ trauma team
 
         [DebugAction(Trauma, "Give coverage (free)", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
-        private static void GiveCoverage(Pawn p)
+        internal static void GiveCoverage(Pawn p)
         {
             if (!GameComponent_RimPunk.IsCovered(p)) p.health.AddHediff(RPDefOf.RPC_TraumaTeamCoverage);
         }
@@ -431,9 +431,11 @@ namespace RimPunkCE
         [DebugAction(Events, "Rogue cyberpsycho at cursor", actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void RogueHere()
         {
+            var cell = UI.MouseCell();
+            if (!cell.InBounds(Find.CurrentMap)) return; // clicked off the map edge
             var kind = DefDatabase<PawnKindDef>.GetNamed("RPC_RogueCyberpsycho");
             var pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(kind, null, mustBeCapableOfViolence: true));
-            GenSpawn.Spawn(pawn, UI.MouseCell(), Find.CurrentMap);
+            GenSpawn.Spawn(pawn, cell, Find.CurrentMap);
             pawn.mindState.mentalStateHandler.TryStartMentalState(RPDefOf.RPC_Cyberpsychosis, "debug", forced: true, forceWake: true);
         }
 

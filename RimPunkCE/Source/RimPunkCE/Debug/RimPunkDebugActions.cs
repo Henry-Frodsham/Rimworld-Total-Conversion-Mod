@@ -30,7 +30,7 @@ namespace RimPunkCE
             return nodes;
         }
 
-        private static void DebugInstall(Pawn pawn, HediffDef def, CyberTier tier)
+        internal static void DebugInstall(Pawn pawn, HediffDef def, CyberTier tier)
         {
             var ext = def.Ext();
             BodyPartRecord part = null;
@@ -71,23 +71,16 @@ namespace RimPunkCE
         [DebugAction(Category, "Roll cyberpsychosis event (took damage)", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void RollEvent(Pawn p) => CyberpsychosisUtility.Notify_Event(p, CyberpsychosisEvent.TookDamage);
 
-        [DebugAction(Category, "Refill RAM and stamina", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [DebugAction(Category, "Refill RAM and adrenaline", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void Refill(Pawn p)
         {
             var t = p.GetCyberTracker();
             t?.GainRam(9999f);
-            var s = t?.Stamina;
-            if (s != null) s.CurLevel = s.MaxLevel;
+            t?.SetAdrenaline(9999f);
         }
 
-        [DebugAction(Category, "Drain stamina", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
-        private static void DrainStamina(Pawn p)
-        {
-            var s = p.GetCyberTracker()?.Stamina;
-            if (s == null) return;
-            s.CurLevel = 0f;
-            if (!s.Exhausted) p.health.AddHediff(RPDefOf.RPC_Exhausted);
-        }
+        [DebugAction(Category, "Drain adrenaline", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void DrainAdrenaline(Pawn p) => p.GetCyberTracker()?.SetAdrenaline(0f);
 
         [DebugAction(Category, "Reset cyberware cooldowns", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void ResetCooldowns(Pawn p)

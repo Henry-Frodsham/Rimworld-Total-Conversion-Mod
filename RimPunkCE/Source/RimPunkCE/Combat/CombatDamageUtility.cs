@@ -42,15 +42,15 @@ namespace RimPunkCE
             if (violent && !CompCyberTracker.ApplyingDelayed) CyberwareDefenseUtility.ModifyIncoming(pawn, tracker, ref dinfo);
             if (dinfo.Amount <= 0f) { absorbed = true; return; }
 
-            // 2. mitigation: chance to block all of it, regaining stamina (terms.md)
-            if (violent && RimPunkMod.Settings.staminaEnabled)
+            // 2. mitigation: chance to block all of it, gaining adrenaline
+            if (violent)
             {
                 float chance = pawn.GetStatValue(RPStatDefOf.RPC_MitigationChance);
                 if (chance > 0f && Rand.Chance(Mathf.Min(chance, 0.95f)))
                 {
                     absorbed = true;
                     Diag.Count("mitigation");
-                    tracker.Stamina?.GainFraction(pawn.GetStatValue(RPStatDefOf.RPC_MitigationStrength));
+                    tracker.GainAdrenalineFraction(pawn.GetStatValue(RPStatDefOf.RPC_MitigationStrength));
                     MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "RPC_Mitigated".Translate(), 2f);
                     return;
                 }

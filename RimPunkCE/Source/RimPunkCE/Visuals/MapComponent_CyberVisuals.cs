@@ -9,7 +9,7 @@ namespace RimPunkCE
     /// Draw-only visuals (never saved, never touches Verse.Rand, so it can't desync multiplayer):
     ///  - Sandevistan afterimages: while an afterimage effect is active and the pawn moves, a tinted, mildly
     ///    transparent copy of the pawn is left every 0.1 s; each fades out over 1 s (visual_effects.md).
-    ///  - Quickhack target widget: icon + upload progress bar above the target.
+    /// Quickhack upload visuals are in MapComponent_Netrun.
     /// </summary>
     [StaticConstructorOnStartup]
     public class MapComponent_CyberVisuals : MapComponent
@@ -20,9 +20,6 @@ namespace RimPunkCE
         private const int AlphaSteps = 10;
 
         private static readonly Color AfterimageColor = new Color(0.35f, 1f, 0.75f);
-        private static readonly Texture2D QuickhackIcon = ContentFinder<Texture2D>.Get("UI/RimPunk/Quickhack_Target", false) ?? BaseContent.BadTex;
-        private static readonly Texture2D BarFill = SolidColorMaterials.NewSolidColorTexture(new Color(0.2f, 0.75f, 1f));
-        private static readonly Texture2D BarEmpty = SolidColorMaterials.NewSolidColorTexture(new Color(0f, 0f, 0f, 0.6f));
 
         private struct Snapshot
         {
@@ -107,23 +104,6 @@ namespace RimPunkCE
                 matCache[(tex, alphaStep)] = mat;
             }
             return mat;
-        }
-
-        public override void MapComponentOnGUI()
-        {
-            if (Find.CurrentMap != map) return;
-            var pawns = map.mapPawns.AllHumanlikeSpawned;
-            for (int i = 0; i < pawns.Count; i++)
-            {
-                if (!Verb_Quickhack.IsUploading(pawns[i], out var stance) || !stance.focusTarg.HasThing) continue;
-                var target = stance.focusTarg.Thing;
-                if (!target.Spawned || target.Map != map) continue;
-                Vector2 screen = GenMapUI.LabelDrawPosFor(target, 1.1f);
-                var icon = new Rect(screen.x - 12f, screen.y - 34f, 24f, 24f);
-                GUI.DrawTexture(icon, QuickhackIcon);
-                var bar = new Rect(screen.x - 24f, screen.y - 8f, 48f, 6f);
-                Widgets.FillableBar(bar, Verb_Quickhack.UploadProgress(stance), BarFill, BarEmpty, false);
-            }
         }
     }
 }

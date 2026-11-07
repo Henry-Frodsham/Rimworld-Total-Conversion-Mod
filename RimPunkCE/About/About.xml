@@ -6,9 +6,9 @@
   <supportedVersions>
     <li>1.7</li>
   </supportedVersions>
-  <description>Cyberware, cyberpsychosis and stamina for Combat Extended. Operating systems (sandevistan, berserk, cyberdecks, chrome compressor), arm cyberware, prefrontal cortex implants and more, all tiered from T1 to Iconic.
+  <description>Cyberware, cyberpsychosis and adrenaline for Combat Extended. Operating systems (sandevistan, berserk, cyberdecks, chrome compressor), arm cyberware, prefrontal cortex implants and more, all tiered from T1 to Iconic.
 
-Requires Royalty, Harmony and Combat Extended. Multiplayer compatible.
+Requires Royalty, Harmony and Combat Extended. Multiplayer compatible. Works with Quality Bionics Remastered: cyberware gets quality, which scales its effects.
 
 Icons by Lorc, Delapouite, Andy Meneely and Sbed from game-icons.net, CC BY 3.0, recoloured.</description>
   <modDependencies>
@@ -32,5 +32,6 @@ Icons by Lorc, Delapouite, Andy Meneely and Sbed from game-icons.net, CC BY 3.0,
     <li>brrainz.harmony</li>
     <li>CETeam.CombatExtended</li>
     <li>rwmt.Multiplayer</li>
+    <li>assassinsbro.qualitybionicsremastered</li>
   </loadAfter>
 </ModMetaData>

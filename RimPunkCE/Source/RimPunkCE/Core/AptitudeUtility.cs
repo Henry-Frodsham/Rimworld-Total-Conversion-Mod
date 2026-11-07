@@ -58,18 +58,23 @@ namespace RimPunkCE
             if (req.Thing is not Pawn pawn) return;
             if (AptitudeUtility.IsGonk(pawn))
             {
-                val = gonkCapacity;
+                val = gonkCapacity + ImmunoblockerUtility.CapacityBonus(pawn); // the one thing that raises a gonk's capacity
                 return;
             }
             val *= RimPunkMod.Settings?.capacityMultiplier ?? 1f;
+            val += ImmunoblockerUtility.CapacityBonus(pawn); // flat: a +200 drug is +200 whatever the capacity setting
         }
 
         public override string ExplanationPart(StatRequest req)
         {
             if (req.Thing is not Pawn pawn) return null;
-            if (AptitudeUtility.IsGonk(pawn)) return "RPC_GonkCapacityExplanation".Translate(gonkCapacity);
+            string first = AptitudeUtility.IsGonk(pawn) ? (string)"RPC_GonkCapacityExplanation".Translate(gonkCapacity) : null;
             float m = RimPunkMod.Settings?.capacityMultiplier ?? 1f;
-            return m != 1f ? "RPC_CapacitySettingExplanation".Translate(m.ToStringPercent()) : null;
+            if (first == null && m != 1f) first = "RPC_CapacitySettingExplanation".Translate(m.ToStringPercent());
+            float drug = ImmunoblockerUtility.CapacityBonus(pawn);
+            if (drug <= 0f) return first;
+            string blocker = "RPC_ImmunoblockerExplanation".Translate(drug);
+            return first == null ? blocker : first + "\n" + blocker;
         }
     }
 }

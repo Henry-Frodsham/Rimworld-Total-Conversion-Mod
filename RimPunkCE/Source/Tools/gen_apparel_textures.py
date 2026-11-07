@@ -1,4 +1,4 @@
-"""Draft textures for the custom faction gear (Trauma Team, MaxTac): vanilla armour shapes recoloured, plus simple emblems.
+"""Draft textures for the custom faction gear (Trauma Team, MaxTac): vanilla shapes recoloured (flat or shaded), plus simple emblems.
 Meant as a starting point for hand refinement.
 
     python -I Source/Tools/gen_apparel_textures.py --templates <folder>
@@ -13,7 +13,12 @@ import argparse
 import hashlib
 import os
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+import sys
+
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from polish_art import polish
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 OUT = os.path.join(ROOT, 'Common', 'Textures', 'Things', 'RimPunk', 'Apparel')
@@ -28,14 +33,38 @@ GOLD, YELLOW = (215, 170, 50), (235, 200, 40)
 
 TT_DARK, MT_NAVY = (100, 110, 118), (30, 52, 96)
 
-# name: (vanilla template, has body types, palette (light, mid, dark, visor glow or None), decal)
+TT_GREEN = (52, 130, 78)
+
+AR_RED, AR_RED_MID, AR_RED_DARK = (200, 30, 36), (150, 22, 28), (92, 14, 18)      # Arasaka red (helmets, rigs)
+AR_BLACK, AR_BLACK_MID, AR_BLACK_DARK, AR_WHITE = (66, 66, 72), (42, 42, 48), (26, 26, 30), (232, 232, 228)
+
+# name: (vanilla template, has body types, palette, decal). palette is (light, mid, dark, visor glow or None) for a shaded
+# recolour, or ('flat', colour) for one flat colour inside the vanilla outline. Template '@pants': the legs of the naked body
+# (vanilla pants have no worn texture), with Pants/Pants as the item icon.
 PIECES = {
-    'TraumaArmor':      ('ReconArmor/ReconArmor', True, (TT_WHITE, TT_GREY, TT_DARK, None), 'tt_armor'),
-    'TraumaHelmet':     ('ReconArmorHelmet/ReconHelmet', False, (TT_WHITE, TT_GREY, TT_DARK, TT_GLOW), None),
-    'TraumaLeadHelmet': ('ReconArmorHelmet/ReconHelmet', False, (TT_WHITE, TT_GREY, TT_DARK, TT_GLOW), 'stripe_gold'),
+    'TraumaShirt':      ('ShirtBasic/ShirtBasic', True, ('camo', TT_GREEN), None),
+    'TraumaPants':      ('@pants', True, ('flat', TT_GREEN), None),
+    'TraumaVest':       ('FlakVest/FlakVest', True, ('flat', TT_WHITE), None),
+    'TraumaHelmet':     ('ReconArmorHelmet/ReconHelmet', False, ('flat', TT_WHITE), None),
     'MaxTacArmor':      ('PowerArmor/PowerArmor', True, (MT_BLACK, MT_DARK, MT_NAVY, None), 'mt_armor'),
     'MaxTacHelmet':     ('PowerArmorHelmet/PowerArmorHelmet', False, (MT_BLACK, MT_DARK, MT_NAVY, MT_RED), None),
     'MaxTacLeadHelmet': ('PowerArmorHelmet/PowerArmorHelmet', False, (MT_BLACK, MT_DARK, MT_NAVY, MT_RED), 'stripe_yellow'),
+    # Arasaka: black gear, red helmets and rigs, white shirts for guards and execs
+    'ArasakaShirtWhite':   ('ShirtButton/ShirtButton', True, ('flat', AR_WHITE), None),
+    'ArasakaShirt':        ('ShirtButton/ShirtButton', True, ('flat', AR_BLACK_MID), None),
+    'ArasakaPants':        ('@sprite', True, (AR_BLACK, AR_BLACK_MID, AR_BLACK_DARK, None), None),
+    'ArasakaBodysuit':     ('EltexShirt/EltexShirt', True, ('flat', AR_BLACK_MID), None),
+    'ArasakaVestLight':    ('EltexVest/EltexVest', True, ('flat', AR_BLACK), None),
+    'ArasakaPlateCarrier': ('FlakVest/FlakVest', True, (AR_BLACK, AR_BLACK_MID, AR_BLACK_DARK, None), 'stripe_red'),
+    'ArasakaJacket':       ('Jacket/Jacket', True, (AR_BLACK, AR_BLACK_MID, AR_BLACK_DARK, None), None),
+    'ArasakaDuster':       ('Duster/Duster', True, (AR_BLACK, AR_BLACK_MID, AR_BLACK_DARK, None), None),
+    'ArasakaReconArmor':   ('ReconArmor/ReconArmor', True, (AR_BLACK, AR_BLACK_MID, AR_BLACK_DARK, None), 'stripe_red'),
+    'ArasakaHeavyArmor':   ('PowerArmor/PowerArmor', True, (AR_BLACK, AR_BLACK_MID, AR_BLACK_DARK, None), 'stripe_red'),
+    'ArasakaCombatHelmet': ('AdvancedHelmet/AdvancedHelmet', False, (AR_RED, AR_RED_MID, AR_RED_DARK, None), None),
+    'ArasakaReconHelmet':  ('ReconArmorHelmet/ReconHelmet', False, (AR_RED, AR_RED_MID, AR_RED_DARK, None), None),
+    'ArasakaHeavyHelmet':  ('PowerArmorHelmet/PowerArmorHelmet', False, (AR_RED, AR_RED_MID, AR_RED_DARK, None), None),
+    'ArasakaNetRig':       ('EltexSkullcap/EltexSkullcap', False, (AR_RED, AR_RED_MID, AR_RED_DARK, None), None),
+    'ArasakaVisor':        ('Gunlink/Gunlink', False, (AR_RED, AR_RED_MID, AR_RED_DARK, None), None),
 }
 
 
@@ -75,6 +104,71 @@ def recolour(img, light, mid, dark, glow):
             else:
                 c, k = light, 0.93 + 0.07 * (L - 185) / 70
             op[x, y] = (min(255, int(c[0] * k)), min(255, int(c[1] * k)), min(255, int(c[2] * k)), al)
+    return out
+
+
+def flat(img, colour):
+    """One flat colour inside the vanilla silhouette with an even 2px outline. Inner detail goes; see-through parts
+    (visors) are filled solid."""
+    img = img.convert('RGBA')
+    opaque = img.getchannel('A').point(lambda v: 255 if v > 64 else 0)
+    shape = opaque.filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.MinFilter(5))   # closes small gaps such as visors
+    inner = shape.filter(ImageFilter.MinFilter(5))                                      # 2px in from the edge
+    out = Image.new('RGBA', img.size, (0, 0, 0, 0))
+    out.paste(OUTLINE + (255,), (0, 0), shape)
+    out.paste(colour + (255,), (0, 0), inner)
+    return out
+
+
+TT_CAMO = [((42, 110, 64), 0.35), ((66, 148, 92), 0.28), ((124, 132, 128), 0.14)]   # dark green, light green, grey accent
+
+
+def camo_field(seed, size=128, cells=10):
+    """Smooth noise in 0..255, the same for every body type and facing so the pattern stays consistent."""
+    import random
+    rnd = random.Random(seed)
+    small = Image.new('L', (cells, cells))
+    small.putdata([rnd.randrange(256) for _ in range(cells * cells)])
+    f = small.resize((size, size), Image.BICUBIC).filter(ImageFilter.GaussianBlur(1.5))
+    lo, hi = f.getextrema()
+    return f.point(lambda v: int((v - lo) * 255 / max(1, hi - lo)))
+
+
+def camo(img, base, tones=TT_CAMO):
+    """Flat colour + outline (as flat()), then hard-edged blobs of slightly different tones (polish() smooths them).
+    Each tone is its own noise field; a tone covers roughly its share of the canvas."""
+    out = flat(img, base)
+    inner = out.getchannel('A').point(lambda v: 255 if v == 255 else 0).filter(ImageFilter.MinFilter(5))
+    for k, (colour, share) in enumerate(tones):
+        field = camo_field(7 + k * 31, img.width, cells=22 if k < 2 else 30)
+        cut = 255 - int(255 * share)
+        blob = ImageChops.multiply(field.point(lambda v: 255 if v >= cut else 0), inner)
+        out.paste(colour + (255,), (0, 0), blob)
+    return out
+
+
+def legs(body):
+    """Pants: the naked body below the hips, outline kept."""
+    body = body.convert('RGBA')
+    x0, y0, x1, y1 = bbox(body)
+    cut = y0 + int((y1 - y0) * 0.62)
+    out = body.copy()
+    ImageDraw.Draw(out).rectangle((0, 0, out.width, cut), fill=(0, 0, 0, 0))
+    return out
+
+
+def pants_on_body(sprite, body):
+    """Vanilla pants sprite (icon, cropped to its content) scaled to the naked legs, feet to feet, centred on the body."""
+    body = body.convert('RGBA')
+    x0, y0, x1, y1 = bbox(body)
+    sprite = sprite.convert('RGBA')
+    sprite = sprite.crop(bbox(sprite))
+    hip = y0 + (y1 - y0) * 0.5
+    s = min((x1 - x0) / sprite.width, (y1 - hip) / sprite.height)
+    w, h = max(1, round(sprite.width * s)), max(1, round(sprite.height * s))
+    sprite = sprite.resize((w, h), Image.LANCZOS)
+    out = Image.new('RGBA', body.size, (0, 0, 0, 0))
+    out.paste(sprite, ((x0 + x1 - w) // 2, y1 - h), sprite)
     return out
 
 
@@ -129,8 +223,8 @@ def decal(kind, img, direction):
             d.text((cx - tw / 2, y0 + int(h * 0.30)), text, fill=MT_WHITE, font=font)
         else:
             d.rectangle((x0, y0 + int(h * 0.33), x1, y0 + int(h * 0.33) + 3), fill=MT_BLUE)
-    elif kind in ('stripe_gold', 'stripe_yellow'):
-        colour = GOLD if kind == 'stripe_gold' else YELLOW
+    elif kind in ('stripe_gold', 'stripe_yellow', 'stripe_red'):
+        colour = {'stripe_gold': GOLD, 'stripe_yellow': YELLOW, 'stripe_red': AR_RED}[kind]
         if direction == 'east':
             d.rectangle((x0, y0 + int(h * 0.22), x1, y0 + int(h * 0.22) + 2), fill=colour)
         else:
@@ -140,6 +234,115 @@ def decal(kind, img, direction):
 
 def sha(path):
     return hashlib.sha1(open(path, 'rb').read()).hexdigest()
+
+
+TT_RED = (176, 22, 34)
+
+
+def star_of_life(d, cx, cy, r, fill, edge):
+    """Six-armed medical star: three bars at 0/60/120 degrees, outlined."""
+    import math
+    for col, grow in ((edge, 1.5), (fill, 0)):
+        for ang in (90, 30, -30):
+            a = math.radians(ang)
+            dx, dy = math.cos(a), -math.sin(a)
+            px, py = -dy, dx
+            hw = r * 0.22 + grow
+            ln = r + grow
+            d.polygon([(cx + dx * ln + px * hw, cy + dy * ln + py * hw), (cx + dx * ln - px * hw, cy + dy * ln - py * hw),
+                       (cx - dx * ln - px * hw, cy - dy * ln - py * hw), (cx - dx * ln + px * hw, cy - dy * ln + py * hw)], fill=col)
+
+
+def tt_shuttle(img):
+    """Vanilla shuttle (top-down, 512x256) in Trauma Team colours: white hull, green panels, dark glass, red star of life on
+    the engine block and a green stripe along the hull."""
+    out = recolour(img, TT_WHITE, (178, 184, 188), TT_GREEN, None)
+    x0, y0, x1, y1 = bbox(out)
+    w, h = x1 - x0, y1 - y0
+    glass = recolour(img, TT_WHITE, (178, 184, 188), (54, 70, 82), None)   # cockpit canopy (right 40%) as dark glass
+    m = Image.new('L', out.size, 0)
+    ImageDraw.Draw(m).rectangle((x0 + int(w * 0.6), 0, out.width, out.height), fill=255)
+    out = Image.composite(glass, out, m)
+    layer = Image.new('RGBA', out.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    star_of_life(d, x0 + int(w * 0.11), y0 + int(h * 0.42), int(h * 0.16), TT_RED, OUTLINE)
+    yy = y0 + int(h * 0.80)
+    d.rectangle((x0 + int(w * 0.05), yy, x0 + int(w * 0.93), yy + max(3, h // 40)), fill=TT_GREEN)
+    return clip(layer, out)
+
+
+PIXEL_FONT = {  # 3x5 stencil letters (M is 5 wide)
+    'M': ['10001', '11011', '10101', '10001', '10001'], 'A': ['010', '101', '111', '101', '101'], 'X': ['101', '101', '010', '101', '101'],
+    'T': ['111', '010', '010', '010', '010'], 'C': ['111', '100', '100', '100', '111'], 'N': ['1001', '1101', '1011', '1001', '1001'],
+    'P': ['110', '101', '110', '100', '100'], 'D': ['110', '101', '101', '101', '110'],
+}
+
+
+def stencil(d, x, y, text, scale, fill):
+    for ch in text:
+        g = PIXEL_FONT[ch]
+        for r, row in enumerate(g):
+            for k, v in enumerate(row):
+                if v == '1': d.rectangle((x + k * scale, y + r * scale, x + (k + 1) * scale - 1, y + (r + 1) * scale - 1), fill=fill)
+        x += (len(g[0]) + 1) * scale
+
+
+def stencil_width(text, scale): return (sum(len(PIXEL_FONT[c][0]) for c in text) + len(text) - 1) * scale
+
+
+MT_HULL, MT_HULL_MID, MT_GLASS, NCPD_BLUE = (58, 61, 68), (40, 42, 48), (72, 20, 26), (60, 110, 200)
+
+
+def mt_shuttle(img):
+    """Vanilla shuttle (top-down, 512x256) as a MaxTac AV: black hull, navy panels, dark red canopy, white MAXTAC stencil on
+    the engine block, NCPD blue stripe along the hull."""
+    out = recolour(img, MT_HULL, MT_HULL_MID, MT_NAVY, None)
+    x0, y0, x1, y1 = bbox(out)
+    w, h = x1 - x0, y1 - y0
+    glass = recolour(img, MT_HULL, MT_HULL_MID, MT_GLASS, None)
+    m = Image.new('L', out.size, 0)
+    ImageDraw.Draw(m).rectangle((x0 + int(w * 0.6), 0, out.width, out.height), fill=255)
+    out = Image.composite(glass, out, m)
+    layer = Image.new('RGBA', out.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    scale = 3
+    tx = x0 + int(w * 0.11) - stencil_width('MAXTAC', scale) // 2
+    stencil(d, tx, y0 + int(h * 0.36), 'MAXTAC', scale, MT_WHITE)
+    stencil(d, x0 + int(w * 0.11) - stencil_width('NCPD', 2) // 2, y0 + int(h * 0.36) + 7 * scale, 'NCPD', 2, NCPD_BLUE)
+    yy = y0 + int(h * 0.80)
+    d.rectangle((x0 + int(w * 0.05), yy, x0 + int(w * 0.93), yy + max(3, h // 40)), fill=NCPD_BLUE)
+    d.rectangle((x0 + int(w * 0.05), yy + max(3, h // 40) + 1, x0 + int(w * 0.93), yy + max(3, h // 40) + 2), fill=MT_WHITE)
+    return clip(layer, out)
+
+
+# Arasaka weapons: defName -> (vanilla template, palette light/mid/dark). Placeholders: same vanilla gun shape, recoloured by
+# type (power = black, smart = dark steel blue to match the blue tracers, tech = white and red).
+WEAPON_BASE = 'Things/Item/Equipment/WeaponRanged/'
+W_POWER = ((78, 78, 86), (48, 48, 56), (28, 28, 34))
+W_SMART = ((96, 120, 158), (54, 72, 104), (30, 40, 62))
+W_TECH = ((236, 236, 238), (200, 38, 44), (110, 20, 26))
+ARASAKA_WEAPONS = {
+    'RPC_Gun_ArasakaHJKE11Yukimura': ('Autopistol', W_SMART),
+    'RPC_Gun_ArasakaHJSH18Masamune': ('AssaultRifle', W_POWER),
+    'RPC_Gun_ArasakaJKEX2Kenshin': ('ChargeBlasterLight', W_TECH),
+    'RPC_Gun_ArasakaNowaki': ('AssaultRifle', W_POWER),
+    'RPC_Gun_ArasakaSenkohLX': ('ChargeRifle', W_TECH),
+    'RPC_Gun_ArasakaShigure': ('HeavySMG', W_POWER),
+    'RPC_Gun_ArasakaTKI20Shingen': ('HeavySMG', W_SMART),
+    'RPC_Gun_ArasakaTamayura': ('Autopistol', W_POWER),
+}
+
+
+def weapon_draw(pal):
+    return lambda img: recolour(img, pal[0], pal[1], pal[2], None)
+
+
+# other custom art: output path under Common/Textures -> (vanilla template path, draw function)
+EXTRA = {
+    **{f'Things/RimPunk/Weapons/{dn}/{dn}': (WEAPON_BASE + tmpl, weapon_draw(pal)) for dn, (tmpl, pal) in ARASAKA_WEAPONS.items()},
+    'Things/RimPunk/Vehicles/TraumaShuttle/TraumaShuttle': ('Things/Building/Misc/Shuttle', tt_shuttle),
+    'Things/RimPunk/Vehicles/MaxTacShuttle/MaxTacShuttle': ('Things/Building/Misc/Shuttle', mt_shuttle),
+}
 
 
 def main():
@@ -156,19 +359,47 @@ def main():
     for name, (tmpl, bodies, pal, dec) in PIECES.items():
         jobs = [('', None)] + [(f'_{b}_{dr}' if bodies else f'_{dr}', dr) for b in (BODIES if bodies else [None]) for dr in DIRS]
         for suffix, direction in jobs:
-            src = os.path.join(args.templates, *(V + tmpl + suffix).split('/')) + '.png'
+            if tmpl == '@pants':
+                src = os.path.join(args.templates, *(V + 'Pants/Pants').split('/')) + '.png' if not suffix else                     os.path.join(args.templates, 'Things', 'Pawn', 'Humanlike', 'Bodies', f'Naked{suffix}.png')
+            elif tmpl == '@sprite':
+                src = os.path.join(args.templates, *(V + 'Pants/Pants').split('/')) + '.png'
+            else:
+                src = os.path.join(args.templates, *(V + tmpl + suffix).split('/')) + '.png'
             rel = f'{name}/{name}{suffix}.png'
             dst = os.path.join(OUT, *rel.split('/'))
             if os.path.exists(dst) and tracked.get(rel) != sha(dst):
                 kept.append(rel)
                 continue
-            img = recolour(Image.open(src), *pal)
+            img = Image.open(src)
+            if tmpl == '@pants' and suffix:
+                img = legs(img)
+            if tmpl == '@sprite' and suffix:
+                body = Image.open(os.path.join(args.templates, 'Things', 'Pawn', 'Humanlike', 'Bodies', f'Naked{suffix}.png'))
+                img = pants_on_body(img, body)
+            if tmpl == '@sprite':
+                img = recolour(img, *pal)           # the vanilla sprite's own shading, in black
+            elif pal[0] in ('flat', 'camo'):
+                # same finish as hand-drawn drafts get from polish_art.py: smooth edges, anti-aliasing, soft shading
+                img = polish(flat(img, pal[1]) if pal[0] == 'flat' else camo(img, pal[1]), seams=pal[0] != 'camo')
+            else:
+                img = recolour(img, *pal)
             if dec:
                 img = decal(dec, img, direction or 'south')
             os.makedirs(os.path.dirname(dst), exist_ok=True)
             img.save(dst, optimize=True)
             tracked[rel] = sha(dst)
             made += 1
+    for rel_path, (tmpl, draw) in EXTRA.items():
+        rel = rel_path + '.png'
+        dst = os.path.join(ROOT, 'Common', 'Textures', *rel.split('/'))
+        if os.path.exists(dst) and tracked.get(rel) != sha(dst):
+            kept.append(rel)
+            continue
+        img = draw(Image.open(os.path.join(args.templates, *tmpl.split('/')) + '.png'))
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        img.save(dst, optimize=True)
+        tracked[rel] = sha(dst)
+        made += 1
     os.makedirs(os.path.dirname(TRACK), exist_ok=True)
     with open(TRACK, 'w', encoding='utf-8') as fh:
         fh.writelines(f'{k} {v}\n' for k, v in sorted(tracked.items()))

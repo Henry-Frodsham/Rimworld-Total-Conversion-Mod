@@ -312,6 +312,7 @@
   <ThingDef ParentName="BaseBulletCE">
     <defName>Bullet_RPC_Arasaka_Pistol_Smart</defName>
     <label>Arasaka pistol smart bullet</label>
+    <thingClass>RimPunkCE.BulletCE_Smart</thingClass>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -319,10 +320,11 @@
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Bullet</damageDef>
-      <speed>83</speed>
+      <speed>30</speed>
       <damageAmountBase>16</damageAmountBase>
       <armorPenetrationSharp>4.73</armorPenetrationSharp>
       <armorPenetrationBlunt>14.66</armorPenetrationBlunt>
+      <gravityFactor>0.05</gravityFactor>
     </projectile>
   </ThingDef>
 
@@ -846,6 +848,7 @@
   <ThingDef ParentName="BaseBulletCE">
     <defName>Bullet_RPC_Arasaka_SMG_Smart</defName>
     <label>Arasaka smg smart bullet</label>
+    <thingClass>RimPunkCE.BulletCE_Smart</thingClass>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -853,10 +856,11 @@
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Bullet</damageDef>
-      <speed>83</speed>
+      <speed>30</speed>
       <damageAmountBase>16</damageAmountBase>
       <armorPenetrationSharp>4.73</armorPenetrationSharp>
       <armorPenetrationBlunt>14.66</armorPenetrationBlunt>
+      <gravityFactor>0.05</gravityFactor>
     </projectile>
   </ThingDef>
 
@@ -2703,6 +2707,7 @@
   <ThingDef ParentName="BaseBulletCE">
     <defName>Bullet_RPC_HansenArmory_SMG_Smart</defName>
     <label>Hansen Armory smg smart bullet</label>
+    <thingClass>RimPunkCE.BulletCE_Smart</thingClass>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -2710,10 +2715,11 @@
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Bullet</damageDef>
-      <speed>83</speed>
+      <speed>30</speed>
       <damageAmountBase>13</damageAmountBase>
       <armorPenetrationSharp>3.68</armorPenetrationSharp>
       <armorPenetrationBlunt>11.4</armorPenetrationBlunt>
+      <gravityFactor>0.05</gravityFactor>
     </projectile>
   </ThingDef>
 
@@ -2781,6 +2787,7 @@
   <ThingDef ParentName="BaseBulletCE">
     <defName>Bullet_RPC_KangTao_Pistol_Smart</defName>
     <label>Kang Tao pistol smart bullet</label>
+    <thingClass>RimPunkCE.BulletCE_Smart</thingClass>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -2788,10 +2795,11 @@
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Bullet</damageDef>
-      <speed>83</speed>
+      <speed>30</speed>
       <damageAmountBase>16</damageAmountBase>
       <armorPenetrationSharp>4.55</armorPenetrationSharp>
       <armorPenetrationBlunt>14.12</armorPenetrationBlunt>
+      <gravityFactor>0.05</gravityFactor>
     </projectile>
   </ThingDef>
 
@@ -2859,6 +2867,7 @@
   <ThingDef ParentName="BaseBulletCE">
     <defName>Bullet_RPC_KangTao_SMG_Smart</defName>
     <label>Kang Tao smg smart bullet</label>
+    <thingClass>RimPunkCE.BulletCE_Smart</thingClass>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -2866,10 +2875,11 @@
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Bullet</damageDef>
-      <speed>83</speed>
+      <speed>30</speed>
       <damageAmountBase>16</damageAmountBase>
       <armorPenetrationSharp>4.55</armorPenetrationSharp>
       <armorPenetrationBlunt>14.12</armorPenetrationBlunt>
+      <gravityFactor>0.05</gravityFactor>
     </projectile>
   </ThingDef>
 
@@ -2937,6 +2947,7 @@
   <ThingDef ParentName="BaseBulletCE">
     <defName>Bullet_RPC_KangTao_Shotgun_Smart</defName>
     <label>Kang Tao shotgun smart bullet</label>
+    <thingClass>RimPunkCE.BulletCE_Smart</thingClass>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -2944,12 +2955,13 @@
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Bullet</damageDef>
-      <speed>60</speed>
+      <speed>30</speed>
       <damageAmountBase>10</damageAmountBase>
       <armorPenetrationSharp>5.2</armorPenetrationSharp>
       <armorPenetrationBlunt>5.88</armorPenetrationBlunt>
       <pelletCount>9</pelletCount>
       <spreadMult>8.9</spreadMult>
+      <gravityFactor>0.05</gravityFactor>
     </projectile>
   </ThingDef>
 
@@ -4848,6 +4860,7 @@
   <ThingDef ParentName="BaseBulletCE">
     <defName>Bullet_RPC_Nokota_Rifle_Smart</defName>
     <label>Nokota rifle smart bullet</label>
+    <thingClass>RimPunkCE.BulletCE_Smart</thingClass>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -4855,10 +4868,11 @@
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Bullet</damageDef>
-      <speed>165</speed>
+      <speed>30</speed>
       <damageAmountBase>16</damageAmountBase>
       <armorPenetrationSharp>6.9</armorPenetrationSharp>
       <armorPenetrationBlunt>39.31</armorPenetrationBlunt>
+      <gravityFactor>0.05</gravityFactor>
     </projectile>
   </ThingDef>
 
@@ -5326,6 +5340,7 @@
   <ThingDef ParentName="BaseBulletCE">
     <defName>Bullet_RPC_Rostovic_Shotgun_Smart</defName>
     <label>Rostović shotgun smart bullet</label>
+    <thingClass>RimPunkCE.BulletCE_Smart</thingClass>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -5333,12 +5348,13 @@
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Bullet</damageDef>
-      <speed>60</speed>
+      <speed>30</speed>
       <damageAmountBase>8</damageAmountBase>
       <armorPenetrationSharp>3.8</armorPenetrationSharp>
       <armorPenetrationBlunt>4.29</armorPenetrationBlunt>
       <pelletCount>9</pelletCount>
       <spreadMult>8.9</spreadMult>
+      <gravityFactor>0.05</gravityFactor>
     </projectile>
   </ThingDef>
 
@@ -6190,6 +6206,7 @@
   <ThingDef ParentName="BaseBulletCE">
     <defName>Bullet_RPC_Tsunami_Pistol_Smart</defName>
     <label>Tsunami pistol smart bullet</label>
+    <thingClass>RimPunkCE.BulletCE_Smart</thingClass>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -6197,10 +6214,11 @@
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Bullet</damageDef>
-      <speed>83</speed>
+      <speed>30</speed>
       <damageAmountBase>14</damageAmountBase>
       <armorPenetrationSharp>4.2</armorPenetrationSharp>
       <armorPenetrationBlunt>13.03</armorPenetrationBlunt>
+      <gravityFactor>0.05</gravityFactor>
     </projectile>
   </ThingDef>
 
@@ -6537,6 +6555,7 @@
   <ThingDef ParentName="BaseBulletCE">
     <defName>Bullet_RPC_Tsunami_Sniper_Smart</defName>
     <label>Tsunami sniper smart bullet</label>
+    <thingClass>RimPunkCE.BulletCE_Smart</thingClass>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -6544,10 +6563,11 @@
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Bullet</damageDef>
-      <speed>185</speed>
+      <speed>30</speed>
       <damageAmountBase>29</damageAmountBase>
       <armorPenetrationSharp>10.8</armorPenetrationSharp>
       <armorPenetrationBlunt>96</armorPenetrationBlunt>
+      <gravityFactor>0.05</gravityFactor>
     </projectile>
   </ThingDef>
 

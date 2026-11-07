@@ -171,11 +171,24 @@ ammo_xml.append('''  <ThingCategoryDef>
   </CombatExtended.AmmoCategoryDef>
 ''')
 
-def projectile(defname, label, base, dmg, penS, penB, speed, pellets=None, cls=None, tracer=False, charged=False):
+# smart rounds (Edgerunners look): slow, near gravity-free (0 breaks CE's aim maths: 0/0 shot angle, round deleted on its first tick), BulletCE_Smart draws the long blue trail and curves onto the target
+# with a smart link. Speed is low on purpose: at bullet speed the round lands before the homing can bend it.
+SMART_SPEED = 30
+
+def gun_tex(dn, fam, typ):
+    """Own art when Common/Textures/Things/RimPunk/Weapons/<defName>/<defName>.png exists (Arasaka placeholders, see
+    gen_apparel_textures.py), else the vanilla family texture."""
+    own = f'Things/RimPunk/Weapons/{dn}/{dn}'
+    if os.path.exists(os.path.join(ROOT, 'Common', 'Textures', *own.split('/')) + '.png'): return own
+    return fam['tex'] if typ != 'tech' else 'Things/Item/Equipment/WeaponRanged/ChargeRifle'
+
+
+def projectile(defname, label, base, dmg, penS, penB, speed, pellets=None, cls=None, tracer=False, charged=False, gravity=None):
     tex = 'Things/Projectile/Charged/ChargeShot' if charged else 'Things/Projectile/Bullet_Small'
     color = '\n      <color>(80,160,255)</color>' if tracer else ''
     thingclass = f'\n    <thingClass>{cls}</thingClass>' if cls else ''
     pel = f'\n      <pelletCount>{pellets}</pelletCount>\n      <spreadMult>8.9</spreadMult>' if pellets else ''
+    if gravity is not None: pel += f'\n      <gravityFactor>{gravity}</gravityFactor>'
     return f'''  <ThingDef ParentName="BaseBulletCE">
     <defName>{defname}</defName>
     <label>{escape(label)}</label>{thingclass}
@@ -300,7 +313,7 @@ for cid, c in sorted(calibers.items()):
     if 'smart' in c['types']:
         ad, pd = f'Ammo_RPC_{cid}_Smart', f'Bullet_RPC_{cid}_Smart'
         ammo_xml.append(ammo(ad, f'{nice} (smart)', cat, fam['ammoBase'], f'{tex}/FMJ' if fam['ammoTex'] != 'Shotgun' else 'Things/Ammo/Shotgun/Shot', 'RPC_Smart', pd, research))
-        ammo_xml.append(projectile(pd, f'{nice} smart bullet', None, dmg, penS, penB, fam['speed'], pellets=fam.get('pellets'), tracer=True))
+        ammo_xml.append(projectile(pd, f'{nice} smart bullet', None, dmg, penS, penB, SMART_SPEED, pellets=fam.get('pellets'), cls='RimPunkCE.BulletCE_Smart', tracer=True, gravity=0.05))
         ammo_xml.append(recipe(ad, f'{nice} (smart) rounds', research, 12, {'ComponentIndustrial': 1}))
         sd = f'AmmoSet_RPC_{cid}_Smart'
         ammo_xml.append(f'''  <CombatExtended.AmmoSetDef>
@@ -362,7 +375,8 @@ for w in guns:
     steel = int(fam['steel'] * mult); comp = max(1, int(round(fam['comp'] * mult)))
     cost_xml = f'      <Steel>{steel}</Steel>\n      <ComponentIndustrial>{comp}</ComponentIndustrial>\n' + ''.join(f'      <{k}>{v}</{k}>\n' for k, v in extra.items())
     # RPC_W_<Manu>_<Class>: weaponTags are OR'd, so pawn kinds that want "Arasaka rifles" need one combined tag
-    tags = ['RPC_Gun', f'RPC_Manu_{ident(manu)}', f"RPC_Class_{fam['fam']}", f'RPC_Type_{typ}', f"RPC_W_{ident(manu)}_{fam['fam']}"]
+    tags = ['RPC_Gun', f'RPC_Manu_{ident(manu)}', f"RPC_Class_{fam['fam']}", f'RPC_Type_{typ}', f"RPC_W_{ident(manu)}_{fam['fam']}",
+            f"RPC_WT_{fam['fam']}_{typ}"]  # class + type, e.g. RPC_WT_Rifle_smart
     tag_xml = ''.join(f'      <li>{t}</li>\n' for t in tags + fam['tags'])
     trade_xml = f'      <li>RPC_Weapon</li>\n      <li>RPC_Manu_{ident(manu)}</li>\n'
     # default projectile: first ammo type of this gun's ammo set
@@ -375,7 +389,7 @@ for w in guns:
     <description>{describe(w, manu, 'gun')}</description>
     <techLevel>{'Spacer' if typ != 'power' else 'Industrial'}</techLevel>
     <graphicData>
-      <texPath>{fam['tex'] if typ != 'tech' else 'Things/Item/Equipment/WeaponRanged/ChargeRifle'}</texPath>
+      <texPath>{gun_tex(dn, fam, typ)}</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>{fam['interact']}</soundInteract>
@@ -464,11 +478,6 @@ for w in melee:
         <power>{r2(power * mult)}</power>
         <cooldownTime>{cd}</cooldownTime>{pen}{ex}
       </li>''')
-    stamina = w.get('stamina')
-    stam_xml = f'''
-    <modExtensions>
-      <li Class="RimPunkCE.StaminaCostExtension"><costPerAttack>{r2(stamina)}</costPerAttack></li>
-    </modExtensions>''' if stamina else ''
     comps = ''
     if thrown:
         comps = '''
@@ -515,7 +524,7 @@ for w in melee:
     </tradeTags>
     <tools>
 ''' + '\n'.join(tools) + f'''
-    </tools>{comps}{stam_xml}
+    </tools>{comps}
   </ThingDef>
 ''')
 

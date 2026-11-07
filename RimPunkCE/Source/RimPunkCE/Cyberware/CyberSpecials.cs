@@ -240,7 +240,7 @@ namespace RimPunkCE
             if (n > 0) Diag.Count("reveal");
         }
 
-        private static int UnfogAround(Map map, IntVec3 c, int radius)
+        public static int UnfogAround(Map map, IntVec3 c, int radius)
         {
             int n = 0;
             foreach (var cell in GenRadial.RadialCellsAround(c, radius, true))
@@ -311,103 +311,5 @@ namespace RimPunkCE
 
         public override bool AICanTargetNow(LocalTargetInfo target) =>
             target.Thing is Pawn p && !p.Downed && p.HostileTo(parent.pawn);
-    }
-
-    /// <summary>
-    /// Projectile Launch System: fire the selected shell. Snap shots are instant but scatter; aimed shots have a
-    /// warmup and use the aimed shell defs (+30% damage, +25% radius). Shell type is chosen with the arm's gizmo.
-    /// </summary>
-    public class CompProperties_AbilityLauncher : CompProperties_AbilityEffect
-    {
-        public bool aimed;
-        public float scatter = 2.5f;
-
-        public CompProperties_AbilityLauncher() => compClass = typeof(CompAbilityEffect_Launcher);
-    }
-
-    public class CompAbilityEffect_Launcher : CompAbilityEffect
-    {
-        public new CompProperties_AbilityLauncher Props => (CompProperties_AbilityLauncher)props;
-
-        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
-        {
-            base.Apply(target, dest);
-            var caster = parent.pawn;
-            var map = caster.Map;
-            if (map == null) return;
-            var ammo = LauncherAmmo(caster);
-            var shell = ammo?.Selected(Props.aimed);
-            if (shell == null) return;
-            var cell = target.Cell;
-            if (Props.scatter > 0f)
-            {
-                var near = GenRadial.RadialCellsAround(cell, Props.scatter, true).Where(c => c.InBounds(map)).ToList();
-                if (near.Count > 0) cell = near.RandomElement();
-            }
-            var proj = (Projectile)GenSpawn.Spawn(shell, caster.Position, map);
-            proj.Launch(caster, caster.DrawPos, new LocalTargetInfo(cell), target, ProjectileHitFlags.All);
-        }
-
-        private static HediffComp_LauncherAmmo LauncherAmmo(Pawn pawn)
-        {
-            foreach (var h in pawn.health.hediffSet.hediffs)
-                if (h is HediffWithComps hwc && hwc.TryGetComp<HediffComp_LauncherAmmo>() is HediffComp_LauncherAmmo c) return c;
-            return null;
-        }
-
-        public override bool AICanTargetNow(LocalTargetInfo target) =>
-            target.Thing is Pawn p && !p.Downed && p.HostileTo(parent.pawn) && !p.Position.InHorDistOf(parent.pawn.Position, 5f);
-    }
-
-    public class HediffCompProperties_LauncherAmmo : HediffCompProperties
-    {
-        public List<ThingDef> shells = new List<ThingDef>();
-        public List<ThingDef> aimedShells = new List<ThingDef>();
-        public List<string> shellLabels = new List<string>();
-
-        public HediffCompProperties_LauncherAmmo() => compClass = typeof(HediffComp_LauncherAmmo);
-    }
-
-    public class HediffComp_LauncherAmmo : HediffComp
-    {
-        public int selected;
-
-        public HediffCompProperties_LauncherAmmo Props => (HediffCompProperties_LauncherAmmo)props;
-
-        public ThingDef Selected(bool aimed)
-        {
-            var list = aimed && Props.aimedShells.Count == Props.shells.Count ? Props.aimedShells : Props.shells;
-            if (list.NullOrEmpty()) return null;
-            return list[Mathf.Clamp(selected, 0, list.Count - 1)];
-        }
-
-        public override string CompLabelInBracketsExtra =>
-            Props.shellLabels.Count > selected ? Props.shellLabels[selected] : null;
-
-        public override IEnumerable<Gizmo> CompGetGizmos()
-        {
-            if (!(Pawn.Faction?.IsPlayer ?? false) || Props.shells.Count < 2) yield break;
-            yield return new Command_Action
-            {
-                defaultLabel = "RPC_CycleShell".Translate(Props.shellLabels.Count > selected ? Props.shellLabels[selected] : "?"),
-                defaultDesc = "RPC_CycleShellDesc".Translate(),
-                icon = TextureOverrides.Gizmo("CycleShell"),
-                action = () => CycleShell(Pawn, (selected + 1) % Props.shells.Count),
-            };
-        }
-
-        /// <summary>Synced in multiplayer.</summary>
-        [Multiplayer.API.SyncMethod]
-        public static void CycleShell(Pawn pawn, int index)
-        {
-            foreach (var h in pawn.health.hediffSet.hediffs)
-                if (h is HediffWithComps hwc && hwc.TryGetComp<HediffComp_LauncherAmmo>() is HediffComp_LauncherAmmo c) c.selected = index;
-        }
-
-        public override void CompExposeData()
-        {
-            base.CompExposeData();
-            Scribe_Values.Look(ref selected, "rpcShell");
-        }
     }
 }

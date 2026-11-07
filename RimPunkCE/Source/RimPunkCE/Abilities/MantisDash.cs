@@ -20,6 +20,8 @@ namespace RimPunkCE
             var pawn = CasterPawn;
             if (!currentTarget.HasThing || pawn?.Map == null) return false;
             if (!TryFindLandingCell(pawn, currentTarget.Thing, out var cell)) return false;
+            MapComponent_CyberAnimations.MantisColor(pawn, out var bladeColor);
+            MapComponent_CyberAnimations.Play(pawn, CyberAnimKind.DashStreak, currentTarget, bladeColor, to: cell.ToVector3Shifted());
             return JumpUtility.DoJump(pawn, new LocalTargetInfo(cell), null, verbProps, ability, currentTarget, FlyerDef);
         }
 
@@ -69,10 +71,36 @@ namespace RimPunkCE
             if (pawn == null || pawn.Dead || pawn.Downed || !target.HasThing || target.Thing.Destroyed) return;
             var job = JobMaker.MakeJob(JobDefOf.AttackMelee, target.Thing);
             job.playerForced = pawn.Drafted;
+            if (!pawn.Drafted)
+            {
+                // AI: a few slashes, then back to the gun (CE reloads it on the next shot attempt)
+                job.maxNumMeleeAttacks = 2;
+                job.expiryInterval = 150;
+                job.checkOverrideOnExpire = true;
+            }
             pawn.jobs.StartJob(job, JobCondition.InterruptForced);
         }
 
-        public override bool AICanTargetNow(LocalTargetInfo target) =>
-            target.Thing is Pawn p && !p.Downed && p.HostileTo(parent.pawn) && !parent.pawn.Position.AdjacentTo8WayOrInside(p.Position);
+        /// <summary>
+        /// AI dashes to an enemy inside dash range when it's built for melee, when the enemy is already close enough that
+        /// a gun is a bad idea, or when the gun is useless right now (empty magazine / out of ammo / none).
+        /// </summary>
+        public override bool AICanTargetNow(LocalTargetInfo target)
+        {
+            var caster = parent.pawn;
+            if (!(target.Thing is Pawn p) || p.Downed || !p.HostileTo(caster)) return false;
+            if (caster.Position.AdjacentTo8WayOrInside(p.Position)) return false;
+            if (!p.Position.InHorDistOf(caster.Position, parent.verb.verbProps.range)) return false;
+            return ContextualCombat.RoleOf(caster) == CombatRole.Melee || p.Position.InHorDistOf(caster.Position, 5f) || !HasUsableGun(caster);
+        }
+
+        public static bool HasUsableGun(Pawn pawn)
+        {
+            var gun = pawn.equipment?.Primary;
+            if (gun == null || !gun.def.IsRangedWeapon) return false;
+            var ammo = gun.TryGetComp<CombatExtended.CompAmmoUser>();
+            if (ammo == null) return true;
+            return ammo.CanBeFiredNow;
+        }
     }
 }

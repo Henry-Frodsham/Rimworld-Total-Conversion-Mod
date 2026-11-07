@@ -27,7 +27,10 @@ namespace RimPunkCE.Patches
         public static void Postfix(Thing __instance, DamageInfo dinfo, DamageWorker.DamageResult __result)
         {
             if (dinfo.Instigator is Pawn attacker && __result != null)
+            {
                 CyberEvents.Notify_DamageDealt(attacker, __instance, dinfo, __result.totalDamageDealt);
+                if (__instance is Pawn victim) CyberpsychosisUtility.Notify_Harmed(attacker, victim);
+            }
         }
     }
 
@@ -35,8 +38,30 @@ namespace RimPunkCE.Patches
     [HarmonyPatch(typeof(Pawn_HealthTracker), "MakeDowned")]
     public static class Patch_Pawn_HealthTracker_MakeDowned
     {
-        public static void Postfix(Pawn ___pawn, DamageInfo? dinfo)
+        public class GearSnapshot
         {
+            public ThingWithComps primary;
+            public List<ThingDefCountClass> inventory;
+        }
+
+        /// <summary>Cyberpsycho: snapshot weapon + inventory before vanilla drops them, so they can be picked back up.</summary>
+        public static void Prefix(Pawn ___pawn, out GearSnapshot __state)
+        {
+            __state = null;
+            if (!CyberpsychosisUtility.InCyberpsychosis(___pawn)) return;
+            __state = new GearSnapshot
+            {
+                primary = ___pawn.equipment?.Primary,
+                inventory = ___pawn.inventory?.innerContainer
+                    .GroupBy(t => t.def)
+                    .Select(g => new ThingDefCountClass(g.Key, g.Sum(t => t.stackCount)))
+                    .ToList(),
+            };
+        }
+
+        public static void Postfix(Pawn ___pawn, DamageInfo? dinfo, GearSnapshot __state)
+        {
+            if (__state != null && ___pawn.MentalState is MentalState_Cyberpsychosis psycho) psycho.Notify_GearDropped(__state.primary, __state.inventory);
             CyberEvents.LastNeutralizeDinfo = dinfo;
             if (dinfo?.Instigator is Pawn attacker) CyberEvents.Notify_Neutralized(attacker, ___pawn, killed: false);
             if (HediffComp_SecondHeart.TryProc(___pawn)) return; // back on their feet: no Trauma Team call
@@ -51,8 +76,9 @@ namespace RimPunkCE.Patches
         public static void Prefix(Pawn __instance, DamageInfo? dinfo, bool __runOriginal)
         {
             if (!__runOriginal || __instance.Dead) return; // Second Heart cancelled the kill
-            // cyberpsycho kill count (MaxTac), downed victims included
-            if (dinfo?.Instigator is Pawn killer) CyberpsychosisUtility.Notify_Kill(killer, __instance);
+            // cyberpsycho kill count (MaxTac), downed victims included; deaths without a psycho instigator
+            // (bled out, DoT, organ failure) are credited to the psycho who last hurt them
+            CyberpsychosisUtility.Notify_Death(__instance, dinfo?.Instigator as Pawn);
             if (__instance.Downed) return; // downing already counted
             CyberEvents.LastNeutralizeDinfo = dinfo;
             if (dinfo?.Instigator is Pawn attacker) CyberEvents.Notify_Neutralized(attacker, __instance, killed: true);
@@ -62,8 +88,6 @@ namespace RimPunkCE.Patches
     /// <summary>
     /// Verb.Available (Verse/Verb.cs): melee-only effects (berserk) block ranged.
     /// All CE verb overrides call base.Available(), so this covers CE guns too. Abilities are exempt.
-    /// Exhaustion is not checked here (every verb unavailable makes vanilla log "no available melee attack"):
-    /// see Patch_Verb_TryStartCastOn.
     /// </summary>
     [HarmonyPatch(typeof(Verb), nameof(Verb.Available))]
     public static class Patch_Verb_Available
@@ -86,18 +110,24 @@ namespace RimPunkCE.Patches
     }
 
     /// <summary>
-    /// Verb.TryStartCastOn (Verse/Verb.cs): exhausted pawns can't start an attack (guns or melee; abilities exempt).
-    /// The CE overrides (Verb_LaunchProjectileCE, Verb_ThrowGrenade) call base first, so this covers them.
+    /// Verb.TryFindShootLineFromTo: vanilla's TryStartCastOn wants a shoot line before warmup, and CE reroutes this to its own
+    /// finder, which stops at walls. Without this a charged tech shot at a target behind a wall never started, whatever
+    /// CanHitTargetFrom said. Runs before CE's reroute, and only steps in when there's no normal line. Once the shot goes off,
+    /// Verb_ShootTech.KeepBurstOnNoShootLine takes over.
     /// </summary>
-    [HarmonyPatch(typeof(Verb), nameof(Verb.TryStartCastOn),
-        new[] { typeof(LocalTargetInfo), typeof(LocalTargetInfo), typeof(bool), typeof(bool), typeof(bool), typeof(bool) })]
-    public static class Patch_Verb_TryStartCastOn
+    [HarmonyPatch(typeof(Verb), nameof(Verb.TryFindShootLineFromTo))]
+    public static class Patch_Verb_TryFindShootLineFromTo_TechPierce
     {
-        public static bool Prefix(Verb __instance, ref bool __result)
+        [HarmonyPriority(Priority.First)]
+        public static bool Prefix(Verb __instance, IntVec3 root, LocalTargetInfo targ, ref ShootLine resultingLine, ref bool __result)
         {
-            if (__instance is Verb_CastAbility || !RimPunkMod.Settings.staminaEnabled || __instance.caster is not Pawn pawn) return true;
-            if (pawn.health?.hediffSet?.HasHediff(RPDefOf.RPC_Exhausted) != true) return true;
-            __result = false;
+            if (!(__instance is Verb_ShootTech tech) || !tech.CanPierceTo(root, targ)) return true;
+            if (tech.TryFindCEShootLineFromTo(root, targ, out resultingLine)) __result = true;
+            else
+            {
+                resultingLine = new ShootLine(root, targ.Cell);
+                __result = true;
+            }
             return false;
         }
     }
@@ -107,9 +137,14 @@ namespace RimPunkCE.Patches
     public static class Patch_Thing_TakeDamage_ProtectShuttles
     {
         [HarmonyPriority(Priority.First)]
-        public static bool Prefix(Thing __instance, ref DamageWorker.DamageResult __result)
+        public static bool Prefix(Thing __instance, DamageInfo dinfo, ref DamageWorker.DamageResult __result)
         {
-            if (__instance.def != ThingDefOf.Shuttle || !GameComponent_RimPunk.IsProtectedShip(__instance)) return true;
+            // attacking Trauma Team (an operator or their shuttle) on purpose turns them hostile (TraumaHostility.cs)
+            if (GameComponent_RimPunk.IsIntentionalAttack(__instance, dinfo))
+                GameComponent_RimPunk.Instance?.Notify_AttackedTraumaTeam(dinfo.Instigator, __instance);
+            // a hostile Trauma Team's shuttle is fair game
+            if (__instance.def == RPDefOf.RPC_TraumaShuttle && GameComponent_RimPunk.TraumaHostileToPlayer) return true;
+            if ((__instance.def != ThingDefOf.Shuttle && __instance.def != RPDefOf.RPC_TraumaShuttle && __instance.def != RPDefOf.RPC_MaxTacShuttle) || !GameComponent_RimPunk.IsProtectedShip(__instance)) return true;
             __result = new DamageWorker.DamageResult();
             return false;
         }
@@ -170,11 +205,74 @@ namespace RimPunkCE.Patches
             var primary = pawn.equipment?.Primary;
             var eqVerbs = primary?.TryGetComp<CompEquippable>()?.AllVerbs;
             if (eqVerbs != null) foreach (var v in eqVerbs) Add(primary.def.defName, v);
-            string flags = $"thrown={ThrownWeaponUtility.IsThrown(pawn)} exhausted={pawn.health.hediffSet.HasHediff(RPDefOf.RPC_Exhausted)} meleeDamageFactor={pawn.GetStatValue(StatDefOf.MeleeDamageFactor):0.##} canMelee={pawn.kindDef.canMeleeAttack}";
+            string flags = $"thrown={ThrownWeaponUtility.IsThrown(pawn)} meleeDamageFactor={pawn.GetStatValue(StatDefOf.MeleeDamageFactor):0.##} canMelee={pawn.kindDef.canMeleeAttack}";
             Diag.Event("melee", $"{Diag.Describe(pawn)} has no usable melee verb ({flags}): {string.Join("; ", lines)}");
         }
 
         private static bool IsExtendedBlade(Verb v) =>
             v?.HediffSource is HediffWithComps h && h.TryGetComp<HediffComp_MantisBlades>() is { extended: true };
+    }
+}
+
+namespace RimPunkCE.Patches
+{
+    /// <summary>
+    /// Diagnostics only: CE Verb_MeleeAttackCE.ApplyMeleeDamageToTarget threw NREs in DamageInfosToApply during a
+    /// cyberpsycho melee (2026-11-04). When it throws, log what the verb was built from (once per verb/target def
+    /// pair) so the null can be traced. The exception is passed through untouched.
+    /// </summary>
+    [HarmonyPatch(typeof(CombatExtended.Verb_MeleeAttackCE), nameof(CombatExtended.Verb_MeleeAttackCE.ApplyMeleeDamageToTarget))]
+    public static class Patch_Verb_MeleeAttackCE_ApplyMeleeDamageToTarget
+    {
+        public static System.Exception Finalizer(System.Exception __exception, CombatExtended.Verb_MeleeAttackCE __instance, LocalTargetInfo target)
+        {
+            if (__exception == null) return null;
+            try
+            {
+                var v = __instance;
+                var caster = v.CasterPawn;
+                var gizmo = caster?.TryGetComp<CombatExtended.CompMeleeTargettingGizmo>();
+                string info = $"verb={v.GetType().Name} tool={v.tool?.GetType().Name ?? "null"}:{v.tool?.label ?? "-"} " +
+                              $"caps=[{string.Join(",", v.tool?.capacities?.Select(c => c?.defName ?? "null") ?? Enumerable.Empty<string>())}] " +
+                              $"dmgDef={v.verbProps?.meleeDamageDef?.defName ?? "null"} equip={v.EquipmentSource?.def.defName ?? "none"} " +
+                              $"hediff={v.HediffSource?.def.defName ?? "none"} hediffComp={v.HediffCompSource?.Def?.defName ?? "none"} " +
+                              $"caster={Diag.Describe(caster)} target={target.Thing?.def.defName ?? "null"} " +
+                              $"gizmo={(gizmo == null ? "none" : (gizmo.targetBodyPart?.defName ?? "nullPart"))}";
+                Diag.Check("melee", "CE melee damage threw " + __exception.GetType().Name + ": " + info,
+                    "meleeNre_" + (v.tool?.label ?? v.GetType().Name) + "_" + (caster?.def.defName) + "_" + target.Thing?.def.defName);
+            }
+            catch { /* diagnostics must not throw */ }
+            return __exception;
+        }
+    }
+}
+
+namespace RimPunkCE.Patches
+{
+    /// <summary>
+    /// CE CompSuppressable.CompTickInterval: a suppressed pawn waiting inside a shuttle / transporter still ticks, and
+    /// CE's "call for help" then reads its map (null) and throws every tick (seen with Trauma Team operators boarding
+    /// under fire). Suppression means nothing off the map, so it isn't ticked there.
+    /// </summary>
+    [HarmonyPatch(typeof(CombatExtended.CompSuppressable), nameof(CombatExtended.CompSuppressable.CompTickInterval))]
+    public static class Patch_CompSuppressable_SkipUnspawned
+    {
+        public static bool Prefix(CombatExtended.CompSuppressable __instance) => __instance.parent != null && __instance.parent.Spawned;
+    }
+
+    /// <summary>
+    /// CE AI_Utility.EdgingCloser (fire-mode choice when an attack starts) reads both pawns' pathers: a target picked up
+    /// and carried (Trauma Team extracting a patient the colony was shooting at) has none, and every attacker threw.
+    /// Off the map nobody is edging closer.
+    /// </summary>
+    [HarmonyPatch(typeof(CombatExtended.AI.AI_Utility), nameof(CombatExtended.AI.AI_Utility.EdgingCloser))]
+    public static class Patch_AIUtility_EdgingCloser_Unspawned
+    {
+        public static bool Prefix(Pawn pawn, Pawn other, ref bool __result)
+        {
+            if (pawn != null && other != null && pawn.Spawned && other.Spawned && pawn.pather != null && other.pather != null) return true;
+            __result = false;
+            return false;
+        }
     }
 }

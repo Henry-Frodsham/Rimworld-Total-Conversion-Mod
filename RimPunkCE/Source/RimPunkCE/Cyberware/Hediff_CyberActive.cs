@@ -22,8 +22,8 @@ namespace RimPunkCE
         /// <summary>Only melee attacks allowed while active (berserk).</summary>
         public bool meleeOnly;
 
-        /// <summary>Stamina cost multiplier while active (berserk: 0).</summary>
-        public float staminaCostFactor = 1f;
+        /// <summary>Adrenaline gain multiplier while active (berserk builds faster, a running sandevistan slower).</summary>
+        public float adrenalineGainFactor = 1f;
 
         /// <summary>Draw sandevistan afterimages while the pawn moves.</summary>
         public bool afterimages;
@@ -34,10 +34,10 @@ namespace RimPunkCE
         /// <summary>HP healed per second while active (Blood Pump).</summary>
         public TieredFloat healPerSecond;
 
-        /// <summary>Neutralizing an enemy while active: extend by this fraction of the original duration, heal, regain stamina (Apogee, Falcon, Warp Dancer).</summary>
+        /// <summary>Neutralizing an enemy while active: extend by this fraction of the original duration, heal, gain adrenaline (Apogee, Falcon, Warp Dancer).</summary>
         public float onNeutralizeExtendFraction;
         public TieredFloat onNeutralizeHealFraction;
-        public float onNeutralizeStamina;
+        public float onNeutralizeAdrenaline;
 
         /// <summary>Kiroshi optics scans: reveal (unfog) hostile pawns / traps / turrets within these radii while active.</summary>
         public TieredFloat revealEnemies;
@@ -88,7 +88,7 @@ namespace RimPunkCE
         /// <summary>Conditional effects refresh every second: no countdown for those.</summary>
         public override string LabelInBrackets => originalDuration > 0 && originalDuration <= 90 ? null : (ticksLeft / 60f).ToString("0.0") + "s";
 
-        public float IncomingDamageFactor => Ext?.incomingDamageFactor?.Evaluate(tier, minTier, maxTier) ?? 1f;
+        public virtual float IncomingDamageFactor => Ext?.incomingDamageFactor?.Evaluate(tier, minTier, maxTier) ?? 1f;
 
         public void Setup(CyberTier tier, CyberTier minTier, CyberTier maxTier, int durationTicks, bool doubled = false)
         {
@@ -113,7 +113,7 @@ namespace RimPunkCE
             if (ext.onNeutralizeExtendFraction > 0f) ticksLeft += Mathf.RoundToInt(originalDuration * ext.onNeutralizeExtendFraction);
             float heal = Eval(ext.onNeutralizeHealFraction);
             if (heal > 0f) CyberUtility.HealFraction(pawn, heal);
-            if (ext.onNeutralizeStamina > 0f) pawn.GetCyberTracker()?.Stamina?.GainFraction(ext.onNeutralizeStamina);
+            if (ext.onNeutralizeAdrenaline > 0f) pawn.GetCyberTracker()?.GainAdrenalineFraction(ext.onNeutralizeAdrenaline);
         }
 
         /// <summary>Militech Berserk: outgoing damage factor from missing health.</summary>

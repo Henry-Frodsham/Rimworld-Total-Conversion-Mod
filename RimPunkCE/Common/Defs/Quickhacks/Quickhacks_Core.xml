@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Quickhack framework defs (hand-written). The quickhacks themselves, their effect hediffs and shards are generated
+  by Source/Tools/gen_quickhacks.py into Generated_Quickhacks.xml (spec: prompts/quickhacks/manifest.md).
+-->
+<Defs>
+
+  <AbilityCategoryDef>
+    <defName>RPC_Quickhacks</defName>
+    <displayOrder>901</displayOrder>
+  </AbilityCategoryDef>
+
+  <ThingCategoryDef>
+    <defName>RPC_QuickhackShards</defName>
+    <label>quickhack shards</label>
+    <parent>Items</parent>
+  </ThingCategoryDef>
+
+  <!-- ===================== Overclock =====================
+       every cyberdeck: 14s, 30s cooldown. Quickhacks can be uploaded without enough RAM, the missing RAM costs health. -->
+
+  <AbilityDef ParentName="RPC_CyberSelfAbilityBase">
+    <defName>RPC_Ability_Overclock</defName>
+    <label>overclock</label>
+    <description>Push the cyberdeck past its limits for 14 seconds: quickhacks can be uploaded without enough RAM. Every missing RAM unit is paid for in health.</description>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <comps>
+      <li Class="RimPunkCE.CompProperties_AbilityCyberBuff">
+        <hediffDef>RPC_Overclock</hediffDef>
+        <defaultDurationSeconds>14</defaultDurationSeconds>
+        <aiMaxEnemyDistance>25</aiMaxEnemyDistance>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef ParentName="RPC_CyberActiveBase">
+    <defName>RPC_Overclock</defName>
+    <label>overclocked</label>
+    <description>The cyberdeck is running past its limits. Quickhacks can be uploaded without enough RAM; the missing RAM is paid in health.</description>
+    <defaultLabelColor>(0.3, 0.7, 1)</defaultLabelColor>
+  </HediffDef>
+
+  <!-- ===================== mental states ===================== -->
+
+  <MentalStateDef ParentName="WanderPsychotic">
+    <defName>RPC_MemoryWiped</defName>
+    <stateClass>RimPunkCE.MentalState_TimedWander</stateClass>
+    <label>memory wiped</label>
+    <category>Misc</category>
+    <moodRecoveryThought IsNull="True" />
+    <blockNormalThoughts>false</blockNormalThoughts>
+    <beginLetter IsNull="True" />
+    <beginLetterDef IsNull="True" />
+    <recoveryMessage>{0} remembers what was going on.</recoveryMessage>
+    <baseInspectLine>Mental state: Memory wiped</baseInspectLine>
+    <!-- the quickhack's duration ends it (MentalState_TimedWander) -->
+    <minTicksBeforeRecovery>99999999</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>99999999</maxTicksBeforeRecovery>
+    <recoveryMtbDays>99999</recoveryMtbDays>
+    <recoverFromSleep>false</recoverFromSleep>
+  </MentalStateDef>
+
+  <MentalStateDef ParentName="Berserk">
+    <defName>RPC_HackedCyberpsychosis</defName>
+    <stateClass>RimPunkCE.MentalState_HackedCyberpsychosis</stateClass>
+    <label>hacked cyberpsychosis</label>
+    <nameColor>(1,0.15,0.3)</nameColor>
+    <beginLetter>{0} has been quickhacked into cyberpsychosis.\n\n[PAWN_pronoun] will attack anyone [PAWN_pronoun] sees until the hack wears off.</beginLetter>
+    <beginLetterLabel>hacked cyberpsychosis</beginLetterLabel>
+    <beginLetterDef>ThreatSmall</beginLetterDef>
+    <recoveryMessage>{0}'s hacked cyberpsychosis has worn off.</recoveryMessage>
+    <baseInspectLine>Mental state: Hacked cyberpsychosis</baseInspectLine>
+    <recoverFromSleep>false</recoverFromSleep>
+    <recoverFromDowned>true</recoverFromDowned>
+    <minTicksBeforeRecovery>99999999</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>99999999</maxTicksBeforeRecovery>
+    <recoveryMtbDays>99999</recoveryMtbDays>
+    <moodRecoveryThought IsNull="True" />
+  </MentalStateDef>
+
+  <!-- ===================== shard base ===================== -->
+
+  <ThingDef Name="RPC_QuickhackShardBase" ParentName="ResourceBase" Abstract="True">
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>RPC_QuickhackShards</li>
+    </thingCategories>
+    <graphicData>
+      <!-- placeholder art -->
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.6</drawSize>
+      <color>(60,140,255)</color>
+    </graphicData>
+    <stackLimit>10</stackLimit>
+    <tradeTags Inherit="False">
+      <li>RPC_QuickhackShard</li>
+    </tradeTags>
+    <statBases>
+      <Mass>0.05</Mass>
+      <WorkToMake>6000</WorkToMake>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <tradeability>All</tradeability>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    </recipeMaker>
+  </ThingDef>
+
+</Defs>

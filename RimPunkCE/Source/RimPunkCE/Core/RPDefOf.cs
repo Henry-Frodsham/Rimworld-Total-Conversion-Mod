@@ -13,9 +13,9 @@ namespace RimPunkCE
         public static StatDef RPC_RamRegen;
         public static StatDef RPC_QuickhackUploadSpeed;
         public static StatDef RPC_QuickhackCritChance;
-        public static StatDef RPC_StaminaMax;
-        public static StatDef RPC_StaminaRegen;
-        public static StatDef RPC_StaminaCostFactor;
+        public static StatDef RPC_AdrenalineMax;
+        public static StatDef RPC_AdrenalineDecay;
+        public static StatDef RPC_AdrenalineGain;
         public static StatDef RPC_MitigationChance;
         public static StatDef RPC_MitigationStrength;
         public static StatDef RPC_RangedCritChance;
@@ -33,8 +33,8 @@ namespace RimPunkCE
         public static StatDef RPC_DamageVsPoisoned;
         public static StatDef RPC_OrganDamageFactor;
         public static StatDef RPC_CritChanceGrenades;
-        public static StatDef RPC_StaminaCostFactorMelee;
-        public static StatDef RPC_StaminaCostFactorRanged;
+        public static StatDef RPC_AdrenalineGainMelee;
+        public static StatDef RPC_AdrenalineGainRanged;
         public static StatDef RPC_RecoilFactor;
         public static StatDef RPC_SpreadFactor;
         public static StatDef RPC_QuickhackDamageFactor;
@@ -45,13 +45,25 @@ namespace RimPunkCE
     [DefOf]
     public static class RPDefOf
     {
-        public static NeedDef RPC_Stamina;
-        public static HediffDef RPC_Exhausted;
+        public static HediffDef RPC_AdrenalineSurge;
         public static HediffDef RPC_CyberpsychosisBurnout;
         public static HediffDef RPC_CyberpsychosisRage;
+        public static HediffDef RPC_CyberpsychosisPermanent;
         public static HediffDef RPC_WeaponThrown;
         public static HediffDef RPC_TraumaTeamCoverage;
         public static JobDef RPC_TraumaBoardShuttle;
+        public static JobDef RPC_ReloadArmLauncher;
+        public static ThingDef RPC_TraumaShuttle;
+        public static TransportShipDef RPC_Ship_TraumaShuttle;
+        public static ThingDef RPC_TraumaShuttleIncoming;
+        public static ThingDef RPC_MaxTacShuttle;
+        public static ThingDef RPC_MaxTacShuttleIncoming;
+        public static TransportShipDef RPC_Ship_MaxTacShuttle;
+        public static SoundDef RPC_TT_Arrive;
+        public static SoundDef RPC_TT_Contact;
+        public static SoundDef RPC_TT_Warning;
+        public static SoundDef RPC_TT_Secure;
+        public static SoundDef RPC_TT_Depart;
         public static TraitDef RPC_CyberAptitude;
         public static TraitDef RPC_Netrunner;
         public static MentalStateDef RPC_Cyberpsychosis;
@@ -59,7 +71,7 @@ namespace RimPunkCE
         public static DamageDef RPC_Toxic;
         public static DamageDef RPC_Thermal;
         public static DamageDef RPC_Shock;
-        public static StaminaTuningDef RPC_StaminaTuning;
+        public static AdrenalineTuningDef RPC_AdrenalineTuning;
         public static CyberpsychosisTuningDef RPC_CyberpsychosisTuning;
         public static AbilityCategoryDef RPC_Cyberware;
 

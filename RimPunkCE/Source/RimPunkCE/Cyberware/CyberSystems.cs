@@ -46,7 +46,7 @@ namespace RimPunkCE
         ApplyActive,          // timed effect hediff (durationKey seconds)
         HealFraction,         // heal each injury by valueKey of its severity ("+x% health")
         HealFlat,             // heal valueKey HP spread over injuries
-        Stamina,              // +valueKey stamina (fraction of max)
+        Adrenaline,           // +valueKey adrenaline (fraction of max)
         RamFraction,          // +valueKey of max RAM
         RamFlat,              // +valueKey RAM
         RamPerDamage,         // +valueKey x damage taken as RAM
@@ -253,8 +253,8 @@ namespace RimPunkCE
                 case CyberEffectKind.HealFlat:
                     CyberUtility.HealFlat(pawn, v);
                     break;
-                case CyberEffectKind.Stamina:
-                    tracker?.Stamina?.GainFraction(v);
+                case CyberEffectKind.Adrenaline:
+                    tracker?.GainAdrenalineFraction(v);
                     break;
                 case CyberEffectKind.RamFraction:
                     tracker?.GainRam(v * tracker.RamMax);
@@ -300,7 +300,7 @@ namespace RimPunkCE
         HealthBelow,      // summary health below threshold (fraction)
         StandingStill,
         NoEnemiesWithin,  // no hostile pawn within threshold tiles
-        StaminaAbove,     // stamina above threshold (fraction)
+        AdrenalineAbove,  // adrenaline above threshold (fraction)
         RamBelow,         // available RAM below threshold (flat)
         ActivePresent,    // activeDef effect running (Kerenzikov Boost System)
         WieldingBlade,
@@ -360,10 +360,10 @@ namespace RimPunkCE
                 case CyberConditionKind.HealthBelow: return pawn.health.summaryHealth.SummaryHealthPercent < th;
                 case CyberConditionKind.StandingStill: return pawn.Spawned && (pawn.pather == null || !pawn.pather.Moving);
                 case CyberConditionKind.NoEnemiesWithin: return pawn.Spawned && !CyberUtility.AnyHostileWithin(pawn, th);
-                case CyberConditionKind.StaminaAbove:
+                case CyberConditionKind.AdrenalineAbove:
                 {
-                    var s = pawn.GetCyberTracker()?.Stamina;
-                    return s != null && s.CurLevelPercentage > th;
+                    var a = pawn.GetCyberTracker();
+                    return a != null && a.AdrenalineFraction > th;
                 }
                 case CyberConditionKind.RamBelow:
                 {

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  BARK LINES. Edit freely: add or remove <li> lines, no code changes needed. One line is picked per bark.
+    chance        how often it fires when the event happens (0.5 = half the time, default 1)
+    pawnCooldown  seconds before the same pawn can bark again (default 12)
+  They show as speech bubbles if a bubble mod is active, otherwise as floating text.
+-->
+<Defs>
+
+  <InteractionDef>
+    <defName>RPC_Bark</defName>
+    <label>bark</label>
+    <symbol>Things/Mote/SpeechSymbols/Chitchat</symbol>
+  </InteractionDef>
+
+  <!-- ================= netrunning ================= -->
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_NetrunUploading</defName>
+    <chance>0.5</chance>
+    <lines>
+      <li>Jacking in.</li>
+      <li>I'm in your head, choom.</li>
+      <li>Daemon's away.</li>
+      <li>Hold still. This'll sting.</li>
+      <li>Found a hole in your ICE.</li>
+      <li>Uploading.</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_NetrunHacked</defName>
+    <chance>0.5</chance>
+    <lines>
+      <li>Something's in my optics!</li>
+      <li>Netrunner! I've got a netrunner on me!</li>
+      <li>Who's in my chrome?!</li>
+      <li>My ICE is going!</li>
+      <li>Get out of my head!</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_NetrunResisted</defName>
+    <lines>
+      <li>Nice try. Good ICE, that.</li>
+      <li>Bounced right off.</li>
+      <li>Their ICE held. Damn.</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+  <!-- ================= combat ================= -->
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_Sandevistan</defName>
+    <chance>0.6</chance>
+    <lines>
+      <li>Everything's so slow.</li>
+      <li>Too slow.</li>
+      <li>Sandy's up.</li>
+      <li>Time to move.</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_Berserk</defName>
+    <chance>0.6</chance>
+    <lines>
+      <li>Can't feel a thing!</li>
+      <li>Come on then!</li>
+      <li>Pinned? I'll give you pinned!</li>
+      <li>You want some?!</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+  <!-- ================= cyberpsychosis ================= -->
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_PsychosisStart</defName>
+    <lines>
+      <li>They're all made of meat.</li>
+      <li>GET IT OFF ME!</li>
+      <li>I can hear the chrome.</li>
+      <li>Nobody's real. Nobody's real.</li>
+      <li>You're all going to burn.</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_PsychosisEnd</defName>
+    <lines>
+      <li>What... what did I do?</li>
+      <li>So much blood. Whose is it?</li>
+      <li>I'm back. I think I'm back.</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+  <!-- ================= factions ================= -->
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_MaxTacArrive</defName>
+    <lines>
+      <li>MaxTac. Drop your weapons or don't. Makes no difference.</li>
+      <li>Target confirmed. Putting it down.</li>
+      <li>MaxTac on site. Clear the area.</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_TraumaArrive</defName>
+    <lines>
+      <li>Trauma Team. Stay clear of the client.</li>
+      <li>Securing the client. Anyone in the way gets shot.</li>
+      <li>Client located, moving in.</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_Retaliation</defName>
+    <lines>
+      <li>We just made a corp very angry.</li>
+      <li>Word is there's a strike team coming for us.</li>
+      <li>Corp's sending a message. Get ready.</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+  <!-- ================= gigs ================= -->
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_GigOffered</defName>
+    <lines>
+      <li>Got a ping from a contact. There's work going.</li>
+      <li>New gig on the wire, if anyone's interested.</li>
+      <li>Someone's paying for a job. Check the board.</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_GigAccepted</defName>
+    <lines>
+      <li>Contract's signed. Let's get it done.</li>
+      <li>Gig's ours. Who's coming?</li>
+      <li>Told the contact we're in.</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_GigCompleted</defName>
+    <lines>
+      <li>Gig's done. Eddies are on the way.</li>
+      <li>Job's finished. Contact says the pay's in the post.</li>
+      <li>Clean work. Time to get paid.</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+  <RimPunkCE.BarkDef>
+    <defName>RPC_Bark_GigFailed</defName>
+    <lines>
+      <li>Gig's blown. Contact isn't happy.</li>
+      <li>We lost that one. So much for the eddies.</li>
+      <li>Contract's dead. Word will get around.</li>
+    </lines>
+  </RimPunkCE.BarkDef>
+
+</Defs>

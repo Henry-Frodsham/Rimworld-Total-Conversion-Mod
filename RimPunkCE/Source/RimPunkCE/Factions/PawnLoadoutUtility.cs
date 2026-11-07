@@ -20,8 +20,13 @@ namespace RimPunkCE
                     pawn.story.traits.GainTrait(new Trait(RPDefOf.RPC_CyberAptitude, loadout.forceAptitudeDegree));
                 }
                 ApplyLoadout(pawn, loadout);
+                if (loadout.addArmor) ChromePlatingUtility.AddGeneratedArmor(pawn, loadout);
+                foreach (var extra in loadout.extraHediffs) pawn.health.AddHediff(extra);
+                ArmLauncherUtility.StockGenerated(pawn); // a launcher arm spawns loaded, with spare shells
             }
+            if (loadout != null) QuickhackLoadoutUtility.LearnRandom(pawn, loadout.minTier, loadout.maxTier);
             ApplyStreetName(pawn);
+            TraumaCoverageUtility.TryGiveNpcCoverage(pawn);
             if (loadout != null || pawn.Faction.Ext() != null)
                 Diag.Event("pawngen", $"{Diag.Describe(pawn)} kind {pawn.kindDef.defName}: weapon {pawn.equipment?.Primary?.def.defName ?? "none"}, " +
                                       $"cyberware [{string.Join(", ", pawn.InstalledCyberware().Select(c => c.def.defName + " " + c.tier))}], usage {pawn.GetCyberTracker()?.UsageRatio:P0}");

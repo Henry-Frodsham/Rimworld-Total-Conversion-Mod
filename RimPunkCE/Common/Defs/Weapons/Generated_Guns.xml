@@ -8,7 +8,7 @@
     <description>A smart pistol made by Arasaka. Smart weapon: with a smart link, every shot lands under perfect conditions; cover and obstacles still block shots.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/Autopistol</texPath>
+      <texPath>Things/RimPunk/Weapons/RPC_Gun_ArasakaHJKE11Yukimura/RPC_Gun_ArasakaHJKE11Yukimura</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Autopistol</soundInteract>
@@ -33,6 +33,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_smart</li>
       <li>RPC_W_Arasaka_Pistol</li>
+      <li>RPC_WT_Pistol_smart</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -57,7 +58,7 @@
     <description>A conventional assault rifle made by Arasaka.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/AssaultRifle</texPath>
+      <texPath>Things/RimPunk/Weapons/RPC_Gun_ArasakaHJSH18Masamune/RPC_Gun_ArasakaHJSH18Masamune</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
@@ -80,6 +81,7 @@
       <li>RPC_Class_Rifle</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Arasaka_Rifle</li>
+      <li>RPC_WT_Rifle_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -102,7 +104,7 @@
     <description>A tech pistol made by Arasaka. Tech weapon: charged (aimed) shots pierce walls.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
+      <texPath>Things/RimPunk/Weapons/RPC_Gun_ArasakaJKEX2Kenshin/RPC_Gun_ArasakaJKEX2Kenshin</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Autopistol</soundInteract>
@@ -127,6 +129,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_tech</li>
       <li>RPC_W_Arasaka_Pistol</li>
+      <li>RPC_WT_Pistol_tech</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -151,7 +154,7 @@
     <description>A conventional assault rifle made by Arasaka.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/AssaultRifle</texPath>
+      <texPath>Things/RimPunk/Weapons/RPC_Gun_ArasakaNowaki/RPC_Gun_ArasakaNowaki</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
@@ -174,6 +177,7 @@
       <li>RPC_Class_Rifle</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Arasaka_Rifle</li>
+      <li>RPC_WT_Rifle_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -196,7 +200,7 @@
     <description>A tech submachine gun made by Arasaka. Tech weapon: charged (aimed) shots pierce walls.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
+      <texPath>Things/RimPunk/Weapons/RPC_Gun_ArasakaSenkohLX/RPC_Gun_ArasakaSenkohLX</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_SMG</soundInteract>
@@ -221,6 +225,7 @@
       <li>RPC_Class_SMG</li>
       <li>RPC_Type_tech</li>
       <li>RPC_W_Arasaka_SMG</li>
+      <li>RPC_WT_SMG_tech</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -243,7 +248,7 @@
     <description>A conventional submachine gun made by Arasaka.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/HeavySMG</texPath>
+      <texPath>Things/RimPunk/Weapons/RPC_Gun_ArasakaShigure/RPC_Gun_ArasakaShigure</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_SMG</soundInteract>
@@ -266,6 +271,7 @@
       <li>RPC_Class_SMG</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Arasaka_SMG</li>
+      <li>RPC_WT_SMG_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -288,7 +294,7 @@
     <description>A smart submachine gun made by Arasaka. Smart weapon: with a smart link, every shot lands under perfect conditions; cover and obstacles still block shots.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/HeavySMG</texPath>
+      <texPath>Things/RimPunk/Weapons/RPC_Gun_ArasakaTKI20Shingen/RPC_Gun_ArasakaTKI20Shingen</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_SMG</soundInteract>
@@ -313,6 +319,7 @@
       <li>RPC_Class_SMG</li>
       <li>RPC_Type_smart</li>
       <li>RPC_W_Arasaka_SMG</li>
+      <li>RPC_WT_SMG_smart</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -335,7 +342,7 @@
     <description>A conventional pistol made by Arasaka.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/Autopistol</texPath>
+      <texPath>Things/RimPunk/Weapons/RPC_Gun_ArasakaTamayura/RPC_Gun_ArasakaTamayura</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Autopistol</soundInteract>
@@ -358,6 +365,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Arasaka_Pistol</li>
+      <li>RPC_WT_Pistol_power</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -405,6 +413,7 @@
       <li>RPC_Class_Shotgun</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_BudgetArms_Shotgun</li>
+      <li>RPC_WT_Shotgun_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -450,6 +459,7 @@
       <li>RPC_Class_SMG</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_BudgetArms_SMG</li>
+      <li>RPC_WT_SMG_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -495,6 +505,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_BudgetArms_Pistol</li>
+      <li>RPC_WT_Pistol_power</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -542,6 +553,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_ConstitutionalArms_Pistol</li>
+      <li>RPC_WT_Pistol_power</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -589,6 +601,7 @@
       <li>RPC_Class_Shotgun</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_ConstitutionalArms_Shotgun</li>
+      <li>RPC_WT_Shotgun_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -634,6 +647,7 @@
       <li>RPC_Class_MG</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_ConstitutionalArms_MG</li>
+      <li>RPC_WT_MG_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -679,6 +693,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_ConstitutionalArms_Pistol</li>
+      <li>RPC_WT_Pistol_power</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -726,6 +741,7 @@
       <li>RPC_Class_Rifle</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_DarraPolytechnic_Rifle</li>
+      <li>RPC_WT_Rifle_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -773,6 +789,7 @@
       <li>RPC_Class_Revolver</li>
       <li>RPC_Type_tech</li>
       <li>RPC_W_DarraPolytechnic_Revolver</li>
+      <li>RPC_WT_Revolver_tech</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -820,6 +837,7 @@
       <li>RPC_Class_Revolver</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_DarraPolytechnic_Revolver</li>
+      <li>RPC_WT_Revolver_power</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -867,6 +885,7 @@
       <li>RPC_Class_SMG</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_DarraPolytechnic_SMG</li>
+      <li>RPC_WT_SMG_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -914,6 +933,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_tech</li>
       <li>RPC_W_HansenArmory_Pistol</li>
+      <li>RPC_WT_Pistol_tech</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -963,6 +983,7 @@
       <li>RPC_Class_SMG</li>
       <li>RPC_Type_smart</li>
       <li>RPC_W_HansenArmory_SMG</li>
+      <li>RPC_WT_SMG_smart</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1010,6 +1031,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_smart</li>
       <li>RPC_W_KangTao_Pistol</li>
+      <li>RPC_WT_Pistol_smart</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -1059,6 +1081,7 @@
       <li>RPC_Class_SMG</li>
       <li>RPC_Type_smart</li>
       <li>RPC_W_KangTao_SMG</li>
+      <li>RPC_WT_SMG_smart</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1106,6 +1129,7 @@
       <li>RPC_Class_Shotgun</li>
       <li>RPC_Type_smart</li>
       <li>RPC_W_KangTao_Shotgun</li>
+      <li>RPC_WT_Shotgun_smart</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1151,6 +1175,7 @@
       <li>RPC_Class_Revolver</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_MalorianArms_Revolver</li>
+      <li>RPC_WT_Revolver_power</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -1198,6 +1223,7 @@
       <li>RPC_Class_MG</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_MidnightArms_MG</li>
+      <li>RPC_WT_MG_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1243,6 +1269,7 @@
       <li>RPC_Class_Precision</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_MidnightArms_Precision</li>
+      <li>RPC_WT_Precision_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1288,6 +1315,7 @@
       <li>RPC_Class_Shotgun</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Militech_Shotgun</li>
+      <li>RPC_WT_Shotgun_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1333,6 +1361,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Militech_Pistol</li>
+      <li>RPC_WT_Pistol_power</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -1382,6 +1411,7 @@
       <li>RPC_Class_Precision</li>
       <li>RPC_Type_tech</li>
       <li>RPC_W_Militech_Precision</li>
+      <li>RPC_WT_Precision_tech</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1429,6 +1459,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_tech</li>
       <li>RPC_W_Militech_Pistol</li>
+      <li>RPC_WT_Pistol_tech</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -1476,6 +1507,7 @@
       <li>RPC_Class_SMG</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Militech_SMG</li>
+      <li>RPC_WT_SMG_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1521,6 +1553,7 @@
       <li>RPC_Class_Rifle</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Militech_Rifle</li>
+      <li>RPC_WT_Rifle_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1566,6 +1599,7 @@
       <li>RPC_Class_MG</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Militech_MG</li>
+      <li>RPC_WT_MG_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1613,6 +1647,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_tech</li>
       <li>RPC_W_Militech_Pistol</li>
+      <li>RPC_WT_Pistol_tech</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -1660,6 +1695,7 @@
       <li>RPC_Class_Rifle</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Nokota_Rifle</li>
+      <li>RPC_WT_Rifle_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1707,6 +1743,7 @@
       <li>RPC_Class_Rifle</li>
       <li>RPC_Type_smart</li>
       <li>RPC_W_Nokota_Rifle</li>
+      <li>RPC_WT_Rifle_smart</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1754,6 +1791,7 @@
       <li>RPC_Class_Shotgun</li>
       <li>RPC_Type_tech</li>
       <li>RPC_W_Rostovic_Shotgun</li>
+      <li>RPC_WT_Shotgun_tech</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1799,6 +1837,7 @@
       <li>RPC_Class_Shotgun</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Rostovic_Shotgun</li>
+      <li>RPC_WT_Shotgun_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1844,6 +1883,7 @@
       <li>RPC_Class_Shotgun</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Rostovic_Shotgun</li>
+      <li>RPC_WT_Shotgun_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1891,6 +1931,7 @@
       <li>RPC_Class_Shotgun</li>
       <li>RPC_Type_smart</li>
       <li>RPC_W_Rostovic_Shotgun</li>
+      <li>RPC_WT_Shotgun_smart</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1936,6 +1977,7 @@
       <li>RPC_Class_Precision</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Rostovic_Precision</li>
+      <li>RPC_WT_Precision_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -1983,6 +2025,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_smart</li>
       <li>RPC_W_Arasaka_Pistol</li>
+      <li>RPC_WT_Pistol_smart</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -2030,6 +2073,7 @@
       <li>RPC_Class_Revolver</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Techtronika_Revolver</li>
+      <li>RPC_WT_Revolver_power</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -2079,6 +2123,7 @@
       <li>RPC_Class_Revolver</li>
       <li>RPC_Type_tech</li>
       <li>RPC_W_Techtronika_Revolver</li>
+      <li>RPC_WT_Revolver_tech</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -2126,6 +2171,7 @@
       <li>RPC_Class_Sniper</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Techtronika_Sniper</li>
+      <li>RPC_WT_Sniper_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -2171,6 +2217,7 @@
       <li>RPC_Class_Shotgun</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Techtronika_Shotgun</li>
+      <li>RPC_WT_Shotgun_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -2218,6 +2265,7 @@
       <li>RPC_Class_Sniper</li>
       <li>RPC_Type_smart</li>
       <li>RPC_W_Tsunami_Sniper</li>
+      <li>RPC_WT_Sniper_smart</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -2265,6 +2313,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_smart</li>
       <li>RPC_W_Tsunami_Pistol</li>
+      <li>RPC_WT_Pistol_smart</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>
@@ -2312,6 +2361,7 @@
       <li>RPC_Class_Rifle</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Tsunami_Rifle</li>
+      <li>RPC_WT_Rifle_power</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -2359,6 +2409,7 @@
       <li>RPC_Class_Sniper</li>
       <li>RPC_Type_tech</li>
       <li>RPC_W_Tsunami_Sniper</li>
+      <li>RPC_WT_Sniper_tech</li>
     </weaponTags>
     <tradeTags>
       <li>RPC_Weapon</li>
@@ -2404,6 +2455,7 @@
       <li>RPC_Class_Pistol</li>
       <li>RPC_Type_power</li>
       <li>RPC_W_Tsunami_Pistol</li>
+      <li>RPC_WT_Pistol_power</li>
       <li>CE_Sidearm</li>
       <li>CE_OneHandedWeapon</li>
     </weaponTags>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Gigs MVP (Gigs/Gigs.cs). The full fixer system is cycle 2. -->
+
+  <RimPunkCE.GigTuningDef>
+    <defName>RPC_GigTuning</defName>
+    <maxOffers>3</maxOffers>
+    <daysBetweenOffers>3~6</daysBetweenOffers>
+    <offerExpiryDays>8</offerExpiryDays>
+    <deadlineDays>12</deadlineDays>
+    <siteDistance>4~12</siteDistance>
+    <rewardPerThreatPoint>1.2</rewardPerThreatPoint>
+    <rewardClamp>500~6000</rewardClamp>
+    <siteThreatFactor>0.8</siteThreatFactor>
+    <minSiteThreat>300</minSiteThreat>
+    <goodwillGain>12</goodwillGain>
+    <goodwillLossTarget>-15</goodwillLossTarget>
+    <goodwillLossFail>-8</goodwillLossFail>
+    <serverRack>RPC_GigServerRack</serverRack>
+    <dataShard>RPC_GigDataShard</dataShard>
+    <objectivePart>RPC_GigObjective</objectivePart>
+    <basePart>BanditCamp</basePart>
+    <restrained>RPC_GigRestrained</restrained>
+    <freeHostageJob>RPC_FreeHostage</freeHostageJob>
+  </RimPunkCE.GigTuningDef>
+
+  <MainButtonDef>
+    <defName>RPC_Gigs</defName>
+    <label>gigs</label>
+    <description>Contracts from your contact: jobs against corporations and gangs.</description>
+    <tabWindowClass>RimPunkCE.MainTabWindow_Gigs</tabWindowClass>
+    <order>65</order>
+    <iconPath>UI/RimPunk/Quickhack_Target</iconPath>
+    <minimized>true</minimized>
+    <canBeTutorDenied>false</canBeTutorDenied>
+  </MainButtonDef>
+
+  <!-- sits beside the outpost part; hidden so the site shows as the outpost with the gig's own label -->
+  <SitePartDef>
+    <defName>RPC_GigObjective</defName>
+    <label>gig objective</label>
+    <description>The target of a contract.</description>
+    <workerClass>RimPunkCE.SitePartWorker_GigObjective</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Ambush</expandingIconTexture>
+    <defaultHidden>true</defaultHidden>
+    <tags>
+      <li>RPC_GigObjective</li>
+    </tags>
+  </SitePartDef>
+
+  <JobDef>
+    <defName>RPC_FreeHostage</defName>
+    <driverClass>RimPunkCE.JobDriver_FreeHostage</driverClass>
+    <reportString>freeing TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <!-- Moving capped at 0 keeps the hostage where they were put, and downed, until freed -->
+  <HediffDef>
+    <defName>RPC_GigRestrained</defName>
+    <label>restrained</label>
+    <description>Zip-tied and left under guard. Can't go anywhere until someone cuts them loose.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.9, 0.7, 0.3)</defaultLabelColor>
+    <isBad>true</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- placeholder art: reuses the comms console -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPC_GigServerRack</defName>
+    <label>corp server rack</label>
+    <description>Racks of black-budget data and the hardware running it. Someone has paid good money to see it destroyed.</description>
+    <graphicData>
+      <texPath>Things/Building/Misc/CommsConsole</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5,4)</drawSize>
+      <color>(150,170,190)</color>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.6</fillPercent>
+    <pathCost>42</pathCost>
+    <size>(3,2)</size>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>350</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <MarketValue>0</MarketValue>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+      <isTargetable>true</isTargetable>
+    </building>
+    <designationCategory IsNull="True" />
+  </ThingDef>
+
+  <!-- placeholder art: reuses the quickhack shard -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>RPC_GigDataShard</defName>
+    <label>stolen data shard</label>
+    <description>The shard a client wants out of corporate hands. Carry it home, or take it with a caravan, to finish the job.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+      <color>(255,180,60)</color>
+    </graphicData>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <Mass>0.05</Mass>
+      <MarketValue>1</MarketValue>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <tradeability>None</tradeability>
+  </ThingDef>
+
+</Defs>

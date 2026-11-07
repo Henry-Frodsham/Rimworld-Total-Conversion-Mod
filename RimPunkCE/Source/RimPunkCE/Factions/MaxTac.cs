@@ -14,6 +14,7 @@ namespace RimPunkCE
         public TransportShip ship;
         public int startTick;
         public int boardTick = -1;
+        public bool saidArrive;
 
         public void ExposeData()
         {
@@ -22,6 +23,7 @@ namespace RimPunkCE
             Scribe_References.Look(ref ship, "ship");
             Scribe_Values.Look(ref startTick, "startTick");
             Scribe_Values.Look(ref boardTick, "boardTick", -1);
+            Scribe_Values.Look(ref saidArrive, "saidArrive");
         }
     }
 
@@ -53,7 +55,7 @@ namespace RimPunkCE
                 var kind = i == 0 && tuning.maxTacLeaderKind != null ? tuning.maxTacLeaderKind : tuning.maxTacOperatorKind;
                 squad.Add(PawnGenerator.GeneratePawn(new PawnGenerationRequest(kind, faction, mustBeCapableOfViolence: true)));
             }
-            var ship = SendShuttle(faction, target.Map, target.Position, squad);
+            var ship = SendShuttle(faction, target.Map, target.Position, squad, RPDefOf.RPC_Ship_MaxTacShuttle);
             ship.AddJobs(ShipJobDefOf.Unload);
             var wait = (ShipJob_WaitForever)ShipJobMaker.MakeShipJob(ShipJobDefOf.WaitForever);
             wait.showGizmos = false;
@@ -81,6 +83,11 @@ namespace RimPunkCE
                 if (!d.ship.ShipExistsAndIsSpawned) continue; // still landing
                 var map = d.ship.shipThing.Map;
                 var t = d.target;
+                if (!d.saidArrive && d.squad.FirstOrDefault(s => s != null && s.Spawned) is Pawn officer)
+                {
+                    d.saidArrive = true;
+                    BarkUtility.Say(officer, BarkKeys.MaxTacArrive);
+                }
                 if (d.boardTick < 0)
                 {
                     bool dead = t == null || t.Dead;
@@ -114,6 +121,8 @@ namespace RimPunkCE
         {
             if (p == null || !p.Spawned || p.Dead || p.Downed || p.InMentalState || p.Map != target.Map) return;
             var cur = p.CurJob;
+            // never cut a CE reload short: re-issuing the attack restarted the reload forever (stuck at 0 rounds)
+            if (cur != null && cur.def == CombatExtended.CE_JobDefOf.ReloadWeapon) return;
             if (cur != null && cur.playerForced)
             {
                 if (cur.targetA.Thing == target && (cur.def == JobDefOf.AttackMelee || cur.def == JobDefOf.AttackStatic)) return;

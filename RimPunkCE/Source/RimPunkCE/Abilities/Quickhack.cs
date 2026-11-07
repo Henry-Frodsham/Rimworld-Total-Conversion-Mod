@@ -6,12 +6,25 @@ namespace RimPunkCE
 {
     /// <summary>
     /// Quickhack: the ability warmup is the upload. Upload speed scales with RPC_QuickhackUploadSpeed.
-    /// While uploading, the caster's eyes glow blue (PawnRenderNodeWorker_QuickhackEyes) and the target shows
-    /// an icon + progress bar (MapComponent_CyberVisuals).
+    /// While uploading, the caster's eyes glow blue (PawnRenderNodeWorker_QuickhackEyes) and MapComponent_Netrun draws
+    /// the netrunner -> target line, the progress box and the result.
     /// </summary>
     public class Verb_Quickhack : Verb_CastAbility
     {
-        public override float WarmupTime => base.WarmupTime / Mathf.Max(0.1f, CasterPawn?.GetStatValue(RPStatDefOf.RPC_QuickhackUploadSpeed) ?? 1f);
+        // upload time comes from the quickhack's learned tier (QuickhackAbility), scaled by upload speed
+        public override float WarmupTime =>
+            (ability is QuickhackAbility qa ? qa.UploadSeconds : base.WarmupTime) / Mathf.Max(0.1f, CasterPawn?.GetStatValue(RPStatDefOf.RPC_QuickhackUploadSpeed) ?? 1f);
+
+        /// <summary>The target can have stopped being a valid one during the upload: refuse it here, nothing is spent.</summary>
+        protected override bool TryCastShot()
+        {
+            if (ability is QuickhackAbility hack && currentTarget.Thing is Pawn p && !p.Dead && QuickhackUtility.InvalidReason(hack, p) != null)
+            {
+                MapComponent_Netrun.Notify_Result(p, NetrunResult.Immune);
+                return false;
+            }
+            return base.TryCastShot();
+        }
 
         public static bool IsUploading(Pawn pawn, out Stance_Busy stance)
         {
@@ -25,41 +38,6 @@ namespace RimPunkCE
             int total = elapsed + stance.ticksLeft;
             return total <= 0 ? 1f : Mathf.Clamp01((float)elapsed / total);
         }
-    }
-
-    /// <summary>Placeholder combat quickhack: electrical damage scaled by RPC_CyberwareDamageFactor, can crit.</summary>
-    public class CompProperties_AbilityQuickhackDamage : CompProperties_AbilityEffect
-    {
-        public DamageDef damageDef;
-        public float damage = 8f;
-        public float armorPenetration = 0.5f;
-
-        public CompProperties_AbilityQuickhackDamage() => compClass = typeof(CompAbilityEffect_QuickhackDamage);
-    }
-
-    public class CompAbilityEffect_QuickhackDamage : CompAbilityEffect
-    {
-        public new CompProperties_AbilityQuickhackDamage Props => (CompProperties_AbilityQuickhackDamage)props;
-
-        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
-        {
-            base.Apply(target, dest);
-            if (!target.HasThing) return;
-            var caster = parent.pawn;
-            if (target.Thing is Pawn victim && victim.HostileTo(caster) && HediffComp_SelfIce.TryNegate(victim)) return;
-            float amount = Props.damage * caster.GetStatValue(RPStatDefOf.RPC_CyberwareDamageFactor) * caster.GetStatValue(RPStatDefOf.RPC_QuickhackDamageFactor);
-            float crit = caster.GetStatValue(RPStatDefOf.RPC_QuickhackCritChance);
-            if (crit > 0f && Rand.Chance(crit))
-            {
-                amount *= 2f;
-                if (caster.Map != null) MoteMaker.ThrowText(target.Thing.DrawPos, caster.Map, "RPC_Crit".Translate(), Color.cyan, 2f);
-            }
-            var dinfo = new DamageInfo(Props.damageDef ?? RPDefOf.RPC_Electrical, amount, Props.armorPenetration, -1f, caster);
-            target.Thing.TakeDamage(dinfo);
-        }
-
-        public override bool AICanTargetNow(LocalTargetInfo target) =>
-            target.Thing is Pawn p && !p.Downed && p.HostileTo(parent.pawn);
     }
 
     /// <summary>Eyes render node that only draws while the pawn is uploading a quickhack.</summary>

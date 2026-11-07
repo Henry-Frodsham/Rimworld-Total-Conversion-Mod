@@ -50,6 +50,7 @@
     <modExtensions>
       <li Class="RimPunkCE.ActiveEffectExtension">
         <afterimages>true</afterimages>
+        <adrenalineGainFactor>0.5</adrenalineGainFactor>
         <effects>
           <capMods>
             <li><capacity>Consciousness</capacity><offset><min>1</min><max>1</max></offset></li>
@@ -77,13 +78,15 @@
         <hediffDef>RPC_DynalarSandevistanActive</hediffDef>
         <defaultDurationSeconds>80</defaultDurationSeconds>
         <aiMaxEnemyDistance>40</aiMaxEnemyDistance>
+        <adrenalineCost>25</adrenalineCost>
+        <aiRule>CloseDistance</aiRule>
       </li>
     </comps>
   </AbilityDef>
 
   <!-- ===================== Moore Tech Berserk =====================
        T2-Iconic, capacity 12. +30-50% damage reduction, parts can't drop below 25%, melee only,
-       -100% stamina cost, no pain. On end: 25% health per enemy neutralized. 8-11s / 60-25s.
+       +50% adrenaline gain, no pain. On end: 25% health per enemy neutralized. 8-11s / 60-25s.
        Red aura (vanilla berserk effecter) and red eyes while active. -->
 
   <ThingDef ParentName="RPC_CyberwareItemBase">
@@ -170,7 +173,7 @@
         <incomingDamageFactor><min>0.7</min><max>0.5</max></incomingDamageFactor>
         <partHealthFloor>0.25</partHealthFloor>
         <meleeOnly>true</meleeOnly>
-        <staminaCostFactor>0</staminaCostFactor>
+        <adrenalineGainFactor>1.5</adrenalineGainFactor>
         <healPerNeutralizeOnEnd>0.25</healPerNeutralizeOnEnd>
       </li>
     </modExtensions>
@@ -179,12 +182,14 @@
   <AbilityDef ParentName="RPC_CyberSelfAbilityBase">
     <defName>RPC_Ability_MooreTechBerserk</defName>
     <label>activate berserk</label>
-    <description>Shut off pain and go all in on melee: damage reduction, parts can't drop below 25% health, no stamina cost. Heals for every enemy put down when it ends.</description>
+    <description>Shut off pain and go all in on melee: damage reduction, parts can't drop below 25% health, builds adrenaline faster. Heals for every enemy put down when it ends.</description>
     <comps>
       <li Class="RimPunkCE.CompProperties_AbilityCyberBuff">
         <hediffDef>RPC_MooreTechBerserkActive</hediffDef>
         <defaultDurationSeconds>80</defaultDurationSeconds>
         <aiMaxEnemyDistance>8</aiMaxEnemyDistance>
+        <adrenalineCost>40</adrenalineCost>
+        <aiRule>Pinned</aiRule>
       </li>
     </comps>
   </AbilityDef>
@@ -209,7 +214,7 @@
     <descriptionHyperlinks><ThingDef>RPC_Item_ArasakaCyberdeck</ThingDef></descriptionHyperlinks>
     <comps>
       <li Class="RimPunkCE.HediffCompProperties_GiveCyberAbilities">
-        <abilities><li>RPC_Quickhack_ShortCircuit</li></abilities>
+        <abilities><li>RPC_Ability_Overclock</li></abilities>
       </li>
     </comps>
     <!-- blue eyes while uploading a quickhack -->
@@ -250,48 +255,14 @@
         <item>RPC_Item_ArasakaCyberdeck</item>
         <effects>
           <statOffsets>
-            <li><stat>RPC_RamMax</stat><value><min>1</min><max>10</max></value></li>
+            <!-- base RAM bank by tier (6-16) + the Arasaka bonus (1-10) -->
+            <li><stat>RPC_RamMax</stat><value><perTier><li>7</li><li>10.8</li><li>14.6</li><li>18.4</li><li>22.2</li><li>26</li></perTier></value></li>
           </statOffsets>
         </effects>
       </li>
     </modExtensions>
   </HediffDef>
 
-  <!-- placeholder quickhack until the quickhack list is designed -->
-  <AbilityDef>
-    <defName>RPC_Quickhack_ShortCircuit</defName>
-    <label>quickhack: short circuit</label>
-    <description>Upload a short circuit into the target's systems, dealing electrical damage. Placeholder quickhack.</description>
-    <abilityClass>RimPunkCE.CyberwareAbility</abilityClass>
-    <category>RPC_Cyberware</category>
-    <iconPath>UI/RimPunk/Placeholder_Ability</iconPath>
-    <showPsycastEffects>false</showPsycastEffects>
-    <cooldownTicksRange>120</cooldownTicksRange>
-    <aiCanUse>true</aiCanUse>
-    <ai_IsOffensive>true</ai_IsOffensive>
-    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-    <verbProperties>
-      <verbClass>RimPunkCE.Verb_Quickhack</verbClass>
-      <label>upload</label>
-      <range>24.9</range>
-      <warmupTime>1.5</warmupTime>
-      <requireLineOfSight>true</requireLineOfSight>
-      <targetParams>
-        <canTargetPawns>true</canTargetPawns>
-        <canTargetBuildings>false</canTargetBuildings>
-        <canTargetLocations>false</canTargetLocations>
-      </targetParams>
-    </verbProperties>
-    <comps>
-      <li Class="RimPunkCE.CompProperties_AbilityRamCost">
-        <ramCost>1</ramCost>
-      </li>
-      <li Class="RimPunkCE.CompProperties_AbilityQuickhackDamage">
-        <damageDef>RPC_Electrical</damageDef>
-        <damage>8</damage>
-      </li>
-    </comps>
-  </AbilityDef>
 
   <!-- ===================== Chrome Compressor =====================
        T2-Iconic, capacity 0. +40-70 max cyberware capacity (not for gonks). -->

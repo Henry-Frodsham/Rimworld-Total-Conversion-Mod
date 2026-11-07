@@ -12,6 +12,8 @@ namespace RimPunkCE
         TraumaTeam,
         NetWatch,
         MaxTac,
+        /// <summary>Trauma Team's debt collection agency: only raids a colony with unpaid Trauma Team debt (TraumaBilling.cs).</summary>
+        DebtCollector,
     }
 
     /// <summary>On every RimPunk FactionDef (prompts/factions.md).</summary>
@@ -44,6 +46,12 @@ namespace RimPunkCE
 
         /// <summary>Force this capacity aptitude degree (rogue cyberpsycho: gonk, so the chrome overloads them).</summary>
         public int forceAptitudeDegree = -99;
+
+        /// <summary>Plain hediffs on top of the cyberware (scrap plating on rogue cyberpsychos).</summary>
+        public List<HediffDef> extraHediffs = new List<HediffDef>();
+
+        /// <summary>Roll for extra armor implants (ChromePlatingUtility.AddGeneratedArmor).</summary>
+        public bool addArmor = true;
     }
 
     public class CyberwareLoadoutOption

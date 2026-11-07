@@ -7,7 +7,7 @@ Output (overwritten every run, do not hand-edit): Common/Defs/Apparel/Generated_
 gen_factions.py imports OUTFITS / outfit() from here to give every pawn kind its apparelRequired list.
 
 Looks reuse vanilla textures tinted per faction (they are greyscale, the game multiplies in the colour).
-Trauma Team and MaxTac have their own textures under Common/Textures/Things/RimPunk/Apparel/ (gen_apparel_textures.py
+Trauma Team, MaxTac and Arasaka have their own textures under Common/Textures/Things/RimPunk/Apparel/ (gen_apparel_textures.py
 drafts them, hand-refine from there). Armour values are CE scale: sharp in mm RHA, blunt in MPa.
 """
 import os
@@ -99,15 +99,18 @@ T = {
     'veil':       dict(label='veil', tex=V + 'Veil/Veil', worn=V + 'Veil/Veil', layers=['Overhead'], groups=['FullHead'], cat='Headgear',
                        sharp=0.2, blunt=0.4, bulk=1, wbulk=0, mass=0.2, hp=60, value=40, cold=2, cost={'Cloth': 20}),
     # --- custom looks (own textures)
-    'trauma_armor':  dict(label='Trauma Team armor', tex=CUSTOM + 'TraumaArmor/TraumaArmor', worn=CUSTOM + 'TraumaArmor/TraumaArmor', custom=True,
-                          layers=['Middle', 'Shell'], groups=BODY_FULL, cat='ApparelArmor', sharp=18, blunt=40, bulk=80, wbulk=12, mass=28, hp=450, value=3000,
-                          cold=22, heat=0.4, cost={'Plasteel': 90, 'ComponentSpacer': 4, 'MedicineIndustrial': 4}),
+    'trauma_shirt':  dict(label='Trauma Team shirt', tex=CUSTOM + 'TraumaShirt/TraumaShirt', worn=CUSTOM + 'TraumaShirt/TraumaShirt', custom=True,
+                          layers=['OnSkin'], groups=['Torso', 'Shoulders'], cat='Apparel', sharp=0.5, blunt=1, bulk=1, wbulk=0, mass=0.3, hp=100,
+                          value=80, cold=5, cost={'Synthread': 20}),
+    'trauma_pants':  dict(label='Trauma Team pants', tex=CUSTOM + 'TraumaPants/TraumaPants', worn=CUSTOM + 'TraumaPants/TraumaPants', custom=True,
+                          layers=['OnSkin'], groups=['Legs'], cat='Apparel', sharp=0.5, blunt=1, bulk=1, wbulk=0, mass=0.4, hp=100, value=80, cold=6,
+                          cost={'Synthread': 25}),
+    'trauma_vest':   dict(label='Trauma Team combat vest', tex=CUSTOM + 'TraumaVest/TraumaVest', worn=CUSTOM + 'TraumaVest/TraumaVest', custom=True,
+                          layers=['Middle'], groups=['Torso', 'Neck'], cat='ApparelArmor', sharp=12, blunt=26, bulk=6, wbulk=3, mass=8, hp=220,
+                          value=1200, cold=3, heat=0.3, cost={'Plasteel': 40, 'ComponentSpacer': 1}),
     'trauma_helmet': dict(label='Trauma Team helmet', tex=CUSTOM + 'TraumaHelmet/TraumaHelmet', worn=CUSTOM + 'TraumaHelmet/TraumaHelmet', custom=True,
                           layers=['Overhead'], groups=['FullHead'], cat='ArmorHeadgear', sharp=14, blunt=30, bulk=4, wbulk=1, mass=3, hp=220, value=900, cold=2,
                           heat=0.35, cost={'Plasteel': 35, 'ComponentSpacer': 1}),
-    'trauma_lead':   dict(label='Trauma Team lead helmet', tex=CUSTOM + 'TraumaLeadHelmet/TraumaLeadHelmet', worn=CUSTOM + 'TraumaLeadHelmet/TraumaLeadHelmet',
-                          custom=True, layers=['Overhead'], groups=['FullHead'], cat='ArmorHeadgear', sharp=14, blunt=30, bulk=4, wbulk=1, mass=3, hp=220,
-                          value=1000, cold=2, heat=0.35, cost={'Plasteel': 35, 'ComponentSpacer': 1, 'Gold': 3}),
     'maxtac_armor':  dict(label='MaxTac armor', tex=CUSTOM + 'MaxTacArmor/MaxTacArmor', worn=CUSTOM + 'MaxTacArmor/MaxTacArmor', custom=True,
                           layers=['Middle', 'Shell'], groups=BODY_FULL, cat='ApparelArmor', sharp=26, blunt=58, bulk=100, wbulk=14, mass=55, hp=650, value=5000,
                           cold=24, heat=0.5, cost={'Plasteel': 140, 'ComponentSpacer': 6, 'Uranium': 20}, offsets={'CarryWeight': 100, 'CarryBulk': 15}),
@@ -118,6 +121,27 @@ T = {
                           custom=True, layers=['Overhead'], groups=['FullHead'], cat='ArmorHeadgear', sharp=22, blunt=50, bulk=5, wbulk=1, mass=5, hp=300,
                           value=1600, cold=4, heat=0.5, cost={'Plasteel': 50, 'ComponentSpacer': 2}),
 }
+
+# Arasaka's own looks (own textures, drafted by gen_apparel_textures.py): stats copied from the vanilla-based piece they replace.
+def _arasaka(key, base, label, tex, **kw):
+    T[key] = dict(T[base], label=label, tex=CUSTOM + tex + '/' + tex, worn=CUSTOM + tex + '/' + tex, custom=True, **kw)
+
+
+_arasaka('arasaka_shirt_white', 'collar', 'Arasaka white shirt', 'ArasakaShirtWhite')
+_arasaka('arasaka_shirt', 'collar', 'Arasaka black shirt', 'ArasakaShirt')
+_arasaka('arasaka_pants', 'pants', 'Arasaka pants', 'ArasakaPants')
+_arasaka('arasaka_bodysuit', 'bodysuit', 'Arasaka bodysuit', 'ArasakaBodysuit')
+_arasaka('arasaka_vest', 'vest', 'Arasaka light vest', 'ArasakaVestLight')
+_arasaka('arasaka_carrier', 'flakvest', 'Arasaka plate carrier', 'ArasakaPlateCarrier')
+_arasaka('arasaka_jacket', 'jacket', 'Arasaka jacket', 'ArasakaJacket')
+_arasaka('arasaka_duster', 'duster', 'Arasaka long coat', 'ArasakaDuster')
+_arasaka('arasaka_recon', 'recon', 'Arasaka tactical armor', 'ArasakaReconArmor')
+_arasaka('arasaka_heavy', 'marine', 'Arasaka heavy armor', 'ArasakaHeavyArmor')
+_arasaka('arasaka_helmet', 'advhelm', 'Arasaka combat helmet', 'ArasakaCombatHelmet')
+_arasaka('arasaka_reconhelm', 'reconhelm', 'Arasaka tactical helmet', 'ArasakaReconHelmet')
+_arasaka('arasaka_heavyhelm', 'marinehelm', 'Arasaka heavy helmet', 'ArasakaHeavyHelmet')
+_arasaka('arasaka_netrig', 'netrig', 'Arasaka netrunner rig', 'ArasakaNetRig')
+_arasaka('arasaka_visor', 'visor', 'Arasaka visor', 'ArasakaVisor')
 
 # colour words used in the outfit tables, RGB 0-255 (the vanilla textures are near white, so this is roughly the final colour)
 C = {
@@ -132,20 +156,34 @@ C = {
     'custom': (255, 255, 255),
 }
 
+# Arasaka has two looks: its own recoloured textures (Common/Textures/Things/RimPunk/Apparel/Arasaka*, drafted by gen_apparel_textures.py,
+# which needs exported vanilla textures) or, until those exist, vanilla textures tinted black/red.
+ARASAKA_HAS_ART = os.path.isdir(os.path.join(ROOT, 'Common', 'Textures', 'Things', 'RimPunk', 'Apparel', 'ArasakaShirt'))
+ARASAKA_TINTED = {
+    'Guard':     ('security guard', ['collar:white', 'flakvest:black', 'pants:black', 'advhelm:arasaka'], []),
+    'Grunt':     ('soldier', ['recon:black', 'reconhelm:arasaka', 'collar:black', 'pants:black'], []),
+    'Enforcer':  ('heavy gunner', ['marine:black', 'marinehelm:arasaka', 'collar:black', 'pants:black'], []),
+    'Netrunner': ('netrunner', ['bodysuit:black', 'netrig:arasaka', 'pants:black'], ['vest:black']),
+    'Sniper':    ('marksman', ['collar:black', 'flakvest:black', 'pants:black', 'visor:arasaka'], ['jacket:black']),
+    'Boss':      ('commander', ['collar:white', 'duster:black', 'pants:black'], ['visor:arasaka']),
+    'Trader':    ('corpo', ['collar:white', 'jacket:black', 'pants:black'], []),
+}
+ARASAKA_OWN_ART = {
+    'Guard':     ('security guard', ['arasaka_shirt_white:custom', 'arasaka_carrier:custom', 'arasaka_pants:custom', 'arasaka_helmet:custom'], []),
+    'Grunt':     ('soldier', ['arasaka_recon:custom', 'arasaka_reconhelm:custom', 'arasaka_shirt:custom', 'arasaka_pants:custom'], []),
+    'Enforcer':  ('heavy gunner', ['arasaka_heavy:custom', 'arasaka_heavyhelm:custom', 'arasaka_shirt:custom', 'arasaka_pants:custom'], []),
+    'Netrunner': ('netrunner', ['arasaka_bodysuit:custom', 'arasaka_netrig:custom', 'arasaka_pants:custom'], ['arasaka_vest:custom']),
+    'Sniper':    ('marksman', ['arasaka_shirt:custom', 'arasaka_carrier:custom', 'arasaka_pants:custom', 'arasaka_visor:custom'], ['arasaka_jacket:custom']),
+    'Boss':      ('commander', ['arasaka_shirt_white:custom', 'arasaka_duster:custom', 'arasaka_pants:custom'], ['arasaka_visor:custom']),
+    'Trader':    ('corpo', ['arasaka_shirt_white:custom', 'arasaka_jacket:custom', 'arasaka_pants:custom'], []),
+}
+
 # per faction: role -> (label, required pieces, optional extras). piece = 'template:colour' (two-colour masked pieces: 'template:colour/colour2').
 # lore notes from the Cyberpunk 2077 / Cyberpunk RED setting, kept to what reads at RimWorld scale.
 OUTFITS = {
     # Arasaka: black and red corporate security. Guards in shirts and vests, soldiers in full black tactical gear with red helmets,
     # netrunners in black suits with red rigs, execs in black coats over white shirts.
-    'Arasaka': {
-        'Guard':     ('security guard', ['collar:white', 'flakvest:black', 'pants:black', 'advhelm:arasaka'], []),
-        'Grunt':     ('soldier', ['recon:black', 'reconhelm:arasaka', 'collar:black', 'pants:black'], []),
-        'Enforcer':  ('heavy gunner', ['marine:black', 'marinehelm:arasaka', 'collar:black', 'pants:black'], []),
-        'Netrunner': ('netrunner', ['bodysuit:black', 'netrig:arasaka', 'pants:black'], ['vest:black']),
-        'Sniper':    ('marksman', ['collar:black', 'flakvest:black', 'pants:black', 'visor:arasaka'], ['jacket:black']),
-        'Boss':      ('commander', ['collar:white', 'duster:black', 'pants:black'], ['visor:arasaka']),
-        'Trader':    ('corpo', ['collar:white', 'jacket:black', 'pants:black'], []),
-    },
+    'Arasaka': ARASAKA_OWN_ART if ARASAKA_HAS_ART else ARASAKA_TINTED,
     # Militech: US military contractor. Olive drab and khaki, plate carriers, heavy suits for the line.
     'Militech': {
         'Guard':     ('security guard', ['collar:khaki', 'flakvest:olive', 'pants:khaki', 'simplehelm:olive'], []),
@@ -212,15 +250,23 @@ OUTFITS = {
         'Netrunner': ('netrunner', ['bodysuit:blue', 'netrig:skyblue', 'pants:black', 'vest:black'], []),
         'Boss':      ('director', ['collar:white', 'duster:black', 'pants:black', 'visor:blue'], []),
     },
-    # Trauma Team: white armour with teal, paramedic-soldiers. Own textures.
+    # Trauma Team: green shirt and pants under a white combat vest, armoured helmet. Own textures.
     'TraumaTeam': {
-        'Operator':  ('operator', ['trauma_armor:custom', 'trauma_helmet:custom', 'bodysuit:white', 'pants:white'], []),
-        'Boss':      ('team lead', ['trauma_armor:custom', 'trauma_lead:custom', 'bodysuit:white', 'pants:white'], []),
+        'Operator':  ('operator', ['trauma_shirt:custom', 'trauma_pants:custom', 'trauma_vest:custom', 'trauma_helmet:custom'], []),
+        'Boss':      ('team lead', ['trauma_shirt:custom', 'trauma_pants:custom', 'trauma_vest:custom', 'trauma_helmet:custom'], []),
     },
     # MaxTac: NCPD anti-cyberpsycho unit. Black heavy armour, sealed helmets. Own textures.
     'MaxTac': {
         'Operator':  ('officer', ['maxtac_armor:custom', 'maxtac_helmet:custom', 'bodysuit:black', 'pants:black'], []),
         'Boss':      ('sergeant', ['maxtac_armor:custom', 'maxtac_lead:custom', 'bodysuit:black', 'pants:black'], []),
+    },
+    # Debt collectors (Trauma Team's collection agency): grey suits over plate carriers, red visors. Repo men, not soldiers.
+    'DebtCollectors': {
+        'Grunt':     ('collector', ['collar:white', 'flakvest:charcoal', 'pants:charcoal', 'visor:red'], ['jacket:charcoal']),
+        'Enforcer':  ('repo heavy', ['marine:charcoal', 'marinehelm:red', 'collar:white', 'pants:charcoal'], []),
+        'Melee':     ('repo ripper', ['collar:white', 'flakjacket:charcoal', 'flakpants:charcoal', 'faceplate:chrome'], []),
+        'Netrunner': ('skip tracer', ['bodysuit:charcoal', 'netrig:red', 'pants:charcoal'], ['vest:charcoal']),
+        'Boss':      ('account manager', ['collar:white', 'duster:charcoal', 'pants:charcoal', 'visor:red'], []),
     },
 
     # Maelstrom: chrome-obsessed, black leather and red, faceplates and glowing optics.
@@ -363,7 +409,7 @@ def thing(fid, faction_label, name, tmpl, c1, c2, tags):
     offsets = f'\n    <equippedStatOffsets>{offsets}\n    </equippedStatOffsets>' if offsets else ''
     heat = f"\n      <ArmorRating_Heat>{fmt(t['heat'])}</ArmorRating_Heat>" if t.get('heat') else ''
     cost = ''.join(f'\n      <{k}>{v}</{k}>' for k, v in t['cost'].items())
-    tech = 'Spacer' if t['sharp'] >= 12 or tmpl in ('bodysuit', 'netrig', 'visor', 'robe', 'vest') else 'Industrial'
+    tech = 'Spacer' if t['sharp'] >= 12 or tmpl in ('bodysuit', 'netrig', 'visor', 'robe', 'vest', 'arasaka_bodysuit', 'arasaka_netrig', 'arasaka_visor', 'arasaka_vest') else 'Industrial'
     return f'''  <ThingDef ParentName="ApparelBase">
     <defName>{name}</defName>
     <label>{escape(label)}</label>
@@ -413,6 +459,8 @@ BLURB = {
 def describe(fid, flabel, tmpl, t):
     if fid == 'TraumaTeam':
         return 'Trauma Team International issue: armoured, sealed, and white so you know who just saved your life.'
+    if fid == 'Arasaka':
+        return 'Arasaka corporate security issue. Black, red, and expensive.'
     if fid == 'MaxTac':
         return 'NCPD MaxTac issue. Built to walk through cyberpsycho fire and put them down.'
     return f"{BLURB.get(tmpl, 'Clothing.')} Worn by {flabel} in their colours."

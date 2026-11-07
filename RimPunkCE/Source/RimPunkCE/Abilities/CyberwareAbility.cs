@@ -21,7 +21,7 @@ namespace RimPunkCE
 
         public Hediff_Cyberware Source => CyberUtility.SourceCyberwareFor(pawn, def);
 
-        public CyberTier SourceTier => Source?.tier ?? CyberTier.T1;
+        public virtual CyberTier SourceTier => Source?.tier ?? CyberTier.T1;
 
         public float GetSourceValue(string key, float fallback) => Source?.GetValue(key, fallback) ?? fallback;
 
@@ -68,9 +68,42 @@ namespace RimPunkCE
             else StartCooldown(left);
         }
 
+        /// <summary>
+        /// Why this can't be used right now (null = usable). Checked by the gizmo and by CanCast, so the AI respects it
+        /// too. Quickhack debuffs on the caster: Cyberware Malfunction blocks everything, Cripple Movement blocks
+        /// movement abilities, Sonic Shock blocks quickhacks.
+        /// </summary>
+        public virtual string BlockReason()
+        {
+            if (Hediff_Quickhack.TargetHas(pawn, x => x.blocksCyberwareAbilities)) return "RPC_BlockedByMalfunction".Translate();
+            if (IsMovementAbility && Hediff_Quickhack.TargetHas(pawn, x => x.blocksMovementAbilities)) return "RPC_BlockedByCripple".Translate();
+            var buff = CompOfType<CompAbilityEffect_CyberBuff>();
+            if (buff != null && buff.Props.adrenalineCost > 0f && pawn.GetCyberTracker()?.HasAdrenaline(buff.Props.adrenalineCost) == false)
+                return "RPC_NotEnoughAdrenaline".Translate(buff.Props.adrenalineCost.ToString("0"));
+            return null;
+        }
+
+        /// <summary>Dashes, jumps and Sandevistans (blocked by Cripple Movement).</summary>
+        public bool IsMovementAbility =>
+            def.verbProperties?.verbClass is System.Type vc && (typeof(Verb_CastAbilityJump).IsAssignableFrom(vc) || typeof(Verb_MantisDash).IsAssignableFrom(vc))
+            || Source?.Ext?.osType == CyberOsType.Sandevistan;
+
+        public override AcceptanceReport CanCast
+        {
+            get
+            {
+                var r = base.CanCast;
+                if (!r.Accepted) return r;
+                string block = BlockReason();
+                return block == null ? AcceptanceReport.WasAccepted : new AcceptanceReport(block);
+            }
+        }
+
         public override bool GizmoDisabled(out string reason)
         {
             if (base.GizmoDisabled(out reason)) return true;
+            reason = BlockReason();
+            if (reason != null) return true;
             var ram = CompOfType<CompAbilityEffect_RamCost>();
             if (ram != null)
             {
@@ -180,6 +213,10 @@ namespace RimPunkCE
         public float defaultDurationSeconds = 8f;
         /// <summary>AI casts it once its enemy is this close (Sandevistan: gunfight range; Berserk: melee range, it blocks guns).</summary>
         public float aiMaxEnemyDistance = 30f;
+        /// <summary>When the AI uses it (ContextualCombat.WantsBuff).</summary>
+        public CyberBuffAiRule aiRule = CyberBuffAiRule.Engaged;
+        /// <summary>Adrenaline spent to activate (sandevistan, berserk). 0 = free.</summary>
+        public float adrenalineCost;
 
         public CompProperties_AbilityCyberBuff() => compClass = typeof(CompAbilityEffect_CyberBuff);
     }
@@ -196,6 +233,7 @@ namespace RimPunkCE
             var pawn = parent.pawn;
             var ability = parent as CyberwareAbility;
             var source = ability?.Source;
+            if (Props.adrenalineCost > 0f) pawn.GetCyberTracker()?.SpendAdrenaline(Props.adrenalineCost);
             var ext = source?.Ext;
             int duration = ability?.DurationTicksFor(Props.defaultDurationSeconds) ?? CyberUtility.SecondsToTicks(Props.defaultDurationSeconds);
 
@@ -205,14 +243,20 @@ namespace RimPunkCE
             var hediff = (Hediff_CyberActive)HediffMaker.MakeHediff(Props.hediffDef, pawn);
             hediff.Setup(source?.tier ?? CyberTier.T1, ext?.minTier ?? CyberTier.T1, ext?.maxTier ?? CyberTier.Iconic, duration);
             pawn.health.AddHediff(hediff);
+
+            if (Props.aiRule == CyberBuffAiRule.CloseDistance) BarkUtility.Say(pawn, BarkKeys.Sandevistan);
+            else if (Props.aiRule == CyberBuffAiRule.Pinned)
+            {
+                BarkUtility.Say(pawn, BarkKeys.Berserk);
+                pawn.TryGetComp<CombatExtended.CompSuppressable>()?.DebugSetSuppression(0f); // shrugs it off (see Patch_CompSuppressable_AddSuppression)
+            }
         }
 
         public override bool AICanTargetNow(LocalTargetInfo target)
         {
-            // use once engaged with an enemy within aiMaxEnemyDistance
             var pawn = parent.pawn;
             var enemy = pawn.mindState?.enemyTarget;
-            return !IsActive && enemy != null && enemy.Spawned && pawn.Position.InHorDistOf(enemy.Position, Props.aiMaxEnemyDistance);
+            return !IsActive && enemy != null && enemy.Spawned && ContextualCombat.WantsBuff(pawn, Props, enemy);
         }
     }
 }

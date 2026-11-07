@@ -27,6 +27,7 @@ namespace RimPunkCE
             if (tracker == null) return;
             tracker.Notify_CombatAction();
             Diag.Count("damage-dealt-by-tracked-pawns");
+            if (victim is Pawn vp && vp.HostileTo(attacker)) tracker.Notify_DamageForAdrenaline(dinfo, damageDealt, dealt: true);
             ForEachReceiver(attacker, r => r.Notify_DealtDamage(victim, dinfo, damageDealt));
         }
 
@@ -46,6 +47,7 @@ namespace RimPunkCE
         public static void Notify_DamageTaken(Pawn pawn, DamageInfo dinfo, float damageTaken)
         {
             if (damageTaken <= 0f) return;
+            if (dinfo.Def.ExternalViolenceFor(pawn)) pawn.GetCyberTracker()?.Notify_DamageForAdrenaline(dinfo, damageTaken, dealt: false);
             ForEachReceiver(pawn, r => r.Notify_TookDamage(dinfo, damageTaken));
             CyberpsychosisUtility.Notify_Event(pawn, CyberpsychosisEvent.TookDamage);
         }

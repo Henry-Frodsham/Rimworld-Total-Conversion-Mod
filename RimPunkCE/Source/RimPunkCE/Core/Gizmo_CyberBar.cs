@@ -7,16 +7,16 @@ namespace RimPunkCE
     public enum CyberBarKind
     {
         Ram,
-        Stamina,
+        Adrenaline,
     }
 
-    /// <summary>Resource bar gizmo for RAM (cyberdeck users) and stamina (while drafted).</summary>
+    /// <summary>Resource bar gizmo for RAM (cyberdeck users) and adrenaline (drafted, or while any is left).</summary>
     [StaticConstructorOnStartup]
     public class Gizmo_CyberBar : Gizmo
     {
         private static readonly Texture2D RamFill = SolidColorMaterials.NewSolidColorTexture(new Color(0.2f, 0.65f, 0.95f));
-        private static readonly Texture2D StaminaFill = SolidColorMaterials.NewSolidColorTexture(new Color(0.95f, 0.8f, 0.2f));
-        private static readonly Texture2D ExhaustedFill = SolidColorMaterials.NewSolidColorTexture(new Color(0.6f, 0.2f, 0.2f));
+        private static readonly Texture2D AdrenalineFill = SolidColorMaterials.NewSolidColorTexture(new Color(0.95f, 0.45f, 0.15f));
+        private static readonly Texture2D SurgeFill = SolidColorMaterials.NewSolidColorTexture(new Color(1f, 0.2f, 0.2f));
         private static readonly Texture2D Empty = SolidColorMaterials.NewSolidColorTexture(new Color(0.08f, 0.08f, 0.08f));
 
         private readonly CompCyberTracker tracker;
@@ -49,11 +49,10 @@ namespace RimPunkCE
             }
             else
             {
-                var need = tracker.Stamina;
-                cur = need?.CurLevel ?? 0f;
-                max = need?.MaxLevel ?? 1f;
-                label = "RPC_Stamina".Translate();
-                fill = need != null && need.Exhausted ? ExhaustedFill : StaminaFill;
+                cur = tracker.Adrenaline;
+                max = tracker.AdrenalineMax;
+                label = "RPC_Adrenaline".Translate();
+                fill = tracker.AdrenalineFraction >= RPDefOf.RPC_AdrenalineTuning.surgeFraction ? SurgeFill : AdrenalineFill;
             }
 
             Text.Font = GameFont.Tiny;
@@ -64,6 +63,7 @@ namespace RimPunkCE
             Widgets.Label(bar, cur.ToString("0.#") + " / " + max.ToString("0.#"));
             Text.Anchor = TextAnchor.UpperLeft;
             Text.Font = GameFont.Small;
+            if (kind == CyberBarKind.Adrenaline) TooltipHandler.TipRegion(rect, "RPC_AdrenalineTip".Translate());
             return new GizmoResult(GizmoState.Clear);
         }
     }

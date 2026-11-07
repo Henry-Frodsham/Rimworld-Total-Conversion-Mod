@@ -29,7 +29,9 @@ namespace RimPunkCE
             list.Label("RPC_Settings_CyberpsychosisChanceMultiplier".Translate(Settings.cyberpsychosisChanceMultiplier.ToStringPercent()));
             Settings.cyberpsychosisChanceMultiplier = list.Slider(Settings.cyberpsychosisChanceMultiplier, 0f, 4f);
             list.CheckboxLabeled("RPC_Settings_VisualEffects".Translate(), ref Settings.visualEffects);
-            list.CheckboxLabeled("RPC_Settings_StaminaEnabled".Translate(), ref Settings.staminaEnabled);
+            list.CheckboxLabeled("RPC_Settings_AdrenalineEnabled".Translate(), ref Settings.adrenalineEnabled);
+            list.CheckboxLabeled("RPC_Settings_ContextualAI".Translate(), ref Settings.contextualAI, "RPC_Settings_ContextualAITip".Translate());
+            list.CheckboxLabeled("RPC_Settings_Barks".Translate(), ref Settings.barks);
             list.CheckboxLabeled("RPC_Settings_FactionsDefault".Translate(), ref Settings.cyberpunkFactionsDefault, "RPC_Settings_FactionsDefaultTip".Translate());
             list.CheckboxLabeled("RPC_Settings_DebugLogging".Translate(), ref Settings.debugLogging);
             list.CheckboxLabeled("RPC_Settings_Diagnostics".Translate(), ref Settings.diagnostics, "RPC_Settings_DiagnosticsTip".Translate());
@@ -43,7 +45,9 @@ namespace RimPunkCE
         public float capacityMultiplier = 1f;
         public float cyberpsychosisChanceMultiplier = 1f;
         public bool visualEffects = true;
-        public bool staminaEnabled = true;
+        public bool adrenalineEnabled = true;
+        public bool contextualAI = true;
+        public bool barks = true;
         public bool debugLogging;
         /// <summary>Corps and gangs are the default factions in a new world (vanilla still selectable).</summary>
         public bool cyberpunkFactionsDefault = true;
@@ -55,7 +59,9 @@ namespace RimPunkCE
             Scribe_Values.Look(ref capacityMultiplier, "capacityMultiplier", 1f);
             Scribe_Values.Look(ref cyberpsychosisChanceMultiplier, "cyberpsychosisChanceMultiplier", 1f);
             Scribe_Values.Look(ref visualEffects, "visualEffects", true);
-            Scribe_Values.Look(ref staminaEnabled, "staminaEnabled", true);
+            Scribe_Values.Look(ref adrenalineEnabled, "adrenalineEnabled", true);
+            Scribe_Values.Look(ref contextualAI, "contextualAI", true);
+            Scribe_Values.Look(ref barks, "barks", true);
             Scribe_Values.Look(ref debugLogging, "debugLogging");
             Scribe_Values.Look(ref cyberpunkFactionsDefault, "cyberpunkFactionsDefault", true);
             Scribe_Values.Look(ref diagnostics, "diagnostics", true);

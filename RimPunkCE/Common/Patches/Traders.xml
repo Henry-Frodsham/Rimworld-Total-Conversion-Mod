@@ -23,6 +23,12 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
       </li>
+      <!-- quickhack shards (gen_quickhacks.py) -->
+      <li Class="StockGenerator_Tag">
+        <tradeTag>RPC_QuickhackShard</tradeTag>
+        <thingDefCountRange>2~4</thingDefCountRange>
+        <countRange>1~2</countRange>
+      </li>
     </value>
   </Operation>
 
