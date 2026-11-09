@@ -24,6 +24,8 @@ from xml.sax.saxutils import escape
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'weapons.json')
 MAX_RANGE = 40
+with open(os.path.join(os.path.dirname(__file__), 'data', 'weapon_sounds.json'), encoding='utf-8') as sound_config:
+    WEAPON_SOUNDS = json.load(sound_config)['profiles']
 
 # ---------------------------------------------------------------- balance tables
 
@@ -181,6 +183,16 @@ def gun_tex(dn, fam, typ):
     own = f'Things/RimPunk/Weapons/{dn}/{dn}'
     if os.path.exists(os.path.join(ROOT, 'Common', 'Textures', *own.split('/')) + '.png'): return own
     return fam['tex'] if typ != 'tech' else 'Things/Item/Equipment/WeaponRanged/ChargeRifle'
+
+
+def firing_sound(typ, family):
+    if typ == 'tech':
+        key = 'tech_' + ('light' if family in ('Pistol', 'SMG') else 'heavy' if family in ('Shotgun', 'Sniper', 'MG') else 'medium')
+    elif typ == 'smart':
+        key = 'smart_' + ('light' if family in ('Pistol', 'Revolver', 'SMG') else 'heavy')
+    else:
+        key = 'gun_' + family.lower()
+    return WEAPON_SOUNDS[key]['defName']
 
 
 def projectile(defname, label, base, dmg, penS, penB, speed, pellets=None, cls=None, tracer=False, charged=False, gravity=None):
@@ -356,6 +368,7 @@ for w in guns:
     mult = MANUFACTURER.get(manu, 1.0)
     dn = thing_defname('RPC_Gun_', w['name'], fam['fam'])
     typ = w['type'] or 'power'
+    shot_sound = firing_sound(typ, fam['fam'])
     market = int(round(MARKET[fam['fam']] * mult * (1.3 if typ != 'power' else 1.0) / 10) * 10)
     verb = {'power': 'CombatExtended.Verb_ShootCE', 'tech': 'RimPunkCE.Verb_ShootTech', 'smart': 'RimPunkCE.Verb_ShootSmart'}[typ]
     rng = min(MAX_RANGE, int(round(w['range'] or 30)))
@@ -397,6 +410,7 @@ for w in guns:
       <WorkToMake>{fam['work']}</WorkToMake>
       <Mass>{fam['mass']}</Mass>
       <MarketValue>{market}</MarketValue>
+      <RangedWeapon_DamageMultiplier>{r2(w.get('damageMultiplier', 1.0))}</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
 {cost_xml}    </costList>
@@ -414,7 +428,7 @@ for w in guns:
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>{first_proj}</defaultProjectile>
         <range>{rng}</range>
-        <soundCast>{fam['snd'] if typ != 'tech' else 'Shot_ChargeRifle'}</soundCast>
+        <soundCast>{shot_sound}</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -424,6 +438,7 @@ for w in guns:
     <statBases>
       <Mass>{fam['mass']}</Mass>
       <RangedWeapon_Cooldown>{r2(cooldown)}</RangedWeapon_Cooldown>
+      <RangedWeapon_DamageMultiplier>{r2(w.get('damageMultiplier', 1.0))}</RangedWeapon_DamageMultiplier>
       <SightsEfficiency>{fam['sights']}</SightsEfficiency>
       <ShotSpread>{fam['spread']}</ShotSpread>
       <SwayFactor>{fam['sway']}</SwayFactor>
@@ -437,8 +452,7 @@ for w in guns:
       <defaultProjectile>{first_proj}</defaultProjectile>
       <warmupTime>{fam['warm']}</warmupTime>
       <range>{rng}</range>{burst_xml}
-      <soundCast>{fam['snd'] if typ != 'tech' else 'Shot_ChargeRifle'}</soundCast>
-      <soundCastTail>{fam['tail']}</soundCastTail>
+      <soundCast>{shot_sound}</soundCast>
       <muzzleFlashScale>9</muzzleFlashScale>
     </Properties>
     <AmmoUser>
@@ -475,7 +489,7 @@ for w in melee:
         tools.append(f'''      <li Class="CombatExtended.ToolCE">
         <label>{label}</label>
         <capacities><li>{cap}</li></capacities>
-        <power>{r2(power * mult)}</power>
+        <power>{r2(power * mult * w.get('damageMultiplier', 1.0))}</power>
         <cooldownTime>{cd}</cooldownTime>{pen}{ex}
       </li>''')
     comps = ''

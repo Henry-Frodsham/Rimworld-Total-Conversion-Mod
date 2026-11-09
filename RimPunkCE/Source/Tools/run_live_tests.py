@@ -69,6 +69,8 @@ def make_links(links):
 
 
 def main():
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(errors='replace')  # weapon/faction names may not fit the Windows console code page
     ap = argparse.ArgumentParser()
     ap.add_argument('--filter', default='')
     ap.add_argument('--timeout', type=int, default=1500, help='seconds before the run is abandoned')

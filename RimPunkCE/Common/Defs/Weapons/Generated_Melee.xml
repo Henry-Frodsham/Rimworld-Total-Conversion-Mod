@@ -35,14 +35,14 @@
       <li Class="CombatExtended.ToolCE">
         <label>head</label>
         <capacities><li>Blunt</li></capacities>
-        <power>20</power>
+        <power>15</power>
         <cooldownTime>2.6</cooldownTime>
         <armorPenetrationBlunt>7</armorPenetrationBlunt>
       </li>
       <li Class="CombatExtended.ToolCE">
         <label>handle</label>
         <capacities><li>Poke</li></capacities>
-        <power>4</power>
+        <power>3</power>
         <cooldownTime>1.8</cooldownTime>
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
@@ -333,14 +333,14 @@
       <li Class="CombatExtended.ToolCE">
         <label>head</label>
         <capacities><li>Blunt</li></capacities>
-        <power>13</power>
+        <power>12.35</power>
         <cooldownTime>2.2</cooldownTime>
         <armorPenetrationBlunt>4.5</armorPenetrationBlunt>
       </li>
       <li Class="CombatExtended.ToolCE">
         <label>handle</label>
         <capacities><li>Poke</li></capacities>
-        <power>3</power>
+        <power>2.85</power>
         <cooldownTime>1.7</cooldownTime>
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
@@ -381,7 +381,7 @@
       <li Class="CombatExtended.ToolCE">
         <label>head</label>
         <capacities><li>Blunt</li></capacities>
-        <power>13</power>
+        <power>12.35</power>
         <cooldownTime>2.2</cooldownTime>
         <armorPenetrationBlunt>4.5</armorPenetrationBlunt>
         <extraMeleeDamages>
@@ -391,7 +391,7 @@
       <li Class="CombatExtended.ToolCE">
         <label>handle</label>
         <capacities><li>Poke</li></capacities>
-        <power>3</power>
+        <power>2.85</power>
         <cooldownTime>1.7</cooldownTime>
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
@@ -432,7 +432,7 @@
       <li Class="CombatExtended.ToolCE">
         <label>head</label>
         <capacities><li>Blunt</li></capacities>
-        <power>13</power>
+        <power>12.35</power>
         <cooldownTime>2.2</cooldownTime>
         <armorPenetrationBlunt>4.5</armorPenetrationBlunt>
         <extraMeleeDamages>
@@ -442,7 +442,7 @@
       <li Class="CombatExtended.ToolCE">
         <label>handle</label>
         <capacities><li>Poke</li></capacities>
-        <power>3</power>
+        <power>2.85</power>
         <cooldownTime>1.7</cooldownTime>
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
@@ -483,7 +483,7 @@
       <li Class="CombatExtended.ToolCE">
         <label>head</label>
         <capacities><li>Blunt</li></capacities>
-        <power>13</power>
+        <power>12.35</power>
         <cooldownTime>2.2</cooldownTime>
         <armorPenetrationBlunt>4.5</armorPenetrationBlunt>
         <extraMeleeDamages>
@@ -493,7 +493,7 @@
       <li Class="CombatExtended.ToolCE">
         <label>handle</label>
         <capacities><li>Poke</li></capacities>
-        <power>3</power>
+        <power>2.85</power>
         <cooldownTime>1.7</cooldownTime>
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
@@ -650,14 +650,14 @@
       <li Class="CombatExtended.ToolCE">
         <label>head</label>
         <capacities><li>Blunt</li></capacities>
-        <power>20</power>
+        <power>15</power>
         <cooldownTime>2.6</cooldownTime>
         <armorPenetrationBlunt>7</armorPenetrationBlunt>
       </li>
       <li Class="CombatExtended.ToolCE">
         <label>handle</label>
         <capacities><li>Poke</li></capacities>
-        <power>4</power>
+        <power>3</power>
         <cooldownTime>1.8</cooldownTime>
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
@@ -1081,14 +1081,14 @@
       <li Class="CombatExtended.ToolCE">
         <label>head</label>
         <capacities><li>Blunt</li></capacities>
-        <power>13</power>
+        <power>12.35</power>
         <cooldownTime>2.2</cooldownTime>
         <armorPenetrationBlunt>4.5</armorPenetrationBlunt>
       </li>
       <li Class="CombatExtended.ToolCE">
         <label>handle</label>
         <capacities><li>Poke</li></capacities>
-        <power>3</power>
+        <power>2.85</power>
         <cooldownTime>1.7</cooldownTime>
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>
@@ -1184,14 +1184,14 @@
       <li Class="CombatExtended.ToolCE">
         <label>head</label>
         <capacities><li>Blunt</li></capacities>
-        <power>13</power>
+        <power>12.35</power>
         <cooldownTime>2.2</cooldownTime>
         <armorPenetrationBlunt>4.5</armorPenetrationBlunt>
       </li>
       <li Class="CombatExtended.ToolCE">
         <label>handle</label>
         <capacities><li>Poke</li></capacities>
-        <power>3</power>
+        <power>2.85</power>
         <cooldownTime>1.7</cooldownTime>
         <armorPenetrationBlunt>1</armorPenetrationBlunt>
       </li>

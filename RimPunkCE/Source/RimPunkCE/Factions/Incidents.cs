@@ -20,13 +20,14 @@ namespace RimPunkCE
 
         protected override bool CanFireNowSub(IncidentParms parms)
         {
-            if (parms.target is not Map map || NetWatch == null) return false;
+            if (!WorldFeatures.Quickhacks || parms.target is not Map map || NetWatch == null) return false;
             int now = Find.TickManager.TicksGame;
             return map.mapPawns.FreeColonistsSpawned.Any(p => now - (p.GetCyberTracker()?.lastHighTierQuickhackTick ?? -999999) < RecentQuickhackTicks);
         }
 
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
+            if (!WorldFeatures.Quickhacks) return false;
             var nw = NetWatch;
             if (nw == null) return false;
             if (!nw.HostileTo(Faction.OfPlayer)) CyberFactionUtility.ForceRelation(nw, Faction.OfPlayer, FactionRelationKind.Hostile, "RPC_NetWatchReason".Translate());

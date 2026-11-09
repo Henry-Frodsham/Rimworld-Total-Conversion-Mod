@@ -1,5 +1,5 @@
-"""Draft textures for the custom faction gear (Trauma Team, MaxTac): vanilla shapes recoloured (flat or shaded), plus simple emblems.
-Meant as a starting point for hand refinement.
+"""Offline draft textures only: vanilla shapes recoloured (flat or shaded), plus simple emblems.
+Writes Source/Art/Drafts, never the live textures. Trauma Team and MaxTac's live art is hand-drawn and protected.
 
     python -I Source/Tools/gen_apparel_textures.py --templates <folder>
 
@@ -21,8 +21,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from polish_art import polish
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
-OUT = os.path.join(ROOT, 'Common', 'Textures', 'Things', 'RimPunk', 'Apparel')
-TRACK = os.path.join(os.path.dirname(__file__), 'data', 'apparel_textures_generated.txt')
+DRAFTS = os.path.join(ROOT, 'Source', 'Art', 'Drafts')
+OUT = os.path.join(DRAFTS, 'Textures', 'Things', 'RimPunk', 'Apparel')
+TRACK = os.path.join(DRAFTS, 'apparel_textures_generated.txt')
 V = 'Things/Pawn/Humanlike/Apparel/'
 BODIES = ['Male', 'Female', 'Thin', 'Hulk', 'Fat']
 DIRS = ['south', 'north', 'east']
@@ -391,7 +392,7 @@ def main():
             made += 1
     for rel_path, (tmpl, draw) in EXTRA.items():
         rel = rel_path + '.png'
-        dst = os.path.join(ROOT, 'Common', 'Textures', *rel.split('/'))
+        dst = os.path.join(DRAFTS, 'Textures', *rel.split('/'))
         if os.path.exists(dst) and tracked.get(rel) != sha(dst):
             kept.append(rel)
             continue

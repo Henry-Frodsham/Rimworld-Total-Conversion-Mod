@@ -13,14 +13,13 @@
     Times are seconds. Fractions: 0.05 = 5%.
   -->
 
-  <!-- Per-part armor and health from implants (Cyberware/ChromePlating.cs). perTier = T1, T2, T3, T4, T5, Iconic.
-       Target: every slot full at top tier is about a CE centipede (20 mm sharp, 45 MPa blunt, health x4.32).
-       partSlots: implants on a body part plate it and everything below it. Blunt and sharp add to the pawn-wide armor stat.
-       wholeBodySlots: these add health to every part (their armor is the existing pawn-wide stat). -->
+  <!-- Cycle 2: dedicated implants supply armour; general implants retain health only.
+       perTier = T1, T2, T3, T4, T5, Iconic. Local armour and multipliers share the same ceiling.
+       partSlots contribute health to their part and descendants; wholeBodySlots add health to every part. -->
   <RimPunkCE.ChromePlatingTuningDef>
     <defName>RPC_ChromePlatingTuning</defName>
-    <partSharp><perTier><li>0.5</li><li>1</li><li>1.5</li><li>2.5</li><li>3.25</li><li>4</li></perTier></partSharp>
-    <partBlunt><perTier><li>1</li><li>2</li><li>3.5</li><li>5.5</li><li>7</li><li>9</li></perTier></partBlunt>
+    <partSharp><perTier><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li></perTier></partSharp>
+    <partBlunt><perTier><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li></perTier></partBlunt>
     <partHealth><perTier><li>0.15</li><li>0.25</li><li>0.35</li><li>0.5</li><li>0.65</li><li>0.8</li></perTier></partHealth>
     <wholeBodyHealth><perTier><li>0.05</li><li>0.1</li><li>0.2</li><li>0.3</li><li>0.4</li><li>0.5</li></perTier></wholeBodyHealth>
     <partSlots>
@@ -34,9 +33,9 @@
       <li>RPC_Slot_IntegumentarySystem</li>
     </wholeBodySlots>
     <maxHealthFactor>4.3</maxHealthFactor>
-    <!-- pawn-wide armor on a chromed pawn stops here; part plating adds on top, worn apparel isn't capped -->
-    <maxPawnSharp>22</maxPawnSharp>
-    <maxPawnBlunt>50</maxPawnBlunt>
+    <!-- Implant-only ceiling after all plating/multipliers. Race armour and apparel are separate. -->
+    <maxPawnSharp>10</maxPawnSharp>
+    <maxPawnBlunt>25</maxPawnBlunt>
     <!-- pawn generation: pawns with this much chrome can get armor implants, without going over aiMaxUsage -->
     <aiMinChrome>3</aiMinChrome>
     <aiFirstArmorChance>0.6</aiFirstArmorChance>
@@ -65,13 +64,15 @@
     <stages>
       <li>
         <statOffsets>
-          <ArmorRating_Sharp>6</ArmorRating_Sharp>
-          <ArmorRating_Blunt>14</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0</ArmorRating_Blunt>
         </statOffsets>
       </li>
     </stages>
     <modExtensions>
       <li Class="RimPunkCE.PartPlatingExtension">
+        <sharp>2.4</sharp>
+        <blunt>5.6</blunt>
         <health>0.75</health>
       </li>
     </modExtensions>

@@ -173,15 +173,15 @@ namespace RimPunkCE
             Check(!CyberpsychosisUtility.InCyberpsychosis(b), "held off while the blocker runs");
             b.health.RemoveHediff(b.health.hediffSet.GetFirstHediffOfDef(Hediff("RPC_ImmunoblockerHigh_BlackLace")));
             yield return 2;
-            Check(CyberpsychosisUtility.InCyberpsychosis(b), $"blocker off with burnout over 50%: episode ({b.GetCyberTracker().UsageRatio:P0})");
+            Check(!CyberpsychosisUtility.InCyberpsychosis(b), "blocker expiry no longer triggers a capacity-threshold episode");
 
             // David's last stand: permanent when it ends
             var d = Colonist(Center + new IntVec3(-4, 0, 0));
             d.health.AddHediff(Hediff("RPC_ImmunoblockerHigh_DavidsLastStand"));
             d.health.RemoveHediff(d.health.hediffSet.GetFirstHediffOfDef(Hediff("RPC_ImmunoblockerHigh_DavidsLastStand")));
             yield return 2;
-            Check(CyberpsychosisUtility.IsPermanent(d), "last stand ends in permanent cyberpsychosis");
-            Check(CyberpsychosisUtility.InCyberpsychosis(d), "and the episode starts");
+            Check(!CyberpsychosisUtility.IsPermanent(d), "last stand no longer forces permanent rogue on unchromed pawn");
+            Check(!CyberpsychosisUtility.InCyberpsychosis(d), "unchromed pawn has no psychosis crash");
         }
 
         // ------------------------------------------------------------------------------------ cyberpsychosis
@@ -209,7 +209,8 @@ namespace RimPunkCE
             }
             Check(fought, $"the cyberpsycho goes for people (job {p.CurJobDef?.defName})");
 
-            // chrome off below 50%: it ends, and leaves burnout
+            // Action-based treatment ends a temporary break, without requiring chrome removal.
+            CyberpsychosisUtility.RecoverInstability(p, InstabilityRecovery.MedicalCare, 100f);
             foreach (var c in p.InstalledCyberware().ToList()) p.health.RemoveHediff(c);
             for (int i = 0; i < 40 && CyberpsychosisUtility.InCyberpsychosis(p); i++) yield return 15;
             Check(!CyberpsychosisUtility.InCyberpsychosis(p), $"ended once under 50% ({t.UsageRatio:P0})");
@@ -219,7 +220,7 @@ namespace RimPunkCE
             // from now on, over 50% is instant
             RimPunkDebugActions.DebugInstall(p, Hediff("RPC_DynalarSandevistan"), CyberTier.T5);
             yield return 2;
-            Check(CyberpsychosisUtility.InCyberpsychosis(p), $"with burnout, going over 50% starts an episode ({t.UsageRatio:P0})");
+            Check(!CyberpsychosisUtility.InCyberpsychosis(p), "burnout is a historical scar, not an instant capacity threshold");
 
             // who can't get it
             var deathless = Colonist(Center + new IntVec3(-8, 0, 0));

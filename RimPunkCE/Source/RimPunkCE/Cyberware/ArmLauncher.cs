@@ -6,6 +6,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using Verse.Sound;
 
 namespace RimPunkCE
 {
@@ -60,6 +61,7 @@ namespace RimPunkCE
             }
             MapComponent_CyberAnimations.Play(caster, CyberAnimKind.LauncherFire, new LocalTargetInfo(cell), Color.white);
             ArmLauncherUtility.Launch(caster, shell, target.HasThing ? target : new LocalTargetInfo(cell), cell);
+            DefDatabase<SoundDef>.GetNamed("RPC_Shot_ArmLauncher").PlayOneShot(new TargetInfo(caster.Position, map));
             if (mag.Loaded <= 0) mag.TryStartReload(queue: true);
         }
 

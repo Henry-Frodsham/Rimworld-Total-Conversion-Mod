@@ -16,7 +16,8 @@ namespace RimPunkCE.Patches
         public static void Postfix(Pawn pawn, StatDef stat, BodyPartRecord part, ref float __result)
         {
             if (part == null || pawn?.RaceProps?.Humanlike != true) return;
-            __result += ChromePlatingUtility.ArmorFor(pawn, stat, part);
+            // Pawn stat already includes whole-body plating; add only the per-part difference.
+            __result += ChromePlatingUtility.ArmorFor(pawn, stat, part) - ChromePlatingUtility.ArmorFor(pawn, stat, null);
         }
     }
 

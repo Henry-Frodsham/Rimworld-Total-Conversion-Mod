@@ -1,0 +1,902 @@
+[
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Fat_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Fat_east.png",
+    "SHA256": "39AC1D0418B027FFB43CED8A2A184D3D9328E549056672F1DD0B05701A30F7CB"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Fat_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Fat_north.png",
+    "SHA256": "FB3FF7D419CFB971C74868DED77BB6458ACAC1B96A3E0C793141FECC8DF1B17F"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Fat_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Fat_south.png",
+    "SHA256": "98FC909C227BA4B285CEE85476D9DA63BDD5D16412C9883C64C5E8BC86D6E3AA"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Female_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Female_east.png",
+    "SHA256": "6D9CF2C5398831215E1AC6D7241864266F40AC350887A39274C4A72C7CF940C8"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Female_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Female_north.png",
+    "SHA256": "A2E52588A45A627D3F03556FA18BBEB70098B22FCEAF37B5F5210B2D0B9AF00F"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Female_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Female_south.png",
+    "SHA256": "3A528221B1D0CAE300109A3425E89614B0C6145097BF32927FA51DCB5748185B"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Hulk_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Hulk_east.png",
+    "SHA256": "7E0BB6659356A64441D0261027B30F9C76C67097503579BAFEA2EF6C55DFD208"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Hulk_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Hulk_north.png",
+    "SHA256": "236E12B1CE09F446CFCF589B95A40E1E34482E62EE0288F273CC4A0D717CA5FF"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Hulk_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Hulk_south.png",
+    "SHA256": "126B25E68655AFCB5EC6A486DD91F8E8DECCD09ADC05D53F635A54DA2B438E12"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Male_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Male_east.png",
+    "SHA256": "ED7BFAB262BD509D935503A9E46636E2A675C4FC8CFF2057C1C3271A50233DB3"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Male_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Male_north.png",
+    "SHA256": "637F9D1D245EADF582BB1690D8477F9DB090F4ECEC3C1CECEBEE2E05B2350FD1"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Male_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Male_south.png",
+    "SHA256": "8D5DB9A9793D09B4E89B51E82F5FD9A8EE50809F566C6A8A993C84CAA479F433"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Thin_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Thin_east.png",
+    "SHA256": "6BE45253B816203A76BCA7AF6BA1F2A0BB59FF6222CAA222C7E821F91A88CC02"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Thin_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Thin_north.png",
+    "SHA256": "CC4B872EA6A830D9C3F46044C4F0E5F3C1F52A726A1C7D965BF1D3684EFF86C3"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Thin_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit_Thin_south.png",
+    "SHA256": "34D01C32180468BEBAAF1702D2D57B8564969DCEAF9AB3B6BA62FC5CEFE039BB"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaBodysuit\\ArasakaBodysuit.png",
+    "SHA256": "F0D8DAD9AA73914BD0CEC1C447AC14F81822F736141C007AD2ED7A1ABBD7F1F4"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaCombatHelmet\\ArasakaCombatHelmet_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaCombatHelmet\\ArasakaCombatHelmet_east.png",
+    "SHA256": "677A2A8426B807EDF67D6A45A38B5102A7620211051103CE78B8DD7CA5C7DBF8"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaCombatHelmet\\ArasakaCombatHelmet_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaCombatHelmet\\ArasakaCombatHelmet_north.png",
+    "SHA256": "9EDF858CC8B4FD186B27A215C27EC92BE6BB240F0B6AAD7E8B45C5635985AC96"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaCombatHelmet\\ArasakaCombatHelmet_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaCombatHelmet\\ArasakaCombatHelmet_south.png",
+    "SHA256": "3B1C9BE1D949F068E3E0E589D91D13B3DA25BD49CAF89ED45D14FF2F426E55D1"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaCombatHelmet\\ArasakaCombatHelmet.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaCombatHelmet\\ArasakaCombatHelmet.png",
+    "SHA256": "EB1FEA68683266751D71951C1E1A3E1B633B404ED0331436184089C8270CE93E"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Fat_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Fat_east.png",
+    "SHA256": "D130B4BE300964CC7B5D08206D62053AA3396C307EEB941D777C268FBD8285DA"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Fat_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Fat_north.png",
+    "SHA256": "49D72217867D537556791AA80F2734030E44B52BE9974C6F2334FDCFAA66BA11"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Fat_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Fat_south.png",
+    "SHA256": "06E6EEB83B967A51EE822DE315A327596427B0BE3F66B54C04413D2C52760EA6"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Female_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Female_east.png",
+    "SHA256": "7C046F0650428C4078D09EC6081072453F0F7B6815BFA6F79E5E343B769297D9"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Female_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Female_north.png",
+    "SHA256": "B1B0B448FB4AA5F36BAA1A80855E668030B5D5567058EDC4928A8613D2F6F7CE"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Female_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Female_south.png",
+    "SHA256": "60AC5A30E5D1C6BAA99C85941ED1DD36BB8668359302539B0EB23AEE75C45327"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Hulk_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Hulk_east.png",
+    "SHA256": "A84A28416E68F0281E83EF5A2A59743D06E6008A0BBE114E8EBF82923DD0962F"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Hulk_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Hulk_north.png",
+    "SHA256": "C748C8B6E67FA537BEC1572CCB84177DD2D9029693E8DA4A6020DAB17B2A7588"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Hulk_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Hulk_south.png",
+    "SHA256": "1C26474117FFBBB5B5DDECAEAFDF73CF4CF7B91A58C82F0867EAC93D38388D70"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Male_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Male_east.png",
+    "SHA256": "4549251138D5473BA628A7AE5C658C0CFA9F8AC0653FAD36851A2A0E9F453FC9"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Male_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Male_north.png",
+    "SHA256": "E6C28E18C3A030584B6C680E1B52796E570B12C9BB266D1A9864C9604964527F"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Male_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Male_south.png",
+    "SHA256": "F81F5831CF6AF56E1B2CBD5F41EA48217A16DBC17F18AB6A11D30DF6AF7F4218"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Thin_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Thin_east.png",
+    "SHA256": "A8D86803BB56EBA4A38A7A875BAB17D3A0F1903BCC27E2E077EBA81513119895"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Thin_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Thin_north.png",
+    "SHA256": "AADDD7847A51DEC8BD29B8FAA44CC0D3C75735608F7E9B19561A19CB1893D566"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Thin_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster_Thin_south.png",
+    "SHA256": "3B49FBF0B69905ACADBB536577832FE0DB5442519C738D516B25CC4C5C6EED33"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaDuster\\ArasakaDuster.png",
+    "SHA256": "4E4524F972F0E6E7DA5289E0A6BA189D4E7C8D7CDE90522685388EFBFAE1C5D7"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Fat_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Fat_east.png",
+    "SHA256": "634EACE58D3A2031C4D8E0847A7E0F06C2C280106C8DC9068C9B9A839964CBFE"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Fat_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Fat_north.png",
+    "SHA256": "A71EA924F3195A3582D398A58FABF29B16EC8130D518C65DA94077587718A113"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Fat_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Fat_south.png",
+    "SHA256": "4C5F66A8D250B16FC56DA0A70599510D0326289B4D3922C2E45A815A0CE9DE91"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Female_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Female_east.png",
+    "SHA256": "C8BDA881AF02B6C170648E912762E69342A5C3A8B737D94216F818667FE7F8B6"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Female_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Female_north.png",
+    "SHA256": "ACE9254D74327F0F11998ED674AA43D5024EA8C4E077A055B9EE51B5A1D2132A"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Female_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Female_south.png",
+    "SHA256": "BB0F89C9B4E63B3B97721BEC697C92CCB30CCE789140F1236D31D99434DDC0AC"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Hulk_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Hulk_east.png",
+    "SHA256": "FA2808CDA6E41D78523418D0E4AD53086DB0DDE3D41FB7422C134C94412A3F9D"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Hulk_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Hulk_north.png",
+    "SHA256": "5D45D05F33F2E37BB1F2ED09C17D557305729305A4E14397638C0775C61E1BA5"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Hulk_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Hulk_south.png",
+    "SHA256": "433D53D11713FFEB69771B306CA48A5080B2E2908B132B9C4D3062E3D44DC556"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Male_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Male_east.png",
+    "SHA256": "C7E7E10B21D2091CEEA2011D00239DF4D4332022EB1A4EFB9E6746D817AF2271"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Male_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Male_north.png",
+    "SHA256": "71640C6F6AF535A2FD60EF6D69218B1EC8D633BEF187F06F0FCB5E3E8B911119"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Male_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Male_south.png",
+    "SHA256": "A5AF55ED4CE5A00A155915ECEDC6DBDB9DB2CFADE58BB7D7D5ABC5D62F8DEEE1"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Thin_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Thin_east.png",
+    "SHA256": "8F3B4E19E0DEC15D051F499A59DB43DE197A2B6CEE145A577569E6481FDA4A6F"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Thin_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Thin_north.png",
+    "SHA256": "80917D4A228DC72F778FE19542433BB8BFB3C977CF690FD51B52B6B5BCD5299A"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Thin_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor_Thin_south.png",
+    "SHA256": "7098151256D0250A0136ED7D2654437AEE622F3D322AB74745E5D83C09B24FCF"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyArmor\\ArasakaHeavyArmor.png",
+    "SHA256": "5BE3F2FEA40C118EAC220FC247DEF05F94E374BBE607F7392375ADDBA0CB5367"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyHelmet\\ArasakaHeavyHelmet_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyHelmet\\ArasakaHeavyHelmet_east.png",
+    "SHA256": "3CBFD217C14CBA058E5C0B20E1AB8C223F84C0FEF086A2253C85FDD153EBB143"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyHelmet\\ArasakaHeavyHelmet_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyHelmet\\ArasakaHeavyHelmet_north.png",
+    "SHA256": "9C4A5CFE7C551023D12AB1F6B5E4BB8A752A81CCE1C724153E26E63B7E0DE04A"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyHelmet\\ArasakaHeavyHelmet_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyHelmet\\ArasakaHeavyHelmet_south.png",
+    "SHA256": "6B722B2EF64059D0E482C7026FCABA1BEAB0CCC87D4F75E6D957068AED58B968"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaHeavyHelmet\\ArasakaHeavyHelmet.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaHeavyHelmet\\ArasakaHeavyHelmet.png",
+    "SHA256": "C166B0AB0D2A780053CD42ECF8B8BA277C0C057BB57E05D4937F9D72EB82EADC"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Fat_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Fat_east.png",
+    "SHA256": "E799F8719E0A3F3F257931183E6DCD4A745E9D9141F89A7535002D226EDB5B75"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Fat_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Fat_north.png",
+    "SHA256": "70C40D4472417AD62FCDACFF687DD885938353EA49F7AEA148EC84363E807946"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Fat_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Fat_south.png",
+    "SHA256": "C97B883C1738A54FD3B276F3235484A61A2AD743832E0F97F00D0D1DBA0A7A60"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Female_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Female_east.png",
+    "SHA256": "FCA32AAA24323EB4DC5B024D9902A15CAE99A2253EDC3D51861255C1FD63FA3E"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Female_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Female_north.png",
+    "SHA256": "787CAE4E06FEE1830EC2E5C4CCF30CB8DD49E5F05F889ED909EBE0A9BDBCFB78"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Female_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Female_south.png",
+    "SHA256": "AA91A83F5B3DBC6F09A26A1435489DDB848E582416EC611F926D335697B135D9"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Hulk_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Hulk_east.png",
+    "SHA256": "C4471F5647EE9A5EB5EB5872DE71901178A05FA966DCA7D43C09A3080072E54F"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Hulk_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Hulk_north.png",
+    "SHA256": "397203D5E638332D515D4FD249676764CE561780C10C8EE8A74DB6405859812D"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Hulk_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Hulk_south.png",
+    "SHA256": "E401D1F224A1262221694EF4D471B834A6FFABB81509D533A58C2CDED3CDC0D1"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Male_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Male_east.png",
+    "SHA256": "18616F96C762304A8C3BCFFFB7E192F9D935EACDD4FEE5A1EABE34F46CECDDCF"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Male_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Male_north.png",
+    "SHA256": "DCDB3E401D4470926A4E1B9128FFEF19A809DE17177423B7199D232AC0B7B7BD"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Male_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Male_south.png",
+    "SHA256": "78A5943A2A42DE57E15DD5C89D24A51F296F57967FF3357E0A5E24072F11132D"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Thin_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Thin_east.png",
+    "SHA256": "71C5B4C2FAC0E2F44F2BE91F85399B7022B18AADAD1D111EC002C90BE10A02A2"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Thin_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Thin_north.png",
+    "SHA256": "82B29425A122A5B93B084ADB8A0B02BC0D81F5D5E703367E7A8E6B0CE2920F3D"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Thin_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket_Thin_south.png",
+    "SHA256": "C019208DE2EC4C3B745F7338FAACD6F741F076EC2B517AB94275477D8FD35A15"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaJacket\\ArasakaJacket.png",
+    "SHA256": "F3A243F49EAEA3A461350D1E59B9AF24AD56FFECDF232800FE34BFFBD0EDD6C5"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaNetRig\\ArasakaNetRig_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaNetRig\\ArasakaNetRig_east.png",
+    "SHA256": "92C3A37CF36A34956A3017D17C1531DFF3342619E561F30C54DD17D2460C3978"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaNetRig\\ArasakaNetRig_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaNetRig\\ArasakaNetRig_north.png",
+    "SHA256": "F7276DD471878983EB4E49AEE2E7BB7B847914829DCBE1822F5F39294FC344C8"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaNetRig\\ArasakaNetRig_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaNetRig\\ArasakaNetRig_south.png",
+    "SHA256": "82BE2E0FAD15C8ECA3AC72D1ECF7D87BD18573925456E6E29454410EAF52528A"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaNetRig\\ArasakaNetRig.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaNetRig\\ArasakaNetRig.png",
+    "SHA256": "E18AF570363922BFDD4427B170AD75E1578E48295BAD30906E81D5130AE30379"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Fat_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Fat_east.png",
+    "SHA256": "22707A8BA8DBB80F66337E7599AAAC40EBF811C60871C205219004966CCC3B9D"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Fat_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Fat_north.png",
+    "SHA256": "BB3BD5CA5A191103981E1D142396CBA9A9050215041A14DBD0F96E9990818C86"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Fat_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Fat_south.png",
+    "SHA256": "BB3BD5CA5A191103981E1D142396CBA9A9050215041A14DBD0F96E9990818C86"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Female_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Female_east.png",
+    "SHA256": "F2D29B0C3AB0EADC9AC29F28B99917FA6E894ED4566B17DE568F5C4CFEB6E270"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Female_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Female_north.png",
+    "SHA256": "4DF4FF038A69AFF427906C5AAD46AFF2688B66639D1E7CAAD899FAEB437CE192"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Female_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Female_south.png",
+    "SHA256": "4DF4FF038A69AFF427906C5AAD46AFF2688B66639D1E7CAAD899FAEB437CE192"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Hulk_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Hulk_east.png",
+    "SHA256": "D1BEE5851D0ACE1D0C81C4BE39B4DDC6BB1A30A3868BA08B7A760E7F9655E756"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Hulk_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Hulk_north.png",
+    "SHA256": "E8222D93CA6E0C415BA1F557999AEAA07D9DA538D498A42B9A7ECC43AF886C46"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Hulk_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Hulk_south.png",
+    "SHA256": "E8222D93CA6E0C415BA1F557999AEAA07D9DA538D498A42B9A7ECC43AF886C46"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Male_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Male_east.png",
+    "SHA256": "B223198D0010C6952DF2416C17D15AF575B330B8F617BE555526C50B3AB4E0CD"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Male_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Male_north.png",
+    "SHA256": "C0044BDA782634E0A90CC999C3FEAC5A6CFF40ABDCA363BEC7A8B0CD5A6078D8"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Male_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Male_south.png",
+    "SHA256": "728CC039AC26EF1ECDE059524AEDF4EA572669EE6418731B9121CF63864D9433"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Thin_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Thin_east.png",
+    "SHA256": "37C28B1894F2BC1DD30B035CE5E56C7A9B9C065DD499A9F183F3160E31EB7678"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Thin_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Thin_north.png",
+    "SHA256": "C282DA7749C403490317C6141A7C1EB8DC366F844CBC77B13E43BC2D2190575F"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Thin_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants_Thin_south.png",
+    "SHA256": "C282DA7749C403490317C6141A7C1EB8DC366F844CBC77B13E43BC2D2190575F"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPants\\ArasakaPants.png",
+    "SHA256": "FC9554727E841BF298A59AFF70164BC1B3266A798CF145FEE2D19E1C8E7F8349"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Fat_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Fat_east.png",
+    "SHA256": "BBFD77BA0C11EC03657994A50A39AD5777AA93CD967FAA44F75692528F28BB69"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Fat_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Fat_north.png",
+    "SHA256": "F89F03290597EE6CE02A066959F183A3678CDD745682B663B06796FAAAA808BD"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Fat_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Fat_south.png",
+    "SHA256": "0AC101016B49882B7BB7D9798FFDD41F6D39038A29A9F799A048B1AD19BF593D"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Female_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Female_east.png",
+    "SHA256": "C0B6465D3EB13E9532EAA97750C8CBC05B63A9B463FE905998CF6C73192167B1"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Female_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Female_north.png",
+    "SHA256": "4CDBD0BCB1056851DDFE0BAACD6077D58DE1A1AFFA1454BBCE126F0B0C733096"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Female_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Female_south.png",
+    "SHA256": "102D84B4AE56D2A729756E9402F348FF89A3C8850940282C64CE00406B2D8F24"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Hulk_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Hulk_east.png",
+    "SHA256": "7AC96D8268D1212E9285C5FD5DB4E9A051C5B68BE04B6990C58F8A3F7F6D415D"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Hulk_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Hulk_north.png",
+    "SHA256": "BEB78FD60470D9F2AA9381ED664383DCEB37E6489DE168AA787BF4E004CCF306"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Hulk_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Hulk_south.png",
+    "SHA256": "6A04104FD04AD85C48F465149ECA9B5AA5F891C5809D0FFDB90C8309803CFFC8"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Male_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Male_east.png",
+    "SHA256": "399D1E303378DF415185908C66FB82BC162B86B13C06E82B8C91B02E1DDE447F"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Male_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Male_north.png",
+    "SHA256": "B3E359BD983C09B0771BA0119B54F9659EBF46DC50BF2A77BD913010E8E5B930"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Male_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Male_south.png",
+    "SHA256": "D89E35D2AF2081ABCB5A45C38CC01399C3BDD9D74FCE4F988274978642998D74"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Thin_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Thin_east.png",
+    "SHA256": "7E62CA52BA6AB3A700A4794BCB019CA93B92993BE9B5377A0BB9036F1F9B4C92"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Thin_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Thin_north.png",
+    "SHA256": "0CD4DAD68E352F13F958B5051E22301109C033A7091B2E354801DE30D4DC6181"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Thin_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier_Thin_south.png",
+    "SHA256": "D4695F23163E9975B5A418FB834B6E10F8407877B1F6F5B3FE4190B774E557DA"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaPlateCarrier\\ArasakaPlateCarrier.png",
+    "SHA256": "5C740A40AFEA02D38BDDAF37C1492E15596974A4FAF1555E59CFFB3679FA5BE0"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Fat_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Fat_east.png",
+    "SHA256": "B359C63275DF5F5A9E4429D3D6005E7238B4249509A11AB621E75C2CD2D2F64C"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Fat_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Fat_north.png",
+    "SHA256": "A23B8C65E29986622E8AC6675B0BA176575FB8F1CE856DF1CCA06A8C39E9E4E1"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Fat_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Fat_south.png",
+    "SHA256": "B808610D281726DCAC42D649C5DBC538FDE596A66A4777FAD84C518DD007CA44"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Female_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Female_east.png",
+    "SHA256": "F898EE032434974B5F15393E0055F46BF75547A7DA950749C3B59488995E7DA5"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Female_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Female_north.png",
+    "SHA256": "DCDC0957C274F2F06F2BA4AAA5527D801B7DD64BFB9128942D14CD055D5C1970"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Female_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Female_south.png",
+    "SHA256": "D4C0192F46C24C41F49BAD4CF86F8AA51567B234BFE3D45C9C45D8775F58B28C"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Hulk_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Hulk_east.png",
+    "SHA256": "91E3275C2E8B0D7DBEC51BAE1872D4BF309668CE45BC69577C872B7FACB34859"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Hulk_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Hulk_north.png",
+    "SHA256": "509C0315C65B54A07992CD7C5B9F2C20DC0F44780B25A51DE716D94062CA914A"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Hulk_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Hulk_south.png",
+    "SHA256": "2017C4596E03F474CD4488A8DE5288C374913D27B49739865D34989DAA6F42A7"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Male_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Male_east.png",
+    "SHA256": "AE74490E37709B0254F40E6FAD7CD13E66DCA679B2E299437BC4226FA701A493"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Male_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Male_north.png",
+    "SHA256": "966AB0B8BBE988025D87D475897245F45580F04F63657EC16C000CF3362B2EB4"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Male_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Male_south.png",
+    "SHA256": "D773C4EDD605DA83992EBDD750B5AD796C4A60311F7CD2F252C80302A60EAAF8"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Thin_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Thin_east.png",
+    "SHA256": "1709F60CA31697229B445369AF13227C0B0F0B2EC6916919431F287F3D045B44"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Thin_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Thin_north.png",
+    "SHA256": "4EE5D6A0C29A8F3E55B5D04BA2AA38EC2636EA8BC82450B3AA36D09031514CEC"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Thin_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor_Thin_south.png",
+    "SHA256": "B228C56E1745F179F25AABD5E8CA95C8F5F1358852D266BCBC2A12899E42C91D"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconArmor\\ArasakaReconArmor.png",
+    "SHA256": "0ECF2F5502EDA62BEA37702197C3EAB03B6C4AEEDEC3674D335454FE22E4CA83"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconHelmet\\ArasakaReconHelmet_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconHelmet\\ArasakaReconHelmet_east.png",
+    "SHA256": "704419AE49970410C13EDAF3C37F728371FC6F82DAAD138B7A934469FD7B2BDC"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconHelmet\\ArasakaReconHelmet_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconHelmet\\ArasakaReconHelmet_north.png",
+    "SHA256": "2FD3610E5A91726B838FBA1B577BBF20F678DD9375AAD8B317CBA091F9FECAB6"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconHelmet\\ArasakaReconHelmet_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconHelmet\\ArasakaReconHelmet_south.png",
+    "SHA256": "EB86AEB1277356F60C12E419AFBCB8BDF6FEA39002B34DF0782DEC0EF10E16EA"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaReconHelmet\\ArasakaReconHelmet.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaReconHelmet\\ArasakaReconHelmet.png",
+    "SHA256": "2F1754D6DB3E22327554F70150225641B18F2DDB32560A0E59A3F95E7436A15C"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Fat_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Fat_east.png",
+    "SHA256": "3A0771B7592FB93341CB4F5A667538FDB33DF0BFF7F4726EC41B3C75420B03EB"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Fat_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Fat_north.png",
+    "SHA256": "60A7EFE78166955C65088324F6026581DD32A33473BE38C54BBFEA5F25286154"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Fat_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Fat_south.png",
+    "SHA256": "68072BBDF98096D0940ADCD877A7D96DF0470BE898E003FACA11581A58693364"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Female_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Female_east.png",
+    "SHA256": "763D13CDF8A07260217CD54B70CA2E74575173FB475DCCBEF6BFFA2E4F85FC2A"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Female_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Female_north.png",
+    "SHA256": "34DDAD507513133577E3CC5A000BAE39E4A4C7A073B532A9C5994E3B03A3D6E3"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Female_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Female_south.png",
+    "SHA256": "F8827D7DDD6E315F63B9D45D680767C21EC2C1DE1C71B5B2C44803831A9F9443"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Hulk_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Hulk_east.png",
+    "SHA256": "D34A08BDB5F4BA47CC8BC1A5D1CECA37C910B16AE45B4A1F01CE98BD62376C1D"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Hulk_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Hulk_north.png",
+    "SHA256": "641913F44E886ECD32736344E1E96530D249FFDC16B3CC4E4B4E5D171C17B448"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Hulk_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Hulk_south.png",
+    "SHA256": "AA4029D01749A11A4CD0A56C033964D33540C7B538898706825AD31A9E803171"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Male_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Male_east.png",
+    "SHA256": "1268ECE86CFCB9E376CD0D595796DACD1F007B04AE8741662706F4D908B63714"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Male_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Male_north.png",
+    "SHA256": "2FE1BFA53781B39BB40B842E84AABA2EA48A3AB56D3FDFDEA2459E982E5A9B9C"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Male_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Male_south.png",
+    "SHA256": "490329E75F5DCD3C5AF5D8AD40EE0FDAB67CDFBAD8EEC58B861AF8BFCA444FB6"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Thin_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Thin_east.png",
+    "SHA256": "6F47569D4D4505FAED279A9711726BEA44C6B99B6B3F3C1318813EFB9AE7AC8A"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Thin_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Thin_north.png",
+    "SHA256": "23D307AD9860EC66EFDAD4CB918EB05B9244C2BDDAC3AB202847A2AC38164663"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Thin_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt_Thin_south.png",
+    "SHA256": "560EB1E5B40EE831D5E775FF39A6FD722EE438774E6ADA4C8F9937CCB7CE4485"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirt\\ArasakaShirt.png",
+    "SHA256": "F7EA469F5A69ACF764358822A364E08A23CFD7AA14CFD0AC4ECCE9C9E9EDF457"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Fat_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Fat_east.png",
+    "SHA256": "717A19BB3517BEF037B13C1EEC5467B6AD26CC325A8519787C3D85928EEF7EF5"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Fat_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Fat_north.png",
+    "SHA256": "37A1A5E1675BC29440CDB94340BA0F581DEBE21498E5D58F7B2421817440DB1C"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Fat_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Fat_south.png",
+    "SHA256": "974F199E97EB1AFDCD9AE1A1979F5D22899D2CB8279B4685EAB411810A6E1E29"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Female_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Female_east.png",
+    "SHA256": "0874C1C60F59CD8A60AE6DB0D043F1B717164CA671FD888AF4A0441D161FD489"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Female_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Female_north.png",
+    "SHA256": "8B199D5D75C54D7B1ABE42804C82733B21B5C3587DCC6464EB24D16A333804DF"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Female_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Female_south.png",
+    "SHA256": "B5CCA8208AB28B6703A6E7C115B4E66034DE69F8DBF7EFBD048E38497EC5D575"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Hulk_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Hulk_east.png",
+    "SHA256": "BE0C0AB97250F18E7FE797C9298C4E47E4A2A82E86A79EADF40FD26FF6A32DA6"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Hulk_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Hulk_north.png",
+    "SHA256": "233B6CB01CFC486321BCFEE2992B7E120E717DD8DC9DBFC8EF584ADA57D89834"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Hulk_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Hulk_south.png",
+    "SHA256": "98333EFFA6FF74EBA38E7330709C79C355F955C97577185F65FB63A0DF6E945D"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Male_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Male_east.png",
+    "SHA256": "2E12B2904D6215799EB4743FA826D42908323E6C6A5A97A42D84AC5BD62A0008"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Male_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Male_north.png",
+    "SHA256": "C98A1D2D16ECD1172BDD868F25F210223D0C64BB70EBB322C1AD539EB9FA87BA"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Male_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Male_south.png",
+    "SHA256": "B7F593B56A3E41AF09120D844B6FDAEC8794B990E642AF6D07E093B9169DCEED"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Thin_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Thin_east.png",
+    "SHA256": "2B976FA72C8F031BB204E1D475F6CB9C68C250E9838109EE6D5ABF85A2D6896A"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Thin_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Thin_north.png",
+    "SHA256": "0D6DBCC4774E4D1E8259A94DF059B69BB835BCBFC4D76C964DB21D80B100EFAA"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Thin_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite_Thin_south.png",
+    "SHA256": "1751D557CE0FAB6C7E90425282B32898A035FCC20E36B0DD564008AB816E8415"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaShirtWhite\\ArasakaShirtWhite.png",
+    "SHA256": "8EFA06E307F89270B908027A79E409DECD255D7731F6672348824869BE4CC126"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Fat_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Fat_east.png",
+    "SHA256": "8C8302619CE2BAAAE9EB4B8BB23A3121B389A52363CCFFC6697EC8A0F11EA971"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Fat_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Fat_north.png",
+    "SHA256": "FE0BED14C6419B233B2525EB3E4DC4BD6EC8E48C004B9FA3042F61C390DC69CE"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Fat_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Fat_south.png",
+    "SHA256": "B0A21A40337CB268F3535410859AB429AFB61784A9FC8B0FA27533484476DDBE"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Female_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Female_east.png",
+    "SHA256": "B9895AD0DF93B3D00D2404ECD409CCECF1460856CA6F7E15787470569C414D41"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Female_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Female_north.png",
+    "SHA256": "044850A03AD6F974D76E826FD9376ECEDD0A100E9AB19F17C9E27CCF31C5F041"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Female_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Female_south.png",
+    "SHA256": "F541A476EFE18C9E3679F868EF090063B8433EFB498838ACE90C7C3A9E2C8A91"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Hulk_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Hulk_east.png",
+    "SHA256": "18715EDB44B4EE8C6FE88A099F78B31B90DFC97DD87C0BFA6BAE05B361CB9C06"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Hulk_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Hulk_north.png",
+    "SHA256": "F921B5F07C6148DD2AAF7CF19AF7210DCC612A61B09C3CE4186E4152881341A8"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Hulk_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Hulk_south.png",
+    "SHA256": "E4744B979116E4AFDE1F9D851B27AD861030BCF0B29923731DBE3FB801E9449D"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Male_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Male_east.png",
+    "SHA256": "8CE06D44AEDD2287A40485DF0E65A68E735570CFA45F206488BCB2C15518D59B"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Male_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Male_north.png",
+    "SHA256": "942A8AD0B4542AFAC5EB32BB041FAD7FB1980EA22614142152CFFC399A5E1A7F"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Male_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Male_south.png",
+    "SHA256": "CE70E511F179B4FADAEEB09D3D20D4B92D433BF191E495691E797CC7384A48C8"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Thin_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Thin_east.png",
+    "SHA256": "E22DD6117614793F6B7A748ED6AD6AE1AFB320B2DB7880E5536D6FFF6BB00691"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Thin_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Thin_north.png",
+    "SHA256": "75198337AC3A70D6B9C919647DE1F602ED4E99A6AF9532A918B24AF7BA6FF67C"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Thin_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight_Thin_south.png",
+    "SHA256": "D737652D4D7DA1AF15B2C94B83C91D5D60E645529F4469E822515731AD24BA51"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVestLight\\ArasakaVestLight.png",
+    "SHA256": "1F9FA7BABA5B440387CE62DCC963A42DFB8CB6F0CAFFB5BD5DD5B469E5B1FA79"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVisor\\ArasakaVisor_east.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVisor\\ArasakaVisor_east.png",
+    "SHA256": "B3B860CACC30AB3AFC1C47D7BDBC951B5B3EF810736C3EE296FE1BD50511A391"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVisor\\ArasakaVisor_north.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVisor\\ArasakaVisor_north.png",
+    "SHA256": "83C0491D42909FE648F8A072C334BBBE4E6F92BF238D3C82377BCC6A6BD7FB92"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVisor\\ArasakaVisor_south.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVisor\\ArasakaVisor_south.png",
+    "SHA256": "836D0951FA14C4E57B00B4FB7459D8CC50499640F9B70C969C1A7A929809C62C"
+  },
+  {
+    "Original": "Things\\RimPunk\\Apparel\\ArasakaVisor\\ArasakaVisor.png",
+    "Archived": "Source\\Art\\RetiredArasaka\\2026-11-07\\Things\\RimPunk\\Apparel\\ArasakaVisor\\ArasakaVisor.png",
+    "SHA256": "E29F60880C9728587DB8292ADBC0AB07EEAFA608EB3D0B94E9479DF47112E4B3"
+  }
+]

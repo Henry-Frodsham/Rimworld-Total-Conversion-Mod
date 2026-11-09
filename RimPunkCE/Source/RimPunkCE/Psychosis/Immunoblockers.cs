@@ -8,7 +8,7 @@ namespace RimPunkCE
     {
         public float capacityBonus;
 
-        /// <summary>David's last stand: permanent cyberpsychosis the moment the hediff ends.</summary>
+        /// <summary>David's last stand: instability spike when the capacity bonus expires.</summary>
         public bool psychosisOnEnd;
     }
 
@@ -31,8 +31,8 @@ namespace RimPunkCE
             if (pawn == null || pawn.Dead) return;
             if (Ext?.psychosisOnEnd == true)
             {
-                if (!CyberpsychosisUtility.IsPermanent(pawn)) pawn.health.AddHediff(RPDefOf.RPC_CyberpsychosisPermanent);
-                Hediff_PermanentCyberpsychosis.Enforce(pawn);
+                // Last Stand keeps its capacity effect; its crash now adds instability instead of forcing permanent rogue on everyone.
+                CyberpsychosisUtility.AddInstability(pawn, 25f);
                 return;
             }
             // other world pawns aren't simulated: nobody would see or stop the episode
@@ -44,7 +44,7 @@ namespace RimPunkCE
     }
 
     /// <summary>
-    /// The source of truth for David's last stand: MentalState_Cyberpsychosis won't recover while this is on the pawn, and
+    /// The source of truth for permanent rogue states: MentalState_Cyberpsychosis won't recover while this is on the pawn, and
     /// anything that still clears the episode (despawning, another mental state, a calming psycast) gets it restarted.
     /// Keeps the normal RPC_Cyberpsychosis state, so fight AI, MaxTac kill credit and the rage hediff all work as usual.
     /// </summary>

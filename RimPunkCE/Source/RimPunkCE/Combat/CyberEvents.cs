@@ -88,7 +88,8 @@ namespace RimPunkCE
         {
             FireTriggers(pawn, CyberTriggerKind.OtherAbilityUsed, new CyberTriggerContext { ability = ability });
             pawn.GetCyberTracker()?.Notify_EvasiveAction(); // dashes count for Nano-plating
-            CyberpsychosisUtility.Notify_Event(pawn, CyberpsychosisEvent.UsedCyberwareAbility);
+            if (ability.Source?.Ext?.osType is CyberOsType.Sandevistan or CyberOsType.Berserk)
+                CyberpsychosisUtility.Notify_Event(pawn, CyberpsychosisEvent.UsedCyberwareAbility);
         }
 
         private static void ForEachReceiver(Pawn pawn, System.Action<ICyberEventReceiver> action)

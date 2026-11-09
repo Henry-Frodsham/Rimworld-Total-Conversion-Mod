@@ -7,15 +7,18 @@ Output (overwritten every run, do not hand-edit): Common/Defs/Apparel/Generated_
 gen_factions.py imports OUTFITS / outfit() from here to give every pawn kind its apparelRequired list.
 
 Looks reuse vanilla textures tinted per faction (they are greyscale, the game multiplies in the colour).
-Trauma Team, MaxTac and Arasaka have their own textures under Common/Textures/Things/RimPunk/Apparel/ (gen_apparel_textures.py
-drafts them, hand-refine from there). Armour values are CE scale: sharp in mm RHA, blunt in MPa.
+Trauma Team and MaxTac keep their hand-drawn textures unchanged. Other factions use vanilla textures with a single
+primary tint from data/faction_colours.json. Retired Arasaka artwork stays in Source/Art. Armour values are CE scale.
 """
 import os
+import json
 from xml.sax.saxutils import escape
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 V = 'Things/Pawn/Humanlike/Apparel/'
 CUSTOM = 'Things/RimPunk/Apparel/'
+with open(os.path.join(os.path.dirname(__file__), 'data', 'faction_colours.json'), encoding='utf-8') as palette_file:
+    FACTION_COLOURS = json.load(palette_file)
 
 BODY_FULL = ['Torso', 'Neck', 'Shoulders', 'Arms', 'Legs']
 
@@ -122,9 +125,9 @@ T = {
                           value=1600, cold=4, heat=0.5, cost={'Plasteel': 50, 'ComponentSpacer': 2}),
 }
 
-# Arasaka's own looks (own textures, drafted by gen_apparel_textures.py): stats copied from the vanilla-based piece they replace.
+# Keep existing Arasaka def names and stats for saves/loadouts, using the original vanilla templates.
 def _arasaka(key, base, label, tex, **kw):
-    T[key] = dict(T[base], label=label, tex=CUSTOM + tex + '/' + tex, worn=CUSTOM + tex + '/' + tex, custom=True, **kw)
+    T[key] = dict(T[base], **kw)
 
 
 _arasaka('arasaka_shirt_white', 'collar', 'Arasaka white shirt', 'ArasakaShirtWhite')
@@ -156,9 +159,7 @@ C = {
     'custom': (255, 255, 255),
 }
 
-# Arasaka has two looks: its own recoloured textures (Common/Textures/Things/RimPunk/Apparel/Arasaka*, drafted by gen_apparel_textures.py,
-# which needs exported vanilla textures) or, until those exist, vanilla textures tinted black/red.
-ARASAKA_HAS_ART = os.path.isdir(os.path.join(ROOT, 'Common', 'Textures', 'Things', 'RimPunk', 'Apparel', 'ArasakaShirt'))
+# Legacy outfit identities are retained below. Their templates always use vanilla art, regardless of files on disk.
 ARASAKA_TINTED = {
     'Guard':     ('security guard', ['collar:white', 'flakvest:black', 'pants:black', 'advhelm:arasaka'], []),
     'Grunt':     ('soldier', ['recon:black', 'reconhelm:arasaka', 'collar:black', 'pants:black'], []),
@@ -183,7 +184,7 @@ ARASAKA_OWN_ART = {
 OUTFITS = {
     # Arasaka: black and red corporate security. Guards in shirts and vests, soldiers in full black tactical gear with red helmets,
     # netrunners in black suits with red rigs, execs in black coats over white shirts.
-    'Arasaka': ARASAKA_OWN_ART if ARASAKA_HAS_ART else ARASAKA_TINTED,
+    'Arasaka': ARASAKA_OWN_ART,
     # Militech: US military contractor. Olive drab and khaki, plate carriers, heavy suits for the line.
     'Militech': {
         'Guard':     ('security guard', ['collar:khaki', 'flakvest:olive', 'pants:khaki', 'simplehelm:olive'], []),
@@ -399,12 +400,16 @@ def fmt(x): return f'{x:g}'
 
 def thing(fid, faction_label, name, tmpl, c1, c2, tags):
     t = T[tmpl]
-    colour_word = CNAME.get(c1, c1)
+    primary = FACTION_COLOURS.get(fid)
+    colour_word = primary['name'] if primary else CNAME.get(c1, c1)
     label = f"{faction_label} {(colour_word + ' ') if colour_word and not t.get('custom') else ''}{t['label']}".replace('  ', ' ')
     if t.get('custom'): label = t['label']
     worn = f"\n      <wornGraphicPath>{t['worn']}</wornGraphicPath>" if t['worn'] else ''
     mask = '\n      <useWornGraphicMask>true</useWornGraphicMask>' if t.get('mask') else ''
     colour = '' if t.get('custom') else f"\n      <color>{rgb(c1)}</color>" + (f"\n      <colorTwo>{rgb(c2)}</colorTwo>" if c2 else '')
+    if primary:
+        tint = '(' + ','.join(str(v) for v in primary['rgb']) + ')'
+        colour = f'\n      <color>{tint}</color>' + (f'\n      <colorTwo>{tint}</colorTwo>' if c2 or t.get('mask') else '')
     offsets = ''.join(f'\n      <{k}>{fmt(v)}</{k}>' for k, v in t.get('offsets', {}).items())
     offsets = f'\n    <equippedStatOffsets>{offsets}\n    </equippedStatOffsets>' if offsets else ''
     heat = f"\n      <ArmorRating_Heat>{fmt(t['heat'])}</ArmorRating_Heat>" if t.get('heat') else ''
@@ -460,7 +465,7 @@ def describe(fid, flabel, tmpl, t):
     if fid == 'TraumaTeam':
         return 'Trauma Team International issue: armoured, sealed, and white so you know who just saved your life.'
     if fid == 'Arasaka':
-        return 'Arasaka corporate security issue. Black, red, and expensive.'
+        return 'Arasaka corporate security issue in Arasaka red.'
     if fid == 'MaxTac':
         return 'NCPD MaxTac issue. Built to walk through cyberpsycho fire and put them down.'
     return f"{BLURB.get(tmpl, 'Clothing.')} Worn by {flabel} in their colours."

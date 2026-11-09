@@ -104,14 +104,11 @@ namespace RimPunkCE
             // queued operations in amber behind the current usage
             Widgets.FillableBar(bar, Mathf.Clamp01(after), QueuedTex, BgTex, false);
             Widgets.FillableBar(bar, Mathf.Clamp01(now), AccentTex, BaseContent.ClearTex, false);
-            float trigger = RPDefOf.RPC_CyberpsychosisTuning?.triggerUsage ?? 1f;
-            GUI.color = new Color(1f, 0.25f, 0.3f);
-            Widgets.DrawLineVertical(bar.x + bar.width * Mathf.Clamp01(trigger), bar.y - 2f, bar.height + 4f);
-            GUI.color = Color.white;
+
             string text = "RPC_UI_Capacity".Translate(tracker.CapacityUsed.ToString("0"), max.ToString("0"), now.ToStringPercent());
             if (queued > 0f) text += "RPC_UI_CapacityQueued".Translate(after.ToStringPercent());
             Widgets.Label(new Rect(bar.xMax + 10f, bar.y - 2f, r.width - bar.width - 10f, 24f), text);
-            TooltipHandler.TipRegion(bar, "RPC_UI_CapacityTip".Translate(trigger.ToStringPercent()));
+            TooltipHandler.TipRegion(bar, "RPC_Psychosis_Status".Translate(tracker.instability.ToString("0.#"), CyberpsychosisUtility.ChromeLoad(p).ToString("0.#")));
             if (!canOp)
             {
                 GUI.color = Color.gray;

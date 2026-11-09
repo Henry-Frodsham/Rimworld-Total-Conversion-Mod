@@ -93,7 +93,13 @@
        eventType: TookDamage, Downed, Killed, EnteredCombat, UsedCyberwareAbility, CyberwareInstalled -->
   <RimPunkCE.CyberpsychosisTuningDef>
     <defName>RPC_CyberpsychosisTuning</defName>
-    <triggerUsage>0.8</triggerUsage>
+    <baselinePerLoadSecond>0.002</baselinePerLoadSecond>
+    <damageSpike>2</damageSpike><killSpike>6</killSpike><abilitySpike>8</abilitySpike>
+    <permanentMinLoad>12</permanentMinLoad><permanentChance>0.03</permanentChance>
+    <temporaryMinTicks>3600</temporaryMinTicks><temporaryMaxTicks>7200</temporaryMaxTicks>
+    <relapseGraceTicks>6000</relapseGraceTicks>
+    <sleepPerSecond>0.08</sleepPerSecond><recreationPerLevel>40</recreationPerLevel>
+    <drugRecovery>12</drugRecovery><medicalRecovery>15</medicalRecovery>
     <safeUsage>0.5</safeUsage>
     <events />
     <maxTacKills>5</maxTacKills>
@@ -143,7 +149,7 @@
   <HediffDef>
     <defName>RPC_CyberpsychosisBurnout</defName>
     <label>cyberpsychosis burnout</label>
-    <description>This pawn has had a cyberpsychotic break. Going above 50% cyberware capacity usage will immediately trigger another. Permanent.</description>
+    <description>This pawn has had a cyberpsychotic break. A lasting record of a survived break. Future risk depends on chrome load and instability, not a capacity threshold.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.9, 0.2, 0.5)</defaultLabelColor>
     <isBad>true</isBad>
@@ -178,7 +184,7 @@
   <HediffDef>
     <defName>RPC_CyberpsychosisPermanent</defName>
     <label>permanent cyberpsychosis</label>
-    <description>David's last stand burned out everything that was holding this mind together. The cyberpsychosis will never end, whatever is removed or done to this pawn. Together with the rage, consciousness and movement speed are quadrupled.</description>
+    <description>Heavy high-tier chrome pushed this mind permanently rogue. The cyberpsychosis will never end, whatever is removed or done to this pawn. Together with the rage, consciousness and movement speed are quadrupled.</description>
     <hediffClass>RimPunkCE.Hediff_PermanentCyberpsychosis</hediffClass>
     <defaultLabelColor>(1, 0, 0.2)</defaultLabelColor>
     <isBad>false</isBad>

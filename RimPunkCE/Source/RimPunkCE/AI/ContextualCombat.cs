@@ -53,7 +53,7 @@ namespace RimPunkCE
             if (tracker.HasCyberdeck || SmartLinkUtility.HasSmartLink(pawn) || pawn.GetStatValue(RPStatDefOf.RPC_RangedCritChance) > 0f) return CombatRole.Ranged;
             for (int i = 0; i < chrome.Count; i++)
                 if (chrome[i].GetValue("distanceCrit") > 0f) return CombatRole.Ranged;
-            return CombatRole.Neutral;
+            return tracker.HasCyberware && pawn.equipment?.Primary?.def.IsRangedWeapon == true ? CombatRole.Ranged : CombatRole.Neutral;
         }
 
         /// <summary>NPCs and anyone in a mental state. Never a colonist under the player's control.</summary>
@@ -96,9 +96,18 @@ namespace RimPunkCE
         /// <summary>Vanilla has picked a job; change it if this pawn's build calls for something else.</summary>
         public static Job AdjustFightJob(Pawn pawn, Job vanilla)
         {
+            if (Verb_Quickhack.IsUploading(pawn, out _)) return vanilla;
             var enemy = pawn.mindState?.enemyTarget;
             var tracker = pawn.GetCyberTracker();
             if (enemy == null || tracker == null || !enemy.Spawned || enemy.Map != pawn.Map) return vanilla;
+            var incoming = IncomingNetrunner(pawn);
+            if (incoming != null)
+            {
+                // Focus the uploader: any damaging hit can interrupt their committed upload.
+                enemy = incoming;
+                pawn.mindState.enemyTarget = incoming;
+                Diag.Count("ai-counter-netrun");
+            }
             float dist = pawn.Position.DistanceTo(enemy.Position);
 
             // being in a fight starts at spotting the enemy, not at the first shot: sandevistan can open it
@@ -114,12 +123,12 @@ namespace RimPunkCE
                 }
             }
 
-            var hack = TryPriorityHack(pawn, tracker);
+            var hack = incoming == null ? TryPriorityHack(pawn, tracker) : null;
             if (hack != null) return hack;
             if (vanilla?.ability != null) return vanilla;
 
             var role = RoleOf(pawn);
-            if (role == CombatRole.Melee && enemy is Pawn && vanilla?.def != JobDefOf.AttackMelee && dist <= ChargeRadius && pawn.CanReach(enemy, PathEndMode.Touch, Danger.Deadly))
+            if (role == CombatRole.Melee && enemy is Pawn && (vanilla?.def != JobDefOf.AttackMelee || vanilla.targetA.Thing != enemy) && dist <= ChargeRadius && pawn.CanReach(enemy, PathEndMode.Touch, Danger.Deadly))
             {
                 Diag.Count("ai-charge");
                 var job = JobMaker.MakeJob(JobDefOf.AttackMelee, enemy);
@@ -128,7 +137,7 @@ namespace RimPunkCE
                 job.expireRequiresEnemiesNearby = true;
                 return job;
             }
-            if (role == CombatRole.Ranged && dist < KeepDistance && Find.TickManager.TicksGame - tracker.lastKiteTick >= KiteCooldownTicks && TryFindKiteCell(pawn, enemy, dist, out var cell))
+            if (role == CombatRole.Ranged && Find.TickManager.TicksGame - tracker.lastKiteTick >= KiteCooldownTicks && TryFindKiteCell(pawn, enemy, dist, out var cell))
             {
                 tracker.lastKiteTick = Find.TickManager.TicksGame;
                 Diag.Count("ai-kite");
@@ -138,7 +147,48 @@ namespace RimPunkCE
                 job.locomotionUrgency = LocomotionUrgency.Sprint;
                 return job;
             }
+            if (role == CombatRole.Ranged && pawn.equipment?.PrimaryEq?.PrimaryVerb is Verb gun && gun.CanHitTarget(enemy)
+                && (dist >= Mathf.Min(KeepDistance, PreferredRange(pawn)) || incoming != null))
+            {
+                // Do not let vanilla replace a valid firing position with a close-range advance.
+                var hold = JobMaker.MakeJob(JobDefOf.Wait_Combat);
+                hold.expiryInterval = 120;
+                hold.checkOverrideOnExpire = true;
+                return hold;
+            }
             return vanilla;
+        }
+
+        public static float PreferredRange(Pawn pawn)
+        {
+            float range = pawn.equipment?.PrimaryEq?.PrimaryVerb?.EffectiveRange ?? (pawn.GetCyberTracker()?.HasCyberdeck == true ? 35f : 12f);
+            float fraction = pawn.Faction?.Ext()?.kind switch { CyberFactionKind.Corporation => 0.75f, CyberFactionKind.Gang => 0.5f, _ => 0.65f };
+            return Mathf.Clamp(range * fraction, 7f, 28f);
+        }
+
+        public static Pawn IncomingNetrunner(Pawn pawn)
+        {
+            if (!WorldFeatures.Quickhacks || pawn.Map == null) return null;
+            Pawn best = null;
+            float distance = float.MaxValue;
+            foreach (var other in pawn.Map.mapPawns.AllHumanlikeSpawned)
+            {
+                if (!other.HostileTo(pawn) || !Verb_Quickhack.IsUploading(other, out var stance) || stance.focusTarg.Thing != pawn) continue;
+                float d = pawn.Position.DistanceToSquared(other.Position);
+                if (d < distance) { distance = d; best = other; }
+            }
+            return best;
+        }
+
+        public static float CoverScore(IntVec3 cell, Map map)
+        {
+            float cover = 0f;
+            foreach (var direction in GenAdj.CardinalDirections)
+            {
+                var adjacent = cell + direction;
+                if (adjacent.InBounds(map)) cover = Mathf.Max(cover, adjacent.GetCover(map)?.def.fillPercent ?? 0f);
+            }
+            return cover;
         }
 
         /// <summary>A reachable standing spot further from the enemy that can still see them, nearest first. Fixed scan, no Rand.</summary>
@@ -146,17 +196,21 @@ namespace RimPunkCE
         {
             best = IntVec3.Invalid;
             var map = pawn.Map;
-            float bestScore = float.MinValue;
+            float desired = PreferredRange(pawn);
+            bool corp = pawn.Faction?.Ext()?.kind == CyberFactionKind.Corporation;
+            float Score(IntVec3 c) => -Mathf.Abs(c.DistanceTo(enemy.Position) - desired)
+                + CoverScore(c, map) * (corp ? 6f : 3f) - c.DistanceTo(pawn.Position) * 0.25f;
+            float bestScore = Score(pawn.Position) + 2f;
             int count = Mathf.Min(GenRadial.NumCellsInRadius(10f), GenRadial.RadialPattern.Length);
             for (int i = GenRadial.NumCellsInRadius(3f); i < count; i += 3)
             {
                 var c = pawn.Position + GenRadial.RadialPattern[i];
                 if (!c.InBounds(map) || !c.Standable(map) || c.GetFirstPawn(map) != null) continue;
                 float d = c.DistanceTo(enemy.Position);
-                if (d < dist + 3f) continue;
+                if (d < Mathf.Min(KeepDistance, desired) || d > (pawn.equipment?.PrimaryEq?.PrimaryVerb?.EffectiveRange ?? 35f)) continue;
                 if (!GenSight.LineOfSight(c, enemy.Position, map, skipFirstCell: true)) continue;
                 if (!pawn.CanReach(c, PathEndMode.OnCell, Danger.Deadly)) continue;
-                float score = d - c.DistanceTo(pawn.Position) * 0.5f;
+                float score = Score(c);
                 if (score > bestScore)
                 {
                     bestScore = score;
@@ -174,7 +228,7 @@ namespace RimPunkCE
         /// </summary>
         private static Job TryPriorityHack(Pawn pawn, CompCyberTracker tracker)
         {
-            if (!tracker.HasCyberdeck || pawn.abilities == null) return null;
+            if (!WorldFeatures.Quickhacks || !tracker.HasCyberdeck || pawn.abilities == null) return null;
             int now = Find.TickManager.TicksGame;
             if (now - tracker.lastHackThinkTick < HackThinkTicks || Verb_Quickhack.IsUploading(pawn, out _)) return null;
             tracker.lastHackThinkTick = now;
@@ -213,7 +267,7 @@ namespace RimPunkCE
         }
 
         /// <summary>Snipers and netrunners outrank anyone else; closer is a tie-break.</summary>
-        private static float HackTargetScore(Pawn target, Pawn from)
+        public static float HackTargetScore(Pawn target, Pawn from)
         {
             float score = 1f;
             var gun = target.equipment?.Primary?.def;
@@ -224,6 +278,8 @@ namespace RimPunkCE
                 else if (reach >= 25f) score += 1f;
             }
             if (target.GetCyberTracker()?.HasCyberdeck == true) score += 2f;
+            // Chrome-dependent hacks have more value against heavily augmented targets.
+            score += Mathf.Min(2f, CyberpsychosisUtility.ChromeLoad(target) * 0.15f);
             return score + 0.5f * (1f - Mathf.Clamp01(target.Position.DistanceTo(from.Position) / 60f));
         }
 
@@ -248,17 +304,18 @@ namespace RimPunkCE
         /// </summary>
         public static void TickInterval(Pawn pawn, CompCyberTracker tracker)
         {
-            if (!Applies(pawn) || !tracker.HasCyberware || pawn.mindState == null) return;
+            if (!Applies(pawn) || !tracker.HasCyberware || pawn.mindState == null || Verb_Quickhack.IsUploading(pawn, out _)) return;
             if (IsPinned(pawn) && TryPopPinnedBuff(pawn)) return;
 
             var enemy = pawn.mindState.enemyTarget;
             if (enemy == null || !enemy.Spawned) return;
             TryPopSandevistan(pawn, enemy);
-            if (pawn.CurJobDef != JobDefOf.Wait_Combat) return;
+            if (IncomingNetrunner(pawn) != null) { pawn.jobs.CheckForJobOverride(); return; }
+            if (pawn.CurJobDef != JobDefOf.Wait_Combat && pawn.CurJobDef != JobDefOf.Goto) return;
             var role = RoleOf(pawn);
             if (role == CombatRole.Neutral) return;
             float dist = pawn.Position.DistanceTo(enemy.Position);
-            bool rethink = role == CombatRole.Melee ? dist <= ChargeRadius : dist < KeepDistance;
+            bool rethink = role == CombatRole.Melee ? dist <= ChargeRadius : dist < KeepDistance || (pawn.CurJobDef == JobDefOf.Goto && pawn.CurJob.targetA.Cell.DistanceTo(enemy.Position) < KeepDistance);
             if (rethink) pawn.jobs.CheckForJobOverride();
         }
 

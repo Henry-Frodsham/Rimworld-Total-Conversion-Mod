@@ -1,0 +1,23 @@
+{
+  "Arasaka": {"name": "red", "rgb": [200, 24, 30]},
+  "Militech": {"name": "olive", "rgb": [96, 112, 62]},
+  "KangTao": {"name": "orange", "rgb": [230, 126, 35]},
+  "Biotechnica": {"name": "green", "rgb": [60, 160, 80]},
+  "Petrochem": {"name": "blue", "rgb": [50, 110, 190]},
+  "Zetatech": {"name": "orange", "rgb": [225, 145, 35]},
+  "NightCorp": {"name": "navy", "rgb": [48, 64, 110]},
+  "NetWatch": {"name": "blue", "rgb": [60, 145, 210]},
+  "DebtCollectors": {"name": "olive", "rgb": [96, 112, 62]},
+  "Maelstrom": {"name": "red", "rgb": [170, 28, 38]},
+  "TygerClaws": {"name": "red", "rgb": [220, 48, 44]},
+  "Valentinos": {"name": "gold", "rgb": [212, 168, 52]},
+  "SixthStreet": {"name": "blue", "rgb": [55, 90, 170]},
+  "Animals": {"name": "yellow", "rgb": [220, 176, 45]},
+  "VoodooBoys": {"name": "purple", "rgb": [110, 60, 160]},
+  "Mox": {"name": "pink", "rgb": [230, 70, 165]},
+  "Scavengers": {"name": "grey", "rgb": [115, 125, 130]},
+  "Wraiths": {"name": "cyan", "rgb": [45, 155, 200]},
+  "Barghest": {"name": "lime", "rgb": [155, 190, 48]},
+  "Aldecaldos": {"name": "red", "rgb": [185, 58, 45]},
+  "RaffenShiv": {"name": "rust", "rgb": [155, 65, 42]}
+}

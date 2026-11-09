@@ -21,6 +21,8 @@ namespace RimPunkCE
         public const float BaseCapacityMin = 50f;
         public const float BaseCapacityMax = 150f;
 
+        public float instability;
+        public int nextPsychosisTick;
         private float baseCapacity = -1f;
         private float ram;
         public int lastCombatTick = -99999;
@@ -214,7 +216,7 @@ namespace RimPunkCE
             var pawn = Pawn;
             var abilities = pawn?.abilities;
             if (abilities == null) return;
-            bool deck = HasCyberdeck;
+            bool deck = WorldFeatures.Quickhacks && HasCyberdeck;
             if (deck)
             {
                 foreach (var pre in new[] { QuickhackDefOf.RPC_Quickhack_ShortCircuit, QuickhackDefOf.RPC_Quickhack_Ping })
@@ -289,7 +291,7 @@ namespace RimPunkCE
             var tuning = RPDefOf.RPC_AdrenalineTuning;
             if (adrenaline > 0f && !InCombat)
                 adrenaline = Mathf.Max(0f, adrenaline - tuning.decayPerSecond * pawn.GetStatValue(RPStatDefOf.RPC_AdrenalineDecay) * 0.25f);
-            bool surging = RimPunkMod.Settings.adrenalineEnabled && AdrenalineFraction >= tuning.surgeFraction;
+            bool surging = !pawn.Downed && RimPunkMod.Settings.adrenalineEnabled && AdrenalineFraction >= tuning.surgeFraction;
             var surge = pawn.health.hediffSet.GetFirstHediffOfDef(RPDefOf.RPC_AdrenalineSurge);
             if (surging)
             {
@@ -399,6 +401,7 @@ namespace RimPunkCE
             if (parent.IsHashIntervalTick(60, delta))
             {
                 TickDelayed(60);
+                CyberpsychosisUtility.TickInstability(pawn);
                 if (RimPunkMod.Settings.contextualAI) ContextualCombat.TickInterval(pawn, this);
             }
             if (parent.IsHashIntervalTick(250, delta)) CyberpsychosisUtility.ClearOrphanedRage(pawn);
@@ -417,6 +420,7 @@ namespace RimPunkCE
             base.PostPostApplyDamage(dinfo, totalDamageDealt);
             if (Pawn == null) return;
             if (dinfo.Def.ExternalViolenceFor(Pawn)) Notify_CombatAction();
+            if (totalDamageDealt > 0f) Verb_Quickhack.CancelUpload(Pawn);
             CyberEvents.Notify_DamageTaken(Pawn, dinfo, totalDamageDealt);
         }
 
@@ -435,7 +439,7 @@ namespace RimPunkCE
             var pawn = Pawn;
             if (pawn == null) yield break;
             if (!(pawn.Faction?.IsPlayer ?? false) && !DebugSettings.ShowDevGizmos) yield break;
-            if (HasCyberdeck && RamMax > 0f) yield return new Gizmo_CyberBar(this, CyberBarKind.Ram);
+            if (WorldFeatures.Quickhacks && HasCyberdeck && RamMax > 0f) yield return new Gizmo_CyberBar(this, CyberBarKind.Ram);
             if (RimPunkMod.Settings.adrenalineEnabled && (pawn.Drafted || Adrenaline > 0f)) yield return new Gizmo_CyberBar(this, CyberBarKind.Adrenaline);
             if (pawn.IsColonistPlayerControlled && !GameComponent_RimPunk.IsCovered(pawn) && GameComponent_RimPunk.Tuning is TraumaTeamTuningDef tt
                 && CyberFactionUtility.FirstOfKind(CyberFactionKind.TraumaTeam) != null)
@@ -484,6 +488,8 @@ namespace RimPunkCE
         public override void PostExposeData()
         {
             base.PostExposeData();
+            Scribe_Values.Look(ref instability, "rpcInstability");
+            Scribe_Values.Look(ref nextPsychosisTick, "rpcNextPsychosisTick");
             Scribe_Values.Look(ref baseCapacity, "baseCapacity", -1f);
             Scribe_Values.Look(ref ram, "ram");
             Scribe_Values.Look(ref adrenaline, "adrenaline");

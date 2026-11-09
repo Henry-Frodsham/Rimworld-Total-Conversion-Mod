@@ -30,11 +30,24 @@ namespace RimPunkCE
     }
 
     /// <summary>
-    /// Cyberpsychosis numbers (Defs/CyberpsychosisTuning.xml). The event table is intentionally empty
-    /// until the trigger events are decided (cyberware_overview.md: "which events will be decided later").
+    /// Cyberpsychosis tuning (Defs/Core.xml). Legacy usage/event fields remain readable for existing definitions.
     /// </summary>
     public class CyberpsychosisTuningDef : Def
     {
+        // Legacy capacity fields remain readable for old definitions; they no longer trigger episodes.
+        public float baselinePerLoadSecond = 0.002f;
+        public float damageSpike = 2f;
+        public float killSpike = 6f;
+        public float abilitySpike = 8f;
+        public float permanentMinLoad = 12f;
+        public float permanentChance = 0.03f;
+        public int temporaryMinTicks = 3600;
+        public int temporaryMaxTicks = 7200;
+        public int relapseGraceTicks = 6000;
+        public float sleepPerSecond = 0.08f;
+        public float recreationPerLevel = 40f;
+        public float drugRecovery = 12f;
+        public float medicalRecovery = 15f;
         public float triggerUsage = 0.8f;
         public float safeUsage = 0.5f;
         public List<CyberpsychosisEventChance> events = new List<CyberpsychosisEventChance>();
@@ -49,7 +62,7 @@ namespace RimPunkCE
         public int maxTacBoardTicks = 1500;
     }
 
-    public static class CyberpsychosisUtility
+    public static partial class CyberpsychosisUtility
     {
         private static CyberpsychosisTuningDef Tuning => RPDefOf.RPC_CyberpsychosisTuning;
 
@@ -131,40 +144,27 @@ namespace RimPunkCE
             if (addBurnout && !HasBurnout(pawn)) pawn.health.AddHediff(RPDefOf.RPC_CyberpsychosisBurnout);
         }
 
-        /// <summary>David's last stand wore off: the episode never recovers (Hediff_PermanentCyberpsychosis).</summary>
+        /// <summary>Permanent rogue outcomes, including permanent states already present in old saves.</summary>
         public static bool IsPermanent(Pawn pawn) => pawn?.health?.hediffSet?.HasHediff(RPDefOf.RPC_CyberpsychosisPermanent) == true;
 
         public static bool HasBurnout(Pawn pawn) => pawn?.health?.hediffSet?.HasHediff(RPDefOf.RPC_CyberpsychosisBurnout) == true;
 
-        /// <summary>Roll the chance for an event (seeded via Verse.Rand). Only possible at >= 80% usage.</summary>
+        /// <summary>Combat event spikes scaled by chrome load. No capacity threshold or per-event random trigger.</summary>
         public static void Notify_Event(Pawn pawn, CyberpsychosisEvent ev)
         {
-            var tuning = Tuning;
-            if (tuning == null || tuning.events.NullOrEmpty()) return;
-            if (pawn == null || pawn.Dead || !pawn.Spawned || InCyberpsychosis(pawn) || IsImmune(pawn)) return;
-            var tracker = pawn.GetCyberTracker();
-            if (tracker == null || !tracker.HasCyberware) return;
-            float usage = tracker.UsageRatio;
-            if (usage < tuning.triggerUsage) return;
-
-            for (int i = 0; i < tuning.events.Count; i++)
+            float spike = ev switch
             {
-                var e = tuning.events[i];
-                if (e.eventType != ev) continue;
-                float chance = (e.chance + e.chancePerTenPercentOver * (usage - tuning.triggerUsage) * 10f)
-                               * (RimPunkMod.Settings?.cyberpsychosisChanceMultiplier ?? 1f);
-                if (Rand.Chance(chance)) TryStart(pawn, "RPC_CyberpsychosisReason_Event".Translate(ev.ToString()));
-                return;
-            }
+                CyberpsychosisEvent.TookDamage => Tuning?.damageSpike ?? 2f,
+                CyberpsychosisEvent.Killed => Tuning?.killSpike ?? 6f,
+                CyberpsychosisEvent.UsedCyberwareAbility => Tuning?.abilitySpike ?? 8f,
+                _ => 0f,
+            };
+            AddInstability(pawn, spike * (1f + ChromeLoad(pawn) * 0.04f)
+                * (RimPunkMod.Settings?.cyberpsychosisChanceMultiplier ?? 1f));
         }
 
-        /// <summary>Burnout: going above 50% usage triggers an episode immediately.</summary>
-        public static void Notify_CapacityChanged(Pawn pawn, CompCyberTracker tracker)
-        {
-            if (pawn.Dead || InCyberpsychosis(pawn) || IsImmune(pawn)) return;
-            if (HasBurnout(pawn) && tracker.UsageRatio > Tuning.safeUsage)
-                TryStart(pawn, "RPC_CyberpsychosisReason_Burnout".Translate());
-        }
+        // Burnout no longer creates an automatic capacity-threshold episode. Chrome volume drives risk.
+        public static void Notify_CapacityChanged(Pawn pawn, CompCyberTracker tracker) { }
 
         public static bool TryStart(Pawn pawn, string reason)
         {
@@ -172,18 +172,19 @@ namespace RimPunkCE
             return ForceStart(pawn, reason);
         }
 
-        /// <summary>No immunity check: David's last stand gets everyone.</summary>
+        /// <summary>Explicit forced starts for incidents/debugging and enforcement of existing permanent states.</summary>
         public static bool ForceStart(Pawn pawn, string reason)
         {
             if (pawn.Dead) return false;
+            if (pawn.GetCyberTracker() is CompCyberTracker tracker) tracker.instability = Mathf.Max(60f, tracker.instability);
             return pawn.mindState?.mentalStateHandler?.TryStartMentalState(RPDefOf.RPC_Cyberpsychosis, reason, forced: true, forceWake: true) == true;
         }
     }
 
     /// <summary>
     /// Berserk rage, except: it doesn't end when downed (MentalStateDef.recoverFromDowned = false),
-    /// consciousness is doubled (RPC_CyberpsychosisRage hediff), and it ends only when cyberware usage
-    /// drops below 50%. A downed cyberpsycho is not treated as hostile, so it can be rescued and operated on.
+    /// consciousness is doubled (RPC_CyberpsychosisRage hediff). Temporary episodes end by duration or treatment;
+    /// permanent rogue episodes persist. A downed cyberpsycho can still be rescued and treated.
     /// </summary>
     public class MentalState_Cyberpsychosis : MentalState_Berserk
     {
@@ -196,6 +197,7 @@ namespace RimPunkCE
         /// <summary>Humanlike kills this episode (MaxTac comes at maxTacKills).</summary>
         public int kills;
         public bool maxTacCalled;
+        public int episodeTicks = 3600;
 
         /// <summary>Gear dropped when downed (vanilla drops weapon + inventory), recovered on getting up (JobGiver_CyberpsychoRecoverGear).</summary>
         public Thing droppedWeapon;
@@ -205,6 +207,7 @@ namespace RimPunkCE
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look(ref episodeTicks, "rpcEpisodeTicks", 3600);
             Scribe_Values.Look(ref kills, "rpcKills");
             Scribe_Values.Look(ref maxTacCalled, "rpcMaxTacCalled");
             Scribe_References.Look(ref droppedWeapon, "rpcDroppedWeapon");
@@ -242,6 +245,12 @@ namespace RimPunkCE
         public override void PostStart(string reason)
         {
             base.PostStart(reason);
+            // Incidents may start the state directly instead of going through ForceStart.
+            if (this is not MentalState_HackedCyberpsychosis && pawn.GetCyberTracker() is CompCyberTracker tracker)
+                tracker.instability = Mathf.Max(60f, tracker.instability);
+            var tuning = RPDefOf.RPC_CyberpsychosisTuning;
+            episodeTicks = Mathf.Clamp((tuning?.temporaryMinTicks ?? 3600) + Mathf.RoundToInt(CyberpsychosisUtility.ChromeLoad(pawn) * 120f),
+                tuning?.temporaryMinTicks ?? 3600, tuning?.temporaryMaxTicks ?? 7200);
             Diag.Event("psychosis", $"{Diag.Describe(pawn)} started cyberpsychosis ({reason}), usage {pawn.GetCyberTracker()?.UsageRatio:P0}");
             if (!pawn.health.hediffSet.HasHediff(RPDefOf.RPC_CyberpsychosisRage)) pawn.health.AddHediff(RPDefOf.RPC_CyberpsychosisRage);
             BarkUtility.Say(pawn, BarkKeys.PsychosisStart);
@@ -250,6 +259,8 @@ namespace RimPunkCE
         public override void PostEnd()
         {
             base.PostEnd();
+            if (pawn.GetCyberTracker() is CompCyberTracker tracker)
+                tracker.nextPsychosisTick = Find.TickManager.TicksGame + (RPDefOf.RPC_CyberpsychosisTuning?.relapseGraceTicks ?? 6000);
             Diag.Event("psychosis", $"{Diag.Describe(pawn)} cyberpsychosis ended, usage {pawn.GetCyberTracker()?.UsageRatio:P0}");
             var rage = pawn.health.hediffSet.GetFirstHediffOfDef(RPDefOf.RPC_CyberpsychosisRage);
             if (rage != null) pawn.health.RemoveHediff(rage);
@@ -263,12 +274,12 @@ namespace RimPunkCE
 
         public override void MentalStateTick(int delta)
         {
-            // no time-based recovery (base would end it after maxTicksBeforeRecovery)
+            // Episode duration can expire; the separate instability value never decays just with time.
             if (!pawn.IsHashIntervalTick(30, delta)) return;
             age += 30;
             if (CyberpsychosisUtility.IsPermanent(pawn)) return;
             var tracker = pawn.GetCyberTracker();
-            if (tracker == null || tracker.UsageRatio < RPDefOf.RPC_CyberpsychosisTuning.safeUsage || pawn.Dead)
+            if (age >= episodeTicks || tracker == null || tracker.instability <= 20f || pawn.Dead)
                 RecoverFromState();
         }
     }

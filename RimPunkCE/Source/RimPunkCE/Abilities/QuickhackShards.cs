@@ -22,6 +22,7 @@ namespace RimPunkCE
 
         public override void DoEffect(Pawn usedBy)
         {
+            if (!WorldFeatures.Quickhacks) return;
             base.DoEffect(usedBy);
             var tracker = usedBy.GetCyberTracker();
             if (tracker == null) return;
@@ -33,6 +34,7 @@ namespace RimPunkCE
 
         public override AcceptanceReport CanBeUsedBy(Pawn p)
         {
+            if (!WorldFeatures.Quickhacks) return "RPC_Features_Disabled".Translate();
             var tracker = p.GetCyberTracker();
             if (tracker == null || !tracker.HasCyberdeck) return "RPC_NeedsCyberdeck".Translate();
             if (tracker.LearnedQuickhacks.TryGetValue(Props.quickhack, out var have) && have >= Props.tier)

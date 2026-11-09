@@ -11,7 +11,7 @@
        prime time              +90      4d     6
        surge                  +140      2d     4
        black lace             +200      1d     2
-       David's last stand    +1000      6h     1   (own research; permanent cyberpsychosis the moment it ends) -->
+       David's last stand    +1000      6h     1   (own research; instability spike on expiry) -->
 
   <!-- ================= research (second row of the cyberware tab) ================= -->
 
@@ -31,7 +31,7 @@
   <ResearchProjectDef ParentName="RPC_CyberwareResearchBase">
     <defName>RPC_DavidsLastStand</defName>
     <label>David's last stand</label>
-    <description>An immunoblocker pushed far past any safe dose. Six hours of carrying more chrome than a body should survive, then permanent cyberpsychosis.</description>
+    <description>An immunoblocker pushed far past any safe dose. Six hours of carrying more chrome than a body should survive, then an instability spike.</description>
     <baseCost>2000</baseCost>
     <prerequisites>
       <li>RPC_Immunoblockers</li>
@@ -377,7 +377,7 @@
   <HediffDef ParentName="RPC_ImmunoblockerHediffBase">
     <defName>RPC_ImmunoblockerHigh_DavidsLastStand</defName>
     <label>David's last stand</label>
-    <description>The body has stopped rejecting anything, adding 1000 cyberware capacity. When this wears off, permanent cyberpsychosis follows instantly.</description>
+    <description>The body has stopped rejecting anything, adding 1000 cyberware capacity. When this wears off, chrome instability rises sharply.</description>
     <defaultLabelColor>(1, 0.2, 0.35)</defaultLabelColor>
     <comps>
       <li Class="HediffCompProperties_Disappears">

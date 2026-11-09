@@ -101,6 +101,7 @@ namespace RimPunkCE
         private void Begin()
         {
             started = true;
+            if (!reloading) WorldFeatures.Current?.SetForTests(true, true);
             if (!reloading) EnsureFactions();
             map = Find.CurrentMap ?? Find.AnyPlayerHomeMap;
             enemy = Find.FactionManager.AllFactionsListForReading.FirstOrDefault(f => f.Ext()?.kind is CyberFactionKind.Corporation or CyberFactionKind.Gang && f.HostileTo(Faction.OfPlayer))
@@ -117,6 +118,7 @@ namespace RimPunkCE
                     Write($"NOTE start: {f.Name} has no leader at the start of the run");
             }
             GenCommandLine.TryGetCommandLineArg(Flag, out string filter);
+            filter ??= string.Empty;
             var all = typeof(GameComponent_RimPunkLiveTests).GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public)
                 .Where(m => m.GetCustomAttribute<LiveScenarioAttribute>() != null)
                 .OrderBy(m => m.GetCustomAttribute<LiveScenarioAttribute>().group == "last" ? 1 : 0)
@@ -224,6 +226,9 @@ namespace RimPunkCE
             if (finished) return;
             finished = true;
             DiagChecks.RunAll();
+            foreach (string error in scenarioErrors.Distinct())
+                if (!failures.Any(f => f.Contains(error))) Check(false, "final diagnostic: " + error);
+            if (scenariosRun == 0) Check(false, "no scenarios matched the requested filter");
             Write($"SUMMARY {scenariosRun} scenarios: {pass} passed, {fail} failed, {warn} warnings, {(DateTime.Now - startedAt).TotalSeconds:0}s");
             foreach (string f in failures) Write("FAILED " + f);
             Diag.ErrorListener = null;
@@ -239,6 +244,7 @@ namespace RimPunkCE
         /// <summary>Between scenarios: what the last one spawned goes, and the arena is flat, clear and unroofed.</summary>
         private void Prepare()
         {
+            WorldFeatures.Current?.SetForTests(true, true);
             foreach (var p in spawned) Remove(p);
             spawned.Clear();
             if (Current.Game.CurrentMap != map) Current.Game.CurrentMap = map;

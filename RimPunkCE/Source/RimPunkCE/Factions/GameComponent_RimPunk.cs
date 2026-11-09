@@ -273,7 +273,7 @@ namespace RimPunkCE
                 // secure the patient as soon as no operator on the ground can see a hostile within their weapon range
                 bool landed = d.squad.Any(p => p != null && p.Spawned && !p.Dead) && now - d.startTick >= tuning.minTicksOnGround;
                 bool clear = !patientGone && landed && !AnyHostileInSquadRange(d);
-                if (patientGone || ((timeUp || clear) && !patient.Downed))
+                if (patientGone)
                 {
                     Diag.Event("trauma", $"no extraction: patientGone={patientGone} patientDowned={patient?.Downed}, squad boarding");
                     d.boardTick = now;

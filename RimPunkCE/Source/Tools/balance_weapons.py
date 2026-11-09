@@ -191,7 +191,9 @@ for t in gun_root.iter('ThingDef'):
     tags = [li.text for li in t.find('weaponTags')]
     cls = next((x[len('RPC_Class_'):].replace('_', ' ') for x in tags if x.startswith('RPC_Class_')), '?')
     typ = next((x[len('RPC_Type_'):] for x in tags if x.startswith('RPC_Type_')), 'power')
-    d = dps(g, gun_projs[g['proj']])
+    projectile = dict(gun_projs[g['proj']])
+    projectile['damage'] = round(projectile['damage'] * num(t.find('statBases'), 'RangedWeapon_DamageMultiplier', 1.0))
+    d = dps(g, projectile)
     guns.append(dict(name=name, label=t.findtext('label'), cls=cls, type=typ, market=num(t.find('statBases'), 'MarketValue'), build=cost_value(t),
                      range=g['range'], burst_n=g['burst'], mag=g['mag'], **d))
 

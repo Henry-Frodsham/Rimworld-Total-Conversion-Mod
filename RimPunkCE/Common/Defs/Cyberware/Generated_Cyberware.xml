@@ -1957,12 +1957,6 @@
         <minTier>T1</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_FortifiedAnkles</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><perTier><li>0</li><li>1.75</li><li>2.6</li><li>3.45</li><li>4.3</li><li>5.15</li></perTier></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><perTier><li>0</li><li>3.9</li><li>5.825</li><li>7.75</li><li>9.675</li><li>11.6</li></perTier></value></li>
-          </statOffsets>
-        </effects>
       </li>
     </modExtensions>
   </HediffDef>
@@ -2016,10 +2010,6 @@
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_JenkinsTendons</item>
         <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>1.1</min><max>1.1</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>2.5</min><max>2.5</max></value></li>
-          </statOffsets>
           <statFactors>
             <li><stat>MoveSpeed</stat><value><min>1.1</min><max>1.1</max></value></li>
           </statFactors>
@@ -2057,10 +2047,6 @@
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_LeeroyLigamentSystem</item>
         <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.5</min><max>1.3</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>1.1</min><max>2.9</max></value></li>
-          </statOffsets>
           <statFactors>
             <li><stat>MoveSpeed</stat><value><perTier><li>1.12</li><li>1.12</li><li>1.14</li><li>1.16</li><li>1.18</li><li>1.2</li></perTier></value></li>
           </statFactors>
@@ -2164,12 +2150,6 @@
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ReinforcedTendons</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>1</min><max>1</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>2.3</min><max>2.3</max></value></li>
-          </statOffsets>
-        </effects>
       </li>
     </modExtensions>
   </HediffDef>
@@ -3682,7 +3662,7 @@
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_BionicJoints</defName>
     <label>bionic joints</label>
-    <description>Armoured replacement joints. Simple but effective.</description>
+    <description>Replacement joints. Reinforce the body without adding armour plating.</description>
     <costList>
       <Steel>30</Steel>
       <ComponentIndustrial>3</ComponentIndustrial>
@@ -3695,7 +3675,7 @@
   <HediffDef ParentName="RPC_CyberwareHediffBase">
     <defName>RPC_BionicJoints</defName>
     <label>bionic joints</label>
-    <description>Armoured replacement joints. Simple but effective.</description>
+    <description>Replacement joints. Reinforce the body without adding armour plating.</description>
     <descriptionHyperlinks><ThingDef>RPC_Item_BionicJoints</ThingDef></descriptionHyperlinks>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareExtension">
@@ -3704,12 +3684,6 @@
         <minTier>T1</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_BionicJoints</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>1.25</min><max>6.5</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>2.8</min><max>14.6</max></value></li>
-          </statOffsets>
-        </effects>
       </li>
     </modExtensions>
   </HediffDef>
@@ -3742,8 +3716,6 @@
         <effects>
           <statOffsets>
             <li><stat>MeleeDamageFactor</stat><value><min>0.15</min><max>0.27</max></value></li>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.9</min><max>2.7</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>2</min><max>6.1</max></value></li>
           </statOffsets>
           <statFactors>
             <li><stat>RPC_AdrenalineGainMelee</stat><value><min>0.8</min><max>0.8</max></value></li>
@@ -3779,10 +3751,6 @@
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_EpimorphicSkeleton</item>
         <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>4.8</min><max>9.3</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>10.8</min><max>20.9</max></value></li>
-          </statOffsets>
           <statFactors>
             <li><stat>RPC_MaxHealthFactor</stat><value><min>1.1</min><max>1.13</max></value></li>
           </statFactors>
@@ -3839,12 +3807,6 @@
         <minTier>T1</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_FeenX</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.4</min><max>1.9</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>0.9</min><max>4.3</max></value></li>
-          </statOffsets>
-        </effects>
         <values>
           <li><key>ramBelow</key><value><min>3</min><max>7</max></value></li>
         </values>
@@ -3900,12 +3862,6 @@
         <minTier>T1</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_KineticFrame</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.85</min><max>5.85</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>1.9</min><max>13.2</max></value></li>
-          </statOffsets>
-        </effects>
         <values>
           <li><key>adrenalineAbove</key><value><min>0.5</min><max>0.5</max></value></li>
         </values>
@@ -3939,10 +3895,6 @@
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ParaBellum</item>
         <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>1.5</min><max>7.5</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>3.4</min><max>16.9</max></value></li>
-          </statOffsets>
           <statFactors>
             <li><stat>ArmorRating_Sharp</stat><value><perTier><li>1.08</li><li>1.08</li><li>1.08</li><li>1.0933</li><li>1.1067</li><li>1.12</li></perTier></value></li>
             <li><stat>ArmorRating_Blunt</stat><value><perTier><li>1.08</li><li>1.08</li><li>1.08</li><li>1.0933</li><li>1.1067</li><li>1.12</li></perTier></value></li>
@@ -3993,8 +3945,6 @@
         <effects>
           <statOffsets>
             <li><stat>RPC_RamMax</stat><value><perTier><li>1</li><li>1.3</li><li>1.7</li><li>2</li><li>2</li><li>2</li></perTier></value></li>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.5</min><max>2.3</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>1.1</min><max>5.2</max></value></li>
           </statOffsets>
         </effects>
         <values>
@@ -4088,12 +4038,6 @@
         <minTier>T1</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ScarCoalescer</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.5</min><max>2.3</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>1.1</min><max>5.2</max></value></li>
-          </statOffsets>
-        </effects>
         <values>
           <li><key>healthBelow</key><value><min>0.5</min><max>0.5</max></value></li>
         </values>
@@ -4108,12 +4052,6 @@
     <defaultLabelColor>(1, 0.85, 0.3)</defaultLabelColor>
     <modExtensions>
       <li Class="RimPunkCE.ActiveEffectExtension">
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>1.5</min><max>6.5</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>3.4</min><max>14.6</max></value></li>
-          </statOffsets>
-        </effects>
       </li>
     </modExtensions>
   </HediffDef>
@@ -4150,12 +4088,6 @@
         <minTier>T1</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_Scarab</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.5</min><max>2.3</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>1.1</min><max>5.2</max></value></li>
-          </statOffsets>
-        </effects>
       </li>
     </modExtensions>
   </HediffDef>
@@ -4188,8 +4120,6 @@
         <effects>
           <statOffsets>
             <li><stat>RPC_MitigationStrength</stat><value><min>0.1</min><max>0.18</max></value></li>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.9</min><max>2.3</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>2</min><max>5.2</max></value></li>
           </statOffsets>
         </effects>
       </li>
@@ -4223,8 +4153,8 @@
         <item>RPC_Item_TitaniumBones</item>
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.5</min><max>2.3</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>1.1</min><max>5.2</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>0.2</min><max>0.92</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>0.44</min><max>2.08</max></value></li>
           </statOffsets>
           <statFactors>
             <li><stat>CarryWeight</stat><value><perTier><li>1.3</li><li>1.372</li><li>1.444</li><li>1.516</li><li>1.588</li><li>1.66</li></perTier></value></li>
@@ -5362,8 +5292,8 @@
         <item>RPC_Item_Carapace</item>
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>1.9</min><max>4.7</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>4.3</min><max>10.6</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>0.76</min><max>1.88</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>1.72</min><max>4.24</max></value></li>
           </statOffsets>
         </effects>
         <values>
@@ -5401,8 +5331,8 @@
         <item>RPC_Item_CellularAdapter</item>
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>3.7</min><max>8.1</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>8.3</min><max>18.2</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>1.48</min><max>3.24</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>3.32</min><max>7.28</max></value></li>
           </statOffsets>
         </effects>
         <values>
@@ -5440,8 +5370,8 @@
         <item>RPC_Item_Chitin</item>
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>7</min><max>10</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>15.8</min><max>22.5</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>2.8</min><max>4</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>6.32</min><max>9</max></value></li>
           </statOffsets>
           <statFactors>
             <li><stat>InjuryHealingFactor</stat><value><min>2</min><max>2</max></value></li>
@@ -5460,8 +5390,8 @@
       <li Class="RimPunkCE.ActiveEffectExtension">
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><perTier><li>1.8</li><li>2.6208</li><li>3.4992</li><li>4.4352</li><li>5.4288</li><li>6.48</li></perTier></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><perTier><li>4</li><li>5.8656</li><li>7.8624</li><li>9.9904</li><li>12.2496</li><li>14.64</li></perTier></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><perTier><li>0.72</li><li>1.0483</li><li>1.3997</li><li>1.7741</li><li>2.1715</li><li>2.592</li></perTier></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><perTier><li>1.6</li><li>2.3462</li><li>3.145</li><li>3.9962</li><li>4.8998</li><li>5.856</li></perTier></value></li>
           </statOffsets>
         </effects>
       </li>
@@ -5502,8 +5432,8 @@
         <item>RPC_Item_CogitoLattice</item>
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.9</min><max>2.7</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>2</min><max>6.1</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>0.36</min><max>1.08</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>0.8</min><max>2.44</max></value></li>
           </statOffsets>
         </effects>
         <values>
@@ -5569,12 +5499,6 @@
         <minTier>T1</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_Countershell</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.85</min><max>2.85</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>1.9</min><max>6.4</max></value></li>
-          </statOffsets>
-        </effects>
         <values>
           <li><key>healthLost</key><value><min>0.35</min><max>0.35</max></value></li>
           <li><key>window</key><value><min>30</min><max>30</max></value></li>
@@ -5639,12 +5563,6 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_Defenzikov</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>1.2</min><max>4</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>2.7</min><max>9</max></value></li>
-          </statOffsets>
-        </effects>
         <values>
           <li><key>duration</key><value><min>30</min><max>40</max></value></li>
         </values>
@@ -5682,8 +5600,8 @@
         <item>RPC_Item_NanoPlating</item>
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>1.9</min><max>3.9</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>4.3</min><max>8.8</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>0.76</min><max>1.56</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>1.72</min><max>3.52</max></value></li>
           </statOffsets>
         </effects>
         <values>
@@ -5755,12 +5673,6 @@
         <minTier>T2</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_OpticalCamo</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.75</min><max>1.5</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>1.7</min><max>3.4</max></value></li>
-          </statOffsets>
-        </effects>
         <values>
           <li><key>duration</key><value><min>40</min><max>70</max></value></li>
           <li><key>cooldown</key><value><min>140</min><max>100</max></value></li>
@@ -5795,10 +5707,6 @@
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_PainEditor</item>
         <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>4.4</min><max>5.4</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>9.9</min><max>12.2</max></value></li>
-          </statOffsets>
           <statFactors>
             <li><stat>RPC_IncomingDamageFactor</stat><value><perTier><li>0.94</li><li>0.94</li><li>0.94</li><li>0.94</li><li>0.935</li><li>0.93</li></perTier></value></li>
           </statFactors>
@@ -5832,12 +5740,6 @@
         <minTier>T4</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_Painducer</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>5.7</min><max>6.9</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>12.8</min><max>15.5</max></value></li>
-          </statOffsets>
-        </effects>
         <values>
           <li><key>delayedFraction</key><value><min>0.25</min><max>0.3</max></value></li>
         </values>
@@ -5870,12 +5772,6 @@
         <minTier>T4</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_PeripheralInverse</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.4</min><max>1.8</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>0.9</min><max>4.1</max></value></li>
-          </statOffsets>
-        </effects>
         <values>
           <li><key>closeRangeReduction</key><value><min>0.34</min><max>0.45</max></value></li>
         </values>
@@ -5908,12 +5804,6 @@
         <minTier>T1</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ProxiShield</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.4</min><max>1.8</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>0.9</min><max>4.1</max></value></li>
-          </statOffsets>
-        </effects>
         <values>
           <li><key>closeRangeReduction</key><value><min>0.08</min><max>0.2</max></value></li>
         </values>
@@ -5930,8 +5820,8 @@
       <li Class="RimPunkCE.ActiveEffectExtension">
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>1.5</min><max>4.5</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>3.4</min><max>10.1</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>0.6</min><max>1.8</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>1.36</min><max>4.04</max></value></li>
           </statOffsets>
         </effects>
       </li>
@@ -5972,8 +5862,8 @@
         <item>RPC_Item_RangeGuard</item>
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.5</min><max>1.7</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>1.1</min><max>3.8</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>0.2</min><max>0.68</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>0.44</min><max>1.52</max></value></li>
           </statOffsets>
         </effects>
         <values>
@@ -6021,12 +5911,6 @@
         <minTier>T1</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_ShockNAwe</item>
-        <effects>
-          <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>2.2</min><max>4.6</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>5</min><max>10.4</max></value></li>
-          </statOffsets>
-        </effects>
         <values>
           <li><key>shockChance</key><value><min>0.1</min><max>0.1</max></value></li>
           <li><key>shockDamage</key><value><min>13.5</min><max>50</max></value></li>
@@ -6062,8 +5946,8 @@
         <item>RPC_Item_SubdermalArmor</item>
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.85</min><max>2.45</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>1.9</min><max>5.5</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>0.34</min><max>0.98</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>0.76</min><max>2.2</max></value></li>
           </statOffsets>
         </effects>
       </li>

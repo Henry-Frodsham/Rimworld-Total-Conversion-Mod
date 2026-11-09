@@ -54,7 +54,7 @@
   <!-- cyberpsychosis -->
   <RPC_CyberpsychosisReason_Event>pushed over the edge ({0})</RPC_CyberpsychosisReason_Event>
   <RPC_CyberpsychosisReason_Burnout>cyberpsychosis burnout: above 50% capacity</RPC_CyberpsychosisReason_Burnout>
-  <RPC_CyberpsychosisReason_LastStand>David's last stand wore off. This break is permanent: removing cyberware won't end it, nothing will.</RPC_CyberpsychosisReason_LastStand>
+  <RPC_CyberpsychosisReason_LastStand>Permanent rogue cyberpsychosis. Removing chrome will not end this episode.</RPC_CyberpsychosisReason_LastStand>
 
   <!-- immunoblockers -->
   <RPC_ImmunoblockerTip>+{0} cyberware capacity (only the strongest active immunoblocker counts)</RPC_ImmunoblockerTip>
@@ -169,7 +169,7 @@ Collectors are sent in {1} days. The debt grows by {2}% a day. Paying at least {
 
   <!-- quickhacks -->
   <RPC_NeedsCyberdeck>Needs a cyberdeck.</RPC_NeedsCyberdeck>
-  <RPC_QuickhackTooltip>{0} quickhack, {1}. RAM: {2}, upload: {3}s.</RPC_QuickhackTooltip>
+  <RPC_QuickhackTooltip>{0} quickhack, {1}. RAM: {2}. Upload commitment: 60–120s by distance; stand still, damage cancels.</RPC_QuickhackTooltip>
   <RPC_QuickhackCategory_Combat>Combat</RPC_QuickhackCategory_Combat>
   <RPC_QuickhackCategory_Control>Control</RPC_QuickhackCategory_Control>
   <RPC_QuickhackCategory_Covert>Covert</RPC_QuickhackCategory_Covert>

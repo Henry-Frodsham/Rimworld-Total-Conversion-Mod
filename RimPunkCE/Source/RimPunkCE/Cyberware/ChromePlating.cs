@@ -7,14 +7,9 @@ using Verse;
 namespace RimPunkCE
 {
     /// <summary>
-    /// Per-part armor and health from implants (RPC_ChromePlatingTuning in Defs/Cyberware/Bases.xml). Target: a pawn with
-    /// every slot full of top-tier chrome is about as tough as a large mech (CE centipede: 20 mm sharp, 45 MPa blunt,
-    /// health scale 4.32). It's read from the hediffs on every hit, so colonists and NPCs are treated the same.
-    ///  - An implant on a body part (arm, hand, leg, eye) plates that part and everything below it.
-    ///  - Whole-body skeleton and skin systems add health to every part. Their armor is still the existing pawn-wide stat.
-    ///  - Any hediff can add more with PartPlatingExtension (scrap plating on cyberpsychos).
-    /// Armor is added to CE's natural armor for the part, health divides damage after armor: the health tab shows normal
-    /// numbers, the part just takes that many more hits. That also keeps it out of Elite Bionics Framework's way.
+    /// Dedicated plating supplies armour, capped after multipliers at 10 mm sharp / 25 MPa blunt per part.
+    /// General implants keep their previous effective-health contribution but give no flat armour.
+    /// Race armour and apparel remain separate. Colonists and NPCs use the same calculation.
     /// </summary>
     public class ChromePlatingTuningDef : Def
     {
@@ -30,9 +25,9 @@ namespace RimPunkCE
         /// <summary>Part health never goes above this multiple (centipede: 4.32).</summary>
         public float maxHealthFactor = 4.3f;
 
-        /// <summary>Pawn-wide natural armor on a chromed pawn stops here (centipede: 20 mm / 45 MPa). Worn apparel isn't capped.</summary>
-        public float maxPawnSharp = 22f;
-        public float maxPawnBlunt = 50f;
+        /// <summary>Implant contribution ceiling, including local plating and multipliers. Excludes race armour and apparel.</summary>
+        public float maxPawnSharp = 10f;
+        public float maxPawnBlunt = 25f;
 
         // pawn generation
         /// <summary>Pawns with at least this many implants can get armor implants added.</summary>
@@ -52,9 +47,7 @@ namespace RimPunkCE
     }
 
     /// <summary>
-    /// Caps the armor stats on chromed pawns, added to ArmorRating_Sharp / _Blunt at startup. Stacked skin and skeleton
-    /// implants otherwise run to more than twice a large mech's armor, past what most guns can pierce. Only pawns with
-    /// cyberware: natural armor from other mods' races is left as it is.
+    /// Adds the capped whole-body implant contribution. CE's per-part postfix supplies only the local difference.
     /// </summary>
     public class StatPart_ChromeArmorCap : StatPart
     {
@@ -62,7 +55,8 @@ namespace RimPunkCE
 
         public override void TransformValue(StatRequest req, ref float val)
         {
-            if (val > cap && req.Thing is Pawn pawn && pawn.RaceProps?.Humanlike == true && pawn.GetCyberTracker()?.HasCyberware == true) val = cap;
+            if (req.Thing is Pawn pawn && pawn.RaceProps?.Humanlike == true)
+                val += ChromePlatingUtility.ArmorFor(pawn, parentStat, null);
         }
 
         public override string ExplanationPart(StatRequest req)
@@ -134,6 +128,35 @@ namespace RimPunkCE
                     health += ext.health;
                 }
             }
+            float sharpFactor = 1f, bluntFactor = 1f;
+            foreach (var h in hediffs)
+            {
+                TieredEffects effects = null;
+                CyberTier tier = CyberTier.T1, min = CyberTier.T1, max = CyberTier.Iconic;
+                float scale = 1f;
+                if (h is Hediff_Cyberware c && c.Ext != null)
+                {
+                    effects = c.Ext.effects; tier = c.tier; min = c.Ext.minTier; max = c.Ext.maxTier;
+                    scale = (c.effectsDoubled ? 2f : 1f) * QualityBionicsCompat.Multiplier(c.Quality);
+                }
+                else if (h is Hediff_CyberActive a && a.Ext != null)
+                { effects = a.Ext.effects; tier = a.tier; min = a.minTier; max = a.maxTier; scale = a.doubled ? 2f : 1f; }
+                if (effects == null || (h.Part != null && (part == null || !Covers(h.Part, part)))) continue;
+                if (effects.statOffsets != null) foreach (var m in effects.statOffsets)
+                {
+                    float value = m.value.Evaluate(tier, min, max) * scale;
+                    if (m.stat == StatDefOf.ArmorRating_Sharp) sharp += value;
+                    if (m.stat == StatDefOf.ArmorRating_Blunt) blunt += value;
+                }
+                if (effects.statFactors != null) foreach (var m in effects.statFactors)
+                {
+                    float value = 1f + (m.value.Evaluate(tier, min, max) - 1f) * scale;
+                    if (m.stat == StatDefOf.ArmorRating_Sharp) sharpFactor *= value;
+                    if (m.stat == StatDefOf.ArmorRating_Blunt) bluntFactor *= value;
+                }
+            }
+            sharp = Mathf.Clamp(sharp * sharpFactor, 0f, t.maxPawnSharp);
+            blunt = Mathf.Clamp(blunt * bluntFactor, 0f, t.maxPawnBlunt);
             healthFactor = Mathf.Min(t.maxHealthFactor, 1f + health);
         }
 

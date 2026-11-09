@@ -75,6 +75,7 @@ namespace RimPunkCE
 
         public override string BlockReason()
         {
+            if (!WorldFeatures.Quickhacks) return "RPC_Features_Disabled".Translate();
             string b = base.BlockReason();
             if (b != null) return b;
             var tracker = pawn.GetCyberTracker();
@@ -103,6 +104,7 @@ namespace RimPunkCE
 
         public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest)
         {
+            if (!WorldFeatures.Quickhacks || BlockReason() != null) return false;
             bool ok = base.Activate(target, dest);
             if (ok && Ext != null && !Ext.IsUntraceable(Tier) && Tier >= CyberTier.T4 && pawn.GetCyberTracker() is CompCyberTracker t)
                 t.lastHighTierQuickhackTick = Find.TickManager.TicksGame; // NetWatch trace
@@ -251,6 +253,7 @@ namespace RimPunkCE
         /// <summary>Translation key for why this hack can't affect this pawn, or null if it can.</summary>
         public static string InvalidReason(QuickhackAbility hack, Pawn p)
         {
+            if (!WorldFeatures.Quickhacks) return "RPC_Features_Disabled";
             var ext = hack.Ext;
             if (ext == null) return null;
             if (p.RaceProps.IsMechanoid && !ext.affectsMechanoids) return "RPC_QuickhackNoMechanoids";

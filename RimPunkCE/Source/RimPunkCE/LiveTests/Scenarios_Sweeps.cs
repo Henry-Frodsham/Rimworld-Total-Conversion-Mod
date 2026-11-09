@@ -191,6 +191,8 @@ namespace RimPunkCE
                         continue;
                     }
                     int before = comp.ResultCount(NetrunResult.Uploaded);
+                    // High-cost ultimates need the same Overclock health payment a player would use.
+                    if (a.RamCost > t.Ram && !QuickhackUtility.Overclocked(caster)) caster.health.AddHediff(QuickhackDefOf.RPC_Overclock);
                     bool threw = false;
                     try { a.Activate(new LocalTargetInfo(victim), new LocalTargetInfo(victim)); }
                     catch (System.Exception e)

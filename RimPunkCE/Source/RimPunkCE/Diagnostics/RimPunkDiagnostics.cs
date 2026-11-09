@@ -244,10 +244,10 @@ namespace RimPunkCE
             // cyberpsychosis
             bool psycho = CyberpsychosisUtility.InCyberpsychosis(pawn);
             bool rage = pawn.health.hediffSet.HasHediff(RPDefOf.RPC_CyberpsychosisRage);
-            if (psycho && tracker.UsageRatio < RPDefOf.RPC_CyberpsychosisTuning.safeUsage)
-                Diag.Check("psychosis", $"{who}: in cyberpsychosis at {tracker.UsageRatio:P0} usage (should have ended)", "psyend" + id + Find.TickManager.TicksGame / 2500);
+            if (float.IsNaN(tracker.instability) || tracker.instability < 0f || tracker.instability > 100f)
+                Diag.Check("psychosis", $"{who}: invalid instability {tracker.instability}", "psyvalue" + id);
             if (psycho != rage) Diag.Check("psychosis", $"{who}: cyberpsychosis={psycho} but rage hediff={rage}", "psyrage" + id + psycho);
-            if (psycho && !CyberpsychosisUtility.HasBurnout(pawn)) Diag.Check("psychosis", $"{who}: in cyberpsychosis without burnout", "psyburn" + id);
+
 
             // timed hediffs that should have expired
             foreach (var act in pawn.ActiveEffects())

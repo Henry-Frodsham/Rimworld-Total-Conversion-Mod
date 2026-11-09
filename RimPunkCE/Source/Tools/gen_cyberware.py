@@ -238,7 +238,24 @@ def header(title):
     out.append(f'\n  <!-- ============================================================ {title} -->\n')
 
 
+# Explicit plating choices. Other implants retain their non-armour effects.
+PLATING = {'Carapace', 'CellularAdapter', 'Chitin', 'CogitoLattice', 'NanoPlating', 'RangeGuard', 'SubdermalArmor', 'TitaniumBones'}
+PLATING_ACTIVE = {'CogitoLatticeBoost', 'RangeGuardBoost'}
+
+def balance_armour(id, effects, allowed):
+    if effects is None: return
+    result = []
+    for stat, value in effects.offsets:
+        if stat not in ('ArmorRating_Sharp', 'ArmorRating_Blunt'):
+            result.append((stat, value))
+        elif id in allowed:
+            value = [v * 0.4 for v in value] if isinstance(value, list) else tuple(v * 0.4 for v in value) if isinstance(value, tuple) else value * 0.4
+            result.append((stat, value))
+    effects.offsets = result
+
 def cyberware(id, label, desc, slot, cap, tiers, effects=None, values=None, comps='', os_type=None, extra='', note=None, role=None):
+    balance_armour(id, effects, PLATING)
+    if id == 'BionicJoints': desc = 'Replacement joints. Reinforce the body without adding armour plating.'
     lo, hi = tiers
     cost = list(COST[lo])
     extra_comp = cap // 20
@@ -278,6 +295,7 @@ def cyberware(id, label, desc, slot, cap, tiers, effects=None, values=None, comp
 
 
 def active(id, label, desc, effects=None, ext='', comps='', color='(1, 0.85, 0.3)', stages=''):
+    balance_armour(id, effects, PLATING_ACTIVE)
     out.append(f'''  <HediffDef ParentName="RPC_CyberActiveBase">
     <defName>RPC_{id}</defName>
     <label>{escape(label)}</label>

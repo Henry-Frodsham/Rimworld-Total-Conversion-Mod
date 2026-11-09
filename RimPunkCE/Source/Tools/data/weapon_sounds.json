@@ -1,0 +1,18 @@
+{
+  "profiles": {
+    "gun_pistol": {"defName": "RPC_Shot_Power_Pistol", "folder": "RimPunk/Guns/Power/Pistol", "maxSeconds": 0.24},
+    "gun_revolver": {"defName": "RPC_Shot_Power_Revolver", "folder": "RimPunk/Guns/Power/Revolver", "maxSeconds": 0.34},
+    "gun_smg": {"defName": "RPC_Shot_Power_SMG", "folder": "RimPunk/Guns/Power/SMG", "maxSeconds": 0.16},
+    "gun_shotgun": {"defName": "RPC_Shot_Power_Shotgun", "folder": "RimPunk/Guns/Power/Shotgun", "maxSeconds": 0.42},
+    "gun_rifle": {"defName": "RPC_Shot_Power_Rifle", "folder": "RimPunk/Guns/Power/Rifle", "maxSeconds": 0.20},
+    "gun_precision": {"defName": "RPC_Shot_Power_Precision", "folder": "RimPunk/Guns/Power/Precision", "maxSeconds": 0.40},
+    "gun_sniper": {"defName": "RPC_Shot_Power_Sniper", "folder": "RimPunk/Guns/Power/Sniper", "maxSeconds": 0.55},
+    "gun_mg": {"defName": "RPC_Shot_Power_MG", "folder": "RimPunk/Guns/Power/MG", "maxSeconds": 0.22},
+    "tech_light": {"defName": "RPC_Shot_Tech_Light", "folder": "RimPunk/Guns/Tech/Light", "maxSeconds": 0.22},
+    "tech_medium": {"defName": "RPC_Shot_Tech_Medium", "folder": "RimPunk/Guns/Tech/Medium", "maxSeconds": 0.30},
+    "tech_heavy": {"defName": "RPC_Shot_Tech_Heavy", "folder": "RimPunk/Guns/Tech/Heavy", "maxSeconds": 0.44},
+    "smart_light": {"defName": "RPC_Shot_Smart_Light", "folder": "RimPunk/Guns/Smart/Light", "maxSeconds": 0.20},
+    "smart_heavy": {"defName": "RPC_Shot_Smart_Heavy", "folder": "RimPunk/Guns/Smart/Heavy", "maxSeconds": 0.30},
+    "launcher_fire": {"defName": "RPC_Shot_ArmLauncher", "folder": "RimPunk/Arms/Launcher/Fire", "maxSeconds": 0.40}
+  }
+}

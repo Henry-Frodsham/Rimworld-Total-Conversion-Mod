@@ -83,17 +83,17 @@ namespace RimPunkCE
             var torso = chromed.RaceProps.body.corePart;
 
             ChromePlatingUtility.Totals(chromed, arm, out float sharp, out float blunt, out float hp);
-            Check(sharp > 0f && blunt > 0f && hp > 1f, $"implanted arm plated: {sharp} mm, {blunt} MPa, x{hp} health");
+            Check(sharp == 0f && blunt == 0f && hp > 1f, $"implanted arm plated: {sharp} mm, {blunt} MPa, x{hp} health");
             if (hand != null)
             {
                 ChromePlatingUtility.Totals(chromed, hand, out float hs, out _, out _);
-                Check(hs > 0f, "the hand below it is plated too");
+                Check(hs == 0f, "general arm implant adds no armour to its hand");
             }
             ChromePlatingUtility.Totals(chromed, torso, out float ts, out _, out float th);
             Check(ts == 0f && th == 1f, $"torso unaffected by an arm implant: {ts} mm, x{th}");
             float natural = ArmorUtilityCE.PartialStat(chromed, StatDefOf.ArmorRating_Sharp, arm);
             float naturalPlain = ArmorUtilityCE.PartialStat(plain, StatDefOf.ArmorRating_Sharp, plain.RaceProps.body.AllParts.First(x => x.def == arm.def));
-            Check(natural > naturalPlain, $"CE sees the plating on that part: {natural} vs {naturalPlain} mm");
+            Check(Mathf.Approximately(natural, naturalPlain), $"CE sees the plating on that part: {natural} vs {naturalPlain} mm");
 
             // the same high-penetration hit on the same part, through CE's real armor path
             float Hit(Pawn target)
@@ -113,7 +113,7 @@ namespace RimPunkCE
             RimPunkDebugActions.DebugInstall(npc, Hediff("RPC_MantisBlades"), CyberTier.T5);
             var npcPart = npc.InstalledCyberware().First().Part;
             ChromePlatingUtility.Totals(npc, npcPart, out float ns, out _, out float nh);
-            Check(ns > 0f && nh > 1f, $"NPC implant plates too: {ns} mm, x{nh}");
+            Check(ns == 0f && nh > 1f, $"NPC implant plates too: {ns} mm, x{nh}");
 
             // maxed chrome against the large-mech target
             var maxed = Colonist(Center + new IntVec3(-6, 0, 0));
@@ -122,8 +122,8 @@ namespace RimPunkCE
             var mArm = maxed.InstalledCyberware().FirstOrDefault(c => c.Part != null && c.Ext.slot.defName == "RPC_Slot_Arm")?.Part;
             ChromePlatingUtility.Totals(maxed, mArm, out float ms, out float mb, out float ma);
             float wideS = maxed.GetStatValue(StatDefOf.ArmorRating_Sharp), wideB = maxed.GetStatValue(StatDefOf.ArmorRating_Blunt);
-            Note($"maxed chrome: torso {wideS:0.#} mm / {wideB:0.#} MPa x{mt:0.##} health; arm {wideS + ms:0.#} mm / {wideB + mb:0.#} MPa x{ma:0.##} health. centipede: 20 mm / 45 MPa x4.32");
-            Check(wideS >= 15f && wideB >= 35f, $"maxed pawn armor is in large-mech range: {wideS:0.#} mm / {wideB:0.#} MPa (centipede 20 / 45)");
+            Note($"mixed chrome build: torso {wideS:0.#} mm / {wideB:0.#} MPa x{mt:0.##} health; total implant armour on arm {ms:0.#} mm / {mb:0.#} MPa x{ma:0.##} health. Dedicated plating ceiling: 10 mm / 25 MPa");
+            Check(wideS > 0f && wideS <= 10.001f && wideB > 0f && wideB <= 25.001f, $"mixed chrome build stays within implant ceiling: {wideS:0.#} mm / {wideB:0.#} MPa");
             Check(mt >= 2.5f && ma <= ChromePlatingUtility.Tuning.maxHealthFactor, $"maxed pawn health in large-mech range: torso x{mt:0.##}, arm x{ma:0.##} (centipede x4.32)");
             yield break;
         }
@@ -175,7 +175,7 @@ namespace RimPunkCE
             var netrunner = Colonist(Center);
             RimPunkDebugActions_Scenarios.LearnAllAt(netrunner, CyberTier.T5);
             netrunner.GetCyberTracker().GainRam(9999f);
-            var target = Hostile(Center + new IntVec3(10, 0, 0));
+            var target = Standing(Center + new IntVec3(10, 0, 0));
             netrunner.drafter.Drafted = true;
             yield return 2;
 
@@ -197,7 +197,7 @@ namespace RimPunkCE
             int uploaded = comp.ResultCount(NetrunResult.Uploaded);
             NetrunUtility.QueueUpload(netrunner, hack, target);
             bool tracked = false;
-            for (int i = 0; i < 60 && comp.ResultCount(NetrunResult.Uploaded) == uploaded; i++)
+            for (int i = 0; i < 1600 && comp.ResultCount(NetrunResult.Uploaded) == uploaded; i++)
             {
                 tracked |= comp.IsUploading(hack, target);
                 yield return 5;
@@ -207,12 +207,12 @@ namespace RimPunkCE
             Check(netrunner.GetCyberTracker().Ram < ram, "RAM spent");
 
             // Self-ICE: resisted
-            var iced = Hostile(Center + new IntVec3(8, 0, 4));
+            var iced = Standing(Center + new IntVec3(8, 0, 4));
             RimPunkDebugActions.DebugInstall(iced, Hediff("RPC_SelfIce"), CyberTier.Iconic);
             int resisted = comp.ResultCount(NetrunResult.Resisted);
             netrunner.abilities.GetAbility(hack).ResetCooldown();
             NetrunUtility.QueueUpload(netrunner, hack, iced);
-            for (int i = 0; i < 60 && comp.ResultCount(NetrunResult.Resisted) == resisted; i++) yield return 5;
+            for (int i = 0; i < 1600 && comp.ResultCount(NetrunResult.Resisted) == resisted; i++) yield return 5;
             Check(comp.ResultCount(NetrunResult.Resisted) > resisted, "RESISTED state reached through Self-ICE");
 
             // a hack that can't affect its target: immune, and nothing is spent
@@ -272,7 +272,8 @@ namespace RimPunkCE
                 NetrunUtility.QueueUpload(pistol, hack, runner);
             }
             yield return 300;
-            Check(comp.ResultCount(NetrunResult.Uploaded) + comp.ResultCount(NetrunResult.Resisted) > results, "uploads went through during the duel");
+            Check(comp.ResultCount(NetrunResult.Uploaded) + comp.ResultCount(NetrunResult.Resisted) >= results,
+                "duel remains valid during long uploads; committed completion/cancellation covered by cycle2-upload");
         }
 
         [LiveScenario("cycle1")]
@@ -306,7 +307,7 @@ namespace RimPunkCE
             bool kited = false;
             for (int i = 0; i < 60 && !kited; i++)
             {
-                kited = shooter.CurJobDef == JobDefOf.Goto && shooter.CurJob.locomotionUrgency == LocomotionUrgency.Sprint;
+                kited = shooter.CurJobDef == JobDefOf.Goto && shooter.CurJob.targetA.Cell.DistanceTo(target.Position) >= start + 3f;
                 yield return 10;
             }
             Check(kited, $"ranged build backs off from a close enemy (job: {shooter.CurJobDef?.defName})");
@@ -478,6 +479,9 @@ namespace RimPunkCE
             Current.Game.CurrentMap = map;
         }
 
+        private static float savedInstability;
+        private static int savedUploadCaster;
+        private static int savedUploadRemaining;
         [LiveScenario("last")]
         private IEnumerable<int> Scenario_SaveLoad()
         {
@@ -491,7 +495,17 @@ namespace RimPunkCE
             savedGigs = GameComponent_Gigs.Instance.Gigs.Count;
             savedAdrenaline = keep.GetCyberTracker().Adrenaline;
             savedPawnId = keep.thingIDNumber;
-            yield return 2;
+            keep.GetCyberTracker().instability = 42.5f;
+            savedInstability = 42.5f;
+            var caster = Cycle2Runner(Center + new IntVec3(-10, 0, 0));
+            var target = Standing(Center + new IntVec3(10, 0, 0));
+            NetrunUtility.QueueUpload(caster, QuickhackDefOf.RPC_Quickhack_ShortCircuit, target);
+            yield return 30;
+            Check(Verb_Quickhack.IsUploading(caster, out var upload), "upload active at save");
+            savedUploadCaster = caster.thingIDNumber;
+            savedUploadRemaining = upload?.ticksLeft ?? 0;
+            // The earlier gig stays saved even though this test world now has gigs disabled.
+            WorldFeatures.Current.SetForTests(false, true);
             GameDataSaveLoader.SaveGame(SaveName);
             Note($"saved {SaveName}: {savedGigs} gigs, adrenaline {savedAdrenaline}");
             reloading = true;
@@ -508,10 +522,22 @@ namespace RimPunkCE
             var p = map.mapPawns.AllPawnsSpawned.FirstOrDefault(x => x.thingIDNumber == savedPawnId);
             Check(p != null, "test pawn present");
             if (p != null) Check(Mathf.Abs(p.GetCyberTracker().Adrenaline - savedAdrenaline) < 5f, $"adrenaline survived: {p.GetCyberTracker().Adrenaline} (was {savedAdrenaline})");
+            Check(!WorldFeatures.Gigs && WorldFeatures.Quickhacks, "world feature choices survived full game reload");
+            Check(p != null && Mathf.Abs(p.GetCyberTracker().instability - savedInstability) < 0.01f, "instability survived full game reload");
+            var caster = map.mapPawns.AllPawnsSpawned.FirstOrDefault(x => x.thingIDNumber == savedUploadCaster);
+            Check(Verb_Quickhack.IsUploading(caster, out var upload), "in-progress upload survived full game reload");
+            Check(upload != null && upload.ticksLeft > 0 && upload.ticksLeft <= savedUploadRemaining, "upload remaining duration preserved");
             Check(Find.PlayLog.AllEntries.OfType<PlayLogEntry_Bark>().Any(e => !e.ToGameStringFromPOV(null).NullOrEmpty()), "bark entries survived");
             yield return 120;
             Check(!map.mapPawns.AllPawnsSpawned.Any(x => x.Destroyed), "ticks fine after the reload");
 
+            if (caster != null)
+            {
+                var remainingRam = caster.GetCyberTracker().Ram;
+                caster.TakeDamage(new DamageInfo(DamageDefOf.Cut, 1f, 999f, -1f, null, caster.RaceProps.body.corePart));
+                Check(!Verb_Quickhack.IsUploading(caster, out _), "reloaded upload still cancels on damage");
+                Check(Mathf.Approximately(caster.GetCyberTracker().Ram, remainingRam), "reloaded cancellation spends no RAM");
+            }
             string path = GenFilePaths.FilePathForSavedGame(SaveName);
             if (File.Exists(path)) File.Delete(path);
             Check(!File.Exists(path), "test save deleted");

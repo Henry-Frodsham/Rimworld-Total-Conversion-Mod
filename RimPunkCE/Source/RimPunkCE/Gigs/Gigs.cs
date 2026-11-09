@@ -142,6 +142,7 @@ namespace RimPunkCE
 
         public Gig TryAddOffer(GigType? type = null, Faction forcedTarget = null)
         {
+            if (!WorldFeatures.Gigs) return null;
             var tuning = Tuning;
             var candidates = forcedTarget != null ? new List<Faction> { forcedTarget } : TargetCandidates();
             if (tuning == null || candidates.Count == 0 || Find.AnyPlayerHomeMap == null)
@@ -171,6 +172,7 @@ namespace RimPunkCE
 
         public static bool HasContact()
         {
+            if (!WorldFeatures.Gigs) return false;
             foreach (var map in Find.Maps)
             {
                 if (!map.IsPlayerHome) continue;
@@ -188,6 +190,7 @@ namespace RimPunkCE
         [SyncMethod]
         public static void AcceptGig(int id)
         {
+            if (!WorldFeatures.Gigs) return;
             var inst = Instance;
             var gig = inst?.gigs.FirstOrDefault(g => g.id == id);
             if (gig == null || gig.state != GigState.Offered) return;
@@ -406,6 +409,7 @@ namespace RimPunkCE
 
         public override void GameComponentTick()
         {
+            if (!WorldFeatures.Gigs) return;
             int now = Find.TickManager.TicksGame;
             if (now % 250 != 0) return;
             var tuning = Tuning;
@@ -511,6 +515,7 @@ namespace RimPunkCE
 
         public override void DoWindowContents(Rect rect)
         {
+            if (!WorldFeatures.Gigs) { Widgets.Label(rect, "RPC_Features_Disabled".Translate()); return; }
             var inst = GameComponent_Gigs.Instance;
             if (inst == null) return;
             bool contact = GameComponent_Gigs.HasContact();

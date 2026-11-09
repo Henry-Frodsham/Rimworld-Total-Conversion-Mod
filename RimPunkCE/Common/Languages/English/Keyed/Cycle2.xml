@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RPC_Features_Button>RimPunk features...</RPC_Features_Button>
+  <RPC_Features_WorldExplanation>Choose features for this world. These choices are locked when the world is created.</RPC_Features_WorldExplanation>
+  <RPC_Features_Defaults>Feature defaults for new worlds. Change individual world choices on the world creation screen.</RPC_Features_Defaults>
+  <RPC_Features_Gigs>Enable gigs</RPC_Features_Gigs>
+  <RPC_Features_Quickhacks>Enable quickhacks and netrun interface</RPC_Features_Quickhacks>
+  <RPC_Features_Current>Current world (locked): gigs {0}, quickhacks {1}.</RPC_Features_Current>
+  <RPC_Features_Disabled>This feature is disabled in this world.</RPC_Features_Disabled>
+  <RPC_Psychosis_InstabilityReason>chrome instability reached breaking point</RPC_Psychosis_InstabilityReason>
+  <RPC_Psychosis_Status>Instability: {0}/100. Chrome load: {1}. More chrome increases risk; combat and overdrive cause spikes. Sleep, drugs, recreation and medical care reduce instability.</RPC_Psychosis_Status>
+</LanguageData>

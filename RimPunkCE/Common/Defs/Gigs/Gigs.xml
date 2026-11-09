@@ -27,6 +27,7 @@
 
   <MainButtonDef>
     <defName>RPC_Gigs</defName>
+    <workerClass>RimPunkCE.MainButtonWorker_RimPunkGigs</workerClass>
     <label>gigs</label>
     <description>Contracts from your contact: jobs against corporations and gangs.</description>
     <tabWindowClass>RimPunkCE.MainTabWindow_Gigs</tabWindowClass>

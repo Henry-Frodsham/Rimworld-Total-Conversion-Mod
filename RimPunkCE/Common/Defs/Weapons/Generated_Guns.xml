@@ -16,6 +16,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>490</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.7</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>40</Steel>
@@ -47,7 +48,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Arasaka_Pistol_Smart</defaultProjectile>
         <range>30</range>
-        <soundCast>Shot_Autopistol</soundCast>
+        <soundCast>RPC_Shot_Smart_Light</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -66,6 +67,7 @@
       <WorkToMake>30000</WorkToMake>
       <Mass>3.26</Mass>
       <MarketValue>880</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>81</Steel>
@@ -93,7 +95,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Arasaka_Rifle_FMJ</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCast>RPC_Shot_Power_Rifle</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -112,6 +114,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>490</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.65</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>40</Steel>
@@ -143,7 +146,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Arasaka_Pistol_Charged</defaultProjectile>
         <range>36</range>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>RPC_Shot_Tech_Light</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -162,6 +165,7 @@
       <WorkToMake>30000</WorkToMake>
       <Mass>3.26</Mass>
       <MarketValue>880</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>81</Steel>
@@ -189,7 +193,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Arasaka_Rifle_FMJ</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCast>RPC_Shot_Power_Rifle</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -208,6 +212,7 @@
       <WorkToMake>24500</WorkToMake>
       <Mass>2.5</Mass>
       <MarketValue>790</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>60</Steel>
@@ -237,7 +242,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Arasaka_SMG_Charged</defaultProjectile>
         <range>28</range>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>RPC_Shot_Tech_Light</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -256,6 +261,7 @@
       <WorkToMake>24500</WorkToMake>
       <Mass>2.5</Mass>
       <MarketValue>610</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.9</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>60</Steel>
@@ -283,7 +289,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Arasaka_SMG_FMJ</defaultProjectile>
         <range>24</range>
-        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCast>RPC_Shot_Power_SMG</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -302,6 +308,7 @@
       <WorkToMake>24500</WorkToMake>
       <Mass>2.5</Mass>
       <MarketValue>790</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>60</Steel>
@@ -331,7 +338,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Arasaka_SMG_Smart</defaultProjectile>
         <range>24</range>
-        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCast>RPC_Shot_Smart_Light</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -350,6 +357,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>380</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.95</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>40</Steel>
@@ -379,7 +387,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Arasaka_Pistol_FMJ</defaultProjectile>
         <range>36</range>
-        <soundCast>Shot_Autopistol</soundCast>
+        <soundCast>RPC_Shot_Power_Pistol</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -398,6 +406,7 @@
       <WorkToMake>10000</WorkToMake>
       <Mass>3.05</Mass>
       <MarketValue>380</MarketValue>
+      <RangedWeapon_DamageMultiplier>1.05</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>42</Steel>
@@ -425,7 +434,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_BudgetArms_Shotgun_Buck</defaultProjectile>
         <range>8</range>
-        <soundCast>Shot_Shotgun</soundCast>
+        <soundCast>RPC_Shot_Power_Shotgun</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -444,6 +453,7 @@
       <WorkToMake>24500</WorkToMake>
       <Mass>2.5</Mass>
       <MarketValue>380</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>38</Steel>
@@ -471,7 +481,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_BudgetArms_SMG_FMJ</defaultProjectile>
         <range>28</range>
-        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCast>RPC_Shot_Power_SMG</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -490,6 +500,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>240</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>25</Steel>
@@ -519,7 +530,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_BudgetArms_Pistol_FMJ</defaultProjectile>
         <range>20</range>
-        <soundCast>Shot_Autopistol</soundCast>
+        <soundCast>RPC_Shot_Power_Pistol</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -538,6 +549,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>280</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>30</Steel>
@@ -567,7 +579,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_ConstitutionalArms_Pistol_FMJ</defaultProjectile>
         <range>36</range>
-        <soundCast>Shot_Autopistol</soundCast>
+        <soundCast>RPC_Shot_Power_Pistol</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -586,6 +598,7 @@
       <WorkToMake>10000</WorkToMake>
       <Mass>3.05</Mass>
       <MarketValue>450</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>50</Steel>
@@ -613,7 +626,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_ConstitutionalArms_Shotgun_Buck</defaultProjectile>
         <range>12</range>
-        <soundCast>Shot_Shotgun</soundCast>
+        <soundCast>RPC_Shot_Power_Shotgun</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -632,6 +645,7 @@
       <WorkToMake>31500</WorkToMake>
       <Mass>8.7</Mass>
       <MarketValue>1100</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>80</Steel>
@@ -659,7 +673,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_ConstitutionalArms_MG_FMJ</defaultProjectile>
         <range>30</range>
-        <soundCast>Shot_Minigun</soundCast>
+        <soundCast>RPC_Shot_Power_MG</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -678,6 +692,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>280</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>30</Steel>
@@ -707,7 +722,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_ConstitutionalArms_Pistol_FMJ</defaultProjectile>
         <range>36</range>
-        <soundCast>Shot_Autopistol</soundCast>
+        <soundCast>RPC_Shot_Power_Pistol</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -726,6 +741,7 @@
       <WorkToMake>30000</WorkToMake>
       <Mass>3.26</Mass>
       <MarketValue>720</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>66</Steel>
@@ -753,7 +769,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_DarraPolytechnic_Rifle_FMJ</defaultProjectile>
         <range>30</range>
-        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCast>RPC_Shot_Power_Rifle</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -772,6 +788,7 @@
       <WorkToMake>6000</WorkToMake>
       <Mass>1.39</Mass>
       <MarketValue>430</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.75</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>33</Steel>
@@ -803,7 +820,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_DarraPolytechnic_Revolver_Charged</defaultProjectile>
         <range>36</range>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>RPC_Shot_Tech_Medium</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -822,6 +839,7 @@
       <WorkToMake>6000</WorkToMake>
       <Mass>1.39</Mass>
       <MarketValue>330</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>33</Steel>
@@ -851,7 +869,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_DarraPolytechnic_Revolver_FMJ</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_Revolver</soundCast>
+        <soundCast>RPC_Shot_Power_Revolver</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -870,6 +888,7 @@
       <WorkToMake>24500</WorkToMake>
       <Mass>2.5</Mass>
       <MarketValue>500</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>49</Steel>
@@ -897,7 +916,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_DarraPolytechnic_SMG_FMJ</defaultProjectile>
         <range>21</range>
-        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCast>RPC_Shot_Power_SMG</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -916,6 +935,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>380</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.85</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>31</Steel>
@@ -947,7 +967,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_HansenArmory_Pistol_Charged</defaultProjectile>
         <range>30</range>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>RPC_Shot_Tech_Light</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -966,6 +986,7 @@
       <WorkToMake>24500</WorkToMake>
       <Mass>2.5</Mass>
       <MarketValue>610</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>47</Steel>
@@ -995,7 +1016,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_HansenArmory_SMG_Smart</defaultProjectile>
         <range>24</range>
-        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCast>RPC_Shot_Smart_Light</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1014,6 +1035,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>470</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.85</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>39</Steel>
@@ -1045,7 +1067,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_KangTao_Pistol_Smart</defaultProjectile>
         <range>36</range>
-        <soundCast>Shot_Autopistol</soundCast>
+        <soundCast>RPC_Shot_Smart_Light</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1064,6 +1086,7 @@
       <WorkToMake>24500</WorkToMake>
       <Mass>2.5</Mass>
       <MarketValue>760</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.95</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>58</Steel>
@@ -1093,7 +1116,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_KangTao_SMG_Smart</defaultProjectile>
         <range>30</range>
-        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCast>RPC_Shot_Smart_Light</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1112,6 +1135,7 @@
       <WorkToMake>10000</WorkToMake>
       <Mass>3.05</Mass>
       <MarketValue>760</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>65</Steel>
@@ -1141,7 +1165,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_KangTao_Shotgun_Smart</defaultProjectile>
         <range>24</range>
-        <soundCast>Shot_Shotgun</soundCast>
+        <soundCast>RPC_Shot_Smart_Heavy</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1160,6 +1184,7 @@
       <WorkToMake>6000</WorkToMake>
       <Mass>1.39</Mass>
       <MarketValue>440</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.8</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>43</Steel>
@@ -1189,7 +1214,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_MalorianArms_Revolver_FMJ</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_Revolver</soundCast>
+        <soundCast>RPC_Shot_Power_Revolver</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1208,6 +1233,7 @@
       <WorkToMake>31500</WorkToMake>
       <Mass>8.7</Mass>
       <MarketValue>1210</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>88</Steel>
@@ -1235,7 +1261,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_MidnightArms_MG_FMJ</defaultProjectile>
         <range>30</range>
-        <soundCast>Shot_Minigun</soundCast>
+        <soundCast>RPC_Shot_Power_MG</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1254,6 +1280,7 @@
       <WorkToMake>24000</WorkToMake>
       <Mass>4.19</Mass>
       <MarketValue>770</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>66</Steel>
@@ -1281,7 +1308,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_MidnightArms_Precision_FMJ</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCast>RPC_Shot_Power_Precision</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1300,6 +1327,7 @@
       <WorkToMake>10000</WorkToMake>
       <Mass>3.05</Mass>
       <MarketValue>610</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>67</Steel>
@@ -1327,7 +1355,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Militech_Shotgun_Buck</defaultProjectile>
         <range>12</range>
-        <soundCast>Shot_Shotgun</soundCast>
+        <soundCast>RPC_Shot_Power_Shotgun</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1346,6 +1374,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>380</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.7</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>40</Steel>
@@ -1375,7 +1404,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Militech_Pistol_FMJ</defaultProjectile>
         <range>30</range>
-        <soundCast>Shot_Autopistol</soundCast>
+        <soundCast>RPC_Shot_Power_Pistol</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1394,6 +1423,7 @@
       <WorkToMake>24000</WorkToMake>
       <Mass>4.19</Mass>
       <MarketValue>1230</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.8</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>81</Steel>
@@ -1423,7 +1453,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Militech_Precision_Charged</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>RPC_Shot_Tech_Medium</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1442,6 +1472,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>490</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.7</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>40</Steel>
@@ -1473,7 +1504,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Militech_Pistol_Charged</defaultProjectile>
         <range>30</range>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>RPC_Shot_Tech_Light</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1492,6 +1523,7 @@
       <WorkToMake>24500</WorkToMake>
       <Mass>2.5</Mass>
       <MarketValue>610</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.95</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>60</Steel>
@@ -1519,7 +1551,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Militech_SMG_FMJ</defaultProjectile>
         <range>24</range>
-        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCast>RPC_Shot_Power_SMG</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1538,6 +1570,7 @@
       <WorkToMake>30000</WorkToMake>
       <Mass>3.26</Mass>
       <MarketValue>880</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>81</Steel>
@@ -1565,7 +1598,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Militech_Rifle_FMJ</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCast>RPC_Shot_Power_Rifle</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1584,6 +1617,7 @@
       <WorkToMake>31500</WorkToMake>
       <Mass>14</Mass>
       <MarketValue>1480</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.85</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>108</Steel>
@@ -1611,7 +1645,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Militech_MG_FMJ</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_Minigun</soundCast>
+        <soundCast>RPC_Shot_Power_MG</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1630,6 +1664,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>490</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.7</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>40</Steel>
@@ -1661,7 +1696,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Militech_Pistol_Charged</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>RPC_Shot_Tech_Light</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1680,6 +1715,7 @@
       <WorkToMake>30000</WorkToMake>
       <Mass>3.26</Mass>
       <MarketValue>750</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>69</Steel>
@@ -1707,7 +1743,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Nokota_Rifle_FMJ</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCast>RPC_Shot_Power_Rifle</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1726,6 +1762,7 @@
       <WorkToMake>30000</WorkToMake>
       <Mass>3.26</Mass>
       <MarketValue>970</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>69</Steel>
@@ -1755,7 +1792,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Nokota_Rifle_Smart</defaultProjectile>
         <range>36</range>
-        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCast>RPC_Shot_Smart_Heavy</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1774,6 +1811,7 @@
       <WorkToMake>10000</WorkToMake>
       <Mass>3.4</Mass>
       <MarketValue>560</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>47</Steel>
@@ -1803,7 +1841,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Rostovic_Shotgun_Charged</defaultProjectile>
         <range>18</range>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>RPC_Shot_Tech_Heavy</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1822,6 +1860,7 @@
       <WorkToMake>10000</WorkToMake>
       <Mass>3.4</Mass>
       <MarketValue>430</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>47</Steel>
@@ -1849,7 +1888,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Rostovic_Shotgun_Buck</defaultProjectile>
         <range>18</range>
-        <soundCast>Shot_Shotgun</soundCast>
+        <soundCast>RPC_Shot_Power_Shotgun</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1868,6 +1907,7 @@
       <WorkToMake>10000</WorkToMake>
       <Mass>3.4</Mass>
       <MarketValue>430</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>47</Steel>
@@ -1895,7 +1935,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Rostovic_Shotgun_Buck</defaultProjectile>
         <range>18</range>
-        <soundCast>Shot_Shotgun</soundCast>
+        <soundCast>RPC_Shot_Power_Shotgun</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1914,6 +1954,7 @@
       <WorkToMake>10000</WorkToMake>
       <Mass>3.4</Mass>
       <MarketValue>560</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>47</Steel>
@@ -1943,7 +1984,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Rostovic_Shotgun_Smart</defaultProjectile>
         <range>12</range>
-        <soundCast>Shot_Shotgun</soundCast>
+        <soundCast>RPC_Shot_Smart_Heavy</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -1962,6 +2003,7 @@
       <WorkToMake>24000</WorkToMake>
       <Mass>4.19</Mass>
       <MarketValue>660</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>57</Steel>
@@ -1989,7 +2031,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Rostovic_Precision_FMJ</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_BoltActionRifle</soundCast>
+        <soundCast>RPC_Shot_Power_Precision</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -2008,6 +2050,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>490</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.7</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>40</Steel>
@@ -2039,7 +2082,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Arasaka_Pistol_Smart</defaultProjectile>
         <range>30</range>
-        <soundCast>Shot_Autopistol</soundCast>
+        <soundCast>RPC_Shot_Smart_Light</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -2058,6 +2101,7 @@
       <WorkToMake>6000</WorkToMake>
       <Mass>1.39</Mass>
       <MarketValue>300</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>30</Steel>
@@ -2087,7 +2131,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Techtronika_Revolver_FMJ</defaultProjectile>
         <range>30</range>
-        <soundCast>Shot_Revolver</soundCast>
+        <soundCast>RPC_Shot_Power_Revolver</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -2106,6 +2150,7 @@
       <WorkToMake>6000</WorkToMake>
       <Mass>1.39</Mass>
       <MarketValue>390</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>30</Steel>
@@ -2137,7 +2182,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Techtronika_Revolver_Charged</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>RPC_Shot_Tech_Medium</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -2156,6 +2201,7 @@
       <WorkToMake>30000</WorkToMake>
       <Mass>7.3</Mass>
       <MarketValue>900</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>70</Steel>
@@ -2183,7 +2229,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Techtronika_Sniper_FMJ</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_SniperRifle</soundCast>
+        <soundCast>RPC_Shot_Power_Sniper</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -2202,6 +2248,7 @@
       <WorkToMake>10000</WorkToMake>
       <Mass>3.05</Mass>
       <MarketValue>450</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>50</Steel>
@@ -2229,7 +2276,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Techtronika_Shotgun_Buck</defaultProjectile>
         <range>14</range>
-        <soundCast>Shot_Shotgun</soundCast>
+        <soundCast>RPC_Shot_Power_Shotgun</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -2248,6 +2295,7 @@
       <WorkToMake>30000</WorkToMake>
       <Mass>7.3</Mass>
       <MarketValue>1400</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>84</Steel>
@@ -2277,7 +2325,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Tsunami_Sniper_Smart</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_SniperRifle</soundCast>
+        <soundCast>RPC_Shot_Smart_Heavy</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -2296,6 +2344,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>440</MarketValue>
+      <RangedWeapon_DamageMultiplier>0.8</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>36</Steel>
@@ -2327,7 +2376,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Tsunami_Pistol_Smart</defaultProjectile>
         <range>24</range>
-        <soundCast>Shot_Autopistol</soundCast>
+        <soundCast>RPC_Shot_Smart_Light</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -2346,6 +2395,7 @@
       <WorkToMake>30000</WorkToMake>
       <Mass>3.26</Mass>
       <MarketValue>780</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>72</Steel>
@@ -2373,7 +2423,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Tsunami_Rifle_FMJ</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCast>RPC_Shot_Power_Rifle</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -2392,6 +2442,7 @@
       <WorkToMake>30000</WorkToMake>
       <Mass>7.3</Mass>
       <MarketValue>1400</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>84</Steel>
@@ -2421,7 +2472,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Tsunami_Sniper_Charged</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>RPC_Shot_Tech_Heavy</soundCast>
       </li>
     </verbs>
   </ThingDef>
@@ -2440,6 +2491,7 @@
       <WorkToMake>7000</WorkToMake>
       <Mass>1.11</Mass>
       <MarketValue>340</MarketValue>
+      <RangedWeapon_DamageMultiplier>1</RangedWeapon_DamageMultiplier>
     </statBases>
     <costList>
       <Steel>36</Steel>
@@ -2469,7 +2521,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_RPC_Tsunami_Pistol_FMJ</defaultProjectile>
         <range>40</range>
-        <soundCast>Shot_Autopistol</soundCast>
+        <soundCast>RPC_Shot_Power_Pistol</soundCast>
       </li>
     </verbs>
   </ThingDef>

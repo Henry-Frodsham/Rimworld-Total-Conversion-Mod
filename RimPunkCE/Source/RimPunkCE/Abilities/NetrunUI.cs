@@ -82,6 +82,7 @@ namespace RimPunkCE
 
         public override void MapComponentTick()
         {
+            if (!WorldFeatures.Quickhacks) { uploads.Clear(); results.Clear(); known.Clear(); return; }
             int now = Find.TickManager.TicksGame;
             results.RemoveAll(r => now - r.tick > ResultLifetimeTicks);
             if (now % ScanIntervalTicks != 0) return;
@@ -115,7 +116,7 @@ namespace RimPunkCE
 
         public override void MapComponentUpdate()
         {
-            if (!RimPunkMod.Settings.visualEffects || Find.CurrentMap != map) return;
+            if (!WorldFeatures.Quickhacks || !RimPunkMod.Settings.visualEffects || Find.CurrentMap != map) return;
             float y = AltitudeLayer.MetaOverlays.AltitudeFor();
             for (int i = 0; i < uploads.Count; i++)
             {
@@ -136,7 +137,7 @@ namespace RimPunkCE
 
         public override void MapComponentOnGUI()
         {
-            if (!RimPunkMod.Settings.visualEffects || Find.CurrentMap != map) return;
+            if (!WorldFeatures.Quickhacks || !RimPunkMod.Settings.visualEffects || Find.CurrentMap != map) return;
             if (Event.current.type != EventType.Repaint) return;
             boxStack.Clear();
             var oldFont = Text.Font;
@@ -212,10 +213,11 @@ namespace RimPunkCE
         protected override bool Multiselect => false;
 
         public override bool SelectedPawnValid(Pawn pawn, FloatMenuContext context) =>
-            base.SelectedPawnValid(pawn, context) && pawn.GetCyberTracker()?.HasCyberdeck == true && pawn.abilities != null;
+            WorldFeatures.Quickhacks && base.SelectedPawnValid(pawn, context) && pawn.GetCyberTracker()?.HasCyberdeck == true && pawn.abilities != null;
 
         public override IEnumerable<FloatMenuOption> GetOptionsFor(Pawn clickedPawn, FloatMenuContext context)
         {
+            if (!WorldFeatures.Quickhacks) yield break;
             var caster = context.FirstSelectedPawn;
             if (caster?.abilities == null || clickedPawn == caster) yield break;
             var hacks = caster.abilities.AllAbilitiesForReading.OfType<QuickhackAbility>()
@@ -241,6 +243,7 @@ namespace RimPunkCE
         [SyncMethod]
         public static void QueueUpload(Pawn caster, AbilityDef hack, Pawn target)
         {
+            if (!WorldFeatures.Quickhacks) return;
             var ability = caster?.abilities?.GetAbility(hack);
             if (ability == null || target == null || target.Dead) return;
             ability.QueueCastingJob(target, target);

@@ -29,7 +29,7 @@ namespace RimPunkCE
             {
                 stage.statOffsets = new List<StatModifier>();
                 foreach (var m in statOffsets)
-                    stage.statOffsets.Add(new StatModifier { stat = m.stat, value = m.value.Evaluate(tier, minTier, maxTier) * effectMultiplier });
+                    if (m.stat != StatDefOf.ArmorRating_Sharp && m.stat != StatDefOf.ArmorRating_Blunt) stage.statOffsets.Add(new StatModifier { stat = m.stat, value = m.value.Evaluate(tier, minTier, maxTier) * effectMultiplier });
             }
             if (template?.statOffsets != null)
             {
@@ -42,6 +42,7 @@ namespace RimPunkCE
                 stage.statFactors = new List<StatModifier>();
                 foreach (var m in statFactors)
                 {
+                    if (m.stat == StatDefOf.ArmorRating_Sharp || m.stat == StatDefOf.ArmorRating_Blunt) continue;
                     float v = m.value.Evaluate(tier, minTier, maxTier);
                     // doubling a factor doubles its deviation from 1 (x1.2 -> x1.4)
                     stage.statFactors.Add(new StatModifier { stat = m.stat, value = 1f + (v - 1f) * effectMultiplier });

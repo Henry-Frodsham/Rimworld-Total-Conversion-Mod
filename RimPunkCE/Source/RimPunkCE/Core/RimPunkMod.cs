@@ -35,6 +35,12 @@ namespace RimPunkCE
             list.CheckboxLabeled("RPC_Settings_FactionsDefault".Translate(), ref Settings.cyberpunkFactionsDefault, "RPC_Settings_FactionsDefaultTip".Translate());
             list.CheckboxLabeled("RPC_Settings_DebugLogging".Translate(), ref Settings.debugLogging);
             list.CheckboxLabeled("RPC_Settings_Diagnostics".Translate(), ref Settings.diagnostics, "RPC_Settings_DiagnosticsTip".Translate());
+            list.Gap();
+            list.Label("RPC_Features_Defaults".Translate());
+            list.CheckboxLabeled("RPC_Features_Gigs".Translate(), ref Settings.newWorldGigs);
+            list.CheckboxLabeled("RPC_Features_Quickhacks".Translate(), ref Settings.newWorldQuickhacks);
+            if (WorldFeatures.Current != null)
+                list.Label("RPC_Features_Current".Translate(WorldFeatures.Gigs ? "On" : "Off", WorldFeatures.Quickhacks ? "On" : "Off"));
             list.End();
         }
     }
@@ -44,6 +50,8 @@ namespace RimPunkCE
         /// <summary>Multiplies every pawn's max cyberware capacity (not Gonk's hard 20).</summary>
         public float capacityMultiplier = 1f;
         public float cyberpsychosisChanceMultiplier = 1f;
+        public bool newWorldGigs;
+        public bool newWorldQuickhacks;
         public bool visualEffects = true;
         public bool adrenalineEnabled = true;
         public bool contextualAI = true;
@@ -56,6 +64,8 @@ namespace RimPunkCE
 
         public override void ExposeData()
         {
+            Scribe_Values.Look(ref newWorldGigs, "newWorldGigs");
+            Scribe_Values.Look(ref newWorldQuickhacks, "newWorldQuickhacks");
             Scribe_Values.Look(ref capacityMultiplier, "capacityMultiplier", 1f);
             Scribe_Values.Look(ref cyberpsychosisChanceMultiplier, "cyberpsychosisChanceMultiplier", 1f);
             Scribe_Values.Look(ref visualEffects, "visualEffects", true);

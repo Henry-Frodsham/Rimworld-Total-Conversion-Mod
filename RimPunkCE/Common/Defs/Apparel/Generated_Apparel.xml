@@ -4,13 +4,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Aldecaldos_Collar_Orange</defName>
-    <label>Aldecaldos orange shirt</label>
+    <label>Aldecaldos red shirt</label>
     <description>Clothing. Worn by Aldecaldos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(220,120,40)</color>
+      <color>(185,58,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -42,13 +42,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Aldecaldos_Collar_Tan</defName>
-    <label>Aldecaldos tan shirt</label>
+    <label>Aldecaldos red shirt</label>
     <description>Clothing. Worn by Aldecaldos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,168,122)</color>
+      <color>(185,58,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -80,13 +80,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Aldecaldos_Cowboy_Brown</defName>
-    <label>Aldecaldos brown hat</label>
+    <label>Aldecaldos red hat</label>
     <description>Clothing. Worn by Aldecaldos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CowboyHat/CowboyHat</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(185,58,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -118,13 +118,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Aldecaldos_Cowboy_Tan</defName>
-    <label>Aldecaldos tan hat</label>
+    <label>Aldecaldos red hat</label>
     <description>Clothing. Worn by Aldecaldos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CowboyHat/CowboyHat</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,168,122)</color>
+      <color>(185,58,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -156,13 +156,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Aldecaldos_Duster_Leather</defName>
-    <label>Aldecaldos leather long coat</label>
+    <label>Aldecaldos red long coat</label>
     <description>Clothing. Worn by Aldecaldos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(90,58,38)</color>
+      <color>(185,58,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -194,13 +194,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Aldecaldos_Duster_Tan</defName>
-    <label>Aldecaldos tan long coat</label>
+    <label>Aldecaldos red long coat</label>
     <description>Clothing. Worn by Aldecaldos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,168,122)</color>
+      <color>(185,58,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -232,13 +232,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Aldecaldos_Flakvest_Brown</defName>
-    <label>Aldecaldos brown armor vest</label>
+    <label>Aldecaldos red armor vest</label>
     <description>A plate carrier. Worn by Aldecaldos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(185,58,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -271,13 +271,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Aldecaldos_Jacket_Brown</defName>
-    <label>Aldecaldos brown jacket</label>
+    <label>Aldecaldos red jacket</label>
     <description>Clothing. Worn by Aldecaldos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(185,58,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -309,13 +309,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Aldecaldos_Jacket_Leather</defName>
-    <label>Aldecaldos leather jacket</label>
+    <label>Aldecaldos red jacket</label>
     <description>Clothing. Worn by Aldecaldos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(90,58,38)</color>
+      <color>(185,58,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -347,13 +347,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Aldecaldos_Pants_Brown</defName>
-    <label>Aldecaldos brown pants</label>
+    <label>Aldecaldos red pants</label>
     <description>Clothing. Worn by Aldecaldos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(185,58,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -384,13 +384,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Aldecaldos_Shirt_Orange</defName>
-    <label>Aldecaldos orange tank top</label>
+    <label>Aldecaldos red tank top</label>
     <description>Clothing. Worn by Aldecaldos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(220,120,40)</color>
+      <color>(185,58,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -422,13 +422,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Animals_Jacket_Brown</defName>
-    <label>Animals brown jacket</label>
+    <label>Animals yellow jacket</label>
     <description>Clothing. Worn by Animals in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(220,176,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -460,13 +460,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Animals_Pants_Black</defName>
-    <label>Animals black pants</label>
+    <label>Animals yellow pants</label>
     <description>Clothing. Worn by Animals in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(220,176,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -497,13 +497,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Animals_Pants_Charcoal</defName>
-    <label>Animals charcoal pants</label>
+    <label>Animals yellow pants</label>
     <description>Clothing. Worn by Animals in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(220,176,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -534,13 +534,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Animals_Shirt_Black</defName>
-    <label>Animals black tank top</label>
+    <label>Animals yellow tank top</label>
     <description>Clothing. Worn by Animals in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(220,176,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -572,13 +572,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Animals_Shirt_Grey</defName>
-    <label>Animals grey tank top</label>
+    <label>Animals yellow tank top</label>
     <description>Clothing. Worn by Animals in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(130,132,136)</color>
+      <color>(220,176,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -610,13 +610,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Animals_Shirt_Orange</defName>
-    <label>Animals orange tank top</label>
+    <label>Animals yellow tank top</label>
     <description>Clothing. Worn by Animals in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(220,120,40)</color>
+      <color>(220,176,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -648,13 +648,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Animals_Tuque_Black</defName>
-    <label>Animals black beanie</label>
+    <label>Animals yellow beanie</label>
     <description>Clothing. Worn by Animals in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Tuque/Tuque</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(220,176,45)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -686,12 +686,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaBodysuit</defName>
-    <label>Arasaka bodysuit</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red bodysuit</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaBodysuit/ArasakaBodysuit</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -713,7 +714,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Shoulders</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaBodysuit/ArasakaBodysuit</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</wornGraphicPath>
       <layers><li>OnSkin</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -723,12 +724,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaCarrier</defName>
-    <label>Arasaka plate carrier</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red armor vest</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaPlateCarrier/ArasakaPlateCarrier</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -751,7 +753,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Neck</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaPlateCarrier/ArasakaPlateCarrier</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</wornGraphicPath>
       <layers><li>Middle</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -761,12 +763,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaDuster</defName>
-    <label>Arasaka long coat</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red long coat</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaDuster/ArasakaDuster</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -788,7 +791,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaDuster/ArasakaDuster</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</wornGraphicPath>
       <layers><li>Shell</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -798,12 +801,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaHeavy</defName>
-    <label>Arasaka heavy armor</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red heavy armor</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaHeavyArmor/ArasakaHeavyArmor</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -832,7 +836,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaHeavyArmor/ArasakaHeavyArmor</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</wornGraphicPath>
       <layers><li>Middle</li><li>Shell</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -842,12 +846,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaHeavyhelm</defName>
-    <label>Arasaka heavy helmet</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red heavy helmet</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaHeavyHelmet/ArasakaHeavyHelmet</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -871,7 +876,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>FullHead</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaHeavyHelmet/ArasakaHeavyHelmet</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</wornGraphicPath>
       <layers><li>Overhead</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -881,12 +886,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaHelmet</defName>
-    <label>Arasaka combat helmet</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red combat helmet</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaCombatHelmet/ArasakaCombatHelmet</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/AdvancedHelmet/AdvancedHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -909,7 +915,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaCombatHelmet/ArasakaCombatHelmet</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/AdvancedHelmet/AdvancedHelmet</wornGraphicPath>
       <layers><li>Overhead</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -919,12 +925,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaJacket</defName>
-    <label>Arasaka jacket</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red jacket</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaJacket/ArasakaJacket</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -946,7 +953,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaJacket/ArasakaJacket</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</wornGraphicPath>
       <layers><li>Shell</li></layers>
       <tags><li>RPC_Outfit_Arasaka_Sniper</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -956,12 +963,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaNetrig</defName>
-    <label>Arasaka netrunner rig</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red netrunner rig</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaNetRig/ArasakaNetRig</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -984,7 +992,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaNetRig/ArasakaNetRig</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</wornGraphicPath>
       <layers><li>Overhead</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -994,12 +1002,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaPants</defName>
-    <label>Arasaka pants</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red pants</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaPants/ArasakaPants</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1021,7 +1030,6 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Legs</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaPants/ArasakaPants</wornGraphicPath>
       <layers><li>OnSkin</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -1031,12 +1039,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaRecon</defName>
-    <label>Arasaka tactical armor</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red tactical armor</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaReconArmor/ArasakaReconArmor</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/ReconArmor/ReconArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1061,7 +1070,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li><li>Legs</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaReconArmor/ArasakaReconArmor</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/ReconArmor/ReconArmor</wornGraphicPath>
       <layers><li>Middle</li><li>Shell</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -1071,12 +1080,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaReconhelm</defName>
-    <label>Arasaka tactical helmet</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red tactical helmet</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaReconHelmet/ArasakaReconHelmet</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/ReconArmorHelmet/ReconHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1100,7 +1110,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>FullHead</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaReconHelmet/ArasakaReconHelmet</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/ReconArmorHelmet/ReconHelmet</wornGraphicPath>
       <layers><li>Overhead</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -1110,12 +1120,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaShirt</defName>
-    <label>Arasaka black shirt</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red shirt</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaShirt/ArasakaShirt</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1137,7 +1148,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaShirt/ArasakaShirt</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</wornGraphicPath>
       <layers><li>OnSkin</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -1147,12 +1158,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaShirtWhite</defName>
-    <label>Arasaka white shirt</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red shirt</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaShirtWhite/ArasakaShirtWhite</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1174,7 +1186,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li><li>Arms</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaShirtWhite/ArasakaShirtWhite</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</wornGraphicPath>
       <layers><li>OnSkin</li></layers>
       <tags><li>RPC_FactionApparel</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -1184,12 +1196,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaVest</defName>
-    <label>Arasaka light vest</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red vest</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaVestLight/ArasakaVestLight</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/EltexVest/EltexVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1211,7 +1224,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>Torso</li><li>Neck</li><li>Shoulders</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaVestLight/ArasakaVestLight</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexVest/EltexVest</wornGraphicPath>
       <layers><li>Middle</li></layers>
       <tags><li>RPC_Outfit_Arasaka_Netrunner</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -1221,12 +1234,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Arasaka_ArasakaVisor</defName>
-    <label>Arasaka visor</label>
-    <description>Arasaka corporate security issue. Black, red, and expensive.</description>
+    <label>Arasaka red visor</label>
+    <description>Arasaka corporate security issue in Arasaka red.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/RimPunk/Apparel/ArasakaVisor/ArasakaVisor</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <color>(200,24,30)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1252,7 +1266,7 @@
     <generateCommonality>1</generateCommonality>
     <apparel>
       <bodyPartGroups><li>UpperHead</li></bodyPartGroups>
-      <wornGraphicPath>Things/RimPunk/Apparel/ArasakaVisor/ArasakaVisor</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</wornGraphicPath>
       <layers><li>Overhead</li></layers>
       <tags><li>RPC_Outfit_Arasaka_Boss</li></tags>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
@@ -1262,13 +1276,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Advhelm_Tan</defName>
-    <label>Barghest tan combat helmet</label>
+    <label>Barghest lime combat helmet</label>
     <description>A modern combat helmet. Worn by Barghest in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/AdvancedHelmet/AdvancedHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,168,122)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1301,13 +1315,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Bodysuit_Tan</defName>
-    <label>Barghest tan bodysuit</label>
+    <label>Barghest lime bodysuit</label>
     <description>A thin, close-fitting synthweave suit. Worn by Barghest in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,168,122)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1339,13 +1353,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Collar_Khaki</defName>
-    <label>Barghest khaki shirt</label>
+    <label>Barghest lime shirt</label>
     <description>Clothing. Worn by Barghest in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(170,156,112)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1377,13 +1391,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Flakpants_Khaki</defName>
-    <label>Barghest khaki armored pants</label>
+    <label>Barghest lime armored pants</label>
     <description>Armoured trousers. Worn by Barghest in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakPants/FlakPants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(170,156,112)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1415,13 +1429,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Flakvest_Tan</defName>
-    <label>Barghest tan armor vest</label>
+    <label>Barghest lime armor vest</label>
     <description>A plate carrier. Worn by Barghest in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,168,122)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1454,13 +1468,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Jacket_Tan</defName>
-    <label>Barghest tan jacket</label>
+    <label>Barghest lime jacket</label>
     <description>Clothing. Worn by Barghest in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,168,122)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1492,13 +1506,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Marine_Tan</defName>
-    <label>Barghest tan heavy armor</label>
+    <label>Barghest lime heavy armor</label>
     <description>Heavy powered armour for the front line. Worn by Barghest in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,168,122)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1537,13 +1551,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Marinehelm_Brown</defName>
-    <label>Barghest brown heavy helmet</label>
+    <label>Barghest lime heavy helmet</label>
     <description>A sealed heavy helmet. Worn by Barghest in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1577,13 +1591,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Netrig_Brown</defName>
-    <label>Barghest brown netrunner rig</label>
+    <label>Barghest lime netrunner rig</label>
     <description>A skull-mounted interface rig for jacking into the Net. Worn by Barghest in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1616,13 +1630,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Pants_Khaki</defName>
-    <label>Barghest khaki pants</label>
+    <label>Barghest lime pants</label>
     <description>Clothing. Worn by Barghest in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(170,156,112)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1653,14 +1667,14 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Prestige_Brown_Tan</defName>
-    <label>Barghest brown officer armor</label>
+    <label>Barghest lime officer armor</label>
     <description>Officer-grade tactical armour. Worn by Barghest in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PrestigeReconArmor/PrestigeReconArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
-      <colorTwo>(190,168,122)</colorTwo>
+      <color>(155,190,48)</color>
+      <colorTwo>(155,190,48)</colorTwo>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1696,13 +1710,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Recon_Tan</defName>
-    <label>Barghest tan tactical armor</label>
+    <label>Barghest lime tactical armor</label>
     <description>Full-body tactical armour. Worn by Barghest in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ReconArmor/ReconArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,168,122)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1737,13 +1751,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Reconhelm_Brown</defName>
-    <label>Barghest brown tactical helmet</label>
+    <label>Barghest lime tactical helmet</label>
     <description>A sealed tactical helmet. Worn by Barghest in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ReconArmorHelmet/ReconHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1777,13 +1791,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Reconhelm_Tan</defName>
-    <label>Barghest tan tactical helmet</label>
+    <label>Barghest lime tactical helmet</label>
     <description>A sealed tactical helmet. Worn by Barghest in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ReconArmorHelmet/ReconHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,168,122)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1817,13 +1831,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Barghest_Visor_Brown</defName>
-    <label>Barghest brown visor</label>
+    <label>Barghest lime visor</label>
     <description>A HUD visor. Worn by Barghest in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(155,190,48)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1935,13 +1949,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Biotechnica_Collar_White</defName>
-    <label>Biotechnica white shirt</label>
+    <label>Biotechnica green shirt</label>
     <description>Clothing. Worn by Biotechnica in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(60,160,80)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -1973,13 +1987,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Biotechnica_Duster_White</defName>
-    <label>Biotechnica white long coat</label>
+    <label>Biotechnica green long coat</label>
     <description>Clothing. Worn by Biotechnica in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(60,160,80)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2050,13 +2064,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Biotechnica_Jacket_White</defName>
-    <label>Biotechnica white jacket</label>
+    <label>Biotechnica green jacket</label>
     <description>Clothing. Worn by Biotechnica in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(60,160,80)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2088,13 +2102,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Biotechnica_Marine_White</defName>
-    <label>Biotechnica white heavy armor</label>
+    <label>Biotechnica green heavy armor</label>
     <description>Heavy powered armour for the front line. Worn by Biotechnica in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(60,160,80)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2173,13 +2187,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Biotechnica_Netrig_White</defName>
-    <label>Biotechnica white netrunner rig</label>
+    <label>Biotechnica green netrunner rig</label>
     <description>A skull-mounted interface rig for jacking into the Net. Worn by Biotechnica in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(60,160,80)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2212,13 +2226,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Biotechnica_Pants_White</defName>
-    <label>Biotechnica white pants</label>
+    <label>Biotechnica green pants</label>
     <description>Clothing. Worn by Biotechnica in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(60,160,80)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2249,13 +2263,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Biotechnica_Recon_White</defName>
-    <label>Biotechnica white tactical armor</label>
+    <label>Biotechnica green tactical armor</label>
     <description>Full-body tactical armour. Worn by Biotechnica in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ReconArmor/ReconArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(60,160,80)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2410,13 +2424,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Bodysuit_Charcoal</defName>
-    <label>Militech Receivables charcoal bodysuit</label>
+    <label>Militech Receivables olive bodysuit</label>
     <description>A thin, close-fitting synthweave suit. Worn by Militech Receivables in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2448,13 +2462,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Collar_White</defName>
-    <label>Militech Receivables white shirt</label>
+    <label>Militech Receivables olive shirt</label>
     <description>Clothing. Worn by Militech Receivables in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2486,13 +2500,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Duster_Charcoal</defName>
-    <label>Militech Receivables charcoal long coat</label>
+    <label>Militech Receivables olive long coat</label>
     <description>Clothing. Worn by Militech Receivables in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2524,13 +2538,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Faceplate_Chrome</defName>
-    <label>Militech Receivables chrome faceplate</label>
+    <label>Militech Receivables olive faceplate</label>
     <description>A metal faceplate. Worn by Militech Receivables in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/WarMask/WarMask</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,196,205)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2562,13 +2576,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Flakjacket_Charcoal</defName>
-    <label>Militech Receivables charcoal armored jacket</label>
+    <label>Militech Receivables olive armored jacket</label>
     <description>An armoured jacket. Worn by Militech Receivables in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakJacket/FlakJacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2601,13 +2615,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Flakpants_Charcoal</defName>
-    <label>Militech Receivables charcoal armored pants</label>
+    <label>Militech Receivables olive armored pants</label>
     <description>Armoured trousers. Worn by Militech Receivables in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakPants/FlakPants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2639,13 +2653,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Flakvest_Charcoal</defName>
-    <label>Militech Receivables charcoal armor vest</label>
+    <label>Militech Receivables olive armor vest</label>
     <description>A plate carrier. Worn by Militech Receivables in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2678,13 +2692,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Jacket_Charcoal</defName>
-    <label>Militech Receivables charcoal jacket</label>
+    <label>Militech Receivables olive jacket</label>
     <description>Clothing. Worn by Militech Receivables in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2716,13 +2730,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Marine_Charcoal</defName>
-    <label>Militech Receivables charcoal heavy armor</label>
+    <label>Militech Receivables olive heavy armor</label>
     <description>Heavy powered armour for the front line. Worn by Militech Receivables in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2761,13 +2775,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Marinehelm_Red</defName>
-    <label>Militech Receivables red heavy helmet</label>
+    <label>Militech Receivables olive heavy helmet</label>
     <description>A sealed heavy helmet. Worn by Militech Receivables in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,30,36)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2801,13 +2815,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Netrig_Red</defName>
-    <label>Militech Receivables red netrunner rig</label>
+    <label>Militech Receivables olive netrunner rig</label>
     <description>A skull-mounted interface rig for jacking into the Net. Worn by Militech Receivables in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,30,36)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2840,13 +2854,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Pants_Charcoal</defName>
-    <label>Militech Receivables charcoal pants</label>
+    <label>Militech Receivables olive pants</label>
     <description>Clothing. Worn by Militech Receivables in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2877,13 +2891,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Vest_Charcoal</defName>
-    <label>Militech Receivables charcoal vest</label>
+    <label>Militech Receivables olive vest</label>
     <description>Clothing. Worn by Militech Receivables in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexVest/EltexVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2915,13 +2929,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_DebtCollectors_Visor_Red</defName>
-    <label>Militech Receivables red visor</label>
+    <label>Militech Receivables olive visor</label>
     <description>A HUD visor. Worn by Militech Receivables in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,30,36)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2957,13 +2971,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Bodysuit_Gold</defName>
-    <label>Kang Tao gold bodysuit</label>
+    <label>Kang Tao orange bodysuit</label>
     <description>A thin, close-fitting synthweave suit. Worn by Kang Tao in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(212,168,52)</color>
+      <color>(230,126,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -2995,13 +3009,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Collar_Black</defName>
-    <label>Kang Tao black shirt</label>
+    <label>Kang Tao orange shirt</label>
     <description>Clothing. Worn by Kang Tao in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(230,126,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3033,13 +3047,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Collar_Gold</defName>
-    <label>Kang Tao gold shirt</label>
+    <label>Kang Tao orange shirt</label>
     <description>Clothing. Worn by Kang Tao in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(212,168,52)</color>
+      <color>(230,126,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3071,13 +3085,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Flakvest_Black</defName>
-    <label>Kang Tao black armor vest</label>
+    <label>Kang Tao orange armor vest</label>
     <description>A plate carrier. Worn by Kang Tao in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(230,126,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3110,13 +3124,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Jacket_Black</defName>
-    <label>Kang Tao black jacket</label>
+    <label>Kang Tao orange jacket</label>
     <description>Clothing. Worn by Kang Tao in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(230,126,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3148,13 +3162,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Jacket_Gold</defName>
-    <label>Kang Tao gold jacket</label>
+    <label>Kang Tao orange jacket</label>
     <description>Clothing. Worn by Kang Tao in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(212,168,52)</color>
+      <color>(230,126,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3186,13 +3200,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Marine_Black</defName>
-    <label>Kang Tao black heavy armor</label>
+    <label>Kang Tao orange heavy armor</label>
     <description>Heavy powered armour for the front line. Worn by Kang Tao in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(230,126,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3231,13 +3245,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Marinehelm_Gold</defName>
-    <label>Kang Tao gold heavy helmet</label>
+    <label>Kang Tao orange heavy helmet</label>
     <description>A sealed heavy helmet. Worn by Kang Tao in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(212,168,52)</color>
+      <color>(230,126,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3271,13 +3285,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Netrig_Black</defName>
-    <label>Kang Tao black netrunner rig</label>
+    <label>Kang Tao orange netrunner rig</label>
     <description>A skull-mounted interface rig for jacking into the Net. Worn by Kang Tao in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(230,126,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3310,13 +3324,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Pants_Black</defName>
-    <label>Kang Tao black pants</label>
+    <label>Kang Tao orange pants</label>
     <description>Clothing. Worn by Kang Tao in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(230,126,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3347,14 +3361,14 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Prestige_Black_Gold</defName>
-    <label>Kang Tao black officer armor</label>
+    <label>Kang Tao orange officer armor</label>
     <description>Officer-grade tactical armour. Worn by Kang Tao in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PrestigeReconArmor/PrestigeReconArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
-      <colorTwo>(212,168,52)</colorTwo>
+      <color>(230,126,35)</color>
+      <colorTwo>(230,126,35)</colorTwo>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3390,13 +3404,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Recon_Black</defName>
-    <label>Kang Tao black tactical armor</label>
+    <label>Kang Tao orange tactical armor</label>
     <description>Full-body tactical armour. Worn by Kang Tao in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ReconArmor/ReconArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(230,126,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3431,13 +3445,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Reconhelm_Gold</defName>
-    <label>Kang Tao gold tactical helmet</label>
+    <label>Kang Tao orange tactical helmet</label>
     <description>A sealed tactical helmet. Worn by Kang Tao in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ReconArmorHelmet/ReconHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(212,168,52)</color>
+      <color>(230,126,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3471,13 +3485,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_KangTao_Visor_Gold</defName>
-    <label>Kang Tao gold visor</label>
+    <label>Kang Tao orange visor</label>
     <description>A HUD visor. Worn by Kang Tao in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(212,168,52)</color>
+      <color>(230,126,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3513,13 +3527,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Maelstrom_Bodysuit_Crimson</defName>
-    <label>Maelstrom crimson bodysuit</label>
+    <label>Maelstrom red bodysuit</label>
     <description>A thin, close-fitting synthweave suit. Worn by Maelstrom in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(140,20,28)</color>
+      <color>(170,28,38)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3551,13 +3565,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Maelstrom_Collar_Black</defName>
-    <label>Maelstrom black shirt</label>
+    <label>Maelstrom red shirt</label>
     <description>Clothing. Worn by Maelstrom in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(170,28,38)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3589,13 +3603,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Maelstrom_Duster_Black</defName>
-    <label>Maelstrom black long coat</label>
+    <label>Maelstrom red long coat</label>
     <description>Clothing. Worn by Maelstrom in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(170,28,38)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3627,13 +3641,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Maelstrom_Faceplate_Chrome</defName>
-    <label>Maelstrom chrome faceplate</label>
+    <label>Maelstrom red faceplate</label>
     <description>A metal faceplate. Worn by Maelstrom in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/WarMask/WarMask</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,196,205)</color>
+      <color>(170,28,38)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3671,7 +3685,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/WarMask/WarMask</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,30,36)</color>
+      <color>(170,28,38)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3703,13 +3717,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Maelstrom_Flakjacket_Black</defName>
-    <label>Maelstrom black armored jacket</label>
+    <label>Maelstrom red armored jacket</label>
     <description>An armoured jacket. Worn by Maelstrom in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakJacket/FlakJacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(170,28,38)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3742,13 +3756,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Maelstrom_Flakpants_Black</defName>
-    <label>Maelstrom black armored pants</label>
+    <label>Maelstrom red armored pants</label>
     <description>Armoured trousers. Worn by Maelstrom in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakPants/FlakPants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(170,28,38)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3780,13 +3794,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Maelstrom_Jacket_Black</defName>
-    <label>Maelstrom black jacket</label>
+    <label>Maelstrom red jacket</label>
     <description>Clothing. Worn by Maelstrom in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(170,28,38)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3818,13 +3832,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Maelstrom_Netrig_Black</defName>
-    <label>Maelstrom black netrunner rig</label>
+    <label>Maelstrom red netrunner rig</label>
     <description>A skull-mounted interface rig for jacking into the Net. Worn by Maelstrom in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(170,28,38)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3857,13 +3871,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Maelstrom_Pants_Black</defName>
-    <label>Maelstrom black pants</label>
+    <label>Maelstrom red pants</label>
     <description>Clothing. Worn by Maelstrom in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(170,28,38)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3894,13 +3908,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Maelstrom_Shirt_Black</defName>
-    <label>Maelstrom black tank top</label>
+    <label>Maelstrom red tank top</label>
     <description>Clothing. Worn by Maelstrom in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(170,28,38)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -3932,13 +3946,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Maelstrom_Shirt_Crimson</defName>
-    <label>Maelstrom crimson tank top</label>
+    <label>Maelstrom red tank top</label>
     <description>Clothing. Worn by Maelstrom in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(140,20,28)</color>
+      <color>(170,28,38)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4173,7 +4187,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/AdvancedHelmet/AdvancedHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(96,104,62)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4206,13 +4220,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Militech_Bodysuit_Charcoal</defName>
-    <label>Militech charcoal bodysuit</label>
+    <label>Militech olive bodysuit</label>
     <description>A thin, close-fitting synthweave suit. Worn by Militech in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4244,13 +4258,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Militech_Collar_Khaki</defName>
-    <label>Militech khaki shirt</label>
+    <label>Militech olive shirt</label>
     <description>Clothing. Worn by Militech in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(170,156,112)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4282,13 +4296,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Militech_Collar_White</defName>
-    <label>Militech white shirt</label>
+    <label>Militech olive shirt</label>
     <description>Clothing. Worn by Militech in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4326,7 +4340,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakJacket/FlakJacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(96,104,62)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4365,7 +4379,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakPants/FlakPants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(96,104,62)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4403,7 +4417,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(96,104,62)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4442,7 +4456,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(96,104,62)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4480,7 +4494,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(96,104,62)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4519,13 +4533,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Militech_Marinehelm_Khaki</defName>
-    <label>Militech khaki heavy helmet</label>
+    <label>Militech olive heavy helmet</label>
     <description>A sealed heavy helmet. Worn by Militech in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(170,156,112)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4565,7 +4579,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(96,104,62)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4605,7 +4619,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(96,104,62)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4638,13 +4652,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Militech_Pants_Khaki</defName>
-    <label>Militech khaki pants</label>
+    <label>Militech olive pants</label>
     <description>Clothing. Worn by Militech in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(170,156,112)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4681,7 +4695,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Parka/Parka</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(96,104,62)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4719,8 +4733,8 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PrestigeMarineArmor/PrestigeMarineArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(96,104,62)</color>
-      <colorTwo>(170,156,112)</colorTwo>
+      <color>(96,112,62)</color>
+      <colorTwo>(96,112,62)</colorTwo>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4766,7 +4780,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/SimpleHelmet/SimpleHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(96,104,62)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4804,7 +4818,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(96,104,62)</color>
+      <color>(96,112,62)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4840,13 +4854,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Mox_Bodysuit_Purple</defName>
-    <label>Mox purple bodysuit</label>
+    <label>Mox pink bodysuit</label>
     <description>A thin, close-fitting synthweave suit. Worn by Mox in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,60,160)</color>
+      <color>(230,70,165)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4878,13 +4892,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Mox_Collar_Black</defName>
-    <label>Mox black shirt</label>
+    <label>Mox pink shirt</label>
     <description>Clothing. Worn by Mox in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(230,70,165)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4922,7 +4936,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(230,90,170)</color>
+      <color>(230,70,165)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4960,7 +4974,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(230,90,170)</color>
+      <color>(230,70,165)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -4992,13 +5006,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Mox_Flakvest_Black</defName>
-    <label>Mox black armor vest</label>
+    <label>Mox pink armor vest</label>
     <description>A plate carrier. Worn by Mox in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(230,70,165)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5031,13 +5045,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Mox_Jacket_Black</defName>
-    <label>Mox black jacket</label>
+    <label>Mox pink jacket</label>
     <description>Clothing. Worn by Mox in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(230,70,165)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5075,7 +5089,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(230,90,170)</color>
+      <color>(230,70,165)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5107,13 +5121,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Mox_Jacket_Purple</defName>
-    <label>Mox purple jacket</label>
+    <label>Mox pink jacket</label>
     <description>Clothing. Worn by Mox in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,60,160)</color>
+      <color>(230,70,165)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5151,7 +5165,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(230,90,170)</color>
+      <color>(230,70,165)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5184,13 +5198,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Mox_Pants_Black</defName>
-    <label>Mox black pants</label>
+    <label>Mox pink pants</label>
     <description>Clothing. Worn by Mox in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(230,70,165)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5221,13 +5235,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Mox_Shirt_Black</defName>
-    <label>Mox black tank top</label>
+    <label>Mox pink tank top</label>
     <description>Clothing. Worn by Mox in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(230,70,165)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5265,7 +5279,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(230,90,170)</color>
+      <color>(230,70,165)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5303,7 +5317,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(50,100,190)</color>
+      <color>(60,145,210)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5335,13 +5349,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NetWatch_Collar_Black</defName>
-    <label>NetWatch black shirt</label>
+    <label>NetWatch blue shirt</label>
     <description>Clothing. Worn by NetWatch in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(60,145,210)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5373,13 +5387,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NetWatch_Collar_White</defName>
-    <label>NetWatch white shirt</label>
+    <label>NetWatch blue shirt</label>
     <description>Clothing. Worn by NetWatch in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(60,145,210)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5411,13 +5425,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NetWatch_Duster_Black</defName>
-    <label>NetWatch black long coat</label>
+    <label>NetWatch blue long coat</label>
     <description>Clothing. Worn by NetWatch in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(60,145,210)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5455,7 +5469,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(50,100,190)</color>
+      <color>(60,145,210)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5487,13 +5501,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NetWatch_Netrig_Skyblue</defName>
-    <label>NetWatch sky blue netrunner rig</label>
+    <label>NetWatch blue netrunner rig</label>
     <description>A skull-mounted interface rig for jacking into the Net. Worn by NetWatch in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,170,230)</color>
+      <color>(60,145,210)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5526,13 +5540,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NetWatch_Pants_Black</defName>
-    <label>NetWatch black pants</label>
+    <label>NetWatch blue pants</label>
     <description>Clothing. Worn by NetWatch in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(60,145,210)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5563,13 +5577,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NetWatch_Recon_Steel</defName>
-    <label>NetWatch steel tactical armor</label>
+    <label>NetWatch blue tactical armor</label>
     <description>Full-body tactical armour. Worn by NetWatch in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ReconArmor/ReconArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(80,100,130)</color>
+      <color>(60,145,210)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5610,7 +5624,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ReconArmorHelmet/ReconHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(50,100,190)</color>
+      <color>(60,145,210)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5644,13 +5658,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NetWatch_Vest_Black</defName>
-    <label>NetWatch black vest</label>
+    <label>NetWatch blue vest</label>
     <description>Clothing. Worn by NetWatch in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexVest/EltexVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(60,145,210)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5688,7 +5702,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(50,100,190)</color>
+      <color>(60,145,210)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5724,13 +5738,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NetWatch_Visor_Skyblue</defName>
-    <label>NetWatch sky blue visor</label>
+    <label>NetWatch blue visor</label>
     <description>A HUD visor. Worn by NetWatch in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,170,230)</color>
+      <color>(60,145,210)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5772,7 +5786,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(34,44,82)</color>
+      <color>(48,64,110)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5804,13 +5818,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NightCorp_Collar_Black</defName>
-    <label>Night Corp black shirt</label>
+    <label>Night Corp navy shirt</label>
     <description>Clothing. Worn by Night Corp in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(48,64,110)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5842,13 +5856,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NightCorp_Collar_White</defName>
-    <label>Night Corp white shirt</label>
+    <label>Night Corp navy shirt</label>
     <description>Clothing. Worn by Night Corp in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(48,64,110)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5880,13 +5894,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NightCorp_Duster_Black</defName>
-    <label>Night Corp black long coat</label>
+    <label>Night Corp navy long coat</label>
     <description>Clothing. Worn by Night Corp in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(48,64,110)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5924,7 +5938,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(34,44,82)</color>
+      <color>(48,64,110)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -5963,7 +5977,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(34,44,82)</color>
+      <color>(48,64,110)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6001,7 +6015,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(34,44,82)</color>
+      <color>(48,64,110)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6040,13 +6054,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NightCorp_Marinehelm_Black</defName>
-    <label>Night Corp black heavy helmet</label>
+    <label>Night Corp navy heavy helmet</label>
     <description>A sealed heavy helmet. Worn by Night Corp in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(48,64,110)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6080,13 +6094,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NightCorp_Netrig_Skyblue</defName>
-    <label>Night Corp sky blue netrunner rig</label>
+    <label>Night Corp navy netrunner rig</label>
     <description>A skull-mounted interface rig for jacking into the Net. Worn by Night Corp in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,170,230)</color>
+      <color>(48,64,110)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6119,13 +6133,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NightCorp_Pants_Black</defName>
-    <label>Night Corp black pants</label>
+    <label>Night Corp navy pants</label>
     <description>Clothing. Worn by Night Corp in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(48,64,110)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6162,7 +6176,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ReconArmor/ReconArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(34,44,82)</color>
+      <color>(48,64,110)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6197,13 +6211,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NightCorp_Reconhelm_Black</defName>
-    <label>Night Corp black tactical helmet</label>
+    <label>Night Corp navy tactical helmet</label>
     <description>A sealed tactical helmet. Worn by Night Corp in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ReconArmorHelmet/ReconHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(48,64,110)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6237,13 +6251,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_NightCorp_Visor_Skyblue</defName>
-    <label>Night Corp sky blue visor</label>
+    <label>Night Corp navy visor</label>
     <description>A HUD visor. Worn by Night Corp in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,170,230)</color>
+      <color>(48,64,110)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6279,13 +6293,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Petrochem_Advhelm_White</defName>
-    <label>Petrochem white combat helmet</label>
+    <label>Petrochem blue combat helmet</label>
     <description>A modern combat helmet. Worn by Petrochem in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/AdvancedHelmet/AdvancedHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6324,7 +6338,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(50,100,190)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6356,13 +6370,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Petrochem_Collar_Skyblue</defName>
-    <label>Petrochem sky blue shirt</label>
+    <label>Petrochem blue shirt</label>
     <description>Clothing. Worn by Petrochem in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,170,230)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6394,13 +6408,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Petrochem_Collar_Steel</defName>
-    <label>Petrochem steel shirt</label>
+    <label>Petrochem blue shirt</label>
     <description>Clothing. Worn by Petrochem in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(80,100,130)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6432,13 +6446,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Petrochem_Collar_White</defName>
-    <label>Petrochem white shirt</label>
+    <label>Petrochem blue shirt</label>
     <description>Clothing. Worn by Petrochem in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6470,13 +6484,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Petrochem_Duster_Steel</defName>
-    <label>Petrochem steel long coat</label>
+    <label>Petrochem blue long coat</label>
     <description>Clothing. Worn by Petrochem in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(80,100,130)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6514,7 +6528,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakJacket/FlakJacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(50,100,190)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6547,13 +6561,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Petrochem_Flakpants_Steel</defName>
-    <label>Petrochem steel armored pants</label>
+    <label>Petrochem blue armored pants</label>
     <description>Armoured trousers. Worn by Petrochem in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakPants/FlakPants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(80,100,130)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6585,13 +6599,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Petrochem_Flakvest_Grey</defName>
-    <label>Petrochem grey armor vest</label>
+    <label>Petrochem blue armor vest</label>
     <description>A plate carrier. Worn by Petrochem in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(130,132,136)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6630,7 +6644,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(50,100,190)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6668,7 +6682,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(50,100,190)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6707,13 +6721,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Petrochem_Marinehelm_White</defName>
-    <label>Petrochem white heavy helmet</label>
+    <label>Petrochem blue heavy helmet</label>
     <description>A sealed heavy helmet. Worn by Petrochem in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6747,13 +6761,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Petrochem_Netrig_White</defName>
-    <label>Petrochem white netrunner rig</label>
+    <label>Petrochem blue netrunner rig</label>
     <description>A skull-mounted interface rig for jacking into the Net. Worn by Petrochem in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6786,13 +6800,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Petrochem_Pants_Steel</defName>
-    <label>Petrochem steel pants</label>
+    <label>Petrochem blue pants</label>
     <description>Clothing. Worn by Petrochem in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(80,100,130)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6829,7 +6843,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/SimpleHelmet/SimpleHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(50,100,190)</color>
+      <color>(50,110,190)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6861,13 +6875,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_RaffenShiv_Collar_Black</defName>
-    <label>Raffen Shiv black shirt</label>
+    <label>Raffen Shiv rust shirt</label>
     <description>Clothing. Worn by Raffen Shiv in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(155,65,42)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6905,7 +6919,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,74,40)</color>
+      <color>(155,65,42)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6937,13 +6951,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_RaffenShiv_Duster_Black</defName>
-    <label>Raffen Shiv black long coat</label>
+    <label>Raffen Shiv rust long coat</label>
     <description>Clothing. Worn by Raffen Shiv in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(155,65,42)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -6981,7 +6995,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,74,40)</color>
+      <color>(155,65,42)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7013,13 +7027,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_RaffenShiv_Faceplate_Black</defName>
-    <label>Raffen Shiv black faceplate</label>
+    <label>Raffen Shiv rust faceplate</label>
     <description>A metal faceplate. Worn by Raffen Shiv in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/WarMask/WarMask</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(155,65,42)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7051,13 +7065,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_RaffenShiv_Faceplate_Red</defName>
-    <label>Raffen Shiv red faceplate</label>
+    <label>Raffen Shiv rust faceplate</label>
     <description>A metal faceplate. Worn by Raffen Shiv in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/WarMask/WarMask</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,30,36)</color>
+      <color>(155,65,42)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7095,7 +7109,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,74,40)</color>
+      <color>(155,65,42)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7128,13 +7142,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_RaffenShiv_Jacket_Black</defName>
-    <label>Raffen Shiv black jacket</label>
+    <label>Raffen Shiv rust jacket</label>
     <description>Clothing. Worn by Raffen Shiv in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(155,65,42)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7166,13 +7180,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_RaffenShiv_Pants_Black</defName>
-    <label>Raffen Shiv black pants</label>
+    <label>Raffen Shiv rust pants</label>
     <description>Clothing. Worn by Raffen Shiv in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(155,65,42)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7209,7 +7223,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Parka/Parka</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,74,40)</color>
+      <color>(155,65,42)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7241,13 +7255,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_RaffenShiv_Shirt_Black</defName>
-    <label>Raffen Shiv black tank top</label>
+    <label>Raffen Shiv rust tank top</label>
     <description>Clothing. Worn by Raffen Shiv in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(155,65,42)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7285,7 +7299,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Veil/Veil</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,74,40)</color>
+      <color>(155,65,42)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7323,7 +7337,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(130,132,136)</color>
+      <color>(115,125,130)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7355,13 +7369,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Scavengers_Collar_Charcoal</defName>
-    <label>Scavengers charcoal shirt</label>
+    <label>Scavengers grey shirt</label>
     <description>Clothing. Worn by Scavengers in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(115,125,130)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7399,7 +7413,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(130,132,136)</color>
+      <color>(115,125,130)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7431,13 +7445,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Scavengers_Flakvest_Rust</defName>
-    <label>Scavengers rust armor vest</label>
+    <label>Scavengers grey armor vest</label>
     <description>A plate carrier. Worn by Scavengers in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,74,40)</color>
+      <color>(115,125,130)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7476,7 +7490,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(130,132,136)</color>
+      <color>(115,125,130)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7514,7 +7528,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ClothMask/ClothMask</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(130,132,136)</color>
+      <color>(115,125,130)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7546,13 +7560,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Scavengers_Mask_White</defName>
-    <label>Scavengers white face mask</label>
+    <label>Scavengers grey face mask</label>
     <description>Clothing. Worn by Scavengers in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ClothMask/ClothMask</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(115,125,130)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7584,13 +7598,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Scavengers_Netrig_Rust</defName>
-    <label>Scavengers rust netrunner rig</label>
+    <label>Scavengers grey netrunner rig</label>
     <description>A skull-mounted interface rig for jacking into the Net. Worn by Scavengers in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,74,40)</color>
+      <color>(115,125,130)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7629,7 +7643,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(130,132,136)</color>
+      <color>(115,125,130)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7660,13 +7674,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Scavengers_Parka_Charcoal</defName>
-    <label>Scavengers charcoal parka</label>
+    <label>Scavengers grey parka</label>
     <description>Clothing. Worn by Scavengers in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Parka/Parka</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(115,125,130)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7704,7 +7718,7 @@
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(130,132,136)</color>
+      <color>(115,125,130)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7736,13 +7750,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Scavengers_Simplehelm_Rust</defName>
-    <label>Scavengers rust helmet</label>
+    <label>Scavengers grey helmet</label>
     <description>A plain steel helmet. Worn by Scavengers in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/SimpleHelmet/SimpleHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,74,40)</color>
+      <color>(115,125,130)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7774,13 +7788,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Scavengers_Visor_Rust</defName>
-    <label>Scavengers rust visor</label>
+    <label>Scavengers grey visor</label>
     <description>A HUD visor. Worn by Scavengers in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,74,40)</color>
+      <color>(115,125,130)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7816,13 +7830,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Advhelm_Navy</defName>
-    <label>6th Street navy combat helmet</label>
+    <label>6th Street blue combat helmet</label>
     <description>A modern combat helmet. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/AdvancedHelmet/AdvancedHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(34,44,82)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7855,13 +7869,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Beret_Red</defName>
-    <label>6th Street red beret</label>
+    <label>6th Street blue beret</label>
     <description>Clothing. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Beret/Beret</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,30,36)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7893,13 +7907,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Collar_Khaki</defName>
-    <label>6th Street khaki shirt</label>
+    <label>6th Street blue shirt</label>
     <description>Clothing. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(170,156,112)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7931,13 +7945,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Collar_White</defName>
-    <label>6th Street white shirt</label>
+    <label>6th Street blue shirt</label>
     <description>Clothing. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -7969,13 +7983,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Flakjacket_Khaki</defName>
-    <label>6th Street khaki armored jacket</label>
+    <label>6th Street blue armored jacket</label>
     <description>An armoured jacket. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakJacket/FlakJacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(170,156,112)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8008,13 +8022,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Flakjacket_Navy</defName>
-    <label>6th Street navy armored jacket</label>
+    <label>6th Street blue armored jacket</label>
     <description>An armoured jacket. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakJacket/FlakJacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(34,44,82)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8047,13 +8061,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Flakpants_Khaki</defName>
-    <label>6th Street khaki armored pants</label>
+    <label>6th Street blue armored pants</label>
     <description>Armoured trousers. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakPants/FlakPants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(170,156,112)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8085,13 +8099,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Flakvest_Navy</defName>
-    <label>6th Street navy armor vest</label>
+    <label>6th Street blue armor vest</label>
     <description>A plate carrier. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(34,44,82)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8124,13 +8138,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Jacket_Navy</defName>
-    <label>6th Street navy jacket</label>
+    <label>6th Street blue jacket</label>
     <description>Clothing. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(34,44,82)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8162,13 +8176,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Pants_Khaki</defName>
-    <label>6th Street khaki pants</label>
+    <label>6th Street blue pants</label>
     <description>Clothing. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(170,156,112)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8199,13 +8213,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Shirt_Khaki</defName>
-    <label>6th Street khaki tank top</label>
+    <label>6th Street blue tank top</label>
     <description>Clothing. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(170,156,112)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8237,13 +8251,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Shirt_Navy</defName>
-    <label>6th Street navy tank top</label>
+    <label>6th Street blue tank top</label>
     <description>Clothing. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(34,44,82)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8275,13 +8289,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Simplehelm_Navy</defName>
-    <label>6th Street navy helmet</label>
+    <label>6th Street blue helmet</label>
     <description>A plain steel helmet. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/SimpleHelmet/SimpleHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(34,44,82)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8313,13 +8327,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_SixthStreet_Tuque_Navy</defName>
-    <label>6th Street navy beanie</label>
+    <label>6th Street blue beanie</label>
     <description>Clothing. Worn by 6th Street in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Tuque/Tuque</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(34,44,82)</color>
+      <color>(55,90,170)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8503,13 +8517,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TygerClaws_Bodysuit_Pink</defName>
-    <label>Tyger Claws pink bodysuit</label>
+    <label>Tyger Claws red bodysuit</label>
     <description>A thin, close-fitting synthweave suit. Worn by Tyger Claws in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(230,90,170)</color>
+      <color>(220,48,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8541,13 +8555,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TygerClaws_Collar_Black</defName>
-    <label>Tyger Claws black shirt</label>
+    <label>Tyger Claws red shirt</label>
     <description>Clothing. Worn by Tyger Claws in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(220,48,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8579,13 +8593,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TygerClaws_Collar_Teal</defName>
-    <label>Tyger Claws teal shirt</label>
+    <label>Tyger Claws red shirt</label>
     <description>Clothing. Worn by Tyger Claws in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,170,170)</color>
+      <color>(220,48,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8617,13 +8631,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TygerClaws_Duster_Black</defName>
-    <label>Tyger Claws black long coat</label>
+    <label>Tyger Claws red long coat</label>
     <description>Clothing. Worn by Tyger Claws in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(220,48,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8655,13 +8669,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TygerClaws_Flakvest_Black</defName>
-    <label>Tyger Claws black armor vest</label>
+    <label>Tyger Claws red armor vest</label>
     <description>A plate carrier. Worn by Tyger Claws in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(220,48,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8694,13 +8708,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TygerClaws_Jacket_Pink</defName>
-    <label>Tyger Claws pink jacket</label>
+    <label>Tyger Claws red jacket</label>
     <description>Clothing. Worn by Tyger Claws in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(230,90,170)</color>
+      <color>(220,48,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8732,13 +8746,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TygerClaws_Jacket_Teal</defName>
-    <label>Tyger Claws teal jacket</label>
+    <label>Tyger Claws red jacket</label>
     <description>Clothing. Worn by Tyger Claws in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,170,170)</color>
+      <color>(220,48,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8770,13 +8784,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TygerClaws_Mask_Pink</defName>
-    <label>Tyger Claws pink face mask</label>
+    <label>Tyger Claws red face mask</label>
     <description>Clothing. Worn by Tyger Claws in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ClothMask/ClothMask</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(230,90,170)</color>
+      <color>(220,48,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8808,13 +8822,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TygerClaws_Mask_Teal</defName>
-    <label>Tyger Claws teal face mask</label>
+    <label>Tyger Claws red face mask</label>
     <description>Clothing. Worn by Tyger Claws in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ClothMask/ClothMask</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,170,170)</color>
+      <color>(220,48,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8846,13 +8860,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TygerClaws_Netrig_Teal</defName>
-    <label>Tyger Claws teal netrunner rig</label>
+    <label>Tyger Claws red netrunner rig</label>
     <description>A skull-mounted interface rig for jacking into the Net. Worn by Tyger Claws in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,170,170)</color>
+      <color>(220,48,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8885,13 +8899,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TygerClaws_Pants_Black</defName>
-    <label>Tyger Claws black pants</label>
+    <label>Tyger Claws red pants</label>
     <description>Clothing. Worn by Tyger Claws in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(220,48,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8922,13 +8936,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TygerClaws_Shirt_Black</defName>
-    <label>Tyger Claws black tank top</label>
+    <label>Tyger Claws red tank top</label>
     <description>Clothing. Worn by Tyger Claws in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(220,48,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8960,13 +8974,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_TygerClaws_Vest_Teal</defName>
-    <label>Tyger Claws teal vest</label>
+    <label>Tyger Claws red vest</label>
     <description>Clothing. Worn by Tyger Claws in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexVest/EltexVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,170,170)</color>
+      <color>(220,48,44)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -8998,13 +9012,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Valentinos_Bowler_Black</defName>
-    <label>Valentinos black bowler hat</label>
+    <label>Valentinos gold bowler hat</label>
     <description>Clothing. Worn by Valentinos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/BowlerHat/BowlerHat</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(212,168,52)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9036,13 +9050,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Valentinos_Collar_White</defName>
-    <label>Valentinos white shirt</label>
+    <label>Valentinos gold shirt</label>
     <description>Clothing. Worn by Valentinos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(212,168,52)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9074,13 +9088,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Valentinos_Cowboy_White</defName>
-    <label>Valentinos white hat</label>
+    <label>Valentinos gold hat</label>
     <description>Clothing. Worn by Valentinos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CowboyHat/CowboyHat</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(212,168,52)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9112,13 +9126,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Valentinos_Jacket_Crimson</defName>
-    <label>Valentinos crimson jacket</label>
+    <label>Valentinos gold jacket</label>
     <description>Clothing. Worn by Valentinos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(140,20,28)</color>
+      <color>(212,168,52)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9150,13 +9164,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Valentinos_Jacket_Red</defName>
-    <label>Valentinos red jacket</label>
+    <label>Valentinos gold jacket</label>
     <description>Clothing. Worn by Valentinos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(190,30,36)</color>
+      <color>(212,168,52)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9188,13 +9202,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Valentinos_Pants_Black</defName>
-    <label>Valentinos black pants</label>
+    <label>Valentinos gold pants</label>
     <description>Clothing. Worn by Valentinos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(212,168,52)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9225,13 +9239,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Valentinos_Shirt_White</defName>
-    <label>Valentinos white tank top</label>
+    <label>Valentinos gold tank top</label>
     <description>Clothing. Worn by Valentinos in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(232,232,228)</color>
+      <color>(212,168,52)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9301,13 +9315,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_VoodooBoys_Bodysuit_Darkpurple</defName>
-    <label>Voodoo Boys dark purple bodysuit</label>
+    <label>Voodoo Boys purple bodysuit</label>
     <description>A thin, close-fitting synthweave suit. Worn by Voodoo Boys in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(60,34,84)</color>
+      <color>(110,60,160)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9339,13 +9353,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_VoodooBoys_Bodysuit_Violet</defName>
-    <label>Voodoo Boys violet bodysuit</label>
+    <label>Voodoo Boys purple bodysuit</label>
     <description>A thin, close-fitting synthweave suit. Worn by Voodoo Boys in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,90,210)</color>
+      <color>(110,60,160)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9377,13 +9391,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_VoodooBoys_Collar_Darkpurple</defName>
-    <label>Voodoo Boys dark purple shirt</label>
+    <label>Voodoo Boys purple shirt</label>
     <description>Clothing. Worn by Voodoo Boys in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(60,34,84)</color>
+      <color>(110,60,160)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9415,13 +9429,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_VoodooBoys_Hood_Black</defName>
-    <label>Voodoo Boys black hood</label>
+    <label>Voodoo Boys purple hood</label>
     <description>Clothing. Worn by Voodoo Boys in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Hood/Hood</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(110,60,160)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9453,13 +9467,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_VoodooBoys_Hood_Darkpurple</defName>
-    <label>Voodoo Boys dark purple hood</label>
+    <label>Voodoo Boys purple hood</label>
     <description>Clothing. Worn by Voodoo Boys in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Hood/Hood</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(60,34,84)</color>
+      <color>(110,60,160)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9491,13 +9505,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_VoodooBoys_Jacket_Black</defName>
-    <label>Voodoo Boys black jacket</label>
+    <label>Voodoo Boys purple jacket</label>
     <description>Clothing. Worn by Voodoo Boys in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(110,60,160)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9529,13 +9543,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_VoodooBoys_Netrig_Violet</defName>
-    <label>Voodoo Boys violet netrunner rig</label>
+    <label>Voodoo Boys purple netrunner rig</label>
     <description>A skull-mounted interface rig for jacking into the Net. Worn by Voodoo Boys in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,90,210)</color>
+      <color>(110,60,160)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9568,13 +9582,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_VoodooBoys_Pants_Black</defName>
-    <label>Voodoo Boys black pants</label>
+    <label>Voodoo Boys purple pants</label>
     <description>Clothing. Worn by Voodoo Boys in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(110,60,160)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9605,13 +9619,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_VoodooBoys_Robe_Black</defName>
-    <label>Voodoo Boys black robe</label>
+    <label>Voodoo Boys purple robe</label>
     <description>Clothing. Worn by Voodoo Boys in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexRobe/EltexRobe</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(40,40,44)</color>
+      <color>(110,60,160)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9643,13 +9657,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_VoodooBoys_Robe_Darkpurple</defName>
-    <label>Voodoo Boys dark purple robe</label>
+    <label>Voodoo Boys purple robe</label>
     <description>Clothing. Worn by Voodoo Boys in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexRobe/EltexRobe</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(60,34,84)</color>
+      <color>(110,60,160)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9719,13 +9733,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Wraiths_Collar_Brown</defName>
-    <label>Wraiths brown shirt</label>
+    <label>Wraiths cyan shirt</label>
     <description>Clothing. Worn by Wraiths in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(45,155,200)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9757,13 +9771,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Wraiths_Duster_Brown</defName>
-    <label>Wraiths brown long coat</label>
+    <label>Wraiths cyan long coat</label>
     <description>Clothing. Worn by Wraiths in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(45,155,200)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9795,13 +9809,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Wraiths_Duster_Sand</defName>
-    <label>Wraiths sand long coat</label>
+    <label>Wraiths cyan long coat</label>
     <description>Clothing. Worn by Wraiths in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(205,185,140)</color>
+      <color>(45,155,200)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9833,13 +9847,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Wraiths_Faceplate_Sand</defName>
-    <label>Wraiths sand faceplate</label>
+    <label>Wraiths cyan faceplate</label>
     <description>A metal faceplate. Worn by Wraiths in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/WarMask/WarMask</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(205,185,140)</color>
+      <color>(45,155,200)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9871,13 +9885,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Wraiths_Flakvest_Rust</defName>
-    <label>Wraiths rust armor vest</label>
+    <label>Wraiths cyan armor vest</label>
     <description>A plate carrier. Worn by Wraiths in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,74,40)</color>
+      <color>(45,155,200)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9910,13 +9924,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Wraiths_Pants_Brown</defName>
-    <label>Wraiths brown pants</label>
+    <label>Wraiths cyan pants</label>
     <description>Clothing. Worn by Wraiths in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(45,155,200)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9947,13 +9961,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Wraiths_Parka_Sand</defName>
-    <label>Wraiths sand parka</label>
+    <label>Wraiths cyan parka</label>
     <description>Clothing. Worn by Wraiths in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Parka/Parka</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(205,185,140)</color>
+      <color>(45,155,200)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -9985,13 +9999,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Wraiths_Shirt_Brown</defName>
-    <label>Wraiths brown tank top</label>
+    <label>Wraiths cyan tank top</label>
     <description>Clothing. Worn by Wraiths in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(45,155,200)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10023,13 +10037,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Wraiths_Simplehelm_Sand</defName>
-    <label>Wraiths sand helmet</label>
+    <label>Wraiths cyan helmet</label>
     <description>A plain steel helmet. Worn by Wraiths in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/SimpleHelmet/SimpleHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(205,185,140)</color>
+      <color>(45,155,200)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10061,13 +10075,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Wraiths_Veil_Brown</defName>
-    <label>Wraiths brown veil</label>
+    <label>Wraiths cyan veil</label>
     <description>Clothing. Worn by Wraiths in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Veil/Veil</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,76,48)</color>
+      <color>(45,155,200)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10099,13 +10113,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Wraiths_Veil_Sand</defName>
-    <label>Wraiths sand veil</label>
+    <label>Wraiths cyan veil</label>
     <description>Clothing. Worn by Wraiths in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Veil/Veil</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(205,185,140)</color>
+      <color>(45,155,200)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10137,13 +10151,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Bodysuit_Violet</defName>
-    <label>Zetatech violet bodysuit</label>
+    <label>Zetatech orange bodysuit</label>
     <description>A thin, close-fitting synthweave suit. Worn by Zetatech in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexShirt/EltexShirt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,90,210)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10175,13 +10189,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Collar_Charcoal</defName>
-    <label>Zetatech charcoal shirt</label>
+    <label>Zetatech orange shirt</label>
     <description>Clothing. Worn by Zetatech in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10213,13 +10227,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Collar_Violet</defName>
-    <label>Zetatech violet shirt</label>
+    <label>Zetatech orange shirt</label>
     <description>Clothing. Worn by Zetatech in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShirtButton/ShirtButton</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,90,210)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10251,13 +10265,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Duster_Charcoal</defName>
-    <label>Zetatech charcoal long coat</label>
+    <label>Zetatech orange long coat</label>
     <description>Clothing. Worn by Zetatech in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10289,13 +10303,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Flakvest_Purple</defName>
-    <label>Zetatech purple armor vest</label>
+    <label>Zetatech orange armor vest</label>
     <description>A plate carrier. Worn by Zetatech in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlakVest/FlakVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,60,160)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10328,13 +10342,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Jacket_Charcoal</defName>
-    <label>Zetatech charcoal jacket</label>
+    <label>Zetatech orange jacket</label>
     <description>Clothing. Worn by Zetatech in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10366,13 +10380,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Jacket_Purple</defName>
-    <label>Zetatech purple jacket</label>
+    <label>Zetatech orange jacket</label>
     <description>Clothing. Worn by Zetatech in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Jacket/Jacket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,60,160)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10404,13 +10418,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Marine_Charcoal</defName>
-    <label>Zetatech charcoal heavy armor</label>
+    <label>Zetatech orange heavy armor</label>
     <description>Heavy powered armour for the front line. Worn by Zetatech in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10449,13 +10463,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Marinehelm_Violet</defName>
-    <label>Zetatech violet heavy helmet</label>
+    <label>Zetatech orange heavy helmet</label>
     <description>A sealed heavy helmet. Worn by Zetatech in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/PowerArmorHelmet/PowerArmorHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,90,210)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10489,13 +10503,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Netrig_Charcoal</defName>
-    <label>Zetatech charcoal netrunner rig</label>
+    <label>Zetatech orange netrunner rig</label>
     <description>A skull-mounted interface rig for jacking into the Net. Worn by Zetatech in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexSkullcap/EltexSkullcap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10528,13 +10542,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Pants_Charcoal</defName>
-    <label>Zetatech charcoal pants</label>
+    <label>Zetatech orange pants</label>
     <description>Clothing. Worn by Zetatech in their colours.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10565,13 +10579,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Recon_Charcoal</defName>
-    <label>Zetatech charcoal tactical armor</label>
+    <label>Zetatech orange tactical armor</label>
     <description>Full-body tactical armour. Worn by Zetatech in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ReconArmor/ReconArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(70,72,78)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ApparelArmor</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10606,13 +10620,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Reconhelm_Violet</defName>
-    <label>Zetatech violet tactical helmet</label>
+    <label>Zetatech orange tactical helmet</label>
     <description>A sealed tactical helmet. Worn by Zetatech in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ReconArmorHelmet/ReconHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,90,210)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>ArmorHeadgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10646,13 +10660,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Vest_Purple</defName>
-    <label>Zetatech purple vest</label>
+    <label>Zetatech orange vest</label>
     <description>Clothing. Worn by Zetatech in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EltexVest/EltexVest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(110,60,160)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Apparel</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>
@@ -10684,13 +10698,13 @@
 
   <ThingDef ParentName="ApparelBase">
     <defName>RPC_Apparel_Zetatech_Visor_Violet</defName>
-    <label>Zetatech violet visor</label>
+    <label>Zetatech orange visor</label>
     <description>A HUD visor. Worn by Zetatech in their colours.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/Gunlink/Gunlink</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(150,90,210)</color>
+      <color>(225,145,35)</color>
     </graphicData>
     <thingCategories Inherit="False"><li>Headgear</li></thingCategories>
     <tradeTags><li>RPC_FactionApparel</li></tradeTags>

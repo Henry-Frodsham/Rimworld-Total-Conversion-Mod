@@ -12,7 +12,8 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": null,
-  "range": 30.0
+  "range": 30.0,
+  "damageMultiplier": 0.7
  },
  {
   "name": "Arasaka HJSH-18 Masamune",
@@ -42,7 +43,8 @@
   "charge": 0.5,
   "headshot": 170.0,
   "armorPen": 50.0,
-  "range": 36.0
+  "range": 36.0,
+  "damageMultiplier": 0.65
  },
  {
   "name": "Arasaka Nowaki",
@@ -87,7 +89,8 @@
   "charge": null,
   "headshot": 100.0,
   "armorPen": null,
-  "range": 24.0
+  "range": 24.0,
+  "damageMultiplier": 0.9
  },
  {
   "name": "Arasaka TKI-20 Shingen",
@@ -117,7 +120,8 @@
   "charge": null,
   "headshot": 150.0,
   "armorPen": 25.0,
-  "range": 36.0
+  "range": 36.0,
+  "damageMultiplier": 0.95
  },
  {
   "name": "Baseball Bat",
@@ -132,7 +136,8 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null
+  "range": null,
+  "damageMultiplier": 0.75
  },
  {
   "name": "Boar Carver",
@@ -162,7 +167,8 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": 50.0,
-  "range": 8.0
+  "range": 8.0,
+  "damageMultiplier": 1.05
  },
  {
   "name": "Budget Arms Cut-o-Matic",
@@ -312,7 +318,8 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null
+  "range": null,
+  "damageMultiplier": 0.95
  },
  {
   "name": "Darra Polytechnic DA8 Umbra",
@@ -342,7 +349,8 @@
   "charge": 0.75,
   "headshot": 175.0,
   "armorPen": 50.0,
-  "range": 36.0
+  "range": 36.0,
+  "damageMultiplier": 0.75
  },
  {
   "name": "Darra Polytechnic DR-5 Nova",
@@ -387,7 +395,8 @@
   "charge": 0.5,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null
+  "range": null,
+  "damageMultiplier": 0.95
  },
  {
   "name": "Electric Baton Beta",
@@ -402,7 +411,8 @@
   "charge": 0.75,
   "headshot": null,
   "armorPen": 50.0,
-  "range": null
+  "range": null,
+  "damageMultiplier": 0.95
  },
  {
   "name": "Electric Baton Gamma",
@@ -417,7 +427,8 @@
   "charge": 1.0,
   "headshot": null,
   "armorPen": 50.0,
-  "range": null
+  "range": null,
+  "damageMultiplier": 0.95
  },
  {
   "name": "HA-4 Grit",
@@ -432,7 +443,8 @@
   "charge": 0.75,
   "headshot": 125.0,
   "armorPen": 50.0,
-  "range": 30.0
+  "range": 30.0,
+  "damageMultiplier": 0.85
  },
  {
   "name": "HA-7 Warden",
@@ -492,7 +504,8 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null
+  "range": null,
+  "damageMultiplier": 0.75
  },
  {
   "name": "Kang Tao A-22B Chao",
@@ -507,7 +520,8 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": null,
-  "range": 36.0
+  "range": 36.0,
+  "damageMultiplier": 0.85
  },
  {
   "name": "Kang Tao G-58 Dian",
@@ -522,7 +536,8 @@
   "charge": null,
   "headshot": 50.0,
   "armorPen": null,
-  "range": 30.0
+  "range": 30.0,
+  "damageMultiplier": 0.95
  },
  {
   "name": "Kang Tao L-69 Zhuo",
@@ -612,7 +627,8 @@
   "charge": null,
   "headshot": 200.0,
   "armorPen": 25.0,
-  "range": 42.0
+  "range": 42.0,
+  "damageMultiplier": 0.8
  },
  {
   "name": "Midnight Arms MA70 HB",
@@ -672,7 +688,8 @@
   "charge": null,
   "headshot": 125.0,
   "armorPen": null,
-  "range": 30.0
+  "range": 30.0,
+  "damageMultiplier": 0.7
  },
  {
   "name": "Militech M-179 Achilles",
@@ -687,7 +704,8 @@
   "charge": 1.0,
   "headshot": 150.0,
   "armorPen": 50.0,
-  "range": 73.0
+  "range": 73.0,
+  "damageMultiplier": 0.8
  },
  {
   "name": "Militech M-76e Omaha",
@@ -702,7 +720,8 @@
   "charge": 0.75,
   "headshot": 170.0,
   "armorPen": 50.0,
-  "range": 30.0
+  "range": 30.0,
+  "damageMultiplier": 0.7
  },
  {
   "name": "Militech M221 Saratoga",
@@ -717,7 +736,8 @@
   "charge": null,
   "headshot": 100.0,
   "armorPen": null,
-  "range": 24.0
+  "range": 24.0,
+  "damageMultiplier": 0.95
  },
  {
   "name": "Militech M251s Ajax",
@@ -747,7 +767,8 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": 60.0
+  "range": 60.0,
+  "damageMultiplier": 0.85
  },
  {
   "name": "Militech Ticon",
@@ -762,7 +783,8 @@
   "charge": 0.75,
   "headshot": 170.0,
   "armorPen": 50.0,
-  "range": 42.0
+  "range": 42.0,
+  "damageMultiplier": 0.7
  },
  {
   "name": "Neurotoxin Knife",
@@ -912,7 +934,8 @@
   "charge": null,
   "headshot": 85.0,
   "armorPen": null,
-  "range": 30.0
+  "range": 30.0,
+  "damageMultiplier": 0.7
  },
  {
   "name": "Steel Pipe",
@@ -927,7 +950,8 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null
+  "range": null,
+  "damageMultiplier": 0.95
  },
  {
   "name": "Techtronika Metel",
@@ -1017,7 +1041,8 @@
   "charge": null,
   "headshot": null,
   "armorPen": 25.0,
-  "range": null
+  "range": null,
+  "damageMultiplier": 0.95
  },
  {
   "name": "Tomahawk",
@@ -1062,7 +1087,8 @@
   "charge": null,
   "headshot": 105.0,
   "armorPen": null,
-  "range": 24.0
+  "range": 24.0,
+  "damageMultiplier": 0.8
  },
  {
   "name": "Tsunami Kyubi",
