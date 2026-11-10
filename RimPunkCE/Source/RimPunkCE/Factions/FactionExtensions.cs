@@ -59,6 +59,17 @@ namespace RimPunkCE
         public float chance = 1f;
         public List<HediffDef> hediffs = new List<HediffDef>();
         public int count = 1;
+
+        /// <summary>
+        /// Optional families (all sandevistans, all mantis blades...). When present they replace <see cref="hediffs"/>: a family is
+        /// picked with equal odds however many models it has, then a model from inside it, so adding models never shifts the odds.
+        /// </summary>
+        public List<CyberwareLoadoutGroup> groups = new List<CyberwareLoadoutGroup>();
+    }
+
+    public class CyberwareLoadoutGroup
+    {
+        public List<HediffDef> hediffs = new List<HediffDef>();
     }
 
     /// <summary>Street names used as nicknames for faction pawns. Original list, Defs/Factions/StreetNames.xml.</summary>

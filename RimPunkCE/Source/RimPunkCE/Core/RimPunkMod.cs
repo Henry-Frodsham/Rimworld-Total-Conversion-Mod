@@ -51,7 +51,7 @@ namespace RimPunkCE
         public float capacityMultiplier = 1f;
         public float cyberpsychosisChanceMultiplier = 1f;
         public bool newWorldGigs;
-        public bool newWorldQuickhacks;
+        public bool newWorldQuickhacks = true;
         public bool visualEffects = true;
         public bool adrenalineEnabled = true;
         public bool contextualAI = true;
@@ -65,7 +65,7 @@ namespace RimPunkCE
         public override void ExposeData()
         {
             Scribe_Values.Look(ref newWorldGigs, "newWorldGigs");
-            Scribe_Values.Look(ref newWorldQuickhacks, "newWorldQuickhacks");
+            Scribe_Values.Look(ref newWorldQuickhacks, "newWorldQuickhacks", true);
             Scribe_Values.Look(ref capacityMultiplier, "capacityMultiplier", 1f);
             Scribe_Values.Look(ref cyberpsychosisChanceMultiplier, "cyberpsychosisChanceMultiplier", 1f);
             Scribe_Values.Look(ref visualEffects, "visualEffects", true);

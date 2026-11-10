@@ -14,7 +14,6 @@
   <RPC_CapacityCost>Cyberware capacity: {0}</RPC_CapacityCost>
   <RPC_CapacityUsage>Cyberware: {0} / {1} ({2})</RPC_CapacityUsage>
   <RPC_UsageChange>usage {0} -> {1}</RPC_UsageChange>
-  <RPC_CyberpsychosisRisk>CYBERPSYCHOSIS RISK</RPC_CyberpsychosisRisk>
   <RPC_GonkCapacityExplanation>Gonk: capacity fixed at {0}</RPC_GonkCapacityExplanation>
   <RPC_CapacitySettingExplanation>Mod setting: x{0}</RPC_CapacitySettingExplanation>
   <RPC_Paired>paired</RPC_Paired>
@@ -226,10 +225,7 @@ Collectors are sent in {1} days. The debt grows by {2}% a day. Paying at least {
   <RPC_Settings_Barks>Barks (speech lines in combat and for events)</RPC_Settings_Barks>
 
   <!-- gigs -->
-  <RPC_Gig_Title>Gigs</RPC_Gig_Title>
-  <RPC_Gig_ContactOnline>Your contact is on the line.</RPC_Gig_ContactOnline>
   <RPC_Gig_NeedsComms>No contact: accepting gigs needs a powered comms console.</RPC_Gig_NeedsComms>
-  <RPC_Gig_None>Nothing on the board right now. New work comes in every few days.</RPC_Gig_None>
   <RPC_Gig_AnonymousClient>an anonymous client</RPC_Gig_AnonymousClient>
   <RPC_Gig_Type_Assassinate>Assassination</RPC_Gig_Type_Assassinate>
   <RPC_Gig_Type_Sabotage>Sabotage</RPC_Gig_Type_Sabotage>
@@ -239,19 +235,9 @@ Collectors are sent in {1} days. The debt grows by {2}% a day. Paying at least {
   <RPC_Gig_Goal_Sabotage>Destroy the server rack at the site.</RPC_Gig_Goal_Sabotage>
   <RPC_Gig_Goal_Steal>Find the data shard at the site and bring it home, or take it with a caravan.</RPC_Gig_Goal_Steal>
   <RPC_Gig_Goal_Rescue>Find the hostage at the site and free them (right-click). They'll join you.</RPC_Gig_Goal_Rescue>
-  <RPC_Gig_State_Offered>open</RPC_Gig_State_Offered>
-  <RPC_Gig_State_Active>running</RPC_Gig_State_Active>
-  <RPC_Gig_State_Completed>done</RPC_Gig_State_Completed>
-  <RPC_Gig_State_Failed>failed</RPC_Gig_State_Failed>
-  <RPC_Gig_Row>Client: {0}. Pays {1} silver.</RPC_Gig_Row>
-  <RPC_Gig_OfferEnds>Offer ends in {0}.</RPC_Gig_OfferEnds>
-  <RPC_Gig_DueIn>Due in {0}.</RPC_Gig_DueIn>
-  <RPC_Gig_Accept>Accept</RPC_Gig_Accept>
-  <RPC_Gig_Decline>Decline</RPC_Gig_Decline>
-  <RPC_Gig_Abandon>Abandon</RPC_Gig_Abandon>
-  <RPC_Gig_Show>Show site</RPC_Gig_Show>
   <RPC_Gig_FreeHostage>Free {0}</RPC_Gig_FreeHostage>
-  <RPC_Gig_NewOffer>New gig: {0} against {1}, pays {2} silver. See the Gigs tab.</RPC_Gig_NewOffer>
+  <RPC_Gig_QuestName>Gig: {0} against {1}</RPC_Gig_QuestName>
+  <RPC_Gig_QuestDesc>{2} silver for a {0} job against {1}, from {3}. Accepting needs a powered comms console.</RPC_Gig_QuestDesc>
   <RPC_Gig_NoSite>Your contact couldn't find a usable site for this job. Try again later.</RPC_Gig_NoSite>
   <RPC_Gig_SiteLabel>{0}: {1}</RPC_Gig_SiteLabel>
   <RPC_Gig_AcceptedLetter>Gig accepted: {0}</RPC_Gig_AcceptedLetter>

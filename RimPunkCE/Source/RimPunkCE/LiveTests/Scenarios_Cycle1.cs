@@ -153,7 +153,7 @@ namespace RimPunkCE
             parms.forced = true;
             bool ok = inc.Worker.TryExecute(parms);
             Check(ok, "incident fired");
-            var rogue = map.mapPawns.AllPawnsSpawned.FirstOrDefault(p => p.kindDef == inc.pawnKind);
+            var rogue = map.mapPawns.AllPawnsSpawned.FirstOrDefault(p => p.kindDef.defName.StartsWith(inc.pawnKind.defName));
             Check(rogue != null, "rogue on the map");
             if (rogue == null) yield break;
             spawned.Add(rogue);
@@ -444,10 +444,8 @@ namespace RimPunkCE
             int silver1 = map.listerThings.ThingsOfDef(ThingDefOf.Silver).Sum(t => t.stackCount);
             Check(silver1 > silver0, $"pay arrived: {silver0} -> {silver1} silver");
 
-            Find.MainTabsRoot.SetCurrentTab(DefDatabase<MainButtonDef>.GetNamed("RPC_Gigs"), false);
-            yield return 30;
-            Check(Find.MainTabsRoot.OpenTab?.defName == "RPC_Gigs", "gigs tab opened and drew with gigs on the board");
-            Find.MainTabsRoot.EscapeCurrentTab(false);
+            var offered = inst.TryAddOffer(GigType.Sabotage);
+            Check(offered?.quest != null && offered.quest.State == QuestState.NotYetAccepted && Find.QuestManager.Contains(offered.quest), "an offer is served as a not-yet-accepted quest");
         }
 
         [LiveScenario("cycle1")]
@@ -459,6 +457,7 @@ namespace RimPunkCE
             if (offer == null) yield break;
             GameComponent_Gigs.AcceptGig(offer.id);
             Check(offer.state == GigState.Active && offer.site != null, $"accepted: state {offer.state}, site {offer.site?.Label}");
+            Check(offer.quest?.State == QuestState.Ongoing, $"accepting the gig accepts its quest ({offer.quest?.State})");
             if (offer.site == null) yield break;
             Check(Find.WorldObjects.Contains(offer.site), "site is on the world map");
             Check(offer.site.Faction == offer.target, "site belongs to the target");
@@ -476,6 +475,7 @@ namespace RimPunkCE
             if (!offer.site.Destroyed) offer.site.Destroy();
             yield return 260;
             Check(offer.state == GigState.Failed, $"leaving the site without finishing fails the gig ({offer.state})");
+            Check(offer.quest?.State == QuestState.EndedFailed, $"and fails its quest ({offer.quest?.State})");
             Current.Game.CurrentMap = map;
         }
 
@@ -523,7 +523,7 @@ namespace RimPunkCE
             Check(p != null, "test pawn present");
             if (p != null) Check(Mathf.Abs(p.GetCyberTracker().Adrenaline - savedAdrenaline) < 5f, $"adrenaline survived: {p.GetCyberTracker().Adrenaline} (was {savedAdrenaline})");
             Check(!WorldFeatures.Gigs && WorldFeatures.Quickhacks, "world feature choices survived full game reload");
-            Check(p != null && Mathf.Abs(p.GetCyberTracker().instability - savedInstability) < 0.01f, "instability survived full game reload");
+            Check(p != null && Mathf.Abs(p.GetCyberTracker().instability - savedInstability) < 0.01f, $"instability survived full game reload ({p?.GetCyberTracker().instability} vs {savedInstability})");
             var caster = map.mapPawns.AllPawnsSpawned.FirstOrDefault(x => x.thingIDNumber == savedUploadCaster);
             Check(Verb_Quickhack.IsUploading(caster, out var upload), "in-progress upload survived full game reload");
             Check(upload != null && upload.ticksLeft > 0 && upload.ticksLeft <= savedUploadRemaining, "upload remaining duration preserved");

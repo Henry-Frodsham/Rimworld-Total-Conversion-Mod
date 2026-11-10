@@ -88,9 +88,6 @@
     <surgeFraction>0.5</surgeFraction>
   </RimPunkCE.AdrenalineTuningDef>
 
-  <!-- Event table intentionally empty until the trigger events are decided. Example entry:
-       <li><eventType>TookDamage</eventType><chance>0.01</chance><chancePerTenPercentOver>0.01</chancePerTenPercentOver></li>
-       eventType: TookDamage, Downed, Killed, EnteredCombat, UsedCyberwareAbility, CyberwareInstalled -->
   <RimPunkCE.CyberpsychosisTuningDef>
     <defName>RPC_CyberpsychosisTuning</defName>
     <baselinePerLoadSecond>0.002</baselinePerLoadSecond>
@@ -101,7 +98,6 @@
     <sleepPerSecond>0.08</sleepPerSecond><recreationPerLevel>40</recreationPerLevel>
     <drugRecovery>12</drugRecovery><medicalRecovery>15</medicalRecovery>
     <safeUsage>0.5</safeUsage>
-    <events />
     <maxTacKills>5</maxTacKills>
     <maxTacOperatorKind>RPC_MaxTac_Operator</maxTacOperatorKind>
     <maxTacLeaderKind>RPC_MaxTac_Boss</maxTacLeaderKind>
@@ -149,7 +145,7 @@
   <HediffDef>
     <defName>RPC_CyberpsychosisBurnout</defName>
     <label>cyberpsychosis burnout</label>
-    <description>This pawn has had a cyberpsychotic break. A lasting record of a survived break. Future risk depends on chrome load and instability, not a capacity threshold.</description>
+    <description>This pawn has had a cyberpsychotic break. A lasting record of a survived break. Future risk depends on chrome load and instability.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.9, 0.2, 0.5)</defaultLabelColor>
     <isBad>true</isBad>

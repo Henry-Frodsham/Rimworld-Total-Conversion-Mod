@@ -17,7 +17,7 @@ namespace RimPunkCE
         public WorldComponent_RimPunkFeatures(World world) : base(world)
         {
             gigs = WorldFeatures.DraftGigs ?? RimPunkMod.Settings?.newWorldGigs ?? false;
-            quickhacks = WorldFeatures.DraftQuickhacks ?? RimPunkMod.Settings?.newWorldQuickhacks ?? false;
+            quickhacks = WorldFeatures.DraftQuickhacks ?? RimPunkMod.Settings?.newWorldQuickhacks ?? true;
         }
         public override void ExposeData()
         {
@@ -42,11 +42,6 @@ namespace RimPunkCE
         public static bool Quickhacks => Current?.Quickhacks ?? false;
     }
 
-    public class MainButtonWorker_RimPunkGigs : MainButtonWorker_ToggleTab
-    {
-        public override bool Visible => WorldFeatures.Gigs && base.Visible;
-    }
-
     public class Dialog_RimPunkWorldFeatures : Window
     {
         public override Vector2 InitialSize => new Vector2(480f, 260f);
@@ -54,7 +49,7 @@ namespace RimPunkCE
         public override void DoWindowContents(Rect rect)
         {
             bool gigs = WorldFeatures.DraftGigs ?? false;
-            bool hacks = WorldFeatures.DraftQuickhacks ?? false;
+            bool hacks = WorldFeatures.DraftQuickhacks ?? true;
             var list = new Listing_Standard();
             list.Begin(rect);
             list.Label("RPC_Features_WorldExplanation".Translate());
@@ -76,7 +71,7 @@ namespace RimPunkCE
             if (initialized.TryGetValue(__instance, out _)) return;
             initialized.Add(__instance, new object());
             WorldFeatures.DraftGigs = RimPunkMod.Settings?.newWorldGigs ?? false;
-            WorldFeatures.DraftQuickhacks = RimPunkMod.Settings?.newWorldQuickhacks ?? false;
+            WorldFeatures.DraftQuickhacks = RimPunkMod.Settings?.newWorldQuickhacks ?? true;
         }
     }
 

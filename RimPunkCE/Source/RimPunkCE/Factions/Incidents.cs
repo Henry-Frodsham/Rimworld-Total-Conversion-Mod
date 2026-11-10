@@ -52,13 +52,17 @@ namespace RimPunkCE
     {
         protected override bool CanFireNowSub(IncidentParms parms) => parms.target is Map && def.pawnKind != null;
 
+        /// <summary>Half of rogue cyberpsychos are melee (the incident's own kind), half ranged.</summary>
+        public static PawnKindDef PickKind(IncidentDef def) =>
+            Rand.Bool ? def.pawnKind : DefDatabase<PawnKindDef>.GetNamedSilentFail(def.pawnKind.defName + "_Ranged") ?? def.pawnKind;
+
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
             var map = (Map)parms.target;
             if (!CellFinder.TryFindRandomEdgeCellWith(c => map.reachability.CanReachColony(c) && !c.Fogged(map), map, CellFinder.EdgeRoadChance_Hostile, out var cell))
                 return false;
 
-            var pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(def.pawnKind, null, mustBeCapableOfViolence: true));
+            var pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PickKind(def), null, mustBeCapableOfViolence: true));
             GenSpawn.Spawn(pawn, cell, map);
             pawn.mindState.mentalStateHandler.TryStartMentalState(RPDefOf.RPC_Cyberpsychosis, "RPC_RogueReason".Translate(), forced: true, forceWake: true, transitionSilently: true);
             Diag.Event("events", $"rogue cyberpsycho {Diag.Describe(pawn)}: usage {pawn.GetCyberTracker()?.UsageRatio:P0}, in state {pawn.MentalStateDef?.defName}");

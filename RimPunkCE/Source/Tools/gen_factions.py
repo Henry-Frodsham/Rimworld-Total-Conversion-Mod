@@ -20,10 +20,15 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 SANDEVISTANS = ['RPC_DynalarSandevistan', 'RPC_ZetatechSandevistan', 'RPC_WarpDancerSandevistan', 'RPC_FalconSandevistan', 'RPC_ApogeeSandevistan']
 BERSERKS = ['RPC_MooreTechBerserk', 'RPC_BioDyneBerserk', 'RPC_ZetatechBerserk', 'RPC_MilitechBerserk']
 DECKS = ['RPC_ArasakaCyberdeck', 'RPC_ParalineCyberdeck', 'RPC_RipplerCyberdeck', 'RPC_BiotechCyberdeck', 'RPC_RavenCyberdeck', 'RPC_NetDriverCyberdeck', 'RPC_CantoCyberdeck']
-OS_ALL = SANDEVISTANS + BERSERKS + DECKS
+CHROME = ['RPC_ChromeCompressor']
+# an operating-system roll picks one of these families with equal odds, then a model inside it (so adding models never shifts the odds);
+# cyberdecks drop out at runtime in worlds without quickhacks (PawnLoadoutUtility.Allowed)
+OS_ALL = SANDEVISTANS + BERSERKS + DECKS + CHROME
+OS_NODECK = SANDEVISTANS + BERSERKS + CHROME
 ARMS = ['RPC_GorillaArms', 'RPC_MantisBlades', 'RPC_ElectrifyingGorillaArms', 'RPC_ThermalGorillaArms', 'RPC_ToxicGorillaArms',
         'RPC_ElectrifyingMantisBlades', 'RPC_ThermalMantisBlades', 'RPC_ToxicMantisBlades', 'RPC_Monowire', 'RPC_ElectrifyingMonowire',
         'RPC_ThermalMonowire', 'RPC_ToxicMonowire', 'RPC_ProjectileLaunchSystem']
+ARM_FAMILIES = [ARMS[0:1] + ARMS[2:5], ARMS[1:2] + ARMS[5:8], ARMS[8:12], ARMS[12:13]]  # gorilla, mantis, monowire, launcher
 PFC = ['RPC_NewtonModule', 'RPC_RamUpgrade', 'RPC_MechatronicCore', 'RPC_MemoryBoost', 'RPC_Bioconductor', 'RPC_ExDisk', 'RPC_Axolotl', 'RPC_SelfIce']
 FACE = ['RPC_BasicKiroshiOptics', 'RPC_KiroshiStalkerOptics', 'RPC_KiroshiSentryOptics', 'RPC_KiroshiCockatriceOptics']
 HANDS = ['RPC_SmartLink', 'RPC_ShockAbsorber', 'RPC_ImmovableForce', 'RPC_Microgenerator']
@@ -51,6 +56,10 @@ CW_MIN_TIER = _cyberware_min_tiers()
 TIER_ORDER = ['T1', 'T2', 'T3', 'T4', 'T5', 'Iconic']
 
 def opt(chance, hediffs, count=1): return dict(chance=chance, hediffs=hediffs, count=count)
+
+# flat pool -> its families, for options that should roll family-first
+FAMILIES = {tuple(OS_ALL): [SANDEVISTANS, BERSERKS, DECKS, CHROME], tuple(OS_NODECK): [SANDEVISTANS, BERSERKS, CHROME],
+            tuple(SANDEVISTANS + BERSERKS): [SANDEVISTANS, BERSERKS], tuple(ARMS): ARM_FAMILIES}
 
 LOADOUT_CORP = [opt(0.5, OS_ALL), opt(0.3, ARMS), opt(0.4, PFC, 2), opt(0.6, ['RPC_SmartLink']), opt(0.5, FACE), opt(0.5, SKELETON),
                 opt(0.4, NERVOUS, 2), opt(0.4, CIRCULATORY, 2), opt(0.5, SKIN, 2), opt(0.3, LEGS, 2), opt(0.3, HANDS)]
@@ -165,7 +174,12 @@ def loadout_xml(options, tiers):
         assert not missing, f'unknown cyberware in loadout: {missing}'
         hediffs = [h for h in o['hediffs'] if TIER_ORDER.index(CW_MIN_TIER[h]) <= top]
         if not hediffs: continue
-        s += f"          <li><chance>{o['chance']}</chance><count>{o['count']}</count><hediffs>{li(hediffs)}</hediffs></li>\n"
+        fams = FAMILIES.get(tuple(o['hediffs']))
+        if fams:
+            groups = ''.join(f'<li><hediffs>{li(g)}</hediffs></li>' for g in ([h for h in fam if h in hediffs] for fam in fams) if g)
+            s += f"          <li><chance>{o['chance']}</chance><count>{o['count']}</count><groups>{groups}</groups></li>\n"
+        else:
+            s += f"          <li><chance>{o['chance']}</chance><count>{o['count']}</count><hediffs>{li(hediffs)}</hediffs></li>\n"
     return s + '''        </options>
       </li>
 '''
@@ -226,7 +240,7 @@ def pawnkind(f, role, label, power, weapon_tags, money, mags, leader=False, trad
     if role == 'Boss': tiers = f.get('bossTiers') or (tiers[0], 'Iconic' if corp else ('T3' if tiers[1] in ('T2', 'T3') else tiers[1]))
     options = f.get('loadout', LOADOUT_CORP if corp else LOADOUT_GANG)
     if role == 'Netrunner' and 'loadout' not in f: options = NETRUNNER_LOADOUT
-    elif 'loadout' not in f: options = [opt(o['chance'], SANDEVISTANS + BERSERKS, o['count']) if o['hediffs'] == OS_ALL else o for o in options]
+    elif 'loadout' not in f: options = [opt(o['chance'], OS_NODECK, o['count']) if o['hediffs'] == OS_ALL else o for o in options]
     if trader: options = [o for o in options if o['hediffs'] != ARMS][:2]
     _, required, _ = outfit(f['id'], role)
     floor = int(cheapest(weapon_tags) * 1.1) + 1

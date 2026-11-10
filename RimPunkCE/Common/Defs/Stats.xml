@@ -22,7 +22,7 @@
   <StatDef ParentName="RPC_PawnStatBase">
     <defName>RPC_CyberwareCapacity</defName>
     <label>cyberware capacity</label>
-    <description>How much cyberware this pawn can carry. Using 80% or more risks cyberpsychosis. Every pawn rolls a base of 50-150, then their aptitude trait, some cyberware and immunoblockers change it.</description>
+    <description>How much cyberware this pawn can carry. Every pawn rolls a base of 50-150, then their aptitude trait, some cyberware and immunoblockers change it.</description>
     <defaultBaseValue>0</defaultBaseValue>
     <minValue>1</minValue>
     <toStringStyle>Integer</toStringStyle>

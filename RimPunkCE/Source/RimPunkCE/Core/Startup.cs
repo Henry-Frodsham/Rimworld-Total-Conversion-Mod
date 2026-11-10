@@ -51,7 +51,7 @@ namespace RimPunkCE
             foreach (var k in DefDatabase<PawnKindDef>.AllDefsListForReading.Where(k => k.defName.StartsWith("RPC_")))
             {
                 if (k.weaponTags != null && !k.weaponTags.Any(allTags.Contains)) Diag.Check("startup", $"{k.defName}: no weapon has any of its tags ({string.Join(",", k.weaponTags)})");
-                if (k.defaultFactionDef == null && k.defName != "RPC_RogueCyberpsycho") Diag.Check("startup", $"{k.defName}: no default faction");
+                if (k.defaultFactionDef == null && !k.defName.StartsWith("RPC_RogueCyberpsycho")) Diag.Check("startup", $"{k.defName}: no default faction");
             }
             Diag.Flush();
         }

@@ -173,7 +173,6 @@ namespace RimPunkCE
                     int count = GameComponent_Gigs.Instance.Gigs.Count;
                     var offer = GameComponent_Gigs.Instance.TryAddOffer();
                     Check(gigs ? offer != null : offer == null && GameComponent_Gigs.Instance.Gigs.Count == count, $"{gigs}/{hacks}: gig creation gate");
-                    Check(DefDatabase<MainButtonDef>.GetNamed("RPC_Gigs").Worker.Visible == gigs, $"{gigs}/{hacks}: gig tab visibility");
                     Check((ability.BlockReason() == null) == hacks, $"{gigs}/{hacks}: retained ability obeys world gate");
                     if (!hacks) Check(!ability.Activate(target, target), "disabled quickhack cannot activate via retained reference");
                     Scribe.saver.InitSaving(path, "features");

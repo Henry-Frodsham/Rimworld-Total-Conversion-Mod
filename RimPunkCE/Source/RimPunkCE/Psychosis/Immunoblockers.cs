@@ -35,11 +35,6 @@ namespace RimPunkCE
                 CyberpsychosisUtility.AddInstability(pawn, 25f);
                 return;
             }
-            // other world pawns aren't simulated: nobody would see or stop the episode
-            if (!Hediff_PermanentCyberpsychosis.Simulated(pawn)) return;
-            // capacity just dropped: burnout's 50% limit applies right away
-            var tracker = pawn.GetCyberTracker();
-            if (tracker != null) CyberpsychosisUtility.Notify_CapacityChanged(pawn, tracker);
         }
     }
 

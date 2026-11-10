@@ -127,6 +127,7 @@
     <minThreatPoints>800</minThreatPoints>
   </IncidentDef>
 
+  <!-- rogue cyberpsychos come in two builds, picked 50/50 by the incident (IncidentWorker_RogueCyberpsycho.PickKind) -->
   <PawnKindDef ParentName="RPC_PawnKindBase">
     <defName>RPC_RogueCyberpsycho</defName>
     <label>rogue cyberpsycho</label>
@@ -144,7 +145,43 @@
         <forceAptitudeDegree>-2</forceAptitudeDegree>
         <options>
           <li><chance>1</chance><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_DynalarSandevistan</li></hediffs></li>
-          <li><chance>1</chance><count>2</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li></hediffs></li>
+          <li><chance>1</chance><count>2</count><groups>
+            <li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li>
+            <li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li>
+          </groups></li>
+          <li><chance>1</chance><count>3</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li></hediffs></li>
+          <li><chance>1</chance><hediffs><li>RPC_SmartLink</li></hediffs></li>
+          <li><chance>1</chance><hediffs><li>RPC_TitaniumBones</li></hediffs></li>
+          <li><chance>1</chance><count>2</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_Carapace</li><li>RPC_Chitin</li></hediffs></li>
+        </options>
+        <extraHediffs><li>RPC_ScrapPlating</li></extraHediffs>
+      </li>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <primaryMagazineCount><min>3</min><max>6</max></primaryMagazineCount>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="RPC_PawnKindBase">
+    <defName>RPC_RogueCyberpsycho_Ranged</defName>
+    <label>rogue cyberpsycho</label>
+    <combatPower>400</combatPower>
+    <itemQuality>Good</itemQuality>
+    <apparelTags><li>IndustrialMilitaryAdvanced</li><li>IndustrialMilitaryBasic</li></apparelTags>
+    <apparelMoney>1500~2500</apparelMoney>
+    <weaponMoney>1000~3000</weaponMoney>
+    <weaponTags><li>RPC_Class_Rifle</li><li>RPC_Class_SMG</li><li>RPC_Class_MG</li><li>RPC_Class_Shotgun</li></weaponTags>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareLoadoutExtension">
+        <minTier>T4</minTier>
+        <maxTier>Iconic</maxTier>
+        <!-- gonk body: the chrome always overloads them, so the episode never ends on its own -->
+        <forceAptitudeDegree>-2</forceAptitudeDegree>
+        <options>
+          <!-- berserk is melee-only, so the gun build runs a sandevistan -->
+          <li><chance>1</chance><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li></hediffs></li>
+          <li><chance>1</chance><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>1</chance><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li>
           <li><chance>1</chance><count>3</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li></hediffs></li>
           <li><chance>1</chance><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>1</chance><hediffs><li>RPC_TitaniumBones</li></hediffs></li>

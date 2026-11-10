@@ -23,19 +23,21 @@
     <basePart>BanditCamp</basePart>
     <restrained>RPC_GigRestrained</restrained>
     <freeHostageJob>RPC_FreeHostage</freeHostageJob>
+    <questScript>RPC_Gig</questScript>
   </RimPunkCE.GigTuningDef>
 
-  <MainButtonDef>
-    <defName>RPC_Gigs</defName>
-    <workerClass>RimPunkCE.MainButtonWorker_RimPunkGigs</workerClass>
-    <label>gigs</label>
-    <description>Contracts from your contact: jobs against corporations and gangs.</description>
-    <tabWindowClass>RimPunkCE.MainTabWindow_Gigs</tabWindowClass>
-    <order>65</order>
-    <iconPath>UI/RimPunk/Quickhack_Target</iconPath>
-    <minimized>true</minimized>
-    <canBeTutorDenied>false</canBeTutorDenied>
-  </MainButtonDef>
+  <!-- gigs are served as quests on their own schedule (GameComponent_Gigs); the storyteller never picks this script -->
+  <QuestScriptDef>
+    <defName>RPC_Gig</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <randomlySelectable>false</randomlySelectable>
+    <affectedByPoints>false</affectedByPoints>
+    <endOnColonyMove>false</endOnColonyMove>
+    <hideInvolvedFactionsInfo>false</hideInvolvedFactionsInfo>
+    <questAvailableLetterLabel>New gig</questAvailableLetterLabel>
+    <questAvailableLetterTextIsDescription>true</questAvailableLetterTextIsDescription>
+    <root Class="QuestNode_Sequence"><nodes /></root>
+  </QuestScriptDef>
 
   <!-- sits beside the outpost part; hidden so the site shows as the outpost with the gig's own label -->
   <SitePartDef>

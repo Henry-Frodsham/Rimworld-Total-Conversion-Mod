@@ -433,7 +433,7 @@ namespace RimPunkCE
         {
             var cell = UI.MouseCell();
             if (!cell.InBounds(Find.CurrentMap)) return; // clicked off the map edge
-            var kind = DefDatabase<PawnKindDef>.GetNamed("RPC_RogueCyberpsycho");
+            var kind = IncidentWorker_RogueCyberpsycho.PickKind(DefDatabase<IncidentDef>.GetNamed("RPC_RogueCyberpsycho"));
             var pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(kind, null, mustBeCapableOfViolence: true));
             GenSpawn.Spawn(pawn, cell, Find.CurrentMap);
             pawn.mindState.mentalStateHandler.TryStartMentalState(RPDefOf.RPC_Cyberpsychosis, "debug", forced: true, forceWake: true);

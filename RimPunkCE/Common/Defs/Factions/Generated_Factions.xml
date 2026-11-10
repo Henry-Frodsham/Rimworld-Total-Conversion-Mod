@@ -19,8 +19,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -55,8 +55,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -91,8 +91,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -157,8 +157,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -194,8 +194,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -231,7 +231,7 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
         </options>
       </li>
@@ -426,8 +426,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -462,8 +462,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -498,8 +498,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -564,8 +564,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -601,8 +601,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -638,7 +638,7 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
         </options>
       </li>
@@ -833,8 +833,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -869,8 +869,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -905,8 +905,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -971,8 +971,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -1008,8 +1008,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -1045,7 +1045,7 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
         </options>
       </li>
@@ -1230,8 +1230,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -1266,8 +1266,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -1302,8 +1302,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -1368,8 +1368,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -1405,8 +1405,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -1442,7 +1442,7 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
         </options>
       </li>
@@ -1637,8 +1637,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -1673,8 +1673,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -1709,8 +1709,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -1776,8 +1776,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -1813,7 +1813,7 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
         </options>
       </li>
@@ -2006,8 +2006,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -2042,8 +2042,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -2078,8 +2078,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -2144,8 +2144,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -2181,8 +2181,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -2218,7 +2218,7 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
         </options>
       </li>
@@ -2413,8 +2413,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -2449,8 +2449,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -2485,8 +2485,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -2551,8 +2551,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -2588,8 +2588,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -2625,7 +2625,7 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
         </options>
       </li>
@@ -2820,8 +2820,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -2856,8 +2856,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -2923,8 +2923,8 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.5</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.3</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
@@ -3040,7 +3040,7 @@
         <minTier>T4</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
+          <li><chance>1.0</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li></groups></li>
           <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
           <li><chance>1.0</chance><count>2</count><hediffs><li>RPC_BionicJoints</li><li>RPC_DenseMarrow</li><li>RPC_TitaniumBones</li><li>RPC_ParaBellum</li><li>RPC_SpringJoints</li><li>RPC_EpimorphicSkeleton</li></hediffs></li>
@@ -3076,7 +3076,7 @@
         <minTier>T4</minTier>
         <maxTier>Iconic</maxTier>
         <options>
-          <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
+          <li><chance>1.0</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_ApogeeSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li></groups></li>
           <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
           <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_BasicKiroshiOptics</li><li>RPC_KiroshiStalkerOptics</li><li>RPC_KiroshiSentryOptics</li><li>RPC_KiroshiCockatriceOptics</li></hediffs></li>
           <li><chance>1.0</chance><count>2</count><hediffs><li>RPC_BionicJoints</li><li>RPC_DenseMarrow</li><li>RPC_TitaniumBones</li><li>RPC_ParaBellum</li><li>RPC_SpringJoints</li><li>RPC_EpimorphicSkeleton</li></hediffs></li>
@@ -3189,7 +3189,7 @@
         <maxTier>Iconic</maxTier>
         <options>
           <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_MooreTechBerserk</li></hediffs></li>
-          <li><chance>1.0</chance><count>2</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>1.0</chance><count>2</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>1.0</chance><count>3</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
         </options>
@@ -3220,7 +3220,7 @@
         <maxTier>Iconic</maxTier>
         <options>
           <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_MooreTechBerserk</li></hediffs></li>
-          <li><chance>1.0</chance><count>2</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>1.0</chance><count>2</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>1.0</chance><count>3</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>1.0</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
         </options>
@@ -3326,8 +3326,8 @@
         <minTier>T2</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li>
-          <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.7</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li></groups></li>
+          <li><chance>0.6</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.6</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SmartLink</li><li>RPC_SmartImprint</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li></hediffs></li>
@@ -3358,8 +3358,8 @@
         <minTier>T2</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li>
-          <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.7</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li></groups></li>
+          <li><chance>0.6</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.6</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SmartLink</li><li>RPC_SmartImprint</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li></hediffs></li>
@@ -3390,8 +3390,8 @@
         <minTier>T2</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li>
-          <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.7</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li></groups></li>
+          <li><chance>0.6</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.6</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SmartLink</li><li>RPC_SmartImprint</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li></hediffs></li>
@@ -3422,8 +3422,8 @@
         <minTier>T2</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li>
-          <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.7</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li></groups></li>
+          <li><chance>0.6</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.6</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SmartLink</li><li>RPC_SmartImprint</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li></hediffs></li>
@@ -3452,8 +3452,8 @@
         <minTier>T3</minTier>
         <maxTier>T4</maxTier>
         <options>
-          <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li>
-          <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.7</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_FalconSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_MilitechBerserk</li></hediffs></li></groups></li>
+          <li><chance>0.6</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.6</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_Axolotl</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SmartLink</li><li>RPC_SmartImprint</li></hediffs></li>
           <li><chance>0.5</chance><count>1</count><hediffs><li>RPC_SubdermalArmor</li><li>RPC_ProxiShield</li><li>RPC_RangeGuard</li><li>RPC_Carapace</li><li>RPC_OpticalCamo</li><li>RPC_PainEditor</li></hediffs></li>
@@ -3562,7 +3562,7 @@
         <maxTier>T3</maxTier>
         <options>
           <li><chance>0.8</chance><count>1</count><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_DynalarSandevistan</li></hediffs></li>
-          <li><chance>0.9</chance><count>2</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.9</chance><count>2</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.7</chance><count>3</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
@@ -3591,7 +3591,7 @@
         <maxTier>T3</maxTier>
         <options>
           <li><chance>0.8</chance><count>1</count><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_DynalarSandevistan</li></hediffs></li>
-          <li><chance>0.9</chance><count>2</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.9</chance><count>2</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.7</chance><count>3</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
@@ -3620,7 +3620,7 @@
         <maxTier>T3</maxTier>
         <options>
           <li><chance>0.8</chance><count>1</count><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_DynalarSandevistan</li></hediffs></li>
-          <li><chance>0.9</chance><count>2</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.9</chance><count>2</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.7</chance><count>3</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
@@ -3649,7 +3649,7 @@
         <maxTier>T3</maxTier>
         <options>
           <li><chance>0.8</chance><count>1</count><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_DynalarSandevistan</li></hediffs></li>
-          <li><chance>0.9</chance><count>2</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.9</chance><count>2</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.7</chance><count>3</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
@@ -3676,7 +3676,7 @@
         <maxTier>T3</maxTier>
         <options>
           <li><chance>0.8</chance><count>1</count><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_DynalarSandevistan</li></hediffs></li>
-          <li><chance>0.9</chance><count>2</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.9</chance><count>2</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.7</chance><count>3</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.7</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
@@ -4776,7 +4776,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
       </li>
@@ -4803,7 +4803,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
       </li>
@@ -4830,7 +4830,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
       </li>
@@ -4857,7 +4857,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
       </li>
@@ -4882,7 +4882,7 @@
         <minTier>T1</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.3</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
       </li>
@@ -5031,7 +5031,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.1</chance><count>1</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li></hediffs></li>
         </options>
       </li>
@@ -5058,7 +5058,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.1</chance><count>1</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li></hediffs></li>
         </options>
       </li>
@@ -5085,7 +5085,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.1</chance><count>1</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li></hediffs></li>
         </options>
       </li>
@@ -5112,7 +5112,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.1</chance><count>1</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li></hediffs></li>
         </options>
       </li>
@@ -5137,7 +5137,7 @@
         <minTier>T1</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.1</chance><count>1</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
         </options>
       </li>
@@ -5241,7 +5241,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.1</chance><count>1</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li></hediffs></li>
         </options>
       </li>
@@ -5268,7 +5268,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.1</chance><count>1</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li></hediffs></li>
         </options>
       </li>
@@ -5295,7 +5295,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.1</chance><count>1</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li></hediffs></li>
         </options>
       </li>
@@ -5320,7 +5320,7 @@
         <minTier>T1</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.1</chance><count>1</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
         </options>
       </li>
@@ -5422,8 +5422,8 @@
         <minTier>T2</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_ArasakaCyberdeck</li><li>RPC_ParalineCyberdeck</li><li>RPC_RipplerCyberdeck</li><li>RPC_BiotechCyberdeck</li><li>RPC_RavenCyberdeck</li></hediffs></li>
-          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.4</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li><li><hediffs><li>RPC_ArasakaCyberdeck</li><li>RPC_ParalineCyberdeck</li><li>RPC_RipplerCyberdeck</li><li>RPC_BiotechCyberdeck</li><li>RPC_RavenCyberdeck</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.4</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
         </options>
@@ -5451,8 +5451,8 @@
         <minTier>T2</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_ArasakaCyberdeck</li><li>RPC_ParalineCyberdeck</li><li>RPC_RipplerCyberdeck</li><li>RPC_BiotechCyberdeck</li><li>RPC_RavenCyberdeck</li></hediffs></li>
-          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.4</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li><li><hediffs><li>RPC_ArasakaCyberdeck</li><li>RPC_ParalineCyberdeck</li><li>RPC_RipplerCyberdeck</li><li>RPC_BiotechCyberdeck</li><li>RPC_RavenCyberdeck</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.4</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
         </options>
@@ -5480,8 +5480,8 @@
         <minTier>T2</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_ArasakaCyberdeck</li><li>RPC_ParalineCyberdeck</li><li>RPC_RipplerCyberdeck</li><li>RPC_BiotechCyberdeck</li><li>RPC_RavenCyberdeck</li></hediffs></li>
-          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.4</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li><li><hediffs><li>RPC_ArasakaCyberdeck</li><li>RPC_ParalineCyberdeck</li><li>RPC_RipplerCyberdeck</li><li>RPC_BiotechCyberdeck</li><li>RPC_RavenCyberdeck</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.4</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
         </options>
@@ -5509,8 +5509,8 @@
         <minTier>T2</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_ArasakaCyberdeck</li><li>RPC_ParalineCyberdeck</li><li>RPC_RipplerCyberdeck</li><li>RPC_BiotechCyberdeck</li><li>RPC_RavenCyberdeck</li></hediffs></li>
-          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.4</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li><li><hediffs><li>RPC_ArasakaCyberdeck</li><li>RPC_ParalineCyberdeck</li><li>RPC_RipplerCyberdeck</li><li>RPC_BiotechCyberdeck</li><li>RPC_RavenCyberdeck</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.4</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
         </options>
@@ -5538,8 +5538,8 @@
         <minTier>T2</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_ArasakaCyberdeck</li><li>RPC_ParalineCyberdeck</li><li>RPC_RipplerCyberdeck</li><li>RPC_BiotechCyberdeck</li><li>RPC_RavenCyberdeck</li></hediffs></li>
-          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.4</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li><li><hediffs><li>RPC_ArasakaCyberdeck</li><li>RPC_ParalineCyberdeck</li><li>RPC_RipplerCyberdeck</li><li>RPC_BiotechCyberdeck</li><li>RPC_RavenCyberdeck</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.4</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
         </options>
@@ -5565,8 +5565,8 @@
         <minTier>T2</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li><li>RPC_ArasakaCyberdeck</li><li>RPC_ParalineCyberdeck</li><li>RPC_RipplerCyberdeck</li><li>RPC_BiotechCyberdeck</li><li>RPC_RavenCyberdeck</li></hediffs></li>
-          <li><chance>0.4</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.4</chance><count>1</count><groups><li><hediffs><li>RPC_DynalarSandevistan</li><li>RPC_ZetatechSandevistan</li><li>RPC_WarpDancerSandevistan</li></hediffs></li><li><hediffs><li>RPC_MooreTechBerserk</li><li>RPC_BioDyneBerserk</li><li>RPC_ZetatechBerserk</li></hediffs></li><li><hediffs><li>RPC_ArasakaCyberdeck</li><li>RPC_ParalineCyberdeck</li><li>RPC_RipplerCyberdeck</li><li>RPC_BiotechCyberdeck</li><li>RPC_RavenCyberdeck</li></hediffs></li><li><hediffs><li>RPC_ChromeCompressor</li></hediffs></li></groups></li>
+          <li><chance>0.4</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.4</chance><count>2</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
           <li><chance>0.6</chance><count>1</count><hediffs><li>RPC_SmartLink</li></hediffs></li>
         </options>
@@ -5680,7 +5680,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.2</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
       </li>
@@ -5707,7 +5707,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.2</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
       </li>
@@ -5734,7 +5734,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.2</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
       </li>
@@ -5762,7 +5762,7 @@
         <minTier>T1</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.15</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.2</chance><count>1</count><hediffs><li>RPC_SmartImprint</li></hediffs></li>
         </options>
       </li>
@@ -5909,7 +5909,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.25</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.25</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li></hediffs></li>
         </options>
       </li>
@@ -5936,7 +5936,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.25</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.25</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li></hediffs></li>
         </options>
       </li>
@@ -5963,7 +5963,7 @@
         <minTier>T1</minTier>
         <maxTier>T2</maxTier>
         <options>
-          <li><chance>0.25</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.25</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li></hediffs></li>
         </options>
       </li>
@@ -5991,7 +5991,7 @@
         <minTier>T1</minTier>
         <maxTier>T3</maxTier>
         <options>
-          <li><chance>0.25</chance><count>1</count><hediffs><li>RPC_GorillaArms</li><li>RPC_MantisBlades</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li><li>RPC_ProjectileLaunchSystem</li></hediffs></li>
+          <li><chance>0.25</chance><count>1</count><groups><li><hediffs><li>RPC_GorillaArms</li><li>RPC_ElectrifyingGorillaArms</li><li>RPC_ThermalGorillaArms</li><li>RPC_ToxicGorillaArms</li></hediffs></li><li><hediffs><li>RPC_MantisBlades</li><li>RPC_ElectrifyingMantisBlades</li><li>RPC_ThermalMantisBlades</li><li>RPC_ToxicMantisBlades</li></hediffs></li><li><hediffs><li>RPC_Monowire</li><li>RPC_ElectrifyingMonowire</li><li>RPC_ThermalMonowire</li><li>RPC_ToxicMonowire</li></hediffs></li><li><hediffs><li>RPC_ProjectileLaunchSystem</li></hediffs></li></groups></li>
           <li><chance>0.15</chance><count>1</count><hediffs><li>RPC_NewtonModule</li><li>RPC_RamUpgrade</li><li>RPC_MechatronicCore</li><li>RPC_MemoryBoost</li><li>RPC_Bioconductor</li><li>RPC_ExDisk</li><li>RPC_SelfIce</li></hediffs></li>
         </options>
       </li>

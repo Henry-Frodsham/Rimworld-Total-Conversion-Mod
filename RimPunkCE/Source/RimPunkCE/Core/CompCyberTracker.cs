@@ -81,7 +81,7 @@ namespace RimPunkCE
 
         public float CapacityMax => Mathf.Max(1f, Pawn.GetStatValue(RPStatDefOf.RPC_CyberwareCapacity));
 
-        /// <summary>Capacity usage as a fraction of max (cyberpsychosis thresholds: 0.8 / 0.5).</summary>
+        /// <summary>Capacity usage as a fraction of max (trauma team strips chrome down to the safe fraction).</summary>
         public float UsageRatio => CapacityUsed / CapacityMax;
 
         public override float GetStatOffset(StatDef stat)
@@ -98,7 +98,6 @@ namespace RimPunkCE
             RecacheIfDirty();
             CyberUtility.UpdateMatchingSets(Pawn, cachedCyberware);
             Pawn.health.capacities?.Notify_CapacityLevelsDirty();
-            if (Pawn.Spawned) CyberpsychosisUtility.Notify_CapacityChanged(Pawn, this);
         }
 
         private void RecacheIfDirty()

@@ -18,23 +18,11 @@ namespace RimPunkCE
         CyberwareInstalled,
     }
 
-    public class CyberpsychosisEventChance
-    {
-        public CyberpsychosisEvent eventType;
-
-        /// <summary>Chance per event at exactly the threshold (80% usage).</summary>
-        public float chance;
-
-        /// <summary>Extra chance per 10 percentage points of usage above the threshold.</summary>
-        public float chancePerTenPercentOver;
-    }
-
     /// <summary>
-    /// Cyberpsychosis tuning (Defs/Core.xml). Legacy usage/event fields remain readable for existing definitions.
+    /// Cyberpsychosis tuning (Defs/Core.xml). Instability and chrome load drive risk; capacity usage never triggers an episode.
     /// </summary>
     public class CyberpsychosisTuningDef : Def
     {
-        // Legacy capacity fields remain readable for old definitions; they no longer trigger episodes.
         public float baselinePerLoadSecond = 0.002f;
         public float damageSpike = 2f;
         public float killSpike = 6f;
@@ -48,9 +36,8 @@ namespace RimPunkCE
         public float recreationPerLevel = 40f;
         public float drugRecovery = 12f;
         public float medicalRecovery = 15f;
-        public float triggerUsage = 0.8f;
+        /// <summary>Trauma Team strips chrome until usage is under this (it no longer triggers anything).</summary>
         public float safeUsage = 0.5f;
-        public List<CyberpsychosisEventChance> events = new List<CyberpsychosisEventChance>();
 
         /// <summary>MaxTac is called once a cyberpsycho has killed this many people in one episode.</summary>
         public int maxTacKills = 5;
@@ -149,7 +136,7 @@ namespace RimPunkCE
 
         public static bool HasBurnout(Pawn pawn) => pawn?.health?.hediffSet?.HasHediff(RPDefOf.RPC_CyberpsychosisBurnout) == true;
 
-        /// <summary>Combat event spikes scaled by chrome load. No capacity threshold or per-event random trigger.</summary>
+        /// <summary>Combat event spikes scaled by chrome load.</summary>
         public static void Notify_Event(Pawn pawn, CyberpsychosisEvent ev)
         {
             float spike = ev switch
@@ -162,9 +149,6 @@ namespace RimPunkCE
             AddInstability(pawn, spike * (1f + ChromeLoad(pawn) * 0.04f)
                 * (RimPunkMod.Settings?.cyberpsychosisChanceMultiplier ?? 1f));
         }
-
-        // Burnout no longer creates an automatic capacity-threshold episode. Chrome volume drives risk.
-        public static void Notify_CapacityChanged(Pawn pawn, CompCyberTracker tracker) { }
 
         public static bool TryStart(Pawn pawn, string reason)
         {

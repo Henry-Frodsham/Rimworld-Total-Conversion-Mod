@@ -95,7 +95,7 @@
             <capacities><li>Cut</li></capacities>
             <power>20</power>
             <cooldownTime>0.9</cooldownTime>
-            <armorPenetrationSharp>2.2</armorPenetrationSharp>
+            <armorPenetrationSharp>8</armorPenetrationSharp>
             <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
           </li>
           <li Class="CombatExtended.ToolCE">
@@ -103,7 +103,7 @@
             <capacities><li>Stab</li></capacities>
             <power>22</power>
             <cooldownTime>1.1</cooldownTime>
-            <armorPenetrationSharp>3.2</armorPenetrationSharp>
+            <armorPenetrationSharp>12</armorPenetrationSharp>
             <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
           </li>
         </tools>

@@ -94,7 +94,7 @@ namespace RimPunkCE
             return false;
         }
 
-        /// <summary>"(usage 64% -> 82%)" suffix so the player sees the cyberpsychosis risk before installing.</summary>
+        /// <summary>"(usage 64% -> 82%)" suffix so the player sees the capacity cost before installing.</summary>
         public static string UsageSuffix(Pawn pawn, float addedCost)
         {
             var tracker = pawn.GetCyberTracker();
@@ -102,10 +102,7 @@ namespace RimPunkCE
             float max = tracker.CapacityMax;
             float before = tracker.CapacityUsed / max;
             float after = (tracker.CapacityUsed + addedCost) / max;
-            string s = " (" + "RPC_UsageChange".Translate(before.ToStringPercent(), after.ToStringPercent()) + ")";
-            float threshold = CyberpsychosisUtility.HasBurnout(pawn) ? RPDefOf.RPC_CyberpsychosisTuning.safeUsage : RPDefOf.RPC_CyberpsychosisTuning.triggerUsage;
-            if (after >= threshold) s += " " + "RPC_CyberpsychosisRisk".Translate();
-            return s;
+            return " (" + "RPC_UsageChange".Translate(before.ToStringPercent(), after.ToStringPercent()) + ")";
         }
     }
 

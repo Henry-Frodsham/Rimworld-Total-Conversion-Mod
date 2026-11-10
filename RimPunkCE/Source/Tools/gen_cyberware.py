@@ -506,7 +506,7 @@ gorilla('ElectrifyingGorillaArms', 'electrifying gorilla arm', 'Gorilla arm actu
 gorilla('ThermalGorillaArms', 'thermal gorilla arm', 'Gorilla arm with heating elements in the knuckles. Punches burn and can set the target alight.', 'RPC_Thermal', 'burnChance')
 gorilla('ToxicGorillaArms', 'toxic gorilla arm', 'Gorilla arm with toxin injectors in the knuckles.', 'RPC_Toxic', 'poisonChance')
 
-MANTIS_TOOLS = (tool('blade edge', 'Cut', 20, 0.9, sharp=2.2, blunt=1.0), tool('blade point', 'Stab', 22, 1.1, sharp=3.2, blunt=1.0))
+MANTIS_TOOLS = (tool('blade edge', 'Cut', 20, 0.9, sharp=8.0, blunt=1.0), tool('blade point', 'Stab', 22, 1.1, sharp=12.0, blunt=1.0))
 
 
 def mantis(id, label, desc, tiers, rider=None, chance_key=None, chance=(0.1, 0.2), fraction=0.3):

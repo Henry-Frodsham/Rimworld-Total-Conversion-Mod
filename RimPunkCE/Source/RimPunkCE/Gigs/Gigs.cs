@@ -41,6 +41,7 @@ namespace RimPunkCE
         public SitePartDef objectivePart;
         public SitePartDef basePart;
         public HediffDef restrained;
+        public QuestScriptDef questScript;
         public JobDef freeHostageJob;
 
         public float RewardFactor(GigType t)
@@ -72,6 +73,8 @@ namespace RimPunkCE
         public Thing objective;
         public bool objectiveSpawned;
         public bool hostageFreed;
+        /// <summary>The vanilla quest this gig is served as (Quests tab). The gig stays the source of truth for its state.</summary>
+        public Quest quest;
 
         public void ExposeData()
         {
@@ -88,6 +91,7 @@ namespace RimPunkCE
             Scribe_References.Look(ref objective, "objective");
             Scribe_Values.Look(ref objectiveSpawned, "objectiveSpawned");
             Scribe_Values.Look(ref hostageFreed, "hostageFreed");
+            Scribe_References.Look(ref quest, "quest");
         }
 
         public string GetUniqueLoadID() => "RPC_Gig_" + id;
@@ -98,7 +102,7 @@ namespace RimPunkCE
     }
 
     /// <summary>
-    /// Gigs MVP: a contact (Gigs tab, needs a powered comms console) offers jobs against corporations and gangs. Accepting
+    /// Gigs MVP: a contact (offers arrive as quests in the Quests tab; accepting needs a powered comms console) offers jobs against corporations and gangs. Accepting
     /// puts a guarded site on the world map with the objective on it. Pay is dropped at home. The full fixer system is
     /// cycle 2: there's one anonymous contact for now, and a gig is just this state plus the site.
     /// </summary>
@@ -164,10 +168,39 @@ namespace RimPunkCE
                 offerExpiresTick = Find.TickManager.TicksGame + Mathf.RoundToInt(tuning.offerExpiryDays * GenDate.TicksPerDay),
             };
             gigs.Add(gig);
-            Messages.Message("RPC_Gig_NewOffer".Translate(gig.TypeLabel, target.Name, reward), MessageTypeDefOf.NeutralEvent, false);
+            MakeQuest(gig, offered: true);
             BarkUtility.SayColonist(BarkKeys.GigOffered);
             Diag.Event("gigs", $"offer #{gig.id}: {t} vs {target.Name} for {gig.IssuerLabel}, {reward} silver");
             return gig;
+        }
+
+        /// <summary>
+        /// Gigs are served as vanilla quests but on their own schedule: the quest script is never storyteller-selectable.
+        /// An offered gig is a not-yet-accepted quest, an active one an ongoing quest.
+        /// </summary>
+        private void MakeQuest(Gig gig, bool offered)
+        {
+            var script = Tuning?.questScript;
+            if (script == null) return;
+            var quest = Quest.MakeRaw();
+            quest.root = script;
+            quest.name = "RPC_Gig_QuestName".Translate(gig.TypeLabel, gig.target.Name);
+            quest.description = ("RPC_Gig_QuestDesc".Translate(gig.TypeLabel, gig.target.Name, gig.reward, gig.IssuerLabel)
+                + "\n\n" + ("RPC_Gig_Goal_" + gig.type).Translate()).Resolve();
+            quest.AddPart(new QuestPart_Gig { gigId = gig.id });
+            quest.AddPart(new QuestPart_GigContact());
+            gig.quest = quest;
+            if (offered) quest.acceptanceExpireTick = gig.offerExpiresTick;
+            else quest.SetInitiallyAccepted();
+            Find.QuestManager.Add(quest);
+            if (offered) QuestUtility.SendLetterQuestAvailable(quest);
+        }
+
+        public override void FinalizeInit()
+        {
+            // gigs from before they were served as quests
+            foreach (var g in gigs)
+                if (g.quest == null && (g.state == GigState.Offered || g.state == GigState.Active)) MakeQuest(g, g.state == GigState.Offered);
         }
 
         public static bool HasContact()
@@ -188,7 +221,7 @@ namespace RimPunkCE
         // ---------------------------------------------------------------- player actions
 
         [SyncMethod]
-        public static void AcceptGig(int id)
+        public static void AcceptGig(int id, bool fromQuest = false)
         {
             if (!WorldFeatures.Gigs) return;
             var inst = Instance;
@@ -197,25 +230,18 @@ namespace RimPunkCE
             if (!inst.TryMakeSite(gig))
             {
                 Messages.Message("RPC_Gig_NoSite".Translate(), MessageTypeDefOf.RejectInput, false);
+                // accepting the quest can't be vetoed from PreQuestAccept: close the offer so it doesn't sit there accepted with no site
+                if (fromQuest) { inst.gigs.Remove(gig); gig.quest?.End(QuestEndOutcome.InvalidPreAcceptance, sendLetter: false); }
                 return;
             }
             gig.state = GigState.Active;
+            if (!fromQuest && gig.quest?.State == QuestState.NotYetAccepted) gig.quest.Accept(null);
             gig.deadlineTick = Find.TickManager.TicksGame + Mathf.RoundToInt(Tuning.deadlineDays * GenDate.TicksPerDay);
             Find.LetterStack.ReceiveLetter("RPC_Gig_AcceptedLetter".Translate(gig.TypeLabel),
                 "RPC_Gig_AcceptedText".Translate(gig.TypeLabel, gig.target.Name, gig.reward, Tuning.deadlineDays.ToString("0"), ("RPC_Gig_Goal_" + gig.type).Translate()),
                 LetterDefOf.NeutralEvent, gig.site);
             BarkUtility.SayColonist(BarkKeys.GigAccepted);
             Diag.Event("gigs", $"accepted #{gig.id} {gig.type} vs {gig.target.Name}, site at tile {gig.site.Tile}");
-        }
-
-        [SyncMethod]
-        public static void DeclineOrAbandonGig(int id)
-        {
-            var inst = Instance;
-            var gig = inst?.gigs.FirstOrDefault(g => g.id == id);
-            if (gig == null) return;
-            if (gig.state == GigState.Offered) inst.gigs.Remove(gig);
-            else if (gig.state == GigState.Active) inst.Finish(gig, false);
         }
 
         private bool TryMakeSite(Gig gig)
@@ -401,6 +427,8 @@ namespace RimPunkCE
                     "RPC_Gig_FailedText".Translate(gig.TypeLabel, gig.target?.Name ?? "?", gig.IssuerLabel), LetterDefOf.NegativeEvent);
                 BarkUtility.SayColonist(BarkKeys.GigFailed);
             }
+            if (gig.quest != null && !gig.quest.Historical)
+                gig.quest.End(success ? QuestEndOutcome.Success : QuestEndOutcome.Fail, sendLetter: false);
             gig.objective = null; // don't hold a reference to whatever's left on a map that may go away
             Diag.Event("gigs", $"gig #{gig.id} {gig.type} {(success ? "COMPLETED" : "FAILED")}");
         }
@@ -418,7 +446,7 @@ namespace RimPunkCE
             for (int i = gigs.Count - 1; i >= 0; i--)
             {
                 var g = gigs[i];
-                if (g.state == GigState.Offered && now > g.offerExpiresTick) gigs.RemoveAt(i);
+                if (g.state == GigState.Offered && now > g.offerExpiresTick) { gigs.RemoveAt(i); }
                 else if (g.state == GigState.Active)
                 {
                     bool? outcome = Outcome(g);
@@ -505,79 +533,41 @@ namespace RimPunkCE
         }
     }
 
-    /// <summary>The contact: open offers and running contracts.</summary>
-    public class MainTabWindow_Gigs : MainTabWindow
+    /// <summary>Links a quest to its gig: accepting the quest accepts the gig.</summary>
+    public class QuestPart_Gig : QuestPart
     {
-        private const float RowHeight = 62f;
-        private Vector2 scroll;
+        public int gigId;
 
-        public override Vector2 RequestedTabSize => new Vector2(760f, 480f);
+        private Gig Gig => GameComponent_Gigs.Instance?.Gigs.FirstOrDefault(g => g.id == gigId);
 
-        public override void DoWindowContents(Rect rect)
+        public override IEnumerable<GlobalTargetInfo> QuestLookTargets
         {
-            if (!WorldFeatures.Gigs) { Widgets.Label(rect, "RPC_Features_Disabled".Translate()); return; }
-            var inst = GameComponent_Gigs.Instance;
-            if (inst == null) return;
-            bool contact = GameComponent_Gigs.HasContact();
-
-            Text.Font = GameFont.Medium;
-            Widgets.Label(new Rect(rect.x, rect.y, rect.width, 32f), "RPC_Gig_Title".Translate());
-            Text.Font = GameFont.Small;
-            GUI.color = contact ? Color.white : new Color(1f, 0.6f, 0.4f);
-            Widgets.Label(new Rect(rect.x, rect.y + 34f, rect.width, 24f), contact ? "RPC_Gig_ContactOnline".Translate() : "RPC_Gig_NeedsComms".Translate());
-            GUI.color = Color.white;
-
-            var list = inst.Gigs.OrderBy(g => g.state == GigState.Active ? 0 : g.state == GigState.Offered ? 1 : 2).ThenByDescending(g => g.id).ToList();
-            var outer = new Rect(rect.x, rect.y + 64f, rect.width, rect.height - 64f);
-            if (list.Count == 0)
-            {
-                GUI.color = Color.gray;
-                Widgets.Label(outer, "RPC_Gig_None".Translate());
-                GUI.color = Color.white;
-                return;
-            }
-            var view = new Rect(0f, 0f, outer.width - 16f, list.Count * RowHeight);
-            Widgets.BeginScrollView(outer, ref scroll, view);
-            float y = 0f;
-            foreach (var g in list)
-            {
-                DrawRow(new Rect(0f, y, view.width, RowHeight - 4f), g, contact);
-                y += RowHeight;
-            }
-            Widgets.EndScrollView();
+            get { if (Gig?.site is { Destroyed: false } site) yield return site; }
         }
 
-        private static void DrawRow(Rect r, Gig g, bool contact)
+        public override IEnumerable<Faction> InvolvedFactions
         {
-            Widgets.DrawOptionBackground(r, false);
-            var text = r.ContractedBy(6f);
-            text.width -= 210f;
-            string status = ("RPC_Gig_State_" + g.state).Translate();
-            Widgets.Label(new Rect(text.x, text.y, text.width, 24f), $"<b>{g.TypeLabel}</b>: {g.target?.Name ?? "?"}  ({status})");
-            GUI.color = new Color(0.8f, 0.8f, 0.8f);
-            int now = Find.TickManager.TicksGame;
-            string time = g.state == GigState.Offered ? "RPC_Gig_OfferEnds".Translate((g.offerExpiresTick - now).ToStringTicksToPeriod()).Resolve()
-                : g.state == GigState.Active ? "RPC_Gig_DueIn".Translate(Mathf.Max(0, g.deadlineTick - now).ToStringTicksToPeriod()).Resolve() : "";
-            Widgets.Label(new Rect(text.x, text.y + 24f, text.width, 24f), "RPC_Gig_Row".Translate(g.IssuerLabel, g.reward) + (time.NullOrEmpty() ? "" : "  " + time));
-            GUI.color = Color.white;
-            TooltipHandler.TipRegion(r, ("RPC_Gig_Goal_" + g.type).Translate());
-
-            var btn = new Rect(r.xMax - 206f, r.y + 14f, 98f, 30f);
-            var btn2 = new Rect(r.xMax - 102f, r.y + 14f, 98f, 30f);
-            if (g.state == GigState.Offered)
+            get
             {
-                if (contact && Widgets.ButtonText(btn, "RPC_Gig_Accept".Translate())) GameComponent_Gigs.AcceptGig(g.id);
-                if (Widgets.ButtonText(btn2, "RPC_Gig_Decline".Translate())) GameComponent_Gigs.DeclineOrAbandonGig(g.id);
-            }
-            else if (g.state == GigState.Active)
-            {
-                if (g.site != null && Widgets.ButtonText(btn, "RPC_Gig_Show".Translate()))
-                {
-                    CameraJumper.TryJumpAndSelect(g.site);
-                    Find.MainTabsRoot.EscapeCurrentTab(false);
-                }
-                if (Widgets.ButtonText(btn2, "RPC_Gig_Abandon".Translate())) GameComponent_Gigs.DeclineOrAbandonGig(g.id);
+                var g = Gig;
+                if (g?.target != null) yield return g.target;
+                if (g?.issuer != null) yield return g.issuer;
             }
         }
+
+        public override void PreQuestAccept() => GameComponent_Gigs.AcceptGig(gigId, fromQuest: true);
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref gigId, "gigId");
+        }
+    }
+
+    /// <summary>Accepting a gig needs the contact: a powered comms console.</summary>
+    public class QuestPart_GigContact : QuestPart_RequirementsToAccept
+    {
+        public override AcceptanceReport CanAccept() =>
+            GameComponent_Gigs.HasContact() ? AcceptanceReport.WasAccepted : new AcceptanceReport("RPC_Gig_NeedsComms".Translate());
     }
 }

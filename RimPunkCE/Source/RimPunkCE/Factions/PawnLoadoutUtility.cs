@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using Verse;
@@ -39,12 +40,32 @@ namespace RimPunkCE
                 for (int n = 0; n < option.count; n++)
                 {
                     if (!Rand.Chance(option.chance)) continue;
-                    foreach (var def in option.hediffs.InRandomOrder())
+                    foreach (var def in Candidates(option))
                     {
                         if (TryInstall(pawn, def, loadout.minTier, loadout.maxTier)) break;
                     }
                 }
             }
+        }
+
+        /// <summary>Cyberdecks are only rolled where quickhacks exist; new worlds not created yet follow the default setting.</summary>
+        private static bool Allowed(HediffDef def)
+        {
+            if (def.Ext()?.osType != CyberOsType.Cyberdeck) return true;
+            var features = WorldFeatures.Current;
+            return features != null ? features.Quickhacks : RimPunkMod.Settings?.newWorldQuickhacks ?? true;
+        }
+
+        /// <summary>Models to try, in order: a random family (equal odds each), then its models in random order; flat options just shuffle.</summary>
+        private static IEnumerable<HediffDef> Candidates(CyberwareLoadoutOption option)
+        {
+            if (option.groups.NullOrEmpty())
+            {
+                foreach (var def in option.hediffs.Where(Allowed).InRandomOrder()) yield return def;
+                yield break;
+            }
+            foreach (var group in option.groups.Select(g => g.hediffs.Where(Allowed).ToList()).Where(g => g.Count > 0).InRandomOrder())
+                foreach (var def in group.InRandomOrder()) yield return def;
         }
 
         public static bool TryInstall(Pawn pawn, HediffDef def, CyberTier minTier, CyberTier maxTier)
