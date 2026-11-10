@@ -770,18 +770,18 @@ def skel(id, label, desc, cap, tiers, sharp, blunt, effects=None, values=None, c
 skel('BionicJoints', 'bionic joints', 'Armoured replacement joints. Simple but effective.', 8, ('T1', 'Iconic'), (1.25, 6.5), (2.8, 14.6))
 skel('DenseMarrow', 'dense marrow', 'Heavier bones that put more weight behind every blow, but melee builds adrenaline more slowly.', 16, ('T2', 'Iconic'), (0.9, 2.7), (2.0, 6.1),
      E().off('MeleeDamageFactor', (0.15, 0.27)).fac('RPC_AdrenalineGainMelee', 0.8))
-skel('EpimorphicSkeleton', 'epimorphic skeleton', 'A regenerative skeleton that makes every body part tougher.', 40, ('T4', 'Iconic'), (4.8, 9.3), (10.8, 20.9),
+skel('EpimorphicSkeleton', 'epimorphic skeleton', 'A regenerative skeleton that makes every body part tougher.', 40, ('T4', 'Iconic'), (2.8, 4.3), (4.8, 8.9),
      E().fac('RPC_MaxHealthFactor', (1.10, 1.13)))
 active('FeenXBoost', 'Feen-X', 'RAM regenerating much faster.', E().fac('RPC_RamRegen', 3.5))
-skel('FeenX', 'Feen-X', 'Boosts RAM regeneration a lot when RAM runs low.', 16, ('T1', 'Iconic'), (0.4, 1.9), (0.9, 4.3), None, {'ramBelow': (3, 7)},
+skel('FeenX', 'Feen-X', 'Boosts RAM regeneration a lot when RAM runs low.', 16, ('T1', 'Iconic'), (0.4, 0.9), (0.9, 2.3), None, {'ramBelow': (3, 7)},
      conditionals(cond('RamBelow', 'RPC_FeenXBoost', threshold='ramBelow')))
 active('KineticFrameBoost', 'kinetic frame', 'Mitigation chance up while adrenaline is high.', E().off('RPC_MitigationChance', (0.08, 0.18)))
-skel('KineticFrame', 'kinetic frame', 'Raises mitigation chance while adrenaline is above 50%.', 16, ('T1', 'Iconic'), (0.85, 5.85), (1.9, 13.2), None, {'adrenalineAbove': 0.5},
+skel('KineticFrame', 'kinetic frame', 'Raises mitigation chance while adrenaline is above 50%.', 16, ('T1', 'Iconic'), (0.85, 2.85), (1.9, 5.2), None, {'adrenalineAbove': 0.5},
      conditionals(cond('AdrenalineAbove', 'RPC_KineticFrameBoost', threshold='adrenalineAbove')))
 lo, hi = 'T3', 'Iconic'
 skel('ParaBellum', 'Para Bellum', 'Reinforces all other armour.', 25, (lo, hi), (1.5, 7.5), (3.4, 16.9),
      E().fac('ArmorRating_Sharp', plus1((0.08, 0.12), lo, hi)).fac('ArmorRating_Blunt', plus1((0.08, 0.12), lo, hi)))
-skel('RamRecoup', 'RAM recoup', 'Turns pain into RAM: taking damage restores RAM.', 14, ('T1', 'Iconic'), (0.5, 2.3), (1.1, 5.2), E().off('RPC_RamMax', [1, 1.3, 1.7, 2, 2, 2]),
+skel('RamRecoup', 'RAM recoup', 'Turns pain into RAM: taking damage restores RAM.', 14, ('T1', 'Iconic'), (0.5, 1.3), (1.1, 3.2), E().off('RPC_RamMax', [1, 1.3, 1.7, 2, 2, 2]),
      {'ramPerDamage': (0.02, 0.03)}, triggers(trig('TookDamage', [eff('RamPerDamage', key='ramPerDamage')])),
      note='RAM recoup: 2-3% of damage taken (the manifest 0.2-0.3% x10, damage numbers are /10 in this mod)')
 cyberware('RaraAvis', 'Rara Avis', 'A rare reinforcement lattice that makes all armour far more effective.', 'skeleton', 45, (lo, hi),
@@ -789,14 +789,14 @@ cyberware('RaraAvis', 'Rara Avis', 'A rare reinforcement lattice that makes all 
 lo, hi = 'T1', 'Iconic'
 active('ScarCoalescerBoost', 'scar coalescer', 'Armour up while badly hurt.',
        E().fac('ArmorRating_Sharp', plus1((0.10, 0.22), lo, hi)).fac('ArmorRating_Blunt', plus1((0.10, 0.22), lo, hi)))
-skel('ScarCoalescer', 'scar coalescer', 'Hardens scar tissue on the fly: more armour below 50% health.', 20, (lo, hi), (0.5, 2.3), (1.1, 5.2), None, {'healthBelow': 0.5},
+skel('ScarCoalescer', 'scar coalescer', 'Hardens scar tissue on the fly: more armour below 50% health.', 20, (lo, hi), (0.5, 1.3), (1.1, 3.2), None, {'healthBelow': 0.5},
      conditionals(cond('HealthBelow', 'RPC_ScarCoalescerBoost', threshold='healthBelow')))
 active('ScarabBraced', 'scarab braced', 'Standing still: extra armour.', E().armor((1.5, 6.5), (3.4, 14.6)))
-skel('Scarab', 'scarab', 'Locks the frame when the user stands still, adding armour.', 14, ('T1', 'Iconic'), (0.5, 2.3), (1.1, 5.2), None, None,
+skel('Scarab', 'scarab', 'Locks the frame when the user stands still, adding armour.', 14, ('T1', 'Iconic'), (0.5, 2.3), (1.1, 3.2), None, None,
      conditionals(cond('StandingStill', 'RPC_ScarabBraced')))
-skel('SpringJoints', 'spring joints', 'Spring-loaded joints that turn blocked hits into adrenaline.', 16, ('T2', 'Iconic'), (0.9, 2.3), (2.0, 5.2), E().off('RPC_MitigationStrength', (0.10, 0.18)))
+skel('SpringJoints', 'spring joints', 'Spring-loaded joints that turn blocked hits into adrenaline.', 16, ('T2', 'Iconic'), (0.9, 1.3), (2.0, 3.2), E().off('RPC_MitigationStrength', (0.10, 0.18)))
 lo, hi = 'T1', 'Iconic'
-skel('TitaniumBones', 'titanium bones', 'Titanium-laced bones: the user can carry far more.', 6, (lo, hi), (0.5, 2.3), (1.1, 5.2),
+skel('TitaniumBones', 'titanium bones', 'Titanium-laced bones: the user can carry far more.', 6, (lo, hi), (0.5, 1.3), (1.1, 3.2),
      E().fac('CarryWeight', plus1((0.3, 0.66), lo, hi)).fac('CarryBulk', plus1((0.3, 0.66), lo, hi)))
 
 # ================================================================================================ nervous system
@@ -880,44 +880,44 @@ def skin(id, label, desc, cap, tiers, sharp, blunt, effects=None, values=None, c
     cyberware(id, label, desc, 'integumentary', cap, tiers, e, values, comps, note=note)
 
 
-skin('Carapace', 'carapace', 'Layered subdermal plates that work best against hits from the side and rear.', 16, ('T2', 'Iconic'), (1.9, 4.7), (4.3, 10.6), None,
+skin('Carapace', 'carapace', 'Layered subdermal plates that work best against hits from the side and rear.', 16, ('T2', 'Iconic'), (1.0, 2.0), (3.0, 6.0), None,
      {'rearArmorEffectiveness': (0.20, 0.32)})
 skin('CellularAdapter', 'cellular adapter', 'Adaptive skin that gets better the more its user knows about crafting: explosion resistance and tech weapon damage per crafting level.', 10, ('T2', 'Iconic'),
-     (3.7, 8.1), (8.3, 18.2), None, {'explosionResistPerCrafting': 0.01, 'techDamagePerCrafting': 0.005},
+     (2.0, 4.0), (5.0, 8.0), None, {'explosionResistPerCrafting': 0.01, 'techDamagePerCrafting': 0.005},
      note='cellular adapter: the health item recharge part waits for health items')
-skin('Chitin', 'chitin', 'An extremely durable subcutaneous shell made of genetically modified chitin. Wounds heal twice as fast.', 50, ('T3', 'Iconic'), (7, 10), (15.8, 22.5),
+skin('Chitin', 'chitin', 'An extremely durable subcutaneous shell made of genetically modified chitin. Wounds heal twice as fast.', 50, ('T3', 'Iconic'), (7, 10), (7.0, 12.0),
      E().fac('InjuryHealingFactor', 2.0))
 lo, hi = 'T1', 'Iconic'
 sharp_c, blunt_c = lerp_tiers((0.9, 2.7), lo, hi), lerp_tiers((2.0, 6.1), lo, hi)
 mult = lerp_tiers((2.0, 2.4), lo, hi)
 active('CogitoLatticeBoost', 'cogito lattice', 'Low RAM: the lattice hardens.', E().armor([s * m for s, m in zip(sharp_c, mult)], [b * m for b, m in zip(blunt_c, mult)]))
-skin('CogitoLattice', 'cogito lattice', 'Armour that hardens to triple strength when available RAM is low.', 12, (lo, hi), (0.9, 2.7), (2.0, 6.1), None, {'ramBelow': (2, 10)},
+skin('CogitoLattice', 'cogito lattice', 'Armour that hardens to triple strength when available RAM is low.', 12, (lo, hi), (0.5, 1.0), (1.0, 2.0), None, {'ramBelow': (2, 10)},
      conditionals(cond('RamBelow', 'RPC_CogitoLatticeBoost', threshold='ramBelow')))
 h = active('CountershellActive', 'countershell', 'Under heavy fire: mitigation up.', E().off('RPC_MitigationChance', (0.30, 0.50)))
 skin('Countershell', 'countershell', 'When the user loses 35% of their health within 30 seconds, mitigation chance rises sharply for 40 seconds.', 12, ('T1', 'Iconic'),
      (0.85, 2.85), (1.9, 6.4), None, {'healthLost': 0.35, 'window': 30, 'duration': 40, 'cooldown': 12},
      triggers(trig('HealthLostWithin', [eff('ApplyActive', hediff=h)], threshold='healthLost', window='window', cooldown='cooldown')))
 h = active('DefenzikovActive', 'Defenzikov', 'After Kerenzikov: mitigation up.', E().off('RPC_MitigationChance', (0.50, 0.90)))
-skin('Defenzikov', 'Defenzikov', 'When Kerenzikov ends, mitigation chance rises sharply for a while.', 20, ('T3', 'Iconic'), (1.2, 4), (2.7, 9), None, {'duration': (30, 40)},
+skin('Defenzikov', 'Defenzikov', 'When Kerenzikov ends, mitigation chance rises sharply for a while.', 20, ('T3', 'Iconic'), (0.4, 1.5), (1.0, 4.0), None, {'duration': (30, 40)},
      triggers(trig('ActiveEnded', [eff('ApplyActive', hediff=h)], active='RPC_KerenzikovActive')))
 skin('NanoPlating', 'nano-plating', 'Reactive plating that can stop a bullet outright, more often right after a dodge, dash or jump. At most three blocks in a short span.', 20, ('T2', 'Iconic'),
-     (1.9, 3.9), (4.3, 8.8), None, {'blockChance': (0.04, 0.07), 'bonusDuration': (14, 17), 'blockWindow': (65, 50)},
+     (1.0, 1.6), (3.4, 4.2), None, {'blockChance': (0.04, 0.07), 'bonusDuration': (14, 17), 'blockWindow': (65, 50)},
      '      <li Class="RimPunkCE.HediffCompProperties_NanoPlating" />\n')
 camo = active('OpticalCamoActive', 'optical camo', 'Invisible.', None, '', comps='      <li Class="HediffCompProperties_Invisibility">\n        <visibleToPlayer>true</visibleToPlayer>\n        <fadeDurationTicks>30</fadeDurationTicks>\n      </li>\n', color='(0.6, 0.8, 1)')
 ab = buff_ability('OpticalCamo', 'optical camo', 'Turn invisible.', camo, 40, ai_dist=20)
-skin('OpticalCamo', 'optical camo', 'Light-bending skin that makes the user invisible on demand.', 20, ('T2', 'Iconic'), (0.75, 1.5), (1.7, 3.4), None,
+skin('OpticalCamo', 'optical camo', 'Light-bending skin that makes the user invisible on demand.', 20, ('T2', 'Iconic'), (0.2, 0.6), (1.0, 1.6), None,
      {'duration': (40, 70), 'cooldown': (140, 100)}, give(ab))
 lo, hi = 'T4', 'Iconic'
-skin('PainEditor', 'pain editor', 'Filters pain signals and dampens every hit a little.', 35, (lo, hi), (4.4, 5.4), (9.9, 12.2), E().fac('RPC_IncomingDamageFactor', minus1((0.06, 0.07), lo, hi)))
-skin('Painducer', 'painducer', 'Spreads part of every hit out over the next 8 seconds as small hits to the body and limbs. Whatever is still held back when the user goes down is dropped.', 30, ('T4', 'Iconic'), (5.7, 6.9), (12.8, 15.5), None, {'delayedFraction': (0.25, 0.30)})
+skin('PainEditor', 'pain editor', 'Filters pain signals and dampens every hit a little.', 35, (lo, hi), (2.0, 3.6), (4.8, 6.5), E().fac('RPC_IncomingDamageFactor', minus1((0.06, 0.07), lo, hi)))
+skin('Painducer', 'painducer', 'Spreads part of every hit out over the next 8 seconds as small hits to the body and limbs. Whatever is still held back when the user goes down is dropped.', 30, ('T4', 'Iconic'), (5.7, 6.9), (8.2, 10.3), None, {'delayedFraction': (0.25, 0.30)})
 skin('PeripheralInverse', 'peripheral inverse', 'The closer an attacker is, the less damage they do: up to -34-45% within 3 tiles, fading to nothing at 6.', 30, ('T4', 'Iconic'),
-     (0.4, 1.8), (0.9, 4.1), None, {'closeRangeReduction': (0.34, 0.45)})
+     (0.4, 1.8), (0.9, 3.1), None, {'closeRangeReduction': (0.34, 0.45)})
 skin('ProxiShield', 'ProxiShield', 'The closer an attacker is, the less damage they do: up to -8-20% within 3 tiles, fading to nothing at 6.', 10, ('T1', 'Iconic'),
-     (0.4, 1.8), (0.9, 4.1), None, {'closeRangeReduction': (0.08, 0.20)})
-active('RangeGuardBoost', 'range guard', 'No enemies close: extra armour.', E().armor((1.5, 4.5), (3.4, 10.1)))
+     (0.4, 1.8), (0.9, 3.1), None, {'closeRangeReduction': (0.08, 0.20)})
+active('RangeGuardBoost', 'range guard', 'No enemies close: extra armour.', E().armor((1.5, 3.5), (2.4, 7.1)))
 skin('RangeGuard', 'RangeGuard', 'Extra armour while no enemy is within 6 tiles.', 14, ('T1', 'Iconic'), (0.5, 1.7), (1.1, 3.8), None, {'clearRadius': 6},
      conditionals(cond('NoEnemiesWithin', 'RPC_RangeGuardBoost', threshold='clearRadius')))
-skin('ShockNAwe', 'Shock-n-Awe', 'Taking damage can release a large electroshock that hits nearby enemies.', 25, ('T1', 'Iconic'), (2.2, 4.6), (5, 10.4), None,
+skin('ShockNAwe', 'Shock-n-Awe', 'Taking damage can release a large electroshock that hits nearby enemies.', 25, ('T1', 'Iconic'), (2.2, 3.1), (3.9, 5.4), None,
      {'shockChance': 0.1, 'shockDamage': (13.5, 50)}, triggers(trig('TookDamage', [eff('Electroshock', key='shockDamage', radius=5)], chance='shockChance')))
 skin('SubdermalArmor', 'subdermal armor', 'Armour plates under the skin. Simple but effective.', 5, ('T1', 'Iconic'), (0.85, 2.45), (1.9, 5.5))
 
