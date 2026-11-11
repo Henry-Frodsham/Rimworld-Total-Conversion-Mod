@@ -429,6 +429,7 @@ namespace RimPunkCE
                     QuickhackUtility.SpendRam(Caster, Props.ramPerJump);
                 }
                 hit.Add(current);
+                if (jump > 0) RPSound.At(RPSoundDefOf.RPC_Snd_QhBlackwallJump, current);
                 Strike(current);
                 var next = QuickhackUtility.SpreadTargets(Caster, current, Props.jumpRadius, 1, x => !hit.Contains(x)).FirstOrDefault();
                 if (next != null && current.Map != null) FleckMaker.ConnectingLine(current.DrawPos, next.DrawPos, FleckDefOf.LineEMP, current.Map, 1f);

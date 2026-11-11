@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
@@ -12,6 +13,68 @@ namespace RimPunkCE
     public partial class GameComponent_RimPunkLiveTests
     {
         private static RecipeDef RecipeWhere(System.Func<RecipeDef, bool> f) => DefDatabase<RecipeDef>.AllDefsListForReading.FirstOrDefault(f);
+
+        // ------------------------------------------------------------------------------------ comms implant (cycle 3)
+
+        [LiveScenario("systems")]
+        private IEnumerable<int> Scenario_CommsImplant()
+        {
+            var optics = Hediff("RPC_BasicKiroshiOptics");
+            var comms = Hediff("RPC_CommsImplant");
+            var a = Colonist(Center);
+            for (int tries = 0; tries < 20 && !CyberSurgeryUtility.CandidateParts(a, optics.Ext().slot).Any(); tries++) { a.Destroy(); a = Colonist(Center); } // generated pawns can lack an eye
+            var b = Colonist(Center + new IntVec3(30, 0, 0));
+            var c = Colonist(Center + new IntVec3(-30, 0, 0));
+
+            // basic implants need the comms implant first, and it can't come out from under them
+            var eye = CyberSurgeryUtility.CandidateParts(a, optics.Ext().slot).First();
+            Check(!CyberUtility.CanInstall(a, optics, eye, out string why) && !why.NullOrEmpty(), $"basic optics refused without a comms implant: {why}");
+            RimPunkDebugActions.DebugInstall(a, comms, CyberTier.T1);
+            Check(CommsUtility.HasImplant(a), "comms implant installs");
+            Check(CyberUtility.CanInstall(a, optics, eye, out _), "basic optics fit once comms is in");
+            RimPunkDebugActions.DebugInstall(a, optics, CyberTier.T1);
+            var removeComms = RecipeWhere(r => r.removesHediff == comms && r.Worker is Recipe_RemoveCyberware);
+            Check(removeComms != null && !removeComms.Worker.AvailableOnNow(a), "comms removal blocked while basic optics need it");
+
+            // chat from anywhere, only between implants, and the bubble is tagged blue
+            RimPunkDebugActions.DebugInstall(b, comms, CyberTier.T1);
+            Check(CommsUtility.PickPartner(a) == b, "partner is the other implanted colonist, 30 tiles away");
+            Check(CommsUtility.PickPartner(b) == a, "and the other way round");
+            int before = Find.PlayLog.AllEntries.Count;
+            a.interactions.GetType().GetField("lastInteractionTime", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.SetValue(a.interactions, -9999);
+            b.interactions.GetType().GetField("lastInteractionTime", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.SetValue(b.interactions, -9999);
+            bool chatted = CommsUtility.TryChat(a, b);
+            Check(chatted, "comms chat across 30 tiles went through");
+            var entry = Find.PlayLog.AllEntries.FirstOrDefault();
+            Check(Find.PlayLog.AllEntries.Count > before && CommsUtility.IsCommsEntry(entry), "its log entry is tagged as comms (blue bubble)");
+            Check(!CommsUtility.Active, "comms flag is cleared afterwards");
+            Check(!a.Position.InHorDistOf(b.Position, 12f), "they really are far apart");
+
+            // someone without the implant is not reachable
+            Check(CommsUtility.PickPartner(a) == b, "a colonist without the implant is never picked as a partner");
+            Check(!CommsUtility.CanTalk(c), "and can't start one");
+
+            // quarter of the vanilla chat rate: 60-tick rolls at MTB 26400 vs 6600
+            int hits = 0, vanilla = 0;
+            const int rolls = 400000;
+            for (int i = 0; i < rolls; i++)
+            {
+                if (CommsUtility.RollsChat()) hits++;
+                if (Rand.MTBEventOccurs(CommsUtility.VanillaChatMtbTicks, 1f, 60f)) vanilla++;
+            }
+            float ratio = hits / (float)System.Math.Max(1, vanilla);
+            Note($"comms {hits} vs vanilla-normal {vanilla} chats over {rolls} rolls: ratio {ratio:0.00}");
+            Check(ratio > 0.18f && ratio < 0.33f, $"comms chats happen at ~25% of the vanilla rate (ratio {ratio:0.00})");
+
+            // if the bubble mod is loaded its Draw is patched for the blue colours (it's optional)
+            if (AccessTools.TypeByName("Bubbles.Core.Bubble") != null)
+            {
+                bool patched = Harmony.GetAllPatchedMethods().Any(m => m.DeclaringType?.FullName == "Bubbles.Core.Bubble" && m.Name == "Draw");
+                Check(patched, "Interaction Bubbles' Draw is patched for comms colours");
+            }
+            else Note("Interaction Bubbles not loaded: comms colour patch skipped");
+            yield break;
+        }
 
         // ------------------------------------------------------------------------------------ tiers + surgery
 
@@ -528,6 +591,44 @@ namespace RimPunkCE
                 yield return 150;
                 if (ammo.defName.EndsWith("HE")) Check(foe.Destroyed || foe.Dead || foe.health.summaryHealth.SummaryHealthPercent < shellHp, "aimed HE did damage");
             }
+        }
+
+        [LiveScenario("psychosis")]
+        private IEnumerable<int> Scenario_CyberpsychoFeelsNoPain()
+        {
+            var p = Colonist(Center);
+            p.TakeDamage(new DamageInfo(DamageDefOf.Cut, 8f, 0f, -1f, null, p.health.hediffSet.GetNotMissingParts().First(r => r.def == BodyPartDefOf.Torso)));
+            float before = p.health.hediffSet.PainTotal;
+            Check(before > 0f, $"wounded pawn feels pain: {before:0.##}");
+            CyberpsychosisUtility.ForceStart(p, "test");
+            yield return 5;
+            Check(CyberpsychosisUtility.InCyberpsychosis(p), "in cyberpsychosis");
+            Check(p.health.hediffSet.PainTotal == 0f, $"no pain in cyberpsychosis: {p.health.hediffSet.PainTotal:0.##}");
+        }
+
+        [LiveScenario("arms")]
+        private IEnumerable<int> Scenario_LauncherShellsDrop()
+        {
+            var p = Colonist(Center);
+            RimPunkDebugActions.DebugInstall(p, Hediff("RPC_ProjectileLaunchSystem"), CyberTier.T3);
+            var ammo = ArmLauncherUtility.Magazine(p).Props.ammo[0];
+            ArmLauncherUtility.GiveToInventory(p, ammo, 10);
+            var stack = p.inventory.innerContainer.First(t => t.def == ammo);
+            bool dropped = p.inventory.innerContainer.TryDrop(stack, p.Position, p.Map, ThingPlaceMode.Near, out var dropThing);
+            Check(dropped && dropThing != null && dropThing.Spawned, $"shells drop from the inventory: {dropped}, spawned {dropThing?.Spawned}");
+            yield return 30;
+            Check(p.inventory.innerContainer.TotalStackCountOfDef(ammo) == 0, $"shells left the inventory: {p.inventory.innerContainer.TotalStackCountOfDef(ammo)}");
+
+            ArmLauncherUtility.GiveToInventory(p, ammo, 10);
+            var pos = p.Position;
+            var map = p.Map;
+            p.Kill(null);
+            yield return 30;
+            int onGround = 0;
+            foreach (var t in map.listerThings.ThingsOfDef(ammo)) onGround += t.stackCount;
+            var corpse = p.Corpse;
+            int inCorpse = corpse?.GetDirectlyHeldThings() != null ? corpse.GetDirectlyHeldThings().TotalStackCountOfDef(ammo) : 0;
+            Check(onGround >= 10 || inCorpse >= 10, $"shells on death: ground {onGround}, corpse {inCorpse}");
         }
 
         // ------------------------------------------------------------------------------------ weapons

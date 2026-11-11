@@ -72,6 +72,9 @@ namespace RimPunkCE
         {
             var ext = def.Ext();
             if (ext == null) return false;
+            // a basic implant brings the comms implant it needs
+            var needed = CyberUtility.MissingRequirement(pawn, ext);
+            if (needed != null && !TryInstall(pawn, needed, minTier, maxTier)) return false;
             BodyPartRecord part = null;
             if (!ext.slot.WholeBody)
             {

@@ -65,6 +65,8 @@ namespace RimPunkCE
         {
             var comp = For(target?.MapHeld);
             comp?.results.Add(new ResultPopup { target = target, result = result, tick = Find.TickManager.TicksGame });
+            if (result == NetrunResult.Resisted) RPSound.At(RPSoundDefOf.RPC_Snd_QhResisted, target);
+            else if (result == NetrunResult.Immune) RPSound.At(RPSoundDefOf.RPC_Snd_QhImmune, target);
             if (comp != null) comp.resultCounts[(int)result]++;
             Diag.Count("netrun-" + result);
         }

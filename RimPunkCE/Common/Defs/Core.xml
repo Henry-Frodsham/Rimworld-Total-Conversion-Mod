@@ -13,6 +13,15 @@
   </RimPunkCE.CyberSlotDef>
 
   <RimPunkCE.CyberSlotDef>
+    <defName>RPC_Slot_Comms</defName>
+    <label>comms</label>
+    <description>One comms implant per pawn. Every basic implant needs it.</description>
+    <maxInstalled>1</maxInstalled>
+    <bodyParts><li>Brain</li></bodyParts>
+    <onePerPart>false</onePerPart>
+  </RimPunkCE.CyberSlotDef>
+
+  <RimPunkCE.CyberSlotDef>
     <defName>RPC_Slot_PrefrontalCortex</defName>
     <label>prefrontal cortex</label>
     <maxInstalled>3</maxInstalled>

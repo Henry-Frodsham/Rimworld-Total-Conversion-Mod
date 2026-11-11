@@ -264,6 +264,7 @@
         <ram><perTier><li>3</li><li>5</li><li>6</li><li>8</li><li>10</li><li>10</li></perTier></ram>
         <upload><perTier><li>1.5</li><li>1.25</li><li>1</li><li>0.75</li><li>0.5</li><li>0.5</li></perTier></upload>
         <magnitude><perTier><li>7.8</li><li>12.35</li><li>16.9</li><li>21.45</li><li>26</li><li>26</li></perTier></magnitude>
+        <landSound>RPC_Snd_QhShortCircuit</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -433,6 +434,7 @@
         <duration><perTier><li>8</li><li>8</li><li>8</li><li>8</li><li>8</li><li>8</li></perTier></duration>
         <magnitude><perTier><li>2.9</li><li>5.175</li><li>7.45</li><li>9.725</li><li>12</li><li>12</li></perTier></magnitude>
         <blockedIfTargetHas>RPC_QH_Overheat</blockedIfTargetHas>
+        <landSound>RPC_Snd_QhOverheat</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -605,6 +607,7 @@
         <spreadRadius>8</spreadRadius>
         <affectsMechanoids>false</affectsMechanoids>
         <blockedIfTargetHas>RPC_QH_Contagion</blockedIfTargetHas>
+        <landSound>RPC_Snd_QhContagion</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -750,6 +753,7 @@
         <ram><perTier><li>10</li><li>10</li><li>10</li><li>13</li><li>16</li><li>16</li></perTier></ram>
         <upload><perTier><li>3</li><li>3</li><li>3</li><li>3</li><li>3</li><li>3</li></perTier></upload>
         <magnitude><perTier><li>8</li><li>8</li><li>8</li><li>10</li><li>12</li><li>12</li></perTier></magnitude>
+        <landSound>RPC_Snd_QhSynapseBurnout</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -871,6 +875,7 @@
         <upload><perTier><li>0.3</li><li>0.3</li><li>0.3</li><li>0.3</li><li>0.3</li><li>0.3</li></perTier></upload>
         <duration><perTier><li>10</li><li>10</li><li>10</li><li>10</li><li>10</li><li>10</li></perTier></duration>
         <blockedIfTargetHas>RPC_QH_CyberwareMalfunction</blockedIfTargetHas>
+        <landSound>RPC_Snd_QhCyberwareMalfunction</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -1038,6 +1043,7 @@
         <upload><perTier><li>0.3</li><li>0.3</li><li>0.3</li><li>0.3</li><li>0.3</li><li>0.3</li></perTier></upload>
         <duration><perTier><li>6</li><li>7.5</li><li>9</li><li>10.5</li><li>12</li><li>12</li></perTier></duration>
         <blockedIfTargetHas>RPC_QH_CrippleMovement</blockedIfTargetHas>
+        <landSound>RPC_Snd_QhCrippleMovement</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -1206,6 +1212,7 @@
         <upload><perTier><li>0.3</li><li>0.3</li><li>0.3</li><li>0.3</li><li>0.3</li><li>0.3</li></perTier></upload>
         <duration><perTier><li>8</li><li>9.75</li><li>11.5</li><li>13.25</li><li>15</li><li>15</li></perTier></duration>
         <blockedIfTargetHas>RPC_QH_RebootOptics</blockedIfTargetHas>
+        <landSound>RPC_Snd_QhRebootOptics</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -1375,6 +1382,7 @@
         <upload><perTier><li>0.3</li><li>0.3</li><li>0.3</li><li>0.3</li><li>0.3</li><li>0.3</li></perTier></upload>
         <duration><perTier><li>8</li><li>9.5</li><li>11</li><li>12.5</li><li>14</li><li>14</li></perTier></duration>
         <blockedIfTargetHas>RPC_QH_WeaponGlitch</blockedIfTargetHas>
+        <landSound>RPC_Snd_QhWeaponGlitch</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -1544,6 +1552,7 @@
         <duration><perTier><li>8</li><li>10</li><li>12</li><li>14</li><li>16</li><li>16</li></perTier></duration>
         <untraceable>true</untraceable>
         <aiNever>true</aiNever>
+        <landSound>RPC_Snd_QhPing</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -1714,6 +1723,7 @@
         <duration><perTier><li>15</li><li>18.75</li><li>22.5</li><li>26.25</li><li>30</li><li>30</li></perTier></duration>
         <untraceable>true</untraceable>
         <blockedIfTargetHas>RPC_QH_SonicShock</blockedIfTargetHas>
+        <landSound>RPC_Snd_QhSonicShock</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -1886,6 +1896,7 @@
         <affectsMechanoids>false</affectsMechanoids>
         <blockedIfTargetHas>RPC_QH_MemoryWiped</blockedIfTargetHas>
         <aiNever>true</aiNever>
+        <landSound>RPC_Snd_QhMemoryWipe</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -2055,6 +2066,7 @@
         <duration><perTier><li>15</li><li>15</li><li>15</li><li>15</li><li>15</li><li>15</li></perTier></duration>
         <untraceable>true</untraceable>
         <aiNever>true</aiNever>
+        <landSound>RPC_Snd_QhBait</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -2225,6 +2237,7 @@
         <upload><perTier><li>2</li><li>2</li><li>2</li><li>2</li><li>2</li><li>2</li></perTier></upload>
         <duration><perTier><li>15</li><li>15</li><li>15</li><li>15</li><li>15</li><li>15</li></perTier></duration>
         <aiNever>true</aiNever>
+        <landSound>RPC_Snd_QhRequestBackup</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -2368,6 +2381,7 @@
         <upload><perTier><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li></perTier></upload>
         <affectsMechanoids>false</affectsMechanoids>
         <humanlikeOnly>true</humanlikeOnly>
+        <landSound>RPC_Snd_QhSuicide</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -2464,6 +2478,7 @@
         <duration><perTier><li>8.8</li><li>8.8</li><li>8.8</li><li>8.8</li><li>8.8</li><li>8.8</li></perTier></duration>
         <untraceableFromTier>T5</untraceableFromTier>
         <blockedIfTargetHas>RPC_QH_SystemCollapse</blockedIfTargetHas>
+        <landSound>RPC_Snd_QhSystemCollapse</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -2559,6 +2574,7 @@
         <maxTier>T5</maxTier>
         <ram><perTier><li>20</li><li>20</li><li>20</li><li>20</li><li>24</li><li>24</li></perTier></ram>
         <upload><perTier><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li></perTier></upload>
+        <landSound>RPC_Snd_QhDetonate</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -2656,6 +2672,7 @@
         <duration><perTier><li>60</li><li>60</li><li>60</li><li>60</li><li>60</li><li>60</li></perTier></duration>
         <affectsMechanoids>false</affectsMechanoids>
         <humanlikeOnly>true</humanlikeOnly>
+        <landSound>RPC_Snd_QhCyberpsychosis</landSound>
       </li>
     </modExtensions>
   </AbilityDef>
@@ -2753,6 +2770,7 @@
         <maxTier>Iconic</maxTier>
         <ram><perTier><li>12</li><li>12</li><li>12</li><li>12</li><li>12</li><li>12</li></perTier></ram>
         <upload><perTier><li>3</li><li>3</li><li>3</li><li>3</li><li>3</li><li>3</li></perTier></upload>
+        <landSound>RPC_Snd_QhBlackwall</landSound>
       </li>
     </modExtensions>
   </AbilityDef>

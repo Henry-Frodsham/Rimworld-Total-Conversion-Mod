@@ -25,6 +25,16 @@ namespace RimPunkCE.Patches
         }
     }
 
+    /// <summary>HediffSet.PainTotal: a pawn in cyberpsychosis feels no pain (no pain shock, no pain-driven downing or slowdown).</summary>
+    [HarmonyPatch(typeof(HediffSet), nameof(HediffSet.PainTotal), MethodType.Getter)]
+    public static class Patch_HediffSet_PainTotal
+    {
+        public static void Postfix(HediffSet __instance, ref float __result)
+        {
+            if (__result > 0f && CyberpsychosisUtility.InCyberpsychosis(__instance.pawn)) __result = 0f;
+        }
+    }
+
     /// <summary>
     /// MedicalRecipesUtility.SpawnThingsFromHediffs: our cyberware hediffs have no spawnThingOnRemoved
     /// (vanilla would spawn a tierless item); spawn the item with its tier instead. Covers part removal and

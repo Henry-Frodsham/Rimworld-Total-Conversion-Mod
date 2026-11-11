@@ -33,6 +33,8 @@ namespace RimPunkCE
         internal static void DebugInstall(Pawn pawn, HediffDef def, CyberTier tier)
         {
             var ext = def.Ext();
+            var needed = CyberUtility.MissingRequirement(pawn, ext);
+            if (needed != null) DebugInstall(pawn, needed, needed.Ext().minTier);
             BodyPartRecord part = null;
             if (!ext.slot.WholeBody)
             {

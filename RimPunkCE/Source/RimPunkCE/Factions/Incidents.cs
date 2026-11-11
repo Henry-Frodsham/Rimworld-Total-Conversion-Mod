@@ -40,6 +40,7 @@ namespace RimPunkCE
             };
             bool ok = IncidentDefOf.RaidEnemy.Worker.TryExecute(raid);
             Diag.Event("events", $"NetWatch hunt fired: {ok}, {raid.points:0} points");
+            if (ok) RPSound.OnCamera(RPSoundDefOf.RPC_Snd_QhTraceAlert);
             return ok;
         }
     }
@@ -64,6 +65,8 @@ namespace RimPunkCE
 
             var pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PickKind(def), null, mustBeCapableOfViolence: true));
             GenSpawn.Spawn(pawn, cell, map);
+            // rogues never come back: permanent psychosis (the hediff also re-starts the state if anything clears it)
+            pawn.health.AddHediff(RPDefOf.RPC_CyberpsychosisPermanent);
             pawn.mindState.mentalStateHandler.TryStartMentalState(RPDefOf.RPC_Cyberpsychosis, "RPC_RogueReason".Translate(), forced: true, forceWake: true, transitionSilently: true);
             Diag.Event("events", $"rogue cyberpsycho {Diag.Describe(pawn)}: usage {pawn.GetCyberTracker()?.UsageRatio:P0}, in state {pawn.MentalStateDef?.defName}");
             SendStandardLetter("RPC_RogueLetter".Translate(), "RPC_RogueLetterText".Translate(pawn.LabelShort), LetterDefOf.ThreatBig, parms, pawn);

@@ -76,7 +76,7 @@ namespace RimPunkCE
 
         private static InteractionDef Interaction => interaction ??= DefDatabase<InteractionDef>.GetNamedSilentFail("RPC_Bark");
 
-        /// <summary>Does any mod listen to PlayLog.Add? Checked by behaviour, not by name, so any bubble mod counts.</summary>
+        /// <summary>Does any other mod listen to PlayLog.Add? Checked by behaviour, not by name, so any bubble mod counts. Our own patches don't.</summary>
         public static bool BubbleModPresent
         {
             get
@@ -84,7 +84,7 @@ namespace RimPunkCE
                 if (listenerPresent == null)
                 {
                     var info = Harmony.GetPatchInfo(AccessTools.Method(typeof(PlayLog), nameof(PlayLog.Add)));
-                    listenerPresent = info != null && (info.Postfixes.Count > 0 || info.Prefixes.Count > 0);
+                    listenerPresent = info != null && info.Postfixes.Concat(info.Prefixes).Any(p => p.owner != Startup.HarmonyId);
                 }
                 return listenerPresent.Value;
             }
@@ -108,9 +108,25 @@ namespace RimPunkCE
             lastBarkTick = now;
             lastPawnBark[pawn.thingIDNumber] = now;
             Find.PlayLog.Add(new PlayLogEntry_Bark(Interaction, pawn, line));
-            if (!BubbleModPresent) MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, line, new Color(0.85f, 0.95f, 1f), 3.5f);
+            if (!BubbleModPresent) FloatText(pawn, line);
             Diag.Event("bark", $"{Diag.Describe(pawn)} [{def.defName}]: {line}");
         }
+
+        /// <summary>
+        /// Speech that isn't a BarkDef (the Trauma Team and MaxTac callouts): an exact line in a bubble (or floating text). No rate limit,
+        /// the caller already paces it. Works for any pawn that can talk, not just colonists.
+        /// </summary>
+        public static void SayText(Pawn pawn, string line)
+        {
+            if (pawn == null || !pawn.Spawned || pawn.Dead || pawn.RaceProps?.Humanlike != true || line.NullOrEmpty() || Interaction == null) return;
+            Find.PlayLog.Add(new PlayLogEntry_Bark(Interaction, pawn, line));
+            if (!BubbleModPresent) FloatText(pawn, line);
+            Diag.Event("bark", $"{Diag.Describe(pawn)}: {line}");
+        }
+
+        /// <summary>No bubble mod: the line floats over the pawn as plain text.</summary>
+        private static void FloatText(Pawn pawn, string line) =>
+            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, line, new Color(0.85f, 0.95f, 1f), 3.5f);
 
         /// <summary>A colonist on the home map says it (faction and gig news).</summary>
         public static void SayColonist(string barkDefName, Map map = null)

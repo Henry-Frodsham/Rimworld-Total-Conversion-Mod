@@ -34,9 +34,9 @@
             <capacities><li>Blunt</li></capacities>
             <power>20</power>
             <cooldownTime>1.7</cooldownTime>
-            <armorPenetrationBlunt>6</armorPenetrationBlunt>
-            <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
-            <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+            <armorPenetrationBlunt>24</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_GorillaHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_GorillaMiss</soundMeleeMiss>
           </li>
         </tools>
       </li>
@@ -95,16 +95,20 @@
             <capacities><li>Cut</li></capacities>
             <power>20</power>
             <cooldownTime>0.9</cooldownTime>
-            <armorPenetrationSharp>8</armorPenetrationSharp>
-            <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+            <armorPenetrationSharp>14</armorPenetrationSharp>
+            <armorPenetrationBlunt>3.0</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_MantisHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_MantisMiss</soundMeleeMiss>
           </li>
           <li Class="CombatExtended.ToolCE">
             <label>blade point</label>
             <capacities><li>Stab</li></capacities>
             <power>22</power>
             <cooldownTime>1.1</cooldownTime>
-            <armorPenetrationSharp>12</armorPenetrationSharp>
-            <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+            <armorPenetrationSharp>20</armorPenetrationSharp>
+            <armorPenetrationBlunt>3.0</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_MantisHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_MantisMiss</soundMeleeMiss>
           </li>
         </tools>
       </li>
@@ -160,6 +164,9 @@
     <comps>
       <li Class="RimPunkCE.CompProperties_AbilityDashStrike" />
     </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.AbilitySoundExtension"><cast>RPC_Snd_MantisDash</cast></li>
+    </modExtensions>
   </AbilityDef>
 
   <!-- Projectile Launch System reload (ArmLauncher.cs): loads shells from the inventory into the arm's magazine -->

@@ -99,8 +99,10 @@ namespace RimPunkCE
         /// <summary>CompCyberTracker.Notify_UsedVerb: a melee hit with arm cyberware plays that arm's animation.</summary>
         public static void Notify_VerbUsed(Pawn pawn, Verb verb)
         {
-            if (!Enabled || !verb.IsMeleeAttack || !(verb.HediffSource is Hediff_Cyberware cw)) return;
+            if (!verb.IsMeleeAttack || !(verb.HediffSource is Hediff_Cyberware cw)) return;
             if (!StyleFor(cw.def, out var kind, out var color)) return;
+            if (kind == CyberAnimKind.BladeSlash) RPSound.AtThrottled(RPSoundDefOf.RPC_Snd_MantisDeploy, pawn, 180);   // audio doesn't depend on the visuals setting
+            if (!Enabled) return;
             Play(pawn, kind, verb.CurrentTarget, color, SideOf(cw.Part));
         }
 

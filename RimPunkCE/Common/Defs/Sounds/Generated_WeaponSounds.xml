@@ -35,7 +35,7 @@
             <clipFolderPath>RimPunk/Guns/Power/Revolver</clipFolderPath>
           </li>
         </grains>
-        <volumeRange>28~30</volumeRange>
+        <volumeRange>56~60</volumeRange>
         <pitchRange>0.98~1.02</pitchRange>
         <distRange>12~65</distRange>
         <onCamera>false</onCamera>
@@ -57,7 +57,7 @@
             <clipFolderPath>RimPunk/Guns/Power/SMG</clipFolderPath>
           </li>
         </grains>
-        <volumeRange>28~30</volumeRange>
+        <volumeRange>56~60</volumeRange>
         <pitchRange>0.98~1.02</pitchRange>
         <distRange>12~65</distRange>
         <onCamera>false</onCamera>
@@ -123,7 +123,7 @@
             <clipFolderPath>RimPunk/Guns/Power/Precision</clipFolderPath>
           </li>
         </grains>
-        <volumeRange>28~30</volumeRange>
+        <volumeRange>56~60</volumeRange>
         <pitchRange>0.98~1.02</pitchRange>
         <distRange>12~65</distRange>
         <onCamera>false</onCamera>

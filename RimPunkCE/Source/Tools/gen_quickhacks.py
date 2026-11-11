@@ -102,6 +102,16 @@ hediff('RPC_QH_SystemCollapse', 'system collapse', 'Quickhacked: the nervous sys
 
 QUICKHACKS = []
 
+# SoundDef played at the target when the upload lands (gen_sounds.py); the others get the generic "uploaded" chirp
+LAND_SOUND = {
+    'ShortCircuit': 'RPC_Snd_QhShortCircuit', 'Overheat': 'RPC_Snd_QhOverheat', 'Contagion': 'RPC_Snd_QhContagion',
+    'SynapseBurnout': 'RPC_Snd_QhSynapseBurnout', 'CyberwareMalfunction': 'RPC_Snd_QhCyberwareMalfunction',
+    'CrippleMovement': 'RPC_Snd_QhCrippleMovement', 'RebootOptics': 'RPC_Snd_QhRebootOptics', 'WeaponGlitch': 'RPC_Snd_QhWeaponGlitch',
+    'Ping': 'RPC_Snd_QhPing', 'SonicShock': 'RPC_Snd_QhSonicShock', 'MemoryWipe': 'RPC_Snd_QhMemoryWipe', 'Bait': 'RPC_Snd_QhBait',
+    'RequestBackup': 'RPC_Snd_QhRequestBackup', 'Suicide': 'RPC_Snd_QhSuicide', 'SystemCollapse': 'RPC_Snd_QhSystemCollapse',
+    'DetonateGrenade': 'RPC_Snd_QhDetonate', 'Cyberpsychosis': 'RPC_Snd_QhCyberpsychosis', 'BlackwallGateway': 'RPC_Snd_QhBlackwall',
+}
+
 
 def comp(cls, **kw):
     body = ''.join(f'        <{k}>{str(v).lower() if isinstance(v, bool) else v}</{k}>\n' for k, v in kw.items())
@@ -127,6 +137,7 @@ def quickhack(id, label, desc, category, tiers, ram, upload, cooldown, comps, du
     if humanlike: ext += '        <humanlikeOnly>true</humanlikeOnly>\n'
     if blocked: ext += f'        <blockedIfTargetHas>{blocked}</blockedIfTargetHas>\n'
     if ai_never: ext += '        <aiNever>true</aiNever>\n'
+    if id in LAND_SOUND: ext += f'        <landSound>{LAND_SOUND[id]}</landSound>' + chr(10)
     QUICKHACKS.append(dict(id=id, label=label, desc=desc, category=category, lo=lo, hi=hi, shard_cost=shard_cost, xml=f'''  <AbilityDef>
     <defName>RPC_Quickhack_{id}</defName>
     <label>{escape(label)}</label>

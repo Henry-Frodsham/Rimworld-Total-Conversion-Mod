@@ -1,6 +1,7 @@
 using CombatExtended;
 using HarmonyLib;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace RimPunkCE.Patches
@@ -35,6 +36,32 @@ namespace RimPunkCE.Patches
             if (factor <= 1f) return;
             __result.SetAmount(__result.Amount / factor);
             Diag.Count("plating-reduced-hit");
+        }
+    }
+
+    /// <summary>
+    /// HealthCardUtility.GetTooltip (private): the body part hover. Part health bonuses (plating, skeleton) work by dividing
+    /// incoming damage, so vanilla's "30 / 30" never changed. Showing both numbers scaled by the same factor is the
+    /// equivalent hit point view: (max - damage) * f out of max * f.
+    /// </summary>
+    [HarmonyPatch(typeof(HealthCardUtility), "GetTooltip")]
+    public static class Patch_HealthCardUtility_GetTooltip
+    {
+        public static bool Prefix(Pawn pawn, BodyPartRecord part, ref string __result)
+        {
+            if (pawn?.RaceProps?.Humanlike != true || part == null) return true;
+            float f = ChromePlatingUtility.HealthFactorFor(pawn, part)
+                * Mathf.Max(0.1f, pawn.GetStatValue(RPStatDefOf.RPC_MaxHealthFactor));
+            if (Mathf.Abs(f - 1f) < 0.005f) return true;
+            var sb = new System.Text.StringBuilder();
+            sb.Append(part.LabelCap + ": ");
+            float cur = pawn.health.hediffSet.GetPartHealth(part);
+            float max = part.def.GetMaxHealth(pawn);
+            sb.AppendLine(" " + Mathf.CeilToInt(cur * f) + " / " + Mathf.CeilToInt(max * f));
+            float eff = PawnCapacityUtility.CalculatePartEfficiency(pawn.health.hediffSet, part);
+            if (eff != 1f) sb.AppendLine("Efficiency".Translate() + ": " + eff.ToStringPercent());
+            __result = sb.ToString();
+            return false;
         }
     }
 

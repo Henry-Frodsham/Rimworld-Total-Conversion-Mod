@@ -94,7 +94,7 @@ namespace RimPunkCE
         private static void Say(SoundDef sound, Pawn speaker, string textKey)
         {
             sound?.PlayOneShot(new TargetInfo(speaker.Position, speaker.Map));
-            MoteMaker.ThrowText(speaker.DrawPos + new Vector3(0f, 0f, 0.6f), speaker.Map, textKey.Translate(), new Color(0.55f, 1f, 0.7f), 3.5f);
+            BarkUtility.SayText(speaker, textKey.Translate());
         }
     }
 

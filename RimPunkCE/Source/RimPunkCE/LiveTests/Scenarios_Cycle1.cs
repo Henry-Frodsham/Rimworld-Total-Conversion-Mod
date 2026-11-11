@@ -145,6 +145,38 @@ namespace RimPunkCE
             yield break;
         }
 
+        /// <summary>Bubbles is optional: with it, speech is a bubble and no floating text; without it, speech floats as text. Run the suite with --no-bubbles to cover the second half.</summary>
+        [LiveScenario("cycle1")]
+        private IEnumerable<int> Scenario_BarksWithoutBubbles()
+        {
+            bool loaded = HarmonyLib.AccessTools.TypeByName("Bubbles.Core.Bubble") != null;
+            Check(BarkUtility.BubbleModPresent == loaded, $"bubble detection matches the mod being loaded ({loaded})");
+            if (!loaded)
+            {
+                Check(!HarmonyLib.Harmony.GetAllPatchedMethods().Any(m => m.DeclaringType?.FullName?.StartsWith("Bubbles.") == true), "nothing of Bubbles is patched");
+                Check(!HarmonyLib.Harmony.GetAllPatchedMethods().Any(m => m.DeclaringType == typeof(CommsUtility) || m.Name == "Draw" && m.DeclaringType?.Namespace == "Bubbles.Core"), "comms colour patch stays off");
+            }
+
+            var p = Colonist(Center);
+            string line = "rpc-test-line-" + p.thingIDNumber;
+            int before = Find.PlayLog.AllEntries.OfType<PlayLogEntry_Bark>().Count();
+            BarkUtility.SayText(p, line);
+            Check(Find.PlayLog.AllEntries.OfType<PlayLogEntry_Bark>().Count() > before || Find.PlayLog.AllEntries.Count == 150, "line is in the play log either way");
+            bool floating = map.listerThings.AllThings.OfType<MoteText>().Any(m => m.text == line);
+            Check(floating == !loaded, loaded ? "bubble mod draws it: no floating text" : "no bubble mod: the line floats as text");
+
+            var gig = DefDatabase<BarkDef>.GetNamed(BarkKeys.GigOffered);
+            var q = Colonist(Center + new IntVec3(2, 0, 0));
+            for (int i = 0; i < 200 && !map.listerThings.AllThings.OfType<MoteText>().Any(m => gig.lines.Contains(m.text)) ; i++)
+            {
+                if (loaded) break;
+                BarkUtility.Say(q, BarkKeys.GigOffered);
+                yield return 100;
+            }
+            if (!loaded) Check(map.listerThings.AllThings.OfType<MoteText>().Any(m => gig.lines.Contains(m.text)), "a normal bark floats as text too");
+            yield break;
+        }
+
         [LiveScenario("cycle1")]
         private IEnumerable<int> Scenario_RogueCyberpsycho()
         {

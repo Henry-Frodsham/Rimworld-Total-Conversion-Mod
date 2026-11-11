@@ -34,6 +34,23 @@ namespace RimPunkCE
                 if (hediffs[i] is Hediff_CyberActive a) yield return a;
         }
 
+        /// <summary>The first cyberware <paramref name="ext"/> needs that the pawn doesn't have (see CyberwareExtension.requiresCyberware), or null.</summary>
+        public static HediffDef MissingRequirement(Pawn pawn, CyberwareExtension ext)
+        {
+            if (ext?.requiresCyberware == null) return null;
+            foreach (var req in ext.requiresCyberware)
+                if (!pawn.InstalledCyberware().Any(c => c.def == req)) return req;
+            return null;
+        }
+
+        /// <summary>The installed cyberware that needs <paramref name="def"/> to run, if any (removing <paramref name="def"/> is blocked while there is one).</summary>
+        public static Hediff_Cyberware DependentOn(Pawn pawn, HediffDef def)
+        {
+            foreach (var c in pawn.InstalledCyberware())
+                if (c.Ext?.requiresCyberware != null && c.Ext.requiresCyberware.Contains(def)) return c;
+            return null;
+        }
+
         /// <summary>
         /// Slot rules (CyberSlotDef): max per pawn, one per body part, matching sets.
         /// Capacity never blocks an install (cyberpsychosis is the deterrent).
@@ -43,6 +60,12 @@ namespace RimPunkCE
             reason = null;
             var ext = def.Ext();
             if (ext?.slot == null) return true;
+            var missing = MissingRequirement(pawn, ext);
+            if (missing != null)
+            {
+                reason = "RPC_Reason_RequiresCyberware".Translate(def.label, missing.label);
+                return false;
+            }
             var slot = ext.slot;
             int inSlot = 0;
             foreach (var c in pawn.InstalledCyberware())
@@ -124,6 +147,7 @@ namespace RimPunkCE
         {
             if (map == null || damage <= 0f) return;
             FleckMaker.Static(center, map, FleckDefOf.ExplosionFlash, radius * 2f);
+            RPSound.At(RPSoundDefOf.RPC_Snd_Electroshock, map, center);
             foreach (var p in map.mapPawns.AllPawnsSpawned.ToList())
             {
                 if (p == source || p.Dead || !p.HostileTo(source) || !p.Position.InHorDistOf(center, radius)) continue;

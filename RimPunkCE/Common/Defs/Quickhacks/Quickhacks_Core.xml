@@ -38,6 +38,12 @@
     <label>overclocked</label>
     <description>The cyberdeck is running past its limits. Quickhacks can be uploaded without enough RAM; the missing RAM is paid in health.</description>
     <defaultLabelColor>(0.3, 0.7, 1)</defaultLabelColor>
+    <modExtensions>
+      <li Class="RimPunkCE.ActiveEffectExtension">
+        <soundOn>RPC_Snd_OverclockOn</soundOn>
+        <soundOff>RPC_Snd_OverclockOff</soundOff>
+      </li>
+    </modExtensions>
   </HediffDef>
 
   <!-- ===================== mental states ===================== -->

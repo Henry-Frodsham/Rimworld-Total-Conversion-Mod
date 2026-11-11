@@ -485,12 +485,17 @@ for w in melee:
         <extraMeleeDamages>
           <li><def>{extra[0]}</def><amount>{extra[1]}</amount><chance>{extra[2]}</chance></li>
         </extraMeleeDamages>'''
+        snd = ''
+        if w['name'].startswith('Electric Baton') and cap == 'Blunt':
+            snd = '\n        <soundMeleeHit>RPC_Snd_BatonHit</soundMeleeHit>\n        <soundMeleeMiss>RPC_Snd_BatonMiss</soundMeleeMiss>'
+        elif w['class'] == 'Chainsword' and cap == 'Cut':
+            snd = '\n        <soundMeleeHit>RPC_Snd_ChainHit</soundMeleeHit>\n        <soundMeleeMiss>RPC_Snd_ChainMiss</soundMeleeMiss>'
         pen = (f'\n        <armorPenetrationSharp>{r2(ps * mult)}</armorPenetrationSharp>' if ps else '') + f'\n        <armorPenetrationBlunt>{r2(pb * mult)}</armorPenetrationBlunt>'
         tools.append(f'''      <li Class="CombatExtended.ToolCE">
         <label>{label}</label>
         <capacities><li>{cap}</li></capacities>
         <power>{r2(power * mult * w.get('damageMultiplier', 1.0))}</power>
-        <cooldownTime>{cd}</cooldownTime>{pen}{ex}
+        <cooldownTime>{cd}</cooldownTime>{pen}{snd}{ex}
       </li>''')
     comps = ''
     if thrown:

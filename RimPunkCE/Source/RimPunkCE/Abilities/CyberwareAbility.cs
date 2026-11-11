@@ -41,6 +41,7 @@ namespace RimPunkCE
                 // replace vanilla's def.cooldownTicksRange cooldown with the tier + stat based one
                 if (def.cooldownTicksRange.max > 0 || Source?.Ext?.HasValue("cooldown") == true)
                     StartCooldown(CooldownTicksFor());
+                RPSound.At(def.GetModExtension<AbilitySoundExtension>()?.cast, pawn);
                 CyberEvents.Notify_AbilityUsed(pawn, this);
                 Diag.Event("ability", $"{Diag.Describe(pawn)} used {def.defName} (tier {SourceTier}), cooldown {CooldownTicksRemaining} ticks");
                 if (CompOfType<CompAbilityEffect_RamCost>() != null && SourceTier >= CyberTier.T4 && pawn.GetCyberTracker() is CompCyberTracker t)

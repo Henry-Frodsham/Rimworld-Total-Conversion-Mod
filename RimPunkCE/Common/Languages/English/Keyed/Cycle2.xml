@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  <RPC_Reason_RequiresCyberware>{0} needs a {1} installed first.</RPC_Reason_RequiresCyberware>
   <RPC_Features_Button>RimPunk features...</RPC_Features_Button>
   <RPC_Features_WorldExplanation>Choose features for this world. These choices are locked when the world is created.</RPC_Features_WorldExplanation>
   <RPC_Features_Defaults>Feature defaults for new worlds. Change individual world choices on the world creation screen.</RPC_Features_Defaults>

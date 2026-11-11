@@ -33,6 +33,9 @@ namespace RimPunkCE
         public CyberTier minTier = CyberTier.T1;
         public CyberTier maxTier = CyberTier.Iconic;
 
+        /// <summary>Cyberware that must already be installed before this can be (basic implants need the comms implant). Removing the required one is blocked while this is installed.</summary>
+        public List<HediffDef> requiresCyberware;
+
         /// <summary>The item. Set this on the HediffDef; the item's ThingDef needs CompProperties_CyberwareTier.</summary>
         public ThingDef item;
 

@@ -29,9 +29,9 @@
             <capacities><li>Blunt</li></capacities>
             <power>20</power>
             <cooldownTime>1.7</cooldownTime>
-            <armorPenetrationBlunt>6</armorPenetrationBlunt>
-            <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
-            <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+            <armorPenetrationBlunt>24</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_GorillaHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_GorillaMiss</soundMeleeMiss>
           </li>
         </tools>
       </li>
@@ -87,9 +87,9 @@
             <capacities><li>Blunt</li></capacities>
             <power>20</power>
             <cooldownTime>1.7</cooldownTime>
-            <armorPenetrationBlunt>6</armorPenetrationBlunt>
-            <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
-            <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+            <armorPenetrationBlunt>24</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_GorillaHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_GorillaMiss</soundMeleeMiss>
           </li>
         </tools>
       </li>
@@ -145,9 +145,9 @@
             <capacities><li>Blunt</li></capacities>
             <power>20</power>
             <cooldownTime>1.7</cooldownTime>
-            <armorPenetrationBlunt>6</armorPenetrationBlunt>
-            <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
-            <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+            <armorPenetrationBlunt>24</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_GorillaHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_GorillaMiss</soundMeleeMiss>
           </li>
         </tools>
       </li>
@@ -203,16 +203,20 @@
             <capacities><li>Cut</li></capacities>
             <power>20</power>
             <cooldownTime>0.9</cooldownTime>
-            <armorPenetrationSharp>8.0</armorPenetrationSharp>
-            <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+            <armorPenetrationSharp>14.0</armorPenetrationSharp>
+            <armorPenetrationBlunt>3.0</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_MantisHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_MantisMiss</soundMeleeMiss>
           </li>
           <li Class="CombatExtended.ToolCE">
             <label>blade point</label>
             <capacities><li>Stab</li></capacities>
             <power>22</power>
             <cooldownTime>1.1</cooldownTime>
-            <armorPenetrationSharp>12.0</armorPenetrationSharp>
-            <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+            <armorPenetrationSharp>20.0</armorPenetrationSharp>
+            <armorPenetrationBlunt>3.0</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_MantisHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_MantisMiss</soundMeleeMiss>
           </li>
         </tools>
       </li>
@@ -272,16 +276,20 @@
             <capacities><li>Cut</li></capacities>
             <power>20</power>
             <cooldownTime>0.9</cooldownTime>
-            <armorPenetrationSharp>8.0</armorPenetrationSharp>
-            <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+            <armorPenetrationSharp>14.0</armorPenetrationSharp>
+            <armorPenetrationBlunt>3.0</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_MantisHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_MantisMiss</soundMeleeMiss>
           </li>
           <li Class="CombatExtended.ToolCE">
             <label>blade point</label>
             <capacities><li>Stab</li></capacities>
             <power>22</power>
             <cooldownTime>1.1</cooldownTime>
-            <armorPenetrationSharp>12.0</armorPenetrationSharp>
-            <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+            <armorPenetrationSharp>20.0</armorPenetrationSharp>
+            <armorPenetrationBlunt>3.0</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_MantisHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_MantisMiss</soundMeleeMiss>
           </li>
         </tools>
       </li>
@@ -341,16 +349,20 @@
             <capacities><li>Cut</li></capacities>
             <power>20</power>
             <cooldownTime>0.9</cooldownTime>
-            <armorPenetrationSharp>8.0</armorPenetrationSharp>
-            <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+            <armorPenetrationSharp>14.0</armorPenetrationSharp>
+            <armorPenetrationBlunt>3.0</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_MantisHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_MantisMiss</soundMeleeMiss>
           </li>
           <li Class="CombatExtended.ToolCE">
             <label>blade point</label>
             <capacities><li>Stab</li></capacities>
             <power>22</power>
             <cooldownTime>1.1</cooldownTime>
-            <armorPenetrationSharp>12.0</armorPenetrationSharp>
-            <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+            <armorPenetrationSharp>20.0</armorPenetrationSharp>
+            <armorPenetrationBlunt>3.0</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_MantisHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_MantisMiss</soundMeleeMiss>
           </li>
         </tools>
       </li>
@@ -410,16 +422,20 @@
             <capacities><li>Cut</li></capacities>
             <power>20</power>
             <cooldownTime>0.9</cooldownTime>
-            <armorPenetrationSharp>8.0</armorPenetrationSharp>
-            <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+            <armorPenetrationSharp>14.0</armorPenetrationSharp>
+            <armorPenetrationBlunt>3.0</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_MantisHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_MantisMiss</soundMeleeMiss>
           </li>
           <li Class="CombatExtended.ToolCE">
             <label>blade point</label>
             <capacities><li>Stab</li></capacities>
             <power>22</power>
             <cooldownTime>1.1</cooldownTime>
-            <armorPenetrationSharp>12.0</armorPenetrationSharp>
-            <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+            <armorPenetrationSharp>20.0</armorPenetrationSharp>
+            <armorPenetrationBlunt>3.0</armorPenetrationBlunt>
+            <soundMeleeHit>RPC_Snd_MantisHit</soundMeleeHit>
+            <soundMeleeMiss>RPC_Snd_MantisMiss</soundMeleeMiss>
           </li>
         </tools>
       </li>
@@ -481,6 +497,9 @@
         <damageDef>RPC_MonowireCut</damageDef>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.AbilitySoundExtension"><cast>RPC_Snd_MonowireLash</cast></li>
+    </modExtensions>
   </AbilityDef>
 
   <!-- monowire: adjacent cut plus a 6-tile lash ability -->
@@ -568,6 +587,9 @@
         <damageDef>RPC_Electrical</damageDef>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.AbilitySoundExtension"><cast>RPC_Snd_MonowireLashElectric</cast></li>
+    </modExtensions>
   </AbilityDef>
 
   <!-- monowire: adjacent cut plus a 6-tile lash ability -->
@@ -659,6 +681,9 @@
         <damageDef>RPC_MonowireCut</damageDef>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.AbilitySoundExtension"><cast>RPC_Snd_MonowireLashToxic</cast></li>
+    </modExtensions>
   </AbilityDef>
 
   <!-- monowire: adjacent cut plus a 6-tile lash ability -->
@@ -752,6 +777,9 @@
         <damageDef>RPC_Thermal</damageDef>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="RimPunkCE.AbilitySoundExtension"><cast>RPC_Snd_MonowireLashThermal</cast></li>
+    </modExtensions>
   </AbilityDef>
 
   <!-- monowire: adjacent cut plus a 6-tile lash ability -->
@@ -885,6 +913,7 @@
       <li>RPC_Ammo_LauncherShells</li>
     </thingCategories>
     <stackLimit>200</stackLimit>
+    <destroyOnDrop>false</destroyOnDrop>
     <graphicData>
       <texPath>Things/Ammo/GrenadeLauncher/HE</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -976,6 +1005,7 @@
       <li>RPC_Ammo_LauncherShells</li>
     </thingCategories>
     <stackLimit>200</stackLimit>
+    <destroyOnDrop>false</destroyOnDrop>
     <graphicData>
       <texPath>Things/Ammo/GrenadeLauncher/Tox</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -1067,6 +1097,7 @@
       <li>RPC_Ammo_LauncherShells</li>
     </thingCategories>
     <stackLimit>200</stackLimit>
+    <destroyOnDrop>false</destroyOnDrop>
     <graphicData>
       <texPath>Things/Ammo/GrenadeLauncher/EMP</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -1158,6 +1189,7 @@
       <li>RPC_Ammo_LauncherShells</li>
     </thingCategories>
     <stackLimit>200</stackLimit>
+    <destroyOnDrop>false</destroyOnDrop>
     <graphicData>
       <texPath>Things/Ammo/GrenadeLauncher/AIR</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -1327,6 +1359,7 @@
             <li><stat>RPC_CritChanceGrenades</stat><value><min>0.08</min><max>0.27</max></value></li>
           </statOffsets>
         </effects>
+        <soundOn>RPC_Snd_BuffOn</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -1482,11 +1515,43 @@
   </HediffDef>
 
 
+  <!-- ============================================================ comms (cycle 3): a whole-body implant, one per pawn. Every "basic" implant needs it installed. Behaviour: Comms.cs -->
+  <!-- cycle 3: required by every basic implant; remote chat in Comms.cs -->
+  <ThingDef ParentName="RPC_CyberwareItemBase">
+    <defName>RPC_Item_CommsImplant</defName>
+    <label>comms implant</label>
+    <description>A short-range radio and a subvocal mic wired into the auditory nerve. Talks to every other comms implant on the map, wherever they are, at a quarter of the usual chatter rate. Every basic implant needs one to run.</description>
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>RPC_Cyberware_T1</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <HediffDef ParentName="RPC_CyberwareHediffBase">
+    <defName>RPC_CommsImplant</defName>
+    <label>comms implant</label>
+    <description>A short-range radio and a subvocal mic wired into the auditory nerve. Talks to every other comms implant on the map, wherever they are, at a quarter of the usual chatter rate. Every basic implant needs one to run.</description>
+    <descriptionHyperlinks><ThingDef>RPC_Item_CommsImplant</ThingDef></descriptionHyperlinks>
+    <modExtensions>
+      <li Class="RimPunkCE.CyberwareExtension">
+        <slot>RPC_Slot_Comms</slot>
+        <capacityCost>1</capacityCost>
+        <minTier>T1</minTier>
+        <maxTier>T1</maxTier>
+        <item>RPC_Item_CommsImplant</item>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+
   <!-- ============================================================ face (face/manifest.md): installed in the eyes, two max -->
   <ThingDef ParentName="RPC_CyberwareItemBase">
     <defName>RPC_Item_BasicKiroshiOptics</defName>
     <label>basic Kiroshi optics</label>
-    <description>Entry-level optics with digital zoom.</description>
+    <description>Entry-level optics with digital zoom. Needs a comms implant to run.</description>
     <costList>
       <Steel>30</Steel>
       <ComponentIndustrial>3</ComponentIndustrial>
@@ -1499,7 +1564,7 @@
   <HediffDef ParentName="RPC_CyberwareHediffBase">
     <defName>RPC_BasicKiroshiOptics</defName>
     <label>basic Kiroshi optics</label>
-    <description>Entry-level optics with digital zoom.</description>
+    <description>Entry-level optics with digital zoom. Needs a comms implant to run.</description>
     <descriptionHyperlinks><ThingDef>RPC_Item_BasicKiroshiOptics</ThingDef></descriptionHyperlinks>
     <modExtensions>
       <li Class="RimPunkCE.CyberwareExtension">
@@ -1508,6 +1573,9 @@
         <minTier>T1</minTier>
         <maxTier>Iconic</maxTier>
         <item>RPC_Item_BasicKiroshiOptics</item>
+        <requiresCyberware>
+          <li>RPC_CommsImplant</li>
+        </requiresCyberware>
         <effects>
           <statFactors>
             <li><stat>AimingAccuracy</stat><value><perTier><li>1.04</li><li>1.06</li><li>1.06</li><li>1.08</li><li>1.1</li><li>1.1</li></perTier></value></li>
@@ -1525,6 +1593,7 @@
     <modExtensions>
       <li Class="RimPunkCE.ActiveEffectExtension">
         <revealEnemies><min>12.5</min><max>19.5</max></revealEnemies>
+        <soundOn>RPC_Snd_OpticsScan</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -1593,6 +1662,7 @@
     <modExtensions>
       <li Class="RimPunkCE.ActiveEffectExtension">
         <revealTraps><min>10</min><max>29</max></revealTraps>
+        <soundOn>RPC_Snd_OpticsScan</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -1661,6 +1731,7 @@
     <modExtensions>
       <li Class="RimPunkCE.ActiveEffectExtension">
         <revealTurrets><min>15</min><max>39</max></revealTurrets>
+        <soundOn>RPC_Snd_OpticsScan</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -1731,6 +1802,7 @@
         <revealEnemies><min>15</min><max>19.5</max></revealEnemies>
         <revealTraps><min>22</min><max>29</max></revealTraps>
         <revealTurrets><min>30</min><max>39</max></revealTurrets>
+        <soundOn>RPC_Snd_OpticsScan</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -2181,6 +2253,9 @@
         <adrenalineGainFactor>0.5</adrenalineGainFactor>
         <onNeutralizeExtendFraction>0.1</onNeutralizeExtendFraction>
         <onNeutralizeAdrenaline>0.22</onNeutralizeAdrenaline>
+        <soundOn>RPC_Snd_SandevistanOn</soundOn>
+        <soundOff>RPC_Snd_SandevistanOff</soundOff>
+        <soundLoop>RPC_Snd_SandevistanLoop</soundLoop>
       </li>
     </modExtensions>
   </HediffDef>
@@ -2265,6 +2340,9 @@
         <adrenalineGainFactor>0.5</adrenalineGainFactor>
         <onNeutralizeExtendFraction>0.05</onNeutralizeExtendFraction>
         <onNeutralizeHealFraction><min>0.10</min><max>0.12</max></onNeutralizeHealFraction>
+        <soundOn>RPC_Snd_SandevistanOn</soundOn>
+        <soundOff>RPC_Snd_SandevistanOff</soundOff>
+        <soundLoop>RPC_Snd_SandevistanLoop</soundLoop>
       </li>
     </modExtensions>
   </HediffDef>
@@ -2349,6 +2427,9 @@
         <adrenalineGainFactor>0.5</adrenalineGainFactor>
         <onNeutralizeExtendFraction>0.05</onNeutralizeExtendFraction>
         <onNeutralizeHealFraction><min>0.10</min><max>0.12</max></onNeutralizeHealFraction>
+        <soundOn>RPC_Snd_SandevistanOn</soundOn>
+        <soundOff>RPC_Snd_SandevistanOff</soundOff>
+        <soundLoop>RPC_Snd_SandevistanLoop</soundLoop>
       </li>
     </modExtensions>
   </HediffDef>
@@ -2429,6 +2510,9 @@
         </effects>
         <afterimages>true</afterimages>
         <adrenalineGainFactor>0.5</adrenalineGainFactor>
+        <soundOn>RPC_Snd_SandevistanOn</soundOn>
+        <soundOff>RPC_Snd_SandevistanOff</soundOff>
+        <soundLoop>RPC_Snd_SandevistanLoop</soundLoop>
       </li>
     </modExtensions>
   </HediffDef>
@@ -2518,6 +2602,9 @@
         <meleeOnly>true</meleeOnly>
         <adrenalineGainFactor>1.5</adrenalineGainFactor>
         <healPerNeutralizeOnEnd>0.25</healPerNeutralizeOnEnd>
+        <soundOn>RPC_Snd_BerserkOn</soundOn>
+        <soundOff>RPC_Snd_BerserkOff</soundOff>
+        <soundLoop>RPC_Snd_BerserkLoop</soundLoop>
       </li>
     </modExtensions>
   </HediffDef>
@@ -2605,6 +2692,9 @@
         <adrenalineGainFactor>1.5</adrenalineGainFactor>
         <healPerNeutralizeOnEnd>0.25</healPerNeutralizeOnEnd>
         <lowHealthDamageBonus>0.5</lowHealthDamageBonus>
+        <soundOn>RPC_Snd_BerserkOn</soundOn>
+        <soundOff>RPC_Snd_BerserkOff</soundOff>
+        <soundLoop>RPC_Snd_BerserkLoop</soundLoop>
       </li>
     </modExtensions>
   </HediffDef>
@@ -2690,6 +2780,9 @@
         <meleeOnly>true</meleeOnly>
         <adrenalineGainFactor>1.5</adrenalineGainFactor>
         <healPerNeutralizeOnEnd>0.25</healPerNeutralizeOnEnd>
+        <soundOn>RPC_Snd_BerserkOn</soundOn>
+        <soundOff>RPC_Snd_BerserkOff</soundOff>
+        <soundLoop>RPC_Snd_BerserkLoop</soundLoop>
       </li>
     </modExtensions>
   </HediffDef>
@@ -4153,8 +4246,8 @@
         <item>RPC_Item_TitaniumBones</item>
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.2</min><max>0.92</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>0.44</min><max>2.08</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>0.2</min><max>0.52</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>0.44</min><max>1.28</max></value></li>
           </statOffsets>
           <statFactors>
             <li><stat>CarryWeight</stat><value><perTier><li>1.3</li><li>1.372</li><li>1.444</li><li>1.516</li><li>1.588</li><li>1.66</li></perTier></value></li>
@@ -4179,6 +4272,7 @@
             <li><stat>MoveSpeed</stat><value><perTier><li>1.2</li><li>1.24</li><li>1.28</li><li>1.32</li><li>1.36</li><li>1.4</li></perTier></value></li>
           </statFactors>
         </effects>
+        <soundOn>RPC_Snd_BuffOn</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -4239,6 +4333,7 @@
             <li><stat>MoveSpeed</stat><value><perTier><li>1.2</li><li>1.2</li><li>1.2</li><li>1.2333</li><li>1.2667</li><li>1.3</li></perTier></value></li>
           </statFactors>
         </effects>
+        <soundOn>RPC_Snd_BuffOn</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -4332,6 +4427,7 @@
             <li><capacity>Consciousness</capacity><offset><min>1.2</min><max>1.2</max></offset></li>
           </capMods>
         </effects>
+        <soundOn>RPC_Snd_KerenzikovOn</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -4429,6 +4525,7 @@
             <li><capacity>Consciousness</capacity><offset><min>0.4</min><max>1.2</max></offset></li>
           </capMods>
         </effects>
+        <soundOn>RPC_Snd_BuffOn</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -4498,6 +4595,7 @@
             <li><capacity>Consciousness</capacity><offset><min>0.8</min><max>1.2</max></offset></li>
           </capMods>
         </effects>
+        <soundOn>RPC_Snd_BuffOn</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -4620,6 +4718,7 @@
             <li><capacity>Consciousness</capacity><offset><min>0.4</min><max>1</max></offset></li>
           </capMods>
         </effects>
+        <soundOn>RPC_Snd_BuffOn</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -4686,6 +4785,7 @@
             <li><stat>MoveSpeed</stat><value><perTier><li>1.05</li><li>1.062</li><li>1.074</li><li>1.086</li><li>1.098</li><li>1.11</li></perTier></value></li>
           </statFactors>
         </effects>
+        <soundOn>RPC_Snd_BuffOn</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -4860,6 +4960,7 @@
     <modExtensions>
       <li Class="RimPunkCE.ActiveEffectExtension">
         <healPerSecond><min>0.9</min><max>2.3</max></healPerSecond>
+        <soundOn>RPC_Snd_InjectHeal</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -5292,8 +5393,8 @@
         <item>RPC_Item_Carapace</item>
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.76</min><max>1.88</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>1.72</min><max>4.24</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>0.4</min><max>0.8</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>1.2</min><max>2.4</max></value></li>
           </statOffsets>
         </effects>
         <values>
@@ -5331,8 +5432,8 @@
         <item>RPC_Item_CellularAdapter</item>
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>1.48</min><max>3.24</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>3.32</min><max>7.28</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>0.8</min><max>1.6</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>2</min><max>3.2</max></value></li>
           </statOffsets>
         </effects>
         <values>
@@ -5371,7 +5472,7 @@
         <effects>
           <statOffsets>
             <li><stat>ArmorRating_Sharp</stat><value><min>2.8</min><max>4</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>6.32</min><max>9</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>2.8</min><max>4.8</max></value></li>
           </statOffsets>
           <statFactors>
             <li><stat>InjuryHealingFactor</stat><value><min>2</min><max>2</max></value></li>
@@ -5432,8 +5533,8 @@
         <item>RPC_Item_CogitoLattice</item>
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.36</min><max>1.08</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>0.8</min><max>2.44</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>0.2</min><max>0.4</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>0.4</min><max>0.8</max></value></li>
           </statOffsets>
         </effects>
         <values>
@@ -5455,6 +5556,7 @@
             <li><stat>RPC_MitigationChance</stat><value><min>0.3</min><max>0.5</max></value></li>
           </statOffsets>
         </effects>
+        <soundOn>RPC_Snd_CountershellOn</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -5521,6 +5623,7 @@
             <li><stat>RPC_MitigationChance</stat><value><min>0.5</min><max>0.9</max></value></li>
           </statOffsets>
         </effects>
+        <soundOn>RPC_Snd_KerenzikovOn</soundOn>
       </li>
     </modExtensions>
   </HediffDef>
@@ -5600,8 +5703,8 @@
         <item>RPC_Item_NanoPlating</item>
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.76</min><max>1.56</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>1.72</min><max>3.52</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>0.4</min><max>0.64</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>1.36</min><max>1.68</max></value></li>
           </statOffsets>
         </effects>
         <values>
@@ -5626,6 +5729,8 @@
     </comps>
     <modExtensions>
       <li Class="RimPunkCE.ActiveEffectExtension">
+        <soundOn>RPC_Snd_OpticalCamoOn</soundOn>
+        <soundOff>RPC_Snd_OpticalCamoOff</soundOff>
       </li>
     </modExtensions>
   </HediffDef>
@@ -5820,8 +5925,8 @@
       <li Class="RimPunkCE.ActiveEffectExtension">
         <effects>
           <statOffsets>
-            <li><stat>ArmorRating_Sharp</stat><value><min>0.6</min><max>1.8</max></value></li>
-            <li><stat>ArmorRating_Blunt</stat><value><min>1.36</min><max>4.04</max></value></li>
+            <li><stat>ArmorRating_Sharp</stat><value><min>0.6</min><max>1.4</max></value></li>
+            <li><stat>ArmorRating_Blunt</stat><value><min>0.96</min><max>2.84</max></value></li>
           </statOffsets>
         </effects>
       </li>

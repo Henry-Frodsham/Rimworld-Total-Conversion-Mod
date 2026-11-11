@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace RimPunkCE
 {
@@ -47,6 +48,11 @@ namespace RimPunkCE
         /// <summary>Berserk: damage bonus that grows as health drops (max at 20% health). Militech Berserk: 0.5.</summary>
         public float lowHealthDamageBonus;
 
+        /// <summary>Audio: when the effect starts, when it ends, and a hum that loops while it lasts (Sounds/RimPunk/Cyberware).</summary>
+        public SoundDef soundOn;
+        public SoundDef soundOff;
+        public SoundDef soundLoop;
+
         public override IEnumerable<string> ConfigErrors()
         {
             foreach (var e in base.ConfigErrors()) yield return e;
@@ -67,6 +73,7 @@ namespace RimPunkCE
 
         private ActiveEffectExtension extCached;
         private TieredStageCache stageCache;
+        private Sustainer loopSustainer;
 
         public ActiveEffectExtension Ext => extCached ??= def.GetModExtension<ActiveEffectExtension>();
 
@@ -82,6 +89,15 @@ namespace RimPunkCE
         }
 
         public override int CurStageIndex => 0;
+
+        public override void PostAdd(DamageInfo? dinfo)
+        {
+            base.PostAdd(dinfo);
+            var ext = Ext;
+            if (ext == null) return;
+            RPSound.At(ext.soundOn, pawn);
+            loopSustainer = RPLoop.Maintain(loopSustainer, ext.soundLoop, pawn);
+        }
 
         public override bool ShouldRemove => ticksLeft <= 0 || base.ShouldRemove;
 
@@ -135,6 +151,7 @@ namespace RimPunkCE
             ticksLeft -= delta;
             var ext = Ext;
             if (ext == null || !pawn.IsHashIntervalTick(60, delta)) return;
+            if (ext.soundLoop != null) loopSustainer = RPLoop.Maintain(loopSustainer, ext.soundLoop, pawn);
             float hps = Eval(ext.healPerSecond);
             if (hps > 0f) CyberUtility.HealFlat(pawn, hps);
             if (ext.revealEnemies != null || ext.revealTraps != null || ext.revealTurrets != null)
@@ -145,6 +162,8 @@ namespace RimPunkCE
         {
             base.PostRemoved();
             var ext = Ext;
+            loopSustainer = RPLoop.Stop(loopSustainer);
+            if (ext?.soundOff != null && !pawn.Dead) RPSound.At(ext.soundOff, pawn);
             if (ext != null && ext.healPerNeutralizeOnEnd > 0f && neutralizedWhileActive > 0 && !pawn.Dead)
                 CyberUtility.HealFraction(pawn, ext.healPerNeutralizeOnEnd * neutralizedWhileActive);
             if (!pawn.Dead) CyberEvents.Notify_ActiveEnded(pawn, def);

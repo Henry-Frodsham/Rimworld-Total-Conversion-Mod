@@ -31,7 +31,9 @@ namespace RimPunkCE
             uploadOrigin = CasterPawn.Position;
             uploadSeconds = SecondsFor(uploadOrigin.DistanceTo(target.Cell), EffectiveRange, CasterPawn.GetStatValue(RPStatDefOf.RPC_QuickhackUploadSpeed));
             CasterPawn.pather.StopDead();
-            return base.TryStartCastOn(target, destination, surpriseAttack, canHitNonTargetPawns, preventFriendlyFire, nonInterruptingSelfCast);
+            bool started = base.TryStartCastOn(target, destination, surpriseAttack, canHitNonTargetPawns, preventFriendlyFire, nonInterruptingSelfCast);
+            if (started) RPSound.At(RPSoundDefOf.RPC_Snd_QhUploadStart, CasterPawn);
+            return started;
         }
 
         public override void ExposeData()
@@ -44,6 +46,7 @@ namespace RimPunkCE
         public static void CancelUpload(Pawn pawn)
         {
             if (!IsUploading(pawn, out var stance)) return;
+            UploadLoop.Stop(stance.verb as Verb_Quickhack);
             stance.verb.Reset();
             if (stance is Stance_Warmup warmup) warmup.Interrupt();
             pawn.stances.SetStance(new Stance_Mobile());
@@ -54,6 +57,7 @@ namespace RimPunkCE
         /// <summary>The target can have stopped being a valid one during the upload: refuse it here, nothing is spent.</summary>
         protected override bool TryCastShot()
         {
+            UploadLoop.Stop(this);
             if (!WorldFeatures.Quickhacks || CasterPawn.Position != uploadOrigin) return false;
             if (ability is QuickhackAbility hack && currentTarget.Thing is Pawn p && !p.Dead && QuickhackUtility.InvalidReason(hack, p) != null)
             {
@@ -84,8 +88,13 @@ namespace RimPunkCE
         {
             if (__instance.verb is not Verb_Quickhack upload) return true;
             var pawn = upload.CasterPawn;
-            if (WorldFeatures.Quickhacks && pawn?.Spawned == true && !pawn.Downed && pawn.Position == upload.UploadOrigin && !pawn.pather.Moving) return true;
+            if (WorldFeatures.Quickhacks && pawn?.Spawned == true && !pawn.Downed && pawn.Position == upload.UploadOrigin && !pawn.pather.Moving)
+            {
+                UploadLoop.Maintain(upload);
+                return true;
+            }
             // Cancellation never invokes WarmupComplete and therefore never applies/spends RAM on the hack.
+            UploadLoop.Stop(upload);
             upload.Reset();
             __instance.Interrupt();
             pawn?.stances.SetStance(new Stance_Mobile());

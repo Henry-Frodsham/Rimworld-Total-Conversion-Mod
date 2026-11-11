@@ -8,7 +8,7 @@
   </supportedVersions>
   <description>Cyberware, cyberpsychosis and adrenaline for Combat Extended. Operating systems (sandevistan, berserk, cyberdecks, chrome compressor), arm cyberware, prefrontal cortex implants and more, all tiered from T1 to Iconic.
 
-Requires Royalty, Harmony and Combat Extended. Multiplayer compatible. Works with Quality Bionics Remastered: cyberware gets quality, which scales its effects.
+Requires Royalty, Harmony, Combat Extended. Multiplayer compatible. Works with Interaction Bubbles (barks and comms chatter show as speech bubbles, comms ones in blue; without it barks show as floating text) and Quality Bionics Remastered: cyberware gets quality, which scales its effects.
 
 Icons by Lorc, Delapouite, Andy Meneely and Sbed from game-icons.net, CC BY 3.0, recoloured.</description>
   <modDependencies>
@@ -31,6 +31,7 @@ Icons by Lorc, Delapouite, Andy Meneely and Sbed from game-icons.net, CC BY 3.0,
     <li>Ludeon.RimWorld.Royalty</li>
     <li>brrainz.harmony</li>
     <li>CETeam.CombatExtended</li>
+    <li>Jaxe.Bubbles</li>
     <li>rwmt.Multiplayer</li>
     <li>assassinsbro.qualitybionicsremastered</li>
   </loadAfter>

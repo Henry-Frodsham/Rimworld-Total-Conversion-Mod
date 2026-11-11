@@ -82,7 +82,7 @@
     <defName>RPC_WeaponThrown</defName>
     <label>weapon thrown</label>
     <description>The melee weapon is in flight and will return shortly.</description>
-    <hediffClass>HediffWithComps</hediffClass>
+    <hediffClass>RimPunkCE.Hediff_WeaponThrown</hediffClass>
     <isBad>false</isBad>
     <everCurableByItem>false</everCurableByItem>
     <comps>

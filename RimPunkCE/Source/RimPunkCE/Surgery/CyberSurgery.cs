@@ -169,6 +169,8 @@ namespace RimPunkCE
         {
             if (!base.AvailableOnNow(thing, part)) return false;
             if (thing is not Pawn pawn) return false;
+            // the comms implant stays until the basic implants that need it are out
+            if (CyberUtility.DependentOn(pawn, recipe.removesHediff) != null) return false;
             if (!recipe.targetsBodyPart) return pawn.health.hediffSet.HasHediff(recipe.removesHediff);
             return true;
         }

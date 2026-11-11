@@ -3,8 +3,8 @@ Runs the RimPunk CE live test suite in the real game (Source/RimPunkCE/LiveTests
 
     python run_live_tests.py                     everything
     python run_live_tests.py --filter gigs       scenarios whose name or group contains "gigs"
-    python run_live_tests.py --bubbles           also load Interaction Bubbles
     python run_live_tests.py --no-build          skip dotnet build
+    python run_live_tests.py --no-bubbles        run without Interaction Bubbles (speech floats as text)
 
 Nothing of yours is touched. The game gets its own data folder under %TEMP% (config, saves, logs), so your mod list,
 settings and saves stay as they are. Steam's API doesn't start for a game launched like this, so workshop mods can't load
@@ -73,8 +73,8 @@ def main():
         sys.stdout.reconfigure(errors='replace')  # weapon/faction names may not fit the Windows console code page
     ap = argparse.ArgumentParser()
     ap.add_argument('--filter', default='')
+    ap.add_argument('--no-bubbles', action='store_true', help='leave Interaction Bubbles out (it is optional)')
     ap.add_argument('--timeout', type=int, default=1500, help='seconds before the run is abandoned')
-    ap.add_argument('--bubbles', action='store_true')
     ap.add_argument('--no-build', action='store_true')
     args = ap.parse_args()
 
@@ -85,7 +85,8 @@ def main():
             return 2
 
     mods, links = list(MODS), dict(LINKS)
-    if args.bubbles:
+    # Interaction Bubbles is optional; loaded by default, --no-bubbles covers the floating-text path
+    if not args.no_bubbles:
         links.update(BUBBLES)
         mods.append('jaxe.bubbles')
     write_config(mods)

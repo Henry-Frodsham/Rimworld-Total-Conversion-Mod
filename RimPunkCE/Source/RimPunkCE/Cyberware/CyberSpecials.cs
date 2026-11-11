@@ -124,6 +124,7 @@ namespace RimPunkCE
             if (bonus) tracker.lastEvasiveTick = -999999; // the bonus is spent by a block
             if (Pawn.Spawned) MoteMaker.ThrowText(Pawn.DrawPos, Pawn.Map, "RPC_Blocked".Translate(), 2f);
             Diag.Count("nanoplating-block");
+            RPSound.At(RPSoundDefOf.RPC_Snd_NanoDeflect, Pawn);
             return true;
         }
 

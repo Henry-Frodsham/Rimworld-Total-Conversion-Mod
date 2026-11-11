@@ -227,7 +227,7 @@ COST = {
 SLOT = {
     'arm': 'RPC_Slot_Arm', 'hand': 'RPC_Slot_Hands', 'face': 'RPC_Slot_Face', 'leg': 'RPC_Slot_Legs',
     'os': 'RPC_Slot_OperatingSystem', 'pfc': 'RPC_Slot_PrefrontalCortex', 'skeleton': 'RPC_Slot_Skeleton',
-    'nervous': 'RPC_Slot_NervousSystem', 'circulatory': 'RPC_Slot_CirculatorySystem', 'integumentary': 'RPC_Slot_IntegumentarySystem',
+    'nervous': 'RPC_Slot_NervousSystem', 'comms': 'RPC_Slot_Comms', 'circulatory': 'RPC_Slot_CirculatorySystem', 'integumentary': 'RPC_Slot_IntegumentarySystem',
 }
 
 out = []
@@ -253,7 +253,12 @@ def balance_armour(id, effects, allowed):
             result.append((stat, value))
     effects.offsets = result
 
-def cyberware(id, label, desc, slot, cap, tiers, effects=None, values=None, comps='', os_type=None, extra='', note=None, role=None):
+def requires_xml(requires):
+    if not requires: return ''
+    return '        <requiresCyberware>'+chr(10)+''.join('          <li>RPC_'+r+'</li>'+chr(10) for r in requires)+'        </requiresCyberware>'+chr(10)
+
+
+def cyberware(id, label, desc, slot, cap, tiers, effects=None, values=None, comps='', os_type=None, extra='', note=None, role=None, requires=None):
     balance_armour(id, effects, PLATING)
     if id == 'BionicJoints': desc = 'Replacement joints. Reinforce the body without adding armour plating.'
     lo, hi = tiers
@@ -287,11 +292,32 @@ def cyberware(id, label, desc, slot, cap, tiers, effects=None, values=None, comp
         <minTier>{lo}</minTier>
         <maxTier>{hi}</maxTier>
         <item>RPC_Item_{id}</item>
-''' + (effects.xml() if effects else '') + values_xml(values) + '''      </li>
+''' + requires_xml(requires) + (effects.xml() if effects else '') + values_xml(values) + '''      </li>
     </modExtensions>
   </HediffDef>
 
 ''')
+
+
+BUFF_HEDIFFS = {'HandleWrapActive', 'ReflexTunerActive', 'AdrenoTriggerActive', 'SynapticAcceleratorActive', 'TyrosineInjectorActive',
+                'AdrenalineConverterActive', 'RevulsorActive'}
+
+
+def sound_xml(on=None, off=None, loop=None):
+    """ActiveEffectExtension audio (SoundDef defNames from gen_sounds.py)."""
+    return ''.join(f'        <{k}>{v}</{k}>\n' for k, v in (('soundOn', on), ('soundOff', off), ('soundLoop', loop)) if v)
+
+
+def active_sound(id):
+    if 'Sandevistan' in id: return sound_xml('RPC_Snd_SandevistanOn', 'RPC_Snd_SandevistanOff', 'RPC_Snd_SandevistanLoop')
+    if 'Berserk' in id: return sound_xml('RPC_Snd_BerserkOn', 'RPC_Snd_BerserkOff', 'RPC_Snd_BerserkLoop')
+    if id == 'OpticalCamoActive': return sound_xml('RPC_Snd_OpticalCamoOn', 'RPC_Snd_OpticalCamoOff')
+    if id.endswith('Scan'): return sound_xml('RPC_Snd_OpticsScan')
+    if id in BUFF_HEDIFFS: return sound_xml('RPC_Snd_BuffOn')
+    if id in ('KerenzikovActive', 'DefenzikovActive'): return sound_xml('RPC_Snd_KerenzikovOn')
+    if id == 'BloodPumpActive': return sound_xml('RPC_Snd_InjectHeal')
+    if id == 'CountershellActive': return sound_xml('RPC_Snd_CountershellOn')
+    return ''
 
 
 def active(id, label, desc, effects=None, ext='', comps='', color='(1, 0.85, 0.3)', stages=''):
@@ -303,7 +329,7 @@ def active(id, label, desc, effects=None, ext='', comps='', color='(1, 0.85, 0.3
     <defaultLabelColor>{color}</defaultLabelColor>
 ''' + (comps if comps.lstrip().startswith('<comps>') else (f'    <comps>\n{comps}    </comps>\n' if comps else '')) + stages + '''    <modExtensions>
       <li Class="RimPunkCE.ActiveEffectExtension">
-''' + (effects.xml('        ') if effects else '') + ext + '''      </li>
+''' + (effects.xml('        ') if effects else '') + ext + active_sound(id) + '''      </li>
     </modExtensions>
   </HediffDef>
 
@@ -364,7 +390,7 @@ def jump_ability(id, label, range_, charges=None, recharge=120):
     return f'RPC_Ability_{id}'
 
 
-def target_ability(id, label, desc, range_, warmup, comps, hostile=True, ai=True):
+def target_ability(id, label, desc, range_, warmup, comps, hostile=True, ai=True, cast=None):
     out.append(f'''  <AbilityDef>
     <defName>RPC_Ability_{id}</defName>
     <label>{escape(label)}</label>
@@ -392,7 +418,10 @@ def target_ability(id, label, desc, range_, warmup, comps, hostile=True, ai=True
     </verbProperties>
     <comps>
 {comps}    </comps>
-  </AbilityDef>
+''' + (f'''    <modExtensions>
+      <li Class="RimPunkCE.AbilitySoundExtension"><cast>{cast}</cast></li>
+    </modExtensions>
+''' if cast else '') + '''  </AbilityDef>
 
 ''')
     return f'RPC_Ability_{id}'
@@ -454,6 +483,7 @@ def launcher_ammo(id, label, ammo_class, tex, projectile, cost):
       <li>RPC_Ammo_LauncherShells</li>
     </thingCategories>
     <stackLimit>200</stackLimit>
+    <destroyOnDrop>false</destroyOnDrop>
     <graphicData>
       <texPath>Things/Ammo/GrenadeLauncher/{tex}</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -498,7 +528,7 @@ def gorilla(id, label, desc, rider, chance_key):
     cyberware(id, label, desc, 'arm', 8, (lo, hi),
               E().off('MeleeDamageFactor', GORILLA_DMG),
               {chance_key: (0.05, 0.1)},
-              tools(tool('gorilla fist', 'Blunt', 20, 1.7, blunt=6, sounds=('MeleeHit_BionicPunch', 'MeleeMiss_BionicPunch')))
+              tools(tool('gorilla fist', 'Blunt', 20, 1.7, blunt=24, sounds=('RPC_Snd_GorillaHit', 'RPC_Snd_GorillaMiss')))
               + onhit(rider=rider, fraction=0.15, **{chance_key.replace('Chance', ''): chance_key}), role='Melee')
 
 
@@ -506,7 +536,8 @@ gorilla('ElectrifyingGorillaArms', 'electrifying gorilla arm', 'Gorilla arm actu
 gorilla('ThermalGorillaArms', 'thermal gorilla arm', 'Gorilla arm with heating elements in the knuckles. Punches burn and can set the target alight.', 'RPC_Thermal', 'burnChance')
 gorilla('ToxicGorillaArms', 'toxic gorilla arm', 'Gorilla arm with toxin injectors in the knuckles.', 'RPC_Toxic', 'poisonChance')
 
-MANTIS_TOOLS = (tool('blade edge', 'Cut', 20, 0.9, sharp=8.0, blunt=1.0), tool('blade point', 'Stab', 22, 1.1, sharp=12.0, blunt=1.0))
+MANTIS_SOUNDS = ('RPC_Snd_MantisHit', 'RPC_Snd_MantisMiss')
+MANTIS_TOOLS = (tool('blade edge', 'Cut', 20, 0.9, sharp=14.0, blunt=3.0, sounds=MANTIS_SOUNDS), tool('blade point', 'Stab', 22, 1.1, sharp=20.0, blunt=3.0, sounds=MANTIS_SOUNDS))
 
 
 def mantis(id, label, desc, tiers, rider=None, chance_key=None, chance=(0.1, 0.2), fraction=0.3):
@@ -523,9 +554,9 @@ mantis('ThermalMantisBlades', 'thermal mantis blade', 'Mantis blades heated unti
 mantis('MaxTacMantisBlades', 'MaxTac mantis blade', 'Heavy mantis blades issued to MaxTac. Serrated edges leave wounds that bleed.', ('T4', 'Iconic'), None, 'bleedChance', (0.15, 0.2))
 
 
-def monowire(id, label, desc, damage_def, rider=None, chance_key=None):
+def monowire(id, label, desc, damage_def, rider=None, chance_key=None, lash_sound='RPC_Snd_MonowireLash'):
     lash = target_ability(id + 'Lash', label + ' lash', 'Whip the monowire at a target up to 6 tiles away.', 5.9, 0.3,
-                          f'      <li Class="RimPunkCE.CompProperties_AbilityMonowireLash">\n        <damageDef>{damage_def}</damageDef>\n      </li>\n')
+                          f'      <li Class="RimPunkCE.CompProperties_AbilityMonowireLash">\n        <damageDef>{damage_def}</damageDef>\n      </li>\n', cast=lash_sound)
     hit = onhit(rider=rider, **({chance_key.replace('Chance', ''): chance_key} if chance_key else {})) if (rider or chance_key) else ''
     values = {'lashDamage': (14, 28)}
     if chance_key: values[chance_key] = (0.1, 0.2)
@@ -535,9 +566,9 @@ def monowire(id, label, desc, damage_def, rider=None, chance_key=None):
 
 
 monowire('Monowire', 'monowire', 'A thin, impossibly sharp wire that whips out of the wrist.', 'RPC_MonowireCut')
-monowire('ElectrifyingMonowire', 'electrifying monowire', 'A monowire carrying an electrical charge.', 'RPC_Electrical', None, 'shockChance')
-monowire('ToxicMonowire', 'toxic monowire', 'A monowire coated in neurotoxin.', 'RPC_MonowireCut', 'RPC_Toxic', 'poisonChance')
-monowire('ThermalMonowire', 'thermal monowire', 'A monowire heated to a searing temperature.', 'RPC_Thermal', None, 'burnChance')
+monowire('ElectrifyingMonowire', 'electrifying monowire', 'A monowire carrying an electrical charge.', 'RPC_Electrical', None, 'shockChance', 'RPC_Snd_MonowireLashElectric')
+monowire('ToxicMonowire', 'toxic monowire', 'A monowire coated in neurotoxin.', 'RPC_MonowireCut', 'RPC_Toxic', 'poisonChance', 'RPC_Snd_MonowireLashToxic')
+monowire('ThermalMonowire', 'thermal monowire', 'A monowire heated to a searing temperature.', 'RPC_Thermal', None, 'burnChance', 'RPC_Snd_MonowireLashThermal')
 
 # projectile launch system: 4 CE shell types (own ammo items, carried in inventory), loaded into the implant's magazine
 # (size by tier) by a reload job. snap (instant, scatter) and aimed (warmup, +30% damage, +25% radius, accurate).
@@ -596,6 +627,11 @@ cyberware('Microgenerator', 'microgenerator', 'Reloading an empty weapon charges
 lo, hi = 'T1', 'Iconic'
 cyberware('ShockAbsorber', 'shock absorber', 'Dampers in the wrist that soak up recoil.', 'hand', 12, (lo, hi), E().fac('RPC_RecoilFactor', minus1((0.08, 0.24), lo, hi)))
 
+# ================================================================================================ comms
+header('comms (cycle 3): a whole-body implant, one per pawn. Every "basic" implant needs it installed. Behaviour: Comms.cs')
+cyberware('CommsImplant', 'comms implant', 'A short-range radio and a subvocal mic wired into the auditory nerve. Talks to every other comms implant on the map, wherever they are, at a quarter of the usual chatter rate. Every basic implant needs one to run.',
+          'comms', 1, ('T1', 'T1'), None, None, '', note='cycle 3: required by every basic implant; remote chat in Comms.cs')
+
 # ================================================================================================ face
 header('face (face/manifest.md): installed in the eyes, two max')
 ACC_T1 = [0.04, 0.06, 0.06, 0.08, 0.10, 0.10]   # +4/6/8/10% (t1/t2/t4/t5)
@@ -605,7 +641,8 @@ def acc(values):
     return [1 + x for x in values]
 
 
-cyberware('BasicKiroshiOptics', 'basic Kiroshi optics', 'Entry-level optics with digital zoom.', 'face', 1, ('T1', 'Iconic'), E().fac('AimingAccuracy', acc(ACC_T1)))
+cyberware('BasicKiroshiOptics', 'basic Kiroshi optics', 'Entry-level optics with digital zoom. Needs a comms implant to run.', 'face', 1, ('T1', 'Iconic'), E().fac('AimingAccuracy', acc(ACC_T1)),
+          requires=['CommsImplant'])
 
 reveal_active = []
 

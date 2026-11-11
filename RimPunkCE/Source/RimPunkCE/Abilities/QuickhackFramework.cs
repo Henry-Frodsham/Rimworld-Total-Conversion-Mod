@@ -29,6 +29,9 @@ namespace RimPunkCE
         public TieredFloat spread;
         public float spreadRadius = 8f;
 
+        /// <summary>Played at the target when the upload lands; the generic "uploaded" chirp plays when this is null.</summary>
+        public SoundDef landSound;
+
         public bool untraceable;
         /// <summary>Untraceable from this tier on (System Collapse t5).</summary>
         public CyberTier untraceableFromTier = CyberTier.Iconic;
@@ -152,7 +155,11 @@ namespace RimPunkCE
                 if (caster.Map != null && target.HasThing) MoteMaker.ThrowText(target.Thing.DrawPos, caster.Map, "RPC_Crit".Translate(), Color.cyan, 2f);
             }
             Diag.Count("quickhack");
-            if (target.HasThing) MapComponent_Netrun.Notify_Result(target.Thing, NetrunResult.Uploaded);
+            if (target.HasThing)
+            {
+                MapComponent_Netrun.Notify_Result(target.Thing, NetrunResult.Uploaded);
+                RPSound.At(ability.Ext?.landSound ?? RPSoundDefOf.RPC_Snd_QhUploaded, target.Thing);
+            }
             if (caster.Faction?.IsPlayer == true)
                 Diag.Event("quickhack", $"{Diag.Describe(caster)} uploaded {parent.def.defName} {ability.Tier} ({ramSpent:0.#} RAM{(critFactor > 1f ? ", crit" : "")}) to {(target.Thing is Pawn tp ? Diag.Describe(tp) : target.ToString())}");
         }

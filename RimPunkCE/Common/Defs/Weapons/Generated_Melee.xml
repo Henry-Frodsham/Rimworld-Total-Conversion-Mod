@@ -157,6 +157,8 @@
         <cooldownTime>1.9</cooldownTime>
         <armorPenetrationSharp>1.36</armorPenetrationSharp>
         <armorPenetrationBlunt>3.4</armorPenetrationBlunt>
+        <soundMeleeHit>RPC_Snd_ChainHit</soundMeleeHit>
+        <soundMeleeMiss>RPC_Snd_ChainMiss</soundMeleeMiss>
       </li>
       <li Class="CombatExtended.ToolCE">
         <label>handle</label>
@@ -384,6 +386,8 @@
         <power>12.35</power>
         <cooldownTime>2.2</cooldownTime>
         <armorPenetrationBlunt>4.5</armorPenetrationBlunt>
+        <soundMeleeHit>RPC_Snd_BatonHit</soundMeleeHit>
+        <soundMeleeMiss>RPC_Snd_BatonMiss</soundMeleeMiss>
         <extraMeleeDamages>
           <li><def>RPC_Shock</def><amount>6</amount><chance>0.15</chance></li>
         </extraMeleeDamages>
@@ -435,6 +439,8 @@
         <power>12.35</power>
         <cooldownTime>2.2</cooldownTime>
         <armorPenetrationBlunt>4.5</armorPenetrationBlunt>
+        <soundMeleeHit>RPC_Snd_BatonHit</soundMeleeHit>
+        <soundMeleeMiss>RPC_Snd_BatonMiss</soundMeleeMiss>
         <extraMeleeDamages>
           <li><def>RPC_Shock</def><amount>8</amount><chance>0.25</chance></li>
         </extraMeleeDamages>
@@ -486,6 +492,8 @@
         <power>12.35</power>
         <cooldownTime>2.2</cooldownTime>
         <armorPenetrationBlunt>4.5</armorPenetrationBlunt>
+        <soundMeleeHit>RPC_Snd_BatonHit</soundMeleeHit>
+        <soundMeleeMiss>RPC_Snd_BatonMiss</soundMeleeMiss>
         <extraMeleeDamages>
           <li><def>RPC_Shock</def><amount>10</amount><chance>0.35</chance></li>
         </extraMeleeDamages>

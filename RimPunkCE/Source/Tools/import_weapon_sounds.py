@@ -78,7 +78,7 @@ def generate_sound_defs():
         sub = ET.SubElement(ET.SubElement(sound, 'subSounds'), 'li')
         grain = ET.SubElement(ET.SubElement(sub,'grains'), 'li', {'Class':'AudioGrain_Folder'})
         ET.SubElement(grain,'clipFolderPath').text = profile['folder']
-        for key,value in [('volumeRange','28~30'), ('pitchRange','0.98~1.02'), ('distRange','12~65'), ('onCamera','false'),
+        for key,value in [('volumeRange', profile.get('volume', '28~30')), ('pitchRange','0.98~1.02'), ('distRange','12~65'), ('onCamera','false'),
             ('tempoAffectedByGameSpeed','false'), ('startDelayRange','0~0')]: ET.SubElement(sub,key).text = value
     ET.indent(root, space='  ')
     path = ROOT / 'Common/Defs/Sounds/Generated_WeaponSounds.xml'

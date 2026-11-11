@@ -46,6 +46,7 @@ namespace RimPunkCE
             float pen = verb?.ArmorPenetrationSharp ?? (tool as CombatExtended.ToolCE)?.armorPenetrationSharp ?? 0.5f;
 
             if (pawn.Map != null) FleckMaker.ThrowDustPuff(target.Thing.DrawPos, pawn.Map, 0.6f);
+            RPSound.At(RPSoundDefOf.RPC_Snd_ThrowWeapon, pawn);
             MeleeVerbAccess.SetLastAttackVerb(verb);
             try { target.Thing.TakeDamage(new DamageInfo(damageDef, amount, pen, -1f, pawn, null, weapon.def)); }
             finally { MeleeVerbAccess.SetLastAttackVerb(null); }
