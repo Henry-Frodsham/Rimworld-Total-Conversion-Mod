@@ -63,6 +63,7 @@ namespace RimPunkCE
             }
             val *= RimPunkMod.Settings?.capacityMultiplier ?? 1f;
             val += ImmunoblockerUtility.CapacityBonus(pawn); // flat: a +200 drug is +200 whatever the capacity setting
+            val += ShardUtility.CapacityBonus(pawn); // capacity shards: flat too (and, like everything else, nothing for a Gonk)
         }
 
         public override string ExplanationPart(StatRequest req)
@@ -72,9 +73,18 @@ namespace RimPunkCE
             float m = RimPunkMod.Settings?.capacityMultiplier ?? 1f;
             if (first == null && m != 1f) first = "RPC_CapacitySettingExplanation".Translate(m.ToStringPercent());
             float drug = ImmunoblockerUtility.CapacityBonus(pawn);
-            if (drug <= 0f) return first;
-            string blocker = "RPC_ImmunoblockerExplanation".Translate(drug);
-            return first == null ? blocker : first + "\n" + blocker;
+            if (drug > 0f)
+            {
+                string blocker = "RPC_ImmunoblockerExplanation".Translate(drug);
+                first = first == null ? blocker : first + "\n" + blocker;
+            }
+            float shard = AptitudeUtility.IsGonk(pawn) ? 0f : ShardUtility.CapacityBonus(pawn);
+            if (shard > 0f)
+            {
+                string line = "RPC_ShardExplanation".Translate(shard);
+                first = first == null ? line : first + "\n" + line;
+            }
+            return first;
         }
     }
 }

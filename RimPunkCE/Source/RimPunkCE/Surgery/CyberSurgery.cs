@@ -409,11 +409,11 @@ namespace RimPunkCE
 
         /// <summary>Vanilla surgeries take 2 medicine. Category filters are resolved later (ThingFilter.ResolveReferences),
         /// so fill the raw category list instead of SetAllow, which needs the resolved category tree.</summary>
-        private static void AddMedicine(RecipeDef r, RecipeDef template)
+        internal static void AddMedicine(RecipeDef r, RecipeDef template, int count = 2)
         {
             var ing = new IngredientCount();
             AllowCategoryDeferred(ing.filter, "Medicine");
-            ing.SetBaseCount(2);
+            ing.SetBaseCount(count);
             r.ingredients.Add(ing);
             AllowCategoryDeferred(r.fixedIngredientFilter, "Medicine");
         }

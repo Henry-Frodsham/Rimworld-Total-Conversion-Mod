@@ -145,7 +145,134 @@ namespace RimPunkCE
                 var box = new Rect(x0 + (i % 2) * (LimbW + Gap), y + (i / 2) * (Box + LabelH + Gap), LimbW, Box);
                 DrawLimb(box, p, limbs[i], bills, canOp);
             }
-            return y + ((limbs.Count + 1) / 2) * (Box + LabelH + Gap) - r.y;
+            y += ((limbs.Count + 1) / 2) * (Box + LabelH + Gap);
+            y = DrawShards(r, y + 6f, p, bills, canOp);
+            return y - r.y;
+        }
+
+        // ================================================================================================ neural shards
+
+        private static bool SelfService(Pawn p) => p.Faction == Faction.OfPlayer && !p.IsPrisoner;
+
+        /// <summary>
+        /// Neural shards: two ports that open once basic cyberware (the comms implant) is in. Colonists slot and unslot their own shards
+        /// directly (no surgery); prisoners and other patients get the forced surgeries as bills. Returns the new y.
+        /// </summary>
+        private float DrawShards(Rect r, float y, Pawn p, List<Bill_Medical> bills, bool canOp)
+        {
+            var slotted = ShardUtility.Slotted(p);
+            bool port = ShardUtility.HasShardPort(p);
+            var pending = bills.Where(b => b.recipe.Worker is Recipe_InstallShard).ToList();
+            GUI.color = Accent;
+            Text.Font = GameFont.Small;
+            Widgets.Label(new Rect(r.x, y, r.width, LabelH), "RPC_UI_Shards".Translate(slotted.Count, ShardUtility.MaxSlots));
+            TooltipHandler.TipRegion(new Rect(r.x, y, r.width, LabelH), "RPC_UI_ShardsTip".Translate());
+            GUI.color = Color.white;
+            y += LabelH;
+            float x0 = r.center.x - (LimbW * 2f + Gap) / 2f + (LimbW - Box) / 2f;
+            for (int i = 0; i < ShardUtility.MaxSlots; i++)
+            {
+                var box = new Rect(x0 + i * (LimbW + Gap), y, Box, Box);
+                if (i < slotted.Count)
+                {
+                    var shard = slotted[i];
+                    var removal = bills.FirstOrDefault(b => b.recipe.Worker is Recipe_RemoveShard && b.recipe.GetModExtension<ShardRecipeExtension>()?.shard == shard);
+                    string tip = shard.LabelCap + "\n\n" + shard.description;
+                    DrawBox(box, shard.uiIcon, null, removal != null ? QueuedBorder : Accent, removal != null, removal != null ? "RPC_UI_RemovalQueued".Translate().ToString() : null, tip, () =>
+                    {
+                        if (!canOp) return;
+                        if (removal != null) { Find.WindowStack.Add(new FloatMenu(new List<FloatMenuOption> { new FloatMenuOption("RPC_UI_Cancel".Translate(removal.LabelCap), () => p.BillStack.Delete(removal)) })); return; }
+                        var opts = new List<FloatMenuOption>();
+                        if (SelfService(p) && p.Spawned)
+                            opts.Add(new FloatMenuOption("RPC_UI_ShardRemove".Translate(shard.LabelCap), () => ShardUtility.OrderRemove(p, shard)));
+                        else
+                        {
+                            var recipe = DefDatabase<RecipeDef>.GetNamedSilentFail("RPC_RemoveShard_" + shard.defName);
+                            if (recipe != null) opts.Add(new FloatMenuOption("RPC_UI_ShardRemoveSurgery".Translate(shard.LabelCap), () => Queue(p, recipe, null, null)));
+                        }
+                        if (opts.Count > 0) Find.WindowStack.Add(new FloatMenu(opts));
+                    });
+                }
+                else if (i - slotted.Count < pending.Count)
+                {
+                    var bill = pending[i - slotted.Count];
+                    var shard = bill.recipe.GetModExtension<ShardRecipeExtension>()?.shard;
+                    DrawBox(box, shard?.uiIcon, null, QueuedBorder, true, "RPC_UI_Queued".Translate(), "RPC_UI_QueuedTip".Translate(bill.LabelCap), () =>
+                    {
+                        if (canOp) Find.WindowStack.Add(new FloatMenu(new List<FloatMenuOption> { new FloatMenuOption("RPC_UI_Cancel".Translate(bill.LabelCap), () => p.BillStack.Delete(bill)) }));
+                    });
+                }
+                else if (!port) DrawLocked(box, "RPC_UI_ShardNoPort".Translate());
+                else DrawBox(box, null, null, EmptyBorder, false, null, "RPC_UI_ShardEmptyTip".Translate(),
+                    canOp ? () => OpenShardMenu(p) : (Action)null, "+");
+            }
+            y += Box + 6f;
+
+            // engrams are always an operation: the new person overwrites the old one
+            if (canOp)
+            {
+                var engramRecipe = DefDatabase<RecipeDef>.GetNamedSilentFail("RPC_InsertEngram");
+                var queued = bills.FirstOrDefault(b => b.recipe == engramRecipe);
+                string label = queued != null ? "RPC_UI_EngramQueued".Translate().ToString() : "RPC_UI_EngramInsert".Translate().ToString();
+                var btn = new Rect(r.center.x - 95f, y, 190f, 26f);
+                if (Widgets.ButtonText(btn, label) && engramRecipe != null)
+                {
+                    if (queued != null) p.BillStack.Delete(queued);
+                    else OpenEngramMenu(p, engramRecipe);
+                }
+                TooltipHandler.TipRegion(btn, "RPC_UI_EngramTip".Translate());
+                y += 32f;
+            }
+            return y;
+        }
+
+        private static void OpenShardMenu(Pawn p)
+        {
+            var opts = new List<FloatMenuOption>();
+            var stock = p.Map == null ? new List<Thing>() : ShardUtility.AllShards.SelectMany(d => p.Map.listerThings.ThingsOfDef(d))
+                .Where(t => !t.IsForbidden(Faction.OfPlayer) && !ReservedByBill(t)).ToList();
+            foreach (var group in stock.GroupBy(t => t.def).OrderBy(g => g.Key.label))
+            {
+                var def = group.Key;
+                var thing = group.First();
+                string name = def.LabelCap + " (" + "RPC_UI_InStock".Translate(group.Sum(t => t.stackCount)) + ")";
+                if (!ShardUtility.CanSlot(p, def, out string reason))
+                {
+                    opts.Add(new FloatMenuOption(name + " - " + reason, null, def));
+                    continue;
+                }
+                bool kills = def.ShardExt().soulkiller;
+                if (SelfService(p) && p.Spawned)
+                {
+                    Action go = () => ShardUtility.OrderSlot(p, thing);
+                    opts.Add(new FloatMenuOption(name, kills
+                        ? () => Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("RPC_UI_SoulkillerConfirm".Translate(p.LabelShortCap), go, true))
+                        : go, def));
+                }
+                else
+                {
+                    var recipe = DefDatabase<RecipeDef>.GetNamedSilentFail("RPC_InsertShard_" + def.defName);
+                    if (recipe != null) opts.Add(new FloatMenuOption(name + " - " + "RPC_UI_ShardSurgery".Translate(), () => Queue(p, recipe, null, thing), def));
+                }
+            }
+            if (opts.Count == 0) opts.Add(new FloatMenuOption("RPC_UI_NoShards".Translate(), null));
+            Find.WindowStack.Add(new FloatMenu(opts));
+        }
+
+        private static void OpenEngramMenu(Pawn p, RecipeDef recipe)
+        {
+            var opts = new List<FloatMenuOption>();
+            if (!EngramUtility.CanReceive(p, out string why)) opts.Add(new FloatMenuOption(why, null));
+            else if (p.Map != null)
+            {
+                foreach (var t in p.Map.listerThings.AllThings.Where(t => t.TryGetComp<CompEngram>() != null && !t.IsForbidden(Faction.OfPlayer) && !ReservedByBill(t)))
+                {
+                    var thing = t;
+                    opts.Add(new FloatMenuOption(thing.LabelCap, () => Queue(p, recipe, null, thing), thing.def));
+                }
+            }
+            if (opts.Count == 0) opts.Add(new FloatMenuOption("RPC_UI_NoEngrams".Translate(), null));
+            Find.WindowStack.Add(new FloatMenu(opts));
         }
 
         // ================================================================================================ cyberware slots

@@ -23,6 +23,15 @@
         <minTier>T3</minTier>
         <maxTier>Iconic</maxTier>
       </li>
+      <!-- neural shards (cycle 4, gen_shards.py): skill and capacity shards, now and then the soulkiller -->
+      <li Class="RimPunkCE.StockGenerator_Shard">
+        <countRange>1~3</countRange>
+        <soulkillerChance>0.12</soulkillerChance>
+      </li>
+      <!-- engrams of lore figures: rarely -->
+      <li Class="RimPunkCE.StockGenerator_Engram">
+        <chance>0.12</chance>
+      </li>
       <!-- quickhack shards (gen_quickhacks.py) -->
       <li Class="StockGenerator_Tag">
         <tradeTag>RPC_QuickhackShard</tradeTag>

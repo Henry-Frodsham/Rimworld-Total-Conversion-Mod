@@ -50,6 +50,9 @@ namespace RimPunkCE
         public static HediffDef RPC_CyberpsychosisRage;
         public static HediffDef RPC_CyberpsychosisPermanent;
         public static HediffDef RPC_WeaponThrown;
+        public static HediffDef RPC_CommsImplant;
+        public static HediffDef RPC_EngramShock;
+        public static JobDef RPC_SlotShard;
         public static HediffDef RPC_TraumaTeamCoverage;
         public static JobDef RPC_TraumaBoardShuttle;
         public static JobDef RPC_ReloadArmLauncher;

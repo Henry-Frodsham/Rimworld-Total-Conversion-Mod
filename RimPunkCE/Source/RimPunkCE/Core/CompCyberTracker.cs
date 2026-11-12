@@ -30,6 +30,13 @@ namespace RimPunkCE
         public int lastKiteTick = -999999;
         public int lastHackThinkTick = -999999;
 
+        /// <summary>Neural shards in the pawn's ports (cycle 4, Shards/Shards.cs). Their effects are read from the defs.</summary>
+        public List<ThingDef> shards = new List<ThingDef>();
+
+        /// <summary>Recruit resistance / slave will of the person an engram wrote into this body (-1: none, the pawn kind's rolls apply).</summary>
+        public float engramResistance = -1f;
+        public float engramWill = -1f;
+
         private bool cacheDirty = true;
         private float cachedUsed;
         private readonly List<Hediff_Cyberware> cachedCyberware = new List<Hediff_Cyberware>();
@@ -87,7 +94,37 @@ namespace RimPunkCE
         public override float GetStatOffset(StatDef stat)
         {
             if (stat == RPStatDefOf.RPC_CyberwareCapacity && Pawn != null) return BaseCapacity;
-            return 0f;
+            float sum = 0f;
+            for (int i = 0; i < shards.Count; i++)
+            {
+                var offsets = shards[i].ShardExt()?.statOffsets;
+                if (offsets != null) sum += offsets.GetStatOffsetFromList(stat);
+            }
+            return sum;
+        }
+
+        public override float GetStatFactor(StatDef stat)
+        {
+            float f = 1f;
+            for (int i = 0; i < shards.Count; i++)
+            {
+                var factors = shards[i].ShardExt()?.statFactors;
+                if (factors != null) f *= factors.GetStatFactorFromList(stat);
+            }
+            return f;
+        }
+
+        public override void GetStatsExplanation(StatDef stat, System.Text.StringBuilder sb, string whitespace = "")
+        {
+            foreach (var shard in shards)
+            {
+                var ext = shard.ShardExt();
+                if (ext == null) continue;
+                float off = ext.statOffsets?.GetStatOffsetFromList(stat) ?? 0f;
+                float fac = ext.statFactors?.GetStatFactorFromList(stat) ?? 1f;
+                if (off != 0f) sb.AppendLine(whitespace + shard.LabelCap + ": " + stat.Worker.ValueToString(off, false, ToStringNumberSense.Offset));
+                if (fac != 1f) sb.AppendLine(whitespace + shard.LabelCap + ": " + stat.Worker.ValueToString(fac, false, ToStringNumberSense.Factor));
+            }
         }
 
         public void Notify_CyberwareChanged()
@@ -499,6 +536,14 @@ namespace RimPunkCE
             Scribe_Values.Look(ref lastKiteTick, "lastKiteTick", -999999);
             Scribe_Values.Look(ref lastHackThinkTick, "lastHackThinkTick", -999999);
             Scribe_Values.Look(ref lastEvasiveTick, "lastEvasiveTick", -999999);
+            Scribe_Collections.Look(ref shards, "shards", LookMode.Def);
+            Scribe_Values.Look(ref engramResistance, "engramResistance", -1f);
+            Scribe_Values.Look(ref engramWill, "engramWill", -1f);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                shards ??= new List<ThingDef>();
+                shards.RemoveAll(d => d == null);
+            }
             Scribe_Values.Look(ref delayedPool, "delayedPool");
             Scribe_Values.Look(ref delayedTicksLeft, "delayedTicksLeft");
             if (Scribe.mode == LoadSaveMode.PostLoadInit) cacheDirty = true;

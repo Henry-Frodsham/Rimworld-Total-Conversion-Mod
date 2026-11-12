@@ -512,6 +512,8 @@ namespace RimPunkCE
         }
 
         private static float savedInstability;
+        private static int savedShardPawn;
+        private static int savedEngramItem;
         private static int savedUploadCaster;
         private static int savedUploadRemaining;
         [LiveScenario("last")]
@@ -536,6 +538,17 @@ namespace RimPunkCE
             Check(Verb_Quickhack.IsUploading(caster, out var upload), "upload active at save");
             savedUploadCaster = caster.thingIDNumber;
             savedUploadRemaining = upload?.ticksLeft ?? 0;
+            // cycle 4: slotted shards, an engram's recruit numbers and an engram item all have to come back
+            var shardPawn = WithPort(Colonist(Center + new IntVec3(2, 0, 2)));
+            ShardUtility.Slot(shardPawn, Thing("RPC_SkillShard_Plants"));
+            ShardUtility.Slot(shardPawn, Thing("RPC_CapacityShard"));
+            shardPawn.GetCyberTracker().engramResistance = 7f;
+            shardPawn.GetCyberTracker().engramWill = 3f;
+            spawned.Remove(shardPawn);
+            savedShardPawn = shardPawn.thingIDNumber;
+            var engramItem = EngramUtility.MakeEngram(Lore("DavidMartinez"));
+            GenSpawn.Spawn(engramItem, Center + new IntVec3(3, 0, 3), map);
+            savedEngramItem = engramItem.thingIDNumber;
             // The earlier gig stays saved even though this test world now has gigs disabled.
             WorldFeatures.Current.SetForTests(false, true);
             GameDataSaveLoader.SaveGame(SaveName);
@@ -560,6 +573,12 @@ namespace RimPunkCE
             Check(Verb_Quickhack.IsUploading(caster, out var upload), "in-progress upload survived full game reload");
             Check(upload != null && upload.ticksLeft > 0 && upload.ticksLeft <= savedUploadRemaining, "upload remaining duration preserved");
             Check(Find.PlayLog.AllEntries.OfType<PlayLogEntry_Bark>().Any(e => !e.ToGameStringFromPOV(null).NullOrEmpty()), "bark entries survived");
+            var sp = map.mapPawns.AllPawnsSpawned.FirstOrDefault(x => x.thingIDNumber == savedShardPawn);
+            Check(sp != null && ShardUtility.Slotted(sp).Count == 2 && ShardUtility.Slotted(sp).Contains(Thing("RPC_SkillShard_Plants")) && ShardUtility.Slotted(sp).Contains(Thing("RPC_CapacityShard")), "slotted shards survived the reload");
+            Check(sp != null && sp.skills.GetSkill(SkillDefOf.Plants).Aptitude == 5 && ShardUtility.CapacityBonus(sp) == 25f, "and still work");
+            Check(sp != null && sp.GetCyberTracker().engramResistance == 7f && sp.GetCyberTracker().engramWill == 3f, "engram recruit numbers survived the reload");
+            var item = map.listerThings.AllThings.FirstOrDefault(t => t.thingIDNumber == savedEngramItem);
+            Check(item?.TryGetComp<CompEngram>()?.Data?.FullName == "David Martinez" && item.TryGetComp<CompEngram>().Data.skills.Count == 12, "an engram item survived the reload with its person");
             yield return 120;
             Check(!map.mapPawns.AllPawnsSpawned.Any(x => x.Destroyed), "ticks fine after the reload");
 

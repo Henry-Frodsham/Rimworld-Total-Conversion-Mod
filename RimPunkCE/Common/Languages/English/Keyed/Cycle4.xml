@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- neural shards -->
+  <RPC_Shard_NotHumanlike>Only people can take shards.</RPC_Shard_NotHumanlike>
+  <RPC_Shard_NeedsPort>Needs a {0} installed first (basic cyberware).</RPC_Shard_NeedsPort>
+  <RPC_Shard_AlreadySlotted>{0} is already slotted.</RPC_Shard_AlreadySlotted>
+  <RPC_Shard_SlotsFull>Both shard slots are taken ({0}).</RPC_Shard_SlotsFull>
+  <RPC_ShardExplanation>Capacity shards: +{0}</RPC_ShardExplanation>
+  <RPC_InsertShardLabel>insert {0}</RPC_InsertShardLabel>
+  <RPC_InsertShardJob>Inserting {0}.</RPC_InsertShardJob>
+  <RPC_RemoveShardLabel>remove {0}</RPC_RemoveShardLabel>
+  <RPC_RemoveShardJob>Removing {0}.</RPC_RemoveShardJob>
+  <RPC_InsertEngramLabel>insert engram</RPC_InsertEngramLabel>
+  <RPC_InsertEngramJob>Writing an engram over the patient.</RPC_InsertEngramJob>
+
+  <!-- the cyberware tab -->
+  <RPC_UI_Shards>Neural shards ({0}/{1})</RPC_UI_Shards>
+  <RPC_UI_ShardsTip>Two ports, open once basic cyberware (the comms implant) is installed. Colonists slot and remove their own shards here, no surgery. For anyone else, the same buttons queue the forced operation.</RPC_UI_ShardsTip>
+  <RPC_UI_ShardNoPort>Shard ports need a comms implant first.</RPC_UI_ShardNoPort>
+  <RPC_UI_ShardEmptyTip>Empty shard port. Click to slot a shard from stock.</RPC_UI_ShardEmptyTip>
+  <RPC_UI_ShardRemove>Take out {0}</RPC_UI_ShardRemove>
+  <RPC_UI_ShardRemoveSurgery>Remove {0} (operation)</RPC_UI_ShardRemoveSurgery>
+  <RPC_UI_ShardSurgery>operation</RPC_UI_ShardSurgery>
+  <RPC_UI_NoShards>No shards in stock.</RPC_UI_NoShards>
+  <RPC_UI_NoEngrams>No engrams in stock.</RPC_UI_NoEngrams>
+  <RPC_UI_SoulkillerConfirm>Slotting the soulkiller shard kills {0} and turns the shard into an engram of them. Go ahead?</RPC_UI_SoulkillerConfirm>
+  <RPC_UI_EngramInsert>Insert engram...</RPC_UI_EngramInsert>
+  <RPC_UI_EngramQueued>Cancel engram operation</RPC_UI_EngramQueued>
+  <RPC_UI_EngramTip>Operation: overwrites this person's name, backstory, traits and skills with the engram's (never their looks). They are down for 12 hours afterwards. Unless the engram came from your own colony they do not join: arrest and recruit them.</RPC_UI_EngramTip>
+
+  <!-- engrams -->
+  <RPC_Engram_NotHumanlike>Only people can take an engram.</RPC_Engram_NotHumanlike>
+  <RPC_Engram_Skills>Best skills: {0}</RPC_Engram_Skills>
+  <RPC_Engram_Traits>Traits: {0}</RPC_Engram_Traits>
+  <RPC_Engram_FromColony>One of yours: joins the colony the moment they are written in.</RPC_Engram_FromColony>
+  <RPC_Engram_Stranger>Not one of yours: has to be arrested and recruited.</RPC_Engram_Stranger>
+  <RPC_Soulkilled>The soulkiller burned a mind out of its body: an engram of {0} is left behind.</RPC_Soulkilled>
+  <RPC_EngramWritten>{0} is gone. {1} wakes up in the same body in 12 hours.</RPC_EngramWritten>
+
+  <!-- health items -->
+  <RPC_HealthItem_Instant>Instant healing</RPC_HealthItem_Instant>
+  <RPC_HealthItem_InstantDesc>Restores {0} of every body part's maximum health at once.</RPC_HealthItem_InstantDesc>
+  <RPC_HealthItem_Seal>Seals wounds</RPC_HealthItem_Seal>
+  <RPC_HealthItem_SealDesc>Stops the bleeding on every wound (tends them at this quality).</RPC_HealthItem_SealDesc>
+  <RPC_HealthItem_Adrenaline>Adrenaline</RPC_HealthItem_Adrenaline>
+  <RPC_HealthItem_AdrenalineDesc>A rush of adrenaline, as a share of the maximum.</RPC_HealthItem_AdrenalineDesc>
+  <RPC_HealthItem_RegenTip>Regenerates {0} of every body part's maximum health.</RPC_HealthItem_RegenTip>
+</LanguageData>
